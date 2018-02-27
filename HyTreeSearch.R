@@ -5,8 +5,8 @@ my_data <- Inapp::read.as.phydat(filename)
 iw_data <- PrepareDataIW(my_data)
 nj.tree <- NJTree(my_data)
 Fitch(nj.tree, my_data)
-rooted.tree <- EnforceOutgroup(nj.tree, 'Namacalathus')
-plot(rooted.tree, title="NJ tree")
+rooted.tree <- EnforceOutgroup(nj.tree, 'Dailyatia')
+plot(rooted.tree, main="NJ tree")
 par(mar=rep(0.25, 4), cex=0.75) # make plot easier to read
 
 better.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, 
