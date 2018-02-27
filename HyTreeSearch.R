@@ -9,11 +9,12 @@ rooted.tree <- EnforceOutgroup(nj.tree, 'Dailyatia')
 plot(rooted.tree, main="NJ tree")
 par(mar=rep(0.25, 4), cex=0.75) # make plot easier to read
 
-better.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, 
-                           EdgeSwapper=RootedNNISwap, verbosity=3)
+plot(better.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, 
+                           EdgeSwapper=RootedNNISwap, verbosity=3))
+text(0.5, 1.4, paste0("Score after first NNI swaps: ", Fitch(better.tree, my_data)), pos=4, cex=0.8)
 plot(best.tree <- Ratchet(better.tree, my_data, verbosity=0, k=5,
                      swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap)))
-text(0.5, 1.4, paste0("Score after first Ratchet: ", Fitch(best.tree, my_data)), pos=4, cex=0.7)
+text(0.5, 1.4, paste0("Score after first Ratchet: ", Fitch(best.tree, my_data)), pos=4, cex=0.8)
 text(0.5, 0.5, Sys.time(), pos=4, cex=0.7)
 
 for (i in 1:10) {
