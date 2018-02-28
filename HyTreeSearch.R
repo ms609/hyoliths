@@ -1,7 +1,17 @@
 library('TreeSearch'); library('ape'); library('phangorn')
 library('Inapp') #  For parse.nexus
-filename <- "../Hyoliths/m.nex"
+cd <- "../Hyoliths/"
+files <- list.files(cd, pattern='mbank_.*\\.nex', full.names=TRUE)
+filename <- files[which.max(file.mtime(files))]
+cat("Reading data from", filename)
 my_data <- Inapp::read.as.phydat(filename)
+if (TRUE) {
+#  cat("\n ! SUPRESSING TOMTELUVA") # !!!
+#  my_data$Tomteluva_perturbata <- NULL # !!!
+  cat("\n ! SUPRESSING NAMACALATHUS") # !!!
+  my_data$Namacalathus <- NULL # !!!
+}
+
 iw_data <- PrepareDataIW(my_data)
 nj.tree <- NJTree(my_data)
 Fitch(nj.tree, my_data)
@@ -9,10 +19,10 @@ rooted.tree <- EnforceOutgroup(nj.tree, 'Dailyatia')
 plot(rooted.tree, main="NJ tree")
 par(mar=rep(0.25, 4), cex=0.75) # make plot easier to read
 
-plot(better.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, 
+plot(better.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
                            EdgeSwapper=RootedNNISwap, verbosity=3))
 text(0.5, 1.4, paste0("Score after first NNI swaps: ", Fitch(better.tree, my_data)), pos=4, cex=0.8)
-plot(best.tree <- Ratchet(better.tree, my_data, verbosity=0, k=5,
+plot(best.tree <- Ratchet(better.tree, my_data, verbosity=1, k=5,
                      swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap)))
 text(0.5, 1.4, paste0("Score after first Ratchet: ", Fitch(best.tree, my_data)), pos=4, cex=0.8)
 text(0.5, 0.5, Sys.time(), pos=4, cex=0.7)
@@ -25,17 +35,26 @@ for (i in 1:10) {
 }
 write.nexus(best.tree, file=paste0("hy_ew_", Fitch(best.tree, my_data), ".nex", collapse=''))
 
-my.consensus <- RatchetConsensus(best.tree, my_data, swappers=
-                                 list(RootedTBRSwap, RootedNNISwap), nSearch=50) 
+my.consensus <- RatchetConsensus(best.tree, my_data, nSearch=150, 
+                                 swappers=list(RootedTBRSwap, RootedNNISwap))
 par(mar=rep(0.25, 4), cex=0.75) # make plot easier to read
 plot(ape::consensus(my.consensus))
+no_acro <- lapply(my.consensus, drop.tip, tip='Clupeafumosus_socialis')
+plot(ape::consensus(no_acro))
+legend(0.5, 4, '? Clupeafumosus_socialis', lty=1, bty='n', text.font=3, cex=0.8)
 text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)                               
 text(0.5, 0.5, Sys.time(), pos=4)
 pdf(file=paste0("hy_ew_", Fitch(best.tree, my_data), ".pdf", collapse=''))
 par(mar=rep(0.25, 4), cex=0.75) # make plot easier to read
+plot(ape::consensus(no_acro))
+legend(0.5, 4, '? Clupeafumosus socialis', lty=1, bty='n', text.font=3, cex=0.8)
+text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)                               
+text(0.5, 0.5, Sys.time(), pos=4)
+
 plot(ape::consensus(my.consensus))
 text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)                               
 text(0.5, 0.5, Sys.time(), pos=4)
+
 dev.off()
 
 iw.tree <- best.tree
