@@ -76,7 +76,7 @@ for (k in c(4, 2, 8, 16)) {
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, 
                   swappers=list(RootedTBRSwap, RootedNNISwap),
                   suboptimal=0.1,
-                  nSearch=20) 
+                  nSearch=150) 
   plot(ape::consensus(iw.consensus))
   text(0.5, 1.4, paste0("k = ", k, "; IW Score: ", IWScore(iw.tree, iw_data, concavity=k)), pos=4)
   text(0.5, 0.5, Sys.time(), pos=4)  
