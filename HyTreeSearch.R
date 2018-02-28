@@ -66,6 +66,7 @@ for (k in c(4, 2, 8, 16)) {
   for (i in 1:8) {
     cat("\n\n############################# I =", i)
     plot(iw.tree <- IWRatchet(iw.tree, iw_data, verbosity=2, concavity=k,
+                         ratchHits = 4,
                          swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap)))
     text(0.5, 1.4, paste0("IW Score: ", IWScore(iw.tree, iw_data, concavity=k)), pos=4)
     text(0.5, 0.5, Sys.time(), pos=4)  
