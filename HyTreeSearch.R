@@ -78,6 +78,8 @@ dev.off()
 iw.tree <- best.tree
 kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 for (k in sample(kValues, length(kValues))) {
+
+  cat("\n\n\n************************ Concavity constant k =", k, "**********************\n")
   attr(iw.tree, 'score') <- NULL
   iw.tree <- IWTreeSearch(tree=iw.tree, dataset=iw_data, concavity=k,
                              EdgeSwapper=RootedNNISwap, verbosity=3)
@@ -95,13 +97,14 @@ for (k in sample(kValues, length(kValues))) {
     bestScore <- score
   }
   score <- IWScore(iw.tree, iw_data, concavity=k)
-  write.nexus(iw.tree, file=paste0("../Hyoliths/hy_iw_k4_", round(score, 3), ".tre", collapse=''))
+  write.nexus(iw.tree, file=paste0("../Hyoliths/hy_iw_k", k, "_", round(score, 3), ".tre", collapse=''))
 
   suboptFraction = 0.02
+  cat("\n\nEstimating consensus...")
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, 
                   swappers=list(RootedTBRSwap, RootedNNISwap),
                   suboptimal=score * suboptFraction,
-                  nSearch=150) 
+                  nSearch=150, verbosity=1L) 
   plot(ape::consensus(iw.consensus))
   text(0.5, 1.4, paste0("k = ", k, "; IW Score: ", signif(score * (1 - suboptFraction), 5), "-", signif(score, 5)), pos=4)
   text(0.5, 0.5, Sys.time(), pos=4)  
@@ -110,7 +113,7 @@ for (k in sample(kValues, length(kValues))) {
   pdf(file=paste0("../Hyoliths/hy_iw_k", k, "_", round(IWScore(iw.tree, my_data, concavity=k), 3), ".pdf", collapse=''))
   par(mar=rep(0.25, 4), cex=0.75) # make plot easier to read
   plot(ape::consensus(iw.consensus))
-  text(0.5, 1.4, paste0("k = ", k, "; IW Score: ", signif(score * 0.99, 5), "-", signif(score, 5)), pos=4)
+  text(0.5, 1.4, paste0("k = ", k, "; IW Score: ", signif(score, 5), "-", signif(score * (1 + suboptFraction), 5)), pos=4)
   text(0.5, 0.5, Sys.time(), pos=4)  
   plot(iw.tree)
   text(0.5, 1.4, paste0("k = ", k, "; IW Score: ", signif(score, 5)), pos=4)
