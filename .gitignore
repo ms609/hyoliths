@@ -3,3 +3,5 @@ mbank_*
 hy_*
 *.nex
 ~*
+.Rhistory
+.Rdata
