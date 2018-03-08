@@ -30,6 +30,7 @@ text(0.5, 0.5, Sys.time(), pos=4, cex=0.7)
 
 i <- 0
 bestScore <- 1e+9
+if (FALSE) {
 while (i < 22) {
   plot(best.tree <- Ratchet(best.tree, my_data, verbosity=1, searchHits=55,
                        swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap)))
@@ -74,7 +75,7 @@ text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)
 text(0.5, 0.5, Sys.time(), pos=4)
 
 dev.off()
-
+}
 iw.tree <- best.tree
 kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 latestFile <- vapply(kValues, function (k) {
