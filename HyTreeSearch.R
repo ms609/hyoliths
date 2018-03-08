@@ -101,7 +101,7 @@ for (k in sample(kValues, length(kValues))) {
 
   suboptFraction = 0.02
   cat("\n\nEstimating consensus...")
-  iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, 
+  iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, concavity=k,
                   swappers=list(RootedTBRSwap, RootedNNISwap),
                   suboptimal=score * suboptFraction,
                   nSearch=150, verbosity=1L) 
