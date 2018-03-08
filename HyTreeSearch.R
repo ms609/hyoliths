@@ -77,7 +77,12 @@ dev.off()
 
 iw.tree <- best.tree
 kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
-for (k in sample(kValues, length(kValues))) {
+latestFile <- vapply(kValues, function (k) {
+  allFiles <- list.files(cd, pattern=paste0('hy_iw_k', k, '_.*\\.tre', sep=''), full.names=TRUE)
+  allFiles[which.max(file.mtime(allFiles))]
+  }, character(1))
+
+for (k in kValues[order(file.mtime(latestFile))]) {
 
   cat("\n\n\n************************ Concavity constant k =", k, "**********************\n")
   attr(iw.tree, 'score') <- NULL
