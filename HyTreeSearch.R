@@ -109,6 +109,7 @@ for (k in kValues[order(file.mtime(latestFile))]) {
   cat("\n\nEstimating consensus...")
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, concavity=k,
                   swappers=list(RootedTBRSwap, RootedNNISwap),
+                  searchHits=4,
                   suboptimal=score * suboptFraction,
                   nSearch=150, verbosity=1L) 
   plot(ape::consensus(iw.consensus))
