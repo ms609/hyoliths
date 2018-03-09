@@ -1,0 +1,85 @@
+---
+title: "Inapplicable data with the Fitch algorithm"
+author: "Martin R. Smith"
+date: "`r Sys.Date()`"
+bibliography: [References.bib]
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{R echo=FALSE, message=FALSE, warning=FALSE}
+library('TreeSearch'); library('ape'); library('phangorn')
+cd <- "../Hyoliths/"
+files <- list.files(cd, pattern='mbank_.*\\.nex', full.names=TRUE)
+filename <- files[which.max(file.mtime(files))]
+cat("Reading data from", filename)
+my_data <- ReadAsPhyDat(filename)
+
+
+tntFiles <- list.files(paste0(cd, 'TNT/'), pattern='xpiwe.*\\.tre', full=TRUE)
+filename <- tntFiles[1]
+tnTrees <- lapply(tntFiles, ReadTntTree)
+lon <- 'Longtancunella_chengjiangensis'
+
+```
+
+# Parsimony analysis
+
+The phylogenetic dataset contains a high proportion of inapplicable codings (404/3325 = 12% of tokens), which are known to introduce error and bias to phylogenetic reconstruction ([@Maddison1993;@Brazeau2017]).  As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data [@Brazeau2017].  This algorithm is implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib], and phylogenetic search was conducted using the `R` package `TreeSearch` v0.0.8 ([@Smith2018TreeSearch]).  
+
+Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997] with a variety of concavity constants.  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants ($k$) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to produce higher accuracy than equal weights at any fixed level of precision [@Smith2017].
+
+The results of phylogenetic tree search under traditional algorithms in a parsimony an Bayesian framework are included in the supplementary information; these recover the same overall relationships but differ in the placement of a small number of incidental taxa.
+
+
+
+# TNT
+
+Parsimony search was conducted in TNT (Goloboff et al. 2008) using sectorial and ratchet heuristics under equal and implied weights.  We acknowledge the Willi Hennig society for their sponsorship of the TNT software.
+
+## Implied weights
+
+### With paterinids
+
+```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
+par(mar=rep(0.2, 4), cex=0.8, oma=c(1,0,0,0))
+omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
+plot(ConsensusWithout(tnTrees, omit))
+MarkMissing(omit, text.font=3, cex=0.8)
+```
+
+### Without paterinids
+
+```{R, echo=FALSE}
+omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda', 'Kutorgina_chengjiangensis', 'Nisusia_sulcata')
+plot(ConsensusWithout(tnTrees, omit))
+mtext("TNT implied weights consensus", side=1)
+MarkMissing(omit, text.font=3, cex=0.8)
+
+```
+
+
+## Equal weights
+
+```{R, echo=FALSE}
+
+tntEw <- list.files(paste0(cd, 'TNT/'), pattern='ew\\.tre', full=TRUE)
+plot(ConsensusWithout(ReadTntTree(tntEw), lon))
+MarkMissing('Longtancunella_chengjiangensis', text.font=3, cex=0.8)
+text(1, 1.5, pos=4, "TNT Equal weights")
+```
+
+
+# Bayesian analysis
+
+Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk model [@Lewis2001] with a gamma parameter (`lset coding=variable rates=gamma;`). 
+Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model ([@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]; we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights (i.e. 1prset brlenspr = unconstrained: gammadir(1,0.33,1,1);` $α_T = 1$, $β_T = 1/$(_equal weights tree length_ / _number of characters_), $α = c = 1$).
+
+Neomorphic and transformational characters [sensu @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently (`unlink shape=(all) pinvar=(all);`).
+Neomorphic characters were not assumed to have a symmetrical transition rate – that is, the probability of the absent → present transition was allowed to differ from that of the present → absent transition, being drawn from a uniform prior (`prset applyto=(`_number of Neomorphic partition_`) symdirihyperpr=fixed(1.0);`).
+
+Two MrBayes runs were executed, each sampling eight chains for 400 000 generations, with samples taken every 250 generations.  Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 100 for each parameter.  The first 10% of samples were discarded as burn-in, and a posterior tree topology was derived from the combined posterior sample of both runs.
+
+# References
