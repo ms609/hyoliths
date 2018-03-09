@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+git lfs track "*.t"
+git lfs track "*.p"
+git lfs track "*.trprobs"
+git lfs track "*.mcmc"

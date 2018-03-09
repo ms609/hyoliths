@@ -1,8 +1,8 @@
 Archive/*
 mbank_*
 hy_*
-*.nex
-~*
+*.ckp
+*~*
 .Rhistory
 .Rdata
 .Rproj.user*
