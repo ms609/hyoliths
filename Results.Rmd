@@ -16,13 +16,55 @@ files <- list.files(cd, pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(file.mtime(files))]
 cat("Reading data from", filename)
 my_data <- ReadAsPhyDat(filename)
+setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 
-
-tntFiles <- list.files(paste0(cd, 'TNT/'), pattern='xpiwe.*\\.tre', full=TRUE)
-filename <- tntFiles[1]
-tnTrees <- lapply(tntFiles, ReadTntTree)
 lon <- 'Longtancunella_chengjiangensis'
 
+pal <- brewer[[11]]
+
+tipCol <- c(
+Namacalathus                    = pal[1],
+Novocrania                      = pal[4],
+Craniops                        = pal[4],
+Ussunia                         = pal[4],
+Gasconsia                       = pal[4],
+Heliomedusa_orienta             = pal[3],
+Micrina                         = pal[3],
+Mickwitzia_muralensis           = pal[3],
+Micromitra                      = pal[8],
+Askepasma_toddense              = pal[8],
+Pelagodiscus_atlanticus         = pal[6],
+Mummpikia_nuda                  = pal[5],
+Lingula                         = pal[5],
+Eoobolus                        = pal[5],
+Clupeafumosus_socialis          = 'grey',
+Phoronis                        = pal[1],
+Dailyatia                       = pal[1],
+Eccentrotheca                   = pal[1],
+Yuganotheca_elegans             = 'grey',
+Longtancunella_chengjiangensis  = 'grey',
+Paterimitra                     = pal[1],
+Lingulellotreta_malongensis     = pal[2],
+Acanthotretella                 = pal[2],
+Lingulosacculus                 = pal[2],
+Pedunculotheca_diania           = pal[2],
+Haplophrentis_carinatus         = pal[2],
+Tomteluva_perturbata            = 'grey',
+Salanygolina                    = pal[9],
+Coolinia_pecten                 = pal[9],
+Antigonambonites_planus         = pal[9],
+Kutorgina_chengjiangensis       = pal[10],
+Nisusia_sulcata                 = pal[10],
+Alisina                         = pal[11],
+Glyptoria                       = pal[11],
+Orthis                          = pal[11],
+Terebratulina                   = pal[11])
+
+
+ColPlot <- function (tree) {
+  setPar()
+  plot(tree, tip.color = tipCol[tree$tip.label])
+}
 ```
 
 # Parsimony analysis
@@ -37,49 +79,70 @@ The results of phylogenetic tree search under traditional algorithms in a parsim
 
 # TNT
 
-Parsimony search was conducted in TNT (Goloboff et al. 2008) using sectorial and ratchet heuristics under equal and implied weights.  We acknowledge the Willi Hennig society for their sponsorship of the TNT software.
+Parsimony search was conducted in TNT [@Goloboff2008] using sectorial and ratchet heuristics under equal and implied weights.  We acknowledge the Willi Hennig society for their sponsorship of the TNT software.
+
+```{R, echo=FALSE}
+tntFiles <- list.files(paste0(cd, 'TNT/'), pattern='xpiwe.*\\.tre', full=TRUE)
+filename <- tntFiles[1]
+tnTrees <- lapply(tntFiles, ReadTntTree)
+```
 
 ## Implied weights
+
+The consensus of all implied weights runs is not very well resolved:
+
+```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
+setPar()
+ColPlot(consensus(tnTrees))
+```
+
+This lack of resolution is largely a product of a few wildcard taxa, which obscure relationships that are consistently observed:
 
 ### With paterinids
 
 ```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
-par(mar=rep(0.2, 4), cex=0.8, oma=c(1,0,0,0))
+setPar()
 omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
-plot(ConsensusWithout(tnTrees, omit))
-MarkMissing(omit, text.font=3, cex=0.8)
+ColPlot(ConsensusWithout(tnTrees, omit))
+MarkMissing(omit, text.font=3, cex=0.8, text.col=tipCol[omit])
 ```
 
 ### Without paterinids
 
-```{R, echo=FALSE}
+```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
+setPar()
 omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda', 'Kutorgina_chengjiangensis', 'Nisusia_sulcata')
 plot(ConsensusWithout(tnTrees, omit))
-mtext("TNT implied weights consensus", side=1)
-MarkMissing(omit, text.font=3, cex=0.8)
+MarkMissing(omit, text.font=3, cex=0.8, text.col=tipCol[omit])
 
 ```
 
 
 ## Equal weights
 
-```{R, echo=FALSE}
-
+```{R, echo=FALSE, fig.cap="TNT Equal weights"}
+setPar()
 tntEw <- list.files(paste0(cd, 'TNT/'), pattern='ew\\.tre', full=TRUE)
-plot(ConsensusWithout(ReadTntTree(tntEw), lon))
-MarkMissing('Longtancunella_chengjiangensis', text.font=3, cex=0.8)
-text(1, 1.5, pos=4, "TNT Equal weights")
+ColPlot(ConsensusWithout(ReadTntTree(tntEw), lon))
+MarkMissing(lon, text.font=3, cex=0.8, text.col=tipCol[lon])
 ```
 
 
 # Bayesian analysis
 
-Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk model [@Lewis2001] with a gamma parameter (`lset coding=variable rates=gamma;`). 
-Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model ([@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]; we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights (i.e. 1prset brlenspr = unconstrained: gammadir(1,0.33,1,1);` $α_T = 1$, $β_T = 1/$(_equal weights tree length_ / _number of characters_), $α = c = 1$).
+Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the M_k_ model [@Lewis2001] with a gamma parameter (`lset coding=variable rates=gamma;`). 
+Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model ([@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights (i.e. `prset brlenspr = unconstrained: gammadir(1,0.33,1,1);` $α_T = 1$, $β_T = 1/$(_equal weights tree length_ / _number of characters_), $α = c = 1$).
 
 Neomorphic and transformational characters [sensu @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently (`unlink shape=(all) pinvar=(all);`).
 Neomorphic characters were not assumed to have a symmetrical transition rate – that is, the probability of the absent → present transition was allowed to differ from that of the present → absent transition, being drawn from a uniform prior (`prset applyto=(`_number of Neomorphic partition_`) symdirihyperpr=fixed(1.0);`).
 
 Two MrBayes runs were executed, each sampling eight chains for 400 000 generations, with samples taken every 250 generations.  Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 100 for each parameter.  The first 10% of samples were discarded as burn-in, and a posterior tree topology was derived from the combined posterior sample of both runs.
+
+```{R, echo=FALSE, fig.cap="TNT Equal weights"}
+setPar()
+tntEw <- list.files(paste0(cd, 'TNT/'), pattern='ew\\.tre', full=TRUE)
+ColPlot(ConsensusWithout(ReadTntTree(tntEw), lon))
+MarkMissing(lon, text.font=3, cex=0.8, text.col=tipCol[lon])
+```
 
 # References
