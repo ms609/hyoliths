@@ -29,32 +29,48 @@ Craniops                        = pal[4],
 Ussunia                         = pal[4],
 Gasconsia                       = pal[4],
 Heliomedusa_orienta             = pal[3],
+Heliomedusa             = pal[3],
 Micrina                         = pal[3],
 Mickwitzia_muralensis           = pal[3],
+Mickwitzia           = pal[3],
 Micromitra                      = pal[8],
 Askepasma_toddense              = pal[8],
+Askepasma              = pal[8],
 Pelagodiscus_atlanticus         = pal[6],
+Pelagodiscus         = pal[6],
 Mummpikia_nuda                  = pal[5],
+Mummpikia                  = pal[5],
 Lingula                         = pal[5],
 Eoobolus                        = pal[5],
 Clupeafumosus_socialis          = 'grey',
+Clupeafumosus          = 'grey',
 Phoronis                        = pal[1],
 Dailyatia                       = pal[1],
 Eccentrotheca                   = pal[1],
 Yuganotheca_elegans             = 'grey',
+Yuganotheca             = 'grey',
 Longtancunella_chengjiangensis  = 'grey',
+Longtancunella  = 'grey',
 Paterimitra                     = pal[1],
 Lingulellotreta_malongensis     = pal[2],
+Lingulellotreta     = pal[2],
 Acanthotretella                 = pal[2],
 Lingulosacculus                 = pal[2],
 Pedunculotheca_diania           = pal[2],
+Pedunculotheca           = pal[2],
 Haplophrentis_carinatus         = pal[2],
+Haplophrentis         = pal[2],
 Tomteluva_perturbata            = 'grey',
+Tomteluva            = 'grey',
 Salanygolina                    = pal[9],
 Coolinia_pecten                 = pal[9],
+Coolinia                 = pal[9],
 Antigonambonites_planus         = pal[9],
+Antigonambonites         = pal[9],
 Kutorgina_chengjiangensis       = pal[10],
+Kutorgina       = pal[10],
 Nisusia_sulcata                 = pal[10],
+Nisusia                 = pal[10],
 Alisina                         = pal[11],
 Glyptoria                       = pal[11],
 Orthis                          = pal[11],
@@ -69,9 +85,9 @@ ColPlot <- function (tree) {
 
 # Parsimony analysis
 
-The phylogenetic dataset contains a high proportion of inapplicable codings (404/3325 = 12% of tokens), which are known to introduce error and bias to phylogenetic reconstruction ([@Maddison1993;@Brazeau2017]).  As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data [@Brazeau2017].  This algorithm is implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib], and phylogenetic search was conducted using the `R` package `TreeSearch` v0.0.8 ([@Smith2018TreeSearch]).  
+The phylogenetic dataset contains a high proportion of inapplicable codings (404/3325 = 12% of tokens), which are known to introduce error and bias to phylogenetic reconstruction ([@Maddison1993;@Brazeau2017]).  As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data [@Brazeau2017].  This algorithm is implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib], and phylogenetic search was conducted using the _R_ package _TreeSearch_ v0.0.8 ([@Smith2018TreeSearch]).  
 
-Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997] with a variety of concavity constants.  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants ($k$) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to produce higher accuracy than equal weights at any fixed level of precision [@Smith2017].
+Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997] with a variety of concavity constants.  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to produce higher accuracy than equal weights at any fixed level of precision [@Smith2017].
 
 The results of phylogenetic tree search under traditional algorithms in a parsimony an Bayesian framework are included in the supplementary information; these recover the same overall relationships but differ in the placement of a small number of incidental taxa.
 
@@ -79,7 +95,7 @@ The results of phylogenetic tree search under traditional algorithms in a parsim
 
 # TNT
 
-Parsimony search was conducted in TNT [@Goloboff2008] using sectorial and ratchet heuristics under equal and implied weights.  We acknowledge the Willi Hennig society for their sponsorship of the TNT software.
+Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using sectorial and ratchet heuristics under equal and implied weights.  We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 
 ```{R, echo=FALSE}
 tntFiles <- list.files(paste0(cd, 'TNT/'), pattern='xpiwe.*\\.tre', full=TRUE)
@@ -96,23 +112,21 @@ setPar()
 ColPlot(consensus(tnTrees))
 ```
 
-This lack of resolution is largely a product of a few wildcard taxa, which obscure relationships that are consistently observed:
+This lack of resolution is largely a product of a few wildcard taxa, which obscure relationships that are nevertheless present in all most parsimonious trees:
 
-### With paterinids
+### Paterinids included
 
 ```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
-setPar()
 omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
 ColPlot(ConsensusWithout(tnTrees, omit))
 MarkMissing(omit, text.font=3, cex=0.8, text.col=tipCol[omit])
 ```
 
-### Without paterinids
+### Paterinids excluded
 
 ```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
-setPar()
 omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda', 'Kutorgina_chengjiangensis', 'Nisusia_sulcata')
-plot(ConsensusWithout(tnTrees, omit))
+ColPlot(ConsensusWithout(tnTrees, omit))
 MarkMissing(omit, text.font=3, cex=0.8, text.col=tipCol[omit])
 
 ```
@@ -120,8 +134,7 @@ MarkMissing(omit, text.font=3, cex=0.8, text.col=tipCol[omit])
 
 ## Equal weights
 
-```{R, echo=FALSE, fig.cap="TNT Equal weights"}
-setPar()
+```{R, echo=FALSE, fig.cap="TNT Equal weights consensus"}
 tntEw <- list.files(paste0(cd, 'TNT/'), pattern='ew\\.tre', full=TRUE)
 ColPlot(ConsensusWithout(ReadTntTree(tntEw), lon))
 MarkMissing(lon, text.font=3, cex=0.8, text.col=tipCol[lon])
@@ -129,6 +142,15 @@ MarkMissing(lon, text.font=3, cex=0.8, text.col=tipCol[lon])
 
 
 # Bayesian analysis
+
+```{R, echo=FALSE}
+files <- list.files(paste0(cd, 'MrBayes/'), pattern='^hyo\\..*\\.t$', full.names=TRUE)
+
+allTrees <- lapply(files, read.nexus)
+nTrees <- length(allTrees[[1]])
+
+postBurnin <- lapply(allTrees, function (x) x[ceiling(nTrees * 0.1):nTrees])
+```
 
 Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the M_k_ model [@Lewis2001] with a gamma parameter (`lset coding=variable rates=gamma;`). 
 Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model ([@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights (i.e. `prset brlenspr = unconstrained: gammadir(1,0.33,1,1);` $α_T = 1$, $β_T = 1/$(_equal weights tree length_ / _number of characters_), $α = c = 1$).
@@ -138,11 +160,25 @@ Neomorphic characters were not assumed to have a symmetrical transition rate –
 
 Two MrBayes runs were executed, each sampling eight chains for 400 000 generations, with samples taken every 250 generations.  Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 100 for each parameter.  The first 10% of samples were discarded as burn-in, and a posterior tree topology was derived from the combined posterior sample of both runs.
 
-```{R, echo=FALSE, fig.cap="TNT Equal weights"}
-setPar()
-tntEw <- list.files(paste0(cd, 'TNT/'), pattern='ew\\.tre', full=TRUE)
-ColPlot(ConsensusWithout(ReadTntTree(tntEw), lon))
-MarkMissing(lon, text.font=3, cex=0.8, text.col=tipCol[lon])
+```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
+omit <- c('Clupeafumosus', 'Heliomedusa')
+ # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
+thinned <- c(lapply(postBurnin[[1]], drop.tip, omit), lapply(postBurnin[[2]], drop.tip, omit))
+class(thinned) <- 'multiPhylo'
+ColPlot(consensus(thinned, p=0.5))
+MarkMissing(omit, text.font=3)
 ```
+
+```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
+omit <- c('Heliomedusa', 'Micrina', 'Mickwitzia',
+          'Eoobolus', 'Clupeafumosus', 
+          'Yuganotheca', 'Longtancunella', 'Tomteluva', 'Nisusia', 'Kutorgina')
+ # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
+thinned <- c(lapply(postBurnin[[1]], drop.tip, omit), lapply(postBurnin[[2]], drop.tip, omit))
+class(thinned) <- 'multiPhylo'
+ColPlot(consensus(thinned, p=0.5))
+MarkMissing(omit, text.font=3, text.col=tipCol[omit])
+```
+
 
 # References
