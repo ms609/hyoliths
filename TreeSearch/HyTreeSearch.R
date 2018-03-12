@@ -1,7 +1,6 @@
 library('TreeSearch'); library('ape'); library('phangorn')
 library('Inapp') #  For parse.nexus
-setwd("C:/Research/R/Hyoliths")
-cd <- "../Hyoliths/"
+cd <- "../Hyoliths/TreeSearch"
 files <- list.files(cd, pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(file.mtime(files))]
 cat("Reading data from", filename)
@@ -42,14 +41,14 @@ while (i < 22) {
 }
 write.nexus(best.tree, file=paste0("hy_ew_", Fitch(best.tree, my_data), ".nex", collapse=''))
 
-my.consensus <- RatchetConsensus(best.tree, my_data, nSearch=150, 
+my.consensus <- RatchetConsensus(best.tree, my_data, nSearch=150,
                                  swappers=list(RootedTBRSwap, RootedNNISwap))
 par(mar=rep(0.25, 4), cex=0.75) # make plot easier to read
 plot(ape::consensus(my.consensus))
 no_acro <- lapply(my.consensus, drop.tip, tip='Clupeafumosus_socialis')
 plot(ape::consensus(no_acro))
 legend(0.5, 4, '? Clupeafumosus_socialis', lty=1, bty='n', text.font=3, cex=0.8)
-text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)                               
+text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)
 text(0.5, 0.5, Sys.time(), pos=4)
 
 no_vagrants <- lapply(my.consensus, drop.tip, tip=
@@ -62,16 +61,16 @@ pdf(file=paste0("hy_ew_", Fitch(best.tree, my_data), ".pdf", collapse=''))
 par(mar=rep(0.25, 4), cex=0.75)
 plot(ape::consensus(no_vagrants))
 legend(0.5, 4, c('? Longtancunella chengjiangensis'), lty=1, bty='n', text.font=3, cex=0.8)
-text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)                               
+text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)
 text(0.5, 0.5, Sys.time(), pos=4)
 
 #plot(ape::consensus(no_acro))  # No ACROTRETIDS
 #legend(0.5, 4, '? Clupeafumosus socialis', lty=1, bty='n', text.font=3, cex=0.8)
-#text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)                               
+#text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)
 #text(0.5, 0.5, Sys.time(), pos=4)
 
 plot(ape::consensus(my.consensus))
-text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)                               
+text(0.5, 1.4, paste0("Score: ", Fitch(best.tree, my_data)), pos=4)
 text(0.5, 0.5, Sys.time(), pos=4)
 
 dev.off()
@@ -111,20 +110,20 @@ for (k in kValues[order(file.mtime(latestFile))]) {
                   swappers=list(RootedTBRSwap, RootedNNISwap),
                   searchHits=4,
                   suboptimal=score * suboptFraction,
-                  nSearch=150, verbosity=1L) 
+                  nSearch=150, verbosity=1L)
   plot(ape::consensus(iw.consensus))
   text(0.5, 1.4, paste0("k = ", k, "; IW Score: ", signif(score * (1 - suboptFraction), 5), "-", signif(score, 5)), pos=4)
-  text(0.5, 0.5, Sys.time(), pos=4)  
+  text(0.5, 0.5, Sys.time(), pos=4)
   write.nexus(iw.consensus, file=paste0("../Hyoliths/hy_iw_k", k, "_", round(IWScore(iw.tree, iw_data, concavity=k), 3), ".con.tre", collapse=''))
 
   pdf(file=paste0("../Hyoliths/hy_iw_k", k, "_", round(IWScore(iw.tree, my_data, concavity=k), 3), ".pdf", collapse=''))
   par(mar=rep(0.25, 4), cex=0.75) # make plot easier to read
   plot(ape::consensus(iw.consensus))
   text(0.5, 1.4, paste0("k = ", k, "; IW Score: ", signif(score, 5), "-", signif(score * (1 + suboptFraction), 5)), pos=4)
-  text(0.5, 0.5, Sys.time(), pos=4)  
+  text(0.5, 0.5, Sys.time(), pos=4)
   plot(iw.tree)
   text(0.5, 1.4, paste0("k = ", k, "; IW Score: ", signif(score, 5)), pos=4)
-  text(0.5, 0.5, Sys.time(), pos=4)  
+  text(0.5, 0.5, Sys.time(), pos=4)
   dev.off()
 }
 
