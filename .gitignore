@@ -1,5 +1,6 @@
 Archive/*
 mbank_*
+*_cache
 hy_*
 *.ckp
 *.log
