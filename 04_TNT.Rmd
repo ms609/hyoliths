@@ -24,17 +24,34 @@ tnTrees <- lapply(tntFiles, ReadTntTree)
 
 The consensus of all implied weights runs is not very well resolved:
 
-```{R, echo=FALSE, fig.wid=7.1, fig.height=10}
-setPar()
+```{R, echo=FALSE, fig.wid=7.1, fig.height=5}
 par(mfrow=c(1, 2))
 ColPlot(consensus(tnTrees)) 
 text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
 
-for (i in 1:7) {
+plotPanel <- function (i) {
   ColPlot(tnTrees[[i]])
   text(1, 0.5, paste('k =', kValues[i]), pos=4, cex=0.6)
 }
 
+plotPanel(1)
+```
+```{R, echo=FALSE}
+par(mfrow=c(1, 2))
+plotPanel(2)
+plotPanel(3)
+```
+
+```{R, echo=FALSE}
+par(mfrow=c(1, 2))
+plotPanel(4)
+plotPanel(5)
+```
+
+```{R, echo=FALSE}
+par(mfrow=c(1, 2))
+plotPanel(6)
+plotPanel(7)
 ```
 
 This lack of resolution is largely a product of a few wildcard taxa, which obscure relationships that are nevertheless present in all most parsimonious trees:
