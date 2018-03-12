@@ -78,7 +78,7 @@ dev.off()
 iw.tree <- best.tree
 kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 latestFile <- vapply(kValues, function (k) {
-  allFiles <- list.files(cd, pattern=paste0('hy_iw_k', k, '_.*\\.tre', sep=''), full.names=TRUE)
+  allFiles <- list.files(cd, pattern=paste0('hy_iw_k', k, '_.*\\.nex', sep=''), full.names=TRUE)
   allFiles[which.max(file.mtime(allFiles))]
   }, character(1))
 
@@ -114,7 +114,7 @@ for (k in kValues[order(file.mtime(latestFile))]) {
   plot(ape::consensus(iw.consensus))
   text(0.5, 1.4, paste0("k = ", k, "; IW Score: ", signif(score * (1 - suboptFraction), 5), "-", signif(score, 5)), pos=4)
   text(0.5, 0.5, Sys.time(), pos=4)
-  write.nexus(iw.consensus, file=paste0("../Hyoliths/hy_iw_k", k, "_", round(IWScore(iw.tree, iw_data, concavity=k), 3), ".con.tre", collapse=''))
+  write.nexus(iw.consensus, file=paste0("../Hyoliths/hy_iw_k", k, "_", round(IWScore(iw.tree, iw_data, concavity=k), 3), ".con.nex", collapse=''))
 
   pdf(file=paste0("../Hyoliths/hy_iw_k", k, "_", round(IWScore(iw.tree, my_data, concavity=k), 3), ".pdf", collapse=''))
   par(mar=rep(0.25, 4), cex=0.75) # make plot easier to read

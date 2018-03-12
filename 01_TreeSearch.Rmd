@@ -47,15 +47,16 @@ start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
 
 ### Implied weights analysis
 
-```{r Implied weights analysis in TreeSearch, cache=TRUE}
-for (k in c(2, 3, 4.5, 7, 10.5, 16, 24)) {
+```{r Implied weights analysis in TreeSearch, cache=TRUE, eval=FALSE}
+kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
+for (k in kValues) {
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
                        ratchHits = 60, searchHits=55,
                        swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
                        verbosity=0)
   score <- IWScore(iw.tree, iw_data, concavity=k)
-  # Write search results
-  write.nexus(iw.tree, file=paste0("/TreeSearch/hy_k", k, "_", signif(score, 5), ".tre", collapse=''))
+  # Write single best tree
+  write.nexus(iw.tree, file=paste0("TreeSearch/hy_iw_k", k, "_", signif(score, 5), ".nex", collapse=''))
 
   suboptFraction = 0.02
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, concavity=k,
@@ -63,24 +64,69 @@ for (k in c(2, 3, 4.5, 7, 10.5, 16, 24)) {
                   searchHits=4,
                   suboptimal=score * suboptFraction,
                   nSearch=150, verbosity=0L)
-  write.nexus(iw.consensus, file=paste0("../Hyoliths/hy_iw_k", k, "_", signif(IWScore(iw.tree, iw_data, concavity=k), 3), ".con.tre", collapse=''))
+  write.nexus(iw.consensus, file=paste0("TreeSearch/hy_iw_k", k, "_", signif(IWScore(iw.tree, iw_data, concavity=k), 3), ".all.nex", collapse=''))
 }
 ```
 
 ### Equal weights analysis
 
-```{r Equal weights, cache=TRUE}
-ew.tree <- Ratchet(start.tree, my_data, verbosity=0,
-                   ratchHits = 60, searchHits=55,
-                   swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap)))
-write.nexus(best.tree, file=paste0("hy_ew_", Fitch(best.tree, my_data), ".nex", collapse=''))
+```{r Equal weights analysis in TreeSearch, cache=TRUE, eval=FALSE}
+ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
+                   ratchHits = 10, searchHits=55,
+                   swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
+write.nexus(best.tree, file=paste0("TreeSearch/hy_ew_", Fitch(ew.tree, my_data), ".nex", collapse=''))
 
-ew.consensus <- RatchetConsensus(best.tree, my_data, nSearch=150,
+ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=150,
                                  swappers=list(RootedTBRSwap, RootedNNISwap),
-                                 verbosityl=0L)
-write.nexus(ew.consensus, file=paste0("../Hyoliths/hy_ew_", Fitch(ew.tree, my_data), ".con.tre", collapse=''))
+                                 verbosity=0L)
+write.nexus(ew.consensus, file=paste0("TreeSearch/hy_ew_", Fitch(ew.tree, my_data), ".nex", collapse=''))
 ```
 
 ## Results
 
+### Implied weights results
 
+```{R Load IW trees TreeSearch}
+iw.trees <- lapply(kValues, function (k) {
+  iw.best <- list.files('TreeSearch', 
+                      pattern=paste0('hy_iw_k',
+                                     gsub('\\.', '\\\\.', k),
+                                     '_\\d+\\.?\\d*\\.all\\.nex'),
+                      full.names=TRUE)
+  # Return:
+  if (length(iw.best) == 0) {
+    list()
+  } else {
+    read.nexus(iw.best[which.max(file.mtime(iw.best))])
+  }
+})
+```
+
+```{r equal weights results in TreeSearch, fig.cap="Strict consensus of equal weights results", fig.width=7.1, fig.height=11}
+par(mfrow=c(4, 2), mar=rep(0.2, 4))
+
+omit=c(lon, 'Clupeafumosus_socialis', 'Heliomedusa_orienta', 'Haplophrentis_carinatus')
+ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
+ColMissing(omit)
+text(-0.5, 0.2, pos=4, "Consensus of all k values", cex=0.8)
+
+for (i in seq_along(iw.trees)) {
+  ColPlot(consensus(iw.trees[[i]]))
+  text(1, 1, paste0('k = ', kValues[i]), pos=4)
+}
+
+```
+
+### Equal weights results
+
+```{r equal weights results in TreeSearch, fig.cap="Strict consensus of equal weights results"}
+ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
+ew.tree <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
+ColPlot(consensus(ew.tree))
+```
+
+```{R, fig.cap="Strict consensus of equal weights results, taxa excluded"}
+omit <- c(lon)
+ColPlot(ConsensusWithout(ew.tree, omit))
+ColMissing(omit)
+```
