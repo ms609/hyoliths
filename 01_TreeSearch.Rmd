@@ -11,7 +11,7 @@ output:
 
 # Parsimony analysis {#treesearch}
 
-The phylogenetic dataset contains a high proportion of inapplicable codings (404/3325 = 12% of tokens), which are known to introduce error and bias to phylogenetic reconstruction ([@Maddison1993;@Brazeau2018]).  As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data [@Brazeau2018].  This algorithm is implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib], and phylogenetic search was conducted using the _R_ package _TreeSearch_ v0.0.8 [@Smith2018TreeSearch].
+The phylogenetic dataset contains a high proportion of inapplicable codings (`r sum(my_chars == '-')`/ `r length(my_chars)` = `r round(sum(my_chars == '-') / length(my_chars), 2) * 100`% of tokens), which are known to introduce error and bias to phylogenetic reconstruction ([@Maddison1993;@Brazeau2018]).  As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data [@Brazeau2018].  This algorithm is implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib], and phylogenetic search was conducted using the _R_ package _TreeSearch_ v0.0.8 [@Smith2018TreeSearch].
 
 _Namacalathus_ is included in the matrix but has been excluded from analysis due to its potentially long branch, which is likely to mislead analysis.
 
@@ -24,10 +24,7 @@ Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under
 ### Load data
 
 ```{r TS Load morphoBank, echo=FALSE}
-# Load most recent MorphoBank file
-files <- list.files(pattern='mbank_X24932.*\\.nex', full.names=TRUE)
-filename <- files[which.max(file.mtime(files))]
-
+# Load file from MorphoBank
 my_data <- ReadAsPhyDat(filename)
 my_data$Namacalathus <- NULL # Exclude Namacalathus
 
@@ -86,7 +83,7 @@ write.nexus(ew.consensus, file=paste0("TreeSearch/hy_ew_", Fitch(ew.tree, my_dat
 
 ### Implied weights results
 
-```{R Load IW trees TreeSearch}
+```{R "Load IW trees TreeSearch"}
 # Read results from files
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
@@ -103,14 +100,23 @@ iw.trees <- lapply(kValues, function (k) {
 })
 ```
 
-```{r Implied weights results in TreeSearch, fig.cap="Strict consensus of equal weights results", fig.width=7.1, fig.height=11}
+
+
+```{r, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5}
+omit=c(lon, 'Clupeafumosus_socialis',
+       'Heliomedusa_orienta', 'Haplophrentis_carinatus')
+ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
+ColMissing(omit)
+```
+
+
+
+```{r, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.5}
 # Plot consensus results
 par(mfrow=c(4, 2), mar=rep(0.2, 4))
 
-omit=c(lon, 'Clupeafumosus_socialis', 'Heliomedusa_orienta', 'Haplophrentis_carinatus')
-ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
-ColMissing(omit)
-text(-0.5, 0.2, pos=4, "Consensus of all k values", cex=0.8)
+ColPlot(consensus(lapply(iw.trees, consensus)))
+text(-0.5, 1, pos=4, "Consensus of all k values", cex=0.8)
 
 # Plot results for each value of k
 for (i in seq_along(iw.trees)) {
@@ -122,7 +128,7 @@ for (i in seq_along(iw.trees)) {
 
 ### Equal weights results
 
-```{r equal weights results in TreeSearch, fig.cap="Strict consensus of equal weights results"}
+```{r "equal weights results in TreeSearch", fig.cap="Strict consensus of equal weights results"}
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
 ew.tree <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
 ColPlot(consensus(ew.tree))

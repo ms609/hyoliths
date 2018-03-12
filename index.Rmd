@@ -18,7 +18,9 @@ library('TreeSearch'); library('ape'); library('phangorn')
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(file.mtime(files))]
 my_data <- ReadAsPhyDat(filename)
-my_states <- attr(ReadCharacters(filename), 'state.labels')
+my_chars <- ReadCharacters(filename)
+my_states <- attr(my_chars, 'state.labels')
+my_chars <- my_chars[-1, ]
 neomorphic <- vapply(my_states, function(x) x[[1]] %in% c("", "''"), logical(1))
 setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 
