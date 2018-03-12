@@ -13,7 +13,7 @@ output:
 
 Here's how each character maps onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
 
-```{R, echo=FALSE, fig.height=5, fig.width=7.1}
+```{R, echo=FALSE, fig.height=6.6, fig.width=7.1}
 library('Inapp')
 tree <- iw.trees[[3]][[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
@@ -34,3 +34,6 @@ for (i in seq_len(ncol(my_chars))) {
 }
 ```
 
+These reconstructions were created using the _Inapp_ _R_ package [@Brazeau2018].
+
+Full character definitions can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
