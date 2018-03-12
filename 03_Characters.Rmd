@@ -1,0 +1,36 @@
+---
+title: "Visualizing characters"
+author: "Martin R. Smith"
+date: "`r Sys.Date()`"
+bibliography: [References.bib]
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Character reconstructions {#reconstructions}
+
+Here's how each character maps onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
+
+```{R, echo=FALSE, fig.height=5, fig.width=7.1}
+library('Inapp')
+tree <- iw.trees[[3]][[1]]
+tree$edge.length <- rep(1, nrow(tree$edge))
+#treeCol <- tipCol[tree$tip.label]
+
+for (i in seq_len(ncol(my_chars))) {
+  par(mar=rep(0.2, 4), cex=0.7, oma=c(1.2, 0, 1.2, 0))
+  
+  plot.states.matrix(apply.reconstruction(tree, my_chars[, i],
+                                          match.tip.char=TRUE),
+                     passes=0, counts=1:2, show.labels=1,
+                     col.states=TRUE, state.labels=my_states[[i]],
+                     #tip.col=treeCol, 
+                     use.edge.length=TRUE, legend.pos='topright')
+  
+  mtext(paste("Character", i, "-", colnames(my_chars)[i]),
+        c(1, 3), outer=TRUE, cex=0.8)
+}
+```
+
