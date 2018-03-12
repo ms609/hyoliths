@@ -17,9 +17,11 @@ knitr::opts_chunk$set(echo = TRUE)
 library('TreeSearch'); library('ape'); library('phangorn')
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(file.mtime(files))]
-cat("Reading data from", filename)
 my_data <- ReadAsPhyDat(filename)
+my_states <- attr(ReadCharacters(filename), 'state.labels')
+neomorphic <- vapply(my_states, function(x) x[[1]] %in% c("", "''"), logical(1))
 setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
+
 
 lon <- 'Longtancunella_chengjiangensis'
 
@@ -32,10 +34,10 @@ tipCol <- c(
   Ussunia                         = pal[4],
   Gasconsia                       = pal[4],
   Heliomedusa_orienta             = pal[3],
-  Heliomedusa             = pal[3],
+  Heliomedusa                     = pal[3],
   Micrina                         = pal[3],
   Mickwitzia_muralensis           = pal[3],
-  Mickwitzia           = pal[3],
+  Mickwitzia                      = pal[3],
   Micromitra                      = pal[8],
   Askepasma_toddense              = pal[8],
   Askepasma              = pal[8],
@@ -82,18 +84,16 @@ tipCol <- c(
 
 ColPlot <- function (tree) {
   setPar()
-  plot(tree, tip.color = tipCol[tree$tip.label])
+  plot(tree, tip.color = tipCol[tree$tip.label], lwd=2)
 }
 ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
                                           text.col=tipCol[omit])
 ```
 
-# Phylogenetic results {-}
+# Brachiopod origins {-}
 
-This document provides a detailed discussion of analyses of the [morphological dataset](#dataset) constructed to accompany _Sun et al._ [-@Sun2018], and their results.
+This document provides a detailed discussion of analyses of the [morphological dataset](#dataset) constructed to accompany Sun _et al._ [-@Sun2018], and their results.
 
-We first discuss the results presented in our paper, which employ the algorithm
-described by Brazeau, Guillerme and Smith [-@Brazeau2018] for correct handling 
-of inapplicable data in a parsimony setting.
+We first discuss the results presented in the main paper, which employ the algorithm described by Brazeau, Guillerme and Smith [-@Brazeau2018] for correct handling of inapplicable data in a parsimony setting.
 
 For completeness, we also document the results of [standard Fitch parsimony](#tnt) analysis, and the results of [Bayesian analysis](#MrBayes), neither of which treat inapplicable data in a logically consistent fashion.
