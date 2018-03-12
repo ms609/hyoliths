@@ -11,10 +11,9 @@ output:
 
 # The dataset
 
-Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` early brachiozoan taxa, including hyoliths, tommotiids and mickwitziids, coded for
-`r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).
+Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` early brachiozoan taxa, including hyoliths, tommotiids and mickwitziids, which were coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).
 
-The dataset can be viewed and downloaded at [Morphobank project 2800](https://morphobank.org/permalink/?P2800), where each character is defined
+The dataset can be viewed and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)), where each character is defined
 and its coding for each taxon discussed.
 
 Characters are coded following the recommendations of Brazeau, Guillerme and
