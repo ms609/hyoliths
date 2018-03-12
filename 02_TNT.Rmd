@@ -15,7 +15,7 @@ output:
 Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using sectorial and ratchet heuristics under equal and implied weights.  We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 
 ```{R, echo=FALSE}
-tntFiles <- list.files(paste0(cd, 'TNT/'), pattern='xpiwe.*\\.tre', full=TRUE)
+tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 filename <- tntFiles[1]
 tnTrees <- lapply(tntFiles, ReadTntTree)
 ```
@@ -51,7 +51,7 @@ ColMissing(omit)
 ## Equal weights
 
 ```{R, echo=FALSE, fig.cap="TNT Equal weights consensus"}
-tntEw <- list.files(paste0(cd, 'TNT/'), pattern='ew\\.tre', full=TRUE)
+tntEw <- list.files('TNT/', pattern='ew\\.tre', full=TRUE)
 ColPlot(ConsensusWithout(ReadTntTree(tntEw), lon))
 ColMissing(lon)
 ```
