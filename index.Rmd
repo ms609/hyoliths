@@ -12,10 +12,10 @@ description: "Results of phylogenetic analysis"
 ---
 
 ```{r setup, include=FALSE}
+set.seed(0)
 knitr::opts_chunk$set(echo = TRUE)
 library('TreeSearch'); library('ape'); library('phangorn')
-cd <- "../"
-files <- list.files(cd, pattern='mbank_.*\\.nex', full.names=TRUE)
+files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(file.mtime(files))]
 cat("Reading data from", filename)
 my_data <- ReadAsPhyDat(filename)
