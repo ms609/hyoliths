@@ -196,7 +196,7 @@ Figure 5.1: Bayesian analysis, posterior probability &gt; 50%
 Figure 5.2: Bayesian analysis, posterior probability &gt; 50%
 </p>
 </div>
-<p>Convergence was indicated by PSRF = 1.00 and an estimated sample size of &gt; 500 for each parameter:</p>
+<p>Convergence was indicated by PSRF = 1.00 and an average estimated sample size of &gt; 500 for each parameter:</p>
 <table>
 <caption>(#tab:MrBayes parameter summary)MrBayes parameter estimates (.pstat file)</caption>
 <thead>
@@ -248,6 +248,10 @@ Figure 5.2: Bayesian analysis, posterior probability &gt; 50%
 </tr>
 </tbody>
 </table>
+<p>It’s interesting to note that the clade of hyoliths + lingulellotretids (+ relatives) is resolved as a grade under Bayesian analysis.</p>
+<p>In parsimony analysis, these taxa are always resolved as a clade when inapplicable data is correctly handled; they instead resolve as a grade under certain conditions under the <a href="#TNT">standard Fitch</a> algorithm (which mishandles inapplicable data).</p>
+<p>We suggest that the failure of Bayesian analysis to recover this group as a clade may reflect inappropriate handling of inapplicable data in MrBayes, though at present (and until the algorithms used in a likelihood context are improved) it is difficult to test this hypothesis.</p>
+<p>The same goes for the position of <em>Gasconsia</em>, which is widely held to have an affinity with the craniid brachiopods, and is recovered in such a position using the inapplicable-safe parsimony algorithm (but not always when the standard Fitch parsimony algorithm is used).</p>
 
 <div id="refs" class="references">
 <div>

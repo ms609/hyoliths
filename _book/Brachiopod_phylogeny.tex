@@ -506,11 +506,10 @@ software.
 
 The consensus of all implied weights runs is not very well resolved:
 
-\begin{figure}
-\centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-6-1.pdf}
-\caption{\label{fig:unnamed-chunk-6}TNT implied weights consensus}
-\end{figure}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-6-2.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-6-3.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-6-4.pdf}
 
 This lack of resolution is largely a product of a few wildcard taxa,
 which obscure relationships that are nevertheless present in all most
@@ -620,8 +619,8 @@ probability \textgreater{} 50\%}
 probability \textgreater{} 50\%}
 \end{figure}
 
-Convergence was indicated by PSRF = 1.00 and an estimated sample size of
-\textgreater{} 500 for each parameter:
+Convergence was indicated by PSRF = 1.00 and an average estimated sample
+size of \textgreater{} 500 for each parameter:
 
 \begin{table}
 
@@ -639,6 +638,25 @@ alpha\{2\} & 2.950148 & 2.036612 & 0.0022876 & 5.567708 & 2.770201 & 22.238850 &
 \hline
 \end{tabular}
 \end{table}
+
+It's interesting to note that the clade of hyoliths + lingulellotretids
+(+ relatives) is resolved as a grade under Bayesian analysis.
+
+In parsimony analysis, these taxa are always resolved as a clade when
+inapplicable data is correctly handled; they instead resolve as a grade
+under certain conditions under the \protect\hyperlink{TNT}{standard
+Fitch} algorithm (which mishandles inapplicable data).
+
+We suggest that the failure of Bayesian analysis to recover this group
+as a clade may reflect inappropriate handling of inapplicable data in
+MrBayes, though at present (and until the algorithms used in a
+likelihood context are improved) it is difficult to test this
+hypothesis.
+
+The same goes for the position of \emph{Gasconsia}, which is widely held
+to have an affinity with the craniid brachiopods, and is recovered in
+such a position using the inapplicable-safe parsimony algorithm (but not
+always when the standard Fitch parsimony algorithm is used).
 
 \bibliography{References.bib}
 
