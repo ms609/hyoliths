@@ -1,0 +1,17 @@
+---
+title: "Phylogenetic dataset"
+author: "Martin R. Smith"
+date: "`r Sys.Date()`"
+bibliography: [References.bib]
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# The dataset
+
+The dataset can be viewed and downloaded at [Morphobank project 2800](https://morphobank.org/permalink/?P2800), where each character is defined
+and its coding for each taxon discussed.
+
+

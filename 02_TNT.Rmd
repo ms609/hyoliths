@@ -1,0 +1,57 @@
+---
+title: "Standard (Fitch) parsimony results"
+author: "Martin R. Smith"
+date: "`r Sys.Date()`"
+bibliography: [References.bib]
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+# Fitch parsimony {#tnt}
+
+Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using sectorial and ratchet heuristics under equal and implied weights.  We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
+
+```{R, echo=FALSE}
+tntFiles <- list.files(paste0(cd, 'TNT/'), pattern='xpiwe.*\\.tre', full=TRUE)
+filename <- tntFiles[1]
+tnTrees <- lapply(tntFiles, ReadTntTree)
+```
+
+## Implied weights
+
+The consensus of all implied weights runs is not very well resolved:
+
+```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
+setPar()
+ColPlot(consensus(tnTrees))
+```
+
+This lack of resolution is largely a product of a few wildcard taxa, which obscure relationships that are nevertheless present in all most parsimonious trees:
+
+### Paterinids included
+
+```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
+omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
+ColPlot(ConsensusWithout(tnTrees, omit))
+ColMissing(omit)
+```
+
+### Paterinids excluded
+
+```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
+omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda', 'Kutorgina_chengjiangensis', 'Nisusia_sulcata')
+ColPlot(ConsensusWithout(tnTrees, omit))
+ColMissing(omit)
+```
+
+
+## Equal weights
+
+```{R, echo=FALSE, fig.cap="TNT Equal weights consensus"}
+tntEw <- list.files(paste0(cd, 'TNT/'), pattern='ew\\.tre', full=TRUE)
+ColPlot(ConsensusWithout(ReadTntTree(tntEw), lon))
+ColMissing(lon)
+```

@@ -2,7 +2,10 @@ Archive/*
 mbank_*
 hy_*
 *.ckp
+*.log
 *~*
 .Rhistory
 .Rdata
 .Rproj.user*
+
+_book*
