@@ -1,5 +1,5 @@
 ---
-title: "Inapplicable data with the Fitch algorithm"
+title: "TreeSearch results"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 bibliography: [References.bib]
