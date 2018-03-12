@@ -1,0 +1,645 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Brachiopod origins - Phylogenetic analysis},
+            pdfauthor={Martin Smith},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Brachiopod origins - Phylogenetic analysis}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Martin Smith}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{2018-03-12}
+
+\usepackage{booktabs}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{brachiopod-origins}{%
+\chapter*{Brachiopod origins}\label{brachiopod-origins}}
+\addcontentsline{toc}{chapter}{Brachiopod origins}
+
+This document provides a detailed discussion of analyses of the
+\protect\hyperlink{dataset}{morphological dataset} constructed to
+accompany Sun \emph{et al.} \citeyearpar{Sun2018}, and their results.
+
+We first discuss the results presented in the main paper, which employ
+the algorithm described by Brazeau, Guillerme and Smith
+\citeyearpar{Brazeau2018} for correct handling of inapplicable data in a
+parsimony setting, and explore how each character is
+\protect\hyperlink{reconstructions}{reconstructed} on an optimal tree.
+
+For completeness, we also document the results of
+\protect\hyperlink{tnt}{standard Fitch parsimony} analysis, and the
+results of \protect\hyperlink{MrBayes}{Bayesian analysis}, neither of
+which treat inapplicable data in a logically consistent fashion.
+
+\hypertarget{the-dataset}{%
+\chapter{The dataset}\label{the-dataset}}
+
+Analysis was performed on a new matrix of 35 early brachiozoan taxa,
+including hyoliths, tommotiids and mickwitziids, which were coded for 95
+morphological characters (42 neomorphic, 53 transformational).
+
+The dataset can be viewed and downloaded at Morphobank
+(\href{https://morphobank.org/permalink/?P2800}{project 2800}), where
+each character is defined and its coding for each taxon discussed.
+
+Characters are coded following the recommendations of Brazeau, Guillerme
+and Smith \citep{Brazeau2018}. In brief, we have employed reductive
+coding, using a distinct state to mark character inapplicability.
+Character specifications follow the model of Sereno
+\citeyearpar{Sereno2007}.
+
+We have distinguished between neomorphic and transformational characters
+\citep[sensu][]{Sereno2007} by reserving the token \texttt{0} to refer
+to the absence of a neomorphic character. The states of transformational
+characters are represented by the tokens \texttt{1}, \texttt{2},
+\texttt{3}, \ldots{}
+
+Following the recommendations of Brazeau, Guillerme and Smith
+\citep[supplementary discussion]{Brazeau2018}, we code the absence of
+neomorphic ontologically dependent characters \citep[sensu][]{Vogt2017}
+as absence, rather than inapplicability.
+
+\hypertarget{treesearch}{%
+\chapter{Parsimony analysis}\label{treesearch}}
+
+The phylogenetic dataset contains a high proportion of inapplicable
+codings (404/ 3325 = 12\% of tokens), which are known to introduce error
+and bias to phylogenetic reconstruction
+(\citep{Maddison1993, Brazeau2018}). As such, phylogenetic search
+employed a new algorithm that correctly handles inapplicable data
+\citep{Brazeau2018}. This algorithm is implemented in the
+\emph{MorphyLib} C library \citep{Brazeau2017Morphylib}, and
+phylogenetic search was conducted using the \emph{R} package
+\emph{TreeSearch} v0.0.8 \citep{Smith2018TreeSearch}.
+
+\emph{Namacalathus} is included in the matrix but has been excluded from
+analysis due to its potentially long branch, which is likely to mislead
+analysis.
+
+\hypertarget{search-parameters}{%
+\section{Search parameters}\label{search-parameters}}
+
+Heuristic searches were conducted using the parsimony ratchet
+\citep{Nixon1999} under equal and implied weights \citep{Goloboff1997}
+with a variety of concavity constants. The consensus tree presented in
+the main manuscript represents a strict consensus of all trees that are
+most parsimonious under one or more of the concavity constants
+(\emph{k}) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to
+produce higher accuracy than equal weights at any fixed level of
+precision \citep{Smith2017}.
+
+\hypertarget{analysis}{%
+\section{Analysis}\label{analysis}}
+
+\hypertarget{load-data}{%
+\subsection{Load data}\label{load-data}}
+
+\hypertarget{generate-starting-tree}{%
+\subsection{Generate starting tree}\label{generate-starting-tree}}
+
+\emph{Dailyatia} is used as an outgroup.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nj.tree <-}\StringTok{ }\KeywordTok{NJTree}\NormalTok{(my_data)}
+\NormalTok{rooted.tree <-}\StringTok{ }\KeywordTok{EnforceOutgroup}\NormalTok{(nj.tree, }\StringTok{'Dailyatia'}\NormalTok{)}
+\NormalTok{start.tree <-}\StringTok{ }\KeywordTok{TreeSearch}\NormalTok{(}\DataTypeTok{tree=}\NormalTok{rooted.tree, }\DataTypeTok{dataset=}\NormalTok{my_data, }\DataTypeTok{maxIter=}\DecValTok{3000}\NormalTok{,}
+                         \DataTypeTok{EdgeSwapper=}\NormalTok{RootedNNISwap, }\DataTypeTok{verbosity=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{implied-weights-analysis}{%
+\subsection{Implied weights analysis}\label{implied-weights-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (k }\ControlFlowTok{in}\NormalTok{ kValues) \{}
+\NormalTok{  iw.tree <-}\StringTok{ }\KeywordTok{IWRatchet}\NormalTok{(start.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k,}
+                       \DataTypeTok{ratchHits =} \DecValTok{60}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{,}
+                       \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),}
+                       \DataTypeTok{verbosity=}\DecValTok{0}\NormalTok{)}
+\NormalTok{  score <-}\StringTok{ }\KeywordTok{IWScore}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k)}
+  \CommentTok{# Write single best tree}
+  \KeywordTok{write.nexus}\NormalTok{(iw.tree, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_iw_k"}\NormalTok{, k, }\StringTok{"_"}\NormalTok{, }\KeywordTok{signif}\NormalTok{(score, }\DecValTok{5}\NormalTok{), }\StringTok{".nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
+
+\NormalTok{  suboptFraction =}\StringTok{ }\FloatTok{0.02}
+\NormalTok{  iw.consensus <-}\StringTok{ }\KeywordTok{IWRatchetConsensus}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k,}
+                  \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedNNISwap),}
+                  \DataTypeTok{searchHits=}\DecValTok{4}\NormalTok{,}
+                  \DataTypeTok{suboptimal=}\NormalTok{score }\OperatorTok{*}\StringTok{ }\NormalTok{suboptFraction,}
+                  \DataTypeTok{nSearch=}\DecValTok{150}\NormalTok{, }\DataTypeTok{verbosity=}\NormalTok{0L)}
+  \KeywordTok{write.nexus}\NormalTok{(iw.consensus, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_iw_k"}\NormalTok{, k, }\StringTok{"_"}\NormalTok{, }\KeywordTok{signif}\NormalTok{(}\KeywordTok{IWScore}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k), }\DecValTok{3}\NormalTok{), }\StringTok{".all.nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{equal-weights-analysis}{%
+\subsection{Equal weights analysis}\label{equal-weights-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ew.tree <-}\StringTok{ }\KeywordTok{Ratchet}\NormalTok{(start.tree, my_data, }\DataTypeTok{verbosity=}\NormalTok{0L,}
+                   \DataTypeTok{ratchHits =} \DecValTok{10}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{,}
+                   \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))}
+\KeywordTok{write.nexus}\NormalTok{(best.tree, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_ew_"}\NormalTok{, }\KeywordTok{Fitch}\NormalTok{(ew.tree, my_data), }\StringTok{".nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
+
+\NormalTok{ew.consensus <-}\StringTok{ }\KeywordTok{RatchetConsensus}\NormalTok{(ew.tree, my_data, }\DataTypeTok{nSearch=}\DecValTok{150}\NormalTok{,}
+                                 \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedNNISwap),}
+                                 \DataTypeTok{verbosity=}\NormalTok{0L)}
+\KeywordTok{write.nexus}\NormalTok{(ew.consensus, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_ew_"}\NormalTok{, }\KeywordTok{Fitch}\NormalTok{(ew.tree, my_data), }\StringTok{".nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{implied-weights-results}{%
+\subsection{Implied weights results}\label{implied-weights-results}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Read results from files}
+\NormalTok{iw.trees <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(kValues, }\ControlFlowTok{function}\NormalTok{ (k) \{}
+\NormalTok{  iw.best <-}\StringTok{ }\KeywordTok{list.files}\NormalTok{(}\StringTok{'TreeSearch'}\NormalTok{, }
+                      \DataTypeTok{pattern=}\KeywordTok{paste0}\NormalTok{(}\StringTok{'hy_iw_k'}\NormalTok{,}
+                                     \KeywordTok{gsub}\NormalTok{(}\StringTok{'}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.'}\NormalTok{, }\StringTok{'}\CharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{.'}\NormalTok{, k),}
+                                     \StringTok{'_}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{d+}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.?}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{d*}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.all}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.nex'}\NormalTok{),}
+                      \DataTypeTok{full.names=}\OtherTok{TRUE}\NormalTok{)}
+  \CommentTok{# Return:}
+  \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{length}\NormalTok{(iw.best) }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+    \KeywordTok{list}\NormalTok{()}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{read.nexus}\NormalTok{(iw.best[}\KeywordTok{which.max}\NormalTok{(}\KeywordTok{file.mtime}\NormalTok{(iw.best))])}
+\NormalTok{  \}}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{omit=}\KeywordTok{c}\NormalTok{(lon, }\StringTok{'Clupeafumosus_socialis'}\NormalTok{,}
+       \StringTok{'Heliomedusa_orienta'}\NormalTok{, }\StringTok{'Haplophrentis_carinatus'}\NormalTok{)}
+\KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{ConsensusWithout}\NormalTok{(}\KeywordTok{lapply}\NormalTok{(iw.trees, consensus), omit))}
+\KeywordTok{ColMissing}\NormalTok{(omit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-1-1.pdf}
+\caption{\label{fig:unnamed-chunk-1}Consensus of implied weights analyses at
+all values of k}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Plot consensus results}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DataTypeTok{mar=}\KeywordTok{rep}\NormalTok{(}\FloatTok{0.2}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+
+\KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{consensus}\NormalTok{(}\KeywordTok{lapply}\NormalTok{(iw.trees, consensus)))}
+\KeywordTok{text}\NormalTok{(}\OperatorTok{-}\FloatTok{0.5}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DataTypeTok{pos=}\DecValTok{4}\NormalTok{, }\StringTok{"Consensus of all k values"}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.8}\NormalTok{)}
+
+\CommentTok{# Plot results for each value of k}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \KeywordTok{seq_along}\NormalTok{(iw.trees)) \{}
+  \KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{consensus}\NormalTok{(iw.trees[[i]]))}
+  \KeywordTok{text}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\KeywordTok{paste0}\NormalTok{(}\StringTok{'k = '}\NormalTok{, kValues[i]), }\DataTypeTok{pos=}\DecValTok{4}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-2-1.pdf}
+\caption{\label{fig:unnamed-chunk-2}Implied weights results}
+\end{figure}
+
+\hypertarget{equal-weights-results}{%
+\subsection{Equal weights results}\label{equal-weights-results}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ew.best <-}\StringTok{ }\KeywordTok{list.files}\NormalTok{(}\StringTok{'TreeSearch'}\NormalTok{, }\DataTypeTok{pattern=}\StringTok{'hy_ew_}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{d*}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.nex'}\NormalTok{, }\DataTypeTok{full.names=}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{ew.tree <-}\StringTok{ }\KeywordTok{read.nexus}\NormalTok{(}\DataTypeTok{file=}\NormalTok{ew.best[}\KeywordTok{which.max}\NormalTok{(}\KeywordTok{file.mtime}\NormalTok{(ew.best))])}
+\KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{consensus}\NormalTok{(ew.tree))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/equal weights results in TreeSearch-1.pdf}
+\caption{(\#fig:equal weights results in TreeSearch)Strict consensus of
+equal weights results}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{omit <-}\StringTok{ }\KeywordTok{c}\NormalTok{(lon)}
+\KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{ConsensusWithout}\NormalTok{(ew.tree, omit))}
+\KeywordTok{ColMissing}\NormalTok{(omit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-3-1.pdf}
+\caption{\label{fig:unnamed-chunk-3}Strict consensus of equal weights
+results, taxa excluded}
+\end{figure}
+
+\hypertarget{reconstructions}{%
+\chapter{Character reconstructions}\label{reconstructions}}
+
+Here's how each character maps onto one of the most parsimonious trees
+(obtained under implied weighting, \(k = 4.5\)):
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-1.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-2.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-3.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-4.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-5.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-6.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-7.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-8.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-9.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-10.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-11.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-12.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-13.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-14.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-15.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-16.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-17.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-18.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-19.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-20.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-21.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-22.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-23.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-24.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-25.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-26.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-27.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-28.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-29.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-30.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-31.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-32.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-33.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-34.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-35.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-36.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-37.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-38.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-39.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-40.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-41.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-42.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-43.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-44.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-45.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-46.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-47.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-48.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-49.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-50.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-51.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-52.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-53.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-54.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-55.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-56.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-57.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-58.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-59.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-60.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-61.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-62.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-63.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-64.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-65.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-66.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-67.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-68.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-69.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-70.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-71.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-72.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-73.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-74.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-75.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-76.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-77.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-78.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-79.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-80.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-81.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-82.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-83.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-84.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-85.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-86.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-87.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-88.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-89.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-90.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-91.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-92.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-93.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-94.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-95.pdf}
+
+These reconstructions were created using the \emph{Inapp} \emph{R}
+package \citep{Brazeau2018}.
+
+Full character definitions can be found by browsing the
+\protect\hyperlink{dataset}{morphological dataset} on MorphoBank
+(\href{https://morphobank.org/permalink/?P2800}{project 2800}).
+
+\hypertarget{tnt}{%
+\chapter{Fitch parsimony}\label{tnt}}
+
+Parsimony search was conducted in TNT v1.5 \citep{Goloboff2016} using
+sectorial and ratchet heuristics under equal and implied weights. We
+acknowledge the Willi Hennig Society for their sponsorship of the TNT
+software.
+
+\hypertarget{implied-weights}{%
+\section{Implied weights}\label{implied-weights}}
+
+The consensus of all implied weights runs is not very well resolved:
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-6-1.pdf}
+\caption{\label{fig:unnamed-chunk-6}TNT implied weights consensus}
+\end{figure}
+
+This lack of resolution is largely a product of a few wildcard taxa,
+which obscure relationships that are nevertheless present in all most
+parsimonious trees:
+
+\hypertarget{paterinids-included}{%
+\subsection{Paterinids included}\label{paterinids-included}}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-7-1.pdf}
+\caption{\label{fig:unnamed-chunk-7}TNT implied weights consensus}
+\end{figure}
+
+\hypertarget{paterinids-excluded}{%
+\subsection{Paterinids excluded}\label{paterinids-excluded}}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-8-1.pdf}
+\caption{\label{fig:unnamed-chunk-8}TNT implied weights consensus}
+\end{figure}
+
+\hypertarget{equal-weights}{%
+\section{Equal weights}\label{equal-weights}}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-9-1.pdf}
+\caption{\label{fig:unnamed-chunk-9}TNT Equal weights consensus}
+\end{figure}
+
+\hypertarget{bayesian-analysis}{%
+\chapter{Bayesian analysis}\label{bayesian-analysis}}
+
+Bayesian search was conducted in MrBayes v3.2.6 \citep{Ronquist2012}
+using the Mk model \citep{Lewis2001} with a gamma parameter:
+
+\begin{quote}
+lset coding=variable rates=gamma;
+\end{quote}
+
+Branch length was drawn from a dirichlet prior distribution, which is
+less informative than an exponential model \citep{Rannala2012}, but
+requires a prior mean tree length within about two orders of magnitude
+of the true value \citep{Zhang2012}. To satisfy this latter criterion,
+we specified the prior mean tree length to be equal to the length of the
+most parsimonious tree under equal weights, usinga Dirichlet prior with
+\(α_T = 1\), \(β_T = 1/\)(\emph{equal weights tree length} /
+\emph{number of characters}), \(α = c = 1\):
+
+\begin{quote}
+prset brlenspr = unconstrained: gammadir(1, 0.33, 1, 1);
+\end{quote}
+
+Neomorphic and transformational characters \citep[sensu][]{Sereno2007}
+were allocated to two separate partitions whose proportion of invariant
+characters and gamma shape parameters were allowed to vary
+independently:
+
+\begin{quote}
+charset Neomorphic = 2 3 5 10 13 14 18 19 24 25 29 30 32 34 36 37 38 39
+40 43 50 51 53 54 55 60 63 64 67 70 72 73 76 77 78 79 84 88 89 92 94 95;
+
+charset Transformational = 1 4 6 7 8 9 11 12 15 16 17 20 21 22 23 26 27
+28 31 33 35 41 42 44 45 46 47 48 49 52 56 57 58 59 61 62 65 66 68 69 71
+74 75 80 81 82 83 85 86 87 90 91 93;
+
+partition chartype = 2: Neomorphic, Transformational;
+
+set partition = chartype;
+
+unlink shape=(all) pinvar=(all);
+\end{quote}
+
+Neomorphic characters were not assumed to have a symmetrical transition
+rate -- that is, the probability of the absent → present transition was
+allowed to differ from that of the present → absent transition, being
+drawn from a uniform prior:
+
+\begin{quote}
+prset applyto=(1) symdirihyperpr=fixed(1.0);
+\end{quote}
+
+Four MrBayes runs were executed, each sampling eight chains for 1 000
+000 generations, with samples taken every 500 generations:
+
+\begin{quote}
+mcmcp ngen=1000000 samplefreq=500 nruns=2 nchains=8;
+\end{quote}
+
+The first 10\% of samples were discarded as burn-in
+(\texttt{burninfrac=0.1}), and a posterior tree topology was derived
+from the combined posterior sample of both runs.
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-11-1.pdf}
+\caption{\label{fig:unnamed-chunk-11}Bayesian analysis, posterior
+probability \textgreater{} 50\%}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-12-1.pdf}
+\caption{\label{fig:unnamed-chunk-12}Bayesian analysis, posterior
+probability \textgreater{} 50\%}
+\end{figure}
+
+Convergence was indicated by PSRF = 1.00 and an estimated sample size of
+\textgreater{} 500 for each parameter:
+
+\begin{table}
+
+\caption{(\#tab:MrBayes parameter summary)MrBayes parameter estimates (.pstat file)}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|r}
+\hline
+Parameter & Mean & Variance & Lower & Upper & Median & minESS & avgESS & PSRF\\
+\hline
+TL\{all\} & 6.893376 & 0.8874795 & 5.0572420 & 8.747620 & 6.840066 & 536.2736 & 542.6161 & 1.0018470\\
+\hline
+alpha\{1\} & 2.487032 & 1.3723370 & 0.6014502 & 4.881594 & 2.266105 & 515.1748 & 657.7982 & 0.9997491\\
+\hline
+alpha\{2\} & 3.021721 & 1.7472690 & 0.8112110 & 5.559932 & 2.816469 & 743.4182 & 750.0910 & 1.0078950\\
+\hline
+\end{tabular}
+\end{table}
+
+\bibliography{References.bib}
+
+
+\end{document}

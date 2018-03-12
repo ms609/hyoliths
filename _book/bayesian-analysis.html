@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Brachiopod origins - Phylogenetic analysis</title>
+  <meta name="description" content="Results of phylogenetic analysis">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Brachiopod origins - Phylogenetic analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Results of phylogenetic analysis" />
+  <meta name="github-repo" content="ms609/hy" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Brachiopod origins - Phylogenetic analysis" />
+  
+  <meta name="twitter:description" content="Results of phylogenetic analysis" />
+  
+
+<meta name="author" content="Martin Smith">
+
+
+<meta name="date" content="2018-03-12">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="tnt.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceLine, a.sourceLine { display: inline-block; min-height: 1.25em; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; }
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+div.sourceLine, a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource div.sourceLine, .numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource div.sourceLine::before, .numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; color: #aaaaaa;  padding-left: 4px; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; color = initial; }
+}
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.bn { color: #40a070; } /* BaseN */
+code span.fl { color: #40a070; } /* Float */
+code span.ch { color: #4070a0; } /* Char */
+code span.st { color: #4070a0; } /* String */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.ot { color: #007020; } /* Other */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.fu { color: #06287e; } /* Function */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code span.cn { color: #880000; } /* Constant */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.im { } /* Import */
+code span.va { color: #19177c; } /* Variable */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.op { color: #666666; } /* Operator */
+code span.bu { } /* BuiltIn */
+code span.ex { } /* Extension */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.at { color: #7d9029; } /* Attribute */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Brachiopod origins</a></li>
+<li class="chapter" data-level="1" data-path="the-dataset.html"><a href="the-dataset.html"><i class="fa fa-check"></i><b>1</b> The dataset</a></li>
+<li class="chapter" data-level="2" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>2</b> Parsimony analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="treesearch.html"><a href="treesearch.html#search-parameters"><i class="fa fa-check"></i><b>2.1</b> Search parameters</a></li>
+<li class="chapter" data-level="2.2" data-path="treesearch.html"><a href="treesearch.html#analysis"><i class="fa fa-check"></i><b>2.2</b> Analysis</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="treesearch.html"><a href="treesearch.html#load-data"><i class="fa fa-check"></i><b>2.2.1</b> Load data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="treesearch.html"><a href="treesearch.html#generate-starting-tree"><i class="fa fa-check"></i><b>2.2.2</b> Generate starting tree</a></li>
+<li class="chapter" data-level="2.2.3" data-path="treesearch.html"><a href="treesearch.html#implied-weights-analysis"><i class="fa fa-check"></i><b>2.2.3</b> Implied weights analysis</a></li>
+<li class="chapter" data-level="2.2.4" data-path="treesearch.html"><a href="treesearch.html#equal-weights-analysis"><i class="fa fa-check"></i><b>2.2.4</b> Equal weights analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="treesearch.html"><a href="treesearch.html#results"><i class="fa fa-check"></i><b>2.3</b> Results</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="treesearch.html"><a href="treesearch.html#implied-weights-results"><i class="fa fa-check"></i><b>2.3.1</b> Implied weights results</a></li>
+<li class="chapter" data-level="2.3.2" data-path="treesearch.html"><a href="treesearch.html#equal-weights-results"><i class="fa fa-check"></i><b>2.3.2</b> Equal weights results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reconstructions.html"><a href="reconstructions.html"><i class="fa fa-check"></i><b>3</b> Character reconstructions</a></li>
+<li class="chapter" data-level="4" data-path="tnt.html"><a href="tnt.html"><i class="fa fa-check"></i><b>4</b> Fitch parsimony</a><ul>
+<li class="chapter" data-level="4.1" data-path="tnt.html"><a href="tnt.html#implied-weights"><i class="fa fa-check"></i><b>4.1</b> Implied weights</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="tnt.html"><a href="tnt.html#paterinids-included"><i class="fa fa-check"></i><b>4.1.1</b> Paterinids included</a></li>
+<li class="chapter" data-level="4.1.2" data-path="tnt.html"><a href="tnt.html#paterinids-excluded"><i class="fa fa-check"></i><b>4.1.2</b> Paterinids excluded</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tnt.html"><a href="tnt.html#equal-weights"><i class="fa fa-check"></i><b>4.2</b> Equal weights</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bayesian-analysis.html"><a href="bayesian-analysis.html"><i class="fa fa-check"></i><b>5</b> Bayesian analysis</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Brachiopod origins - Phylogenetic analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bayesian-analysis" class="section level1">
+<h1><span class="header-section-number">5</span> Bayesian analysis</h1>
+<p>Bayesian search was conducted in MrBayes v3.2.6 <span class="citation">(Ronquist et al., <a href="#ref-Ronquist2012">2012</a>)</span> using the Mk model <span class="citation">(Lewis, <a href="#ref-Lewis2001">2001</a>)</span> with a gamma parameter:</p>
+<blockquote>
+<p>lset coding=variable rates=gamma;</p>
+</blockquote>
+<p>Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model <span class="citation">(Rannala, Zhu, &amp; Yang, <a href="#ref-Rannala2012">2012</a>)</span>, but requires a prior mean tree length within about two orders of magnitude of the true value <span class="citation">(Zhang, Rannala, &amp; Yang, <a href="#ref-Zhang2012">2012</a>)</span>. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, usinga Dirichlet prior with <span class="math inline">\(α_T = 1\)</span>, <span class="math inline">\(β_T = 1/\)</span>(<em>equal weights tree length</em> / <em>number of characters</em>), <span class="math inline">\(α = c = 1\)</span>:</p>
+<blockquote>
+<p>prset brlenspr = unconstrained: gammadir(1, 0.33, 1, 1);</p>
+</blockquote>
+<p>Neomorphic and transformational characters <span class="citation">(sensu Sereno, <a href="#ref-Sereno2007">2007</a>)</span> were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:</p>
+<blockquote>
+<p>charset Neomorphic = 2 3 5 10 13 14 18 19 24 25 29 30 32 34 36 37 38 39 40 43 50 51 53 54 55 60 63 64 67 70 72 73 76 77 78 79 84 88 89 92 94 95;</p>
+<p>charset Transformational = 1 4 6 7 8 9 11 12 15 16 17 20 21 22 23 26 27 28 31 33 35 41 42 44 45 46 47 48 49 52 56 57 58 59 61 62 65 66 68 69 71 74 75 80 81 82 83 85 86 87 90 91 93;</p>
+<p>partition chartype = 2: Neomorphic, Transformational;</p>
+<p>set partition = chartype;</p>
+<p>unlink shape=(all) pinvar=(all);</p>
+</blockquote>
+<p>Neomorphic characters were not assumed to have a symmetrical transition rate – that is, the probability of the absent → present transition was allowed to differ from that of the present → absent transition, being drawn from a uniform prior:</p>
+<blockquote>
+<p>prset applyto=(1) symdirihyperpr=fixed(1.0);</p>
+</blockquote>
+<p>Four MrBayes runs were executed, each sampling eight chains for 1 000 000 generations, with samples taken every 500 generations:</p>
+<blockquote>
+<p>mcmcp ngen=1000000 samplefreq=500 nruns=2 nchains=8;</p>
+</blockquote>
+<p>The first 10% of samples were discarded as burn-in (<code>burninfrac=0.1</code>), and a posterior tree topology was derived from the combined posterior sample of both runs.</p>
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-11-1.png" alt="Bayesian analysis, posterior probability &gt; 50%" width="672" />
+<p class="caption">
+Figure 5.1: Bayesian analysis, posterior probability &gt; 50%
+</p>
+</div>
+<div class="figure"><span id="fig:unnamed-chunk-12"></span>
+<img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-12-1.png" alt="Bayesian analysis, posterior probability &gt; 50%" width="672" />
+<p class="caption">
+Figure 5.2: Bayesian analysis, posterior probability &gt; 50%
+</p>
+</div>
+<p>Convergence was indicated by PSRF = 1.00 and an estimated sample size of &gt; 500 for each parameter:</p>
+<table>
+<caption>(#tab:MrBayes parameter summary)MrBayes parameter estimates (.pstat file)</caption>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="right">Mean</th>
+<th align="right">Variance</th>
+<th align="right">Lower</th>
+<th align="right">Upper</th>
+<th align="right">Median</th>
+<th align="right">minESS</th>
+<th align="right">avgESS</th>
+<th align="right">PSRF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TL{all}</td>
+<td align="right">6.893376</td>
+<td align="right">0.8874795</td>
+<td align="right">5.0572420</td>
+<td align="right">8.747620</td>
+<td align="right">6.840066</td>
+<td align="right">536.2736</td>
+<td align="right">542.6161</td>
+<td align="right">1.0018470</td>
+</tr>
+<tr class="even">
+<td align="left">alpha{1}</td>
+<td align="right">2.487032</td>
+<td align="right">1.3723370</td>
+<td align="right">0.6014502</td>
+<td align="right">4.881594</td>
+<td align="right">2.266105</td>
+<td align="right">515.1748</td>
+<td align="right">657.7982</td>
+<td align="right">0.9997491</td>
+</tr>
+<tr class="odd">
+<td align="left">alpha{2}</td>
+<td align="right">3.021721</td>
+<td align="right">1.7472690</td>
+<td align="right">0.8112110</td>
+<td align="right">5.559932</td>
+<td align="right">2.816469</td>
+<td align="right">743.4182</td>
+<td align="right">750.0910</td>
+<td align="right">1.0078950</td>
+</tr>
+</tbody>
+</table>
+
+<div id="refs" class="references">
+<div>
+<p>Brazeau, M. D., Guillerme, T., &amp; Smith, M. R. (2017). Morphological phylogenetic analysis with inapplicable data. <em>bioR<span class="math inline">\(\chi\)</span>iv</em>. doi:<a href="https://doi.org/10.1101/209775">10.1101/209775</a></p>
+</div>
+<div>
+<p>Brazeau, M. D., Smith, M. R., &amp; Guillerme, T. (2017). MorphyLib: a library for phylogenetic analysis of categorical trait data with inapplicability. doi:<a href="https://doi.org/10.5281/zenodo.815372">10.5281/zenodo.815372</a></p>
+</div>
+<div>
+<p>Goloboff, P. A. (1997). Self-weighted optimization: tree searches and character state reconstructions under implied transformation costs. <em>Cladistics</em>, <em>13</em>(3), 225–245. doi:<a href="https://doi.org/10.1111/j.1096-0031.1997.tb00317.x">10.1111/j.1096-0031.1997.tb00317.x</a></p>
+</div>
+<div>
+<p>Goloboff, P. A., &amp; Catalano, S. A. (2016). TNT version 1.5, including a full implementation of phylogenetic morphometrics. <em>Cladistics</em>, <em>32</em>(3), 221–238. doi:<a href="https://doi.org/10.1111/cla.12160">10.1111/cla.12160</a></p>
+</div>
+<div>
+<p>Lewis, P. O. (2001). A likelihood approach to estimating phylogeny from discrete morphological character data. <em>Systematic Biology</em>, <em>50</em>(6), 913–925. doi:<a href="https://doi.org/10.1080/106351501753462876">10.1080/106351501753462876</a></p>
+</div>
+<div>
+<p>Maddison, W. P. (1993). Missing data versus missing characters in phylogenetic analysis. <em>Systematic Biology</em>, <em>42</em>(4), 576–581. doi:<a href="https://doi.org/10.1093/sysbio/42.4.576">10.1093/sysbio/42.4.576</a></p>
+</div>
+<div>
+<p>Nixon, K. C. (1999). The Parsimony Ratchet, a new method for rapid parsimony analysis. <em>Cladistics</em>, <em>15</em>(4), 407–414. doi:<a href="https://doi.org/10.1111/j.1096-0031.1999.tb00277.x">10.1111/j.1096-0031.1999.tb00277.x</a></p>
+</div>
+<div>
+<p>Rannala, B., Zhu, T., &amp; Yang, Z. (2012). Tail Paradox, Partial Identifiability, and Influential Priors in Bayesian Branch Length Inference. <em>Molecular Biology and Evolution</em>, <em>29</em>(1), 325–335. doi:<a href="https://doi.org/10.1093/molbev/msr210">10.1093/molbev/msr210</a></p>
+</div>
+<div>
+<p>Ronquist, F., Teslenko, M., Mark, P. van der, Ayres, D. L., Darling, A., Hohna, S., … Huelsenbeck, J. P. (2012). MrBayes 3.2: Efficient Bayesian phylogenetic inference and model choice across a large model space. <em>Systematic Biology</em>, <em>61</em>(3), 539–42.</p>
+</div>
+<div>
+<p>Sereno, P. C. (2007). Logical basis for morphological characters in phylogenetics. <em>Cladistics</em>, <em>23</em>(6), 565–587. doi:<a href="https://doi.org/10.1111/j.1096-0031.2007.00161.x">10.1111/j.1096-0031.2007.00161.x</a></p>
+</div>
+<div>
+<p>Smith, M. R. (2017). Quantifying and visualising divergence between pairs of phylogenetic trees: implications for phylogenetic reconstruction. <em>bioR<span class="math inline">\(\chi\)</span>iv</em>. doi:<a href="https://doi.org/10.1101/227942">10.1101/227942</a></p>
+</div>
+<div>
+<p>Smith, M. R. (2018). TreeSearch 0.0.8. doi:<a href="https://doi.org/10.5281/zenodo.1194595">10.5281/zenodo.1194595</a></p>
+</div>
+<div>
+<p>Sun, H.-J., Smith, M. R., Zhu, M.-Y., Zeng, H., &amp; Zhao, F.-C. (2018). Hyoliths are linguliform brachiopods, In review.</p>
+</div>
+<div>
+<p>Vogt, L. (2017). The logical basis for coding ontologically dependent characters. <em>Cladistics</em>. doi:<a href="https://doi.org/10.1111/cla.12209">10.1111/cla.12209</a></p>
+</div>
+<div>
+<p>Zhang, C., Rannala, B., &amp; Yang, Z. (2012). Robustness of compound Dirichlet priors for Bayesian inference of branch lengths, <em>61</em>(5), 779–84. doi:<a href="https://doi.org/10.1093/sysbio/sys030">10.1093/sysbio/sys030</a></p>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Ronquist2012">
+<p>Ronquist, F., Teslenko, M., Mark, P. van der, Ayres, D. L., Darling, A., Hohna, S., … Huelsenbeck, J. P. (2012). MrBayes 3.2: Efficient Bayesian phylogenetic inference and model choice across a large model space. <em>Systematic Biology</em>, <em>61</em>(3), 539–42.</p>
+</div>
+<div id="ref-Lewis2001">
+<p>Lewis, P. O. (2001). A likelihood approach to estimating phylogeny from discrete morphological character data. <em>Systematic Biology</em>, <em>50</em>(6), 913–925. doi:<a href="https://doi.org/10.1080/106351501753462876">10.1080/106351501753462876</a></p>
+</div>
+<div id="ref-Rannala2012">
+<p>Rannala, B., Zhu, T., &amp; Yang, Z. (2012). Tail Paradox, Partial Identifiability, and Influential Priors in Bayesian Branch Length Inference. <em>Molecular Biology and Evolution</em>, <em>29</em>(1), 325–335. doi:<a href="https://doi.org/10.1093/molbev/msr210">10.1093/molbev/msr210</a></p>
+</div>
+<div id="ref-Zhang2012">
+<p>Zhang, C., Rannala, B., &amp; Yang, Z. (2012). Robustness of compound Dirichlet priors for Bayesian inference of branch lengths, <em>61</em>(5), 779–84. doi:<a href="https://doi.org/10.1093/sysbio/sys030">10.1093/sysbio/sys030</a></p>
+</div>
+<div id="ref-Sereno2007">
+<p>Sereno, P. C. (2007). Logical basis for morphological characters in phylogenetics. <em>Cladistics</em>, <em>23</em>(6), 565–587. doi:<a href="https://doi.org/10.1111/j.1096-0031.2007.00161.x">10.1111/j.1096-0031.2007.00161.x</a></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tnt.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ms609/hy/edit/master/05_MrBayes.Rmd",
+"text": "Edit"
+},
+"download": ["Brachiopod_phylogeny.pdf", "Brachiopod_phylogeny.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

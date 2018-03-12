@@ -9,5 +9,3 @@ hy_*
 .Rdata
 .Rproj.user*
 
-# Will want to unignore this once book complete
-_book*
