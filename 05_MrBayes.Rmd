@@ -57,7 +57,10 @@ The first 10% of samples were discarded as burn-in (`burninfrac=0.1`), and a pos
 ```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
 omit <- c('Clupeafumosus', 'Heliomedusa')
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
-thinned <- c(lapply(postBurnin[[1]], drop.tip, omit), lapply(postBurnin[[2]], drop.tip, omit))
+thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
+             lapply(postBurnin[[2]], drop.tip, omit),
+             lapply(postBurnin[[3]], drop.tip, omit),
+             lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
 ColPlot(consensus(thinned, p=0.5))
 ColMissing(omit)
@@ -69,9 +72,9 @@ omit <- c('Heliomedusa', 'Micrina', 'Mickwitzia',
           'Yuganotheca', 'Longtancunella', 'Tomteluva', 'Nisusia', 'Kutorgina')
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
-             lapply(postBurnin[[2]], drop.tip, omit)#,
-             #lapply(postBurnin[[3]], drop.tip, omit),
-             )#lapply(postBurnin[[4]], drop.tip, omit))
+             lapply(postBurnin[[2]], drop.tip, omit),
+             lapply(postBurnin[[3]], drop.tip, omit),
+             lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
 ColPlot(consensus(thinned, p=0.5))
 ColMissing(omit)
