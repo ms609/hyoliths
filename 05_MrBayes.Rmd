@@ -80,10 +80,15 @@ ColPlot(consensus(thinned, p=0.5))
 ColMissing(omit)
 ```
 
-Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 500 for each parameter:
+Convergence was indicated by PSRF = 1.00 and an average estimated sample size of > 500 for each parameter:
 
 ```{R, MrBayes parameter summary, echo=FALSE, asis=TRUE}
 knitr::kable(read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE),
              caption="MrBayes parameter estimates (.pstat file)")
 ```
 
+It's interesting to note that the clade of hyolliths + lingulellotretids (+ relatives) is resolved as a grade under Bayesian analysis.  
+
+In parsimony analysis, these taxa are always resolved as a clade when inapplicable data is correctly handled; they instead resolve as a grade under certain conditions under the [standard Fitch](#TNT) algorithm (which mishandles inapplicable data). 
+
+We suggest that the failure of Bayesian analysis to recover this group as a clade may reflect inappropriate handling of inapplicable data in MrBayes, though at present (and until the algorithms used in a likelihood context are improved) it is difficult to test this hypothesis.
