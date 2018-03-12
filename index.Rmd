@@ -96,6 +96,7 @@ ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
 
 This document provides a detailed discussion of analyses of the [morphological dataset](#dataset) constructed to accompany Sun _et al._ [-@Sun2018], and their results.
 
-We first discuss the results presented in the main paper, which employ the algorithm described by Brazeau, Guillerme and Smith [-@Brazeau2018] for correct handling of inapplicable data in a parsimony setting.
+We first discuss the results presented in the main paper, which employ the algorithm described by Brazeau, Guillerme and Smith [-@Brazeau2018] for correct handling of inapplicable data in a parsimony setting, and explore how each
+character is [reconstructed](#reconstructions) on an optimal tree.
 
 For completeness, we also document the results of [standard Fitch parsimony](#tnt) analysis, and the results of [Bayesian analysis](#MrBayes), neither of which treat inapplicable data in a logically consistent fashion.
