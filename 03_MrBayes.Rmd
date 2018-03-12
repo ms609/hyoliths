@@ -13,7 +13,7 @@ output:
 # Bayesian analysis
 
 ```{R, echo=FALSE}
-files <- list.files(paste0(cd, 'MrBayes/'), pattern='^hyo\\..*\\.t$', full.names=TRUE)
+files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
 
 allTrees <- lapply(files, read.nexus)
 nTrees <- length(allTrees[[1]])
@@ -24,7 +24,21 @@ postBurnin <- lapply(allTrees, function (x) x[ceiling(nTrees * 0.1):nTrees])
 Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk model [@Lewis2001] with a gamma parameter (`lset coding=variable rates=gamma;`). 
 Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights (i.e. `prset brlenspr = unconstrained: gammadir(1,0.33,1,1);` $α_T = 1$, $β_T = 1/$(_equal weights tree length_ / _number of characters_), $α = c = 1$).
 
-Neomorphic and transformational characters [sensu @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently (`unlink shape=(all) pinvar=(all);`).
+Neomorphic and transformational characters [sensu @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:
+
+> charset Neomorphic = `r which(neomorphic)`;
+>
+> charset Transformational = `r which(!neomorphic)`;
+>
+>
+> partition chartype = 2: Neomorphic, Transformational;
+>
+> set partition = chartype;
+>
+>
+> unlink shape=(all) pinvar=(all);
+
+
 Neomorphic characters were not assumed to have a symmetrical transition rate – that is, the probability of the absent → present transition was allowed to differ from that of the present → absent transition, being drawn from a uniform prior (`prset applyto=(`_number of Neomorphic partition_`) symdirihyperpr=fixed(1.0);`).
 
 Four MrBayes runs were executed, each sampling eight chains for 1 000 000 generations, with samples taken every 500 generations (`mcmcp ngen=1000000 samplefreq=500 nruns=2 nchains=8;`).  The first 10% of samples were discarded as burn-in (`burninfrac=0.1`), and a posterior tree topology was derived from the combined posterior sample of both runs.
@@ -44,9 +58,9 @@ omit <- c('Heliomedusa', 'Micrina', 'Mickwitzia',
           'Yuganotheca', 'Longtancunella', 'Tomteluva', 'Nisusia', 'Kutorgina')
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
-             lapply(postBurnin[[2]], drop.tip, omit),
-             lapply(postBurnin[[3]], drop.tip, omit),
-             lapply(postBurnin[[4]], drop.tip, omit))
+             lapply(postBurnin[[2]], drop.tip, omit)#,
+             #lapply(postBurnin[[3]], drop.tip, omit),
+             )#lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
 ColPlot(consensus(thinned, p=0.5))
 ColMissing(omit)
@@ -54,7 +68,7 @@ ColMissing(omit)
 
 Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 500 for each parameter:
 
-```{R, MrBayes parameter summary, asis=TRUE}
+```{R, MrBayes parameter summary, echo=FALSE, asis=TRUE}
 knitr::kable(read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE),
              caption="MrBayes parameter estimates (.pstat file)")
 ```
