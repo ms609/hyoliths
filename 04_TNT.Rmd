@@ -12,7 +12,7 @@ output:
 
 # Fitch parsimony {#tnt}
 
-Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using sectorial and ratchet heuristics under equal and implied weights.  We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
+Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using sectorial and ratchet heuristics [@Goloboff1999;@Nixon1999] under equal and implied weights [@Goloboff1997].  We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 
 ```{R, echo=FALSE}
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
