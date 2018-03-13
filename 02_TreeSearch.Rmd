@@ -34,7 +34,7 @@ kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
 ### Generate starting tree
 
-_Dailyatia_ is used as an outgroup.
+_Dailyatia_ has been selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa [@Skovsted2015;@Zhao2017].
 
 ```{R Starting tree, cache=TRUE}
 nj.tree <- NJTree(my_data)
@@ -61,7 +61,7 @@ for (k in kValues) {
                   searchHits=4,
                   suboptimal=score * suboptFraction,
                   nSearch=150, verbosity=0L)
-  write.nexus(iw.consensus, file=paste0("TreeSearch/hy_iw_k", k, "_", signif(IWScore(iw.tree, iw_data, concavity=k), 3), ".all.nex", collapse=''))
+  write.nexus(iw.consensus, file=paste0("TreeSearch/hy_iw_k", k, "_", signif(IWScore(iw.tree, iw_data, concavity=k), 5), ".all.nex", collapse=''))
 }
 ```
 
