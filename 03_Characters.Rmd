@@ -22,8 +22,7 @@ tree$edge.length <- rep(1, nrow(tree$edge))
 for (i in seq_len(ncol(my_chars))) {
   par(mar=rep(0.2, 4), cex=0.7, oma=c(1.2, 0, 1.2, 0))
   
-  plot.states.matrix(apply.reconstruction(tree, my_chars[, i],
-                                          match.tip.char=TRUE),
+  plot.states.matrix(apply.reconstruction(tree, my_chars[, i]),
                      passes=0, counts=1:2, show.labels=1,
                      col.states=TRUE, state.labels=my_states[[i]],
                      #tip.col=treeCol, 
