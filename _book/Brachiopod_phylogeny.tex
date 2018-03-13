@@ -235,7 +235,9 @@ precision \citep{Smith2017}.
 \hypertarget{generate-starting-tree}{%
 \subsection{Generate starting tree}\label{generate-starting-tree}}
 
-\emph{Dailyatia} is used as an outgroup.
+\emph{Dailyatia} has been selected as an outgroup as camenellans have
+been interpreted as the earliest diverging members of the Brachiozoa
+\citep{Skovsted2015, Zhao2017}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -266,7 +268,7 @@ precision \citep{Smith2017}.
                   \DataTypeTok{searchHits=}\DecValTok{4}\NormalTok{,}
                   \DataTypeTok{suboptimal=}\NormalTok{score }\OperatorTok{*}\StringTok{ }\NormalTok{suboptFraction,}
                   \DataTypeTok{nSearch=}\DecValTok{150}\NormalTok{, }\DataTypeTok{verbosity=}\NormalTok{0L)}
-  \KeywordTok{write.nexus}\NormalTok{(iw.consensus, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_iw_k"}\NormalTok{, k, }\StringTok{"_"}\NormalTok{, }\KeywordTok{signif}\NormalTok{(}\KeywordTok{IWScore}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k), }\DecValTok{3}\NormalTok{), }\StringTok{".all.nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
+  \KeywordTok{write.nexus}\NormalTok{(iw.consensus, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_iw_k"}\NormalTok{, k, }\StringTok{"_"}\NormalTok{, }\KeywordTok{signif}\NormalTok{(}\KeywordTok{IWScore}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k), }\DecValTok{5}\NormalTok{), }\StringTok{".all.nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
