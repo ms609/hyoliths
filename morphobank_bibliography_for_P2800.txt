@@ -30,16 +30,16 @@ Generic	Bassett, Michael Gwyn ;Popov, Leonid E. ;Holmer, Lars E. 		2001	Function
 Generic	Zhang, Zhi-Fei ;Holmer, Lars E. ;Popov, Leonid ;Shu, De-Gan 		2011	An obolellate brachiopod with soft-part preservation from the Early Cambrian Chengjiang fauna of China			85	3	460-463									
 Generic	Skovsted, Christian B. ;Betts, Marissa J. ;Topper, Timothy P. ;Brock, Glenn A. 		2015	The early Cambrian tommotiid genus <i>Dailyatia</i> from South Australia			48	1	1-117									
 Journal Article	Skovsted, C.B. ;Brock, G.A. ;Topper, T.P. ;Paterson, J.R. ;Holmer, Lars E. 		2011	Scleritome construction, biofacies, biostratigraphy and systematics of the tommotiid <I>Eccentrotheca helenia</i> sp. nov. from the early Cambrian of South Australia			54		253-286									
-Journal Article	Balthasar, Uwe ;Skovsted, Christian B. ;Holmer, Lars E. ;Brock, Glenn A. 		2009	Homologous skeletal secretion in tommotiids and brachiopods			37		1143?1146									
+Journal Article	Balthasar, Uwe ;Skovsted, Christian B. ;Holmer, Lars E. ;Brock, Glenn A. 		2009	Homologous skeletal secretion in tommotiids and brachiopods			37		1143-1146									
 Generic	Wright, A.D. ;Rubel, M. 		1996	 A review of the morphological features affecting the classification of clitambonitidine brachiopods			39		53-75									
-Generic	Madison, A. 		2017	Laminar shell structure of Antigonambonites planus (Pander, 1830) (Brachiopoda, Billingsellida)			66		183-187									
+Generic	Madison, A. 		2017	Laminar shell structure of <i>Antigonambonites planus</i> (Pander, 1830) (Brachiopoda, Billingsellida)			66		183-187									
 Generic	Dewing, Keith 		2001	Hinge modifications and musculature of strophomenoid brachiopods: examples across the Ordovician-Silurian boundary, Anticosti Island, Quebec			38		125-141									
 Generic	Zhang, Zhi-Fei ;Shu, De-Gan ;Emig, C. C. ;Zhang, Xing-Liang ;Han, J. ;Liu, Jian-Ni ;Li, Y. ;Guo, Jun-Feng 		2007	Rhynchonelliformean brachiopods with soft-tissue preservation from the early Cambrian Chengjiang Lagerstätte of South China			50		1391-1402									
 Generic	Rowell, A. J. ;Caruso, Nancy E. 		1985	The evolutionary significance of <i>Nisusia sulcata</i>, an early articulate brachiopod			59	5	1227-1242									
 Journal Article	Zhang, Zhi-Fei ;Li, Guo-Xiang ;Holmer, Lars Erik ;Brock, Glenn A. ;Balthasar, Uwe ;Skovsted, Christian B. ;Fu, D.-J. ;Zhang, X.-L. ;Wang, H.-Z. ;Butler, A. D. ;Zhang, Z.-L. ;Cao, C.-Q. ;Han, J. ;Liu, Jian-Ni ;Shu, De-Gan 		2014	An early Cambrian agglutinated tubular lophophorate with brachiopod characters			4	4682										
 Journal Article	Laurie, J.R. 		1986	Phosphatic fauna of the Early Cambrian Todd River Dolomite, Amadeus Basin, central Australia			10		431-454									
 Journal Article	Topper, T.P. ;Holmer, L.E. ;Skovsted, C.B. ;Brock, G.A. ;Balthasar, U. ;Larsson, C.M. ;Petterson Stolk, S. ;Harper, D.A.T. 		2013	The oldest brachiopods from the lower Cambrian of South Australia			58		93-109									
-Generic	Hu, S. ;Zhang, Z. ;Holmer, L.E. ;Skovsted, C.B. 		2010	Soft-part preservation in a linguliform brachiopod from the lower Cambrian Wulongqing Formation (Guanshan Fauna) of Yunnan, South China			55	3	495?505									
+Generic	Hu, Shi-Xue ;Zhang, Zhi-Fei ;Holmer, Lars E. ;Skovsted, Christian B. 		2010	Soft-part preservation in a linguliform brachiopod from the lower Cambrian Wulongqing Formation (Guanshan Fauna) of Yunnan, South China			55	3	495-505									
 Journal Article	Williams, A. ;Popov, L.E. ;Holmer, L.E. ;Cusack, M. 		1998	The diversity and phylogeny of the paterinate brachiopods			40		221-262									
 Book	Kruse, P. D. 		1990			Northern Territory Geological Survey			1-63									
 Generic	Ushatinskaya, G.T. 		2016	Protegulum and brephic shell of the earliest organophosphatic brachiopods			50	2	141-152									
