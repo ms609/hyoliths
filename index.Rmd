@@ -113,7 +113,8 @@ BibEntry <- function (ref) {
          BibLine('number', 'Number'),
          BibLine('pages', 'Pages', gsub("\\-+", "--", ref["Pages"], perl=TRUE)),
          BibLine('volume', "Volume"),
-         BibLine('year', 'Year')
+         BibLine('year', 'Year'),
+         "}\n\n"
          )
 }
 
