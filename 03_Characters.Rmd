@@ -34,6 +34,7 @@ ReadNotes <- function (filepath) {
     charNotes <- gsub(charNote.pattern, "\\2",
                        notesLines[charNote.matches], perl=TRUE)
     charNotes <- gsub("^n", "  \n", charNotes, fixed=TRUE)
+    charNotes <- gsub("''", "'", charNotes, fixed=TRUE)
     charNumbers <- gsub(charNote.pattern, "\\1",
                               notesLines[charNote.matches], perl=TRUE)
     
@@ -62,8 +63,28 @@ ReadNotes <- function (filepath) {
   }
 }
 
+PrintStates <- function (states) {
+  tokens <- seq_along(states) - 1L
+  if (states[1] == "''") {
+    states <- states[-1]
+    tokens <- tokens[-1]
+    transformational <- TRUE
+  } else {
+    transformational <- FALSE
+  }
+  cat(paste0(" > ", tokens, ": ", states, "  \n"))
+  cat("> ", if (transformational) "Transformational" else "Neomorphic", " character.  \n>\n")
+}
+
 char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
 char_notes <- ReadNotes(filename)
+taxa_names <- c("Namacalathus", rownames(my_chars))
+taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
+taxa_italic <- paste0("_", taxa_plaintext, "_")
+Italicize <- function (text) {
+  gsub(paste0("\\b(", paste0(gsub("_", "|", taxa_names, fixed = TRUE), collapse='|'),
+              ")\\b"), "_\\1_", text, perl=TRUE, ignore.case=TRUE)
+}
 #treeCol <- tipCol[tree$tip.label]
 ```
 
@@ -81,11 +102,15 @@ for (i in seq_len(ncol(my_chars))) {
                      #tip.col=treeCol, 
                      use.edge.length=TRUE, legend.pos='topright')
   
-  cat("  \n\n### Character ", i, ": ", char_names[i], " {-}  \n")
-  cat("\n  > 1 ", my_states[[i]], "  \n > 2")
-  if (length(char_notes[[i]][[1]]) > 0) cat(char_notes[i])
-  if (length(char_notes[[i]][[2]]) > 0) {
-    
+  cat("  \n\n **Character ", i, ": ", char_names[i], "**  \n\n")
+  PrintStates(my_states[[i]])
+  cat("  \n\n")
+  char_notes_i <- char_notes[[i]]
+  state_notes_i <- char_notes_i[[2]]
+  if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
+  if (length(state_notes_i) > 0) {
+    cat("  \n ", paste0(taxa_italic[as.integer(names(state_notes_i))],
+                      ": ", Italicize(state_notes_i), "  \n    "))
   }
   cat("  \n") # Clear line, ready for next block
 }
