@@ -24,7 +24,7 @@ tnTrees <- lapply(tntFiles, ReadTntTree)
 
 The consensus of all implied weights runs is not very well resolved:
 
-```{R, echo=FALSE, fig.wid=7.1, fig.height=5}
+```{R, echo=FALSE, fig.wid=7.1, fig.height=4}
 par(mfrow=c(1, 2))
 ColPlot(consensus(tnTrees)) 
 text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
