@@ -2,7 +2,7 @@
 title: "Visualizing characters"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
-bibliography: [References.bib]
+bibliography: [References.bib, MorphoBank.bib]
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
 output:
   html_document: default
@@ -119,3 +119,7 @@ for (i in seq_len(ncol(my_chars))) {
 These reconstructions were created using the _Inapp_ _R_ package [@Brazeau2018].
 
 Full character definitions can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
+
+```{R results='asis'}
+cat(paste0('[@', paste0(apply(refs, 1, RefKey), collapse=';@'), ']'))
+```

@@ -24,7 +24,6 @@ my_chars <- my_chars[-1, ]
 neomorphic <- vapply(my_states, function(x) x[[1]] %in% c("", "''"), logical(1))
 setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 
-
 lon <- 'Longtancunella_chengjiangensis'
 
 pal <- TreeSearch::brewer[[11]]
@@ -90,6 +89,37 @@ ColPlot <- function (tree) {
 }
 ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
                                           text.col=tipCol[omit])
+```
+
+```{R Morphobank bibliography, echo=FALSE}
+mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
+mbRecent <- mbBib[which.max(file.mtime(mbBib))]
+refs <- as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))
+FirstWord <- function (text) gsub("^(\\w+).*$", "\\1", trimws(text), perl=TRUE)
+FirstWords <- function (text) gsub("(\\w+)\\W*(\\w+)?.*", "\\1\\2", trimws(text), perl=TRUE)
+RefKey <- function (ref) paste0(FirstWord(ref['Author']),
+                                trimws(ref['Year']),
+                                FirstWords(ref['Title']))
+BibEntry <- function (ref) {
+  BibLine <- function (bibKey, key, text=ref[key]) {
+    if (is.na(ref[key]) || ref[key] == "") "" else  paste0("  ", bibKey, " = {", trimws(text), "},\n")
+  }
+  paste0("@", FirstWord(ref['Reference.Type']), '{', 
+         RefKey(ref), ",\n",
+         BibLine('author', 'Author', gsub(";", " and ", ref["Author"], fixed=TRUE)),
+         BibLine('doi', 'DOI'),
+         BibLine('journal', 'Secondary.Title'),
+         BibLine('title', 'Title', gsub("</?i>", "_", ref["Title"], perl=TRUE)),
+         BibLine('number', 'Number'),
+         BibLine('pages', 'Pages', gsub("\\-+", "--", ref["Pages"], perl=TRUE)),
+         BibLine('volume', "Volume"),
+         BibLine('year', 'Year')
+         )
+}
+
+bibFile <- file("MorphoBank.bib")
+writeLines(apply(refs, 1, BibEntry), bibFile)
+close(bibFile)
 ```
 
 # Brachiopod origins {-}
