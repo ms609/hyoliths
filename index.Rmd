@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: [References.bib]
+bibliography: [References.bib, MorphoBank.bib]
 link-citations: yes
 github-repo: ms609/hy
 description: "Results of phylogenetic analysis"
@@ -89,38 +89,6 @@ ColPlot <- function (tree) {
 }
 ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
                                           text.col=tipCol[omit])
-```
-
-```{R Morphobank bibliography, echo=FALSE}
-mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
-mbRecent <- mbBib[which.max(file.mtime(mbBib))]
-refs <- as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))
-FirstWord <- function (text) gsub("^(\\w+).*$", "\\1", trimws(text), perl=TRUE)
-FirstWords <- function (text) gsub("(\\w+)\\W*(\\w+)?.*", "\\1\\2", trimws(text), perl=TRUE)
-RefKey <- function (ref) paste0(FirstWord(ref['Author']),
-                                trimws(ref['Year']),
-                                FirstWords(ref['Title']))
-BibEntry <- function (ref) {
-  BibLine <- function (bibKey, key, text=ref[key]) {
-    if (is.na(ref[key]) || ref[key] == "") "" else  paste0("  ", bibKey, " = {", trimws(text), "},\n")
-  }
-  paste0("@", FirstWord(ref['Reference.Type']), '{', 
-         RefKey(ref), ",\n",
-         BibLine('author', 'Author', gsub(";", " and ", ref["Author"], fixed=TRUE)),
-         BibLine('doi', 'DOI'),
-         BibLine('journal', 'Secondary.Title'),
-         BibLine('title', 'Title', gsub("</?i>", "_", ref["Title"], perl=TRUE)),
-         BibLine('number', 'Number'),
-         BibLine('pages', 'Pages', gsub("\\-+", "--", ref["Pages"], perl=TRUE)),
-         BibLine('volume', "Volume"),
-         BibLine('year', 'Year'),
-         "}\n\n"
-         )
-}
-
-bibFile <- file("MorphoBank.bib")
-writeLines(apply(refs, 1, BibEntry), bibFile)
-close(bibFile)
 ```
 
 # Brachiopod origins {-}

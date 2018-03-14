@@ -88,7 +88,10 @@ Italicize <- function (text) {
 #treeCol <- tipCol[tree$tip.label]
 ```
 
-Here's how each character maps onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
+This page defines each characer and accounts for its coding in particular taxa.  Citations for all codings can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
+
+The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
+
 
 ```{R, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
 for (i in seq_len(ncol(my_chars))) {
@@ -110,16 +113,47 @@ for (i in seq_len(ncol(my_chars))) {
   if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
   if (length(state_notes_i) > 0) {
     cat("  \n ", paste0(taxa_italic[as.integer(names(state_notes_i))],
-                      ": ", Italicize(state_notes_i), "  \n    "))
+                      ": ", Italicize(state_notes_i), "  \n  \n "))
   }
   cat("  \n") # Clear line, ready for next block
 }
 ```
 
-These reconstructions were created using the _Inapp_ _R_ package [@Brazeau2018].
 
-Full character definitions can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
+```{R Morphobank bibliography, echo=FALSE}
+mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
+mbRecent <- mbBib[which.max(file.mtime(mbBib))]
+refs <- as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))
+FirstWord <- function (text) gsub("^(\\w+).*$", "\\1", trimws(text), perl=TRUE)
+FirstWords <- function (text) gsub("^\\W*(\\w+)\\W*(\\w+)?.*", "\\1\\2", trimws(text), perl=TRUE)
+RefKey <- function (ref) paste0(FirstWord(ref['Author']),
+                                trimws(ref['Year']),
+                                FirstWords(ref['Title']))
+BibEntry <- function (ref) {
+  BibLine <- function (bibKey, key, text=ref[key]) {
+    if (is.na(ref[key]) || ref[key] == "") "" else  paste0("  ", bibKey, " = {", trimws(text), "},\n")
+  }
+  refType <- tolower(FirstWord(ref['Reference.Type']))
+  if (refType %in% c('generic', 'journal')) refType <- 'article'
+  paste0("@", refType, '{', 
+         RefKey(ref), ",\n",
+         BibLine('author', 'Author', gsub(";", " and ", ref["Author"], fixed=TRUE)),
+         BibLine('doi', 'DOI'),
+         BibLine('journal', 'Secondary.Title'),
+         BibLine('title', 'Title', gsub("</?i>", "_", ref["Title"], perl=TRUE)),
+         BibLine('number', 'Number'),
+         BibLine('pages', 'Pages', gsub("\\-+", "--", ref["Pages"], perl=TRUE)),
+         BibLine('volume', "Volume"),
+         BibLine('year', 'Year'),
+         "}\n"
+         )
+}
 
-```{R results='asis'}
+bibFile <- file("MorphoBank.bib", encoding='UTF-8')
+writeLines(apply(refs, 1, BibEntry), bibFile)
+close(bibFile)
+```
+
+```{R Character references from MorphoBank, echo=FALSE, results='asis'}
 cat(paste0('[@', paste0(apply(refs, 1, RefKey), collapse=';@'), ']'))
 ```
