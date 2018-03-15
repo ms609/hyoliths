@@ -1,0 +1,10 @@
+Archive/*
+*_cache
+nrun2_*
+*.ckp
+*.log
+*~*
+.Rhistory
+.Rdata
+*.Rproj
+.Rproj.user*

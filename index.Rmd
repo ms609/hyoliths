@@ -1,0 +1,101 @@
+--- 
+title: "Brachiopod origins - Supplementary material - Phylogenetic analysis"
+author: "Sun, Hai-Jing; Smith, Martin Ross; Zhu, Mao-Yan; Zeng, Han; Zhao, Fang-Chen"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [References.bib, MorphoBank.bib]
+link-citations: yes
+github-repo: ms609/hy
+description: "Results of phylogenetic analysis"
+---
+
+```{r setup, include=FALSE}
+set.seed(0)
+knitr::opts_chunk$set(echo = TRUE)
+library('TreeSearch'); library('ape'); library('phangorn')
+files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
+filename <- files[which.max(file.mtime(files))]
+my_data <- ReadAsPhyDat(filename)
+my_chars <- ReadCharacters(filename)
+my_states <- attr(my_chars, 'state.labels')
+my_chars <- my_chars[-1, ]
+neomorphic <- vapply(my_states, function(x) x[[1]] %in% c("", "''"), logical(1))
+setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
+
+lon <- 'Longtancunella_chengjiangensis'
+
+pal <- TreeSearch::brewer[[11]]
+
+tipCol <- c(
+  Namacalathus                    = pal[1],
+  Novocrania                      = pal[4],
+  Craniops                        = pal[4],
+  Ussunia                         = pal[4],
+  Gasconsia                       = pal[4],
+  Heliomedusa_orienta             = pal[3],
+  Heliomedusa                     = pal[3],
+  Micrina                         = pal[3],
+  Mickwitzia_muralensis           = pal[3],
+  Mickwitzia                      = pal[3],
+  Micromitra                      = pal[8],
+  Askepasma_toddense              = pal[8],
+  Askepasma              = pal[8],
+  Pelagodiscus_atlanticus         = pal[6],
+  Pelagodiscus         = pal[6],
+  Mummpikia_nuda                  = pal[5],
+  Mummpikia                  = pal[5],
+  Lingula                         = pal[5],
+  Eoobolus                        = pal[5],
+  Clupeafumosus_socialis          = 'grey',
+  Clupeafumosus          = 'grey',
+  Phoronis                        = pal[1],
+  Dailyatia                       = pal[1],
+  Eccentrotheca                   = pal[1],
+  Yuganotheca_elegans             = 'grey',
+  Yuganotheca             = 'grey',
+  Longtancunella_chengjiangensis  = 'grey',
+  Longtancunella  = 'grey',
+  Paterimitra                     = pal[1],
+  Lingulellotreta_malongensis     = pal[2],
+  Lingulellotreta     = pal[2],
+  Acanthotretella                 = pal[2],
+  Lingulosacculus                 = pal[2],
+  Pedunculotheca_diania           = pal[2],
+  Pedunculotheca           = pal[2],
+  Haplophrentis_carinatus         = pal[2],
+  Haplophrentis         = pal[2],
+  Tomteluva_perturbata            = 'grey',
+  Tomteluva            = 'grey',
+  Salanygolina                    = pal[9],
+  Coolinia_pecten                 = pal[9],
+  Coolinia                 = pal[9],
+  Antigonambonites_planus         = pal[9],
+  Antigonambonites         = pal[9],
+  Kutorgina_chengjiangensis       = pal[10],
+  Kutorgina       = pal[10],
+  Nisusia_sulcata                 = pal[10],
+  Nisusia                 = pal[10],
+  Alisina                         = pal[11],
+  Glyptoria                       = pal[11],
+  Orthis                          = pal[11],
+  Terebratulina                   = pal[11])
+
+
+ColPlot <- function (tree) {
+  setPar()
+  plot(tree, tip.color = tipCol[tree$tip.label], lwd=2)
+}
+ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
+                                          text.col=tipCol[omit])
+```
+
+# Brachiopod origins {-}
+
+This document provides a detailed discussion of analyses of the [morphological dataset](#dataset) constructed to accompany Sun _et al._ [-@Sun2018], and their results.
+
+We first discuss the results presented in the main paper, which employ the algorithm described by Brazeau, Guillerme and Smith [-@Brazeau2018] for correct handling of inapplicable data in a parsimony setting, and explore how each
+character is [reconstructed](#reconstructions) on an optimal tree.
+
+For completeness, we also document the results of [standard Fitch parsimony](#tnt) analysis, and the results of [Bayesian analysis](#MrBayes), neither of which treat inapplicable data in a logically consistent fashion.

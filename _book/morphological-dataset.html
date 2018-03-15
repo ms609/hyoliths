@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Brachiopod origins - Phylogenetic analysis</title>
+  <meta name="description" content="Results of phylogenetic analysis">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Brachiopod origins - Phylogenetic analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Results of phylogenetic analysis" />
+  <meta name="github-repo" content="ms609/hy" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Brachiopod origins - Phylogenetic analysis" />
+  
+  <meta name="twitter:description" content="Results of phylogenetic analysis" />
+  
+
+<meta name="author" content="Martin Smith">
+
+
+<meta name="date" content="2018-03-12">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="the-dataset.html">
+<link rel="next" href="tnt.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Phylogenetic results</a></li>
+<li class="chapter" data-level="1" data-path="the-dataset.html"><a href="the-dataset.html"><i class="fa fa-check"></i><b>1</b> The dataset</a></li>
+<li class="chapter" data-level="2" data-path="morphological-dataset.html"><a href="morphological-dataset.html"><i class="fa fa-check"></i><b>2</b> Morphological dataset</a></li>
+<li class="chapter" data-level="3" data-path="tnt.html"><a href="tnt.html"><i class="fa fa-check"></i><b>3</b> Fitch parsimony</a><ul>
+<li class="chapter" data-level="3.1" data-path="tnt.html"><a href="tnt.html#implied-weights"><i class="fa fa-check"></i><b>3.1</b> Implied weights</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="tnt.html"><a href="tnt.html#paterinids-included"><i class="fa fa-check"></i><b>3.1.1</b> Paterinids included</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tnt.html"><a href="tnt.html#paterinids-excluded"><i class="fa fa-check"></i><b>3.1.2</b> Paterinids excluded</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="tnt.html"><a href="tnt.html#equal-weights"><i class="fa fa-check"></i><b>3.2</b> Equal weights</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="bayesian-analysis.html"><a href="bayesian-analysis.html"><i class="fa fa-check"></i><b>4</b> Bayesian analysis</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Brachiopod origins - Phylogenetic analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="morphological-dataset" class="section level1">
+<h1><span class="header-section-number">2</span> Morphological dataset</h1>
+<p>The phylogenetic dataset contains a high proportion of inapplicable codings (404/3325 = 12% of tokens), which are known to introduce error and bias to phylogenetic reconstruction (<span class="citation">(Brazeau et al., <a href="#ref-Brazeau2018">2017</a>; Maddison, <a href="#ref-Maddison1993">1993</a>)</span>). As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data <span class="citation">(Brazeau et al., <a href="#ref-Brazeau2018">2017</a>)</span>. This algorithm is implemented in the <em>MorphyLib</em> C library <span class="citation">(Brazeau, Smith, &amp; Guillerme, <a href="#ref-Brazeau2017Morphylib">2017</a>)</span>, and phylogenetic search was conducted using the <em>R</em> package <em>TreeSearch</em> v0.0.8 (<span class="citation">(Smith, <a href="#ref-Smith2018TreeSearch">2018</a>)</span>).</p>
+<p>Heuristic searches were conducted using the parsimony ratchet <span class="citation">(Nixon, <a href="#ref-Nixon1999">1999</a>)</span> under equal and implied weights <span class="citation">(Pablo A. Goloboff, <a href="#ref-Goloboff1997">1997</a>)</span> with a variety of concavity constants. The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (<em>k</em>) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to produce higher accuracy than equal weights at any fixed level of precision <span class="citation">(Smith, <a href="#ref-Smith2017">2017</a>)</span>.</p>
+<p>The results of phylogenetic tree search under traditional algorithms in a parsimony an Bayesian framework are included in the supplementary information; these recover the same overall relationships but differ in the placement of a small number of incidental taxa.</p>
+
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Brazeau2018">
+<p>Brazeau, M. D., Guillerme, T., &amp; Smith, M. R. (2017). Morphological phylogenetic analysis with inapplicable data. <em>bioR<span class="math inline">\(\chi\)</span>iv</em>. doi:<a href="https://doi.org/10.1101/209775">10.1101/209775</a></p>
+</div>
+<div id="ref-Maddison1993">
+<p>Maddison, W. P. (1993). Missing data versus missing characters in phylogenetic analysis. <em>Systematic Biology</em>, <em>42</em>(4), 576–581. doi:<a href="https://doi.org/10.1093/sysbio/42.4.576">10.1093/sysbio/42.4.576</a></p>
+</div>
+<div id="ref-Brazeau2017Morphylib">
+<p>Brazeau, M. D., Smith, M. R., &amp; Guillerme, T. (2017). MorphyLib: a library for phylogenetic analysis of categorical trait data with inapplicability. doi:<a href="https://doi.org/10.5281/zenodo.815372">10.5281/zenodo.815372</a></p>
+</div>
+<div id="ref-Smith2018TreeSearch">
+<p>Smith, M. R. (2018). TreeSearch 0.0.8. doi:<a href="https://doi.org/10.5281/zenodo.1194595">10.5281/zenodo.1194595</a></p>
+</div>
+<div id="ref-Nixon1999">
+<p>Nixon, K. C. (1999). The Parsimony Ratchet, a new method for rapid parsimony analysis. <em>Cladistics</em>, <em>15</em>(4), 407–414. doi:<a href="https://doi.org/10.1111/j.1096-0031.1999.tb00277.x">10.1111/j.1096-0031.1999.tb00277.x</a></p>
+</div>
+<div id="ref-Goloboff1997">
+<p>Goloboff, P. A. (1997). Self-weighted optimization: tree searches and character state reconstructions under implied transformation costs. <em>Cladistics</em>, <em>13</em>(3), 225–245. doi:<a href="https://doi.org/10.1111/j.1096-0031.1997.tb00317.x">10.1111/j.1096-0031.1997.tb00317.x</a></p>
+</div>
+<div id="ref-Smith2017">
+<p>Smith, M. R. (2017). Quantifying and visualising divergence between pairs of phylogenetic trees: implications for phylogenetic reconstruction. <em>bioR<span class="math inline">\(\chi\)</span>iv</em>. doi:<a href="https://doi.org/10.1101/227942">10.1101/227942</a></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tnt.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ms609/hy/inst/gitbook/edit/master/01_TreeSearch.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

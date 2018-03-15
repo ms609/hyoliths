@@ -1,0 +1,4623 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Brachiopod origins - Supplementary material - Phylogenetic analysis},
+            pdfauthor={Sun, Hai-Jing; Smith, Martin Ross; Zhu, Mao-Yan; Zeng, Han; Zhao, Fang-Chen},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Brachiopod origins - Supplementary material - Phylogenetic analysis}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Sun, Hai-Jing; Smith, Martin Ross; Zhu, Mao-Yan; Zeng, Han; Zhao,
+Fang-Chen}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{2018-03-14}
+
+\usepackage{booktabs}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{brachiopod-origins}{%
+\chapter*{Brachiopod origins}\label{brachiopod-origins}}
+\addcontentsline{toc}{chapter}{Brachiopod origins}
+
+This document provides a detailed discussion of analyses of the
+\protect\hyperlink{dataset}{morphological dataset} constructed to
+accompany Sun \emph{et al.} \citeyearpar{Sun2018}, and their results.
+
+We first discuss the results presented in the main paper, which employ
+the algorithm described by Brazeau, Guillerme and Smith
+\citeyearpar{Brazeau2018} for correct handling of inapplicable data in a
+parsimony setting, and explore how each character is
+\protect\hyperlink{reconstructions}{reconstructed} on an optimal tree.
+
+For completeness, we also document the results of
+\protect\hyperlink{tnt}{standard Fitch parsimony} analysis, and the
+results of \protect\hyperlink{MrBayes}{Bayesian analysis}, neither of
+which treat inapplicable data in a logically consistent fashion.
+
+\hypertarget{the-dataset}{%
+\chapter{The dataset}\label{the-dataset}}
+
+Analysis was performed on a new matrix of 35 early brachiozoan taxa,
+including hyoliths, tommotiids and mickwitziids, which were coded for 95
+morphological characters (42 neomorphic, 53 transformational).
+
+The dataset can be viewed and downloaded at Morphobank
+(\href{https://morphobank.org/permalink/?P2800}{project 2800}), where
+each character is defined and its coding for each taxon discussed.
+
+Characters are coded following the recommendations of Brazeau, Guillerme
+and Smith \citep{Brazeau2018}. In brief, we have employed reductive
+coding, using a distinct state to mark character inapplicability.
+Character specifications follow the model of Sereno
+\citeyearpar{Sereno2007}.
+
+We have distinguished between neomorphic and transformational characters
+\citep[sensu][]{Sereno2007} by reserving the token \texttt{0} to refer
+to the absence of a neomorphic character. The states of transformational
+characters are represented by the tokens \texttt{1}, \texttt{2},
+\texttt{3}, \ldots{}
+
+Following the recommendations of Brazeau, Guillerme and Smith
+\citep[supplementary discussion]{Brazeau2018}, we code the absence of
+neomorphic ontologically dependent characters \citep[sensu][]{Vogt2017}
+as absence, rather than inapplicability.
+
+\hypertarget{treesearch}{%
+\chapter{Parsimony analysis}\label{treesearch}}
+
+The phylogenetic dataset contains a high proportion of inapplicable
+codings (404/ 3325 = 12\% of tokens), which are known to introduce error
+and bias to phylogenetic reconstruction
+(\citep{Maddison1993, Brazeau2018}). As such, phylogenetic search
+employed a new algorithm that correctly handles inapplicable data
+\citep{Brazeau2018}. This algorithm is implemented in the
+\emph{MorphyLib} C library \citep{Brazeau2017Morphylib}, and
+phylogenetic search was conducted using the \emph{R} package
+\emph{TreeSearch} v0.0.8 \citep{Smith2018TreeSearch}.
+
+\emph{Namacalathus} is included in the matrix but has been excluded from
+analysis due to its potentially long branch, which is likely to mislead
+analysis.
+
+\hypertarget{search-parameters}{%
+\section{Search parameters}\label{search-parameters}}
+
+Heuristic searches were conducted using the parsimony ratchet
+\citep{Nixon1999} under equal and implied weights \citep{Goloboff1997}
+with a variety of concavity constants. The consensus tree presented in
+the main manuscript represents a strict consensus of all trees that are
+most parsimonious under one or more of the concavity constants
+(\emph{k}) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to
+produce higher accuracy than equal weights at any fixed level of
+precision \citep{Smith2017}.
+
+\hypertarget{analysis}{%
+\section{Analysis}\label{analysis}}
+
+\hypertarget{load-data}{%
+\subsection{Load data}\label{load-data}}
+
+\hypertarget{generate-starting-tree}{%
+\subsection{Generate starting tree}\label{generate-starting-tree}}
+
+\emph{Dailyatia} has been selected as an outgroup as camenellans have
+been interpreted as the earliest diverging members of the Brachiozoa
+\citep{Skovsted2015, Zhao2017}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nj.tree <-}\StringTok{ }\KeywordTok{NJTree}\NormalTok{(my_data)}
+\NormalTok{rooted.tree <-}\StringTok{ }\KeywordTok{EnforceOutgroup}\NormalTok{(nj.tree, }\StringTok{'Dailyatia'}\NormalTok{)}
+\NormalTok{start.tree <-}\StringTok{ }\KeywordTok{TreeSearch}\NormalTok{(}\DataTypeTok{tree=}\NormalTok{rooted.tree, }\DataTypeTok{dataset=}\NormalTok{my_data, }\DataTypeTok{maxIter=}\DecValTok{3000}\NormalTok{,}
+                         \DataTypeTok{EdgeSwapper=}\NormalTok{RootedNNISwap, }\DataTypeTok{verbosity=}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{implied-weights-analysis}{%
+\subsection{Implied weights analysis}\label{implied-weights-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (k }\ControlFlowTok{in}\NormalTok{ kValues) \{}
+\NormalTok{  iw.tree <-}\StringTok{ }\KeywordTok{IWRatchet}\NormalTok{(start.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k,}
+                       \DataTypeTok{ratchHits =} \DecValTok{60}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{,}
+                       \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),}
+                       \DataTypeTok{verbosity=}\DecValTok{0}\NormalTok{)}
+\NormalTok{  score <-}\StringTok{ }\KeywordTok{IWScore}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k)}
+  \CommentTok{# Write single best tree}
+  \KeywordTok{write.nexus}\NormalTok{(iw.tree, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_iw_k"}\NormalTok{, k, }\StringTok{"_"}\NormalTok{, }\KeywordTok{signif}\NormalTok{(score, }\DecValTok{5}\NormalTok{), }\StringTok{".nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
+
+\NormalTok{  suboptFraction =}\StringTok{ }\FloatTok{0.02}
+\NormalTok{  iw.consensus <-}\StringTok{ }\KeywordTok{IWRatchetConsensus}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k,}
+                  \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedNNISwap),}
+                  \DataTypeTok{searchHits=}\DecValTok{4}\NormalTok{,}
+                  \DataTypeTok{suboptimal=}\NormalTok{score }\OperatorTok{*}\StringTok{ }\NormalTok{suboptFraction,}
+                  \DataTypeTok{nSearch=}\DecValTok{150}\NormalTok{, }\DataTypeTok{verbosity=}\NormalTok{0L)}
+  \KeywordTok{write.nexus}\NormalTok{(iw.consensus, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_iw_k"}\NormalTok{, k, }\StringTok{"_"}\NormalTok{, }\KeywordTok{signif}\NormalTok{(}\KeywordTok{IWScore}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k), }\DecValTok{5}\NormalTok{), }\StringTok{".all.nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{equal-weights-analysis}{%
+\subsection{Equal weights analysis}\label{equal-weights-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ew.tree <-}\StringTok{ }\KeywordTok{Ratchet}\NormalTok{(start.tree, my_data, }\DataTypeTok{verbosity=}\NormalTok{0L,}
+                   \DataTypeTok{ratchHits =} \DecValTok{10}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{,}
+                   \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))}
+\KeywordTok{write.nexus}\NormalTok{(best.tree, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_ew_"}\NormalTok{, }\KeywordTok{Fitch}\NormalTok{(ew.tree, my_data), }\StringTok{".nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
+
+\NormalTok{ew.consensus <-}\StringTok{ }\KeywordTok{RatchetConsensus}\NormalTok{(ew.tree, my_data, }\DataTypeTok{nSearch=}\DecValTok{150}\NormalTok{,}
+                                 \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedNNISwap),}
+                                 \DataTypeTok{verbosity=}\NormalTok{0L)}
+\KeywordTok{write.nexus}\NormalTok{(ew.consensus, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_ew_"}\NormalTok{, }\KeywordTok{Fitch}\NormalTok{(ew.tree, my_data), }\StringTok{".nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{implied-weights-results}{%
+\subsection{Implied weights results}\label{implied-weights-results}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Read results from files}
+\NormalTok{iw.trees <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(kValues, }\ControlFlowTok{function}\NormalTok{ (k) \{}
+\NormalTok{  iw.best <-}\StringTok{ }\KeywordTok{list.files}\NormalTok{(}\StringTok{'TreeSearch'}\NormalTok{, }
+                      \DataTypeTok{pattern=}\KeywordTok{paste0}\NormalTok{(}\StringTok{'hy_iw_k'}\NormalTok{,}
+                                     \KeywordTok{gsub}\NormalTok{(}\StringTok{'}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.'}\NormalTok{, }\StringTok{'}\CharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{.'}\NormalTok{, k),}
+                                     \StringTok{'_}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{d+}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.?}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{d*}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.all}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.nex'}\NormalTok{),}
+                      \DataTypeTok{full.names=}\OtherTok{TRUE}\NormalTok{)}
+  \CommentTok{# Return:}
+  \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{length}\NormalTok{(iw.best) }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+    \KeywordTok{list}\NormalTok{()}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{read.nexus}\NormalTok{(iw.best[}\KeywordTok{which.max}\NormalTok{(}\KeywordTok{file.mtime}\NormalTok{(iw.best))])}
+\NormalTok{  \}}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{omit=}\KeywordTok{c}\NormalTok{(lon, }\StringTok{'Clupeafumosus_socialis'}\NormalTok{,}
+       \StringTok{'Heliomedusa_orienta'}\NormalTok{, }\StringTok{'Haplophrentis_carinatus'}\NormalTok{)}
+\KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{ConsensusWithout}\NormalTok{(}\KeywordTok{lapply}\NormalTok{(iw.trees, consensus), omit))}
+\KeywordTok{ColMissing}\NormalTok{(omit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-1-1.pdf}
+\caption{\label{fig:unnamed-chunk-1}Consensus of implied weights analyses at
+all values of k}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Plot consensus results}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DataTypeTok{mar=}\KeywordTok{rep}\NormalTok{(}\FloatTok{0.2}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+
+\KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{consensus}\NormalTok{(}\KeywordTok{lapply}\NormalTok{(iw.trees, consensus)))}
+\KeywordTok{text}\NormalTok{(}\OperatorTok{-}\FloatTok{0.5}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DataTypeTok{pos=}\DecValTok{4}\NormalTok{, }\StringTok{"Consensus of all k values"}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.8}\NormalTok{)}
+
+\CommentTok{# Plot results for each value of k}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \KeywordTok{seq_along}\NormalTok{(iw.trees)) \{}
+  \KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{consensus}\NormalTok{(iw.trees[[i]]))}
+  \KeywordTok{text}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\KeywordTok{paste0}\NormalTok{(}\StringTok{'k = '}\NormalTok{, kValues[i]), }\DataTypeTok{pos=}\DecValTok{4}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-2-1.pdf}
+\caption{\label{fig:unnamed-chunk-2}Implied weights results}
+\end{figure}
+
+\hypertarget{equal-weights-results}{%
+\subsection{Equal weights results}\label{equal-weights-results}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ew.best <-}\StringTok{ }\KeywordTok{list.files}\NormalTok{(}\StringTok{'TreeSearch'}\NormalTok{, }\DataTypeTok{pattern=}\StringTok{'hy_ew_}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{d*}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.nex'}\NormalTok{, }\DataTypeTok{full.names=}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{ew.tree <-}\StringTok{ }\KeywordTok{read.nexus}\NormalTok{(}\DataTypeTok{file=}\NormalTok{ew.best[}\KeywordTok{which.max}\NormalTok{(}\KeywordTok{file.mtime}\NormalTok{(ew.best))])}
+\KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{consensus}\NormalTok{(ew.tree))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/equal weights results in TreeSearch-1.pdf}
+\caption{(\#fig:equal weights results in TreeSearch)Strict consensus of
+equal weights results}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{omit <-}\StringTok{ }\KeywordTok{c}\NormalTok{(lon)}
+\KeywordTok{ColPlot}\NormalTok{(}\KeywordTok{ConsensusWithout}\NormalTok{(ew.tree, omit))}
+\KeywordTok{ColMissing}\NormalTok{(omit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-3-1.pdf}
+\caption{\label{fig:unnamed-chunk-3}Strict consensus of equal weights
+results, taxa excluded}
+\end{figure}
+
+\hypertarget{reconstructions}{%
+\chapter{Character reconstructions}\label{reconstructions}}
+
+This page defines each characer and accounts for its coding in
+particular taxa. Citations for all codings can be found by browsing the
+\protect\hyperlink{dataset}{morphological dataset} on MorphoBank
+(\href{https://morphobank.org/permalink/?P2800}{project 2800}).
+
+The \emph{Inapp} \emph{R} package \citep{Brazeau2018} was used to map
+each character onto one of the most parsimonious trees (obtained under
+implied weighting, \(k = 4.5\)):
+
+\hypertarget{sclerites-in-adult}{%
+\section*{Sclerites in adult}\label{sclerites-in-adult}}
+\addcontentsline{toc}{section}{Sclerites in adult}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\textbf{Character 1 : Sclerites in adult }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Plate-like (wider than tall) skeletal elements, whether mineralized or
+non-mineralized.\\
+The definition deliberately excludes setae (which are taller than wide).
+
+\hypertarget{sclerites-disposition}{%
+\section*{Sclerites: disposition}\label{sclerites-disposition}}
+\addcontentsline{toc}{section}{Sclerites: disposition}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-2.pdf}
+
+\textbf{Character 2 : Sclerites: disposition }
+
+\begin{quote}
+1: `Single skeletal element'\\
+2: `Bivalved: scleritome dominated by prominent dorsal and ventral
+valve'\\
+3: `Multiple skeletal elements with no differentiated pair'\\
+Transformational character.
+\end{quote}
+
+Taxa in the bivalved condition may bear small additional elements, such
+as the L-elements of \emph{Paterimitra} or the stegidial / deltidial
+plates of certain brachiopods.
+
+\emph{Paterimitra}: Sclerities of \emph{paterimitra} are opposing
+symetrical and fused, not seperated like brachiopods
+
+\emph{Yuganotheca elegans}: The conical element is taken to be
+homologous to the colleplax and thus part of the ventral valve.
+
+\hypertarget{sclerites-bivalved-hinge-line-shape}{%
+\section*{Sclerites: Bivalved: Hinge line
+shape}\label{sclerites-bivalved-hinge-line-shape}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Hinge line shape}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-3.pdf}
+
+\textbf{Character 3 : Sclerites: Bivalved: Hinge line shape }
+
+\begin{quote}
+1: `Astrophic'\\
+2: `Strophic'\\
+Transformational character.
+\end{quote}
+
+\emph{Micrina}: See Holmer et al 2008.
+
+\emph{Tomteluva perturbata}: ``Tomteluvid taxa all have a strongly
+ventribiconvex, astrophic shell with a unisulcate commissure'' -- Streng
+et al. 2016, p5
+
+\emph{Kutorgina chengjiangensis}: Williams et al. (2000, p.~208)
+consider the hinge of \emph{Kutorgina} to be stropic, whereas Bassett et
+al (2001) argue for an astropic interpretation -- whilst noting that the
+arrangement is prominently different from other astrophic taxa. We
+therefore code this taxon as ambiguous.
+
+\emph{Longtancunella chengjiangensis}: ``\emph{Longtancunella} has an
+oval to subcircular shell with a very short strophic hinge line'' --
+Zhang et al. 2011
+
+\emph{Nisusia sulcata}: ``The strophic, articulated shells of the
+Kutorginata rotated on simple hinge mechanisms that are different from
+those of other rhynchonelliforms'' (Williams et al. p.~208)
+
+\emph{Novocrania}: Craniides have a strophic posterior valve edge
+(Williams et al. 2007, table 39 on p.~2853)
+
+\emph{Yuganotheca elegans}: Not evident from fossil material; the
+possibility of a short strophic hinge line (as in \emph{Longtancunella})
+is difficult to discount.
+
+\emph{Mickwitzia muralensis}: non-strophic
+
+\hypertarget{sclerites-bivalved-apophyses}{%
+\section*{Sclerites: Bivalved:
+Apophyses}\label{sclerites-bivalved-apophyses}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Apophyses}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-4.pdf}
+
+\textbf{Character 4 : Sclerites: Bivalved: Apophyses }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Many brachiopods, in addition to \emph{Micrina} and others, bear
+tooth-like structures or processes that articulate the two primary
+valves.\\
+Caution must be applied before taxa are coded as ``absent'', as teeth
+can be subtle and may be overlooked.
+
+Kutorginata don't have teeth or dental sockets, but their shells are
+articulated by ``two triangular plates formed by dorsal interarea,
+bearing oblique ridges on the inner sides'' (Williams et al 2000,
+p.~211); this simple hinge mechanism is different from other
+rhynchonelliforms (Williams et al. 2000, p.208), but serves an
+equivalent purpose and is thus potentially homologous. We thus code
+kutorginids as present, using a subsequent character to capture
+difference in tooth morphology.
+
+\emph{Tomteluva perturbata}: Tomteluvids {[}\ldots{}{]} lack
+articulation structures such as teeth and sockets (Streng et al. 2016)
+
+\emph{Mummpikia nuda}: No articulation structures are evident; instead,
+the propareas are rotated inwards (Balthasar 2008). The definition of
+Family Obolellidae in Willams et al. (2000) notes that articulation may
+be lacking or vestigial in the group.
+
+\emph{Kutorgina chengjiangensis}: ``Articulation characterized by two
+triangular plates formed by dorsal interarea, bearing oblique ridges on
+the inner sides'' -- Williams et al 2000, p.~211
+
+\emph{Nisusia sulcata}: Pseudodont articulation: teeth formed by distal
+lateral extensions from the ventral pseudodeltidium - Holmer et al 2018
+
+\emph{Alisina}: ``Strophic articulation with paired, ventral denticles,
+composed of secondary shell'' -- definition of family Trematobolidae in
+Williams et al. 2000
+
+\emph{Gasconsia}: ``Articulatory structure comprising ventral cardinal
+socket and dorsal hinge plate {[}\ldots{}{]} The shape of the shell
+probably correlates strongly with the unique type of articulation, which
+consists of a dorsal hinge plate that fits tightly into a cardinal
+socket in the ventral valve, with a concave homeodeltidium in the center
+of the ventral interarea'' -- Williams et al. 2000, p.184, concerning
+order Trimerellida
+
+\emph{Clupeafumosus socialis}: No articulating processes evident or
+reported by Topper et al. (2013).
+
+\emph{Ussunia}: ``articulatory structures poorly developed'' -- Williams
+et al. 2000, p.~192
+
+\emph{Mickwitzia muralensis}: Not reported by or evident in Balthasar
+(2004)
+
+\hypertarget{sclerites-bivalved-apophyses-morphology}{%
+\section*{Sclerites: Bivalved: Apophyses:
+Morphology}\label{sclerites-bivalved-apophyses-morphology}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Apophyses:
+Morphology}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-5.pdf}
+
+\textbf{Character 5 : Sclerites: Bivalved: Apophyses: Morphology }
+
+\begin{quote}
+1: `Deltidiodont'\\
+2: `Cyrtomatodont'\\
+3: `Pseudodont'\\
+Transformational character.
+\end{quote}
+
+Deltidiodont teeth are simple hinge teeth developed by the distal
+accretion of secondary shell; Cyrtomatodont teeth are knoblike or
+hook-shaped hinge teeth developed by differential secretion and
+resorption of the secondary shell (fig. 322 in Williams et al 2000).
+
+Kutorginata (here represented by \emph{Kutorgina} and \emph{Nisusia})
+don't have teeth (apophyses) or dental sockets, but their shells are
+articulated by ``two triangular plates formed by dorsal interarea,
+bearing oblique ridges on the inner sides'' (Williams et al 2000,
+p.~211); this simple hinge mechanism is different from other
+rhynchonelliforms (Williams et al. 2000, p.208; table 13 character 30),
+and is described as a ``pseudodont articulation'' (Holmer et al. 2018).
+
+\emph{Micrina}: The simple knob-like teeth of \emph{Micrina} show no
+evidence of resprobtion or the hook-like shape that characterises
+Cyrtomatodont teeth.
+
+\emph{Kutorgina chengjiangensis}: ``Articulation characterized by two
+triangular plates formed by dorsal interarea, bearing oblique ridges on
+the inner sides'' -- Williams et al 2000, p.~211
+
+\emph{Nisusia sulcata}: The `'teeth'`are formed by the distal lateral
+extensions from the ventral\\
+pseudodeltidium fitting into the'`sockets'' on the inner side of the
+dorsal interarea (Holmer et al 2018).
+
+{[}Coded as ``deltidiodont teeth absent'' in Benedetto (2009).{]}
+
+\emph{Terebratulina}: Cyrtomatodont - see fig. 322 in Williams et al
+(2000)
+
+\emph{Antigonambonites planus}: Coded as deltidiodont in Benedetto
+(2009).
+
+\emph{Orthis}: Coded as deltidiodont (in Eoorthis) in Benedetto (2009).
+
+\emph{Glyptoria}: Coded as deltidiodont in Benedetto (2009).
+
+\hypertarget{sclerites-bivalved-apophyses-dental-plates}{%
+\section*{Sclerites: Bivalved: Apophyses: Dental
+plates}\label{sclerites-bivalved-apophyses-dental-plates}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Apophyses: Dental
+plates}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-6.pdf}
+
+\textbf{Character 6 : Sclerites: Bivalved: Apophyses: Dental plates }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Williams et al. 1997 (p362) write: ``Teeth {[}\ldots{}{]} are commonly
+supported by a pair of variably disposed plates also built up
+exclusively of secondary shell and known as dental plates (Fig. 323.1,
+323.3).''
+
+Dewing (2001) elaborates: ``Dental plates are near-vertical, narrow
+sheets of shell tissue between the anteromedian edge of the teeth and
+floor of the ventral valve. They are a composite structure, resulting
+from the growth of teeth over the ridge that bounds the ventral-valve
+muscle field.''
+
+Williams et al. 2000 (p.201) write: ``The denticles lack supporting
+structures in all Obolellida, but in Naukatida they are supported by an
+arcuate plate below the\\
+interarea, the anterise (Fig. 119.3a)''.
+
+The anterise is conceivably homologous with the dental plates, thus the
+presence of either is coded ``present'' for this character.
+
+\emph{Coolinia pecten}: Coded as present following Dewing (2001), who
+seems to use the term Strophomenoids to encompass \emph{Coolinia}, and
+attests to the presence of dental plates.
+
+\emph{Nisusia sulcata}: Coded as absent in Benedetto (2009)
+
+\emph{Antigonambonites planus}: Coded as present (well developed) in
+Benedetto (2009)
+
+\emph{Orthis}: Coded as present (short and recessive, in Eoorthis) in
+Benedetto (2009)
+
+\emph{Gasconsia}: Coded ambiguous to reflect the possibility that the
+hinge plate in trimerellids is homologous to the dental plates of other
+taxa, and has replaced the teeth themselves as the primary articulatory
+mechanism (see Williams et al. 2000, p.~184, for details of the
+articulation)
+
+\emph{Glyptoria}: Coded as absent in Benedetto (2009)
+
+\hypertarget{sclerites-bivalved-sockets}{%
+\section*{Sclerites: Bivalved:
+Sockets}\label{sclerites-bivalved-sockets}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Sockets}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-7.pdf}
+
+\textbf{Character 7 : Sclerites: Bivalved: Sockets }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Simplified from Bassett et al. (2001) character 16.\\
+This character is independent of apophyses, as several taxa bear sockets
+without corresponding teeth; the function of these sockets is unknown.\\
+See figs 323ff in Williams et al. (1997).
+
+\emph{Tomteluva perturbata}: Tomteluvids {[}\ldots{}{]} lack
+articulation structures such as teeth and sockets (Streng et al. 2016)
+
+\emph{Nisusia sulcata}: Coded as absent in Benedetto (2009).
+
+\emph{Antigonambonites planus}: Coded as present in Benedetto (2009)
+
+\emph{Alisina}: ``bearing sockets, bounded by low ridges'' -- Williams
+et al. 2000
+
+\emph{Gasconsia}: ``Articulatory structure comprising ventral cardinal
+socket and dorsal hinge plate'' -- Williams et al. 2000, p.~184
+
+\emph{Glyptoria}: Coded as absent in Benedetto (2009)
+
+\emph{Ussunia}: Following table 15 in Williams et al. 2000
+
+\emph{Mickwitzia muralensis}: Not reported by or evident in Balthasar
+(2004)
+
+\hypertarget{sclerites-bivalved-socket-ridges}{%
+\section*{Sclerites: Bivalved: Socket
+ridges}\label{sclerites-bivalved-socket-ridges}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Socket ridges}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-8.pdf}
+
+\textbf{Character 8 : Sclerites: Bivalved: Socket ridges }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+After Bassett et al. (2001) character 17. May be difficult to
+distinguish from a brachiophore (see Fig 323 in Williams et al 1997), so
+the two structures are not distinguished here.
+
+\emph{Tomteluva perturbata}: Tomteluvids {[}\ldots{}{]} lack
+articulation structures such as teeth and sockets (Streng et al. 2016)
+
+\emph{Nisusia sulcata}: Coded as absent in Benedetto (2009)
+
+\emph{Antigonambonites planus}: Coded as present in Benedetto (2009)
+
+\emph{Alisina}: ``bearing sockets, bounded by low ridges'' -- Williams
+et al. 2000
+
+\emph{Glyptoria}: Coded as absent in Benedetto (2009)
+
+\hypertarget{sclerites-bivalved-enclosing-filtration-chamber}{%
+\section*{Sclerites: Bivalved: Enclosing filtration
+chamber}\label{sclerites-bivalved-enclosing-filtration-chamber}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Enclosing filtration
+chamber}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-9.pdf}
+
+\textbf{Character 9 : Sclerites: Bivalved: Enclosing filtration chamber
+}
+
+\begin{quote}
+0: `No filtration chamber, or open chamber'\\
+1: `Shells close to form enclosed filtration chamber'\\
+Neomorphic character.
+\end{quote}
+
+In crown-group brachiopods, the two primary shells close to form an
+enclosed filtration chamber. Further down the stem, taxa such as
+\emph{Micrina} do not.
+
+\hypertarget{sclerites-bivalved-commissure}{%
+\section*{Sclerites: Bivalved:
+Commissure}\label{sclerites-bivalved-commissure}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Commissure}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-10.pdf}
+
+\textbf{Character 10 : Sclerites: Bivalved: Commissure }
+
+\begin{quote}
+1: `Rectimarginate'\\
+2: `Uniplicate'\\
+3: `Sulcate'\\
+Transformational character.
+\end{quote}
+
+The anterior commissure can be rectimarginate (i.e.~straight),
+uniplicate (i.e.~median sulcus in ventral valve), or sulcate (with
+median sulcus in dorsal valve).
+
+\emph{Kutorgina chengjiangensis}: Following Appendix 2 in Williams et
+al. (1998).
+
+\emph{Salanygolina}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Askepasma toddense}: ``ventral valve weakly to moderately
+sulcate'' (Topper et al. 2013); a similar description is provided by
+Williams et al. (2000).
+
+\emph{Micromitra}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Terebratulina}: ``Anterior commissure rectimarginate to
+uniplicate'' -- uniplicate in fig. 1425.1c of Williams et al. (2006).
+
+\emph{Glyptoria}: Following Appendix 2 in Williams et al. (1998).
+
+\hypertarget{sclerites-bivalved-muscle-scars-ventral}{%
+\section*{Sclerites: Bivalved: Muscle scars:
+Ventral}\label{sclerites-bivalved-muscle-scars-ventral}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Muscle scars:
+Ventral}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-11.pdf}
+
+\textbf{Character 11 : Sclerites: Bivalved: Muscle scars: Ventral }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+After Bassett et al. (2001) character 6
+
+\emph{Micrina}: Prominent ventral muscle scars - see e.g.~Holmer et al
+2008, fig. 1f
+
+\emph{Alisina}: Muscle scars scored based on \emph{Alisina} compleyensis
+(Balthasar et al. 2001)
+
+\emph{Mickwitzia muralensis}: Scars absent; instead, cones ornament
+shell''s internal surface.
+
+\hypertarget{sclerites-bivalved-muscle-scars-adjustor}{%
+\section*{Sclerites: Bivalved: Muscle scars:
+Adjustor}\label{sclerites-bivalved-muscle-scars-adjustor}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Muscle scars:
+Adjustor}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-12.pdf}
+
+\textbf{Character 12 : Sclerites: Bivalved: Muscle scars: Adjustor }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+After Bassett et al. (2001) character 7.\\
+This character is contingent on the presence of a pedicle. Extreme
+caution must be used in inferring an absent state, as adjustor scars can
+be extremely difficult to distinguish from the adductor scars.
+
+\emph{Alisina}: Muscle scars scored based on \emph{Alisina} comleyensis
+(Bassett et al. 2001).
+
+The presence of an adjustor is marked NPA as it is not clear that a
+scar, if present, could be distinguished from the diminutive muscle
+scars present.
+
+\emph{Gasconsia}: No mention of an adjustor muscle in \emph{Gasconsia}
+or Trimerellida more generally on pp.~184-185 of Williams et al. 2000,
+nor in discussion in Williams et al. 2007 (p.~2850). Coded as absent.
+
+\emph{Clupeafumosus socialis}: Not known in any acrotretid (Williams et
+al. 2000); not evident in \emph{Clupeafumosus} (Topper et al. 2013).
+
+\emph{Mickwitzia muralensis}: Scars absent; instead, cones ornament
+shell''s internal surface.
+
+\hypertarget{sclerites-bivalved-muscle-scars-dorsal-adductor}{%
+\section*{Sclerites: Bivalved: Muscle scars: Dorsal
+adductor}\label{sclerites-bivalved-muscle-scars-dorsal-adductor}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Muscle scars: Dorsal
+adductor}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-13.pdf}
+
+\textbf{Character 13 : Sclerites: Bivalved: Muscle scars: Dorsal
+adductor }
+
+\begin{quote}
+1: `Dispersed'\\
+2: `Radially arranged'\\
+3: `Quadripartite'\\
+Transformational character.
+\end{quote}
+
+After Bassett et al. (2001) character 8, and Williams et al. (1996,
+character 35; 2000, p.~160, character 54)
+
+In the dorsal valve, the anterior and posterior adductor scars of
+articulated brachiopods form a single (quadripartite) muscle field
+(Williams et al. 2000, p.~201)
+
+In contrast, the anterior and posterior scars of e.g.~trimerellids have
+prominently separate attachment points, with anterior and posterior
+muscle fields clearly distinct, and coded as ``dispersed''.
+
+In e.g.~kutorginates, adductor muscles are separated into left and right
+fields; the same is the case in lingulids, where there are more separate
+muscle groups and the left and right fields conspire to produce a radial
+arrangement; both of these configurations are scored as ``radially
+arranged''.
+
+\emph{Haplophrentis carinatus}: Laterally dispersed, based on
+interpretation of Moysiuk et al. (2017), and consistent with general
+situation in hyoliths (see Dzik 1980).
+
+\emph{Coolinia pecten}: ``radially arranged adductor scars'' -- Bassett
+\& Popov 2017, p1
+
+\emph{Salanygolina}: ``The dorsal valve of \emph{Salanygolina} has a
+radial arrangement of adductor muscle scars and the scars of
+posteromedially placed internal oblique muscles, which are also
+characteristic of paterinates and chileates'' -- Holmer et al. (2009)
+
+\emph{Heliomedusa orienta}: Distinct anterior and posterior fields (Chen
+et al. 2007); coded as ``dispersed'' by Williams et al. (2000) in table
+15.
+
+\emph{Micromitra}: Williams et al. (1998) code as ``dispersed'', but
+have a less divided scheme of character states and disagree with other
+sources in some codings (e.g.~Bassett et al. 2001, in Kutorginates).
+Williams et al. (2000) do not describe \emph{Micromitra} musculature and
+we were unable to find any reliable description of the scars, so we code
+as ``not presently available''.
+
+\emph{Pelagodiscus atlanticus}: Discinids scored as ``open,
+quadripartite'' by Williams et al. (1996)
+
+\emph{Novocrania}: Craniids scored as ``open, quadripartite'' by
+Williams et al. (1996)
+
+\emph{Terebratulina}: Coded as ``grouped, quadripartite'' by Williams et
+al. (1996)
+
+\emph{Antigonambonites planus}: Treatise
+
+\emph{Alisina}: Following Williams et al. (2000) table 15 (their
+character 54)
+
+\emph{Gasconsia}: Following the coding of Williams et al. (2000), table
+15.
+
+\emph{Glyptoria}: Scored as ``dispersed'' by Williams et al.
+(1998)\ldots{} but then so is \emph{Kutorgina}, which Bassett et al
+(2001) score as radial.
+
+Williams et al. (2000) state, for superfamily Protorthida, ``dorsal
+adductor scars probably linear'', which fits in the category of
+``radial'' employed herein -- so that''s what we follow.
+
+\emph{Clupeafumosus socialis}: Quadripartite, following reconstruction
+of Williams (2000), fig. 51.
+
+\emph{Ussunia}: Following table 15 in Williams et al. 2000
+
+\emph{Mickwitzia muralensis}: Scars absent; instead, cones ornament
+shell''s internal surface.
+
+\hypertarget{sclerites-bivalved-muscle-scars-adductors-position}{%
+\section*{Sclerites: Bivalved: Muscle scars: Adductors:
+Position}\label{sclerites-bivalved-muscle-scars-adductors-position}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Muscle scars:
+Adductors: Position}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-14.pdf}
+
+\textbf{Character 14 : Sclerites: Bivalved: Muscle scars: Adductors:
+Position }
+
+\begin{quote}
+1: `Oblique'\\
+2: `At high angle'\\
+Transformational character.
+\end{quote}
+
+Position of adductor muscles relative to commissural plane.\\
+After Bassett et al. (2001) character 11.
+
+\emph{Coolinia pecten}: Not reported by Williams et al. (2000), nor
+Bassett \& Popov (2017), nor explicitly by Dewing (2001).
+
+\emph{Pelagodiscus atlanticus}: Musculature considered essentially
+equivalent to \emph{Lingula} by Williams et al 2000, so \emph{Lingula}
+coding followed here.
+
+\emph{Gasconsia}: See discussion under Trimerellida in Williams et al.
+(2000).
+
+\emph{Mickwitzia muralensis}: Scars absent; instead, cones ornament
+shell''s internal surface.
+
+\emph{Eoobolus}: ``\emph{Eoobolus} should have anterior and posterior
+adductors and a variety of oblique muscles which were probably arranged
+in criss-crossing pairs'' -- Balthasar 2009
+
+\hypertarget{sclerites-bivalved-muscle-scars-dermal-muscles}{%
+\section*{Sclerites: Bivalved: Muscle scars: Dermal
+muscles}\label{sclerites-bivalved-muscle-scars-dermal-muscles}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Muscle scars: Dermal
+muscles}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-15.pdf}
+
+\textbf{Character 15 : Sclerites: Bivalved: Muscle scars: Dermal muscles
+}
+
+\begin{quote}
+0: `Absent or weakly developed'\\
+1: `Strongly developed'\\
+Neomorphic character.
+\end{quote}
+
+Based on character 11 in Zhang et al. (2014).\\
+Well developed dermal muscles present in the body wall of recent
+lingulates, which are absent in all calcareous-shelled brachiopods.
+These muscles are responsible for the hydraulic shell-opening mechanism,
+and possibly present in all organophosphatic-shelled brachiopods, with
+the possible exception of the paterinates (Williams et al., 2000, p.~32)
+
+\emph{Tomteluva perturbata}: Though Williams et al. (2000, P.32) state
+that these muscles are absent in all carbonate-shelled brachiopods,
+their existence cannot be discounted with certainty in this taxon, which
+is therefore coded not presently available.
+
+\emph{Mummpikia nuda}: Though Williams et al. (2000, P.32) state that
+these muscles are absent in all carbonate-shelled brachiopods, their
+existence cannot be discounted with certainty in this taxon, which is
+therefore coded not presently available.
+
+\emph{Coolinia pecten}: According to the statement of Williams et al.
+(2000, P.32) that these muscle are absent in all carbonate- shelled
+brachiopods.
+
+\emph{Kutorgina chengjiangensis}: According to the statement of Williams
+et al. (2000, P.32) that these muscle are absent in all carbonate-
+shelled brachiopods, and the coding for kutorginids in Zhang et al.
+(2014).
+
+\emph{Salanygolina}: According to the statement of Williams et al.
+(2000, P.32) that these muscle are absent in all carbonate- shelled
+brachiopods.
+
+\emph{Askepasma toddense}: According to the statement of Williams et al.
+(2000, P.32) that the presence of these muscles in paterinates is
+uncertain
+
+\emph{Micromitra}: Williams et al. (2000, P.32) are uncertain about the
+presence of these muscles in the paterinates. Zhang et al. (2014) code
+absence in Paterinida, but without specifying evidence; we follow their
+coding here.
+
+\emph{Nisusia sulcata}: According to the statement of Williams et al.
+(2000, P.32) that these muscle are absent in all carbonate- shelled
+brachiopods.
+
+\emph{Pelagodiscus atlanticus}: Musculature considered essentially
+equivalent to \emph{Lingula} by Williams et al 2000, so \emph{Lingula}
+coding followed here.
+
+\emph{Novocrania}: Following Zhang et al. (2014), and the statement of
+Williams et al. (2000) that such muscles are absent in all
+calcite-shelled brachiopods.
+
+\emph{Terebratulina}: Williams et al. (2000, P.32) state that these
+muscles are absent in all carbonate-shelled brachiopods.
+
+\emph{Antigonambonites planus}: According to the statement of Williams
+et al. (2000, P.32) that these muscle are absent in all carbonate-
+shelled brachiopods.
+
+\emph{Alisina}: According to the statement of Williams et al. (2000,
+P.32) that these muscle are absent in all carbonate- shelled
+brachiopods.
+
+\emph{Orthis}: According to the statement of Williams et al. (2000,
+P.32) that these muscle are absent in all carbonate- shelled
+brachiopods.
+
+\emph{Gasconsia}: According to the statement of Williams et al. (2000,
+P.32) that these muscle are absent in all carbonate- shelled
+brachiopods.
+
+\emph{Glyptoria}: According to the statement of Williams et al. (2000,
+P.32) that these muscle are absent in all carbonate- shelled
+brachiopods.
+
+\emph{Clupeafumosus socialis}: This character is coded based on the
+score of Acrotreta in Zhang et al. (2014), and statement in Williams et
+al. (2000, P.32).
+
+\emph{Eoobolus}: Not remarked upon by Balthasar (2009).
+
+\hypertarget{sclerites-bivalved-muscle-scars-unpaired-median-levator-ani}{%
+\section*{Sclerites: Bivalved: Muscle scars: Unpaired median (levator
+ani)}\label{sclerites-bivalved-muscle-scars-unpaired-median-levator-ani}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Muscle scars:
+Unpaired median (levator ani)}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-16.pdf}
+
+\textbf{Character 16 : Sclerites: Bivalved: Muscle scars: Unpaired
+median (levator ani) }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+The levator ani is a diminutive unpaired medial muscle found in certain
+calcitic brachiopods (Williams et al. 2000; see fig. 89, character 34 in
+table 13)
+
+\emph{Coolinia pecten}: Not reported in Dewing (2001)
+
+\emph{Kutorgina chengjiangensis}: Following table 13 in Williams et al.
+2000
+
+\emph{Heliomedusa orienta}: Poor preservation of minor muscle scars
+noted by Chen et al. (2007)
+
+\emph{Nisusia sulcata}: Following table 13 in Williams et al. 2000
+
+\emph{Pelagodiscus atlanticus}: Musculature considered essentially
+equivalent to \emph{Lingula} by Williams et al 2000, so \emph{Lingula}
+coding followed here.
+
+\emph{Novocrania}: Following table 13 in Williams et al. 2000 (for
+\emph{Novocrania})
+
+\emph{Alisina}: Following table 13 in Williams et al. 2000
+
+\emph{Gasconsia}: Following table 13 in Williams et al. 2000
+
+\emph{Craniops}: See fig. 90 in Williams et al. 2000
+
+\emph{Ussunia}: Following table 15 in Williams et al. 2000
+
+\emph{Mickwitzia muralensis}: Scars absent; instead, cones ornament
+shell''s internal surface.
+
+\hypertarget{sclerites-bivalved-muscle-scars-dorsal-diductor}{%
+\section*{Sclerites: Bivalved: Muscle scars: Dorsal
+diductor}\label{sclerites-bivalved-muscle-scars-dorsal-diductor}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Muscle scars: Dorsal
+diductor}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-17.pdf}
+
+\textbf{Character 17 : Sclerites: Bivalved: Muscle scars: Dorsal
+diductor }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+After Bassett et al. (2001) character 9
+
+\emph{Acanthotretella}: Not observable in \emph{Acanthotretella} itself,
+so coded as ambiguous -- though it is likely based on the anticipated
+phylogenetic affinities of \emph{Acanthotretella} that the muscles are
+absent.
+
+\emph{Gasconsia}: Internal oblique muscles serve as diductors.
+
+\emph{Clupeafumosus socialis}: Not reported by Topper et al. (2013), nor
+reconstructed in generic Acrotretid by Williams et al. (2000)
+
+\hypertarget{sclerites-bivalved-muscle-scars-dorsal-diductor-position}{%
+\section*{Sclerites: Bivalved: Muscle scars: Dorsal diductor:
+position}\label{sclerites-bivalved-muscle-scars-dorsal-diductor-position}}
+\addcontentsline{toc}{section}{Sclerites: Bivalved: Muscle scars: Dorsal
+diductor: position}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-18.pdf}
+
+\textbf{Character 18 : Sclerites: Bivalved: Muscle scars: Dorsal
+diductor: position }
+
+\begin{quote}
+1: `Close to commissural plane'\\
+2: `Oblique to commissural plane'\\
+3: `At high angle to commissural plane'\\
+Transformational character.
+\end{quote}
+
+After Bassett et al. (2001) character 10.
+
+\hypertarget{sclerites-dorsal-valve-growth-direction}{%
+\section*{Sclerites: Dorsal valve: Growth
+direction}\label{sclerites-dorsal-valve-growth-direction}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Growth
+direction}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-19.pdf}
+
+\textbf{Character 19 : Sclerites: Dorsal valve: Growth direction }
+
+\begin{quote}
+1: `Holoperipheral'\\
+2: `Mixoperipheral'\\
+3: `Hemiperipheral'\\
+Transformational character.
+\end{quote}
+
+See Fig. 284 in Williams et al (1997).\\
+The growth direction dictates the attitude of the cardinal area relative
+to the hinge, which does not therefore represent an independent
+character.\\
+Crudely put, if, viewed from a dorsal position, the umbo falls within
+the outer margin of the shell, growth is holoperipheral; if it falls
+outside the margin, it is mixoperipheral; if it falls exactly on the
+margin, it is hemiperipheral.
+
+\emph{Micrina}: See Holmer et al. (2008)
+
+\emph{Paterimitra}: S2 and L sclerites are clearly holoperipheral. See
+Larsson et al. 2014, fig. 2.
+
+\emph{Heliomedusa orienta}: ``holoperipheral growth in dorsal valve'' --
+Williams et al. 2007.
+
+The insinuation from Zhang et al. (2009) is that Chen et al. (2007)
+misidentify the dorsal valve as the ventral valve.
+
+\emph{Clupeafumosus socialis}: Appears hemiperipheral in fig. 3 in
+Topper et al (2013), though bordering on holoperipheral, so scored as
+ambiguous.
+
+\emph{Craniops}: ``both valves with growth holoperipheral'' - Williams
+et al. 2000 p164
+
+\emph{Ussunia}: Following description of order in Williams et al. 2000.
+
+\hypertarget{sclerites-dorsal-valve-posterior-surface-differentiated}{%
+\section*{Sclerites: Dorsal valve: Posterior surface:
+Differentiated}\label{sclerites-dorsal-valve-posterior-surface-differentiated}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Posterior
+surface: Differentiated}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-20.pdf}
+
+\textbf{Character 20 : Sclerites: Dorsal valve: Posterior surface:
+Differentiated }
+
+\begin{quote}
+0: `Posterior shell not differentiated'\\
+1: `Posterior shell forms distinct cardinal area or pseudointerarea'\\
+Neomorphic character.
+\end{quote}
+
+In shells that grow by mixoperipheral growth, the triangular area
+subtended between each apex and the posterior ends of the lateral
+margins is termed the cardinal area. In shells with holoperipheral
+growth, a flattened surface on the posterior margin of the valve is
+termed a pseudointerarea (paraphrasing Williams et al. 1997).
+
+In order for this character to be independent of a shell's growth
+direction, we do not distinguish between a ``cardinal area'',
+``interarea'' or ``pseudointerarea''.
+
+\emph{Pedunculotheca diania}: Pseudointerarea.
+
+\emph{Micrina}: = Sellate sclerite duplicature (Holmer et al. 2008)
+
+\emph{Paterimitra}: Pseudointerarea.
+
+\emph{Haplophrentis carinatus}: A very short pseudointerarea appears to
+be present (Moysiuk et al. 2017)
+
+\emph{Lingulosacculus}: Unclear from fossil material.
+
+\emph{Tomteluva perturbata}: Cardinal area (interarea) present.
+
+\emph{Mummpikia nuda}: Absent.
+
+\emph{Coolinia pecten}: Cardinal area (interarea) present.
+
+\emph{Kutorgina chengjiangensis}: Cardinal area (interarea) present.
+
+\emph{Salanygolina}: Cardinal area (interarea) present.
+
+\emph{Lingula}: Pseudointerarea present, following Williams et al.
+(2000), table 6.
+
+\emph{Acanthotretella}: Pseudointerarea present, following
+Siphonotretidae coding in Williams et al. (2000), table 6.
+
+\emph{Heliomedusa orienta}: Pseudointerea in ventral valve, but not
+dorsal valve (Williams et al. 2000, 2007)
+
+\emph{Longtancunella chengjiangensis}: Zhang et al. (2011) note that
+``all evidence of a pseudointerarea is lacking'', but the
+two-dimensional preservation style of Chengjiang material makes details
+of dorsal valve difficult to distinguish, and the possibility of a
+diminutive pseudointerarea cannot be excluded with total confidence.
+
+\emph{Lingulellotreta malongensis}: Pseudointerarea present, following
+Williams et al. (2000), table 6.
+
+\emph{Askepasma toddense}: Well-defined pseudointerarea (Williams et al.
+2000, p153)
+
+\emph{Micromitra}: ``Dorsal pseudointerarea usually well defined, low,
+anacline to catacline'' - Williams et al. 2000
+
+\emph{Nisusia sulcata}: Cardinal area (interarea) present -- with
+reference to Holmer et al. (2018).
+
+\emph{Pelagodiscus atlanticus}: Absent, following entry for Discinidae
+in Williams et al. (2000), table 6.
+
+\emph{Novocrania}: Pseudointerarea
+
+\emph{Terebratulina}: Interarea present
+
+\emph{Antigonambonites planus}: Cardinal area (interarea) present.
+
+\emph{Alisina}: Cardinal area (interarea) present.
+
+\emph{Orthis}: Cardinal area (interarea) present.
+
+\emph{Glyptoria}: Cardinal area (interarea) present.
+
+\emph{Clupeafumosus socialis}: Pseudointerarea present; figured by
+Topper et al. (2013), fig. 3j.
+
+\emph{Yuganotheca elegans}: A differentiated region is not obvious in
+fossil material or its reconstruction (Zhang et al. 2014), but the
+two-dimensional preservation style of Chengjiang material makes details
+of dorsal valve difficult to distinguish, and the possibility of a
+diminutive pseudointerarea cannot be excluded with confidence.
+
+\emph{Craniops}: ``Only some craniopsids (Lingulapholis, Pseudopholidops
+{[}not \emph{Craniops}{]}) have well-developed pseudointerareas.'' --
+Williams et al. 2000
+
+\emph{Ussunia}: Following table 15 in Williams et al. 2000
+
+\emph{Mickwitzia muralensis}: Shell flat.
+
+\hypertarget{sclerites-dorsal-valve-differentiated-posterior-surface-morphology}{%
+\section*{Sclerites: Dorsal valve: Differentiated posterior surface:
+Morphology}\label{sclerites-dorsal-valve-differentiated-posterior-surface-morphology}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Differentiated
+posterior surface: Morphology}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-21.pdf}
+
+\textbf{Character 21 : Sclerites: Dorsal valve: Differentiated posterior
+surface: Morphology }
+
+\begin{quote}
+0: `Curved lateral profile'\\
+1: `Planar lateral profile'\\
+Neomorphic character.
+\end{quote}
+
+It is possible for a cardinal area or pseudointerarea to be distinct
+from the anterior part of the shell, yet to remain curved in lateral
+profile.
+
+Taking an undifferentiated posterior margin as primitive, the primitive
+condition is curved -- flattening of the posterior margin represents an
+additional modification that can only occur once the posterior margin is
+differentiated.
+
+\emph{Mummpikia nuda}: Posterior surface cannot be flat if it is not
+differentiated.
+
+\emph{Heliomedusa orienta}: Posterior surface cannot be flat if it is
+not differentiated.
+
+\emph{Micromitra}: Essentially straight; see fig. 3.7 in Ushatinskaya
+2016
+
+\emph{Pelagodiscus atlanticus}: Posterior surface cannot be flat if it
+is not differentiated.
+
+\emph{Gasconsia}: Posterior surface cannot be flat if it is not
+differentiated.
+
+\emph{Clupeafumosus socialis}: Truncated but essentially planar surface;
+see e.g.~p196 of Topper et al. 2013
+
+\emph{Ussunia}: Posterior surface cannot be flat if it is not
+differentiated.
+
+\emph{Mickwitzia muralensis}: Posterior surface cannot be flat if it is
+not differentiated.
+
+\emph{Eoobolus}: Essentially planar
+
+\hypertarget{sclerites-dorsal-valve-posterior-surface-medial-groove}{%
+\section*{Sclerites: Dorsal valve: Posterior surface: Medial
+groove}\label{sclerites-dorsal-valve-posterior-surface-medial-groove}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Posterior
+surface: Medial groove}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-22.pdf}
+
+\textbf{Character 22 : Sclerites: Dorsal valve: Posterior surface:
+Medial groove }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Following character 29 in Williams et al. (2000), table 9 (which relates
+to pseudointerarea)
+
+\emph{Acanthotretella}: The dorsal pseudointerarea is poorly preserved,
+but appears to have a median groove (Holmer \& Caron, 2006)
+
+\emph{Heliomedusa orienta}: ``A posteriorly protruding dorsal
+pseudointerarea with no median groove and no flexure lines'' - Chen et
+al. 2007
+
+\emph{Lingulellotreta malongensis}: Dorsal pseudointerarea with wide,
+concave median groove and short propareas" - Williams et al 2000
+
+\emph{Clupeafumosus socialis}: Present; figured by Topper et al. (2013),
+fig. 3j.
+
+\emph{Eoobolus}: Prominent medial groove
+
+\hypertarget{sclerites-dorsal-valve-posterior-surface-notothyrium}{%
+\section*{Sclerites: Dorsal valve: Posterior surface:
+Notothyrium}\label{sclerites-dorsal-valve-posterior-surface-notothyrium}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Posterior
+surface: Notothyrium}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-23.pdf}
+
+\textbf{Character 23 : Sclerites: Dorsal valve: Posterior surface:
+Notothyrium }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+A notothyrium is an opening in an interarea that accommodates the
+pedicle, and may be filled with plates.
+
+\emph{Longtancunella chengjiangensis}: No evidence or report of an
+opening at the hinge line in fossil material in Zhang et al 2007, 2011
+
+\hypertarget{sclerites-dorsal-valve-posterior-surface-notothyrium-shape}{%
+\section*{Sclerites: Dorsal valve: Posterior surface: Notothyrium:
+Shape}\label{sclerites-dorsal-valve-posterior-surface-notothyrium-shape}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Posterior
+surface: Notothyrium: Shape}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-24.pdf}
+
+\textbf{Character 24 : Sclerites: Dorsal valve: Posterior surface:
+Notothyrium: Shape }
+
+\begin{quote}
+1: `Parallel-sided cleft'\\
+2: `Triangular'\\
+Transformational character.
+\end{quote}
+
+A notothyrium is an opening in an interarea that accommodates the
+pedicle, and may be filled with plates.
+
+A simplification of character 5 in Bassett et al. 2001.
+
+\hypertarget{sclerites-dorsal-valve-posterior-surface-notothyrium-chilidial-plates}{%
+\section*{Sclerites: Dorsal valve: Posterior surface: Notothyrium:
+Chilidial
+plates}\label{sclerites-dorsal-valve-posterior-surface-notothyrium-chilidial-plates}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Posterior
+surface: Notothyrium: Chilidial plates}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-25.pdf}
+
+\textbf{Character 25 : Sclerites: Dorsal valve: Posterior surface:
+Notothyrium: Chilidial plates }
+
+\begin{quote}
+1: `Open'\\
+2: `Covered by chilidial plates'\\
+Transformational character.
+\end{quote}
+
+A notothyrium may be open or covered by a chilidium or two chilidial
+plates.\\
+No included taxa exhibit more than one chilidial plate.\\
+Transformational as it is not self-evident whether the ancestral taxon
+had an open or closed notothyrium.
+
+\hypertarget{sclerites-dorsal-valve-notothyrial-platform}{%
+\section*{Sclerites: Dorsal valve: Notothyrial
+platform}\label{sclerites-dorsal-valve-notothyrial-platform}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Notothyrial
+platform}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-26.pdf}
+
+\textbf{Character 26 : Sclerites: Dorsal valve: Notothyrial platform }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+After Bassett et al. (2001) character 12.\\
+The presence or absence of a notothyrial platform, which often serves as
+an attachment point for the diductors in a similar fashion to the
+cardinal processes, is independent of the presence of a notothyrium.
+
+\emph{Coolinia pecten}: Referred to as the ``posterior platform'' in
+Dewing (2001)
+
+\emph{Kutorgina chengjiangensis}: ``Dorsal diductor scars impressed on
+floor of notothyrial cavity'': Williams et al. 2000, regarding
+Kutorginata.\\
+Bassett et al. (2001) score as absent in Table 18.1.
+
+\emph{Nisusia sulcata}: Bassett et al. (2001) score as absent in Table
+18.1.\\
+``Dorsal diductor scars impressed on floor of notothyrial cavity'':
+Williams et al. 2000, regarding Kutorginata.
+
+\emph{Alisina}: Bassett et al. (2001) score as present in Table 18.1.
+
+\emph{Glyptoria}: Bassett et al. (2001) score as present in Table 18.1.
+
+\emph{Ussunia}: ``Visceral platforms absent in both valves'' -- Williams
+et al. 2000, p.~192
+
+\hypertarget{sclerites-dorsal-valve-cardinal-processes}{%
+\section*{Sclerites: Dorsal valve: Cardinal
+processes}\label{sclerites-dorsal-valve-cardinal-processes}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Cardinal
+processes}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-27.pdf}
+
+\textbf{Character 27 : Sclerites: Dorsal valve: Cardinal processes }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+After Bassett et al. (2001) character 13.\\
+Cardinal processes are unlikely to be homologous with the notothyrial
+platform, even if their function is similar.
+
+\emph{Longtancunella chengjiangensis}: Not evident, and ought arguably
+to be discernable if present given the quality of preservation
+
+\emph{Clupeafumosus socialis}: Not reported by Topper et al. (2013).
+
+\hypertarget{sclerites-dorsal-valve-medial-septum}{%
+\section*{Sclerites: Dorsal valve: Medial
+septum}\label{sclerites-dorsal-valve-medial-septum}}
+\addcontentsline{toc}{section}{Sclerites: Dorsal valve: Medial septum}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-28.pdf}
+
+\textbf{Character 28 : Sclerites: Dorsal valve: Medial septum }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+The dorsal valve of many taxa is exhibits a septum or process (or
+myophragm) along the medial line. See character 25 in Benedetto (2009).
+
+\emph{Mummpikia nuda}: See pl. 2 panel 6 in Balthasar (2008).
+
+\emph{Kutorgina chengjiangensis}: Absent - fig. 129.1f in Williams et
+al. (2000)
+
+\emph{Heliomedusa orienta}: Reported on `'ventral'`valve by Chen et al.
+(2007); we consider their'`ventral'' valve to be the dorsal valve.
+
+The structure is clearly figured, contra its coding as absent in
+Williams et al. 2000 and its lack of mention in Williams et al. 2007 or
+Zhang et al. 2009.
+
+\emph{Lingulellotreta malongensis}: Very weakly developed but seemingly
+present between muscle scars in \emph{Lingulellotreta}, more prominent
+in Aboriginella (also Lingulellotretidae) (Williams et al. 2000, fig.
+34).
+
+\emph{Nisusia sulcata}: Fig. 125 in Williams et al. (2000)
+
+\emph{Novocrania}: Median process evident: Williams et al. (2000) fig.
+100.2a, d
+
+\emph{Antigonambonites planus}: Weakly developed septum evident in
+internal cast: Williams et al. 2000, fig. 508.2e
+
+\emph{Orthis}: Short medial process (``low median ridge'', p.~724)
+present in dorsal valve; see Fig. 523.3b in Williams et al. (2000)
+
+\emph{Glyptoria}: Neither evident nor reported in Williams et al.
+(2000).
+
+\emph{Clupeafumosus socialis}: Prominent process evident (Topper et al.,
+2013)
+
+\emph{Ussunia}: Following char 42 in table 15 in Williams et al. 2000
+
+\emph{Eoobolus}: A ``median projection'' is present (fig. 4g in
+Balthasar 2009)
+
+\hypertarget{sclerites-ventral-valve-relative-size}{%
+\section*{Sclerites: Ventral valve: Relative
+size}\label{sclerites-ventral-valve-relative-size}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Relative size}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-29.pdf}
+
+\textbf{Character 29 : Sclerites: Ventral valve: Relative size }
+
+\begin{quote}
+1: `Ventral valve markedly larger than dorsal valve (ventribiconvex)'\\
+2: `Equivalve (subequally biconvex)'\\
+3: `Dorsal valve markedly larger than ventral valve (dorsibiconvex)'\\
+Transformational character.
+\end{quote}
+
+In many brachiopods, the valves are closely similar in size; in others,
+the ventral valve is markedly larger than the dorsal, on account of
+being more convex. Marginal cases are treated as ambiguous for the
+relevant states.
+
+\emph{Mummpikia nuda}: Aside from hinge, valves similar in convexity and
+size (Balthasar 2008)
+
+\emph{Kutorgina chengjiangensis}: Ventral valve larger (see Williams et
+al. 2000, fig. 125.)
+
+\emph{Heliomedusa orienta}: Ventral valve larger than the dorsal valve
+(Zhang et al. 2009, p.~659)
+
+\emph{Longtancunella chengjiangensis}: The ventral valve is somewhat,
+but not markedly, larger than the dorsal; as such, this character is
+coded ambiguous for equivalve/ventral valve larger
+
+\emph{Nisusia sulcata}: Ventral valve larger (see Williams et al. 2000,
+fig. 126.)
+
+\emph{Antigonambonites planus}: Broadly equivalve - see Williams et al.
+(2000) fig. 508.2c
+
+\emph{Gasconsia}: Convexiplane (Williams et al. 2000, p.~187)
+
+\emph{Yuganotheca elegans}: The ventral valve is somewhat, but not
+markedly, larger than the dorsal; as such, this character is coded
+ambiguous for equivalve/ventral valve larger
+
+\emph{Craniops}: ``Shell subequally biconvex'' -- WIlliams et al. 2000
+
+\emph{Ussunia}: Subequally biconvex (Williams et al. 2000, p.~192)
+
+\emph{Eoobolus}: ``\emph{Eoobolus} is biconvex'', but in the amended
+diagnosis,Balthasar descriped it as ``shell inequivalved,
+dorsibiconvex'' .
+
+\hypertarget{sclerites-ventral-valve-growth-direction}{%
+\section*{Sclerites: Ventral valve: Growth
+direction}\label{sclerites-ventral-valve-growth-direction}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Growth
+direction}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-30.pdf}
+
+\textbf{Character 30 : Sclerites: Ventral valve: Growth direction }
+
+\begin{quote}
+1: `Holoperipheral'\\
+2: `Mixoperipheral'\\
+3: `Hemiperipheral'\\
+Transformational character.
+\end{quote}
+
+See Fig. 284 in Williams et al. (1997) for depiction of terms.
+
+The growth direction dictates the attitude of the cardinal area relative
+to the hinge, which does not therefore represent an independent
+character.\\
+Crudely put, if, viewed from a dorsal position, the umbo falls within
+the outer margin of the shell, growth is holoperipheral; if it falls
+outside the margin, it is mixoperipheral; if it falls exactly on the
+margin, it is hemiperipheral.
+
+\emph{Paterimitra}: The apical flange notwithstanding, the umbo of the
+S1 sclerite is posterior of the hinge line and the posterior edge of the
+lateral plate -- see Larsson et al. 2014, fig. 2a, c.
+
+\emph{Heliomedusa orienta}: Williams et al. (2000, 2007) reconstruct
+mixoperipheral growth in the ventral valve (though Chen et al. (2007)
+reconstruct the valves the other way round, i.e.~it is the ventral valve
+that grows holoperipherally, and the dorsal mixoperipherally).
+
+\emph{Clupeafumosus socialis}: Inferred from Topper et al. (2013).
+
+\emph{Ussunia}: Following description of order in Williams et al. 2000
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-differentiated}{%
+\section*{Sclerites: Ventral valve: Posterior surface:
+Differentiated}\label{sclerites-ventral-valve-posterior-surface-differentiated}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Differentiated}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-31.pdf}
+
+\textbf{Character 31 : Sclerites: Ventral valve: Posterior surface:
+Differentiated }
+
+\begin{quote}
+0: `Posterior surface of shell not differentiated'\\
+1: `Posterior surface of shell forms distinct cardinal area or
+pseudointerarea'\\
+Neomorphic character.
+\end{quote}
+
+In shells that grow by mixoperipheral growth, the triangular area
+subtended between each apex and the posterior ends of the lateral
+margins is termed the cardinal area. In shells with holoperipheral
+growth, a flattened surface on the posterior margin of the valve is
+termed a pseudointerarea (paraphrasing Williams et al. 1997).
+
+In order for this character to be independent of a shell's growth
+direction, we do not distinguish between a ``cardinal area'',
+``interarea'' or ``pseudointerarea''.
+
+\emph{Paterimitra}: Triangular notch and subapical flange
+
+\emph{Lingulosacculus}: The conical valve is interpreted as the ventral
+valve with an extended pseudointerarea.
+
+\emph{Tomteluva perturbata}: Interarea present.
+
+\emph{Mummpikia nuda}: Balthasar (2008) interprets a pseudointerarea as
+being present - e.g.~p273, ``Of particular interest is the vault that
+bridges the most anterior portion of the ventral pseudointerarea and
+raises it above the visceral platform.''; ``This pattern is reversed in
+the ventral valves of M. \emph{nuda}, where the anterior projection of
+the pedicle groove is raised above the valve floor whereas the lateral
+parts of pseudointerarea are not''.
+
+\emph{Coolinia pecten}: Interarea present.
+
+\emph{Kutorgina chengjiangensis}: Interarea present.
+
+\emph{Salanygolina}: Interarea present.
+
+\emph{Heliomedusa orienta}: Zhang et al. (2009) report a moderate to
+somewhat developed ventral pseudointerarea, confirmed by Williams et al
+(2007).
+
+\emph{Longtancunella chengjiangensis}: Though ``all evidence of a
+pseudointerarea is lacking'' -- Zhang et al. 2011 -- the region of the
+shell between the strophic hinge line and the colleplax (fig. 2 in Zhang
+et al. 2011) is distinct from the rest of the shell; the ends of the
+strophic hinge line are marked by prominent nicks in the shell margin.
+\emph{Longtancunella} is therefore coded as having a differentiated
+posterior surface.
+
+\emph{Nisusia sulcata}: Interarea present.
+
+\emph{Terebratulina}: Interarea.
+
+\emph{Antigonambonites planus}: Interarea present.
+
+\emph{Alisina}: Interarea present.
+
+\emph{Orthis}: Interarea present.
+
+\emph{Gasconsia}: The region corresponding to the ventral
+(pseudo)interarea is described as a ``trimerellid ventral cardinal
+area'' by Williams et al. (2000, p.162), who code both an interarea and
+a pseudointerarea as absent in trimerellids.
+
+\emph{Glyptoria}: Interarea present.
+
+\emph{Clupeafumosus socialis}: Described by Topper et al. (2013).
+
+\emph{Ussunia}: Following char 17 in table 15 in Williams et al. 2000
+
+\emph{Mickwitzia muralensis}: What Balthasar (2004) terms an interarea
+is, in the terminology employed herein, a pseudointerarea.
+
+\hypertarget{sclerites-ventral-valve-posterior-margin-growth-direction}{%
+\section*{Sclerites: Ventral valve: Posterior margin growth
+direction}\label{sclerites-ventral-valve-posterior-margin-growth-direction}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+margin growth direction}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-32.pdf}
+
+\textbf{Character 32 : Sclerites: Ventral valve: Posterior margin growth
+direction }
+
+\begin{quote}
+1: `Inward-growing'\\
+2: `Outward-growing'\\
+Transformational character.
+\end{quote}
+
+Balthasar (2008) notes an inward-growing posterior margin of the
+pseudointerarea as potentially linking \emph{Mummpikia} with the
+linguliform brachiopods.
+
+The posterior margin can only grow inwards if it is differentiated from
+the anterior margin; else the entire shell would grow in on itself.
+
+\emph{Mummpikia nuda}: Balthasar (2008) interprets an inward-growing
+posterior margin of the pseudointerarea - e.g.~p273, ``Of particular
+interest is the vault that bridges the most anterior portion of the
+ventral pseudointerarea and raises it above the visceral platform
+{[}\ldots{}{]} An inward-growing posterior margin is otherwise known
+only from the pseudointerareas of linguliform brachiopods''.
+
+\emph{Lingulellotreta malongensis}: Transverse cross section of ventral
+pseudointerarea concave.
+
+\emph{Clupeafumosus socialis}: See Topper et al. (2013)
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-planar}{%
+\section*{Sclerites: Ventral valve: Posterior surface:
+Planar}\label{sclerites-ventral-valve-posterior-surface-planar}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Planar}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-33.pdf}
+
+\textbf{Character 33 : Sclerites: Ventral valve: Posterior surface:
+Planar }
+
+\begin{quote}
+0: `Curved lateral profile'\\
+1: `Planar lateral profile'\\
+Neomorphic character.
+\end{quote}
+
+It is possible for a cardinal area or pseudointerarea to be distinct
+from the anterior part of the shell, yet to remain curved in lateral
+profile.
+
+Taking an undifferentiated posterior margin as primitive, the primitive
+condition is curved -- flattening of the posterior margin represents an
+additional modification that can only occur once the posterior margin is
+differentiated.
+
+A flat and triangular interarea links \emph{Mummpikia} with the
+Obolellidae (Balthasar 2008) -- but all included taxa have triangular
+interareas, so this is not listed as a separate character.
+
+\emph{Acanthotretella}: ventral pseudointerareas are most similar to
+those found within the Order Siphonotretida
+
+\emph{Longtancunella chengjiangensis}: Flattened, reflecting the
+strophic hinge line
+
+\emph{Lingulellotreta malongensis}: Transverse cross section of ventral
+pseudointerarea concave.
+
+\emph{Micromitra}: Essentially planar; see fig. 6 in Ushatinskaya 2016
+
+\emph{Clupeafumosus socialis}: ``Ventral pseudointerarea is gently
+procline and is flat in lateral profile''.
+
+\emph{Eoobolus}: Some curvature retained
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-extent}{%
+\section*{Sclerites: Ventral valve: Posterior surface:
+Extent}\label{sclerites-ventral-valve-posterior-surface-extent}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Extent}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-34.pdf}
+
+\textbf{Character 34 : Sclerites: Ventral valve: Posterior surface:
+Extent }
+
+\begin{quote}
+1: `Low'\\
+2: `High'\\
+Transformational character.
+\end{quote}
+
+Distinguishes taxa whose ventral valve is essentially flat from those
+that are essentially conical
+
+\emph{Coolinia pecten}: See fig. 485 in Williams et al. 2000
+
+\emph{Salanygolina}: ``Ventral pseudointerarea well defined, high,
+nearly flat, apsacline'' -- Williams et al. 2000, p.~156
+
+\emph{Nisusia sulcata}: Scored High in data matrix of Benedetto (2009).
+
+\emph{Antigonambonites planus}: Scored High in data matrix of Benedetto
+(2009).
+
+\emph{Orthis}: Scored `'Low'' for Eoorthis by Benedetto (2009); assumed
+same in \emph{Orthis}.
+
+\emph{Gasconsia}: ``ventral cardinal interarea low, apsacline, with
+narrow, poorly defined homeodeltidium'' - Williams et al. 2000, p.~186
+
+\emph{Clupeafumosus socialis}: Entire valve length -- see schematic in
+Williams et al. (21997), fig. 286
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-delthyrium}{%
+\section*{Sclerites: Ventral valve: Posterior surface:
+Delthyrium}\label{sclerites-ventral-valve-posterior-surface-delthyrium}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Delthyrium}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-35.pdf}
+
+\textbf{Character 35 : Sclerites: Ventral valve: Posterior surface:
+Delthyrium }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+A delthyrium is an opening in an interarea that accommodates the
+pedicle, and may be filled with plates.
+
+\emph{Micrina}: Opening inferred by Holmer et al. (2008)
+
+\emph{Longtancunella chengjiangensis}: Unclear: a narrow ridge that may
+correspond to a pseudodeltidium evident in fig 2a and sketched in fig.
+2c is not discussed in the text of Zhang et al. 2011, so the delthyrial
+region is coded as ambiguous.
+
+\emph{Askepasma toddense}: Small notch present at base of parallel-sided
+homeodeltidium -- See Williams et al. 2000
+
+\emph{Glyptoria}: ``Delthyrium and notothyrium open, wide'' -- Cooper
+1976
+
+\emph{Yuganotheca elegans}: Details of the hinge region are unclear due
+to the flattened and overprinted nature of fossil preservation.
+
+\emph{Mickwitzia muralensis}: A delthyrium is present in young
+individuals (Balthasar 2004).
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-delthyrium-shape}{%
+\section*{Sclerites: Ventral valve: Posterior surface: Delthyrium:
+Shape}\label{sclerites-ventral-valve-posterior-surface-delthyrium-shape}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Delthyrium: Shape}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-36.pdf}
+
+\textbf{Character 36 : Sclerites: Ventral valve: Posterior surface:
+Delthyrium: Shape }
+
+\begin{quote}
+1: `Parallel sided'\\
+2: `Triangular'\\
+Transformational character.
+\end{quote}
+
+A parallel-sided delthyrium links \emph{Mummpikia} with the Obolellidae
+(Balthasar 2008).
+
+This character has the capacity for further resolution, but this is
+unlikely to affect the results of the present study.
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-delthyrium-cover}{%
+\section*{Sclerites: Ventral valve: Posterior surface: Delthyrium:
+Cover}\label{sclerites-ventral-valve-posterior-surface-delthyrium-cover}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Delthyrium: Cover}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-37.pdf}
+
+\textbf{Character 37 : Sclerites: Ventral valve: Posterior surface:
+Delthyrium: Cover }
+
+\begin{quote}
+1: `Open'\\
+2: `Covered, at least in part'\\
+Transformational character.
+\end{quote}
+
+An open delthyrium links \emph{Mummpikia} with the Obolellidae
+(Balthasar 2008).
+
+The delthyrial opening can be covered by one or more deltidial plates,
+or a pseudodeltitium.
+
+A convex pseudodeltidium completely covers the delthyrium in
+\emph{Coolinia}.
+
+\emph{Paterimitra}: Covered by subaical flange, in part.
+
+\emph{Nisusia sulcata}: ``Covered only apically by a small convex
+pseudodeltitium'' - Holmer et al. 2018
+
+\emph{Glyptoria}: Coded as open by Williams et al. (1998)
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-delthyrium-cover-extent}{%
+\section*{Sclerites: Ventral valve: Posterior surface: Delthyrium:
+Cover:
+Extent}\label{sclerites-ventral-valve-posterior-surface-delthyrium-cover-extent}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Delthyrium: Cover: Extent}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-38.pdf}
+
+\textbf{Character 38 : Sclerites: Ventral valve: Posterior surface:
+Delthyrium: Cover: Extent }
+
+\begin{quote}
+1: `Covered only partially; partially open'\\
+2: `Completely covered'\\
+Transformational character.
+\end{quote}
+
+\emph{Micrina}: Remains somewhat open
+
+\emph{Nisusia sulcata}: A well-defined pseudo-deltidium {[}\ldots{}{]}
+closes only the apical part of\\
+the delthyrium (Rowell \& Caruso 1985)
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-delthyrium-cover-identity}{%
+\section*{Sclerites: Ventral valve: Posterior surface: Delthyrium:
+Cover:
+Identity}\label{sclerites-ventral-valve-posterior-surface-delthyrium-cover-identity}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Delthyrium: Cover: Identity}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-39.pdf}
+
+\textbf{Character 39 : Sclerites: Ventral valve: Posterior surface:
+Delthyrium: Cover: Identity }
+
+\begin{quote}
+1: `Pseudodeltidium'\\
+2: `Deltidial plate(s)'\\
+Transformational character.
+\end{quote}
+
+Transformational.\\
+This character has the capacity for further resolution (one or more
+deltidial plates), but this is unlikely to affect the results of the
+present study.
+
+The pseudodelthyrium is also referred to as a homeodeltidium.
+
+\emph{Micrina}: ``Ventral valve convex with apsacline interarea bearing
+delthyrium, covered by a convex pseudodeltidium'' -- Homer et al. 2008
+
+\emph{Lingulellotreta malongensis}: The subapical flange of the
+\emph{Paterimitra} S1 sclerite has been homologised with the ventral
+homeodeltidium of \emph{Micromitra} (Larsson et al 2014).
+
+\emph{Alisina}: Stated as ``concave pseudodeltidium with median
+plication'' -- Williams et al. 2000\\
+Coded as ``Pseudodeltidium: Covered by concave plate'' by Bassett et al.
+(2001)
+
+\emph{Mickwitzia muralensis}: Termed a homoedeltidium by Balthasar
+(2004)
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-delthyrium-pseudodeltidium-shape}{%
+\section*{Sclerites: Ventral valve: Posterior surface: Delthyrium:
+Pseudodeltidium:
+Shape}\label{sclerites-ventral-valve-posterior-surface-delthyrium-pseudodeltidium-shape}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Delthyrium: Pseudodeltidium: Shape}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-40.pdf}
+
+\textbf{Character 40 : Sclerites: Ventral valve: Posterior surface:
+Delthyrium: Pseudodeltidium: Shape }
+
+\begin{quote}
+1: `Convex'\\
+2: `Concave'\\
+Transformational character.
+\end{quote}
+
+A ridge-like (i.e.~convex) pseudodeltitium unites \emph{Salanygolina}
+with \emph{Coolinia} and other Chileata (Holmer et al. 2009, p.~6).
+
+\emph{Salanygolina}: ``The presence of {[}\ldots{}{]} a narrow
+delthyrium covered by a convex pseudodeltidium, places Salanygolinidae
+outside the Class Paterinata and strongly suggests affinity to the
+Cambrian Chileida'' -- Holmer et al. 1009, p.~9
+
+\emph{Alisina}: ``concave pseudodeltidium with median plication'' --
+Williams et al. 2000\\
+Coded as ``Pseudodeltidium: Covered by concave plate'' by Bassett et al.
+(2001)
+
+\emph{Gasconsia}: \emph{Gasconsia} possesses narrow concave
+homeodeltidium, but absent pseudodeltidium
+
+\hypertarget{sclerites-ventral-valve-posterior-surface-delthyrium-pseudodeltidium-hinge-furrows}{%
+\section*{Sclerites: Ventral valve: Posterior surface: Delthyrium:
+Pseudodeltidium: Hinge
+furrows}\label{sclerites-ventral-valve-posterior-surface-delthyrium-pseudodeltidium-hinge-furrows}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Posterior
+surface: Delthyrium: Pseudodeltidium: Hinge furrows}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-41.pdf}
+
+\textbf{Character 41 : Sclerites: Ventral valve: Posterior surface:
+Delthyrium: Pseudodeltidium: Hinge furrows }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+After Bassett et al. (2001) character 18, ``Hinge furrows on lateral
+sides of pseudodeltidium''.
+
+\emph{Pedunculotheca diania}: Absent due to inapplicability of
+neomorphic character.
+
+\emph{Micrina}: Absent due to inapplicability of neomorphic character.
+
+\emph{Paterimitra}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Eccentrotheca}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Haplophrentis carinatus}: Absent due to inapplicability of
+neomorphic character.
+
+\emph{Lingulosacculus}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Phoronis}: Absent due to inapplicability of neomorphic character.
+
+\emph{Mummpikia nuda}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Salanygolina}: The presence of this feature is impossible to
+determine based on the available material.
+
+\emph{Dailyatia}: Absent due to inapplicability of neomorphic character.
+
+\emph{Lingula}: Absent due to inapplicability of neomorphic character.
+
+\emph{Acanthotretella}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Heliomedusa orienta}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Lingulellotreta malongensis}: Absent due to inapplicability of
+neomorphic character.
+
+\emph{Askepasma toddense}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Micromitra}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Pelagodiscus atlanticus}: Absent due to inapplicability of
+neomorphic character.
+
+\emph{Novocrania}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Terebratulina}: Absent due to inapplicability of neomorphic
+character.
+
+\emph{Orthis}: Absent due to inapplicability of neomorphic character.
+
+\emph{Glyptoria}: Absent due to inapplicability of neomorphic character.
+
+\emph{Clupeafumosus socialis}: Absent due to inapplicability of
+neomorphic character.
+
+\hypertarget{sclerites-ventral-valve-umbonal-perforation}{%
+\section*{Sclerites: Ventral valve: Umbonal
+perforation}\label{sclerites-ventral-valve-umbonal-perforation}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Umbonal
+perforation}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-42.pdf}
+
+\textbf{Character 42 : Sclerites: Ventral valve: Umbonal perforation }
+
+\begin{quote}
+0: `Umbo imperforate (or neomorphic character inapplicable)'\\
+1: `Umbonal perforation'\\
+Neomorphic character.
+\end{quote}
+
+Certain taxa, particularly those with a colleplax, exhibit a perforation
+at the umbo of the ventral valve. This opening is sometimes associated
+with a pedicle sheath.
+
+\emph{Eccentrotheca}: Inapplicable as scleritome is not bivalved.
+
+The sclerites of \emph{Eccentrotheca} form a ring that surrounds the
+inferred attachment structure; the attachment structure does not emerge
+from an aperture within an individual sclerite. Thus no feature in
+\emph{Eccentrotheca} is judged to be potentially homologous with the
+apical perforation in bivalved brachiopods.
+
+\emph{Lingulosacculus}: The apical termination of the fossil is unknown.
+
+\emph{Dailyatia}: The B and C sclerites of \emph{Dailyatia} bear small
+umbonal perforations (Skovsted et al 2015), but these are not considered
+to be homologous with the ventral valve, so this character is coded as
+inapplicable - though the possibility that the perforations are
+equivalent is intriguing.
+
+A1 sclerites typically have a pair of perforations, which are
+conceivably equivalent to the setal tubes of \emph{Micrina} (Holmer et
+al. 2011). The A1 sclerite of D. bacata has a structure that is arguably
+similar to the `'colleplax'' of \emph{Paterimitra}. But the homology of
+any of these structures to the umbonal aperture of brachiopods is
+difficult to establish.
+
+\emph{Heliomedusa orienta}:\\
+``there is compelling evidence to demonstrate that the putative
+pedicle\\
+illustrated by Chen et al. (2007: Figs. 4, 6, 7) in fact is the mold of
+a three-dimensionally preserved visceral cavity.''
+
+\emph{Clupeafumosus socialis}: An umbonal perforation is distinctive of
+Acrotretids, and is reported by Topper et al. (2013).
+
+\emph{Mickwitzia muralensis}: The umbo itself is imperforate, though
+note that an opening is incorporated at the base of the homeodeltidium
+when the organism switches from early to late maturity (fig. 10 in
+Balthasar 2004).
+
+\hypertarget{sclerites-ventral-valve-umbonal-perforation-shape}{%
+\section*{Sclerites: Ventral valve: Umbonal perforation:
+Shape}\label{sclerites-ventral-valve-umbonal-perforation-shape}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Umbonal
+perforation: Shape}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-43.pdf}
+
+\textbf{Character 43 : Sclerites: Ventral valve: Umbonal perforation:
+Shape }
+
+\begin{quote}
+1: `Circular (or subcircular)'\\
+2: `Rhombic to oval'\\
+Transformational character.
+\end{quote}
+
+Chen et al. (2007) propose that an oval to rhombic foramen characterises
+the discinids (and \emph{Heliomedusa}).
+
+\emph{Coolinia pecten}: Bassett and Popov write ``a dominant feature of
+the ventral umbo is a sub-oval perforation about 270 um long and 250 um
+wide'': the width and height of this structure are almost identical, and
+we score it as (sub) circular.
+
+\emph{Kutorgina chengjiangensis}: The exact size and shape of the apical
+perforation is obscured by the emerging pedicle
+
+\emph{Salanygolina}: Essentially circular (Holmer et al. 2009, fig. 4)
+
+\emph{Acanthotretella}: Too small to observe given quality of
+preservation (Homer \& Caron 2006)
+
+\emph{Heliomedusa orienta}: Rhombic to oval -- seen as evidence for a
+discinid affinity (Chen et al. 2007)
+
+\emph{Lingulellotreta malongensis}: Oval (Williams et al. 2000)
+
+\emph{Nisusia sulcata}: " close to circular " (Holmer et al. 2018)
+
+\emph{Antigonambonites planus}: Based on p.92, fig.4B.
+
+\emph{Alisina}: Seemingly circular (Zhang et al. 2011).
+
+\emph{Clupeafumosus socialis}: Taller than wide in some cases, but very
+nearly circular in others; see Topper et alia (2013)
+
+\hypertarget{sclerites-ventral-valve-colleplax-cicatrix-or-pedicle-sheath}{%
+\section*{Sclerites: Ventral valve: Colleplax, cicatrix or pedicle
+sheath}\label{sclerites-ventral-valve-colleplax-cicatrix-or-pedicle-sheath}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Colleplax,
+cicatrix or pedicle sheath}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-44.pdf}
+
+\textbf{Character 44 : Sclerites: Ventral valve: Colleplax, cicatrix or
+pedicle sheath }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+In certain taxa, the umbo of the ventral valve bears a colleplax,
+cicatrix or pedicle sheath; Bassett et al. (2008) consider these
+structures as homologous.
+
+\emph{Pedunculotheca diania}: The flat apical termination of juvenile
+individuals possibly functioned as colleplax for attachment, we treated
+as potentially homologous.
+
+\emph{Micrina}: Absent in \emph{Micrina}, though present in co-occurring
+\emph{Paterimitra}
+
+\emph{Heliomedusa orienta}: A cicatrix was reconstructed by Jin \& Wang
+1992 (figs 6b, 7), but has not been reported by later authors; possibly,
+as with the `'pedicle foramen'' of Chen et al. (2007), this structure
+represents internal organs rather than a cicatrix proper (Zhang et al.
+2009); as such it has been recorded as ambiguous.
+
+\emph{Longtancunella chengjiangensis}: A ring-like structure surrounding
+the pedicle sheath is interpreted as a colleplax (Zhang et al. 2011),
+though the authors make no comparison with the pedicle capsule exhibited
+by extant terebratulids (see Holmer et al. 2018).
+
+\emph{Lingulellotreta malongensis}: The pedicle is identified as such
+(rather than a pedicle sheath) by the internal pedicle tube.
+
+\emph{Clupeafumosus socialis}: Not reported by Topper et al. (2013).
+
+\emph{Yuganotheca elegans}: The median collar or conical tube is
+conceivably homologous with the pedicle sheath.
+
+\emph{Craniops}: Paracraniops is ``externally similar to
+\emph{Craniops}, but lacking cicatrix'' -- indicating that
+\emph{Craniops} bears a cicatrix. (Williams et al. 2000) Aso coded
+present in their table 15.
+
+\emph{Ussunia}: Following table 15 in Williams et al. 2000
+
+\hypertarget{sclerites-ventral-valve-median-septum}{%
+\section*{Sclerites: Ventral valve: Median
+septum}\label{sclerites-ventral-valve-median-septum}}
+\addcontentsline{toc}{section}{Sclerites: Ventral valve: Median septum}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-45.pdf}
+
+\textbf{Character 45 : Sclerites: Ventral valve: Median septum }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Chen et al. (2007) observe a median septum in the ventral valve of
+\emph{Heliomedusa} and Discinisca, which they propose points to a close
+relationship.
+
+\emph{Haplophrentis carinatus}: The carina of H. \emph{carinatus} is an
+angular elevation of the ventral valve surface, rather than a septum
+growing inward on the interior of shell.
+
+\emph{Mummpikia nuda}: ``Some specimens also reveal that the vault had a
+slight median septum, which is now visible as a notch or a groove
+dividing the right from the left part'' -- Balthasar 2008
+
+\emph{Heliomedusa orienta}: Reported on `'ventral'`valve by Chen et al.
+(2007); we consider the'`ventral'' valve to be the dorsal valve.
+
+\emph{Micromitra}: Ventral ridge characteristic of \emph{Micromitra}
+(Skovsted \& Peel 2010)
+
+\emph{Pelagodiscus atlanticus}: Described as present in Discinisca by
+Chen et al. 2007; assumed present also in \emph{Pelagodiscus}.
+
+\emph{Novocrania}: Valve thin and often unmineralized.
+
+\emph{Gasconsia}: Evident in moulds of ventral valve; see Watkins
+(2002).
+
+\emph{Glyptoria}: Neither evident nor reported in Williams et al.
+(2000).
+
+\emph{Clupeafumosus socialis}: A short medial ridge (septum) is present
+in the ventral valve (Topper et al. 2013).
+
+\emph{Ussunia}: Following char. 42 in table 15 in Williams et al. 2000
+
+\emph{Eoobolus}: Prominent median septum (fig. 4d, e in Balthasar 2009)
+
+\hypertarget{sclerites-concentric-ornament}{%
+\section*{Sclerites: Concentric
+ornament}\label{sclerites-concentric-ornament}}
+\addcontentsline{toc}{section}{Sclerites: Concentric ornament}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-46.pdf}
+
+\textbf{Character 46 : Sclerites: Concentric ornament }
+
+\begin{quote}
+0: `Smooth, or growth lines only'\\
+1: `Concentric ornament present'\\
+Neomorphic character.
+\end{quote}
+
+After character 11 in Williams et al. (1998).
+
+\emph{Eccentrotheca}: More or less concentric ridges occur on
+\emph{Eccentrotheca} sclerites (Skovsted et al. 2011)
+
+\emph{Kutorgina chengjiangensis}: Following Appendix 2 in Williams et
+al. (1998).
+
+\emph{Salanygolina}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Heliomedusa orienta}: The ornament on shell exterior is described
+as concentric fila (Chen et al., 2007, P.43), and also scored as it in
+Willaims et al. (2000, pp.160-163).
+
+\emph{Askepasma toddense}: Following Appendix 2 in Williams et al.
+(1998).
+
+\emph{Micromitra}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Pelagodiscus atlanticus}: Only growth lines evident (Williams et
+al. 2000)
+
+\emph{Novocrania}: Irregular ridges externally (Williams et al. 2000)
+
+\emph{Terebratulina}: Single ridge evident in Williams et al. (2006)
+fig. 1425.1a interpreted as interruption ot growth rather than inherent
+feature, so coded as absent (i.e.~smooth).
+
+\emph{Glyptoria}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Mickwitzia muralensis}: Symmetric fila
+
+\hypertarget{sclerites-concentric-ornament-symmetry}{%
+\section*{Sclerites: Concentric ornament:
+symmetry}\label{sclerites-concentric-ornament-symmetry}}
+\addcontentsline{toc}{section}{Sclerites: Concentric ornament: symmetry}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-47.pdf}
+
+\textbf{Character 47 : Sclerites: Concentric ornament: symmetry }
+
+\begin{quote}
+0: `Symmetric fila'\\
+1: `Asymmetric fila, with outer faces'\\
+Neomorphic character.
+\end{quote}
+
+After character 11 in Williams et al. (1998).
+
+\emph{Micrina}: No obvious asymmetry, even if not obviously symmetric
+either (Holmer et al. 2008). Coded as ambiguous.
+
+\emph{Eccentrotheca}: Ornament, such as it is, is asymmetric, with
+prominent outer faces (Skovsted et alia 2011).
+
+\emph{Kutorgina chengjiangensis}: Following Appendix 2 in Williams et
+al. (1998).
+
+\emph{Salanygolina}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Dailyatia}: Clear asymmetry (Skovsted et al. 2015).
+
+\emph{Heliomedusa orienta}: See fig. 1715 in Williams et al. (2007)
+
+\emph{Askepasma toddense}: Following Appendix 2 in Williams et al.
+(1998).
+
+\emph{Micromitra}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Novocrania}: Clear outer faces (Williams et al. 2000, fig. 100.2b)
+
+\emph{Alisina}: Seemingly asymmetric (Williams et al. 2000, fig. 122.3c;
+Zhang et al. 2011, Fig. 1)
+
+\emph{Glyptoria}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Mickwitzia muralensis}: Symmetric fila (Balthasar 2004)
+
+\hypertarget{sclerites-radial-ornament}{%
+\section*{Sclerites: Radial ornament}\label{sclerites-radial-ornament}}
+\addcontentsline{toc}{section}{Sclerites: Radial ornament}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-48.pdf}
+
+\textbf{Character 48 : Sclerites: Radial ornament }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Ridges radiating from umbo, i.e.~ribs
+
+\emph{Heliomedusa orienta}: See fig. 1715 in Williams et al. (2007)
+
+\emph{Askepasma toddense}: ``Ornament of irregularly developed,
+concentric growth lamellae; microornament of irregularly arranged,
+polygonal pits'' -- Williams et al. 2000, p153; figs on p.155
+
+\emph{Gasconsia}: ``Ornament of indistinct low radial ribs'' -- Williams
+et al. (2000, p167)
+
+\emph{Glyptoria}: ``Coarsely costate'' - Williams et al. (2000, p710)
+
+\emph{Ussunia}: Unornamented.
+
+\emph{Eoobolus}: Very faint costellae in some specimens but coded
+absent.
+
+\hypertarget{sclerites-shell-penetrating-spines}{%
+\section*{Sclerites: Shell-penetrating
+spines}\label{sclerites-shell-penetrating-spines}}
+\addcontentsline{toc}{section}{Sclerites: Shell-penetrating spines}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-49.pdf}
+
+\textbf{Character 49 : Sclerites: Shell-penetrating spines }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Mineralized or partly mineralized spines are observed in
+\emph{Heliomedusa} and \emph{Acanthotretella}
+
+\emph{Heliomedusa orienta}: The `'spines'' reported by Chen et al.
+(2007) are pyritized spinelike\\
+setae -- see pp.~2580-2590 in Williams et al. (2007).
+
+\emph{Nisusia sulcata}: Bears numerous small, hollow spines (Williams et
+al. 2000)
+
+\emph{Glyptoria}: Neither evident nor reported in Williams et al.
+(2000).
+
+\hypertarget{sclerites-mineralogy}{%
+\section*{Sclerites: Mineralogy}\label{sclerites-mineralogy}}
+\addcontentsline{toc}{section}{Sclerites: Mineralogy}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-50.pdf}
+
+\textbf{Character 50 : Sclerites: Mineralogy }
+
+\begin{quote}
+1: `Organic (non-mineralized)'\\
+2: `Phosphatic'\\
+3: `Calcitic'\\
+4: `Aragonitic'\\
+Transformational character.
+\end{quote}
+
+\emph{Mummpikia nuda}: Identified as calcareous by preservational
+criteria, and description ``primary\\
+calcitic shells of M. \emph{nuda}'' (Balthasar 2008).
+
+\emph{Salanygolina}: Original mineralogy unknown, but known to be
+mineralised and anticipated to be phosphatic (Holmer et al. 2009)
+
+\emph{Acanthotretella}: Holmer \& Caron (2006) note the absence of
+brittle breakage, interpreted as indicating the absence of a material
+mineralized component to the shells.
+
+\emph{Heliomedusa orienta}: ``Shell originally organophosphatic, but may
+generally have been poorly mineralized'' -- Williams et al. 2007 --
+cf.~ibid, p.~2889, " These strong similarities to discinoids in
+soft-part anatomy imply that the \emph{Heliomedusa} shell was chitinous
+or chitinophosphatic, not calcareous."
+
+\emph{Longtancunella chengjiangensis}: ``The original composition of the
+shell cannot be determined with certainty'', though it was ``most
+probably entirely soft and organic'' -- Zhang et al. 2011
+
+\emph{Novocrania}: Ventral valve uncalcified in extant forms or
+sometimes thin (Williams et al., 2000), but coded as calcitic as
+calcite-mineralizing pathways are present.
+
+\emph{Gasconsia}: Confirmed in Trimerella by Balthasar et al. 2011
+
+\emph{Clupeafumosus socialis}: Phosphatic - hence the conventional
+placement within Linguliformea.
+
+\emph{Craniops}: Shell calcitic
+
+\emph{Mickwitzia muralensis}: Calcite and silica deemed diagenetic by
+Balthasar (2004).
+
+\emph{Eoobolus}: ``the original shell of \emph{Eoobolus} contained small
+calcareous grains that were incorporated into organic-rich layers
+alongside apatite'' (Balthasar 2007)
+
+\hypertarget{sclerites-composition-of-cuticle-or-organic-matrix}{%
+\section*{Sclerites: Composition of cuticle or organic
+matrix}\label{sclerites-composition-of-cuticle-or-organic-matrix}}
+\addcontentsline{toc}{section}{Sclerites: Composition of cuticle or
+organic matrix}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-51.pdf}
+
+\textbf{Character 51 : Sclerites: Composition of cuticle or organic
+matrix }
+
+\begin{quote}
+1: `GAGs, chitin and collagen'\\
+2: `Glycoprotein'\\
+Transformational character.
+\end{quote}
+
+Williams et al. (1996) identify glycoprotein-based organic scaffolds as
+distinct from those comprising glycosaminoglycans (GAGs), chitin and
+collagen. This character can only be scored for extant taxa.
+
+\emph{Phoronis}: ``The presence of sulphated glycosaminoglycans (GAGs)
+in the chitinous cuticle of \emph{Phoronis} (Herrmann, 1997, p.~215)
+would suggest a link with linguliforms, as GAGs are unknown in
+rhynchonelliform shells (Fig. 1891, 1896)'' -- Williams et al. 2007,
+p.~2830
+
+\emph{Lingula}: Coded as GAGs, chitin and collagen in lingulids by
+Williams et al (1996)
+
+\emph{Pelagodiscus atlanticus}: Coded as GAGs, chitin and collagen in
+discinids by Williams et al (1996)
+
+\emph{Novocrania}: Coded as glycoprotein for craniids by Williams et al
+(1996)
+
+\emph{Terebratulina}: Coded as glycoprotein for terebratulids by
+Williams et al (1996)
+
+\hypertarget{sclerites-incorporation-of-sedimentary-particles}{%
+\section*{Sclerites: incorporation of sedimentary
+particles}\label{sclerites-incorporation-of-sedimentary-particles}}
+\addcontentsline{toc}{section}{Sclerites: incorporation of sedimentary
+particles}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-52.pdf}
+
+\textbf{Character 52 : Sclerites: incorporation of sedimentary particles
+}
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Phoronids and \emph{Yuganotheca} aggulutinate particles into their
+sclerites.
+
+\hypertarget{sclerites-periostracum-flexibility}{%
+\section*{Sclerites: Periostracum:
+Flexibility}\label{sclerites-periostracum-flexibility}}
+\addcontentsline{toc}{section}{Sclerites: Periostracum: Flexibility}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-53.pdf}
+
+\textbf{Character 53 : Sclerites: Periostracum: Flexibility }
+
+\begin{quote}
+1: `Flexible'\\
+2: `Inflexible'\\
+Transformational character.
+\end{quote}
+
+Following character 9 in Williams et al. (1998); see their p228-230 for
+a discussion of how this might be inferred from fossil material.
+
+\emph{Kutorgina chengjiangensis}: Following Appendix 2 in Williams et
+al. (1998).
+
+\emph{Salanygolina}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Askepasma toddense}: Following Appendix 2 in Williams et al.
+(1998).
+
+\emph{Micromitra}: Following Appendix 2 in Williams et al. (1998).
+
+\emph{Pelagodiscus atlanticus}: Flexible (Williams et al. 1998)
+
+\emph{Glyptoria}: Following Appendix 2 in Williams et al. (1998).
+
+\hypertarget{sclerites-microstructure-layers}{%
+\section*{Sclerites: Microstructure:
+Layers}\label{sclerites-microstructure-layers}}
+\addcontentsline{toc}{section}{Sclerites: Microstructure: Layers}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-54.pdf}
+
+\textbf{Character 54 : Sclerites: Microstructure: Layers }
+
+\begin{quote}
+1: `Single microstructural layer'\\
+2: `Two microstructurally differentiated layers'\\
+3: `Inner and outer laminae enclosing medial void'\\
+4: `Three microstrurally differentiated layers'\\
+Transformational character.
+\end{quote}
+
+Hyolith conchs comprise two mineralized layers of fibrous bundles.
+Bundles are measure 5-15 um across; their constituent fibres are each
+0.1-1.0 um wide. In the inner layer, the fibres are transverse; in the
+outer layer, the bundles are inclined towards the umbo, becoming
+longitudinal on the outermost margin.
+
+Obolellids (like craniids) comprise a single laminated mineralogical
+layer (Baltahsar 2008). Shell-penetrating canals are not considered as
+contributing to the mineralogical microstructure and are coded
+separately.
+
+\emph{Namacalathus} exhibits three layers, none of which have any
+obvious correspondence with those of brachiopods.
+
+Coded as non-additive as there is no clear necessity to pass through the
+brachiopod-like construction: the three layers could arise by the
+addition of a void to a single preexisting layer, for example.
+
+Inapplicable in taxa with a non-mineralized shell.
+
+\emph{Micrina}: Identical to \emph{Mickwitzia} and more derived
+linguliforms (Holmer et al 2011)
+
+\emph{Haplophrentis carinatus}: Assumed to be equivalent to the hyoliths
+described by Kouchinsky (2000)
+
+\emph{Clupeafumosus socialis}: General acrotretid structure taken from
+Zhang et al. (2016)
+
+\emph{Mickwitzia muralensis}: ``the shell structure of \emph{Mickwitzia}
+{[}\ldots{}{]} is closely similar to the columnar shell of linguliform
+acrotretoid brachiopods as well as to the linguloid
+\emph{Lingulellotreta}, in that it has slender columns in the laminar
+succession'' -- Williams et al. 2007
+
+\emph{Eoobolus}: ``\emph{Eoobolus} shells exhibit the general
+characteristics of modern linguliform shells, i.e.~they were composed of
+alternating sets of organic and apatite-rich layers that were separated
+by thin sheets of recalcitrant organic layers.'' -- Balthasar 2007
+
+\hypertarget{sclerites-microstructure-crystal-format}{%
+\section*{Sclerites: Microstructure: Crystal
+format}\label{sclerites-microstructure-crystal-format}}
+\addcontentsline{toc}{section}{Sclerites: Microstructure: Crystal
+format}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-55.pdf}
+
+\textbf{Character 55 : Sclerites: Microstructure: Crystal format }
+
+\begin{quote}
+1: `Laminated'\\
+2: `Fibrous bundles'\\
+3: `Polygonal columns'\\
+Transformational character.
+\end{quote}
+
+Hyolith conchs comprise two mineralized layers of fibrous bundles.
+Bundles are measure 5-15 um across; their constituent fibres are each
+0.1-1.0 um wide. In the inner layer, the fibres are transverse; in the
+outer layer, the bundles are inclined towards the umbo, becoming
+longitudinal on the outermost margin.
+
+Obolellids (like craniids) comprise a single laminated mineralogical
+layer (Baltahsar 2008). Shell-penetrating canals are not considered as
+contributing to the mineralogical microstructure and are coded
+separately.
+
+The pervasive (not just superficial) polygonal structures in
+\emph{Paterimitra} are distinct, and characterize \emph{Askepasma},
+Sanalygolina, \emph{Eccentrotheca} and \emph{Paterimitra} (Larsson et
+al. 2014)
+
+The treatise (Williams et al 2000) identifies cross-bladed laminae as
+diagnostic of Strophomenata, with the exception of some older groups
+that contain fibres or laminar laths.
+
+\emph{Namacalathus}: The inner and outer layer are foliated. The
+columnar inflections lack canals, and as such we do not consider them to
+bear any obvious homology with the hollow pillars of tommotiids and
+certain brachiopods, their superficial similarity to strophomenid
+pseudopunctae notwithstanding.
+
+\emph{Antigonambonites planus}: Shell structure of this taxon is
+laminated, rather than fibrous as previously considered.
+
+\emph{Craniops}: ``with calcitic or possibly aragonitic inarticulated
+shells with laminar (tabular) secondary layers'' (Williams et al. 2000)
+
+\hypertarget{sclerites-microstructure-punctae}{%
+\section*{Sclerites: Microstructure:
+Punctae}\label{sclerites-microstructure-punctae}}
+\addcontentsline{toc}{section}{Sclerites: Microstructure: Punctae}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-56.pdf}
+
+\textbf{Character 56 : Sclerites: Microstructure: Punctae }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Punctae are 10-20 um wide canals created by multicellular extensions of
+the outer epithelium. They penetrate the full depth of the shell.
+
+Balthasar (2008) writes:
+
+``Vertical shell penetrating structures, such as punctae, pseudopunctae,
+extropunctae and canals, are common in many groups of brachiopods and
+are distinguished based on their geometry and size (Williams 1997).
+Punctae are 10-20 um wide and represent multicellular extensions of the
+outer epithelium (Owen and Williams 1969). Pseudopunctae and
+extropunctae are similar in diameter but, instead of canals, are
+vertical stacks of conical deflections of individual shell layers
+(Williams and Brunton 1993). None of these three types of vertical shell
+structure, all of which are confined to calcitic-shelled brachiopods,
+compares with the much smaller canals (
+
+\emph{Mummpikia nuda}: ``Vertical shell penetrating structures, such as
+punctae, pseudopunctae, extropunctae and canals, are common in many
+groups of brachiopods and are distinguished based on their geometry and
+size (Williams 1997). Punctae are 10-20 um wide and represent
+multicellular extensions of the outer epithelium (Owen and Williams
+1969). {[}\ldots{}{]} None of these three types of vertical shell
+structure, all of which are confined to calcitic-shelled brachiopods,
+compares with the much smaller canals (
+
+\emph{Heliomedusa orienta}: `'Identical'' to those in \emph{Mickwitzia}
+-- see Williams et al. 2007
+
+\emph{Terebratulina}: Endopunctae are relatively large canals, diameter
+vary greatly from 5-20µm.
+
+\emph{Craniops}: ``impunctate''
+
+\emph{Mickwitzia muralensis}: Coded as present to reflect that the
+chambers contained setae; following Carlson in Williams et al. 2007, the
+punctae may or may not be homologous as punctae, but are likely
+homologous as shell perforations; both these perforations and those of
+\emph{Micrina} were associated with setae, even if their equivalence bay
+be with juvenile vs adult setal structures in modern brachiopods
+(Balthasar 2004, p, 397).
+
+\hypertarget{sclerites-microstructure-canals}{%
+\section*{Sclerites: Microstructure:
+Canals}\label{sclerites-microstructure-canals}}
+\addcontentsline{toc}{section}{Sclerites: Microstructure: Canals}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-57.pdf}
+
+\textbf{Character 57 : Sclerites: Microstructure: Canals }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+A caniculate microstructure occurs in lingulids; canals are narrower (
+
+\emph{Micrina}: Acrotretid laminae bear characteristic columns
+(e.g.~Zhang et al. 2016); a similar fabric has been reported, and
+assumed homologous, in \emph{Micrina} (Butler et al. 2012).
+
+A similar columnar shell microstructure also occurs in the closely
+related \emph{Mickwitzia} (Balthasar 2008).
+
+\emph{Namacalathus}: Canal-like structures have been reported in
+\emph{Namacalathus} (Zhuravlev et al. 2015), and interpreted as evidence
+for a Lophophorate affinity. Though the structures are not necessarily
+directly equivalent, the hypothesis of homology is followed here.
+
+\emph{Haplophrentis carinatus}: The tubules within the centre of the
+bundles of hyolith shells (Kouchinsky 2000) are c. 10 um wide, making
+them an order of magnitude larger than the canals that characterize
+lingulid valves. It is not clear that they are necessarily homologous.
+
+\emph{Longtancunella chengjiangensis}: Preservational resolution not
+sufficient to evaluate
+
+\emph{Clupeafumosus socialis}: Acrotretid laminae bear characteristic
+columns (e.g.~Zhang et al. 2016).
+
+Balthasar (2008) considers these columns as homologous with tubules
+within the columnar shell microstructure \emph{Mummpikia},
+\emph{Mickwitzia} and lingulellotretids
+
+\emph{Mickwitzia muralensis}: Coded as present to reflect similarity of
+columnar microstructure remarked on by, among others, Balthasar (2008);
+Williams et al. (2007); Skovsted \& Holmer (2003)
+
+\hypertarget{sclerites-microstructure-pseudopunctae}{%
+\section*{Sclerites: Microstructure:
+Pseudopunctae}\label{sclerites-microstructure-pseudopunctae}}
+\addcontentsline{toc}{section}{Sclerites: Microstructure: Pseudopunctae}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-58.pdf}
+
+\textbf{Character 58 : Sclerites: Microstructure: Pseudopunctae }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Pseudopunctae are not punctae, but deflections of shell laminae. They
+characterise Strophomenata in particular.
+
+\emph{Nisusia sulcata}: Scored absent in data matrix of Benedetto
+(2009).
+
+\emph{Antigonambonites planus}: Scored absent in data matrix of
+Benedetto (2009).
+
+\emph{Orthis}: Scored absent (in Eoorthis) in data matrix of Benedetto
+(2009).
+
+\emph{Glyptoria}: Scored absent in data matrix of Benedetto (2009).
+
+\hypertarget{sclerites-microstructure-external-polygonal-ornament}{%
+\section*{Sclerites: Microstructure: External polygonal
+ornament}\label{sclerites-microstructure-external-polygonal-ornament}}
+\addcontentsline{toc}{section}{Sclerites: Microstructure: External
+polygonal ornament}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-59.pdf}
+
+\textbf{Character 59 : Sclerites: Microstructure: External polygonal
+ornament }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Regular polygonal compartments, around 10 um in diameter, characterise
+\emph{Paterimitra} and some other brachiopod groups. Walls between
+compartments have the cross-section of an anvil. external polygonal
+structure (possible imprints of epithelial tissue)occurs in
+\emph{Dailyatia}, but it is surface pattern, which is different from the
+polygonal prisms in the body wall of other paterinid like groups.
+
+\emph{Clupeafumosus socialis}: The polygonal ornament reported in
+acrotretids by Zhang et al. (2016) is on the internal surface of the
+shell.
+
+\hypertarget{egg-size}{%
+\section*{Egg size}\label{egg-size}}
+\addcontentsline{toc}{section}{Egg size}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-60.pdf}
+
+\textbf{Character 60 : Egg size }
+
+\begin{quote}
+1: `Small: \textless{} 100 um, little yolk'\\
+2: `Large: \textgreater{} 110 um, much yolk'\\
+Transformational character.
+\end{quote}
+
+Following Carlson (1995), character 7. This character is only possible
+to code in extant taxa. It is not considered independent of Carlson's
+character 11, number of gametes released per spawning, as it is possible
+to produce more small eggs than large eggs -- thus this latter character
+is not reproduced in the present study. The same goes for Carlson's
+character 12, gamete dispersal mode; brooders will tend to brood large
+eggs.
+
+\emph{Phoronis}: \emph{Phoronis} has planktotrophic larvae indicating a
+small egg size -- Ruppert et al. 2004.
+
+Carlson (1995) codes phoronids as polymorphic, as some members of the
+phylum have eggs of each size.
+
+\emph{Lingula}: Following coding for class in Carlson (1995) Appendix 1,
+character 7.
+
+\emph{Pelagodiscus atlanticus}: Following coding for class in Carlson
+(1995) Appendix 1, character 7.
+
+\emph{Novocrania}: Following coding for class in Carlson (1995) Appendix
+1, character 7.
+
+\emph{Terebratulina}: Following coding for class in Carlson (1995)
+Appendix 1, character 7.
+
+\hypertarget{site-of-gamete-maturation}{%
+\section*{Site of gamete maturation}\label{site-of-gamete-maturation}}
+\addcontentsline{toc}{section}{Site of gamete maturation}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-61.pdf}
+
+\textbf{Character 61 : Site of gamete maturation }
+
+\begin{quote}
+0: `Body cavity'\\
+1: `Mantle canals'\\
+Neomorphic character.
+\end{quote}
+
+After Carlson (1995), character 9. Only possible to code in extant taxa.
+Mantle canals is considered the derived state, as it represents a
+migration from the body cavity, where gametes are produced.
+
+\emph{Phoronis}: Following coding for class in Carlson (1995) Appendix
+1, character 9.
+
+\emph{Lingula}: Following coding for class in Carlson (1995) Appendix 1,
+character 9.
+
+\emph{Pelagodiscus atlanticus}: Following coding for class in Carlson
+(1995) Appendix 1, character 9.
+
+\emph{Novocrania}: Following coding for class in Carlson (1995) Appendix
+1, character 9.
+
+\emph{Terebratulina}: Following coding for class in Carlson (1995)
+Appendix 1, character 9.
+
+\hypertarget{embryonic-shell}{%
+\section*{Embryonic shell}\label{embryonic-shell}}
+\addcontentsline{toc}{section}{Embryonic shell}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-62.pdf}
+
+\textbf{Character 62 : Embryonic shell }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+The embryonic shell or protegulum is secreted by the embryo immediately
+before hatching.
+
+\emph{Namacalathus}: Inapplicable insofar as reproduction occurs by
+budding; there is no evidence for a free-living larval stage.
+Nevertheless, the presence of a sexual reproductive phase in addition to
+asexual reproduction cannot be discounted.
+
+\emph{Clupeafumosus socialis}: Described by Topper et al. (2013).
+
+\hypertarget{embryonic-shell-morphology}{%
+\section*{Embryonic shell:
+Morphology}\label{embryonic-shell-morphology}}
+\addcontentsline{toc}{section}{Embryonic shell: Morphology}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-63.pdf}
+
+\textbf{Character 63 : Embryonic shell: Morphology }
+
+\begin{quote}
+1: `Flat, disc-like (cf.~Micrina)'\\
+2: `Three prominent lobes forming a Y (cf.~Paterimitra)'\\
+3: `Spherical'\\
+Transformational character.
+\end{quote}
+
+\emph{Micrina} resembles linguliforms (Holmer et al 2011): in both, the
+mitral protegulum has one pair of setal sacs enclosed by lateral lobes,
+whereas the ventral protegulum has two lateral setal tubes.
+
+\emph{Paterimitra} and \emph{Salanygolina} have ``identical'' ventral
+larval shells (Holmer et al 2011), resembling the shape of a ship's
+propeller.
+
+Hyoliths typically have a spherical larval shell;
+\emph{Pedunculotheca}'s is seemingly cap-shaped.
+
+\emph{Coolinia pecten}: See fig. 3 in Bassett et al. 2017
+
+\emph{Lingula}: See fig. 159 in Williams et al. 1997
+
+\emph{Askepasma toddense}: Renoid -- see fig. 4B3 in Topper et al. 2013
+
+\emph{Micromitra}: Subtriangular -- essentially round
+
+\emph{Pelagodiscus atlanticus}: See e.g.~fig 169 in Williams et al.
+(1997)
+
+\emph{Clupeafumosus socialis}: The flat larval shell of
+\emph{Clupeafumosus} resembles that of \emph{Micrina} in outline (Topper
+et al. 2013; cf.~Holmer et al. 2011).
+
+\emph{Craniops}: The embryonic shell is more or less circular in outline
+-- see Freeman \& Lundelius, 1999, fig. 6A
+
+\emph{Mickwitzia muralensis}: Trifoliate appearance results from
+prominent attachment rudiment and bunching of setal sacs (Balthasar
+2009).
+
+\hypertarget{embryonic-shell-extended-in-larvae}{%
+\section*{Embryonic shell: Extended in
+larvae}\label{embryonic-shell-extended-in-larvae}}
+\addcontentsline{toc}{section}{Embryonic shell: Extended in larvae}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-64.pdf}
+
+\textbf{Character 64 : Embryonic shell: Extended in larvae }
+
+\begin{quote}
+1: `Not extended; embryonic shell contiguous with adult shell'\\
+2: `Extended into larval shell, separated from adult shell by prominent
+nick'\\
+Transformational character.
+\end{quote}
+
+Many taxa add to their embryonic shell during the larval phase of their
+life cycle. The shell that exists at metamorphosis, marked by a halo or
+nick point, is variously termed the ``first formed shell'',
+``metamorphic shell'' or ``larval shell'' (Bassett \& Popov 2017).
+
+\emph{Clupeafumosus socialis}: Described by Topper et al. (2013).
+
+\emph{Craniops}: Prominent nick; see Freeman \& Lundelius 1999, fig. 6A
+
+\emph{Eoobolus}: Nick point indicated by arrows in fig. 1 of Balthasar
+(2009).
+
+\hypertarget{larval-attachment-structure}{%
+\section*{Larval attachment
+structure}\label{larval-attachment-structure}}
+\addcontentsline{toc}{section}{Larval attachment structure}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-65.pdf}
+
+\textbf{Character 65 : Larval attachment structure }
+
+\begin{quote}
+0: `Without evidence of pedicle'\\
+1: `With evidence of pedicle'\\
+Neomorphic character.
+\end{quote}
+
+Embryonic shells of \emph{Micrina} and certain linguliforms exhibit a
+transversely folded posterior extension that speaks of the original
+presence of a pedicle in the embryo.
+
+This is independent of the presence of an adult pedicle, which may arise
+after metamorphosis.
+
+\emph{Clupeafumosus socialis}: The larval shell embraces the pedicle
+foramen, suggesting a larval attachment. See fig. 4 of Topper et al.
+(2013).
+
+\emph{Mickwitzia muralensis}: Note the posterior lobe related to the
+attachment rudiment in fig. 2 of Balthasar 2009
+
+\emph{Eoobolus}: Lobe related to the attachment rudiment (Balthasar
+2009, fig. 2)
+
+\hypertarget{setae-in-adults}{%
+\section*{Setae in adults}\label{setae-in-adults}}
+\addcontentsline{toc}{section}{Setae in adults}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-66.pdf}
+
+\textbf{Character 66 : Setae in adults }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Although preservation of setae (in adults) is exceptional, their
+presence can be inferred from shelly material (see Holmer \& Caron
+2006).
+
+\emph{Acanthotretella}: Note that the setae do not obviously emerge from
+tubes, leading Holmer and Caron to question their homology with the
+setae of other taxa (\emph{Heliomedusa}, \emph{Mickwitzia}).
+
+Both valves of \emph{Acanthotretella} were coveredd by long spine-like
+and shell penetrating setae. The setae of A.decaius are usually
+preserved along anterior and anterolateral margins (Hu et al. 2010).
+
+\emph{Novocrania}: ``Adult craniids are without setae (a feature shared
+with the thecideides, the\\
+shells of which are also cemented).'' -- Williams et al. 2007
+
+\emph{Clupeafumosus socialis}: Setal bundles interpreted as present in
+acrotretids by Ushatinskaya (2016).
+
+\hypertarget{setae-distribution}{%
+\section*{Setae: Distribution}\label{setae-distribution}}
+\addcontentsline{toc}{section}{Setae: Distribution}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-67.pdf}
+
+\textbf{Character 67 : Setae: Distribution }
+
+\begin{quote}
+1: `Uniform'\\
+2: `Only present at margins of shell'\\
+Transformational character.
+\end{quote}
+
+Setae penetrate the valves of many brachiopods. In certain taxa, they
+are apparent only at the margins of the valves, in association with the
+commissure, being reduced or lost over the surface of the shell.
+
+\emph{Eccentrotheca}: Skovsted et al (2011) assumed the setae may have
+been present along the margin of the adapical opening, but there is no
+fossil evidence.
+
+\emph{Heliomedusa orienta}: Throughout the shell -- see Williams et al.
+2007 -- causing the pustulose appearance remarked upon by Chen et al.
+2007
+
+\hypertarget{setae-present-in-larva}{%
+\section*{Setae: present in larva}\label{setae-present-in-larva}}
+\addcontentsline{toc}{section}{Setae: present in larva}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-68.pdf}
+
+\textbf{Character 68 : Setae: present in larva }
+
+\begin{quote}
+0: `No evidence of setae in embryonic shell'\\
+1: `Setae present'\\
+Neomorphic character.
+\end{quote}
+
+The protegulum of \emph{Micrina} is penetrated with canals that were
+originally associated with setae, a character that it has in common with
+linguliforms (Holmer et al 2011).
+
+\emph{Lingulellotreta malongensis}: Familial character: larval shell
+smooth (williams et al.,2000, p.72).
+
+\emph{Clupeafumosus socialis}: Setal bundles interpreted as present in
+acrotretids by Ushatinskaya (2016).
+
+\emph{Mickwitzia muralensis}: Four setal sacs
+
+\hypertarget{setae-embryonic-setal-sacs}{%
+\section*{Setae: Embryonic: Setal
+sacs}\label{setae-embryonic-setal-sacs}}
+\addcontentsline{toc}{section}{Setae: Embryonic: Setal sacs}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-69.pdf}
+
+\textbf{Character 69 : Setae: Embryonic: Setal sacs }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Setal sacs are recognizable as raised lumps on the juvenile shell (see
+Bassett and Popov 2017).
+
+\emph{Micrina} and linguliforms have setal sacs on their mitral/dorsal
+embryonic shell, whereas these are absent in \emph{Paterimitra} (Holmer
+et al 2011).
+
+\emph{Lingula}: Lingulids'' larval setae are not arranged in bundles
+(Carlson 1995)
+
+\emph{Lingulellotreta malongensis}: Familial character: larval shell
+smooth (williams et al.,2000, p.72).
+
+\emph{Pelagodiscus atlanticus}: Three pairs (Carlson 1995)
+
+\emph{Novocrania}: Three pairs (Carlson 1995)
+
+\emph{Clupeafumosus socialis}: Setal bundles interpreted as present in
+acrotretids by Ushatinskaya (2016).
+
+\hypertarget{setae-embryonic-setal-sacs-number}{%
+\section*{Setae: Embryonic: Setal sacs:
+Number}\label{setae-embryonic-setal-sacs-number}}
+\addcontentsline{toc}{section}{Setae: Embryonic: Setal sacs: Number}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-70.pdf}
+
+\textbf{Character 70 : Setae: Embryonic: Setal sacs: Number }
+
+\begin{quote}
+1: `One pair'\\
+2: `Two pairs'\\
+3: `Three pairs'\\
+Transformational character.
+\end{quote}
+
+Two pairs on e.g.~Coolina; one on e.g. \emph{Micrina}
+
+\emph{Pelagodiscus atlanticus}: Three pairs (Carlson 1995)
+
+\emph{Novocrania}: Three pairs (Carlson 1995)
+
+\emph{Clupeafumosus socialis}: Two pairs identified in acrotretids by
+Ushatinskaya (2016).
+
+\emph{Mickwitzia muralensis}: See fig. 2 in Balthasar 2009
+
+\hypertarget{pedicle}{%
+\section*{Pedicle}\label{pedicle}}
+\addcontentsline{toc}{section}{Pedicle}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-71.pdf}
+
+\textbf{Character 71 : Pedicle }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+The brachiopod pedicle is a fleshy protuberance that emerges from the
+posterior part of the body wall -- as denoted in fossil taxa by its
+occurrence between the dorsal and ventral valves.
+
+It is important to distinguish the pedicle from the ``pedicle sheath'',
+a tubular extension of the umbo that grows by accretion from an isolated
+portion of the ventral mantle. For discussion see Holmer et al. 2017 and
+Bassett and Popov 2017.
+
+\emph{Namacalathus}: There is no obvious way to homologise the
+attachment structure with the ventral pedicle of brachiopods.
+
+\emph{Lingulosacculus}: The absence of a pedicle is inferred from the
+absence of an internal pedicle tube, and the absence of a pedicle at the
+hinge.
+
+\emph{Acanthotretella}: The attachment structure of
+\emph{Acanthotretella} originates at the margin of the dorsal and
+ventral valves; although it emerges from the umbo of the ventral valve,
+the presence of an internal pedicle tube betrays its identity as a
+pedicle, rather than a pedicle sheath.
+
+The pedicle of \emph{Acanthotretella} emerges from a short extension of
+the umbo of the ventral valve. This extension is contiguous with the
+valve and presumably grew by accretion; its position and continuity with
+the valve suggest its interpretation as a pedicle sheath that is
+superseded as an attachment structure. On the other hand, its continuity
+with the internal pedicle tube suggests that is may represent an
+independent organ.
+
+\emph{Heliomedusa orienta}: ``It seems unlikely that H. \emph{orienta}
+possessed a pedicle that attached it to\\
+the soft seafloor, like most other Chengjiang brachiopods.'' \ldots{}\\
+``The putative pedicle illustrated by Chen et al. (2007: Figs. 4, 6, 7)
+in fact is the mold of a three-dimensionally preserved visceral cavity''
+-- Zhang et al. 2009
+
+\emph{Nisusia sulcata}: Has a pedicle, rather than a pedicle sheath as
+in \emph{Kutorgina} - see Holmer et al. 2017, 2018
+
+\emph{Clupeafumosus socialis}: A pedicle was presumably present, but
+only the foramen is preserved.
+
+\emph{Craniops}: Attached apically by cementation
+
+\emph{Mickwitzia muralensis}: An attachment structure is inferred based
+on the presence of an opening (Balthasar 2004); this is assumed to have
+been homologous with the brachiopod pedicle.
+
+\hypertarget{pedicle-constitution}{%
+\section*{Pedicle: Constitution}\label{pedicle-constitution}}
+\addcontentsline{toc}{section}{Pedicle: Constitution}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-72.pdf}
+
+\textbf{Character 72 : Pedicle: Constitution }
+
+\begin{quote}
+1: `Massive or uniform'\\
+2: `Densely stacked tabular discs'\\
+Transformational character.
+\end{quote}
+
+The pedicle of certain chengjiang rhynchonelliforms comprises ``densely
+stacked, three dimensionally preserved, tabular discs'' (Holmer et al.
+2018).\\
+This contrasts with the uniform (`massive') pedicles of living taxa.
+
+\emph{Terebratulina}: Extant rhynconellid pedicles are massive,
+consisting of a thick outer chitinous cuticle, a pedicle epithelium, and
+a core composed of collagen fibres and cartilage-like connective tissue
+(Holmer et al. 2018).
+
+\hypertarget{pedicle-biomineralization}{%
+\section*{Pedicle: Biomineralization}\label{pedicle-biomineralization}}
+\addcontentsline{toc}{section}{Pedicle: Biomineralization}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-73.pdf}
+
+\textbf{Character 73 : Pedicle: Biomineralization }
+
+\begin{quote}
+1: `Absent'\\
+2: `Present'\\
+Transformational character.
+\end{quote}
+
+The pedicle of strophomenates such as \emph{Antigonambonites} is
+biomineralized (Holmer et al. 2018)
+
+\hypertarget{pedicle-bulb}{%
+\section*{Pedicle: Bulb}\label{pedicle-bulb}}
+\addcontentsline{toc}{section}{Pedicle: Bulb}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-74.pdf}
+
+\textbf{Character 74 : Pedicle: Bulb }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+A bulb is an expanded region of the distal pedicle, often embedded into
+the sediment to improve anchorage.
+
+\emph{Acanthotretella}: Holmer and Caron interpret the presence of a
+bulb as tentative; we score it as ambiguous.
+
+\hypertarget{pedicle-distal-rootlets}{%
+\section*{Pedicle: Distal rootlets}\label{pedicle-distal-rootlets}}
+\addcontentsline{toc}{section}{Pedicle: Distal rootlets}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-75.pdf}
+
+\textbf{Character 75 : Pedicle: Distal rootlets }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Neomorphic.\\
+Observed in \emph{Pedunculotheca} and Bethia (Sutton et al 2005).
+
+\hypertarget{pedicle-tapering}{%
+\section*{Pedicle: Tapering}\label{pedicle-tapering}}
+\addcontentsline{toc}{section}{Pedicle: Tapering}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-76.pdf}
+
+\textbf{Character 76 : Pedicle: Tapering }
+
+\begin{quote}
+1: `Uniform thickness'\\
+2: `Tapering'\\
+Transformational character.
+\end{quote}
+
+Holmer et al (2018) remark that the tapering aspect of the
+\emph{Nisusia} pedicle recalls that of certain Chengjiang taxa
+(\emph{Alisina}, \emph{Longtancunella}) whilst distinguishing it from
+many other taxa (Eichwaldia, Bethia) in which the pedicle is a constant
+thickness.
+
+\emph{Pedunculotheca diania}: The pedicle thickness does not obviously
+change between the apex of the shell and the holdfast.
+
+\emph{Antigonambonites planus}: Tapered pedicle sheath with holdfast.
+
+\hypertarget{pedicle-coelomic-region}{%
+\section*{Pedicle: Coelomic region}\label{pedicle-coelomic-region}}
+\addcontentsline{toc}{section}{Pedicle: Coelomic region}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-77.pdf}
+
+\textbf{Character 77 : Pedicle: Coelomic region }
+
+\begin{quote}
+1: `Absent'\\
+2: `Present'\\
+Transformational character.
+\end{quote}
+
+Certain brachiopods, such as \emph{Acanthotretella}, exhibit a coelomic
+cavity within the pedicle or pedicle sheath.
+
+Treated as transformational as it is not clear that either state is
+necessarily ancestral.
+
+\emph{Nisusia sulcata}: A coleomic canal is inferred based on the ease
+with which the pedicle is deformed (Holmer et al 2018), but its presence
+is not known for certain so is coded ambiguous.
+
+\hypertarget{pedicle-surface-ornament}{%
+\section*{Pedicle: Surface ornament}\label{pedicle-surface-ornament}}
+\addcontentsline{toc}{section}{Pedicle: Surface ornament}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-78.pdf}
+
+\textbf{Character 78 : Pedicle: Surface ornament }
+
+\begin{quote}
+1: `Smooth'\\
+2: `Irregular wrinkles'\\
+3: `Regular annulations'\\
+Transformational character.
+\end{quote}
+
+Annulations are regular rings that surround the pedicle, and are
+distinguished from wrinkles, which are irregular in magnitude and
+spacing, and may branch or fail to entirely encircle the pedicle.
+
+\emph{Kutorgina chengjiangensis}: ``Pronounced concentric annular discs
+disposed at intervals of 0.6--1.0 mm''
+
+\emph{Acanthotretella}: ``The pedicle surface is ornamented with
+pronounced annulated rings, disposed at intervals of about 0.2 mm''
+
+\emph{Longtancunella chengjiangensis}: ``The preserved pedicle has
+condensed annulations'' -- Zhang et al. 2011
+
+\emph{Lingulellotreta malongensis}: Regularly annotated (see fig. 14.9
+in Hou et al. 2017)
+
+\emph{Nisusia sulcata}: The ``strong annulations'' vary significantly in
+transverse thickness (Holmer et al. 2018), so it is not clear whether
+these represent true annulations or wrinkles.
+
+\emph{Antigonambonites planus}: ``The emerging pedicle has a consistent
+shape in all the available specimens and is strongly annulated and
+distally tapering'' -- Holmer et al. 2018
+
+\emph{Alisina}: ``It appears that the pedicle lacks a coelomic space and
+is distinctly annulated, with densely stacked tabular bodies'' -- Zhang
+et al. 2011
+
+\emph{Yuganotheca elegans}: Annulations present in median collar
+
+\hypertarget{pedicle-position}{%
+\section*{Pedicle: position}\label{pedicle-position}}
+\addcontentsline{toc}{section}{Pedicle: position}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-79.pdf}
+
+\textbf{Character 79 : Pedicle: position }
+
+\begin{quote}
+1: `At hinge'\\
+2: `Ventral valve umbo via internal pedicle tube'\\
+3: `Ventral valve umbo (pedicle sheath)'\\
+Transformational character.
+\end{quote}
+
+The pedicle of certain brachiopods (e.g.~Ancanthotretella,
+siphonotretides, acrotretides) travels from the hinge line to the umbo
+(or in the case of Limgulellotreta manongensis, a foramen on the
+pseudointerarea) within an internal pedicle tube. See Holmer \& Caron
+(2006) for discussion.
+
+The pedicle sheath, in contrast, emerges from the umbo of the ventral
+valve without any indication of a relationship with the hinge.
+
+\emph{Clupeafumosus socialis}: The presumed pedicle foramen is at the
+ventral valve umbo, though no evidence of a pedicle sheath is present.
+
+\hypertarget{mantle-canals-morphology}{%
+\section*{Mantle canals: Morphology}\label{mantle-canals-morphology}}
+\addcontentsline{toc}{section}{Mantle canals: Morphology}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-80.pdf}
+
+\textbf{Character 80 : Mantle canals: Morphology }
+
+\begin{quote}
+0: `Pinnate (=lemniscate)'\\
+1: `Bifurcate'\\
+2: `Baculate'\\
+3: `Saccate'\\
+Neomorphic character.
+\end{quote}
+
+The morphology of dorsal and ventral canals is identical in all included
+taxa, so is assumed not to be independent - hence the use of a single
+character (contra Williams et al. 2000).
+
+For a description of terms see Williams et al. (1997, 2000).
+
+Pinnate = ``rapidly branch into a number of subequal, radially disposed
+canals''\\
+Bifurcate = ``vascula lateralia in both valves divide immediately after
+leaving the body cavity''\\
+Baculate = ``extend forward without any major dichotomy or bifurcation''
+(Williams et al. 1997 p.~418)\\
+Saccate = ``pouchlike sinuses lying wholly posterior to the arcuate
+vascula media'' (ibid., p412)
+
+\emph{Lingulosacculus}: Baculate vascula media - Balthasar \&
+Butterfield (2009)
+
+\emph{Tomteluva perturbata}: Preservation not adequate to evaluate
+(Streng 2016).
+
+\emph{Mummpikia nuda}: ``Poorly resolved'' -- Balthasar 2008
+
+\emph{Coolinia pecten}: Not reported in Treatise (Williams et al. 2000).
+
+\emph{Kutorgina chengjiangensis}: Following Table 15 in Williams et al.
+(2000) (for Neocrania).
+
+\emph{Salanygolina}: Coded uncertain in Appendix 2 in Williams et al.
+(1998).
+
+\emph{Lingula}: Following Table 6 in Williams et al. (2000).
+
+\emph{Acanthotretella}: Following Table 6, for Siphonotretidae, in
+Williams et al. (2000).
+
+\emph{Heliomedusa orienta}: Described as pinnate by Jin \& Wang (1992)
+
+\emph{Longtancunella chengjiangensis}: Reported by Zhang et al. (2007,
+2011) though the interpretation is tentative.
+
+\emph{Lingulellotreta malongensis}: Following Table 6 in Williams et al.
+(2000).
+
+\emph{Askepasma toddense}: Described as pinnate (at least in ventral
+valve) by Williams et al. (1998, p.~250).
+
+\emph{Micromitra}: Described as saccate by Williams et al. (1998).
+
+\emph{Nisusia sulcata}: Following Table 15 in Williams et al. (2000).
+
+\emph{Pelagodiscus atlanticus}: Following Table 6, for Discinidae, in
+Williams et al. (2000).
+
+\emph{Novocrania}: Following Table 15 in Williams et al. (2000) (for
+Neocrania).
+
+\emph{Terebratulina}: ``In modern terebratulides, the vascula media are
+subordinate to the lemniscate or pinnate vascula genitalia'' -- Williams
+et al. 1997
+
+\emph{Antigonambonites planus}: Not reported in Treatise (Williams et
+al. 2000).
+
+\emph{Alisina}: Following Table 15 in Williams et al. (2000).
+
+\emph{Orthis}: Sacculate (sometimes digitate in dorsal valve) (Williams
+et al. 2000, p716)
+
+\emph{Gasconsia}: Following Table 15 in Williams et al. (2000).
+
+\emph{Glyptoria}: Following Appendix 2 (char. 21) in Williams et al.
+(1998).
+
+\emph{Clupeafumosus socialis}: Following Table 8 (for Acrotreta) in
+Williams et al. (2000).
+
+\emph{Craniops}: Not reported from fossil material
+
+\hypertarget{mantle-canals-vascula-lateralia}{%
+\section*{Mantle canals: vascula
+lateralia}\label{mantle-canals-vascula-lateralia}}
+\addcontentsline{toc}{section}{Mantle canals: vascula lateralia}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-81.pdf}
+
+\textbf{Character 81 : Mantle canals: vascula lateralia }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+We treat the vascula lateralia as equivalent to the vascula genitalia of
+articulated brachiopods, allowing phylogenetic analysis to test their
+proposed homology.
+
+Williams et al (1997) write:\\
+``The mantle canal system of most of the organophosphate-shelled species
+consists of a single pair of main trunks in the ventral mantle (vascula
+lateralia) and two pairs in the dorsal mantle, one pair (vascula
+lateralia) occupying a similar position to the single pair in the
+ventral mantle and a second pair projecting from the body cavity near
+the midline of the valve. This latter pair may be termed the vascula
+media, but whether they are strictly homologous with the vascula media
+of articulated brachiopods is a matter of\\
+opinion. It is also impossible to assert that the vascula lateralia are
+the homologues of the vascula myaria or genitalia of articulated
+species, although they are likely to be so as they arise in a comparable
+position.''
+
+``In inarticulated brachiopods, two main mantle canals (vascula
+lateralia) emerge from the main body cavity through muscular valves and
+bifurcate distally to produce an increasingly dense array of blindly
+ending branches near the periphery of the mantle (Fig. 71.1-71.2).''
+
+\emph{Tomteluva perturbata}: Preservation not adequate to evaluate
+(Streng 2016).
+
+\emph{Kutorgina chengjiangensis}: Following Table 15 in Williams et al.
+(2000).
+
+\emph{Acanthotretella}: Following Table 8 (which records presence in
+Siphonotreta) in Williams et al. (2000).
+
+\emph{Heliomedusa orienta}: Present: Williams et al. (2000); Jin \& Wang
+(1992).
+
+\emph{Longtancunella chengjiangensis}: Presence is possible but requires
+interpretation that is not unambiguous:
+
+``In the dorsal valve, there can be seen two baculate grooves that arise
+from the\\
+anterior body wall at an antero-lateral position. These two grooves
+(Figs 4H, 5D) could be taken to represent the vascula lateralia'' --
+Zhang et al 2007
+
+\emph{Lingulellotreta malongensis}: Present (Williams et al. 2000).
+
+\emph{Askepasma toddense}: ``Laurie (1987) has shown that arcuate
+vascula media were present in the mantles of both valves as were
+pouchlike vascula genitalia, especially in the ventral valve'' --
+Williams et al. 1997
+
+\emph{Micromitra}: ``Laurie (1987) has shown that arcuate vascula media
+were present in the mantles of both valves as were pouchlike vascula
+genitalia, especially in the ventral valve'' -- Williams et al. 1997
+
+\emph{Nisusia sulcata}: Following Table 15 in Williams et al. (2000).
+
+\emph{Pelagodiscus atlanticus}: Wollowing Lochothele (Discinidae), Fig.
+43.4a in Williams et al. (2000).
+
+\emph{Novocrania}: Following Table 15 in Williams et al. (2000) (for
+Neocrania).\\
+Williams et al. (2000) write ``Holocene craniides have only a single
+pair of main trunks in both valves, corresponding to the vascula
+lateralia''\\
+Williams et al. (2007) reiterate this position (p.~2875), at least for
+the ventral valve.
+
+\emph{Terebratulina}: = vascula genitalia
+
+\emph{Alisina}: Following Table 15 in Williams et al. (2000).
+
+\emph{Orthis}: = vascula genetalia
+
+\emph{Gasconsia}: Following Table 15 in Williams et al. (2000).
+
+\emph{Clupeafumosus socialis}: Presence indicated in Table 8 (for
+Acrotreta) in Williams et al. (2000).
+
+\emph{Yuganotheca elegans}: Based on the figures and sketches in Zhang
+et al. 2014 (and supplementary material), the mantle canals are
+interpreted as lateral, with no clear vascula media present.
+
+\hypertarget{mantle-canals-vascula-media}{%
+\section*{Mantle canals: vascula
+media}\label{mantle-canals-vascula-media}}
+\addcontentsline{toc}{section}{Mantle canals: vascula media}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-82.pdf}
+
+\textbf{Character 82 : Mantle canals: vascula media }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present (in dorsal valve)'\\
+Neomorphic character.
+\end{quote}
+
+Williams et al. (1997) note that in addition to the vascula lateralia,
+``Discinisca has two additional mantle canals emanating from the body
+cavity into the dorsal mantle (vascula media).''
+
+These structures are only evident in the dorsal valve for the included
+taxa, so only a single character is necessary.
+
+\emph{Tomteluva perturbata}: Preservation not adequate to evaluate
+(Streng 2016).
+
+\emph{Kutorgina chengjiangensis}: Following Table 15 in Williams et al.
+(2000).
+
+\emph{Lingula}: Following Table 6 in Williams et al. (2000).
+
+\emph{Acanthotretella}: Following Table 6 (for Siphonotretidae) in
+Williams et al. (2000).
+
+\emph{Heliomedusa orienta}: Present: Williams et al. (2000) p162, Jin \&
+Wang (1992).
+
+\emph{Longtancunella chengjiangensis}: Reported by Zhang et al. (2007)
+though the interpretation is tentative.
+
+\emph{Lingulellotreta malongensis}: Following Table 6 in Williams et al.
+(2000).
+
+\emph{Askepasma toddense}: Following Table 6 (for Paterinidae) in
+Williams et al. (2000).
+
+\emph{Micromitra}: Reported by Williams et al. (1998).
+
+\emph{Nisusia sulcata}: Following Table 15 in Williams et al. (2000).
+
+\emph{Pelagodiscus atlanticus}: Following Table 6 (for Discinidae) in
+Williams et al. (2000).
+
+\emph{Novocrania}: Williams et al. (2000) write ``Holocene craniides
+have only a single pair of main trunks in both valves, corresponding to
+the vascula lateralia'' -- an observation reflected in their table 15
+(for Neocrania).\\
+But in contrast, Williams et al. 2007, p.~2875, identify the dorsal
+valve''s canals as a vascula media in living cranidds (though both are
+lateralia in Ordoviian craniides). This character is therefore coded as
+ambiguous.
+
+\emph{Terebratulina}: ``In modern terebratulides, the vascula media are
+subordinate to the lemniscate or pinnate vascula genitalia'' -- Williams
+et al. 1997 p417
+
+\emph{Alisina}: Following Table 15 in Williams et al. (2000).
+
+\emph{Orthis}: From idealised morphology in Williams et al. (2000)
+
+\emph{Gasconsia}: Following Table 15 in Williams et al. (2000).
+
+\emph{Glyptoria}: Present and divergent (Williams et al. 2000).
+
+\emph{Clupeafumosus socialis}: Following Hadrotreta schematic in
+Williams et al. (2000).
+
+\emph{Yuganotheca elegans}: Based on the figures and sketches in Zhang
+et al. 2014 (and supplementary material), the mantle canals are
+interpreted as lateral, with no clear vascula media present.
+
+\emph{Eoobolus}: Fig. 5 in Balthasar 2009.
+
+\hypertarget{mantle-canals-vascula-terminalia}{%
+\section*{Mantle canals: vascula
+terminalia}\label{mantle-canals-vascula-terminalia}}
+\addcontentsline{toc}{section}{Mantle canals: vascula terminalia}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-83.pdf}
+
+\textbf{Character 83 : Mantle canals: vascula terminalia }
+
+\begin{quote}
+0: `Exclusively marginal (peripheral)'\\
+1: `Directed peripherally and (intero)medially'\\
+Neomorphic character.
+\end{quote}
+
+Presumed to be connected with setal follicles in life (Williams et al.
+1998). See Williams et al. (2000) for discussion.
+
+\emph{Kutorgina chengjiangensis}: Coded uncertain in Appendix 2 in
+Williams et al. (1998).
+
+\emph{Salanygolina}: Coded uncertain in Appendix 2 in Williams et al.
+(1998).
+
+\emph{Lingula}: Peripheral and medial for all Lingulata (Williams et al.
+2000).
+
+\emph{Acanthotretella}: Preservation not clear enough to score with
+certainty (Holmer \& Caron 2006)
+
+\emph{Heliomedusa orienta}: Inferred from Jin \& Wang (1992).
+
+\emph{Askepasma toddense}: Peripheral only (Williams et al. 1998, 2000).
+
+\emph{Micromitra}: Peripheral only (Williams et al. 1998, 2000).
+
+\emph{Pelagodiscus atlanticus}: Wollowing Lochothele (Discinidae), Fig.
+43.4a in Williams et al. (2000).
+
+\emph{Novocrania}: Peripheral only (Williams et al. 2000, p.158).
+
+\emph{Terebratulina}: Following idealised plectolophous terebratulid of
+Emig (1992).
+
+\emph{Alisina}: Interomedial vascula terminalia not reported by Williams
+et al. (2000).
+
+\emph{Orthis}: See schematics in Williams et al. (2000)
+
+\emph{Glyptoria}: Following Appendix 2 in Williams et al. (1998).
+
+\hypertarget{lophophore-tentacle-disposition}{%
+\section*{Lophophore: tentacle
+disposition}\label{lophophore-tentacle-disposition}}
+\addcontentsline{toc}{section}{Lophophore: tentacle disposition}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-84.pdf}
+
+\textbf{Character 84 : Lophophore: tentacle disposition }
+
+\begin{quote}
+1: `Single side'\\
+2: `Both sides'\\
+Transformational character.
+\end{quote}
+
+Tentacles may occur along one or both sides of the axis of the
+lophophore arm (Carlson 1995).
+
+\emph{Lingulosacculus}: Preservation insufficient to evaluate
+
+\emph{Phoronis}: Following coding for higher group in Carlson 1995,
+Appendix 1, character 36.
+
+\emph{Kutorgina chengjiangensis}: Tentacles ``cannot be confidently
+demonstrated in the available specimens.'' -- Zhang et al. 2007
+
+\emph{Lingula}: Following coding for higher group in Carlson 1995,
+Appendix 1, character 36.
+
+\emph{Acanthotretella}: Preservation insufficient to evaluate (Caron \&
+Holmer 2006)
+
+\emph{Heliomedusa orienta}: ``Each lophophoral arm bears a row of long,
+slender flexible tentacles'' -- Zhang et al. 2009
+
+\emph{Longtancunella chengjiangensis}: Inadequately preserved to
+evaluate.
+
+\emph{Lingulellotreta malongensis}: ``The tentacles are clearly visible,
+and closely arranged in a single palisade'' -- Zhang et al. 2004
+
+\emph{Pelagodiscus atlanticus}: Following coding for higher group in
+Carlson 1995, Appendix 1, character 36.
+
+\emph{Novocrania}: Following coding for higher group in Carlson 1995,
+Appendix 1, character 36.
+
+\emph{Terebratulina}: Following coding for higher group in Carlson 1995,
+Appendix 1, character 36.
+
+\emph{Alisina}: Preservation inadequate.
+
+\hypertarget{lophophore-tentacle-rows-per-side-trocholophe-stage}{%
+\section*{Lophophore: tentacle rows per side: trocholophe
+stage}\label{lophophore-tentacle-rows-per-side-trocholophe-stage}}
+\addcontentsline{toc}{section}{Lophophore: tentacle rows per side:
+trocholophe stage}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-85.pdf}
+
+\textbf{Character 85 : Lophophore: tentacle rows per side: trocholophe
+stage }
+
+\begin{quote}
+0: `Single row'\\
+1: `Ablabial and adlabial row'\\
+Neomorphic character.
+\end{quote}
+
+After Carlson (1995), character 37. Lophophore tentacles are commonly
+arranged into an ablabial and adlablial row, with ablabial tentacles
+sometimes added later in development.
+
+\emph{Phoronis}: Following coding for higher taxon in Carlson (1995),
+appendix 1, character 37.
+
+\emph{Lingula}: Following coding for higher taxon in Carlson (1995),
+appendix 1, character 37.
+
+\emph{Pelagodiscus atlanticus}: Following coding for higher taxon in
+Carlson (1995), appendix 1, character 37.
+
+\emph{Novocrania}: Following coding for higher taxon in Carlson (1995),
+appendix 1, character 37. Also states in Williams et al. 2000, p.~158.
+
+\emph{Terebratulina}: Following coding for higher taxon in Carlson
+(1995), appendix 1, character 37.
+
+\hypertarget{lophophore-tentacle-rows-per-side-post-trocholophe-stage}{%
+\section*{Lophophore: tentacle rows per side: post-trocholophe
+stage}\label{lophophore-tentacle-rows-per-side-post-trocholophe-stage}}
+\addcontentsline{toc}{section}{Lophophore: tentacle rows per side:
+post-trocholophe stage}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-86.pdf}
+
+\textbf{Character 86 : Lophophore: tentacle rows per side:
+post-trocholophe stage }
+
+\begin{quote}
+0: `Single row'\\
+1: `Adbalial and ablabial row'\\
+Neomorphic character.
+\end{quote}
+
+After Carlson (1995), character 37. Lophophore tentacles are commonly
+arranged into an ablabial and adlablial row, with ablabial tentacles
+sometimes added later in development.
+
+\emph{Lingulosacculus}: Preservation insufficient to evaluate
+
+\emph{Phoronis}: Following coding for higher taxon in Carlson (1995),
+appendix 1, character 37.
+
+\emph{Kutorgina chengjiangensis}: Tentacles ``cannot be confidently
+demonstrated in the available specimens.'' -- Zhang et al. 2007
+
+\emph{Lingula}: Following coding for higher taxon in Carlson (1995),
+appendix 1, character 37.
+
+\emph{Acanthotretella}: Preservation insufficient to evaluate (Caron \&
+Holmer 2006)
+
+\emph{Heliomedusa orienta}: ``The lophophoral arms bear laterofrontal
+tentacles with a double row of cilia along their lateral edge, as in
+extant lingulid brachiopods'' -- Zhang et al. 2009
+
+\emph{Lingulellotreta malongensis}: Single palisade - Zhang et al. 2004
+
+\emph{Pelagodiscus atlanticus}: Following coding for higher taxon in
+Carlson (1995), appendix 1, character 37.
+
+\emph{Novocrania}: Following coding for higher taxon in Carlson (1995),
+appendix 1, character 37.
+
+\emph{Terebratulina}: Following coding for higher taxon in Carlson
+(1995), appendix 1, character 37.
+
+\emph{Yuganotheca elegans}: ``helical lophophore fringed with a single
+row of thick, widely spaced, parallel-sided and hollow tentacles'' --
+Zhang et al. 2014
+
+\hypertarget{lophophore-median-tentacle-in-early-development}{%
+\section*{Lophophore: Median tentacle in early
+development}\label{lophophore-median-tentacle-in-early-development}}
+\addcontentsline{toc}{section}{Lophophore: Median tentacle in early
+development}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-87.pdf}
+
+\textbf{Character 87 : Lophophore: Median tentacle in early development
+}
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Following character 28 in Carlson 1995. Certain taxa exhibit a median
+tentacle early in development that is lost at some point in ontogeny.
+
+\emph{Pedunculotheca diania}: Lophophore ontogeny presently unknown.
+
+\emph{Micrina}: Lophophore ontogeny presently unknown.
+
+\emph{Paterimitra}: Lophophore ontogeny presently unknown.
+
+\emph{Namacalathus}: Lophophore ontogeny presently unknown.
+
+\emph{Eccentrotheca}: Lophophore ontogeny presently unknown.
+
+\emph{Haplophrentis carinatus}: Lophophore ontogeny presently unknown.
+
+\emph{Lingulosacculus}: Lophophore ontogeny presently unknown.
+
+\emph{Tomteluva perturbata}: Lophophore ontogeny presently unknown.
+
+\emph{Mummpikia nuda}: Lophophore ontogeny presently unknown.
+
+\emph{Coolinia pecten}: Lophophore ontogeny presently unknown.
+
+\emph{Kutorgina chengjiangensis}: Lophophore ontogeny presently unknown.
+
+\emph{Salanygolina}: Lophophore ontogeny presently unknown.
+
+\emph{Dailyatia}: Lophophore ontogeny presently unknown.
+
+\emph{Acanthotretella}: Lophophore ontogeny presently unknown.
+
+\emph{Heliomedusa orienta}: Lophophore ontogeny presently unknown.
+
+\emph{Longtancunella chengjiangensis}: Lophophore ontogeny presently
+unknown.
+
+\emph{Lingulellotreta malongensis}: Lophophore ontogeny presently
+unknown.
+
+\emph{Askepasma toddense}: Lophophore ontogeny presently unknown.
+
+\emph{Micromitra}: Lophophore ontogeny presently unknown.
+
+\emph{Nisusia sulcata}: Lophophore ontogeny presently unknown.
+
+\emph{Antigonambonites planus}: Lophophore ontogeny presently unknown.
+
+\emph{Alisina}: Lophophore ontogeny presently unknown.
+
+\emph{Orthis}: Lophophore ontogeny presently unknown.
+
+\emph{Gasconsia}: Lophophore ontogeny presently unknown.
+
+\emph{Glyptoria}: Lophophore ontogeny presently unknown.
+
+\emph{Clupeafumosus socialis}: Lophophore ontogeny presently unknown.
+
+\emph{Yuganotheca elegans}: Lophophore ontogeny presently unknown.
+
+\hypertarget{lophophore-forms-closed-loop}{%
+\section*{Lophophore: forms closed
+loop}\label{lophophore-forms-closed-loop}}
+\addcontentsline{toc}{section}{Lophophore: forms closed loop}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-88.pdf}
+
+\textbf{Character 88 : Lophophore: forms closed loop }
+
+\begin{quote}
+1: `Diverging laterally'\\
+2: `Closed loop'\\
+Transformational character.
+\end{quote}
+
+Whereas the lophophore of crown-group brachiopods typically forms a
+closed loop, those of Haplophorentis and \emph{Heliomedusa} diverge
+laterally (Moysiuk et al 2017).
+
+\emph{Namacalathus}: The existence of a lophophore is speculative.
+
+\emph{Lingulosacculus}: Two diverging arms of the lophophore are
+preserved (Balthasar \& Butterfield 2009)
+
+\emph{Longtancunella chengjiangensis}: Two distinct, diverging arms
+reconstructed by Zhang et al. 2007
+
+\emph{Nisusia sulcata}: No specimens of \emph{Nisusia} preserve the
+lophophore.
+
+\hypertarget{lophophore-coiling-direction}{%
+\section*{Lophophore: coiling
+direction}\label{lophophore-coiling-direction}}
+\addcontentsline{toc}{section}{Lophophore: coiling direction}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-89.pdf}
+
+\textbf{Character 89 : Lophophore: coiling direction }
+
+\begin{quote}
+1: `Anteriad'\\
+2: `Posteriad'\\
+Transformational character.
+\end{quote}
+
+The lophophore arms of \emph{Heliomedusa} and \emph{Haplophrentis} arch
+posteriad, rather than anteriad as in lingulids. See Zhang et al. 2009;
+Moysuik et al. 2017.
+
+\emph{Phoronis}: Coiling in direction of anus (i.e.~posteriad)
+
+\emph{Acanthotretella}: Arms proceed anteriad before recurving.
+
+\emph{Lingulellotreta malongensis}: Arms proceed anteriad before
+recurving.
+
+\emph{Pelagodiscus atlanticus}: ``converging anteriorly and coiling
+anterior to the body cavity'' -- Zhang et al. 2009
+
+\hypertarget{lophophore-adjustor-muscle}{%
+\section*{Lophophore: adjustor
+muscle}\label{lophophore-adjustor-muscle}}
+\addcontentsline{toc}{section}{Lophophore: adjustor muscle}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-90.pdf}
+
+\textbf{Character 90 : Lophophore: adjustor muscle }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Following character 55 in Carlson (1995). Not possible to code in most
+fossil taxa.
+
+\emph{Pedunculotheca diania}: Preservation not adequate to evaluate
+presence or absence of this muscle.
+
+\emph{Micrina}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Paterimitra}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Namacalathus}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Eccentrotheca}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Haplophrentis carinatus}: Preservation not adequate to evaluate
+presence or absence of this muscle.
+
+\emph{Lingulosacculus}: Preservation not adequate to evaluate presence
+or absence of this muscle.
+
+\emph{Phoronis}: Following coding for higher taxon in Carlson (1995),
+appendix 1, character 55.
+
+\emph{Tomteluva perturbata}: Preservation not adequate to evaluate
+presence or absence of this muscle.
+
+\emph{Mummpikia nuda}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Coolinia pecten}: Preservation not adequate to evaluate presence
+or absence of this muscle.
+
+\emph{Kutorgina chengjiangensis}: Preservation not adequate to evaluate
+presence or absence of this muscle.
+
+\emph{Salanygolina}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Dailyatia}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Lingula}: Following coding for higher taxon in Carlson (1995),
+appendix 1, character 55.
+
+\emph{Acanthotretella}: Preservation not adequate to evaluate presence
+or absence of this muscle.
+
+\emph{Heliomedusa orienta}: Preservation not adequate to evaluate
+presence or absence of this muscle.
+
+\emph{Longtancunella chengjiangensis}: Preservation not adequate to
+evaluate presence or absence of this muscle.
+
+\emph{Lingulellotreta malongensis}: Preservation not adequate to
+evaluate presence or absence of this muscle.
+
+\emph{Askepasma toddense}: Preservation not adequate to evaluate
+presence or absence of this muscle.
+
+\emph{Micromitra}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Nisusia sulcata}: Preservation not adequate to evaluate presence
+or absence of this muscle.
+
+\emph{Pelagodiscus atlanticus}: Following coding for higher taxon in
+Carlson (1995), appendix 1, character 55.
+
+\emph{Novocrania}: Following coding for higher taxon in Carlson (1995),
+appendix 1, character 55.
+
+\emph{Terebratulina}: Following coding for higher taxon in Carlson
+(1995), appendix 1, character 55.
+
+\emph{Antigonambonites planus}: Preservation not adequate to evaluate
+presence or absence of this muscle.
+
+\emph{Alisina}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Orthis}: Preservation not adequate to evaluate presence or absence
+of this muscle.
+
+\emph{Gasconsia}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Glyptoria}: Preservation not adequate to evaluate presence or
+absence of this muscle.
+
+\emph{Clupeafumosus socialis}: Preservation not adequate to evaluate
+presence or absence of this muscle.
+
+\emph{Yuganotheca elegans}: Preservation not adequate to evaluate
+presence or absence of this muscle.
+
+\hypertarget{prominent-pharynx}{%
+\section*{Prominent pharynx}\label{prominent-pharynx}}
+\addcontentsline{toc}{section}{Prominent pharynx}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-91.pdf}
+
+\textbf{Character 91 : Prominent pharynx }
+
+\begin{quote}
+0: `Absent'\\
+1: `Present'\\
+Neomorphic character.
+\end{quote}
+
+Hyoliths exhibit a prominent protrusible muscular pharynx at the base of
+the lophophore (Moysiuk et al. 2017); no equivalent feature is observed
+in brachiopods.
+
+\emph{Heliomedusa orienta}: Corresponding to the ``neck'' of the
+vase-shaped visceral cavity reported by Zhang et al. 2009
+
+\emph{Yuganotheca elegans}: Possibly present, following interpretation
+of mouth (see fig. 2c, d in Zhang et al. 2014)
+
+\hypertarget{anus}{%
+\section*{Anus}\label{anus}}
+\addcontentsline{toc}{section}{Anus}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-92.pdf}
+
+\textbf{Character 92 : Anus }
+
+\begin{quote}
+1: `Absent: digestive tract is blind sac'\\
+2: `Present: through-gut'\\
+Transformational character.
+\end{quote}
+
+The digestive tract may either constitute a blind sac, or a through gut
+with anus.
+
+\emph{Kutorgina chengjiangensis}: Although ``the possibility of a blind
+ending may not be completely eliminated {[}\ldots{}{]} the weight of
+evidence {[}\ldots{}{]} leads us to reject the possibility of a
+blind-ending intestine'' -- Zhang et al. 2007, p.~1399
+
+\emph{Glyptoria}: Scored according to familial level feature.
+
+\hypertarget{anus-migration}{%
+\section*{Anus: migration}\label{anus-migration}}
+\addcontentsline{toc}{section}{Anus: migration}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-93.pdf}
+
+\textbf{Character 93 : Anus: migration }
+
+\begin{quote}
+0: `Not migrated: straight gut with posterior anus'\\
+1: `Migrated: anus has migrated posteriad to create U-shaped gut'\\
+Neomorphic character.
+\end{quote}
+
+``The relative position of the mouth and anus in the larvae of
+brachiopods and phoronids is similar: posterior anus and anterior
+mouth'' -- Williams et al. 2007, p.~2884
+
+\emph{Kutorgina chengjiangensis}: ``Five specimens have an exceptionally
+preserved digestive tract, dorsally curved, with a putative
+dorso-terminal anus located near the proximal end of a pedicle'' --
+Zhang et al. 2007
+
+\emph{Terebratulina}: ``In rhynchonelliforms, the gut curves somewhat
+into a C-shape and the (blind) anus becomes posteroventral in
+position.'' -- Williams et al. 2007,\\
+p.~2884
+
+\hypertarget{anus-migration-within-ring-of-tentacles}{%
+\section*{Anus: migration: within ring of
+tentacles}\label{anus-migration-within-ring-of-tentacles}}
+\addcontentsline{toc}{section}{Anus: migration: within ring of
+tentacles}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-94.pdf}
+
+\textbf{Character 94 : Anus: migration: within ring of tentacles }
+
+\begin{quote}
+1: `Not within ring of tentacles'\\
+2: `Anterior - within ring of feeding tentacles'\\
+Transformational character.
+\end{quote}
+
+A migrated anus may be located laterally or within the lophophore ring
+(as in entoprocts).
+
+\emph{Kutorgina chengjiangensis}: ``Presumed to terminate in a
+functional anus located near the proximal end of the pedicle.'' -- Zhang
+et al. 2007
+
+\hypertarget{anus-migration-position}{%
+\section*{Anus: migration: position}\label{anus-migration-position}}
+\addcontentsline{toc}{section}{Anus: migration: position}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-5-95.pdf}
+
+\textbf{Character 95 : Anus: migration: position }
+
+\begin{quote}
+1: `Left'\\
+2: `Right'\\
+3: `Dorsally'\\
+4: `Ventrally'\\
+Transformational character.
+\end{quote}
+
+If the anus is not within the ring of tentacles, in which direction is
+it oriented?
+
+\emph{Haplophrentis carinatus}: Opening to the right -- see figures 1,
+3, and extended data 5 in Moysiuk et al. (2017). The text states in
+error that the anus is to the left of the midline.
+
+\emph{Lingulosacculus}: ``This same arrangement occurs in L.
+\emph{nuda}, with the looped dark line tracking the same course as the
+exceptionally preserved guts of Chengjiang lingulellotretids, including
+the median position of its posterior loop and the sharp right turn as it
+exits the posterior extension of the ventral valve'' (Balthasar et
+al.,2009, p.310).
+
+\emph{Kutorgina chengjiangensis}: ``Five specimens have an exceptionally
+preserved digestive tract, dorsally curved, with a putative
+dorso-terminal anus located near the proximal end of a pedicle'' --
+Zhang et al. 2007
+
+\emph{Lingula}: ``In the lingulids, the {[}intestine{]} follows an
+oblique course anteriorly to open at the anus on the right body wall.''
+-- Williams et al. 1997, p.~89
+
+\emph{Longtancunella chengjiangensis}: ``The intestine extends
+posteriorly, and then turns right to continue as a tortuous strand,
+finally terminating at the latero-median position of the anterior body
+wall'' -- Zhang et al. 2007
+
+\emph{Lingulellotreta malongensis}: ``finally terminating in an anal
+opening on the right anterior\\
+body wall'' (Zhang et al., 2007, p.66).
+
+\emph{Terebratulina}: ``In rhynchonelliforms, the gut curves somewhat
+into a C-shape and the (blind) anus becomes posteroventral in
+position.'' -- Williams et al. 2007,\\
+p.~2884
+
+\emph{Yuganotheca elegans}: The identification of the ``very poorly
+impressed possible anus at the lateral side of the anterior body wall''
+is not yet confident, so this character is coded as not presently
+available.
+
+\citep{Skovsted2008Thescleritome, Holmer2006Aspinose, Clarkson2013, Holmer2018Theattachment, Bassett2017Earliestontogeny, Balthasar2008iMummpikia, Williams1997PartH, Kouchinsky2000Skeletalmicrostructures, Holmer1989MiddleOrdovician, Cusack1999Chemicostructural, Balthasar2004Shellstructure, Holmer2011Firstrecord, Holmer2008EarlyCambrian, Larsson2014iPaterimitra, Holmer2009Theenigmatic, Zhang2011Theexceptionally, Streng2016Anew, Moysiuk2017Hyolithsare, Zhang2009Architectureand, Zhang2007Noteon, Balthasar2009EarlyCambrian, 0, Zhuravlev2015Ediacaranskeletal, Bassett2008Earlyontogeny, Holmer2018Evolutionarysignificance, Popov2007Earliestontogeny, Bassett2001Functionalmorphology, Zhang2011Anobolellate, Skovsted2015Theearly, Skovsted2011Scleritomeconstruction, Balthasar2009Homologousskeletal, Wright1996Areview, Madison2017Laminarshell, Dewing2001Hingemodifications, Zhang2007Rhynchonelliformeanbrachiopods, Rowell1985Theevolutionary, Zhang2014Anearly, Laurie1986Phosphaticfauna, Topper2013Theoldest, Hu2010Softpart, Williams1998Thediversity, Kruse1990, Ushatinskaya2016Protegulumand, Williams2000BrachiopodaLinguliformea, Robinson2014Themuscles, Williams2006Rhynchonelliformeapart, Ruppert1993, Chen2007Reinterpretationof, Holmer1997EarlyCambrian, Williams1996ASupra, Barczyk1973BraehiopodsTerebratulina, Ackerly1992Rapidshell, Conklin1902Theembryology, Chapman1914IVNotes, Williams2002Shellstructure, Harper2017Brachiopodsorigin, Hanken1985Thetaxonomy, Benedetto2009iChaniella, Topper2013Reappraisalof, Zhang2016Epithelialcell, Butler2012ConstructingCambrian, Zhang2007Agregarious, Jin1992Revisionof, Williams1998Chemicostructural, Watkins2002Newrecord, Emig1992Functionaldisposition, Elliott1939Noteon, Skovsted2010EarlyCambrian, Robson2001Cambrianand, Lee1986iNeocrania, Dzik1980Ontogenyof, Cooper1976LowerCambrian, Hou2017Brachiopoda, Carlson1995Phylogeneticrelationships, Ruppert2004, Zhang2004Newdata, Zhang2004Softtissue, Williams1989Biomineralizationin, Freeman1999Changesin, Williams2007PartH, Gorjansky1986Onthe, Balthasar2011Relicaragonite, Skovsted2003EarlyCambrian, Balthasar2009Thebrachiopod, Balthasar2007Anearly, Kuzmina2007Structureof}
+
+\hypertarget{tnt}{%
+\chapter{Fitch parsimony}\label{tnt}}
+
+Parsimony search was conducted in TNT v1.5 \citep{Goloboff2016} using
+sectorial and ratchet heuristics \citep{Goloboff1999, Nixon1999} under
+equal and implied weights \citep{Goloboff1997}. We acknowledge the Willi
+Hennig Society for their sponsorship of the TNT software.
+
+\hypertarget{implied-weights}{%
+\section{Implied weights}\label{implied-weights}}
+
+The consensus of all implied weights runs is not very well resolved:
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-7-1.pdf}
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+This lack of resolution is largely a product of a few wildcard taxa,
+which obscure relationships that are nevertheless present in all most
+parsimonious trees:
+
+\hypertarget{paterinids-included}{%
+\subsection{Paterinids included}\label{paterinids-included}}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-11-1.pdf}
+\caption{\label{fig:unnamed-chunk-11}TNT implied weights consensus}
+\end{figure}
+
+\hypertarget{paterinids-excluded}{%
+\subsection{Paterinids excluded}\label{paterinids-excluded}}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-12-1.pdf}
+\caption{\label{fig:unnamed-chunk-12}TNT implied weights consensus}
+\end{figure}
+
+\hypertarget{equal-weights}{%
+\section{Equal weights}\label{equal-weights}}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-13-1.pdf}
+\caption{\label{fig:unnamed-chunk-13}TNT Equal weights consensus}
+\end{figure}
+
+\hypertarget{bayesian-analysis}{%
+\chapter{Bayesian analysis}\label{bayesian-analysis}}
+
+Bayesian search was conducted in MrBayes v3.2.6 \citep{Ronquist2012}
+using the Mk model \citep{Lewis2001} with a gamma parameter:
+
+\begin{quote}
+lset coding=variable rates=gamma;
+\end{quote}
+
+Branch length was drawn from a dirichlet prior distribution, which is
+less informative than an exponential model \citep{Rannala2012}, but
+requires a prior mean tree length within about two orders of magnitude
+of the true value \citep{Zhang2012}. To satisfy this latter criterion,
+we specified the prior mean tree length to be equal to the length of the
+most parsimonious tree under equal weights, usinga Dirichlet prior with
+\(α_T = 1\), \(β_T = 1/\)(\emph{equal weights tree length} /
+\emph{number of characters}), \(α = c = 1\):
+
+\begin{quote}
+prset brlenspr = unconstrained: gammadir(1, 0.33, 1, 1);
+\end{quote}
+
+Neomorphic and transformational characters \citep[sensu][]{Sereno2007}
+were allocated to two separate partitions whose proportion of invariant
+characters and gamma shape parameters were allowed to vary
+independently:
+
+\begin{quote}
+charset Neomorphic = 2 3 5 10 13 14 18 19 24 25 29 30 32 34 36 37 38 39
+40 43 50 51 53 54 55 60 63 64 67 70 72 73 76 77 78 79 84 88 89 92 94 95;
+
+charset Transformational = 1 4 6 7 8 9 11 12 15 16 17 20 21 22 23 26 27
+28 31 33 35 41 42 44 45 46 47 48 49 52 56 57 58 59 61 62 65 66 68 69 71
+74 75 80 81 82 83 85 86 87 90 91 93;
+
+partition chartype = 2: Neomorphic, Transformational;
+
+set partition = chartype;
+
+unlink shape=(all) pinvar=(all);
+\end{quote}
+
+Neomorphic characters were not assumed to have a symmetrical transition
+rate -- that is, the probability of the absent → present transition was
+allowed to differ from that of the present → absent transition, being
+drawn from a uniform prior:
+
+\begin{quote}
+prset applyto=(1) symdirihyperpr=fixed(1.0);
+\end{quote}
+
+Four MrBayes runs were executed, each sampling eight chains for 1 000
+000 generations, with samples taken every 500 generations:
+
+\begin{quote}
+mcmcp ngen=1000000 samplefreq=500 nruns=2 nchains=8;
+\end{quote}
+
+The first 10\% of samples were discarded as burn-in
+(\texttt{burninfrac=0.1}), and a posterior tree topology was derived
+from the combined posterior sample of both runs.
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-15-1.pdf}
+\caption{\label{fig:unnamed-chunk-15}Bayesian analysis, posterior
+probability \textgreater{} 50\%}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-16-1.pdf}
+\caption{\label{fig:unnamed-chunk-16}Bayesian analysis, posterior
+probability \textgreater{} 50\%}
+\end{figure}
+
+Convergence was indicated by PSRF = 1.00 and an average estimated sample
+size of \textgreater{} 500 for each parameter:
+
+\begin{table}
+
+\caption{(\#tab:MrBayes parameter summary)MrBayes parameter estimates (.pstat file)}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|r}
+\hline
+Parameter & Mean & Variance & Lower & Upper & Median & minESS & avgESS & PSRF\\
+\hline
+TL\{all\} & 6.708892 & 1.624940 & 4.8329690 & 9.249889 & 6.781895 & 9.742945 & 877.9326 & 1.022541\\
+\hline
+alpha\{1\} & 2.403829 & 1.536554 & 0.0001827 & 4.702963 & 2.194241 & 23.533840 & 1038.9600 & 1.005475\\
+\hline
+alpha\{2\} & 2.950148 & 2.036612 & 0.0022876 & 5.567708 & 2.770201 & 22.238850 & 1073.5860 & 1.004902\\
+\hline
+\end{tabular}
+\end{table}
+
+It's interesting to note that the clade of hyoliths + lingulellotretids
+(+ relatives) is resolved as a grade under Bayesian analysis.
+
+In parsimony analysis, these taxa are always resolved as a clade when
+inapplicable data is correctly handled; they instead resolve as a grade
+under certain conditions under the \protect\hyperlink{TNT}{standard
+Fitch} algorithm (which mishandles inapplicable data).
+
+We suggest that the failure of Bayesian analysis to recover this group
+as a clade may reflect inappropriate handling of inapplicable data in
+MrBayes, though at present (and until the algorithms used in a
+likelihood context are improved) it is difficult to test this
+hypothesis.
+
+The same goes for the position of \emph{Gasconsia}, which is widely held
+to have an affinity with the craniid brachiopods, and is recovered in
+such a position using the inapplicable-safe parsimony algorithm (but not
+always when the standard Fitch parsimony algorithm is used).
+
+\bibliography{References.bib,MorphoBank.bib}
+
+
+\end{document}

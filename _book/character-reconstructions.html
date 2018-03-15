@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Brachiopod origins - Phylogenetic analysis</title>
+  <meta name="description" content="Results of phylogenetic analysis">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Brachiopod origins - Phylogenetic analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Results of phylogenetic analysis" />
+  <meta name="github-repo" content="ms609/hy" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Brachiopod origins - Phylogenetic analysis" />
+  
+  <meta name="twitter:description" content="Results of phylogenetic analysis" />
+  
+
+<meta name="author" content="Martin Smith">
+
+
+<meta name="date" content="2018-03-12">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="treesearch.html">
+<link rel="next" href="tnt.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceLine, a.sourceLine { display: inline-block; min-height: 1.25em; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; }
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+div.sourceLine, a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource div.sourceLine, .numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource div.sourceLine::before, .numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; color: #aaaaaa;  padding-left: 4px; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; color = initial; }
+}
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.bn { color: #40a070; } /* BaseN */
+code span.fl { color: #40a070; } /* Float */
+code span.ch { color: #4070a0; } /* Char */
+code span.st { color: #4070a0; } /* String */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.ot { color: #007020; } /* Other */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.fu { color: #06287e; } /* Function */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code span.cn { color: #880000; } /* Constant */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.im { } /* Import */
+code span.va { color: #19177c; } /* Variable */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.op { color: #666666; } /* Operator */
+code span.bu { } /* BuiltIn */
+code span.ex { } /* Extension */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.at { color: #7d9029; } /* Attribute */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Brachiopod origins</a></li>
+<li class="chapter" data-level="1" data-path="the-dataset.html"><a href="the-dataset.html"><i class="fa fa-check"></i><b>1</b> The dataset</a></li>
+<li class="chapter" data-level="2" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>2</b> Parsimony analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="treesearch.html"><a href="treesearch.html#search-parameters"><i class="fa fa-check"></i><b>2.1</b> Search parameters</a></li>
+<li class="chapter" data-level="2.2" data-path="treesearch.html"><a href="treesearch.html#analysis"><i class="fa fa-check"></i><b>2.2</b> Analysis</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="treesearch.html"><a href="treesearch.html#load-data"><i class="fa fa-check"></i><b>2.2.1</b> Load data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="treesearch.html"><a href="treesearch.html#generate-starting-tree"><i class="fa fa-check"></i><b>2.2.2</b> Generate starting tree</a></li>
+<li class="chapter" data-level="2.2.3" data-path="treesearch.html"><a href="treesearch.html#implied-weights-analysis"><i class="fa fa-check"></i><b>2.2.3</b> Implied weights analysis</a></li>
+<li class="chapter" data-level="2.2.4" data-path="treesearch.html"><a href="treesearch.html#equal-weights-analysis"><i class="fa fa-check"></i><b>2.2.4</b> Equal weights analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="treesearch.html"><a href="treesearch.html#results"><i class="fa fa-check"></i><b>2.3</b> Results</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="treesearch.html"><a href="treesearch.html#implied-weights-results"><i class="fa fa-check"></i><b>2.3.1</b> Implied weights results</a></li>
+<li class="chapter" data-level="2.3.2" data-path="treesearch.html"><a href="treesearch.html#equal-weights-results"><i class="fa fa-check"></i><b>2.3.2</b> Equal weights results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="character-reconstructions.html"><a href="character-reconstructions.html"><i class="fa fa-check"></i><b>3</b> Character reconstructions</a></li>
+<li class="chapter" data-level="4" data-path="tnt.html"><a href="tnt.html"><i class="fa fa-check"></i><b>4</b> Fitch parsimony</a><ul>
+<li class="chapter" data-level="4.1" data-path="tnt.html"><a href="tnt.html#implied-weights"><i class="fa fa-check"></i><b>4.1</b> Implied weights</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="tnt.html"><a href="tnt.html#paterinids-included"><i class="fa fa-check"></i><b>4.1.1</b> Paterinids included</a></li>
+<li class="chapter" data-level="4.1.2" data-path="tnt.html"><a href="tnt.html#paterinids-excluded"><i class="fa fa-check"></i><b>4.1.2</b> Paterinids excluded</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tnt.html"><a href="tnt.html#equal-weights"><i class="fa fa-check"></i><b>4.2</b> Equal weights</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bayesian-analysis.html"><a href="bayesian-analysis.html"><i class="fa fa-check"></i><b>5</b> Bayesian analysis</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Brachiopod origins - Phylogenetic analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="character-reconstructions" class="section level1">
+<h1><span class="header-section-number">3</span> Character reconstructions</h1>
+<p>Here’s how each character maps onto one of the most parsimonious trees (obtained under implied weighting, <span class="math inline">\(k = 4.5\)</span>):</p>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-1.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-2.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-3.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-4.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-5.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-6.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-7.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-8.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-9.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-10.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-11.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-12.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-13.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-14.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-15.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-16.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-17.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-18.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-19.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-20.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-21.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-22.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-23.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-24.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-25.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-26.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-27.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion
+
+## Warning in sort(as.numeric(states)): NAs introduced by coercion
+
+## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-28.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-29.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-30.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-31.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-32.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-33.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-34.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-35.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-36.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-37.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-38.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-39.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-40.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-41.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-42.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-43.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-44.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-45.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-46.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-47.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-48.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion
+
+## Warning in sort(as.numeric(states)): NAs introduced by coercion
+
+## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-49.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-50.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-51.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-52.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-53.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion
+
+## Warning in sort(as.numeric(states)): NAs introduced by coercion
+
+## Warning in sort(as.numeric(states)): NAs introduced by coercion
+
+## Warning in sort(as.numeric(states)): NAs introduced by coercion
+
+## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-54.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-55.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-56.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-57.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-58.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-59.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-60.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-61.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-62.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-63.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-64.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-65.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-66.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-67.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-68.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-69.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-70.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-71.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-72.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-73.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-74.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-75.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-76.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-77.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-78.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-79.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-80.png" width="681.6" /></p>
+<pre><code>## Warning in sort(as.numeric(states)): NAs introduced by coercion</code></pre>
+<p><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-81.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-82.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-83.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-84.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-85.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-86.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-87.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-88.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-89.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-90.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-91.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-92.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-93.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-94.png" width="681.6" /><img src="Brachiopod_phylogeny_files/figure-html/unnamed-chunk-4-95.png" width="681.6" /></p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="treesearch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tnt.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ms609/hy/inst/gitbook/edit/master/03_Characters.Rmd",
+"text": "Edit"
+},
+"download": ["Brachiopod_phylogeny.pdf", "Brachiopod_phylogeny.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
