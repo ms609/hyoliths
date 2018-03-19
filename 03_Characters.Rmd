@@ -165,6 +165,8 @@ writeLines(apply(refs, 1, BibEntry), bibFile)
 close(bibFile)
 ```
 
+## Literature cited in character exposition {-}
+
 ```{R Character references from MorphoBank, echo=FALSE, results='asis'}
 cat(paste0('[@', paste0(apply(refs, 1, RefKey), collapse=';@'), ']'))
 ```
