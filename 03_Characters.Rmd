@@ -13,8 +13,69 @@ output:
 
 ```{R, echo=FALSE}
 library('Inapp')
+str_replace <- stringi::stri_replace_all_fixed
 tree <- iw.trees[[3]][[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
+
+LookUpReference <- function (keys, fail, Format) {
+  if (length(keys) == 0) return (character(0))
+  matches <- vapply(keys, FUN=grepl, FUN.VALUE=logical(length(refKeys)), refKeys, fixed=TRUE)
+  ret <- fail
+  uniques <- colSums(matches) == 1
+  ret[uniques] <- apply(matches[, uniques, drop=FALSE], 2, function (x) Format(refKeys[x]))
+  
+  # Return:
+  ret
+}
+
+ConvertReferences <- function (string) {
+  noParentheses <- "([A-Z][A-z]+) (et al\\. )?(\\d\\d\\d\\d)"
+  ReplNoPar <- function (keyedText, oldKey) {
+    str_replace(keyedText, oldKey, 
+                LookUpReference(oldKey, matchText[[i]], function(x) paste0('@', x)),
+                vectorize_all=FALSE)
+  }
+  
+  parentheses <- "([A-Z][A-z]+)( et al\\.)? \\((\\d\\d\\d\\d)\\)"
+  ReplPar <- function (keyedText, oldKey) {
+    str_replace(keyedText, oldKey, 
+                LookUpReference(oldKey, matchText[[i]], function (x)
+                  paste0(gsub(parentheses, "\\1\\2", matchText[[i]]), ' [-@', x, ']')),
+                vectorize_all=FALSE)
+  }
+  
+  ReplaceRefs <- function (pattern, strings, Replace) {
+    execResults <- gregexpr(pattern, strings)
+    matchText <- regmatches(unlist(strings), execResults)
+    keyed <- gsub(pattern, "\\1\\3", strings)
+    keys <- lapply(matchText, function (x) gsub(pattern, "\\1\\3", x))
+    toEdit <- which(vapply(keys, length, 0) > 0)
+    strings[toEdit] <- lapply(toEdit, function (i) {
+      Replace(keyed[i], keys[[i]])
+    })
+    # Return:
+    strings
+  }
+  
+  matches <- grepl(noParentheses, string)
+  string[matches] <- ReplaceRefs(noParentheses, string[matches], ReplNoPar)
+  
+  matches <- grepl(parentheses, string)
+  string[matches] <- ReplaceRefs(parentheses, string[matches], ReplPar)
+  
+  # Return:
+  string
+}
+
+MorphoBankDecode <- function (string) {
+  string <- gsub("^n", "  \n", string, fixed=TRUE)
+  string <- gsub("''", "'", string, fixed=TRUE)
+  string <- gsub(" - ", " -- ", string, fixed=TRUE)
+  string <- gsub(" et al ", " et al. ", string, fixed=TRUE)
+  
+  # Return:
+  ConvertReferences(string)
+}
 
 ReadNotes <- function (filepath) {
   lines <- readLines(filepath)
@@ -33,15 +94,14 @@ ReadNotes <- function (filepath) {
     charNote.matches <- grepl(charNote.pattern, notesLines, perl=TRUE)
     charNotes <- gsub(charNote.pattern, "\\2",
                        notesLines[charNote.matches], perl=TRUE)
-    charNotes <- gsub("^n", "  \n", charNotes, fixed=TRUE)
-    charNotes <- gsub("''", "'", charNotes, fixed=TRUE)
+    charNotes <- MorphoBankDecode(charNotes)
     charNumbers <- gsub(charNote.pattern, "\\1",
                               notesLines[charNote.matches], perl=TRUE)
     
     stateNote.matches <- grepl(stateNote.pattern, notesLines, perl=TRUE)
     stateNotes <- gsub(stateNote.pattern, "\\3",
                        notesLines[stateNote.matches], perl=TRUE)
-    stateNotes <- gsub("^n", "  \n", stateNotes, fixed=TRUE)
+    stateNotes <- MorphoBankDecode(stateNotes)
     stateTaxon <- gsub(stateNote.pattern, "\\1",
                               notesLines[stateNote.matches], perl=TRUE)
     stateChar  <- gsub(stateNote.pattern, "\\2",
@@ -64,8 +124,9 @@ ReadNotes <- function (filepath) {
 }
 
 PrintStates <- function (states) {
+  states <- gsub("^'(.*)'$", "\\1", states)
   tokens <- seq_along(states) - 1L
-  if (states[1] == "''") {
+  if (states[1] == "") {
     states <- states[-1]
     tokens <- tokens[-1]
     transformational <- TRUE
@@ -82,7 +143,7 @@ taxa_names <- c("Namacalathus", rownames(my_chars))
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
 Italicize <- function (text) {
-  gsub(paste0("\\b(", paste0(gsub("_", "|", c(taxa_names, 'et al\\.', 'et al'), fixed = TRUE), collapse='|'),
+  gsub(paste0("\\b(", paste0(gsub("_", "|", c(taxa_names, 'Eoorthis', 'et al\\.', 'et al'), fixed = TRUE), collapse='|'),
               ")\\b"), "_\\1_", text, perl=TRUE, ignore.case=TRUE)
 }
 #treeCol <- tipCol[tree$tip.label]
@@ -119,54 +180,8 @@ for (i in seq_len(ncol(my_chars))) {
 }
 ```
 
-
-```{R Morphobank bibliography, echo=FALSE}
-mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
-mbRecent <- mbBib[which.max(file.mtime(mbBib))]
-refs <- as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))
-FirstWord <- function (text) gsub("^(\\w+).*$", "\\1", trimws(text), perl=TRUE)
-FirstWords <- function (text) gsub("^\\W*(\\w+)\\W*(\\w+)?.*", "\\1\\2", trimws(text), perl=TRUE)
-FormatAuthors <- function (text) {
-  authors <- trimws(strsplit(text, ';')[[1]])
-  names.pattern <- "(\\w+,)\\s(.*)"
-  surnames <-  gsub(names.pattern, "\\1 ", authors)
-  forenames <- gsub(names.pattern, "\\2", authors)
-  forenames <- gsub("(\\w)\\w+\\.?", "\\1.", forenames)
-  forenames <- gsub("\\.(\\w)", ". \\1", forenames)
-  
-  # Return:
-  paste0(surnames, forenames, collapse=' and ')
-}
-RefKey <- function (ref) paste0(FirstWord(ref['Author']),
-                                trimws(ref['Year']),
-                                FirstWords(ref['Title']))
-BibEntry <- function (ref) {
-  BibLine <- function (bibKey, key, text=ref[key]) {
-    if (is.na(ref[key]) || ref[key] == "") "" else  paste0("  ", bibKey, " = {", trimws(text), "},\n")
-  }
-  refType <- tolower(FirstWord(ref['Reference.Type']))
-  if (refType %in% c('generic', 'journal')) refType <- 'article'
-  paste0("@", refType, '{', 
-         RefKey(ref), ",\n",
-         BibLine('author', 'Author', FormatAuthors(ref['Author'])),
-         BibLine('doi', 'DOI'),
-         BibLine('journal', 'Secondary.Title'),
-         BibLine('title', 'Title', paste0('{', gsub("</?i>", "_", ref["Title"], perl=TRUE), '}')),
-         BibLine('number', 'Number'),
-         BibLine('pages', 'Pages', gsub("\\-+", "--", ref["Pages"], perl=TRUE)),
-         BibLine('volume', "Volume"),
-         BibLine('year', 'Year'),
-         "}\n"
-         )
-}
-
-bibFile <- file("MorphoBank.bib", encoding='UTF-8')
-writeLines(apply(refs, 1, BibEntry), bibFile)
-close(bibFile)
-```
-
 ## Literature cited in character exposition {-}
 
 ```{R Character references from MorphoBank, echo=FALSE, results='asis'}
-cat(paste0('[@', paste0(apply(refs, 1, RefKey), collapse=';@'), ']'))
+cat(paste0('[@', paste0(refKeys, collapse=';@'), ']'))
 ```

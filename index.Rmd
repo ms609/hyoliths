@@ -90,6 +90,51 @@ ColPlot <- function (tree) {
 ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
                                           text.col=tipCol[omit])
 ```
+```{R Morphobank bibliography, echo=FALSE}
+mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
+mbRecent <- mbBib[which.max(file.mtime(mbBib))]
+refs <- as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))
+FirstWord <- function (text) gsub("^(\\w+).*$", "\\1", trimws(text), perl=TRUE)
+FirstWords <- function (text) gsub("^\\W*(\\w+)\\W*(\\w+)?.*", "\\1\\2", trimws(text), perl=TRUE)
+FormatAuthors <- function (text) {
+  authors <- trimws(strsplit(text, ';')[[1]])
+  names.pattern <- "(\\w+,)\\s(.*)"
+  surnames <-  gsub(names.pattern, "\\1 ", authors)
+  forenames <- gsub(names.pattern, "\\2", authors)
+  forenames <- gsub("(\\w)\\w+\\.?", "\\1.", forenames)
+  forenames <- gsub("\\.(\\w)", ". \\1", forenames)
+  
+  # Return:
+  paste0(surnames, forenames, collapse=' and ')
+}
+RefKey <- function (ref) paste0(FirstWord(ref['Author']),
+                                trimws(ref['Year']),
+                                FirstWords(ref['Title']))
+BibEntry <- function (ref) {
+  BibLine <- function (bibKey, key, text=ref[key]) {
+    if (is.na(ref[key]) || ref[key] == "") "" else  paste0("  ", bibKey, " = {", trimws(text), "},\n")
+  }
+  refType <- tolower(FirstWord(ref['Reference.Type']))
+  if (refType %in% c('generic', 'journal')) refType <- 'article'
+  paste0("@", refType, '{', 
+         RefKey(ref), ",\n",
+         BibLine('author', 'Author', FormatAuthors(ref['Author'])),
+         BibLine('doi', 'DOI'),
+         BibLine('journal', 'Secondary.Title'),
+         BibLine('title', 'Title', paste0('{', gsub("</?i>", "_", ref["Title"], perl=TRUE), '}')),
+         BibLine('number', 'Number'),
+         BibLine('pages', 'Pages', gsub("\\-+", "--", ref["Pages"], perl=TRUE)),
+         BibLine('volume', "Volume"),
+         BibLine('year', 'Year'),
+         "}\n"
+         )
+}
+
+bibFile <- file("MorphoBank.bib", encoding='UTF-8')
+writeLines(apply(refs, 1, BibEntry), bibFile)
+close(bibFile)
+refKeys <- apply(refs, 1, RefKey)
+```
 
 # Brachiopod origins {-}
 
