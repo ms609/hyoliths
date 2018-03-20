@@ -5,7 +5,7 @@ Generic	Holmer, Lars E. ;Caron, Jean-Bernard 		2006	A spinose stem group brachio
 Book	Clarkson, E. N. K. 		2013			John Wiley & Sons			468									
 Journal Article	Holmer, Lars E. ;Zhang, Zhifei ;Topper, Timothy P. ;Popov, Leonid ;Claybourn, Thomas M. 		2018	The attachment strategies of Cambrian kutorginate brachiopods: the curious case of two pedicle openings and their phylogenetic significance			92	1	33-39									
 Journal Article	Bassett, M. G. ;Popov, L. E. 		2017	Earliest ontogeny of the Silurian orthotetide brachiopod <i>Coolinia</i> and its significance for interpreting strophomenate phylogeny			50	4	504-510								10.1111/let.12204	
-Journal Article	Balthasar, Uwe 		2008	<i>Mummpikia</i> gen. nov. and the origin of calcitic-shelled brachiopods	Palaeontology		51		263-279		0031-0239	Phosphatised limestone-hosted and shale-hosted specimens of the obolellid Mummpikia nuda gen. et comb. nov. and two further unidentified obolellids from the Early Cambrian Mural Formation (Jasper National Park, Canadian Rocky Mountains) provide novel insights into the shell microstructure of obolellids and the nature of their pedicle. The shell was penetrated by abundant canals of a sub-µm diameter and the anterior tip of the delthyrium forms a projection into the body cavity that is penetrated by a thin canal. It is argued that both shell microstructure and posterior margin are linguliformean characters and that obolellids hold a position basal in the rhynchonelliform stem-group.		Brachiopods; Pedicle; Phosphatisation; Shell microstructure			10.1111/j.1475-4983.2008.00754.x	
+Journal Article	Balthasar, Uwe 		2008	<i>Mummpikia</i> gen. nov. and the origin of calcitic-shelled brachiopods	Palaeontology		51	2	263-279		0031-0239						10.1111/j.1475-4983.2008.00754.x	
 Generic	Williams, Alwyn 		1997	Part H. Brachiopoda. Revised. Volume 1: Introduction														
 Generic	Kouchinsky, Artem V. 		2000	Skeletal microstructures of hyoliths from the Early Cambrian of Siberia			24	2	65-81									
 Generic	Holmer, Lars E. 		1989	Middle Ordovician phosphatic inarticulate brachiopods from Västergötland and Dalarna, Sweden			26											
@@ -49,7 +49,7 @@ Generic	Williams, Alwyn ;Brunton, C. Howard C. ;Carlson, Sandra J. 		2006	Rhynch
 Book	Ruppert, E. E. ;Barnes, R. D. 		1993			Saunders College Publishing			1056									
 Generic	Chen, Jun-yuan ;Huang, Di-ying ;Chuang, Shou-Hwa 		2007	Reinterpretation of the Lower Cambrian brachiopod <i>Heliomedusa orienta</i> Sun and Hou, 1987a as a discinid			81	1	38-47									
 Generic	Holmer, Lars E. ;Popov, Leonid E. ;Koneva, Svetlana P. ;Rong Jia-Yu,  		1997	Early Cambrian Lingulellotreta (Lingulata, Brachiopoda) from South Kazakhstan (Malyi Karatau Range) and South China (Eastern Yunnan)			71		577-584									
-Journal Article	Williams, Alwyn ;Carlson, Sandra J. ;Brunton, C. Howard C. ;Holmer, Lars E. ;Popov, Leonid E. 		1996	A Supra-Ordinal Classification of the Brachiopoda			351	1344	1171-1193									
+Journal Article	Williams, Alwyn ;Carlson, Sandra J. ;Brunton, C. Howard C. ;Holmer, Lars E. ;Popov, Leonid E. 		1996	A supra-ordinal classification of the Brachiopoda			351	1344	1171-1193									
 Generic	Barczyk, W 		1973	Braehiopods Terebratulina delheidi Vincent in the Nummulite Eocene of the Tatra Mts			23	3	491-497									
 Journal Article	Ackerly, Spafford C. 		1992	Rapid shell closure in the brachiopods <i>Terebratulina retusa</i> and <i>Terebratalia transversa</i>			72		579-598									
 Generic	Conklin, Edwin G. 		1902	The embryology of a brachiopod, <i>Terebratulina septentrionalis</i> Couthouy			41	168	41-76									
@@ -84,5 +84,11 @@ Journal Article	Gorjansky, Wladimir Ju. ;Popov, Leonid Ye. 		1986	On the origin 
 Journal Article	Balthasar, Uwe ;Cusack, Maggie ;Faryma, L. ;Chung, P. ;Holmer, L. E. ;Jin, J. ;Percival, I. G. ;Popov, L. E. 		2011	Relic aragonite from Ordovician-Silurian brachiopods: Implications for the evolution of calcification			39	10	967-970									
 Journal Article	Skovsted, Christian B. ;Holmer, Lars E. 		2003	Early Cambrian (Botomian) stem group brachiopod <i>Mickwitzia</i> from Northeast Greenland			48	1	1-20									
 Journal Article	Balthasar, Uwe 		2009	The brachiopod <i>Eoobolus</i> from the early Cambrian Mural Formation (Canadian Rocky Mountains)			83	3	407-417									
-Journal Article	Balthasar, Uwe 		2007	An early Cambrian organophosphatic brachiopod with calcitic granules			50	6	1319-1325									
+Journal Article	Balthasar, Uwe 		2007	An early Cambrian organophosphatic brachiopod with calcitic granules			50	6	1319-1325								10.1111/j.1475-4983.2007.00729.x	
 Journal Article	Kuzmina, T. V. ;Malakhov, V. V. 		2007	Structure of the Brachiopod Lophophore			41	5	520-536									
+Journal Article	Sutton, Mark D. ;Briggs, Derek E. G. ;Siveter, David J. ;Siveter, Derek J. 		2005	Silurian brachiopods with soft-tissue preservation			436	7053	1013-1015									
+Journal Article	Owen, G. ;Williams, A. 		1969	The caecum of articulate Brachiopoda			172		187-201									
+Journal Article	Williams, A. ;Mackay, S. ;Cusack, M. 		1992	Structure of the organo-phosphatic shell of the brachiopod <i>Discina</i>			337		83-104									
+Journal Article	Williams, A. ;Cusack, M. ;Mackay, S. 		1994	Collagenous chitino-phosphatic shell of the brachiopod <i>Lingula</i>			346		223-266									
+Journal Article	Laurie, John 		1987	The musculature and vascular systems of two species of Cambrian Paterinide (Brachiopoda)			10		261-265									
+Journal Article	Williams, A. ;Brunton, C. H. C. 		1993	Role of shell structure in the classification of the orthotetidine brachiopods			36		931-966									
