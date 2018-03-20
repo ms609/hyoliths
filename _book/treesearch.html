@@ -236,6 +236,7 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <li class="chapter" data-level="4.2" data-path="tnt.html"><a href="tnt.html#equal-weights"><i class="fa fa-check"></i><b>4.2</b> Equal weights</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="bayesian-analysis.html"><a href="bayesian-analysis.html"><i class="fa fa-check"></i><b>5</b> Bayesian analysis</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -255,11 +256,11 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
             <section class="normal" id="section-">
 <div id="treesearch" class="section level1">
 <h1><span class="header-section-number">2</span> Parsimony analysis</h1>
-<p>The phylogenetic dataset contains a high proportion of inapplicable codings (404/ 3325 = 12% of tokens), which are known to introduce error and bias to phylogenetic reconstruction (<span class="citation">(Brazeau et al., <a href="#ref-Brazeau2018">2017</a>; Maddison, <a href="#ref-Maddison1993">1993</a>)</span>). As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data <span class="citation">(Brazeau et al., <a href="#ref-Brazeau2018">2017</a>)</span>. This algorithm is implemented in the <em>MorphyLib</em> C library <span class="citation">(Brazeau, Smith, &amp; Guillerme, <a href="#ref-Brazeau2017Morphylib">2017</a>)</span>, and phylogenetic search was conducted using the <em>R</em> package <em>TreeSearch</em> v0.0.8 <span class="citation">(Smith, <a href="#ref-Smith2018TreeSearch">2018</a>)</span>.</p>
+<p>The phylogenetic dataset contains a high proportion of inapplicable codings (404/ 3325 = 12% of tokens), which are known to introduce error and bias to phylogenetic reconstruction (<span class="citation">(Maddison <a href="#ref-Maddison1993">1993</a>; Brazeau et al. <a href="#ref-Brazeau2018">2017</a><a href="#ref-Brazeau2018"><em>a</em></a>)</span>). As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data <span class="citation">(Brazeau et al. <a href="#ref-Brazeau2018">2017</a><a href="#ref-Brazeau2018"><em>a</em></a>)</span>. This algorithm is implemented in the <em>MorphyLib</em> C library <span class="citation">(Brazeau et al. <a href="#ref-Brazeau2017Morphylib">2017</a><a href="#ref-Brazeau2017Morphylib"><em>b</em></a>)</span>, and phylogenetic search was conducted using the <em>R</em> package <em>TreeSearch</em> v0.0.8 <span class="citation">(Smith <a href="#ref-Smith2018TreeSearch">2018</a>)</span>.</p>
 <p><em>Namacalathus</em> is included in the matrix but has been excluded from analysis due to its potentially long branch, which is likely to mislead analysis.</p>
 <div id="search-parameters" class="section level2">
 <h2><span class="header-section-number">2.1</span> Search parameters</h2>
-<p>Heuristic searches were conducted using the parsimony ratchet <span class="citation">(Nixon, <a href="#ref-Nixon1999">1999</a>)</span> under equal and implied weights <span class="citation">(Goloboff, <a href="#ref-Goloboff1997">1997</a>)</span> with a variety of concavity constants. The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (<em>k</em>) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to produce higher accuracy than equal weights at any fixed level of precision <span class="citation">(Smith, <a href="#ref-Smith2017">2017</a>)</span>.</p>
+<p>Heuristic searches were conducted using the parsimony ratchet <span class="citation">(Nixon <a href="#ref-Nixon1999">1999</a>)</span> under equal and implied weights <span class="citation">(Goloboff <a href="#ref-Goloboff1997">1997</a>)</span> with a variety of concavity constants. The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (<em>k</em>) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to produce higher accuracy than equal weights at any fixed level of precision <span class="citation">(Smith <a href="#ref-Smith2017">2017</a>)</span>.</p>
 </div>
 <div id="analysis" class="section level2">
 <h2><span class="header-section-number">2.2</span> Analysis</h2>
@@ -268,7 +269,7 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 </div>
 <div id="generate-starting-tree" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Generate starting tree</h3>
-<p><em>Dailyatia</em> has been selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa <span class="citation">(C. B. Skovsted, Betts, Topper, &amp; Brock, <a href="#ref-Skovsted2015">2015</a>; Zhao et al., <a href="#ref-Zhao2017">2017</a>)</span>.</p>
+<p><em>Dailyatia</em> has been selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa <span class="citation">(Skovsted et al. <a href="#ref-Skovsted2015">2015</a><a href="#ref-Skovsted2015"><em>a</em></a>; Zhao et al. <a href="#ref-Zhao2017">2017</a>)</span>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">nj.tree &lt;-<span class="st"> </span><span class="kw">NJTree</span>(my_data)</div>
 <div class="sourceLine" id="2" href="#2" data-line-number="2">rooted.tree &lt;-<span class="st"> </span><span class="kw">EnforceOutgroup</span>(nj.tree, <span class="st">&#39;Dailyatia&#39;</span>)</div>
 <div class="sourceLine" id="3" href="#3" data-line-number="3">start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<span class="dt">tree=</span>rooted.tree, <span class="dt">dataset=</span>my_data, <span class="dt">maxIter=</span><span class="dv">3000</span>,</div>
@@ -379,32 +380,32 @@ Figure 2.3: Strict consensus of equal weights results, taxa excluded
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Brazeau2018">
-<p>Brazeau, M. D., Guillerme, T., &amp; Smith, M. R. (2017). Morphological phylogenetic analysis with inapplicable data. <em>bioR<span class="math inline">\(\chi\)</span>iv</em>. doi:<a href="https://doi.org/10.1101/209775">10.1101/209775</a></p>
-</div>
 <div id="ref-Maddison1993">
-<p>Maddison, W. P. (1993). Missing data versus missing characters in phylogenetic analysis. <em>Systematic Biology</em>, <em>42</em>(4), 576–581. doi:<a href="https://doi.org/10.1093/sysbio/42.4.576">10.1093/sysbio/42.4.576</a></p>
+<p>Maddison, W. P. 1993: Missing data versus missing characters in phylogenetic analysis. Systematic Biology 42:576–581.</p>
+</div>
+<div id="ref-Brazeau2018">
+<p>Brazeau, M. D., T. Guillerme, and M. R. Smith. 2017a: Morphological phylogenetic analysis with inapplicable data. BioR<span class="math inline">\(\chi\)</span>iv.</p>
 </div>
 <div id="ref-Brazeau2017Morphylib">
-<p>Brazeau, M. D., Smith, M. R., &amp; Guillerme, T. (2017). MorphyLib: a library for phylogenetic analysis of categorical trait data with inapplicability. doi:<a href="https://doi.org/10.5281/zenodo.815372">10.5281/zenodo.815372</a></p>
+<p>Brazeau, M. D., M. R. Smith, and T. Guillerme. 2017b: MorphyLib: a library for phylogenetic analysis of categorical trait data with inapplicability..</p>
 </div>
 <div id="ref-Smith2018TreeSearch">
-<p>Smith, M. R. (2018). TreeSearch 0.0.8. doi:<a href="https://doi.org/10.5281/zenodo.1194595">10.5281/zenodo.1194595</a></p>
+<p>Smith, M. 2018: TreeSearch: phylogenetic tree search using custom optimality criteria..</p>
 </div>
 <div id="ref-Nixon1999">
-<p>Nixon, K. C. (1999). The Parsimony Ratchet, a new method for rapid parsimony analysis. <em>Cladistics</em>, <em>15</em>(4), 407–414. doi:<a href="https://doi.org/10.1111/j.1096-0031.1999.tb00277.x">10.1111/j.1096-0031.1999.tb00277.x</a></p>
+<p>Nixon, K. C. 1999: The Parsimony Ratchet, a new method for rapid parsimony analysis. Cladistics 15:407–414.</p>
 </div>
 <div id="ref-Goloboff1997">
-<p>Goloboff, P. A. (1997). Self-weighted optimization: tree searches and character state reconstructions under implied transformation costs. <em>Cladistics</em>, <em>13</em>(3), 225–245. doi:<a href="https://doi.org/10.1111/j.1096-0031.1997.tb00317.x">10.1111/j.1096-0031.1997.tb00317.x</a></p>
+<p>Goloboff, P. A. 1997: Self-weighted optimization: tree searches and character state reconstructions under implied transformation costs. Cladistics 13:225–245.</p>
 </div>
 <div id="ref-Smith2017">
-<p>Smith, M. R. (2017). Quantifying and visualising divergence between pairs of phylogenetic trees: implications for phylogenetic reconstruction. <em>bioR<span class="math inline">\(\chi\)</span>iv</em>. doi:<a href="https://doi.org/10.1101/227942">10.1101/227942</a></p>
+<p>Smith, M. R. 2017: Quantifying and visualising divergence between pairs of phylogenetic trees: implications for phylogenetic reconstruction. BioR<span class="math inline">\(\chi\)</span>iv.</p>
 </div>
 <div id="ref-Skovsted2015">
-<p>Skovsted, C. B., Betts, M. J., Topper, T. P., &amp; Brock, G. A. (2015). The early Cambrian tommotiid genus <em>Dailyatia</em> from South Australia. <em>Memoirs of the Association of Australasian Palaeontologists</em>, <em>48</em>(1), 1–117.</p>
+<p>Skovsted, C. B., M. J. Betts, T. P. Topper, and G. A. Brock. 2015a: The early Cambrian tommotiid genus <em>Dailyatia</em> from South Australia. Memoirs of the Association of Australasian Palaeontologists 48:1–117.</p>
 </div>
 <div id="ref-Zhao2017">
-<p>Zhao, F.-C., Smith, M. R., Yin, Z.-J., Zeng, H., Li, G.-X., &amp; Zhu, M.-Y. (2017). <em>Orthrozanclus elongata</em> n. sp. and the significance of sclerite-covered taxa for early trochozoan evolution. <em>Scientific Reports</em>, <em>7</em>(1), 16232. doi:<a href="https://doi.org/10.1038/s41598-017-16304-6">10.1038/s41598-017-16304-6</a></p>
+<p>Zhao, F.-C., M. R. Smith, Z.-J. Yin, H. Zeng, G.-X. Li, and M.-Y. Zhu. 2017: <em>Orthrozanclus elongata</em> n. sp. and the significance of sclerite-covered taxa for early trochozoan evolution. Scientific Reports 7:16232.</p>
 </div>
 </div>
             </section>
