@@ -94,6 +94,8 @@ MorphoBankDecode <- function (string) {
   ConvertReferences(string)
 }
 
+EndSentence <- function (string) gsub("\\s*\\.?\\s*\\.$", ".", paste0(string, '.'), perl=TRUE)
+
 ReadNotes <- function (filepath) {
   lines <- readLines(filepath)
   charNote.pattern <- "^\\s+TEXT\\s+CHARACTER=(\\d+)\\s+TEXT='(.*)';\\s*$"
@@ -111,14 +113,14 @@ ReadNotes <- function (filepath) {
     charNote.matches <- grepl(charNote.pattern, notesLines, perl=TRUE)
     charNotes <- gsub(charNote.pattern, "\\2",
                        notesLines[charNote.matches], perl=TRUE)
-    charNotes <- gsub("\\.\\s*\\.$", ".", paste0(MorphoBankDecode(charNotes), '.'))
+    charNotes <- EndSentence(MorphoBankDecode(charNotes))
     charNumbers <- gsub(charNote.pattern, "\\1",
                               notesLines[charNote.matches], perl=TRUE)
     
     stateNote.matches <- grepl(stateNote.pattern, notesLines, perl=TRUE)
     stateNotes <- gsub(stateNote.pattern, "\\3",
                        notesLines[stateNote.matches], perl=TRUE)
-    stateNotes <- MorphoBankDecode(stateNotes)
+    stateNotes <- EndSentence(MorphoBankDecode(stateNotes))
     stateTaxon <- gsub(stateNote.pattern, "\\1",
                               notesLines[stateNote.matches], perl=TRUE)
     stateChar  <- gsub(stateNote.pattern, "\\2",
