@@ -77,7 +77,7 @@ ConvertReferences <- function (string) {
   matches <- grepl(parentheses, string)
   string[matches] <- ReplaceRefs(parentheses, string[matches], ReplPar)
   
-  string <- gsub("\\((@\\S+[^\\)]*)\\)", "[\\1]", string, perl=TRUE)
+  string <- gsub("\\((@\\S+?[^\\)]*)\\)", "[\\1]", string, perl=TRUE)
   
   # Return:
   string
