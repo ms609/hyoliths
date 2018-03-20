@@ -3,7 +3,7 @@ title: "Visualizing characters"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 bibliography: [References.bib, MorphoBank.bib]
-csl: http://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
+csl: http://raw.githubusercontent.com/citation-style-language/styles/master/paleobiology.csl
 output:
   html_document: default
   pdf_document: default
@@ -48,7 +48,7 @@ ConvertReferences <- function (string) {
                 vectorize_all=FALSE)
   }
   
-  parentheses <- "([A-Z][A-z]+)( et al\\.| ?& ?\\w+)? \\((\\d\\d\\d\\d\\w?)([^\\)]*)\\)"
+  parentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? \\((\\d\\d\\d\\d\\w?)([^\\)]*)\\)"
   ReplPar <- function (keyedText, oldKey, original) {
     str_replace(keyedText, pattern=oldKey, replacement=
                 LookUpReference(oldKey, original, function (x, raw)
