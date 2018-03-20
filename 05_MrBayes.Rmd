@@ -2,11 +2,6 @@
 title: "Bayesian Analysis results"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
-bibliography: [References.bib]
-csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
-output:
-  html_document: default
-  pdf_document: default
 ---
 
 

@@ -2,11 +2,6 @@
 title: "Visualizing characters"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
-bibliography: [References.bib, MorphoBank.bib]
-csl: http://raw.githubusercontent.com/citation-style-language/styles/master/paleobiology.csl
-output:
-  html_document: default
-  pdf_document: default
 ---
 
 # Character reconstructions {#reconstructions}
