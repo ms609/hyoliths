@@ -26,11 +26,11 @@ LookUpReference <- function (keys, original, Format) {
     if (sum(matches) == 1) {
       Format(refKeys[matches], original)
     } else {
-      original
+      paste0('<mark>', original, '</mark>')
     }
   } else {
     matches <- vapply(keys, FUN=grepl, FUN.VALUE=logical(length(refKeys)), refKeys, fixed=TRUE)
-    ret <- original
+    ret <- paste0('<mark>', original, '</mark>')
     uniques <- colSums(matches) == 1
     ret[uniques] <- vapply(which(uniques), function (i) 
       Format(refKeys[matches[, i]], original[i]), character(1))
@@ -77,7 +77,7 @@ ConvertReferences <- function (string) {
   matches <- grepl(parentheses, string)
   string[matches] <- ReplaceRefs(parentheses, string[matches], ReplPar)
   
-  string <- gsub("\\(([^\\)]+?@\\S+?[^\\)]*)\\)", "[\\1]", string, perl=TRUE)
+  string <- gsub("\\(([^\\)]*?@\\S+?[^\\)]*)\\)", "[\\1]", string, perl=TRUE)
   
   # Return:
   string
