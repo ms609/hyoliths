@@ -87,6 +87,8 @@ MorphoBankDecode <- function (string) {
   string <- gsub("^n", "  \n", string, fixed=TRUE)
   string <- gsub("''", "'", string, fixed=TRUE)
   string <- gsub(" - ", " -- ", string, fixed=TRUE)
+  string <- gsub("(\\d)\\-(\\d)", "\\1--\\2", string, perl=TRUE)
+  string <- gsub("(\\d) ?um\\b", "\\1 &mu;m", string, perl=TRUE)
   string <- gsub(" et al ", " et al. ", string, fixed=TRUE)
   string <- gsub(" et alia", " et al.", string, fixed=TRUE)
   
