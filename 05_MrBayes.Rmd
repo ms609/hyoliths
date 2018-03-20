@@ -63,7 +63,7 @@ thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
 ColPlot(consensus(thinned, p=0.5))
-ColMissing(omit)
+#ColMissing(omit)
 ```
 
 ```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
