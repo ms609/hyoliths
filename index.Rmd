@@ -6,6 +6,7 @@ site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 bibliography: [References.bib, MorphoBank.bib]
+csl: http://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
 link-citations: yes
 github-repo: ms609/hy
 description: "Results of phylogenetic analysis"
