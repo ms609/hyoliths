@@ -41,7 +41,7 @@ LookUpReference <- function (keys, original, Format) {
 }
 
 ConvertReferences <- function (string) {
-  noParentheses <- "([A-Z][A-z]+)( et al\\.| ?& ?\\w+)? (\\d\\d\\d\\d)"
+  noParentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? (\\d\\d\\d\\d)"
   ReplNoPar <- function (keyedText, oldKey, original) {
     str_replace(keyedText, oldKey, 
                 LookUpReference(oldKey, original, function(x, raw) paste0('@', x)),
@@ -164,7 +164,7 @@ taxa_names <- c("Namacalathus", rownames(my_chars))
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
 Italicize <- function (text) {
-  gsub(paste0("\\b(", paste0(gsub("_", "|", c(taxa_names, 'Eoorthis', 'comleyensis', 'et al\\.', 'et al'), fixed = TRUE), collapse='|'),
+  gsub(paste0("\\b(", paste0(gsub("_", "|", c(taxa_names, 'Eoorthis', 'comleyensis', 'et al\\.', 'et al', "A\\. decaius"), fixed = TRUE), collapse='|'),
               ")\\b"), "_\\1_", text, perl=TRUE, ignore.case=TRUE)
 }
 #treeCol <- tipCol[tree$tip.label]
