@@ -8,7 +8,8 @@
     font-size: smaller;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal dl dt {
-  font-style: inherit;
-  font-weight: normal;
+.state-note {
+  text-indent: -16px;
+  margin-left: 16px;
+  padding: 8px 0;
 }
