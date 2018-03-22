@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 
 # Character reconstructions {#reconstructions}
 
-```{R, echo=FALSE}
+```{R load_character_data, echo=FALSE, cache=TRUE}
 library('Inapp')
 str_replace <- stringi::stri_replace_all_fixed
 tree <- iw.trees[[3]][[1]]
@@ -154,6 +154,9 @@ PrintStates <- function (states) {
 }
 
 char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
+n_char <- ncol(my_chars)
+char_parts <- strsplit(char_names, ": ")
+char_nesting <- vapply(char_parts, length, 0L)
 char_notes <- ReadNotes(filename)
 taxa_names <- c("Namacalathus", rownames(my_chars))
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
@@ -180,9 +183,38 @@ This page defines each characer and accounts for its coding in particular taxa. 
 The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
 
 
-```{R, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
-for (i in seq_len(ncol(my_chars))) {
-  cat(paste0("\n## ", i, ". ", char_names[i], " {-}  \n"))
+```{R print_each_character, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
+Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
+PrintDivision <- function (parts) cat(Header(2L, paste(char_parts_i[1:parts],
+                                                       collapse=': ')))
+PrintCharacter <- function () cat(Header(3L, paste0("[", i, "] ",
+                                           char_parts_i[char_nesting[i]], " {-}")))
+PrintSoloCharacter <- function () cat(Header(2L, paste0(char_parts_i, " [", i, "] ")))
+
+for (i in seq_len(n_char)) {
+  
+  char_parts_i <- char_parts[[i]]
+  if (i > 1) char_parts_last <- char_parts[[i - 1L]]
+  
+  if (char_nesting[i] == 1 && 
+      (i == n_char || char_parts[[i + 1L]][1] != char_parts_i[1])) {
+    PrintSoloCharacter()
+  } else if (i == 1) {
+    PrintDivision(1)
+    PrintCharacter()
+  } else if (char_parts_last[1L] != char_parts_i[1L]) {
+      PrintDivision(1)
+      PrintCharacter()
+  } else if (length(char_parts_i) > 2L) {
+    if (length(char_parts_last) < 2L
+        || char_parts_last[2L] != char_parts_i[2L]) {
+      PrintDivision(2)
+    }
+    PrintCharacter()
+  } else {
+    PrintCharacter()
+  }
+
   
   par(mar=rep(0.2, 4), cex=0.7)
   
