@@ -7,7 +7,7 @@ date: "`r Sys.Date()`"
 
 # Bayesian analysis
 
-```{R, echo=FALSE}
+```{R, echo=FALSE, cache=TRUE}
 files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
 
 allTrees <- lapply(files, read.nexus)
@@ -49,7 +49,7 @@ Four MrBayes runs were executed, each sampling eight chains for 1 000 000 genera
 
 The first 10% of samples were discarded as burn-in (`burninfrac=0.1`), and a posterior tree topology was derived from the combined posterior sample of both runs.
 
-```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
+```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%", cache=TRUE}
 omit <- c("none")
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
@@ -61,7 +61,7 @@ ColPlot(consensus(thinned, p=0.5))
 #ColMissing(omit)
 ```
 
-```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
+```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%", cache=TRUE}
 omit <- c('Heliomedusa', 'Micrina', 'Mickwitzia',
           'Eoobolus', 'Clupeafumosus', 
           'Yuganotheca', 'Longtancunella', 'Tomteluva', 'Nisusia', 'Kutorgina')
@@ -76,7 +76,7 @@ ColMissing(omit)
 
 Convergence was indicated by PSRF = 1.00 and an average estimated sample size of > 500 for each parameter:
 
-```{R, MrBayes parameter summary, echo=FALSE, asis=TRUE}
+```{R, MrBayes parameter summary, echo=FALSE, asis=TRUE, cache=TRUE}
 knitr::kable(read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE),
              caption="MrBayes parameter estimates (.pstat file)")
 ```

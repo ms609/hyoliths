@@ -78,7 +78,7 @@ write.nexus(ew.consensus, file=paste0("TreeSearch/hy_ew_", Fitch(ew.tree, my_dat
 
 ### Implied weights results
 
-```{R "Load IW trees TreeSearch"}
+```{R "Load IW trees TreeSearch", cache=TRUE}
 # Read results from files
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
@@ -97,7 +97,7 @@ iw.trees <- lapply(kValues, function (k) {
 
 
 
-```{r, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5}
+```{r, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5, cache=TRUE}
 omit=c(lon, 'Clupeafumosus_socialis',
        'Heliomedusa_orienta', 'Haplophrentis_carinatus')
 ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
@@ -106,7 +106,7 @@ ColMissing(omit)
 
 
 
-```{r, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.5}
+```{r, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.5, cache=TRUE}
 # Plot consensus results
 par(mfrow=c(4, 2), mar=rep(0.2, 4))
 
@@ -123,13 +123,13 @@ for (i in seq_along(iw.trees)) {
 
 ### Equal weights results
 
-```{r "equal weights results in TreeSearch", fig.cap="Strict consensus of equal weights results"}
+```{r "equal weights results in TreeSearch", fig.cap="Strict consensus of equal weights results", cache=TRUE}
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
 ew.tree <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
 ColPlot(consensus(ew.tree))
 ```
 
-```{R, fig.cap="Strict consensus of equal weights results, taxa excluded"}
+```{R, fig.cap="Strict consensus of equal weights results, taxa excluded", cache=TRUE}
 omit <- c(lon)
 ColPlot(ConsensusWithout(ew.tree, omit))
 ColMissing(omit)
