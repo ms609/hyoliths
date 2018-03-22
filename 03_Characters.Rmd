@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 
 # Character reconstructions {#reconstructions}
 
-```{R load_character_data, echo=FALSE, cache=TRUE}
+```{R load_character_data, echo=FALSE}
 library('Inapp')
 str_replace <- stringi::stri_replace_all_fixed
 tree <- iw.trees[[3]][[1]]
