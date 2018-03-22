@@ -7,3 +7,9 @@
 .caption {
     font-size: smaller;
 }
+
+.state-note {
+  text-indent: -16px;
+  margin-left: 16px;
+  padding: 8px 0;
+}

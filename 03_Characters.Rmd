@@ -199,8 +199,8 @@ for (i in seq_len(ncol(my_chars))) {
   state_notes_i <- char_notes_i[[2]]
   if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
   if (length(state_notes_i) > 0) {
-    cat("  \n ", paste0(taxa_italic[as.integer(names(state_notes_i))],
-                      ": ", Italicize(state_notes_i), "  \n  \n "))
+    cat("  \n", paste0("<div class='state-note'>", taxa_italic[as.integer(names(state_notes_i))],
+                      ": ", Italicize(state_notes_i), "</div>  \n  \n"))
   }
   cat("  \n") # Clear line, ready for next block
 }
