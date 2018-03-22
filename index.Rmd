@@ -12,7 +12,7 @@ github-repo: ms609/hy
 description: "Results of phylogenetic analysis"
 ---
 
-```{r setup, include=FALSE}
+```{r setup-index, include=FALSE}
 set.seed(0)
 knitr::opts_chunk$set(echo = TRUE)
 library('TreeSearch'); library('ape'); library('phangorn')
