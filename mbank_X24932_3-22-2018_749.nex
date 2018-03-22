@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-03-20 12.59.13 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-03-22 07.49.47 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=36;
@@ -51,7 +51,7 @@ BEGIN CHARACTERS;
 	FORMAT DATATYPE=STANDARD MISSING=? GAP=- SYMBOLS="012345";
 
 	CHARLABELS
-		 [1] 'Sclerites in adult'
+		 [1] 'Sclerites: Present in adult'
 		 [2] 'Sclerites: Disposition'
 		 [3] 'Sclerites: Bivalved: Hinge line shape'
 		 [4] 'Sclerites: Bivalved: Apophyses'
@@ -110,15 +110,15 @@ BEGIN CHARACTERS;
 		 [57] 'Sclerites: Microstructure: Canals'
 		 [58] 'Sclerites: Microstructure: Pseudopunctae'
 		 [59] 'Sclerites: Microstructure: External polygonal ornament'
-		 [60] 'Egg size'
-		 [61] 'Site of gamete maturation'
-		 [62] 'Embryonic shell'
-		 [63] 'Embryonic shell: Morphology'
-		 [64] 'Embryonic shell: Extended in larvae'
-		 [65] 'Larval attachment structure'
-		 [66] 'Setae in adults'
+		 [60] 'Offspring: Egg size'
+		 [61] 'Offspring: Site of gamete maturation'
+		 [62] 'Offspring: Embryonic shell'
+		 [63] 'Offspring: Embryonic shell: Morphology'
+		 [64] 'Offspring: Embryonic shell: Extended in larvae'
+		 [65] 'Offspring: Larval attachment structure'
+		 [66] 'Setae: Present in adults'
 		 [67] 'Setae: Distribution'
-		 [68] 'Setae: Present in larva'
+		 [68] 'Setae: Embryonic: Present in larva'
 		 [69] 'Setae: Embryonic: Setal sacs'
 		 [70] 'Setae: Embryonic: Setal sacs: Number'
 		 [71] 'Pedicle'
@@ -691,13 +691,13 @@ BEGIN NOTES;
 	TEXT CHARACTER=43 TEXT='Chen et al. (2007) propose that an oval to rhombic foramen characterises the discinids (and Heliomedusa, though the foramen in this taxon has since been reinterpreted by Zhang et al. (2009) as an impression of internal tissue).';
 	TEXT CHARACTER=44 TEXT='In certain taxa, the umbo of the ventral valve bears a colleplax, cicatrix or pedicle sheath; Bassett et al. (2008) consider these structures as homologous.';
 	TEXT CHARACTER=45 TEXT='Chen et al. (2007) observe a median septum in what they interpret as the ventral valve of Heliomedusa, and the ventral valve of Discinisca, which they propose points to a close relationship.';
-	TEXT CHARACTER=46 TEXT='After character 11 in Williams et al. (1998).';
-	TEXT CHARACTER=47 TEXT='After character 11 in Williams et al. (1998).';
+	TEXT CHARACTER=46 TEXT='After character 11 in Williams et al. (1998T).';
+	TEXT CHARACTER=47 TEXT='After character 11 in Williams et al. (1998T).';
 	TEXT CHARACTER=48 TEXT='Ridges radiating from umbo, i.e. ribs';
 	TEXT CHARACTER=49 TEXT='Mineralized or partly mineralized spines are observed in Heliomedusa and Acanthotretella';
 	TEXT CHARACTER=51 TEXT='Williams et al. (1996) identify glycoprotein-based organic scaffolds as distinct from those comprising glycosaminoglycans (GAGs), chitin and collagen.  This character can only be scored for extant taxa.';
 	TEXT CHARACTER=52 TEXT='Phoronids and Yuganotheca aggulutinate particles into their sclerites.';
-	TEXT CHARACTER=53 TEXT='Following character 9 in Williams et al. (1998); see their p228-230 for a discussion of how this might be inferred from fossil material.';
+	TEXT CHARACTER=53 TEXT='Following character 9 in Williams et al. (1998T); see their p228-230 for a discussion of how this might be inferred from fossil material.';
 	TEXT CHARACTER=54 TEXT='Hyolith conchs comprise two mineralized layers of fibrous bundles.  Bundles are measure 5-15 um across; their constituent fibres are each 0.1-1.0 um wide.  In the inner layer, the fibres are transverse; in the outer layer, the bundles are inclined towards the umbo, becoming longitudinal on the outermost margin.^n^nObolellids comprise a single laminated mineralogical layer (Balthasar 2008).  Shell-penetrating canals are not considered as contributing to the mineralogical microstructure and are coded separately.^n^nNamacalathus exhibits three layers, none of which have any obvious correspondence with those of brachiopods.^n^nCoded as non-additive as there is no clear necessity to pass through the brachiopod-like construction: the three layers could arise by the addition of a void to a single pre-existing layer, for example.^n^nInapplicable in taxa with a non-mineralized shell.';
 	TEXT CHARACTER=55 TEXT='Hyolith conchs comprise two mineralized layers of fibrous bundles.  Bundles measure 5--15 &mu;m across; their constituent fibres are each 0.1-1.0 um wide.  In the inner layer, the fibres are transverse; in the outer layer, the bundles are inclined towards the umbo, becoming longitudinal on the outermost margin.^n^nObolellids comprise a single laminated mineralogical layer (Balthasar 2008).  Shell-penetrating canals are not considered as contributing to the mineralogical microstructure and are coded separately.^n^nThe pervasive (not just superficial) polygonal structures in Paterimitra are distinct, and characterize Askepasma, Salanygolina, Eccentrotheca and Paterimitra (Larsson et al. 2014)^n^nThe treatise (Williams et al 2000) identifies cross-bladed laminae as diagnostic of Strophomenata, with the exception of some older groups that contain fibres or laminar laths.';
 	TEXT CHARACTER=56 TEXT='Punctae are 10-20 um wide canals created by multicellular extensions of the outer epithelium.  They penetrate the full depth of the shell.^n^nBalthasar (2008) writes:^n^n"Vertical shell penetrating structures, such as punctae, pseudopunctae, extropunctae and canals, are common in many groups of brachiopods and are distinguished based on their geometry and size (Williams 1997). Punctae are 10-20 um wide and represent multicellular extensions of the outer epithelium (Owen and Williams 1969). Pseudopunctae and extropunctae are similar in diameter but, instead of canals, are vertical stacks of conical deflections of individual shell layers (Williams and Brunton 1993). None of these three types of vertical shell structure, all of which are confined to calcitic-shelled brachiopods, compares with the much smaller canals (&lt; 1 um in diameter) of M. nuda. The only type of vertical structure that fits the size and nature of the canals of the Mural obolellids are the canals of linguliform brachiopods, which range in width from 180 to 740 nm and are occupied by proteinaceous strands in extant taxa (Williams et al. 1992; Williams et al. 1994; Williams 1997). In contrast to obolellid canals, however, linguliform canals are not known to penetrate the entire shell but terminate in organic-rich layers (Williams 1997). Based on ^nthese considerations it would, therefore, be misleading to call obolellid shells punctate (they are as much "punctate" as acrotretids or other ^nlinguliforms); rather their shell structure should be called canaliculate (Williams 1997)."';
@@ -716,7 +716,7 @@ BEGIN NOTES;
 	TEXT CHARACTER=69 TEXT='Setal sacs are recognizable as raised lumps on the juvenile shell (see Bassett and Popov 2017).^n^nMicrina and linguliforms have setal sacs on their mitral/dorsal embryonic shell, whereas these are absent in Paterimitra (Holmer et al 2011).';
 	TEXT CHARACTER=70 TEXT='Two pairs on e.g. Coolina; one on e.g. Micrina';
 	TEXT CHARACTER=71 TEXT='The brachiopod pedicle is a fleshy protuberance that emerges from the posterior part of the body wall -- as denoted in fossil taxa by its occurrence between the dorsal and ventral valves.  ^n^nIt is important to distinguish the pedicle from the "pedicle sheath", a tubular extension of the umbo that grows by accretion from an isolated portion of the ventral mantle.  For discussion see Holmer et al. 2018T and Bassett and Popov 2017.^n';
-	TEXT CHARACTER=72 TEXT='The pedicle of certain chengjiang rhynchonelliforms comprises "densely stacked, three dimensionally preserved, tabular discs" (Holmer et al. 2018).^nThis contrasts with the uniform (''massive'') pedicles of living taxa.';
+	TEXT CHARACTER=72 TEXT='The pedicle of certain chengjiang rhynchonelliforms comprises "densely stacked, three dimensionally preserved, tabular discs" (Holmer et al. 2018E).^nThis contrasts with the uniform (''massive'') pedicles of living taxa.';
 	TEXT CHARACTER=73 TEXT='The pedicle of strophomenates such as Antigonambonites is biomineralized (Holmer et al. 2018E)';
 	TEXT CHARACTER=74 TEXT='A bulb is an expanded region of the distal pedicle, often embedded into the sediment to improve anchorage.';
 	TEXT CHARACTER=75 TEXT='Observed in Pedunculotheca and Bethia (Sutton et al 2005).';
@@ -933,7 +933,7 @@ BEGIN NOTES;
 	TEXT TAXON=15 CHARACTER=42 TEXT='"there is compelling evidence to demonstrate that the putative pedicle^nillustrated by Chen et al. (2007: Figs. 4, 6, 7) in fact is the mold of a three-dimensionally preserved visceral cavity." -- Zhang et al. 2009';
 	TEXT TAXON=6 CHARACTER=42 TEXT='An umbonal perforation is distinctive of Acrotretids, and is reported by Topper et al. (2013R).';
 	TEXT TAXON=23 CHARACTER=42 TEXT='The umbo itself is imperforate, though note that an opening is incorporated at the base of the homeodeltidium when the organism switches from early to late maturity (fig. 10 in Balthasar 2004).';
-	TEXT TAXON=21 CHARACTER=39 TEXT='"Ventral valve convex with apsacline interarea bearing delthyrium, covered by a convex pseudodeltidium" -- Homer et al. 2008E';
+	TEXT TAXON=21 CHARACTER=39 TEXT='"Ventral valve convex with apsacline interarea bearing delthyrium, covered by a convex pseudodeltidium" -- Holmer et al. 2008';
 	TEXT TAXON=20 CHARACTER=39 TEXT='The subapical flange of the Paterimitra S1 sclerite has been homologised with the ventral homeodeltidium of Micromitra (Larsson et al 2014).';
 	TEXT TAXON=3 CHARACTER=39 TEXT='Stated as "concave pseudodeltidium with median plication" -- Williams et al. 2000^nCoded as "Pseudodeltidium: Covered by concave plate" by Bassett et al. (2001)';
 	TEXT TAXON=23 CHARACTER=39 TEXT='Termed a homoedeltidium by Balthasar (2004)';
@@ -1208,7 +1208,7 @@ BEGIN NOTES;
 	TEXT TAXON=32 CHARACTER=47 TEXT='Following Appendix 2 in Williams et al. (1998T).';
 	TEXT TAXON=9 CHARACTER=47 TEXT='Clear asymmetry (Skovsted et al. 2015).';
 	TEXT TAXON=15 CHARACTER=47 TEXT='See fig. 1715 in Williams et al. (2007)';
-	TEXT TAXON=4 CHARACTER=47 TEXT='Following Appendix 2 in Williams et al. (1998).';
+	TEXT TAXON=4 CHARACTER=47 TEXT='Following Appendix 2 in Williams et al. (1998T).';
 	TEXT TAXON=22 CHARACTER=47 TEXT='Following Appendix 2 in Williams et al. (1998T).';
 	TEXT TAXON=26 CHARACTER=47 TEXT='Clear outer faces (Williams et al. 2000, fig. 100.2b)';
 	TEXT TAXON=3 CHARACTER=47 TEXT='Seemingly asymmetric (Williams et al. 2000, fig. 122.3c; Zhang et al. 2011A, Fig. 1)';
