@@ -9,4 +9,6 @@ bookdown::gitbook:
   css: style.css
   config:
     edit: https://github.com/ms609/hy/edit/master/%s
+  includes:
+    in_header: icons/icon_head.html
 
