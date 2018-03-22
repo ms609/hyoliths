@@ -1,5 +1,5 @@
 --- 
-title: "Brachiopod origins - Supplementary material - Phylogenetic analysis"
+title: "Brachiopod origins -- Supplementary material -- Phylogenetic analysis"
 author: "Sun, Hai-Jing; Smith, Martin Ross; Zhu, Mao-Yan; Zeng, Han; Zhao, Fang-Chen"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

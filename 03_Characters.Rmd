@@ -182,7 +182,7 @@ The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one o
 
 ```{R, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
 for (i in seq_len(ncol(my_chars))) {
-  cat("\n## ", char_names[i], " {-}  \n")
+  cat(paste0("\n## ", i, ". ", char_names[i], " {-}  \n"))
   
   par(mar=rep(0.2, 4), cex=0.7)
   
@@ -192,7 +192,7 @@ for (i in seq_len(ncol(my_chars))) {
                      #tip.col=treeCol, 
                      use.edge.length=TRUE, legend.pos='topright')
   
-  cat("  \n\n **Character ", i, ": ", char_names[i], "**  \n\n")
+  cat(paste0("  \n\n **Character ", i, ": ", char_names[i], "**  \n\n"))
   PrintStates(my_states[[i]])
   cat("  \n\n")
   char_notes_i <- char_notes[[i]]
