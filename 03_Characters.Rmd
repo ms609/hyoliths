@@ -166,7 +166,7 @@ Italicize <- function (string) {
                         paste0(gsub("_", "|", fixed = TRUE,
                                     c(taxa_names,
                                       'Bethia', 'Eichwaldia', 'Eoorthis',
-                                      'Hadrotreta', 'Lochkothele',
+                                      'Hadrotreta', 'Lochkothele', 'Paracraniops',
                                       'comleyensis', 'decaius',
                                       'vascula', 'genitalia','lateralia',
                                       'media', 'myaria', 'terminalia',
