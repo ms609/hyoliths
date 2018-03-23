@@ -198,6 +198,10 @@ for (i in seq_len(n_char)) {
   char_parts_i <- char_parts[[i]]
   if (i > 1) char_parts_last <- char_parts[[i - 1L]]
   
+  ## NB we may need (in future?) to fix something:
+  ## if a 2-part character follows a 3-parter, it doesn't print its name
+  ## e.g. "Character: Thingamies: Item" followed by "Character: Wotsits"
+  ## Wotsits will not appear as a subheading.
   if (char_nesting[i] == 1 && 
       (i == n_char || char_parts[[i + 1L]][1] != char_parts_i[1])) {
     PrintSoloCharacter()
