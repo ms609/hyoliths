@@ -10,7 +10,7 @@ Generic	Williams, Alwyn 		1997	Part H. Brachiopoda. Revised. Volume 1: Introduct
 Generic	Kouchinsky, Artem V. 		2000	Skeletal microstructures of hyoliths from the Early Cambrian of Siberia			24	2	65-81									
 Generic	Holmer, Lars E. 		1989	Middle Ordovician phosphatic inarticulate brachiopods from Västergötland and Dalarna, Sweden			26											
 Generic	Cusack, Maggie ;Williams, Alwyn ;Buckman, James O. 		1999	Chemico-structural evolution of linguloid brachiopod shells			42	5	799-840									
-Journal Article	Balthasar, Uwe 		2004	Shell structure, ontogeny, and affinities of the Lower Cambrian bivalved problematic fossil <i>Mickwitzia muralensis</i>			37	4	381-400									
+Journal Article	Balthasar, Uwe 		2004	Shell structure, ontogeny, and affinities of the Lower Cambrian bivalved problematic fossil <i>Mickwitzia muralensis</i>			37	4	381-400								10.1080/00241160410002090	
 Generic	Holmer, Lars E. ;Skovsted, Christian B. ;Larsson, Cecilia M. ;Brock, Glenn A. ;Zhang, Zhifei 		2011	First record of a bivalved larval shell in Early Cambrian tommotiids and its phylogenetic significance			54	2	235-239									
 Generic	Holmer, L.E. ;Skovsted, C.B. ;Brock, G.A. ;Valentine, J.L. ;Paterson, J.R. 		2008	Early Cambrian tommotiid <i>Micrina</i>, a sessile bivalved stem group brachiopod. 			4		724-728									
 Generic	Larsson, Cecilia M. ;Skovsted, Christian B. ;Brock, Glenn A. ;Balthasar, Uwe ;Topper, Timothy P. ;Holmer, Lars E. 		2014	<i>Paterimitra pyramidalis</i> from South Australia: scleritome, shell structure and evolution of a lower Cambrian stem group brachiopod			57	2	417-446									
@@ -22,7 +22,7 @@ Generic	Zhang, Zhi-Fei ;Li, Guo-Xiang ;Emig, Christian C. ;Han, Jian ;Holmer, La
 Generic	Zhang, Zhi-Fei ;Han, Jian ;Zhang, Xing-Liang ;Liu, Jian-Ni ;Guo, Jun-Feng ;Shu, De-Gan 		2007	Note on the gut preserved in the Lower Cambrian <i>Lingulellotreta</i> (Lingulata, Brachiopoda) from southern China			88	1	65-70									
 Generic	Balthasar, Uwe ;Butterfield, Nicholas J. 		2009	Early Cambrian "soft-shelled" brachiopods as possible stem-group phoronids			54	2	307-314									
 Journal Article			0															http://
-Generic	Zhuravlev, A. Yu. ;Wood, R. A. ;Penny, A. M. 		2015	Ediacaran skeletal metazoan interpreted as a lophophorate			282	1818	20151860									
+Generic	Zhuravlev, A. Yu. ;Wood, R. A. ;Penny, A. M. 		2015	Ediacaran skeletal metazoan interpreted as a lophophorate			282	1818	20151860								10.1098/rspb.2015.1860	
 Generic	Bassett, M. G. ;Popov, L. E. ;Egerquist, Eva 		2008	Early ontogeny of some Ordovician-Silurian strophomenate brachiopods: Significance for interpreting evolutionary relationships within early Rhynchonelliformea			54		13-20									
 Generic	Holmer, Lars E. ;Popov, Leonid E. ;Pour, Mansoureh Ghobadi ;Claybourn, Tom ;Zhang, Zhi-Liang ;Brock, Glenn A. ;Zhang, Zhi-Fei 		2018	Evolutionary significance of a middle Cambrian (Series 3) <i>in situ</i> occurrence of the pedunculate rhynchonelliform brachiopod <i>Nisusia sulcata</i>													10.1111/let.12254	
 Journal Article	Popov, Leonid E. ;Egerquist, Eva ;Holmer, Lars E. 		2007	Earliest ontogeny of Middle Ordovician rhynchonelliform brachiopods (Clitambonitoidea and Polytoechioidea): implications for brachiopod phylogeny			40	1	85-96									
@@ -47,11 +47,11 @@ Book Section	Williams, Alwyn ;Carlson, Sandra J. ;Brunton, C. Howard C. ;Holmer,
 Journal Article	Robinson, Jeffrey 		2014	The muscles, body wall and valve-opening mechanism of extant craniid (inarticulated) brachiopods			48		1231-1252									
 Generic	Williams, Alwyn ;Brunton, C. Howard C. ;Carlson, Sandra J. 		2006	Rhynchonelliformea (part)			5		1689-2320									
 Book	Ruppert, E. E. ;Barnes, R. D. 		1993			Saunders College Publishing			1056									
-Generic	Chen, Jun-yuan ;Huang, Di-ying ;Chuang, Shou-Hwa 		2007	Reinterpretation of the Lower Cambrian brachiopod <i>Heliomedusa orienta</i> Sun and Hou, 1987a as a discinid			81	1	38-47									
+Generic	Chen, Jun-Yuan ;Huang, Di-Ying ;Chuang, Shou-Hwa 		2007	Reinterpretation of the Lower Cambrian brachiopod <i>Heliomedusa orienta</i> Sun and Hou, 1987a as a discinid			81	1	38-47									
 Generic	Holmer, Lars E. ;Popov, Leonid E. ;Koneva, Svetlana P. ;Rong Jia-Yu,  		1997	Early Cambrian Lingulellotreta (Lingulata, Brachiopoda) from South Kazakhstan (Malyi Karatau Range) and South China (Eastern Yunnan)			71		577-584									
 Journal Article	Williams, Alwyn ;Carlson, Sandra J. ;Brunton, C. Howard C. ;Holmer, Lars E. ;Popov, Leonid E. 		1996	A supra-ordinal classification of the Brachiopoda			351	1344	1171-1193									
 Generic	Barczyk, W 		1973	Braehiopods Terebratulina delheidi Vincent in the Nummulite Eocene of the Tatra Mts			23	3	491-497									
-Journal Article	Ackerly, Spafford C. 		1992	Rapid shell closure in the brachiopods <i>Terebratulina retusa</i> and <i>Terebratalia transversa</i>			72		579-598									
+Journal Article	Ackerly, Spafford C. 		1992	Rapid shell closure in the brachiopods <i>Terebratulina retusa</i> and <i>Terebratalia transversa</i>			72		579-598								10.1017/S0025315400059361	
 Generic	Conklin, Edwin G. 		1902	The embryology of a brachiopod, <i>Terebratulina septentrionalis</i> Couthouy			41	168	41-76									
 Generic	Chapman, Frederick 		1914	IV. -- Notes on shell-structure in the genus <i>Lingula</i>, Recent and fossil					28-31									
 Generic	Williams, A. ;Holmer, L.E. 		2002	Shell structure and inferred growth, functions and affinities of the sclerites of the problematic <i>Micrina</i>			45		845-873									
@@ -92,3 +92,7 @@ Journal Article	Williams, A. ;Mackay, S. ;Cusack, M. 		1992	Structure of the org
 Journal Article	Williams, A. ;Cusack, M. ;Mackay, S. 		1994	Collagenous chitino-phosphatic shell of the brachiopod <i>Lingula</i>			346		223-266									
 Journal Article	Laurie, John 		1987	The musculature and vascular systems of two species of Cambrian Paterinide (Brachiopoda)			10		261-265									
 Journal Article	Williams, A. ;Brunton, C. H. C. 		1993	Role of shell structure in the classification of the orthotetidine brachiopods			36		931-966									
+Journal Article	Holmer, Lars E. ;Popov, Leonid E. ;Koneva, Svetlana P. ;Rong, Jia-Yu 		1997	Early Cambrian Lingulellotreta (Lingulata, Brachiopoda) from south Kazakhstan (Malyi Karatau Range) and South China (eastern Yunnan)			71	4	577-584									
+Journal Article	Popov, Leonid E. ;Bassett, Michael G. ;Holmer, Lars E. ;Ghobadi Pour, Mansoureh 		2009	Early ontogeny and soft tissue preservation in siphonotretide brachiopods: new data from the Cambrian-Ordovician of Iran			16	1	151-161								10.1016/j.gr.2009.01.009	
+Journal Article	Williams, Alwyn ;Holmer, Lars E. ;Cusack, Maggie 		2004	Chemico-structure of the organophosphatic shells of siphonotretide brachiopods			47	5	1313-1337								10.1111/j.0031-0239.2004.00404.x	
+Journal Article	Havlicek, M. 		1982	Lingulacea, Paterinacea, and Siphonotretacea (Brachiopoda) in the Lower Ordovician sequence of Bohemia			25		9-82, pl. 1-16									
