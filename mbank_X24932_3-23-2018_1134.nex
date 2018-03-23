@@ -1,0 +1,1419 @@
+#NEXUS
+
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-03-23 11.34.47 ]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX=37;
+	TAXLABELS
+		'Namacalathus'
+		'Alisina'
+		'Askepasma toddense'
+		'Antigonambonites planus'
+		'Clupeafumosus socialis'
+		'Coolinia pecten'
+		'Craniops'
+		'Dailyatia'
+		'Eccentrotheca'
+		'Eoobolus'
+		'Glyptoria'
+		'Gasconsia'
+		'Haplophrentis carinatus'
+		'Heliomedusa orienta'
+		'Kutorgina chengjiangensis'
+		'Lingulosacculus'
+		'Lingulellotreta malongensis'
+		'Longtancunella chengjiangensis'
+		'Micrina'
+		'Micromitra'
+		'Mickwitzia muralensis'
+		'Mummpikia nuda'
+		'Nisusia sulcata'
+		'Novocrania'
+		'Orthis'
+		'Paterimitra'
+		'Pedunculotheca diania'
+		'Pelagodiscus atlanticus'
+		'Phoronis'
+		'Salanygolina'
+		'Lingula'
+		'Siphonobolus priscus'
+		'Acanthotretella'
+		'Terebratulina'
+		'Ussunia'
+		'Tomteluva perturbata'
+		'Yuganotheca elegans'
+	;
+ENDBLOCK;
+
+
+
+BEGIN CHARACTERS;
+	DIMENSIONS NCHAR=95;
+	FORMAT DATATYPE=STANDARD MISSING=? GAP=- SYMBOLS="012345";
+
+	CHARLABELS
+		 [1] 'Sclerites: Present in adult'
+		 [2] 'Sclerites: Disposition'
+		 [3] 'Sclerites: Bivalved: Hinge line shape'
+		 [4] 'Sclerites: Bivalved: Apophyses'
+		 [5] 'Sclerites: Bivalved: Apophyses: Morphology'
+		 [6] 'Sclerites: Bivalved: Apophyses: Dental plates'
+		 [7] 'Sclerites: Bivalved: Sockets'
+		 [8] 'Sclerites: Bivalved: Socket ridges'
+		 [9] 'Sclerites: Bivalved: Enclosing filtration chamber'
+		 [10] 'Sclerites: Bivalved: Commissure'
+		 [11] 'Sclerites: Bivalved: Muscle scars: Ventral '
+		 [12] 'Sclerites: Bivalved: Muscle scars: Adjustor'
+		 [13] 'Sclerites: Bivalved: Muscle scars: Dorsal adductor'
+		 [14] 'Sclerites: Bivalved: Muscle scars: Adductors: Position'
+		 [15] 'Sclerites: Bivalved: Muscle scars: Dermal muscles'
+		 [16] 'Sclerites: Bivalved: Muscle scars: Unpaired median (levator ani)'
+		 [17] 'Sclerites: Bivalved: Muscle scars: Dorsal diductor'
+		 [18] 'Sclerites: Bivalved: Muscle scars: Dorsal diductor: Position'
+		 [19] 'Sclerites: Dorsal valve: Growth direction'
+		 [20] 'Sclerites: Dorsal valve: Posterior surface: Differentiated'
+		 [21] 'Sclerites: Dorsal valve: Differentiated posterior surface: Morphology'
+		 [22] 'Sclerites: Dorsal valve: Posterior surface: Medial groove'
+		 [23] 'Sclerites: Dorsal valve: Posterior surface: Notothyrium'
+		 [24] 'Sclerites: Dorsal valve: Posterior surface: Notothyrium: Shape'
+		 [25] 'Sclerites: Dorsal valve: Posterior surface: Notothyrium: Chilidial plates'
+		 [26] 'Sclerites: Dorsal valve: Notothyrial platform'
+		 [27] 'Sclerites: Dorsal valve: Cardinal processes'
+		 [28] 'Sclerites: Dorsal valve: Medial septum'
+		 [29] 'Sclerites: Ventral valve: Relative size'
+		 [30] 'Sclerites: Ventral valve: Growth direction'
+		 [31] 'Sclerites: Ventral valve: Posterior surface: Differentiated'
+		 [32] 'Sclerites: Ventral valve: Posterior margin growth direction'
+		 [33] 'Sclerites: Ventral valve: Posterior surface: Planar'
+		 [34] 'Sclerites: Ventral valve: Posterior surface: Extent'
+		 [35] 'Sclerites: Ventral valve: Posterior surface: Delthyrium'
+		 [36] 'Sclerites: Ventral valve: Posterior surface: Delthyrium: Shape'
+		 [37] 'Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover'
+		 [38] 'Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent'
+		 [39] 'Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Identity'
+		 [40] 'Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Shape'
+		 [41] 'Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Hinge furrows'
+		 [42] 'Sclerites: Ventral valve: Umbonal perforation'
+		 [43] 'Sclerites: Ventral valve: Umbonal perforation: Shape'
+		 [44] 'Sclerites: Ventral valve: Colleplax, cicatrix or pedicle sheath'
+		 [45] 'Sclerites: Ventral valve: Median septum'
+		 [46] 'Sclerites: Ornament: Concentric ornament'
+		 [47] 'Sclerites: Ornament: Concentric ornament: Symmetry'
+		 [48] 'Sclerites: Ornament: Radial ornament'
+		 [49] 'Sclerites: Ornament: Shell-penetrating spines'
+		 [50] 'Sclerites: Composition: Mineralogy'
+		 [51] 'Sclerites: Composition: Cuticle or organic matrix'
+		 [52] 'Sclerites: Composition: Incorporation of sedimentary particles'
+		 [53] 'Sclerites: Composition: Periostracum: Flexibility'
+		 [54] 'Sclerites: Composition: Microstructure: Layers'
+		 [55] 'Sclerites: Composition: Microstructure: Crystal format'
+		 [56] 'Sclerites: Composition: Microstructure: Punctae'
+		 [57] 'Sclerites: Composition: Microstructure: Canals'
+		 [58] 'Sclerites: Composition: Microstructure: Pseudopunctae'
+		 [59] 'Sclerites: Composition: Microstructure: External polygonal ornament'
+		 [60] 'Offspring: Egg size'
+		 [61] 'Offspring: Site of gamete maturation'
+		 [62] 'Offspring: Embryonic shell'
+		 [63] 'Offspring: Embryonic shell: Morphology'
+		 [64] 'Offspring: Embryonic shell: Extended in larvae'
+		 [65] 'Offspring: Larval attachment structure'
+		 [66] 'Setae: Present in adults'
+		 [67] 'Setae: Distribution'
+		 [68] 'Setae: Embryonic: Present in larva'
+		 [69] 'Setae: Embryonic: Setal sacs'
+		 [70] 'Setae: Embryonic: Setal sacs: Number'
+		 [71] 'Pedicle'
+		 [72] 'Pedicle: Constitution'
+		 [73] 'Pedicle: Biomineralization'
+		 [74] 'Pedicle: Bulb'
+		 [75] 'Pedicle: Distal rootlets'
+		 [76] 'Pedicle: Tapering'
+		 [77] 'Pedicle: Coelomic region'
+		 [78] 'Pedicle: Surface ornament'
+		 [79] 'Pedicle: Position'
+		 [80] 'Mantle canals: Morphology'
+		 [81] 'Mantle canals: vascula lateralia'
+		 [82] 'Mantle canals: vascula media'
+		 [83] 'Mantle canals: vascula terminalia'
+		 [84] 'Feeding: Lophophore: Tentacle disposition'
+		 [85] 'Feeding: Lophophore: Tentacle rows per side: Trocholophe stage'
+		 [86] 'Feeding: Lophophore: Tentacle rows per side: Post-trocholophe stage'
+		 [87] 'Feeding: Lophophore: Median tentacle in early development'
+		 [88] 'Feeding: Lophophore: Forms closed loop'
+		 [89] 'Feeding: Lophophore: Coiling direction'
+		 [90] 'Feeding: Lophophore: Adjustor muscle'
+		 [91] 'Feeding: Prominent pharynx'
+		 [92] 'Feeding: Anus'
+		 [93] 'Feeding: Anus: Migration'
+		 [94] 'Feeding: Anus: Migration: Within ring of tentacles'
+		 [95] 'Feeding: Anus: Migration: Position'
+	;
+
+	STATELABELS
+		1
+		'Absent'
+		'Present'
+		,
+		2
+		'[Transformational character]'
+		'Single skeletal element'
+		'Bivalved: scleritome dominated by prominent dorsal and ventral valve'
+		'Multiple skeletal elements with no differentiated pair'
+		,
+		3
+		'[Transformational character]'
+		'Astrophic'
+		'Strophic'
+		,
+		4
+		'Absent'
+		'Present'
+		,
+		5
+		'[Transformational character]'
+		'Deltidiodont'
+		'Cyrtomatodont'
+		'Pseudodont'
+		,
+		6
+		'Absent'
+		'Present'
+		,
+		7
+		'Absent'
+		'Present'
+		,
+		8
+		'Absent'
+		'Present'
+		,
+		9
+		'No filtration chamber, or open chamber'
+		'Shells close to form enclosed filtration chamber'
+		,
+		10
+		'[Transformational character]'
+		'Rectimarginate'
+		'Uniplicate'
+		'Sulcate'
+		,
+		11
+		'Absent'
+		'Present'
+		,
+		12
+		'Absent'
+		'Present'
+		,
+		13
+		'[Transformational character]'
+		'Dispersed'
+		'Radially arranged'
+		'Quadripartite'
+		,
+		14
+		'[Transformational character]'
+		'Oblique'
+		'At high angle'
+		,
+		15
+		'Absent or weakly developed'
+		'Strongly developed'
+		,
+		16
+		'Absent'
+		'Present'
+		,
+		17
+		'Absent'
+		'Present'
+		,
+		18
+		'[Transformational character]'
+		'Close to commissural plane'
+		'Oblique to commissural plane'
+		'At high angle to commissural plane'
+		,
+		19
+		'[Transformational character]'
+		'Holoperipheral'
+		'Mixoperipheral'
+		'Hemiperipheral'
+		,
+		20
+		'Posterior shell not differentiated'
+		'Posterior shell forms distinct cardinal area or pseudointerarea'
+		,
+		21
+		'Curved lateral profile'
+		'Planar lateral profile'
+		,
+		22
+		'Absent'
+		'Present'
+		,
+		23
+		'Absent'
+		'Present'
+		,
+		24
+		'[Transformational character]'
+		'Parallel-sided cleft'
+		'Triangular'
+		,
+		25
+		'[Transformational character]'
+		'Open'
+		'Covered by chilidial plates'
+		,
+		26
+		'Absent'
+		'Present'
+		,
+		27
+		'Absent'
+		'Present'
+		,
+		28
+		'Absent'
+		'Present'
+		,
+		29
+		'[Transformational character]'
+		'Ventral valve markedly larger than dorsal valve (ventribiconvex)'
+		'Equivalve (subequally biconvex)'
+		'Dorsal valve markedly larger than ventral valve (dorsibiconvex)'
+		,
+		30
+		'[Transformational character]'
+		'Holoperipheral'
+		'Mixoperipheral'
+		'Hemiperipheral'
+		,
+		31
+		'Posterior surface of shell not differentiated'
+		'Posterior surface of shell forms distinct cardinal area or pseudointerarea'
+		,
+		32
+		'[Transformational character]'
+		'Inward-growing'
+		'Outward-growing'
+		,
+		33
+		'Curved lateral profile'
+		'Planar lateral profile'
+		,
+		34
+		'[Transformational character]'
+		'Low'
+		'High'
+		,
+		35
+		'Absent'
+		'Present'
+		,
+		36
+		'[Transformational character]'
+		'Parallel sided'
+		'Triangular'
+		,
+		37
+		'[Transformational character]'
+		'Open'
+		'Covered, at least in part'
+		,
+		38
+		'[Transformational character]'
+		'Covered only partially; partially open'
+		'Completely covered'
+		,
+		39
+		'[Transformational character]'
+		'Pseudodeltidium'
+		'Deltidial plate(s)'
+		,
+		40
+		'[Transformational character]'
+		'Convex'
+		'Concave'
+		,
+		41
+		'Absent'
+		'Present'
+		,
+		42
+		'Umbo imperforate (or neomorphic character inapplicable)'
+		'Umbonal perforation'
+		,
+		43
+		'[Transformational character]'
+		'Circular (or subcircular)'
+		'Rhombic to oval'
+		,
+		44
+		'Absent'
+		'Present'
+		,
+		45
+		'Absent'
+		'Present'
+		,
+		46
+		'Smooth, or growth lines only'
+		'Concentric ornament present'
+		,
+		47
+		'Symmetric fila'
+		'Asymmetric fila, with outer faces'
+		,
+		48
+		'Absent'
+		'Present'
+		,
+		49
+		'Absent'
+		'Present'
+		,
+		50
+		'[Transformational character]'
+		'Organic (non-mineralized)'
+		'Phosphatic'
+		'Calcitic'
+		'Aragonitic'
+		,
+		51
+		'[Transformational character]'
+		'GAGs, chitin and collagen'
+		'Glycoprotein'
+		,
+		52
+		'Absent'
+		'Present'
+		,
+		53
+		'[Transformational character]'
+		'Flexible'
+		'Inflexible'
+		,
+		54
+		'[Transformational character]'
+		'Single microstructural layer'
+		'Two microstructurally differentiated layers'
+		'Inner and outer laminae enclosing medial void'
+		'Three microstrurally differentiated layers'
+		,
+		55
+		'[Transformational character]'
+		'Laminated'
+		'Fibrous bundles'
+		'Polygonal columns'
+		,
+		56
+		'Absent'
+		'Present'
+		,
+		57
+		'Absent'
+		'Present'
+		,
+		58
+		'Absent'
+		'Present'
+		,
+		59
+		'Absent'
+		'Present'
+		,
+		60
+		'[Transformational character]'
+		'Small: < 100 um, little yolk'
+		'Large: > 110 um, much yolk'
+		,
+		61
+		'Body cavity'
+		'Mantle canals'
+		,
+		62
+		'Absent'
+		'Present'
+		,
+		63
+		'[Transformational character]'
+		'Flat, disc-like (cf. Micrina)'
+		'Three prominent lobes forming a Y (cf. Paterimitra)'
+		'Spherical'
+		,
+		64
+		'[Transformational character]'
+		'Not extended; embryonic shell contiguous with adult shell'
+		'Extended into larval shell, separated from adult shell by prominent nick'
+		,
+		65
+		'Without evidence of pedicle'
+		'With evidence of pedicle'
+		,
+		66
+		'Absent'
+		'Present'
+		,
+		67
+		'[Transformational character]'
+		'Uniform '
+		'Only present at margins of shell'
+		,
+		68
+		'No evidence of setae in embryonic shell'
+		'Setae present'
+		,
+		69
+		'Absent'
+		'Present'
+		,
+		70
+		'[Transformational character]'
+		'One pair'
+		'Two pairs'
+		'Three pairs'
+		,
+		71
+		'Absent'
+		'Present'
+		,
+		72
+		'[Transformational character]'
+		'Massive or uniform'
+		'Densely stacked tabular discs'
+		,
+		73
+		'[Transformational character]'
+		'Absent'
+		'Present'
+		,
+		74
+		'Absent'
+		'Present'
+		,
+		75
+		'Absent'
+		'Present'
+		,
+		76
+		'[Transformational character]'
+		'Uniform thickness'
+		'Tapering'
+		,
+		77
+		'[Transformational character]'
+		'Absent'
+		'Present'
+		,
+		78
+		'[Transformational character]'
+		'Smooth'
+		'Irregular wrinkles'
+		'Regular annulations'
+		,
+		79
+		'[Transformational character]'
+		'At hinge'
+		'Ventral valve umbo via internal pedicle tube'
+		'Ventral valve umbo (or pedicle sheath)'
+		,
+		80
+		'Pinnate (=lemniscate)'
+		'Bifurcate'
+		'Baculate'
+		'Saccate'
+		,
+		81
+		'Absent'
+		'Present'
+		,
+		82
+		'Absent'
+		'Present (in dorsal valve)'
+		,
+		83
+		'Exclusively marginal (peripheral)'
+		'Directed peripherally and (intero)medially'
+		,
+		84
+		'[Transformational character]'
+		'Single side'
+		'Both sides'
+		,
+		85
+		'Single row'
+		'Ablabial and adlabial row'
+		,
+		86
+		'Single row'
+		'Adbalial and ablabial row'
+		,
+		87
+		'Absent'
+		'Present'
+		,
+		88
+		'[Transformational character]'
+		'Diverging laterally'
+		'Closed loop'
+		,
+		89
+		'[Transformational character]'
+		'Anteriad'
+		'Posteriad'
+		,
+		90
+		'Absent'
+		'Present'
+		,
+		91
+		'Absent'
+		'Present'
+		,
+		92
+		'[Transformational character]'
+		'Absent: digestive tract is blind sac'
+		'Present: through-gut'
+		,
+		93
+		'Not migrated: straight gut with [dorso] posterior anus'
+		'Migrated: anus has migrated posteriad to create U-shaped gut'
+		,
+		94
+		'[Transformational character]'
+		'Not within ring of tentacles'
+		'Anterior - within ring of feeding tentacles'
+		,
+		95
+		'[Transformational character]'
+		'Left'
+		'Right'
+		'Dorsally'
+		'Ventrally'
+		
+	;
+
+	MATRIX
+	'Namacalathus'		                            11------0------------00--000------0-----00-000--03?0-310100??????0-???0------------????????????
+	'Alisina'		                                 12212011111?32001121101111002212111222{1,2}20110011003?0???0000??0--?12???12(2,1)0?21332110????21??????
+	'Askepasma toddense'		                      1220-000121????0??21100--00012121111211100-0010002?013(3,1)0000??112?1?1121????????0110????????????
+	'Antigonambonites planus'		                 1221111111102?0???21101221112212121222111121111103?0?410010??11211?112112002233????????????????
+	'Clupeafumosus socialis'		                  1210-000111031100-(3,1)1110--0011112120-----01{2,1}010-002?0?210100??11211?112????????3011?????????????
+	'Coolinia pecten'		                         1221111111102?00123110122110221211122211111100-103?0?210010??11211?1121???0???3????????????????
+	'Craniops'		                                1210-000111031?1??10000--000210-020-----00-1011003?0?210000??1120?????0--00----????????????????
+	'Dailyatia'		                               13------0------------00--000------0-----00-0011002?0?110001??0---??00-?????????----????????????
+	'Eccentrotheca'		                           13------0------------00--000------0-----00-0011002?0?1(3,1)0000????????00-?????????----????????????
+	'Eoobolus'		                                1210-000111021?00-21110--001(3,2)212010-----00-010-00(2,3)?0?210000??1121??1121???????1?11?????????????
+	'Glyptoria'		                               1221100012112100132110121100221211121---00-000-103?02220000??0--??????11??????10110????????????
+	'Gasconsia'		                               1220-(0,1)10111011011220000--00012121112221210-011?104?0?2(1,2)0000??0--??????0--00----211?????????????
+	'Haplophrentis carinatus'		                 1210-00011101?????11100--0101112020-----00-000-004?0?220100??1320??00-0--00----????1?0?12?12112
+	'Heliomedusa orienta'		                     1210-000111?1?????10000--0011212010-----00-(1,0)01000{2,1}?0???1?00??1???11???0--00----01101?1?12?1????
+	'Kutorgina chengjiangensis'		               12(1,2)13000111021001221101220001212121?221111?100-103?02220000??0--112???122001233????????21??20-3
+	'Lingulosacculus'		                         1210-000111???1?0-2???0--000121??20-----01?0?0-00{1,4}?0?--0?00??1????????1????????2110????21??2112
+	'Lingulellotreta malongensis'		             1210-000111???100-21010--0011211020-----012000-002?0???0?00??1?????00-11110123221101?0?21??2112
+	'Longtancunella chengjiangensis'		          122???00111???????2????--?00(2,1)21211???????11100-00??0???0?00??????12???1210021330?1?????11??2112
+	'Micrina'		                                 121110000-1???????21000--00012120212211100-001(0,1)002?0?211100??112111111????????1????????????????
+	'Micromitra'		                              1220-0001110??0?1?21100--00012121112221100-0111102?013(1,3)0000??112?121121???????13110????????????
+	'Mickwitzia muralensis'		                   1210-0001100--?00-10000--00011120212221100-0010102?0?211100??1221111121????????????????????????
+	'Mummpikia nuda'		                          1210-000111???????20000--000221111111---00-010-003?0?110100???????????1???0?2?1????????????????
+	'Nisusia sulcata'		                         1221300011102100122110121000121212122111111000-113?0?220000??0--1?????1110022(3,2)10???????????2???
+	'Novocrania'		                              1220-000111031011211000--001310-020-----00-001100320?211000210--0021130--00----01(0,1)01011211120-3
+	'Orthis'		                                  1221111111113?00112100121111221211121---00-000-103?0?220000??0--??????11??????13110????????????
+	'Paterimitra'		                             1210-0000-????????11100--00012120212211100-0011002?0?2(3,1)0000??1220?-00-????????1????????????????
+	'Pedunculotheca diania'		                   1210-000111???????11000--0101112020-----01?100-004?0?2?0?00??1110??00-112011233????????????21??
+	'Pelagodiscus atlanticus'		                 1210-000111031100-10000--000310-010-----00-010-002101210100101121121131110012111111111111102123
+	'Phoronis'		                                0-------0------------00--000------0-----00-00-----11-------100---0-00-0------------200022002113
+	'Salanygolina'		                            1220-000111?2100??2110122(1,0)00121202112111111101000{2,3}?0?230000??12211?1121???????3????????????????
+	'Lingula'		                                 1210-000111021100-31010--0012312010-----00-000-00210?2110001011111210-1111022111101111121012112
+	'Siphonobolus priscus'		                    1210-000111???????21{0,1}(0,1)0--0011(1,2)12{1,0}10-----01111(1,0)-11210?2110001?1120111121???????2?11?????????????
+	'Acanthotretella'		                         1210-000111???1???21010--0001212120-----01?000-01{1,2,3,4}?0?--1?00??1???11???111101232211?????21??211?
+	'Terebratulina'		                           121120111(2,1)1132001121100--01022121112212-00-000-00320?221000210--11211211111111101102010210111-4
+	'Ussunia'		                                 1210-00011??1??1??20000--000220-010-----00-000-004?0?????0????????-???0--00----????????????????
+	'Tomteluva perturbata'		                    1210-000121???????2100122010111201112221111000-103?0???0000??0--??????1???????2????????????????
+	'Yuganotheca elegans'		                     12??????11?????????????--00?(1,2)1?201???????1?100-001?1?--???0??????12???11210223301001?0?11?1211?
+	;
+ENDBLOCK;
+
+BEGIN NOTES;
+	[Taxon comments]
+	TEXT TAXON=4 TEXT='Strophomenata -> Billingsellida -> Polytoechiidae';
+	TEXT TAXON=5 TEXT='Phylum: Brachiopoda, Class: Lingulata, Order: Acrotretida, Family: Acrotretidae';
+	TEXT TAXON=6 TEXT='Strophomenata -> Orthotetida -> Chilidiopsidae';
+	TEXT TAXON=11 TEXT='Rhynchonellata - Protorthida - Protorthidae';
+	TEXT TAXON=12 TEXT='Phylum: Brachiopoda, Class: Craniata, Order: Trimerellida, Family: Trimerellidae, Genus: Gasconsia';
+	TEXT TAXON=13 TEXT='Skeletal microstructure is not known from Haplophrentis. ^nHere we assume that the microstructure is equivalent to that described by Kouchinsky (2000).';
+	TEXT TAXON=14 TEXT='Chen et al. (2007) interpret the weakly subconical valve with interarea as dorsal, but subsequent authors (Williams et al. 2007, Zhang et al. 2009) prefer the original interpretation that sees this valve as ventral; we follow this latter reconstruction.';
+	TEXT TAXON=22 TEXT='A phosphatic obolellid.^n^nIf another is desired, try Alisina (known from Chengjiang).';
+	TEXT TAXON=26 TEXT='The S1 sclerite is taken to be homologous with the ventral valve of brachiopods; the S2 sclerite presumably corresponds to the dorsal valve.';
+	TEXT TAXON=35 TEXT='Included because Gorjansky & Popov (1986) consider it intermediate between Trimerallids and Craniidae';
+
+	[Character comments]
+	TEXT CHARACTER=1 TEXT='Plate-like (wider than tall) skeletal elements, whether mineralized or non-mineralized.^nThe definition deliberately excludes setae (which are taller than wide).^n';
+	TEXT CHARACTER=2 TEXT='Taxa in the bivalved condition may bear small additional elements, such as the L-elements of Paterimitra or the stegidial / deltidial plates of certain brachiopods.';
+	TEXT CHARACTER=4 TEXT='Many brachiopods, in addition to Micrina and others, bear tooth-like structures or processes that articulate the two primary valves.^nCaution must be applied before taxa are coded as "absent", as teeth can be subtle and may be overlooked.^n^nKutorginata don''t have teeth or dental sockets, but their shells are articulated by "two triangular plates formed by dorsal interarea, bearing oblique ridges on the inner sides" (Williams et al 2000, p. 211); this simple hinge mechanism is different from other rhynchonelliforms (Williams et al. 2000, p.208), but serves an equivalent purpose and is thus potentially homologous.  We thus code kutorginids as present, using a subsequent character to capture difference in tooth morphology.';
+	TEXT CHARACTER=5 TEXT='Deltidiodont teeth are simple hinge teeth developed by the distal accretion of secondary shell; Cyrtomatodont teeth are knoblike or hook-shaped hinge teeth developed by differential secretion and resorption of the secondary shell (fig. 322 in Williams et al 2000).^n^nKutorginata (here represented by Kutorgina and Nisusia) don''t have teeth (apophyses) or dental sockets, but their shells are articulated by "two triangular plates formed by dorsal interarea, bearing oblique ridges on the inner sides" (Williams et al 2000, p. 211); this simple hinge mechanism is different from other rhynchonelliforms (Williams et al. 2000, p.208; table 13 character 30), and is described as a "pseudodont articulation" (Holmer et al. 2018E).^n';
+	TEXT CHARACTER=6 TEXT='Williams et al. 1997 (p362) write: "Teeth [...] are commonly supported by a pair of variably disposed plates also built up exclusively of secondary shell and known as dental plates (Fig. 323.1, 323.3)."^n^nDewing (2001) elaborates: "Dental plates are near-vertical, narrow sheets of shell tissue between the anteromedian edge of the teeth and floor of the ventral valve. They are a composite structure, resulting from the growth of teeth over the ridge that bounds the ventral-valve muscle field."^n^nWilliams et al. 2000 (p.201) write: "The denticles lack supporting structures in all Obolellida, but in Naukatida they are supported by an arcuate plate below the^ninterarea, the anterise (Fig. 119.3a)".^n^nThe anterise is conceivably homologous with the dental plates, thus the presence of either is coded "present" for this character.';
+	TEXT CHARACTER=7 TEXT='Simplified from Bassett et al. (2001) character 16.^nThis character is independent of apophyses, as several taxa bear sockets without corresponding teeth; the function of these sockets is unknown.^nSee figs 323ff in Williams et al. (1997).';
+	TEXT CHARACTER=8 TEXT='After Bassett et al. (2001) character 17.  May be difficult to distinguish from a brachiophore (see Fig 323 in Williams et al 1997), so the two structures are not distinguished here.';
+	TEXT CHARACTER=9 TEXT='In crown-group brachiopods, the two primary shells close to form an enclosed filtration chamber.  Further down the stem, taxa such as Micrina do not.';
+	TEXT CHARACTER=10 TEXT='The anterior commissure can be rectimarginate (i.e. straight), uniplicate (i.e. median sulcus in ventral valve), or sulcate (with median sulcus in dorsal valve).';
+	TEXT CHARACTER=11 TEXT='After Bassett et al. (2001) character 6';
+	TEXT CHARACTER=12 TEXT='After Bassett et al. (2001) character 7.^nThis character is contingent on the presence of a pedicle.  Extreme caution must be used in inferring an absent state, as adjustor scars can be extremely difficult to distinguish from the adductor scars.';
+	TEXT CHARACTER=13 TEXT='After Bassett et al. (2001) character 8, and Williams et al. (1996, character 35; 2000, p. 160, character 54)^n^nIn the dorsal valve, the anterior and posterior adductor scars of articulated brachiopods form a single (quadripartite) muscle field (Williams et al. 2000, p. 201)^n^nIn contrast, the anterior and posterior scars of e.g. trimerellids have prominently separate attachment points, with anterior and posterior muscle fields clearly distinct, and coded as "dispersed".^n^nIn e.g. kutorginates, adductor muscles are separated into left and right fields; the same is the case in lingulids, where there are more separate muscle groups and the left and right fields conspire to produce a radial arrangement; both of these configurations are scored as "radially arranged".';
+	TEXT CHARACTER=14 TEXT='Position of adductor muscles relative to commissural plane.^nAfter Bassett et al. (2001) character 11.^n^n';
+	TEXT CHARACTER=15 TEXT='Based on character 11 in Zhang et al. (2014).^nWell developed dermal muscles present in the body wall of recent lingulates, which are absent in all calcareous-shelled brachiopods. These muscles are responsible for the hydraulic shell-opening mechanism, and possibly present in all organophosphatic-shelled brachiopods, with the possible exception of the paterinates (Williams et al., 2000, p. 32) ^n';
+	TEXT CHARACTER=16 TEXT='The levator ani is a diminutive unpaired medial muscle found in certain calcitic brachiopods (Williams et al. 2000; see fig. 89, character 34 in table 13)';
+	TEXT CHARACTER=17 TEXT='After Bassett et al. (2001) character 9';
+	TEXT CHARACTER=18 TEXT='After Bassett et al. (2001) character 10.';
+	TEXT CHARACTER=19 TEXT='See Fig. 284 in Williams et al (1997).^nThe growth direction dictates the attitude of the cardinal area relative to the hinge, which does not therefore represent an independent character.^nCrudely put, if, viewed from a dorsal position, the umbo falls within the outer margin of the shell, growth is holoperipheral; if it falls outside the margin, it is mixoperipheral; if it falls exactly on the margin, it is hemiperipheral.';
+	TEXT CHARACTER=20 TEXT='In shells that grow by mixoperipheral growth, the triangular area subtended between each apex and the posterior ends of the lateral margins is termed the cardinal area.  In shells with holoperipheral growth, a flattened surface on the posterior margin of the valve is termed a pseudointerarea (paraphrasing Williams et al. 1997).^n^nIn order for this character to be independent of a shell''s growth direction, we do not distinguish between a "cardinal area", "interarea" or "pseudointerarea".^n';
+	TEXT CHARACTER=21 TEXT='It is possible for a cardinal area or pseudointerarea to be distinct from the anterior part of the shell, yet to remain curved in lateral profile.^n^nTaking an undifferentiated posterior margin as primitive, the primitive condition is curved -- flattening of the posterior margin represents an additional modification that can only occur once the posterior margin is differentiated.';
+	TEXT CHARACTER=22 TEXT='Following character 29 in Williams et al. (2000), table 9 (which relates to pseudointerarea)';
+	TEXT CHARACTER=23 TEXT='A notothyrium is an opening in an interarea that accommodates the pedicle, and may be filled with plates.^n';
+	TEXT CHARACTER=24 TEXT='A notothyrium is an opening in an interarea that accommodates the pedicle, and may be filled with plates.^n^nA simplification of character 5 in Bassett et al. 2001.';
+	TEXT CHARACTER=25 TEXT='A notothyrium may be open or covered by a chilidium or two chilidial plates.^nNo included taxa exhibit more than one chilidial plate.^nTransformational as it is not self-evident whether the ancestral taxon had an open or closed notothyrium.';
+	TEXT CHARACTER=26 TEXT='After Bassett et al. (2001) character 12.^nThe presence or absence of a notothyrial platform, which often serves as an attachment point for the diductors in a similar fashion to the cardinal processes, is independent of the presence of a notothyrium.';
+	TEXT CHARACTER=27 TEXT='After Bassett et al. (2001) character 13.^nCardinal processes are unlikely to be homologous with the notothyrial platform, even if their function is similar.';
+	TEXT CHARACTER=28 TEXT='The dorsal valve of many taxa is exhibits a septum or process (or myophragm) along the medial line.  See character 25 in Benedetto (2009).';
+	TEXT CHARACTER=29 TEXT='In many brachiopods, the valves are closely similar in size; in others, the ventral valve is markedly larger than the dorsal, on account of being more convex.  Marginal cases are treated as ambiguous for the relevant states.';
+	TEXT CHARACTER=30 TEXT='See Fig. 284 in Williams et al. (1997) for depiction of terms.^n^nThe growth direction dictates the attitude of the cardinal area relative to the hinge, which does not therefore represent an independent character.^nCrudely put, if, viewed from a dorsal position, the umbo falls within the outer margin of the shell, growth is holoperipheral; if it falls outside the margin, it is mixoperipheral; if it falls exactly on the margin, it is hemiperipheral.';
+	TEXT CHARACTER=31 TEXT='In shells that grow by mixoperipheral growth, the triangular area subtended between each apex and the posterior ends of the lateral margins is termed the cardinal area.  In shells with holoperipheral growth, a flattened surface on the posterior margin of the valve is termed a pseudointerarea (paraphrasing Williams et al. 1997).^n^nIn order for this character to be independent of a shell''s growth direction, we do not distinguish between a "cardinal area", "interarea" or "pseudointerarea".^n';
+	TEXT CHARACTER=32 TEXT='Balthasar (2008) notes an inward-growing posterior margin of the pseudointerarea as potentially linking Mummpikia with the linguliform brachiopods.^n^nThe posterior margin can only grow inwards if it is differentiated from the anterior margin; else the entire shell would grow in on itself.';
+	TEXT CHARACTER=33 TEXT='It is possible for a cardinal area or pseudointerarea to be distinct from the anterior part of the shell, yet to remain curved in lateral profile.^n^nTaking an undifferentiated posterior margin as primitive, the primitive condition is curved -- flattening of the posterior margin represents an additional modification that can only occur once the posterior margin is differentiated.^n^nA flat and triangular interarea links Mummpikia with the Obolellidae (Balthasar 2008) -- but all included taxa have triangular interareas, so this is not listed as a separate character.^n';
+	TEXT CHARACTER=34 TEXT='Distinguishes taxa whose ventral valve is essentially flat from those that are essentially conical';
+	TEXT CHARACTER=35 TEXT='A delthyrium is an opening in an interarea or pseudointerarea that accommodates the pedicle, and may be filled with plates.^n';
+	TEXT CHARACTER=36 TEXT='A parallel-sided delthyrium links Mummpikia with the Obolellidae (Balthasar 2008).^n^nThis character has the capacity for further resolution, but this is unlikely to affect the results of the present study.';
+	TEXT CHARACTER=37 TEXT='An open delthyrium links Mummpikia with the Obolellidae (Balthasar 2008).^n^nThe delthyrial opening can be covered by one or more deltidial plates, or a pseudodeltitium.^n^nA convex pseudodeltidium completely covers the delthyrium in Coolinia.';
+	TEXT CHARACTER=39 TEXT='This character has the capacity for further resolution (one or more deltidial plates), but this is unlikely to affect the results of the present study.^n^nThe pseudodelthyrium is also referred to as a homeodeltidium.';
+	TEXT CHARACTER=40 TEXT='A ridge-like (i.e. convex) pseudodeltitium unites Salanygolina with Coolinia and other Chileata (Holmer et al. 2009, p. 6).';
+	TEXT CHARACTER=41 TEXT='After Bassett et al. (2001) character 18, "Hinge furrows on lateral sides of pseudodeltidium".';
+	TEXT CHARACTER=42 TEXT='Certain taxa, particularly those with a colleplax, exhibit a perforation at the umbo of the ventral valve.  This opening is sometimes associated with a pedicle sheath.';
+	TEXT CHARACTER=43 TEXT='Chen et al. (2007) propose that an oval to rhombic foramen characterises the discinids (and Heliomedusa, though the foramen in this taxon has since been reinterpreted by Zhang et al. (2009) as an impression of internal tissue).';
+	TEXT CHARACTER=44 TEXT='In certain taxa, the umbo of the ventral valve bears a colleplax, cicatrix or pedicle sheath; Bassett et al. (2008) consider these structures as homologous.';
+	TEXT CHARACTER=45 TEXT='Chen et al. (2007) observe a median septum in what they interpret as the ventral valve of Heliomedusa, and the ventral valve of Discinisca, which they propose points to a close relationship.';
+	TEXT CHARACTER=46 TEXT='After character 11 in Williams et al. (1998T).';
+	TEXT CHARACTER=47 TEXT='After character 11 in Williams et al. (1998T).';
+	TEXT CHARACTER=48 TEXT='Ridges radiating from umbo, i.e. ribs';
+	TEXT CHARACTER=49 TEXT='Mineralized or partly mineralized spines are observed in Heliomedusa and Acanthotretella';
+	TEXT CHARACTER=51 TEXT='Williams et al. (1996) identify glycoprotein-based organic scaffolds as distinct from those comprising glycosaminoglycans (GAGs), chitin and collagen.  This character can only be scored for extant taxa.';
+	TEXT CHARACTER=52 TEXT='Phoronids and Yuganotheca aggulutinate particles into their sclerites.';
+	TEXT CHARACTER=53 TEXT='Following character 9 in Williams et al. (1998T); see their p228-230 for a discussion of how this might be inferred from fossil material.';
+	TEXT CHARACTER=54 TEXT='Hyolith conchs comprise two mineralized layers of fibrous bundles.  Bundles are measure 5-15 um across; their constituent fibres are each 0.1-1.0 um wide.  In the inner layer, the fibres are transverse; in the outer layer, the bundles are inclined towards the umbo, becoming longitudinal on the outermost margin.^n^nObolellids comprise a single laminated mineralogical layer (Balthasar 2008).  Shell-penetrating canals are not considered as contributing to the mineralogical microstructure and are coded separately.^n^nNamacalathus exhibits three layers, none of which have any obvious correspondence with those of brachiopods.^n^nCoded as non-additive as there is no clear necessity to pass through the brachiopod-like construction: the three layers could arise by the addition of a void to a single pre-existing layer, for example.^n^nInapplicable in taxa with a non-mineralized shell.';
+	TEXT CHARACTER=55 TEXT='Hyolith conchs comprise two mineralized layers of fibrous bundles.  Bundles measure 5--15 &mu;m across; their constituent fibres are each 0.1-1.0 um wide.  In the inner layer, the fibres are transverse; in the outer layer, the bundles are inclined towards the umbo, becoming longitudinal on the outermost margin.^n^nObolellids comprise a single laminated mineralogical layer (Balthasar 2008).  Shell-penetrating canals are not considered as contributing to the mineralogical microstructure and are coded separately.^n^nThe pervasive (not just superficial) polygonal structures in Paterimitra are distinct, and characterize Askepasma, Salanygolina, Eccentrotheca and Paterimitra (Larsson et al. 2014)^n^nThe treatise (Williams et al 2000) identifies cross-bladed laminae as diagnostic of Strophomenata, with the exception of some older groups that contain fibres or laminar laths.';
+	TEXT CHARACTER=56 TEXT='Punctae are 10-20 um wide canals created by multicellular extensions of the outer epithelium.  They penetrate the full depth of the shell.^n^nBalthasar (2008) writes:^n^n"Vertical shell penetrating structures, such as punctae, pseudopunctae, extropunctae and canals, are common in many groups of brachiopods and are distinguished based on their geometry and size (Williams 1997). Punctae are 10-20 um wide and represent multicellular extensions of the outer epithelium (Owen and Williams 1969). Pseudopunctae and extropunctae are similar in diameter but, instead of canals, are vertical stacks of conical deflections of individual shell layers (Williams and Brunton 1993). None of these three types of vertical shell structure, all of which are confined to calcitic-shelled brachiopods, compares with the much smaller canals (&lt; 1 um in diameter) of M. nuda. The only type of vertical structure that fits the size and nature of the canals of the Mural obolellids are the canals of linguliform brachiopods, which range in width from 180 to 740 nm and are occupied by proteinaceous strands in extant taxa (Williams et al. 1992; Williams et al. 1994; Williams 1997). In contrast to obolellid canals, however, linguliform canals are not known to penetrate the entire shell but terminate in organic-rich layers (Williams 1997). Based on ^nthese considerations it would, therefore, be misleading to call obolellid shells punctate (they are as much "punctate" as acrotretids or other ^nlinguliforms); rather their shell structure should be called canaliculate (Williams 1997)."';
+	TEXT CHARACTER=57 TEXT='A caniculate microstructure occurs in lingulids; canals are narrower (&lt; 1 um) than punctae, may branch, and do not fully penetrate the shell, terminating just within the boundaries of a microstructural layer. See Williams 1997, p303ff, and Balthasar 2008, p273, for discussion.^n^nTubules described in hyoliths by Kouchinsky (2000) measure around 10 um in diameter, making them an order of magnitude wider than lingulid canals.  ^n^nThis said, Balthasar (2008) considers the tubules within the columnar shell microstructure of Mickwitzia cf. occidens (1-3 um wide, Skovsted & Holmer 2003), acrotretides (1 um wide, see Holmer 1989, Zhang et al. 2016) and lingulellotretids (100 nm wide, Cusack et al 1999) as equivalent to lingulid canals.^n^nMicrina exhibits both punctae and canals (Harper et al. 2017), challenging Carlson''s contention (in Williams et al. 2007) that the structures are potentially homologous as shell perforations.';
+	TEXT CHARACTER=58 TEXT='Pseudopunctae are not punctae, but deflections of shell laminae.  They characterise Strophomenata in particular.';
+	TEXT CHARACTER=59 TEXT='Regular polygonal compartments, around 10 um in diameter, characterise Paterimitra and some other brachiopod groups.  Walls between compartments have the cross-section of an anvil. An external polygonal structure (possible imprints of epithelial tissue) occurs in Dailyatia, but it is a surface pattern, which is different from the polygonal prisms in the body wall of other paterinid-like groups.';
+	TEXT CHARACTER=60 TEXT='Following Carlson (1995), character 7.  This character is only possible to code in extant taxa.  It is not considered independent of Carlson''s character 11, number of gametes released per spawning, as it is possible to produce more small eggs than large eggs -- thus this latter character is not reproduced in the present study.  The same goes for Carlson''s character 12, gamete dispersal mode; brooders will tend to brood large eggs.';
+	TEXT CHARACTER=61 TEXT='After Carlson (1995), character 9. Only possible to code in extant taxa.  Mantle canals is considered the derived state, as it represents a migration from the body cavity, where gametes are produced.';
+	TEXT CHARACTER=62 TEXT='The embryonic shell or protegulum is secreted by the embryo immediately before hatching.';
+	TEXT CHARACTER=63 TEXT='Micrina resembles linguliforms (Holmer et al. 2011): in both, the mitral protegulum has one pair of setal sacs enclosed by lateral lobes, whereas the ventral protegulum has two lateral setal tubes.^n^nPaterimitra and Salanygolina have "identical" ventral larval shells (Holmer et al 2011), resembling the shape of a ship''s propeller.^n^nHyoliths typically have a spherical larval shell; Pedunculotheca''s is seemingly cap-shaped.';
+	TEXT CHARACTER=64 TEXT='Many taxa add to their embryonic shell during the larval phase of their life cycle.  The shell that exists at metamorphosis, marked by a halo or nick point, is variously termed the "first formed shell", "metamorphic shell" or "larval shell" (Bassett & Popov 2017).^n';
+	TEXT CHARACTER=65 TEXT='Embryonic shells of Micrina and certain linguliforms exhibit a transversely folded posterior extension that speaks of the original presence of a pedicle in the embryo.^n^nThis is independent of the presence of an adult pedicle, which may arise after metamorphosis.';
+	TEXT CHARACTER=66 TEXT='Although preservation of setae (in adults) is exceptional, their presence can be inferred from shelly material (see Holmer & Caron 2006).';
+	TEXT CHARACTER=67 TEXT='Setae penetrate the valves of many brachiopods.  In certain taxa, they are apparent only at the margins of the valves, in association with the commissure, being reduced or lost over the surface of the shell.';
+	TEXT CHARACTER=68 TEXT='The protegulum of Micrina is penetrated with canals that were originally associated with setae, a character that it has in common with linguliforms (Holmer et al. 2011).';
+	TEXT CHARACTER=69 TEXT='Setal sacs are recognizable as raised lumps on the juvenile shell (see Bassett and Popov 2017).^n^nMicrina and linguliforms have setal sacs on their mitral/dorsal embryonic shell, whereas these are absent in Paterimitra (Holmer et al 2011).';
+	TEXT CHARACTER=70 TEXT='Two pairs on e.g. Coolina; one on e.g. Micrina';
+	TEXT CHARACTER=71 TEXT='The brachiopod pedicle is a fleshy protuberance that emerges from the posterior part of the body wall -- as denoted in fossil taxa by its occurrence between the dorsal and ventral valves.  ^n^nIt is important to distinguish the pedicle from the "pedicle sheath", a tubular extension of the umbo that grows by accretion from an isolated portion of the ventral mantle.  For discussion see Holmer et al. 2018T and Bassett and Popov 2017.^n';
+	TEXT CHARACTER=72 TEXT='The pedicle of certain chengjiang rhynchonelliforms comprises "densely stacked, three dimensionally preserved, tabular discs" (Holmer et al. 2018E).^nThis contrasts with the uniform (''massive'') pedicles of living taxa.';
+	TEXT CHARACTER=73 TEXT='The pedicle of strophomenates such as Antigonambonites is biomineralized (Holmer et al. 2018E)';
+	TEXT CHARACTER=74 TEXT='A bulb is an expanded region of the distal pedicle, often embedded into the sediment to improve anchorage.';
+	TEXT CHARACTER=75 TEXT='Observed in Pedunculotheca and Bethia (Sutton et al 2005).';
+	TEXT CHARACTER=76 TEXT='Holmer et al. (2018T) remark that the tapering aspect of the Nisusia pedicle recalls that of certain Chengjiang taxa (Alisina, Longtancunella) whilst distinguishing it from many other taxa (Eichwaldia, Bethia) in which the pedicle is a constant thickness.';
+	TEXT CHARACTER=77 TEXT='Certain brachiopods, such as Acanthotretella, exhibit a coelomic cavity within the pedicle or pedicle sheath.^n^nTreated as transformational as it is not clear that either state is necessarily ancestral.';
+	TEXT CHARACTER=78 TEXT='Annulations are regular rings that surround the pedicle, and are distinguished from wrinkles, which are irregular in magnitude and spacing, and may branch or fail to entirely encircle the pedicle.';
+	TEXT CHARACTER=79 TEXT='The pedicle of certain brachiopods (e.g. Acanthotretella, siphonotretides, acrotretides) travels from the hinge line to the umbo (or in the case of Lingulellotreta malongensis, a foramen on the pseudointerarea) within an internal pedicle tube.  See Holmer & Caron (2006) for discussion.^n^nThe pedicle sheath, in contrast, emerges from the umbo of the ventral valve without any indication of a relationship with the hinge.';
+	TEXT CHARACTER=80 TEXT='The morphology of dorsal and ventral canals is identical in all included taxa, so is assumed not to be independent - hence the use of a single character (contra Williams et al. 2000).^n^nFor a description of terms see Williams et al. (1997, 2000).^n^nPinnate = "rapidly branch into a number of subequal, radially disposed canals"^nBifurcate = "vascula lateralia in both valves divide immediately after leaving the body cavity"^nBaculate =  "extend forward without any major dichotomy or bifurcation" (Williams et al. 1997 p. 418)^nSaccate = "pouchlike sinuses lying wholly posterior to the arcuate vascula media" (ibid., p412)';
+	TEXT CHARACTER=81 TEXT='We treat the vascula lateralia as equivalent to the vascula genitalia of articulated brachiopods, allowing phylogenetic analysis to test their proposed homology.^n^nWilliams et al (1997) write: ^n"The mantle canal system of most of the organophosphate-shelled species consists of a single pair of main trunks in the ventral mantle (vascula lateralia) and two pairs in the dorsal mantle, one pair (vascula lateralia) occupying a similar position to the single pair in the ventral mantle and a second pair projecting from the body cavity near the midline of the valve. This latter pair may be termed the vascula media, but whether they are strictly homologous with the vascula media of articulated brachiopods is a matter of^nopinion. It is also impossible to assert that the vascula lateralia are the homologues of the vascula myaria or genitalia of articulated species, although they are likely to be so as they arise in a comparable position." ^n^n"In inarticulated brachiopods, two main mantle canals (vascula lateralia) emerge from the main body cavity through muscular valves and bifurcate distally to produce an increasingly dense array of blindly ending branches near the periphery of the mantle (Fig. 71.1-71.2)."';
+	TEXT CHARACTER=82 TEXT='Williams et al. (1997) note that in addition to the vascula lateralia, "Discinisca has two additional mantle canals emanating from the body cavity into the dorsal mantle (vascula media)."^n^nThese structures are only evident in the dorsal valve for the included taxa, so only a single character is necessary.';
+	TEXT CHARACTER=83 TEXT='Presumed to be connected with setal follicles in life (Williams et al. 1998T).  See Williams et al. (2000) for discussion.';
+	TEXT CHARACTER=84 TEXT='Tentacles may occur along one or both sides of the axis of the lophophore arm (Carlson 1995).';
+	TEXT CHARACTER=85 TEXT='After Carlson (1995), character 37.  Lophophore tentacles are commonly arranged into an ablabial and adlablial row, with ablabial tentacles sometimes added later in development.';
+	TEXT CHARACTER=86 TEXT='After Carlson (1995), character 37.  Lophophore tentacles are commonly arranged into an ablabial and adlablial row, with ablabial tentacles sometimes added later in development.';
+	TEXT CHARACTER=87 TEXT='Following character 28 in Carlson 1995. Certain taxa exhibit a median tentacle early in development that is lost at some point in ontogeny. ';
+	TEXT CHARACTER=88 TEXT='Whereas the lophophore of crown-group brachiopods typically forms a closed loop, those of Haplophrentis and Heliomedusa diverge laterally (Moysiuk et al 2017).';
+	TEXT CHARACTER=89 TEXT='The lophophore arms of Heliomedusa and Haplophrentis arch posteriad, rather than anteriad as in lingulids.  See Zhang et al. 2009; Moysiuk et al. 2017.';
+	TEXT CHARACTER=90 TEXT='Following character 55 in Carlson (1995).  Not possible to code in most fossil taxa.';
+	TEXT CHARACTER=91 TEXT='Hyoliths exhibit a prominent protrusible muscular pharynx at the base of the lophophore (Moysiuk et al. 2017); no equivalent feature is observed in brachiopods.';
+	TEXT CHARACTER=92 TEXT='The digestive tract may either constitute a blind sac, or a through gut with anus.';
+	TEXT CHARACTER=93 TEXT='"The relative position of the mouth and anus in the larvae of brachiopods and phoronids is similar: posterior anus and anterior mouth" -- Williams et al. 2007, p. 2884';
+	TEXT CHARACTER=94 TEXT='A migrated anus may be located laterally or within the lophophore ring (as in entoprocts).';
+	TEXT CHARACTER=95 TEXT='If the anus is not within the ring of tentacles, in which direction is it oriented?';
+
+	[Attribute comments]
+	TEXT TAXON=26 CHARACTER=2 TEXT='Sclerites of Paterimitra are opposing symmetrical and fused, not separated like brachiopods.';
+	TEXT TAXON=37 CHARACTER=2 TEXT='The conical element is taken to be homologous to the colleplax and thus part of the ventral valve.';
+	TEXT TAXON=16 CHARACTER=50 TEXT='The absence of relief in Lingulosacculus rules out a phosphatic or calcitic composition, but co-occurring (and presumably aragonitic) hyolithids are preserved in the same fashion.  Its constitution was thus either organic or aragonitic (Balthasar & Butterfield 2009).';
+	TEXT TAXON=22 CHARACTER=50 TEXT='Identified as calcareous by preservational criteria, and description "primary^ncalcitic shells of M. nuda" (Balthasar 2008).';
+	TEXT TAXON=30 CHARACTER=50 TEXT='Original mineralogy unknown, but known to be mineralised and anticipated to be phosphatic (Holmer et al. 2009)';
+	TEXT TAXON=33 CHARACTER=50 TEXT='Holmer & Caron (2006) note the absence of brittle breakage, interpreted as indicating the absence of a material mineralized component to the shells.  The preservation is strikingly different from that of other Burgess Shale brachiopods, ruling out a primarily calcitic or phosphatic composition.  The two-dimensional nature of the preservation also differs from that of co-occurring aragonitic taxa (hyoliths; Holmer & Caron 2006 p. 273), indicating that any mineralization was minor at best.^n^nHolmer & Caron (2006, p. 286) suggest that it is more likely that a (minor) mineral component was present than that it was not, though without providing an uncontestable rationale.  To be as conservative as possible, we therefore code this taxon as ambiguous.^n';
+	TEXT TAXON=14 CHARACTER=50 TEXT='"Shell originally organophosphatic, but may generally have been poorly mineralized" -- Williams et al. 2007 -- cf. ibid, p. 2889, " These strong similarities to discinoids in soft-part anatomy imply that the Heliomedusa shell was chitinous or chitinophosphatic, not calcareous."';
+	TEXT TAXON=18 CHARACTER=50 TEXT='"The original composition of the shell cannot be determined with certainty", though it was "most probably entirely soft and organic" -- Zhang et al. 2011T';
+	TEXT TAXON=17 CHARACTER=50 TEXT='Coded as phosphatic by Zhang et al. (2014), but with no explanation.^nCracks within shells of Chengjiang specimens (e.g. Zhang et al. 2007N, fig. 3) demonstrate that the shells were originally mineralized, but not the identity of the original biomineral. This said, phosphatized material from Kazakhstan (Holmer et al. 1997) is attributed to the same species; presuming this phosphate to be original and the material to be conspecific, L. malongensis is coded as having phosphatic shells.';
+	TEXT TAXON=24 CHARACTER=50 TEXT='Ventral valve uncalcified in extant forms or sometimes thin (Williams et al., 2000), but coded as calcitic as calcite-mineralizing pathways are present.';
+	TEXT TAXON=12 CHARACTER=50 TEXT='Confirmed in Trimerella by Balthasar et al. 2011';
+	TEXT TAXON=5 CHARACTER=50 TEXT='Phosphatic - hence the conventional placement within Linguliformea.';
+	TEXT TAXON=7 CHARACTER=50 TEXT='Shell calcitic';
+	TEXT TAXON=21 CHARACTER=50 TEXT='Calcite and silica deemed diagenetic by Balthasar (2004).';
+	TEXT TAXON=10 CHARACTER=50 TEXT='"the original shell of Eoobolus contained small calcareous grains that were incorporated into organic-rich layers alongside apatite" (Balthasar 2007)';
+	TEXT TAXON=33 CHARACTER=66 TEXT='Note that the setae do not obviously emerge from tubes, leading Holmer and Caron to question their homology with the setae of other taxa (Heliomedusa, Mickwitzia).^n^nBoth valves of Acanthotretella were covered by long spine-like and shell penetrating setae. The setae of A. decaius are usually preserved along anterior and anterolateral margins (Hu et al. 2010).';
+	TEXT TAXON=24 CHARACTER=66 TEXT='"Adult craniids are without setae (a feature shared with the thecideides, the^nshells of which are also cemented)." -- Williams et al. 2007';
+	TEXT TAXON=5 CHARACTER=66 TEXT='Setal bundles interpreted as present in acrotretids by Ushatinskaya (2016).';
+	TEXT TAXON=32 CHARACTER=66 TEXT='Phosphatised setae emerge from hollow spines (Popov et al. 2009)';
+	TEXT TAXON=15 CHARACTER=92 TEXT='Although "the possibility of a blind ending may not be completely eliminated [...] the weight of evidence [...] leads us to reject the possibility of a blind-ending intestine" -- Zhang et al. 2007R, p. 1399';
+	TEXT TAXON=11 CHARACTER=92 TEXT='Scored according to familial level feature.';
+	TEXT TAXON=15 CHARACTER=93 TEXT='"Five specimens have an exceptionally preserved digestive tract, dorsally curved, with a putative dorso-terminal anus located near the proximal end of a pedicle" -- Zhang et al. 2007R';
+	TEXT TAXON=34 CHARACTER=93 TEXT='"In rhynchonelliforms, the gut curves somewhat into a C-shape and the (blind) anus becomes posteroventral in position." -- Williams et al. 2007, p. ^n2884';
+	TEXT TAXON=22 CHARACTER=29 TEXT='Aside from hinge, valves similar in convexity and size (Balthasar 2008)';
+	TEXT TAXON=15 CHARACTER=29 TEXT='Ventral valve larger (see Williams et al. 2000, fig. 125.)';
+	TEXT TAXON=14 CHARACTER=29 TEXT='Ventral valve larger than the dorsal valve (Zhang et al. 2009, p. 659)';
+	TEXT TAXON=18 CHARACTER=29 TEXT='The ventral valve is somewhat, but not markedly, larger than the dorsal; as such, this character is coded ambiguous for equivalve/ventral valve larger';
+	TEXT TAXON=23 CHARACTER=29 TEXT='Ventral valve larger (see Williams et al. 2000, fig. 126.)';
+	TEXT TAXON=4 CHARACTER=29 TEXT='Broadly equivalve - see Williams et al. (2000) fig. 508.2c ';
+	TEXT TAXON=12 CHARACTER=29 TEXT='Convexiplane (Williams et al. 2000, p. 187)';
+	TEXT TAXON=37 CHARACTER=29 TEXT='The ventral valve is somewhat, but not markedly, larger than the dorsal; as such, this character is coded ambiguous for equivalve/ventral valve larger';
+	TEXT TAXON=7 CHARACTER=29 TEXT='"Shell subequally biconvex" -- Williams et al. 2000';
+	TEXT TAXON=35 CHARACTER=29 TEXT='Subequally biconvex (Williams et al. 2000, p. 192)';
+	TEXT TAXON=10 CHARACTER=29 TEXT='"Eoobolus is biconvex", but in his amended diagnosis, Balthasar (2009T) described it as "shell inequivalved, dorsibiconvex".';
+	TEXT TAXON=32 CHARACTER=29 TEXT='Ventribiconvex (Popov et al. 2009)';
+	TEXT TAXON=9 CHARACTER=67 TEXT='Skovsted et al (2011) assumed the setae may have been  present along the margin of the adapical opening, but there is no fossil evidence.';
+	TEXT TAXON=14 CHARACTER=67 TEXT='Throughout the shell -- see Williams et al. 2007 -- causing the pustulose appearance remarked upon by Chen et al. 2007';
+	TEXT TAXON=1 CHARACTER=71 TEXT='There is no obvious way to homologise the attachment structure with the ventral pedicle of brachiopods.';
+	TEXT TAXON=16 CHARACTER=71 TEXT='The absence of a pedicle is inferred from the absence of an internal pedicle tube, and the absence of a pedicle at the hinge.';
+	TEXT TAXON=33 CHARACTER=71 TEXT='The attachment structure of Acanthotretella originates at the margin of the dorsal and ventral valves; although it emerges from the umbo of the ventral valve, the presence of an internal pedicle tube betrays its identity as a pedicle, rather than a pedicle sheath.^n^nThe pedicle of Acanthotretella emerges from a short extension of the umbo of the ventral valve.  This extension is contiguous with the valve and presumably grew by accretion; its position and continuity with the valve suggest its interpretation as a pedicle sheath that is superseded as an attachment structure.  On the other hand, its continuity with the internal pedicle tube suggests that is may represent an independent organ.';
+	TEXT TAXON=14 CHARACTER=71 TEXT='"It seems unlikely that H. orienta possessed a pedicle that attached it to^nthe soft seafloor, like most other Chengjiang brachiopods." ...^n"The putative pedicle illustrated by Chen et al. (2007: Figs 4, 6, 7) in fact is the mold of a three-dimensionally preserved visceral cavity" -- Zhang et al. 2009';
+	TEXT TAXON=23 CHARACTER=71 TEXT='Has a pedicle, rather than a pedicle sheath as in Kutorgina (Holmer et al. 2018E; Holmer et al. 2018T)';
+	TEXT TAXON=5 CHARACTER=71 TEXT='A pedicle was presumably present, but only the foramen is preserved.';
+	TEXT TAXON=7 CHARACTER=71 TEXT='Attached apically by cementation';
+	TEXT TAXON=21 CHARACTER=71 TEXT='An attachment structure is inferred based on the presence of an opening (Balthasar 2004); this is assumed to have been homologous with the brachiopod pedicle.';
+	TEXT TAXON=32 CHARACTER=71 TEXT='Presumed present, based on ventral foramen with colleplax.';
+	TEXT TAXON=23 CHARACTER=77 TEXT='A coleomic canal is inferred based on the ease with which the pedicle is deformed (Holmer et al. 2018E), but its presence is not known for certain so is coded ambiguous.';
+	TEXT TAXON=5 CHARACTER=79 TEXT='The presumed pedicle foramen is at the ventral valve umbo, though no evidence of a pedicle sheath is present. ';
+	TEXT TAXON=32 CHARACTER=79 TEXT='"High, cylindrical internal pedicle tube" -- Popov et al. (2009)';
+	TEXT TAXON=15 CHARACTER=78 TEXT='"Pronounced concentric annular discs disposed at intervals of 0.6–1.0 mm"';
+	TEXT TAXON=33 CHARACTER=78 TEXT='"The pedicle surface is ornamented with pronounced annulated rings, disposed at intervals of about 0.2 mm"';
+	TEXT TAXON=18 CHARACTER=78 TEXT='"The preserved pedicle has condensed annulations" -- Zhang et al. 2011T';
+	TEXT TAXON=17 CHARACTER=78 TEXT='Regularly annotated (see fig. 14.9 in Hou et al. 2017)';
+	TEXT TAXON=23 CHARACTER=78 TEXT='The "strong annulations" vary significantly in transverse thickness (Holmer et al. 2018E), so it is not clear whether these represent true annulations or wrinkles.';
+	TEXT TAXON=4 CHARACTER=78 TEXT='"The emerging pedicle has a consistent shape in all the available specimens and is strongly annulated and distally tapering" -- Holmer et al. 2018E';
+	TEXT TAXON=2 CHARACTER=78 TEXT='"It appears that the pedicle lacks a coelomic space and is distinctly annulated, with densely stacked tabular bodies" -- Zhang et al. 2011A';
+	TEXT TAXON=37 CHARACTER=78 TEXT='Annulations present in median collar';
+	TEXT TAXON=33 CHARACTER=74 TEXT='Holmer and Caron (2006) interpret the presence of a bulb as tentative; we score it as ambiguous.';
+	TEXT TAXON=15 CHARACTER=94 TEXT='"Presumed to terminate in a functional anus located near the proximal end of the pedicle." -- Zhang et al. 2007R';
+	TEXT TAXON=14 CHARACTER=91 TEXT='Corresponding to the "neck" of the vase-shaped visceral cavity reported by Zhang et al. 2009';
+	TEXT TAXON=37 CHARACTER=91 TEXT='Possibly present, following interpretation of mouth (see fig. 2c, d in Zhang et al. 2014)';
+	TEXT TAXON=13 CHARACTER=95 TEXT='Opening to the right -- see figures 1, 3, and extended data 5 in Moysiuk et al. (2017).  The text states in error that the anus is to the left of the midline.';
+	TEXT TAXON=16 CHARACTER=95 TEXT='"This same arrangement occurs in L. nuda, with the looped dark line tracking the same course as the exceptionally preserved guts of Chengjiang lingulellotretids, including the median position of its posterior loop and the sharp right turn as it exits the posterior extension of the ventral valve" (Balthasar & Butterfield 2009E, p.310).';
+	TEXT TAXON=15 CHARACTER=95 TEXT='"Five specimens have an exceptionally preserved digestive tract, dorsally curved, with a putative dorso-terminal anus located near the proximal end of a pedicle" -- Zhang et al. 2007R';
+	TEXT TAXON=31 CHARACTER=95 TEXT='"In the lingulids, the [intestine] follows an oblique course anteriorly to open at the anus on the right body wall." -- Williams et al. 1997, p. 89';
+	TEXT TAXON=18 CHARACTER=95 TEXT='"The intestine extends posteriorly, and then turns right to continue as a tortuous strand, finally terminating at the latero-median position of the anterior body wall" -- Zhang et al. 2007A^n';
+	TEXT TAXON=17 CHARACTER=95 TEXT='"finally terminating in an anal opening on the right anterior body wall" (Zhang et al. 2007N, p.66).';
+	TEXT TAXON=34 CHARACTER=95 TEXT='"In rhynchonelliforms, the gut curves somewhat into a C-shape and the (blind) anus becomes posteroventral in position." -- Williams et al. 2007, p. ^n2884';
+	TEXT TAXON=37 CHARACTER=95 TEXT='The identification of the "very poorly impressed possible anus at the lateral side of the anterior body wall" is not yet confident, so this character is coded as not presently available.';
+	TEXT TAXON=1 CHARACTER=88 TEXT='The existence of a lophophore is speculative.';
+	TEXT TAXON=16 CHARACTER=88 TEXT='Two diverging arms of the lophophore are preserved (Balthasar & Butterfield 2009E)';
+	TEXT TAXON=18 CHARACTER=88 TEXT='Two distinct, diverging arms reconstructed by Zhang et al. 2007A';
+	TEXT TAXON=23 CHARACTER=88 TEXT='No specimens of Nisusia preserve the lophophore.';
+	TEXT TAXON=19 CHARACTER=54 TEXT='Identical to Mickwitzia and more derived linguliforms (Holmer et al 2011)';
+	TEXT TAXON=13 CHARACTER=54 TEXT='Assumed to be equivalent to the hyoliths described by Kouchinsky (2000)';
+	TEXT TAXON=5 CHARACTER=54 TEXT='General acrotretid structure taken from Zhang et al. (2016)';
+	TEXT TAXON=21 CHARACTER=54 TEXT='"the shell structure of Mickwitzia [...] is closely similar to the columnar shell of linguliform acrotretoid brachiopods as well as to the linguloid Lingulellotreta, in that it has slender columns in the laminar succession" -- Williams et al. 2007';
+	TEXT TAXON=10 CHARACTER=54 TEXT='"Eoobolus shells exhibit the general characteristics of modern linguliform shells, i.e. they were composed of alternating sets of organic and apatite-rich layers that were separated by thin sheets of recalcitrant organic layers." -- Balthasar 2007';
+	TEXT TAXON=32 CHARACTER=54 TEXT='"Orthodoxly secreted primary and secondary layers" -- Williams et al. 2004';
+	TEXT TAXON=26 CHARACTER=31 TEXT='Triangular notch and subapical flange';
+	TEXT TAXON=16 CHARACTER=31 TEXT='The conical valve is interpreted as the ventral valve with an extended pseudointerarea.';
+	TEXT TAXON=36 CHARACTER=31 TEXT='Interarea present.';
+	TEXT TAXON=22 CHARACTER=31 TEXT='Balthasar (2008) interprets a pseudointerarea as being present - e.g. p273, "Of particular interest is the vault that bridges the most anterior portion of the ventral pseudointerarea and raises it above the visceral platform.";  "This pattern is reversed in the ventral valves of M. nuda, where the anterior projection of the pedicle groove is raised above the valve floor whereas the lateral parts of pseudointerarea are not".  ';
+	TEXT TAXON=6 CHARACTER=31 TEXT='Interarea present.';
+	TEXT TAXON=15 CHARACTER=31 TEXT='Interarea present.';
+	TEXT TAXON=30 CHARACTER=31 TEXT='Interarea present.';
+	TEXT TAXON=14 CHARACTER=31 TEXT='Zhang et al. (2009) report a moderate to somewhat developed ventral pseudointerarea, confirmed by Williams et al (2007).';
+	TEXT TAXON=18 CHARACTER=31 TEXT='Though "all evidence of a pseudointerarea is lacking" -- Zhang et al. 2011T -- the region of the shell between the strophic hinge line and the colleplax (fig. 2 in Zhang et al. 2011T) is distinct from the rest of the shell; the ends of the strophic hinge line are marked by prominent nicks in the shell margin.  Longtancunella is therefore coded as having a differentiated posterior surface.';
+	TEXT TAXON=23 CHARACTER=31 TEXT='Interarea present.';
+	TEXT TAXON=34 CHARACTER=31 TEXT='Interarea.';
+	TEXT TAXON=4 CHARACTER=31 TEXT='Interarea present.';
+	TEXT TAXON=2 CHARACTER=31 TEXT='Interarea present.';
+	TEXT TAXON=25 CHARACTER=31 TEXT='Interarea present.';
+	TEXT TAXON=12 CHARACTER=31 TEXT='The region corresponding to the ventral (pseudo)interarea is described as a "trimerellid ventral cardinal area" by Williams et al. (2000, p.162), who code both an interarea and a pseudointerarea as absent in trimerellids.';
+	TEXT TAXON=11 CHARACTER=31 TEXT='Interarea present.';
+	TEXT TAXON=5 CHARACTER=31 TEXT='Described by Topper et al. (2013R).';
+	TEXT TAXON=35 CHARACTER=31 TEXT='Following char 17 in  table 15 in Williams et al. 2000';
+	TEXT TAXON=21 CHARACTER=31 TEXT='What Balthasar (2004) terms an interarea is, in the terminology employed herein, a pseudointerarea. ';
+	TEXT TAXON=32 CHARACTER=31 TEXT='"Ventral pseudointerarea, low, undivided, poorly defined" -- Williams et al. 2000';
+	TEXT TAXON=19 CHARACTER=35 TEXT='Opening inferred by Holmer et al. (2008)';
+	TEXT TAXON=18 CHARACTER=35 TEXT='Unclear: a narrow ridge that may correspond to a pseudodeltidium evident in fig 2a and sketched in fig. 2c is not discussed in the text of Zhang et al. 2011T, so the delthyrial region is coded as ambiguous.';
+	TEXT TAXON=3 CHARACTER=35 TEXT='Small notch present at base of parallel-sided homeodeltidium -- See Williams et al. 2000';
+	TEXT TAXON=11 CHARACTER=35 TEXT='"Delthyrium and notothyrium open, wide" -- Cooper 1976';
+	TEXT TAXON=37 CHARACTER=35 TEXT='Details of the hinge region are unclear due to the flattened and overprinted nature of fossil preservation.';
+	TEXT TAXON=21 CHARACTER=35 TEXT='A delthyrium is present in young individuals (Balthasar 2004).';
+	TEXT TAXON=13 CHARACTER=56 TEXT='The tubules within the centre of the bundles of hyolith shells (Kouchinsky 2000) are c. 10 um wide, making them an order of magnitude larger than the canals that characterize lingulid valves, and a similar scale to punctae.  This said, they have only been reported in a putative allathecid, so the presence of equivalent structures in hyolithids has never been demonstrated.';
+	TEXT TAXON=22 CHARACTER=56 TEXT='"Vertical shell penetrating structures, such as punctae, pseudopunctae, extropunctae and canals, are common in many groups of brachiopods and are distinguished based on their geometry and size (Williams 1997). Punctae are 10-20 um wide and represent multicellular extensions of the outer epithelium (Owen and Williams 1969). [...] None of these three types of vertical shell structure, all of which are confined to calcitic-shelled brachiopods, compares with the much smaller canals (&lt; 1 um in diameter) of M. nuda. The only^ntype of vertical structure that fits the size and nature of the canals of the Mural obolellids are the canals of linguliform brachiopods, which range in width from 180 to 740 nm and are occupied by proteinaceous strands in^nextant taxa (Williams et al. 1992, 1994; Williams 1997)." -- Balthasar 2008';
+	TEXT TAXON=14 CHARACTER=56 TEXT='''Identical'' to those in Mickwitzia -- see Williams et al. 2007';
+	TEXT TAXON=34 CHARACTER=56 TEXT='Endopunctae are relatively large canals, diameter vary greatly from 5-20µm.';
+	TEXT TAXON=7 CHARACTER=56 TEXT='"impunctate"';
+	TEXT TAXON=21 CHARACTER=56 TEXT='Coded as present to reflect that the chambers contained setae; following Carlson in Williams et al. 2007, the punctae may or may not be homologous as punctae, but are likely homologous as shell perforations; both these perforations and those of Micrina were associated with setae, even if their equivalence bay be with juvenile vs adult setal structures in modern brachiopods (Balthasar 2004, p, 397).';
+	TEXT TAXON=32 CHARACTER=56 TEXT='The ''canals'' through the shell have a diameter of c. 20 um (Williams et al. 2004, text-fig. 2a), falling within the definition of punctae used herein.';
+	TEXT TAXON=19 CHARACTER=57 TEXT='Acrotretid laminae bear characteristic columns (e.g. Zhang et al. 2016); a similar fabric has been reported, and assumed homologous, in Micrina (Butler et al. 2012).^n^nA similar columnar shell microstructure also occurs in the closely related Mickwitzia (Balthasar 2008).';
+	TEXT TAXON=1 CHARACTER=57 TEXT='Canal-like structures have been reported in Namacalathus (Zhuravlev et al. 2015), and interpreted as evidence for a Lophophorate affinity.  Though the structures are not necessarily directly equivalent, the hypothesis of homology is followed here.';
+	TEXT TAXON=13 CHARACTER=57 TEXT='Zhang et al. (2018) have reported um-scale canals, replicated in phosphate, within the shell of the hyolithid Paramicrocornus; as shell microstructure is not preserved in Haplophrentis, this latter taxon is taken as a model.';
+	TEXT TAXON=18 CHARACTER=57 TEXT='Preservational resolution not sufficient to evaluate';
+	TEXT TAXON=5 CHARACTER=57 TEXT='Acrotretid laminae bear characteristic columns (e.g. Zhang et al. 2016).^n^nBalthasar (2008) considers these columns as homologous with tubules within the columnar shell microstructure Mummpikia, Mickwitzia and lingulellotretids';
+	TEXT TAXON=21 CHARACTER=57 TEXT='Coded as present to reflect similarity of columnar microstructure remarked on by, among others, Balthasar (2008); Williams et al. (2007); Skovsted & Holmer (2003)';
+	TEXT TAXON=32 CHARACTER=57 TEXT='The ''canals'' through the shell have a diameter of c. 20 um (Williams et al. 2004, text-fig. 2a), falling within the definition of punctae (rather than canals) used herein.';
+	TEXT TAXON=26 CHARACTER=37 TEXT='Covered by subaical flange, in part.  ';
+	TEXT TAXON=23 CHARACTER=37 TEXT='"Covered only apically by a small convex pseudodeltitium" - Holmer et al. 2018E';
+	TEXT TAXON=11 CHARACTER=37 TEXT='Coded as open by Williams et al. (1998T)';
+	TEXT TAXON=22 CHARACTER=32 TEXT='Balthasar (2008) interprets an inward-growing posterior margin of the pseudointerarea - e.g. p273, "Of particular interest is the vault that bridges the most anterior portion of the ventral pseudointerarea and raises it above the visceral platform [...] An inward-growing posterior margin is otherwise known only from the pseudointerareas of linguliform brachiopods".';
+	TEXT TAXON=17 CHARACTER=32 TEXT='Transverse cross section of ventral pseudointerarea concave.';
+	TEXT TAXON=5 CHARACTER=32 TEXT='See Topper et al. (2013R)';
+	TEXT TAXON=1 CHARACTER=62 TEXT='Inapplicable insofar as reproduction occurs by budding; there is no evidence for a free-living larval stage.  Nevertheless, the presence of a sexual reproductive phase in addition to asexual reproduction cannot be discounted.';
+	TEXT TAXON=5 CHARACTER=62 TEXT='Described by Topper et al. (2013R).';
+	TEXT TAXON=5 CHARACTER=64 TEXT='Described by Topper et al. (2013R).';
+	TEXT TAXON=7 CHARACTER=64 TEXT='Prominent nick; see Freeman & Lundelius 1999, fig. 6A';
+	TEXT TAXON=10 CHARACTER=64 TEXT='Nick point indicated by arrows in fig. 1 of Balthasar (2009T).';
+	TEXT TAXON=6 CHARACTER=63 TEXT='See fig. 3 in Bassett et al. 2017';
+	TEXT TAXON=31 CHARACTER=63 TEXT='See fig. 159 in Williams et al. 1997';
+	TEXT TAXON=3 CHARACTER=63 TEXT='Renoid -- see fig. 4B3 in Topper et al. 2013T';
+	TEXT TAXON=20 CHARACTER=63 TEXT='Subtriangular -- essentially round';
+	TEXT TAXON=28 CHARACTER=63 TEXT='See e.g. fig 169 in Williams et al. (1997)';
+	TEXT TAXON=5 CHARACTER=63 TEXT='The flat larval shell of Clupeafumosus resembles that of Micrina in outline (Topper et al. 2013R; cf. Holmer et al. 2011).';
+	TEXT TAXON=7 CHARACTER=63 TEXT='The embryonic shell is more or less circular in outline -- see Freeman & Lundelius, 1999, fig. 6A';
+	TEXT TAXON=21 CHARACTER=63 TEXT='Trifoliate appearance results from prominent attachment rudiment and bunching of setal sacs (Balthasar 2009T).';
+	TEXT TAXON=17 CHARACTER=68 TEXT='Familial character: larval shell smooth (williams et al.,2000, p.72).';
+	TEXT TAXON=5 CHARACTER=68 TEXT='Setal bundles interpreted as present in acrotretids by Ushatinskaya (2016).';
+	TEXT TAXON=21 CHARACTER=68 TEXT='Four setal sacs';
+	TEXT TAXON=5 CHARACTER=65 TEXT='The larval shell embraces the pedicle foramen, suggesting a larval attachment. See fig. 4 of Topper et al. (2013R).';
+	TEXT TAXON=21 CHARACTER=65 TEXT='Note the posterior lobe related to the attachment rudiment in fig. 2 of Balthasar 2009T';
+	TEXT TAXON=10 CHARACTER=65 TEXT='Lobe related to the attachment rudiment (Balthasar 2009T, fig. 2)';
+	TEXT TAXON=32 CHARACTER=65 TEXT='Interpreted as having planktotrophic (and thus non-attached) larvae (Popov et al. 2009)';
+	TEXT TAXON=27 CHARACTER=44 TEXT='The flat apical termination of juvenile individuals possibly functioned as colleplax for attachment, we treated as potentially homologous.';
+	TEXT TAXON=19 CHARACTER=44 TEXT='Absent in Micrina, though present in co-occurring Paterimitra';
+	TEXT TAXON=14 CHARACTER=44 TEXT='A cicatrix was reconstructed by Jin & Wang 1992 (figs 6b, 7), but has not been reported by later authors; possibly, as with the ''pedicle foramen'' of Chen et al. (2007), this structure represents internal organs rather than a cicatrix proper (Zhang et al. 2009); as such it has been recorded as ambiguous.';
+	TEXT TAXON=18 CHARACTER=44 TEXT='A ring-like structure surrounding the pedicle sheath is interpreted as a colleplax (Zhang et al. 2011T), though the authors make no comparison with the pedicle capsule exhibited by extant terebratulids (see Holmer et al. 2018E).';
+	TEXT TAXON=17 CHARACTER=44 TEXT='The pedicle is identified as such (rather than a pedicle sheath) by the internal pedicle tube.';
+	TEXT TAXON=5 CHARACTER=44 TEXT='Not reported by Topper et al. (2013R).';
+	TEXT TAXON=37 CHARACTER=44 TEXT='The median collar or conical tube is conceivably homologous with the pedicle sheath.';
+	TEXT TAXON=7 CHARACTER=44 TEXT='Paracraniops is "externally similar to Craniops, but lacking cicatrix" -- indicating that Craniops bears a cicatrix.  (Williams et al. 2000)  Aso coded present in their table 15.';
+	TEXT TAXON=35 CHARACTER=44 TEXT='Following table 15 in Williams et al. 2000';
+	TEXT TAXON=32 CHARACTER=44 TEXT='"The adult colleplax and foramen with attachment pad in Salanygolina are ^nmorphologically similar and probably homologous to the adult attachment structure of Siphonobolus." -- Popov et al. 2009';
+	TEXT TAXON=31 CHARACTER=69 TEXT='Lingulids'' larval setae are not arranged in bundles (Carlson 1995)';
+	TEXT TAXON=17 CHARACTER=69 TEXT='Familial character: larval shell smooth (williams et al.,2000, p.72).';
+	TEXT TAXON=28 CHARACTER=69 TEXT='Three pairs (Carlson 1995)';
+	TEXT TAXON=24 CHARACTER=69 TEXT='Three pairs (Carlson 1995)';
+	TEXT TAXON=5 CHARACTER=69 TEXT='Setal bundles interpreted as present in acrotretids by Ushatinskaya (2016).';
+	TEXT TAXON=36 CHARACTER=4 TEXT='Tomteluvids [...] lack articulation structures such as teeth and sockets (Streng et al. 2016)';
+	TEXT TAXON=22 CHARACTER=4 TEXT='No articulation structures are evident; instead, the propareas are rotated inwards (Balthasar 2008).  The definition of Family Obolellidae in Williams et al. (2000) notes that articulation may be lacking or vestigial in the group.';
+	TEXT TAXON=15 CHARACTER=4 TEXT='"Articulation characterized by two triangular plates formed by dorsal interarea, bearing oblique ridges on the inner sides" -- Williams et al 2000, p. 211';
+	TEXT TAXON=23 CHARACTER=4 TEXT='Pseudodont articulation: teeth formed by distal lateral extensions from the ventral pseudodeltidium - Holmer et al 2018E';
+	TEXT TAXON=2 CHARACTER=4 TEXT='"Strophic articulation with paired, ventral denticles, composed of secondary shell" -- definition of family Trematobolidae in Williams et al. 2000^n';
+	TEXT TAXON=12 CHARACTER=4 TEXT='"Articulatory structure comprising ventral cardinal socket and dorsal hinge plate [...] The shape of the shell probably correlates strongly with the unique type of articulation, which consists of a dorsal hinge plate that fits tightly into a cardinal socket in the ventral valve, with a concave homeodeltidium in the center of the ventral interarea" -- Williams et al. 2000, p.184, concerning order Trimerellida^n';
+	TEXT TAXON=5 CHARACTER=4 TEXT='No articulating processes evident or reported by Topper et al. (2013R).';
+	TEXT TAXON=35 CHARACTER=4 TEXT='"articulatory structures poorly developed" -- Williams et al. 2000, p. 192';
+	TEXT TAXON=21 CHARACTER=4 TEXT='Not reported by or evident in Balthasar (2004)';
+	TEXT TAXON=5 CHARACTER=59 TEXT='The polygonal ornament reported in acrotretids by Zhang et al. (2016) is on the internal surface of the shell.';
+	TEXT TAXON=1 CHARACTER=55 TEXT='The inner and outer layer are foliated.  The columnar inflections lack canals, and as such we do not consider them to bear any obvious homology with the hollow pillars of tommotiids and certain brachiopods, their superficial similarity to strophomenid pseudopunctae notwithstanding.';
+	TEXT TAXON=4 CHARACTER=55 TEXT='Shell structure of this taxon is laminated, rather than fibrous as previously considered.';
+	TEXT TAXON=7 CHARACTER=55 TEXT='"with calcitic or possibly aragonitic inarticulated shells with laminar (tabular) secondary layers" (Williams et al. 2000)';
+	TEXT TAXON=32 CHARACTER=55 TEXT='Prominent laminations; see Williams et al. (2004)';
+	TEXT TAXON=28 CHARACTER=70 TEXT='Three pairs (Carlson 1995)';
+	TEXT TAXON=24 CHARACTER=70 TEXT='Three pairs (Carlson 1995)';
+	TEXT TAXON=5 CHARACTER=70 TEXT='Two pairs identified in acrotretids by Ushatinskaya (2016).';
+	TEXT TAXON=21 CHARACTER=70 TEXT='See fig. 2 in Balthasar 2009T';
+	TEXT TAXON=32 CHARACTER=70 TEXT='Two pairs of setal sacs (Popov et al. 2009)';
+	TEXT TAXON=30 CHARACTER=40 TEXT='"The presence of [...] a narrow delthyrium covered by a convex pseudodeltidium, places Salanygolinidae outside the Class Paterinata and strongly suggests affinity to the Cambrian Chileida" -- Holmer et al. 2009, p. 9';
+	TEXT TAXON=2 CHARACTER=40 TEXT='"concave pseudodeltidium with median plication" -- Williams et al. 2000^nCoded as "Pseudodeltidium: Covered by concave plate" by Bassett et al. (2001)';
+	TEXT TAXON=12 CHARACTER=40 TEXT='Gasconsia possesses narrow concave homeodeltidium, but absent pseudodeltidium ';
+	TEXT TAXON=19 CHARACTER=3 TEXT='See Holmer et al 2008.';
+	TEXT TAXON=36 CHARACTER=3 TEXT='"Tomteluvid taxa all have a strongly ventribiconvex, astrophic shell with a unisulcate commissure" -- Streng et al. 2016, p5';
+	TEXT TAXON=15 CHARACTER=3 TEXT='Williams et al. (2000, p. 208) consider the hinge of Kutorgina to be stropic, whereas Bassett et al (2001) argue for an astropic interpretation -- whilst noting that the arrangement is prominently different from other astrophic taxa.  We therefore code this taxon as ambiguous.';
+	TEXT TAXON=18 CHARACTER=3 TEXT='"Longtancunella has an oval to subcircular shell with a very short strophic hinge line" -- Zhang et al. 2011T';
+	TEXT TAXON=23 CHARACTER=3 TEXT='"The strophic, articulated shells of the Kutorginata rotated on simple hinge mechanisms that are different from those of other rhynchonelliforms" (Williams et al. p. 208)';
+	TEXT TAXON=24 CHARACTER=3 TEXT='Craniides have a strophic posterior valve edge (Williams et al. 2007, table 39 on p. 2853)';
+	TEXT TAXON=37 CHARACTER=3 TEXT='Not evident from fossil material; the possibility of a short strophic hinge line (as in Longtancunella) is difficult to discount.';
+	TEXT TAXON=21 CHARACTER=3 TEXT='non-strophic';
+	TEXT TAXON=26 CHARACTER=30 TEXT='The apical flange notwithstanding, the umbo of the S1 sclerite is posterior of the hinge line and the posterior edge of the lateral plate -- see Larsson et al. 2014, fig. 2a, c.';
+	TEXT TAXON=14 CHARACTER=30 TEXT='Williams et al. (2000, 2007) reconstruct mixoperipheral growth in the ventral valve (though Chen et al. (2007) reconstruct the valves the other way round, i.e. it is the ventral valve that grows holoperipherally, and the dorsal mixoperipherally). ';
+	TEXT TAXON=5 CHARACTER=30 TEXT='Inferred from Topper et al. (2013R).';
+	TEXT TAXON=35 CHARACTER=30 TEXT='Following description of order in Williams et al. 2000';
+	TEXT TAXON=32 CHARACTER=30 TEXT='Initially holoperipheral (Popov et al. 2009, p. 159), then on the brink of being mixoperipheral in adulthood, so coded as polymorphic.';
+	TEXT TAXON=19 CHARACTER=19 TEXT='See Holmer et al. (2008)';
+	TEXT TAXON=26 CHARACTER=19 TEXT='S2 and L sclerites are clearly holoperipheral. See Larsson et al. 2014, fig. 2.^n';
+	TEXT TAXON=14 CHARACTER=19 TEXT='"holoperipheral growth in dorsal valve" -- Williams et al. 2007.^n^nThe insinuation from Zhang et al. (2009) is that Chen et al. (2007) misidentify the dorsal valve as the ventral valve.';
+	TEXT TAXON=5 CHARACTER=19 TEXT='Appears hemiperipheral in fig. 3 in Topper et al (2013R), though bordering on holoperipheral, so scored as ambiguous.';
+	TEXT TAXON=7 CHARACTER=19 TEXT='"both valves with growth holoperipheral" - Williams et al. 2000 p164';
+	TEXT TAXON=35 CHARACTER=19 TEXT='Following description of order in Williams et al. 2000.';
+	TEXT TAXON=9 CHARACTER=42 TEXT='Inapplicable as scleritome is not bivalved. ^n^nThe sclerites of Eccentrotheca form a ring that surrounds the inferred attachment structure; the attachment structure does not emerge from an aperture within an individual sclerite.  Thus no feature in Eccentrotheca is judged to be potentially homologous with the apical perforation in bivalved brachiopods.';
+	TEXT TAXON=16 CHARACTER=42 TEXT='The apical termination of the fossil is unknown.';
+	TEXT TAXON=8 CHARACTER=42 TEXT='The B and C sclerites of Dailyatia bear small umbonal perforations (Skovsted et al 2015), but these are not considered to be homologous with the ventral valve, so this character is coded as inapplicable - though the possibility that the perforations are equivalent is intriguing.^n^nA1 sclerites typically have a pair of perforations, which are conceivably equivalent to the setal tubes of Micrina (Holmer et al. 2011). The A1 sclerite of D. bacata has a structure that is arguably similar to the ''colleplax'' of Paterimitra.  But the homology of any of these structures to the umbonal aperture of brachiopods is difficult to establish.';
+	TEXT TAXON=14 CHARACTER=42 TEXT='"there is compelling evidence to demonstrate that the putative pedicle^nillustrated by Chen et al. (2007: Figs. 4, 6, 7) in fact is the mold of a three-dimensionally preserved visceral cavity." -- Zhang et al. 2009';
+	TEXT TAXON=5 CHARACTER=42 TEXT='An umbonal perforation is distinctive of Acrotretids, and is reported by Topper et al. (2013R).';
+	TEXT TAXON=21 CHARACTER=42 TEXT='The umbo itself is imperforate, though note that an opening is incorporated at the base of the homeodeltidium when the organism switches from early to late maturity (fig. 10 in Balthasar 2004).';
+	TEXT TAXON=32 CHARACTER=42 TEXT='Prominent subcircular perforation at umbo (Popov et al. 2009)';
+	TEXT TAXON=19 CHARACTER=39 TEXT='"Ventral valve convex with apsacline interarea bearing delthyrium, covered by a convex pseudodeltidium" -- Holmer et al. 2008';
+	TEXT TAXON=17 CHARACTER=39 TEXT='The subapical flange of the Paterimitra S1 sclerite has been homologised with the ventral homeodeltidium of Micromitra (Larsson et al 2014).';
+	TEXT TAXON=2 CHARACTER=39 TEXT='Stated as "concave pseudodeltidium with median plication" -- Williams et al. 2000^nCoded as "Pseudodeltidium: Covered by concave plate" by Bassett et al. (2001)';
+	TEXT TAXON=21 CHARACTER=39 TEXT='Termed a homoedeltidium by Balthasar (2004)';
+	TEXT TAXON=19 CHARACTER=38 TEXT='Remains somewhat open';
+	TEXT TAXON=23 CHARACTER=38 TEXT='A well-defined pseudo-deltidium [...] closes only the apical part of^n the delthyrium (Rowell & Caruso 1985)';
+	TEXT TAXON=34 CHARACTER=72 TEXT='Extant rhynconellid pedicles are massive, consisting of a thick outer chitinous cuticle, a pedicle epithelium, and a core composed of collagen fibres and cartilage-like connective tissue (Holmer et al. 2018E).';
+	TEXT TAXON=27 CHARACTER=76 TEXT='The pedicle thickness does not obviously change between the apex of the shell and the holdfast.';
+	TEXT TAXON=4 CHARACTER=76 TEXT='Tapered pedicle sheath with holdfast.';
+	TEXT TAXON=19 CHARACTER=11 TEXT='Prominent ventral muscle scars - see e.g. Holmer et al 2008, fig. 1f';
+	TEXT TAXON=2 CHARACTER=11 TEXT='Muscle scars scored based on Alisina comleyensis (Bassett et al. 2001)';
+	TEXT TAXON=21 CHARACTER=11 TEXT='Scars absent; instead, cones ornament shell''s internal surface.';
+	TEXT TAXON=2 CHARACTER=12 TEXT='Muscle scars scored based on Alisina comleyensis (Bassett et al. 2001).^n^nThe presence of an adjustor is marked NPA as it is not clear that a scar, if present, could be distinguished from the diminutive muscle scars present.';
+	TEXT TAXON=12 CHARACTER=12 TEXT='No mention of an adjustor muscle in Gasconsia or Trimerellida more generally on pp. 184-185 of Williams et al. 2000, nor in discussion in Williams et al. 2007 (p. 2850).  Coded as absent.';
+	TEXT TAXON=5 CHARACTER=12 TEXT='Not known in any acrotretid (Williams et al. 2000); not evident in Clupeafumosus (Topper et al. 2013R).';
+	TEXT TAXON=21 CHARACTER=12 TEXT='Scars absent; instead, cones ornament shell''s internal surface.';
+	TEXT TAXON=32 CHARACTER=12 TEXT='Ventral musculature poorly constrained (Williams et al. 2000; Popov et al. 2009)';
+	TEXT TAXON=13 CHARACTER=13 TEXT='Laterally dispersed, based on interpretation of Moysiuk et al. (2017), and consistent with general situation in hyoliths (see Dzik 1980).';
+	TEXT TAXON=6 CHARACTER=13 TEXT='"radially arranged adductor scars" -- Bassett & Popov 2017, p1';
+	TEXT TAXON=30 CHARACTER=13 TEXT='"The dorsal valve of Salanygolina has a radial arrangement of adductor muscle scars and the scars of posteromedially placed internal oblique muscles, which are also characteristic of paterinates and chileates" -- Holmer et al. (2009)';
+	TEXT TAXON=14 CHARACTER=13 TEXT='Distinct anterior and posterior fields (Chen et al. 2007); coded as "dispersed" by Williams et al. (2000) in table 15.';
+	TEXT TAXON=20 CHARACTER=13 TEXT='Williams et al. (1998T) code as "dispersed", but have a less divided scheme of character states and disagree with other sources in some codings (e.g. Bassett et al. 2001, in Kutorginates).  Williams et al. (2000) do not describe Micromitra musculature and we were unable to find any reliable description of the scars, so we code as "not presently available".';
+	TEXT TAXON=28 CHARACTER=13 TEXT='Discinids scored as "open, quadripartite" by Williams et al. (1996)';
+	TEXT TAXON=24 CHARACTER=13 TEXT='Craniids scored as "open, quadripartite" by Williams et al. (1996)';
+	TEXT TAXON=34 CHARACTER=13 TEXT='Coded as "grouped, quadripartite" by Williams et al. (1996)';
+	TEXT TAXON=4 CHARACTER=13 TEXT='Treatise';
+	TEXT TAXON=2 CHARACTER=13 TEXT='Following Williams et al. (2000) table 15 (their character 54)';
+	TEXT TAXON=12 CHARACTER=13 TEXT='Following the coding of Williams et al. (2000), table 15.';
+	TEXT TAXON=11 CHARACTER=13 TEXT='Scored as "dispersed" by Williams et al. (1998T) ... but then so is Kutorgina, which Bassett et al (2001) score as radial.^n^nWilliams et al. (2000) state, for superfamily Protorthida, "dorsal adductor scars probably linear", which fits in the category of "radial" employed herein -- so that''s what we follow.';
+	TEXT TAXON=5 CHARACTER=13 TEXT='Quadripartite, following reconstruction of Williams (2000), fig. 51.';
+	TEXT TAXON=35 CHARACTER=13 TEXT='Following table 15 in Williams et al. 2000';
+	TEXT TAXON=21 CHARACTER=13 TEXT='Scars absent; instead, cones ornament shell''s internal surface.';
+	TEXT TAXON=32 CHARACTER=13 TEXT='Ventral musculature poorly constrained (Williams et al. 2000; Popov et al. 2009)';
+	TEXT TAXON=33 CHARACTER=17 TEXT='Not observable in Acanthotretella itself, so coded as ambiguous -- though it is likely based on the anticipated phylogenetic affinities of Acanthotretella that the muscles are absent.';
+	TEXT TAXON=12 CHARACTER=17 TEXT='Internal oblique muscles serve as diductors.';
+	TEXT TAXON=5 CHARACTER=17 TEXT='Not reported by Topper et al. (2013R), nor reconstructed in generic Acrotretid by Williams et al. (2000)';
+	TEXT TAXON=32 CHARACTER=17 TEXT='Ventral musculature poorly constrained (Williams et al. 2000; Popov et al. 2009)';
+	TEXT TAXON=32 CHARACTER=18 TEXT='Ventral musculature poorly constrained (Williams et al. 2000; Popov et al. 2009)';
+	TEXT TAXON=6 CHARACTER=14 TEXT='Not reported by Williams et al. (2000), nor Bassett & Popov (2017), nor explicitly by Dewing (2001).';
+	TEXT TAXON=28 CHARACTER=14 TEXT='Musculature considered essentially equivalent to Lingula by Williams et al 2000, so Lingula coding followed here.';
+	TEXT TAXON=12 CHARACTER=14 TEXT='See discussion under Trimerellida in Williams et al. (2000).';
+	TEXT TAXON=21 CHARACTER=14 TEXT='Scars absent; instead, cones ornament shell''s internal surface.';
+	TEXT TAXON=10 CHARACTER=14 TEXT='"Eoobolus should have anterior and posterior adductors and a variety of oblique muscles which were probably arranged in criss-crossing pairs" -- Balthasar 2009T';
+	TEXT TAXON=32 CHARACTER=14 TEXT='Ventral musculature poorly constrained (Williams et al. 2000; Popov et al. 2009)';
+	TEXT TAXON=6 CHARACTER=26 TEXT='Referred to as the "posterior platform" in Dewing (2001)';
+	TEXT TAXON=15 CHARACTER=26 TEXT='"Dorsal diductor scars impressed on floor of notothyrial cavity": Williams et al. 2000, regarding Kutorginata.^nBassett et al. (2001) score as absent in Table 18.1.';
+	TEXT TAXON=23 CHARACTER=26 TEXT='Bassett et al. (2001) score as absent in Table 18.1.^n"Dorsal diductor scars impressed on floor of notothyrial cavity": Williams et al. 2000, regarding Kutorginata.';
+	TEXT TAXON=2 CHARACTER=26 TEXT='Bassett et al. (2001) score as present in Table 18.1.';
+	TEXT TAXON=11 CHARACTER=26 TEXT='Bassett et al. (2001) score as present in Table 18.1.';
+	TEXT TAXON=35 CHARACTER=26 TEXT='"Visceral platforms absent in both valves" -- Williams et al. 2000, p. 192';
+	TEXT TAXON=18 CHARACTER=27 TEXT='Not evident, and ought arguably to be discernable if present given the quality of preservation';
+	TEXT TAXON=5 CHARACTER=27 TEXT='Not reported by Topper et al. (2013R).';
+	TEXT TAXON=36 CHARACTER=7 TEXT='Tomteluvids [...] lack articulation structures such as teeth and sockets (Streng et al. 2016)';
+	TEXT TAXON=23 CHARACTER=7 TEXT='Coded as absent in Benedetto (2009).';
+	TEXT TAXON=4 CHARACTER=7 TEXT='Coded as present in Benedetto (2009)';
+	TEXT TAXON=2 CHARACTER=7 TEXT='"bearing sockets, bounded by low ridges" -- Williams et al. 2000';
+	TEXT TAXON=12 CHARACTER=7 TEXT='"Articulatory structure comprising ventral cardinal socket and dorsal hinge plate" -- Williams et al. 2000, p. 184';
+	TEXT TAXON=11 CHARACTER=7 TEXT='Coded as absent in Benedetto (2009)';
+	TEXT TAXON=35 CHARACTER=7 TEXT='Following table 15 in Williams et al. 2000';
+	TEXT TAXON=21 CHARACTER=7 TEXT='Not reported by or evident in Balthasar (2004)';
+	TEXT TAXON=36 CHARACTER=8 TEXT='Tomteluvids [...] lack articulation structures such as teeth and sockets (Streng et al. 2016)';
+	TEXT TAXON=23 CHARACTER=8 TEXT='Coded as absent in Benedetto (2009)';
+	TEXT TAXON=4 CHARACTER=8 TEXT='Coded as present in Benedetto (2009)';
+	TEXT TAXON=2 CHARACTER=8 TEXT='"bearing sockets, bounded by low ridges" -- Williams et al. 2000';
+	TEXT TAXON=11 CHARACTER=8 TEXT='Coded as absent in Benedetto (2009)';
+	TEXT TAXON=27 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=19 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=26 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=9 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=13 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=16 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=29 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=22 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=30 CHARACTER=41 TEXT='The presence of this feature is impossible to determine based on the available material.';
+	TEXT TAXON=8 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=31 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=33 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=14 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=17 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=3 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=20 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=28 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=24 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=34 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=25 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=11 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=5 CHARACTER=41 TEXT='Absent due to inapplicability of neomorphic character.';
+	TEXT TAXON=22 CHARACTER=21 TEXT='Posterior surface cannot be flat if it is not differentiated.';
+	TEXT TAXON=14 CHARACTER=21 TEXT='Posterior surface cannot be flat if it is not differentiated.';
+	TEXT TAXON=20 CHARACTER=21 TEXT='Essentially straight; see fig. 3.7 in Ushatinskaya 2016';
+	TEXT TAXON=28 CHARACTER=21 TEXT='Posterior surface cannot be flat if it is not differentiated.';
+	TEXT TAXON=12 CHARACTER=21 TEXT='Posterior surface cannot be flat if it is not differentiated.';
+	TEXT TAXON=5 CHARACTER=21 TEXT='Truncated but essentially planar surface; see e.g. p196 of Topper et al. 2013R^n';
+	TEXT TAXON=35 CHARACTER=21 TEXT='Posterior surface cannot be flat if it is not differentiated.';
+	TEXT TAXON=21 CHARACTER=21 TEXT='Posterior surface cannot be flat if it is not differentiated.';
+	TEXT TAXON=10 CHARACTER=21 TEXT='Essentially planar';
+	TEXT TAXON=32 CHARACTER=21 TEXT='The short interarea appears planar (see for example Popov et a. 2009 fig. 6A), but its short length makes it difficult to establish whether slight curvature is present.';
+	TEXT TAXON=23 CHARACTER=58 TEXT='Scored absent in data matrix of Benedetto (2009).';
+	TEXT TAXON=4 CHARACTER=58 TEXT='Scored absent in data matrix of Benedetto (2009).';
+	TEXT TAXON=25 CHARACTER=58 TEXT='Scored absent (in Eoorthis) in data matrix of Benedetto (2009).';
+	TEXT TAXON=11 CHARACTER=58 TEXT='Scored absent in data matrix of Benedetto (2009).';
+	TEXT TAXON=6 CHARACTER=34 TEXT='See fig. 485 in Williams et al. 2000';
+	TEXT TAXON=30 CHARACTER=34 TEXT='"Ventral pseudointerarea well defined, high, nearly flat, apsacline" -- Williams et al. 2000, p. 156';
+	TEXT TAXON=23 CHARACTER=34 TEXT='Scored High in data matrix of Benedetto (2009).';
+	TEXT TAXON=4 CHARACTER=34 TEXT='Scored High in data matrix of Benedetto (2009).';
+	TEXT TAXON=25 CHARACTER=34 TEXT='Scored ''Low'' for Eoorthis by Benedetto (2009); assumed same in Orthis.';
+	TEXT TAXON=12 CHARACTER=34 TEXT='"ventral cardinal interarea low, apsacline, with narrow, poorly defined homeodeltidium" - Williams et al. 2000, p. 186';
+	TEXT TAXON=5 CHARACTER=34 TEXT='Entire valve length -- see schematic in Williams et al. (1997), fig. 286';
+	TEXT TAXON=33 CHARACTER=33 TEXT='ventral pseudointerareas are most similar to those found within the Order Siphonotretida';
+	TEXT TAXON=18 CHARACTER=33 TEXT='Flattened, reflecting the strophic hinge line';
+	TEXT TAXON=17 CHARACTER=33 TEXT='Transverse cross section of ventral pseudointerarea concave.';
+	TEXT TAXON=20 CHARACTER=33 TEXT='Essentially planar; see fig. 6 in Ushatinskaya 2016';
+	TEXT TAXON=5 CHARACTER=33 TEXT='"Ventral pseudointerarea is gently procline and is flat in lateral profile". ---^n (Topper et al. 2013R)';
+	TEXT TAXON=10 CHARACTER=33 TEXT='Some curvature retained';
+	TEXT TAXON=32 CHARACTER=33 TEXT='''Almost'' planar -- see Popov et al. (2009, fig. 4).  Coded as ambiguous.';
+	TEXT TAXON=19 CHARACTER=5 TEXT='The simple knob-like teeth of Micrina show no evidence of resprobtion or the hook-like shape that characterises Cyrtomatodont teeth.';
+	TEXT TAXON=15 CHARACTER=5 TEXT='"Articulation characterized by two triangular plates formed by dorsal interarea, bearing oblique ridges on the inner sides" -- Williams et al 2000, p. 211';
+	TEXT TAXON=23 CHARACTER=5 TEXT='The ''teeth'' are formed by the distal lateral extensions from the ventral^npseudodeltidium fitting into the ''sockets'' on the inner side of the dorsal interarea (Holmer et al. 2018E).  (Coded as "deltidiodont teeth absent" in Benedetto (2009).)';
+	TEXT TAXON=34 CHARACTER=5 TEXT='Cyrtomatodont - see fig. 322 in Williams et al (2000)';
+	TEXT TAXON=4 CHARACTER=5 TEXT='Coded as deltidiodont in Benedetto (2009).';
+	TEXT TAXON=25 CHARACTER=5 TEXT='Coded as deltidiodont (in Eoorthis) in Benedetto (2009).';
+	TEXT TAXON=11 CHARACTER=5 TEXT='Coded as deltidiodont in Benedetto (2009).';
+	TEXT TAXON=6 CHARACTER=6 TEXT='Coded as present following Dewing (2001), who seems to use the term Strophomenoids to encompass Coolinia, and attests to the presence of dental plates.';
+	TEXT TAXON=23 CHARACTER=6 TEXT='Coded as absent in Benedetto (2009)';
+	TEXT TAXON=4 CHARACTER=6 TEXT='Coded as present (well developed) in Benedetto (2009)';
+	TEXT TAXON=25 CHARACTER=6 TEXT='Coded as present (short and recessive, in Eoorthis) in Benedetto (2009)';
+	TEXT TAXON=12 CHARACTER=6 TEXT='Coded ambiguous to reflect the possibility that the hinge plate in trimerellids is homologous to the dental plates of other taxa, and has replaced the teeth themselves as the primary articulatory mechanism (see Williams et al. 2000, p. 184, for details of the articulation)';
+	TEXT TAXON=11 CHARACTER=6 TEXT='Coded as absent in Benedetto (2009)';
+	TEXT TAXON=29 CHARACTER=51 TEXT='"The presence of sulphated glycosaminoglycans (GAGs) in the chitinous cuticle of Phoronis (Herrmann, 1997, p. 215) would suggest a link with linguliforms, as GAGs are unknown in rhynchonelliform shells (Fig. 1891, 1896)" -- Williams et al. 2007, p. 2830';
+	TEXT TAXON=31 CHARACTER=51 TEXT='Coded as GAGs, chitin and collagen in lingulids by Williams et al (1996)';
+	TEXT TAXON=28 CHARACTER=51 TEXT='Coded as GAGs, chitin and collagen in discinids by Williams et al (1996)';
+	TEXT TAXON=24 CHARACTER=51 TEXT='Coded as glycoprotein for craniids by Williams et al (1996)';
+	TEXT TAXON=34 CHARACTER=51 TEXT='Coded as glycoprotein for terebratulids by Williams et al (1996)';
+	TEXT TAXON=32 CHARACTER=51 TEXT='Lenticular chambers in siphonotretid shells interpreted as degraded GAG residue (Williams et al. 2004)';
+	TEXT TAXON=6 CHARACTER=16 TEXT='Not reported in Dewing (2001)';
+	TEXT TAXON=15 CHARACTER=16 TEXT='Following table 13 in Williams et al. 2000';
+	TEXT TAXON=14 CHARACTER=16 TEXT='Poor preservation of minor muscle scars noted by Chen et al. (2007)';
+	TEXT TAXON=23 CHARACTER=16 TEXT='Following table 13 in Williams et al. 2000';
+	TEXT TAXON=28 CHARACTER=16 TEXT='Musculature considered essentially equivalent to Lingula by Williams et al 2000, so Lingula coding followed here.';
+	TEXT TAXON=24 CHARACTER=16 TEXT='Following table 13 in Williams et al. 2000 (for Novocrania)';
+	TEXT TAXON=2 CHARACTER=16 TEXT='Following table 13 in Williams et al. 2000';
+	TEXT TAXON=12 CHARACTER=16 TEXT='Following table 13 in Williams et al. 2000';
+	TEXT TAXON=7 CHARACTER=16 TEXT='See fig. 90 in Williams et al. 2000';
+	TEXT TAXON=35 CHARACTER=16 TEXT='Following table 15 in Williams et al. 2000';
+	TEXT TAXON=21 CHARACTER=16 TEXT='Scars absent; instead, cones ornament shell''s internal surface.';
+	TEXT TAXON=32 CHARACTER=16 TEXT='Ventral musculature poorly constrained (Williams et al. 2000; Popov et al. 2009)';
+	TEXT TAXON=27 CHARACTER=20 TEXT='Pseudointerarea.';
+	TEXT TAXON=19 CHARACTER=20 TEXT='= Sellate sclerite duplicature (Holmer et al. 2008)';
+	TEXT TAXON=26 CHARACTER=20 TEXT='Pseudointerarea.';
+	TEXT TAXON=13 CHARACTER=20 TEXT='A very short pseudointerarea appears to be present (Moysiuk et al. 2017)';
+	TEXT TAXON=16 CHARACTER=20 TEXT='Unclear from fossil material.^n';
+	TEXT TAXON=36 CHARACTER=20 TEXT='Cardinal area (interarea) present.';
+	TEXT TAXON=22 CHARACTER=20 TEXT='Absent.';
+	TEXT TAXON=6 CHARACTER=20 TEXT='Cardinal area (interarea) present.';
+	TEXT TAXON=15 CHARACTER=20 TEXT='Cardinal area (interarea) present.';
+	TEXT TAXON=30 CHARACTER=20 TEXT='Cardinal area (interarea) present.';
+	TEXT TAXON=31 CHARACTER=20 TEXT='Pseudointerarea present, following Williams et al. (2000), table 6.';
+	TEXT TAXON=33 CHARACTER=20 TEXT='Pseudointerarea present, following Siphonotretidae coding in Williams et al. (2000), table 6.';
+	TEXT TAXON=14 CHARACTER=20 TEXT='Pseudointerea in ventral valve, but not dorsal valve (Williams et al. 2000, 2007)';
+	TEXT TAXON=18 CHARACTER=20 TEXT='Zhang et al. (2011T) note that "all evidence of a pseudointerarea is lacking", but the two-dimensional preservation style of Chengjiang material makes details of dorsal valve difficult to distinguish, and the possibility of a diminutive pseudointerarea cannot be excluded with total confidence.';
+	TEXT TAXON=17 CHARACTER=20 TEXT='Pseudointerarea present, following Williams et al. (2000), table 6.';
+	TEXT TAXON=3 CHARACTER=20 TEXT='Well-defined pseudointerarea (Williams et al. 2000, p153)';
+	TEXT TAXON=20 CHARACTER=20 TEXT='"Dorsal pseudointerarea usually well defined, low, anacline to catacline" - Williams et al. 2000';
+	TEXT TAXON=23 CHARACTER=20 TEXT='Cardinal area (interarea) present -- with reference to Holmer et al. (2018E).';
+	TEXT TAXON=28 CHARACTER=20 TEXT='Absent, following entry for Discinidae in Williams et al. (2000), table 6.';
+	TEXT TAXON=24 CHARACTER=20 TEXT='Pseudointerarea';
+	TEXT TAXON=34 CHARACTER=20 TEXT='Interarea present';
+	TEXT TAXON=4 CHARACTER=20 TEXT='Cardinal area (interarea) present.';
+	TEXT TAXON=2 CHARACTER=20 TEXT='Cardinal area (interarea) present.';
+	TEXT TAXON=25 CHARACTER=20 TEXT='Cardinal area (interarea) present.';
+	TEXT TAXON=11 CHARACTER=20 TEXT='Cardinal area (interarea) present.';
+	TEXT TAXON=5 CHARACTER=20 TEXT='Pseudointerarea present; figured by Topper et al. (2013R), fig. 3j.';
+	TEXT TAXON=37 CHARACTER=20 TEXT='A differentiated region is not obvious in fossil material or its reconstruction (Zhang et al. 2014), but the two-dimensional preservation style of Chengjiang material makes details of dorsal valve difficult to distinguish, and the possibility of a diminutive pseudointerarea cannot be excluded with confidence.';
+	TEXT TAXON=7 CHARACTER=20 TEXT='"Only some craniopsids (Lingulapholis, Pseudopholidops [not Craniops]) have well-developed pseudointerareas." -- Williams et al. 2000';
+	TEXT TAXON=35 CHARACTER=20 TEXT='Following table 15 in Williams et al. 2000';
+	TEXT TAXON=21 CHARACTER=20 TEXT='Shell flat.';
+	TEXT TAXON=32 CHARACTER=20 TEXT='"Dorsal pseudointerarea weakly anacline, undivided, elevated above the valve floor" -- Popov et al. 2009';
+	TEXT TAXON=33 CHARACTER=22 TEXT='The dorsal pseudointerarea is poorly preserved, but appears to have a median groove (Holmer & Caron, 2006)';
+	TEXT TAXON=14 CHARACTER=22 TEXT='"A posteriorly protruding dorsal pseudointerarea with no median groove and no flexure lines" - Chen et al. 2007';
+	TEXT TAXON=17 CHARACTER=22 TEXT='Dorsal pseudointerarea with wide, concave median groove and short propareas" - Williams et al 2000';
+	TEXT TAXON=5 CHARACTER=22 TEXT='Present; figured by Topper et al. (2013R), fig. 3j.';
+	TEXT TAXON=10 CHARACTER=22 TEXT='Prominent medial groove';
+	TEXT TAXON=32 CHARACTER=22 TEXT='The dorsal pseudointerarea of S. priscus is undivided (Popov et al. 2009), but in other species it is divided by a "wide, poorly defined median groove" (Williams et al. 2000).  Coded, therefore, as polymorphic.^n';
+	TEXT TAXON=16 CHARACTER=80 TEXT='Baculate vascula media - Balthasar & Butterfield (2009E)';
+	TEXT TAXON=36 CHARACTER=80 TEXT='Preservation not adequate to evaluate (Streng 2016).';
+	TEXT TAXON=22 CHARACTER=80 TEXT='"Poorly resolved" -- Balthasar 2008';
+	TEXT TAXON=6 CHARACTER=80 TEXT='Not reported in Treatise (Williams et al. 2000).';
+	TEXT TAXON=15 CHARACTER=80 TEXT='Following Table 15 in Williams et al. (2000) (for Neocrania).';
+	TEXT TAXON=30 CHARACTER=80 TEXT='Coded uncertain in Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=31 CHARACTER=80 TEXT='Following Table 6 in Williams et al. (2000).';
+	TEXT TAXON=33 CHARACTER=80 TEXT='Following Table 6, for Siphonotretidae, in Williams et al. (2000).';
+	TEXT TAXON=14 CHARACTER=80 TEXT='Described as pinnate by Jin & Wang (1992)';
+	TEXT TAXON=18 CHARACTER=80 TEXT='Reported by Zhang et al. (2007A, 2011T) though the interpretation is tentative.';
+	TEXT TAXON=17 CHARACTER=80 TEXT='Following Table 6 in Williams et al. (2000).';
+	TEXT TAXON=3 CHARACTER=80 TEXT='Described as pinnate (at least in ventral valve) by Williams et al. (1998T, p. 250).';
+	TEXT TAXON=20 CHARACTER=80 TEXT='Described as saccate by Williams et al. (1998T).';
+	TEXT TAXON=23 CHARACTER=80 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=28 CHARACTER=80 TEXT='Following Table 6, for Discinidae, in Williams et al. (2000).';
+	TEXT TAXON=24 CHARACTER=80 TEXT='Following Table 15 in Williams et al. (2000) (for Neocrania).';
+	TEXT TAXON=34 CHARACTER=80 TEXT='"In modern terebratulides, the vascula media are subordinate to the lemniscate or pinnate vascula genitalia" -- Williams et al. 1997';
+	TEXT TAXON=4 CHARACTER=80 TEXT='Not reported in Treatise (Williams et al. 2000).';
+	TEXT TAXON=2 CHARACTER=80 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=25 CHARACTER=80 TEXT='Sacculate (sometimes digitate in dorsal valve) (Williams et al. 2000, p716)';
+	TEXT TAXON=12 CHARACTER=80 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=11 CHARACTER=80 TEXT='Following Appendix 2 (char. 21) in Williams et al. (1998T).';
+	TEXT TAXON=5 CHARACTER=80 TEXT='Following Table 8 (for Acrotreta) in Williams et al. (2000).';
+	TEXT TAXON=7 CHARACTER=80 TEXT='Not reported from fossil material';
+	TEXT TAXON=36 CHARACTER=81 TEXT='Preservation not adequate to evaluate (Streng 2016).';
+	TEXT TAXON=15 CHARACTER=81 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=33 CHARACTER=81 TEXT='Following Table 8 (which records presence in Siphonotreta) in Williams et al. (2000).';
+	TEXT TAXON=14 CHARACTER=81 TEXT='Present: Williams et al. (2000); Jin & Wang (1992).';
+	TEXT TAXON=18 CHARACTER=81 TEXT='Presence is possible but requires interpretation that is not unambiguous:^n^n"In the dorsal valve, there can be seen two baculate grooves that arise from the^nanterior body wall at an antero-lateral position. These two grooves (Figs 4H, 5D) could be taken to represent the vascula lateralia" -- Zhang et al 2007A';
+	TEXT TAXON=17 CHARACTER=81 TEXT='Present (Williams et al. 2000).';
+	TEXT TAXON=3 CHARACTER=81 TEXT='"Laurie (1987) has shown that arcuate vascula media were present in the mantles of both valves as were pouchlike vascula genitalia, especially in the ventral valve" -- Williams et al. 1997';
+	TEXT TAXON=20 CHARACTER=81 TEXT='"Laurie (1987) has shown that arcuate vascula media were present in the mantles of both valves as were pouchlike vascula genitalia, especially in the ventral valve" -- Williams et al. 1997';
+	TEXT TAXON=23 CHARACTER=81 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=28 CHARACTER=81 TEXT='Wollowing Lochothele (Discinidae), Fig. 43.4a in Williams et al. (2000).';
+	TEXT TAXON=24 CHARACTER=81 TEXT='Following Table 15 in Williams et al. (2000) (for Neocrania).^nWilliams et al. (2000) write "Holocene craniides have only a single pair of main trunks in both valves, corresponding to the vascula lateralia"^nWilliams et al. (2007) reiterate this position (p. 2875), at least for the ventral valve.';
+	TEXT TAXON=34 CHARACTER=81 TEXT='= vascula genitalia';
+	TEXT TAXON=2 CHARACTER=81 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=25 CHARACTER=81 TEXT='= vascula genitalia';
+	TEXT TAXON=12 CHARACTER=81 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=5 CHARACTER=81 TEXT='Presence indicated in Table 8 (for Acrotreta) in Williams et al. (2000).';
+	TEXT TAXON=37 CHARACTER=81 TEXT='Based on the figures and sketches in Zhang et al. 2014 (and supplementary material), the mantle canals are interpreted as lateral, with no clear vascula media present.';
+	TEXT TAXON=32 CHARACTER=81 TEXT='Noted in Siphonobolus by Williams et al. (2000), with reference to Havlicek (1982).';
+	TEXT TAXON=36 CHARACTER=82 TEXT='Preservation not adequate to evaluate (Streng 2016).';
+	TEXT TAXON=15 CHARACTER=82 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=31 CHARACTER=82 TEXT='Following Table 6 in Williams et al. (2000).';
+	TEXT TAXON=33 CHARACTER=82 TEXT='Following Table 6 (for Siphonotretidae) in Williams et al. (2000).';
+	TEXT TAXON=14 CHARACTER=82 TEXT='Present: Williams et al. (2000) p162, Jin & Wang (1992).';
+	TEXT TAXON=18 CHARACTER=82 TEXT='Reported by Zhang et al. (2007A) though the interpretation is tentative.';
+	TEXT TAXON=17 CHARACTER=82 TEXT='Following Table 6 in Williams et al. (2000).';
+	TEXT TAXON=3 CHARACTER=82 TEXT='Following Table 6 (for Paterinidae) in Williams et al. (2000).';
+	TEXT TAXON=20 CHARACTER=82 TEXT='Reported by Williams et al. (1998T).';
+	TEXT TAXON=23 CHARACTER=82 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=28 CHARACTER=82 TEXT='Following Table 6 (for Discinidae) in Williams et al. (2000).';
+	TEXT TAXON=24 CHARACTER=82 TEXT='Williams et al. (2000) write "Holocene craniides have only a single pair of main trunks in both valves, corresponding to the vascula lateralia" -- an observation reflected in their table 15 (for Neocrania).  ^nBut in contrast, Williams et al. 2007, p. 2875, identify the dorsal valve''s canals as a vascula media in living cranidds (though both are lateralia in Ordoviian craniides).  This character is therefore coded as ambiguous.';
+	TEXT TAXON=34 CHARACTER=82 TEXT='"In modern terebratulides, the vascula media are subordinate to the lemniscate or pinnate vascula genitalia" -- Williams et al. 1997 p417';
+	TEXT TAXON=2 CHARACTER=82 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=25 CHARACTER=82 TEXT='From idealised morphology in Williams et al. (2000)';
+	TEXT TAXON=12 CHARACTER=82 TEXT='Following Table 15 in Williams et al. (2000).';
+	TEXT TAXON=11 CHARACTER=82 TEXT='Present and divergent (Williams et al. 2000).';
+	TEXT TAXON=5 CHARACTER=82 TEXT='Following Hadrotreta schematic in Williams et al. (2000).';
+	TEXT TAXON=37 CHARACTER=82 TEXT='Based on the figures and sketches in Zhang et al. 2014 (and supplementary material), the mantle canals are interpreted as lateral, with no clear vascula media present.';
+	TEXT TAXON=10 CHARACTER=82 TEXT='Fig. 5 in Balthasar 2009T.';
+	TEXT TAXON=32 CHARACTER=82 TEXT='Noted in Siphonobolus by Williams et al. (2000), with reference to Havlicek (1982).';
+	TEXT TAXON=15 CHARACTER=83 TEXT='Coded uncertain in Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=30 CHARACTER=83 TEXT='Coded uncertain in Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=31 CHARACTER=83 TEXT='Peripheral and medial for all Lingulata (Williams et al. 2000).';
+	TEXT TAXON=33 CHARACTER=83 TEXT='Preservation not clear enough to score with certainty (Holmer & Caron 2006)';
+	TEXT TAXON=14 CHARACTER=83 TEXT='Inferred from Jin & Wang (1992).';
+	TEXT TAXON=3 CHARACTER=83 TEXT='Peripheral only (Williams et al. 1998T; Williams et al. 2000).';
+	TEXT TAXON=20 CHARACTER=83 TEXT='Peripheral only (Williams et al. 1998T; Williams et al. 2000).';
+	TEXT TAXON=28 CHARACTER=83 TEXT='Following Lochkothele (Discinidae), Fig. 43.4a in Williams et al. (2000).';
+	TEXT TAXON=24 CHARACTER=83 TEXT='Peripheral only (Williams et al. 2000, p.158).';
+	TEXT TAXON=34 CHARACTER=83 TEXT='Following idealised plectolophous terebratulid of Emig (1992).';
+	TEXT TAXON=2 CHARACTER=83 TEXT='Interomedial vascula terminalia not reported by Williams et al. (2000).';
+	TEXT TAXON=25 CHARACTER=83 TEXT='See schematics in Williams et al. (2000)';
+	TEXT TAXON=11 CHARACTER=83 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=15 CHARACTER=10 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=30 CHARACTER=10 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=3 CHARACTER=10 TEXT='"ventral valve weakly to moderately sulcate" (Topper et al. 2013T); a similar description is provided by Williams et al. (2000).';
+	TEXT TAXON=20 CHARACTER=10 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=34 CHARACTER=10 TEXT='"Anterior commissure rectimarginate to uniplicate" -- uniplicate in fig. 1425.1c of Williams et al. (2006).';
+	TEXT TAXON=11 CHARACTER=10 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=15 CHARACTER=53 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=30 CHARACTER=53 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=3 CHARACTER=53 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=20 CHARACTER=53 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=28 CHARACTER=53 TEXT='Flexible (Williams et al. 1998T)';
+	TEXT TAXON=11 CHARACTER=53 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=9 CHARACTER=46 TEXT='More or less concentric ridges occur on Eccentrotheca sclerites (Skovsted et al. 2011)';
+	TEXT TAXON=15 CHARACTER=46 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=30 CHARACTER=46 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=14 CHARACTER=46 TEXT='The ornament on shell exterior is described as concentric fila (Chen et al., 2007, P.43), and also scored as it in Williams et al. (2000, pp.160-163).';
+	TEXT TAXON=3 CHARACTER=46 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=20 CHARACTER=46 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=28 CHARACTER=46 TEXT='Only growth lines evident (Williams et al. 2000)';
+	TEXT TAXON=24 CHARACTER=46 TEXT='Irregular ridges externally (Williams et al. 2000)';
+	TEXT TAXON=34 CHARACTER=46 TEXT='Single ridge evident in Williams et al. (2006) fig. 1425.1a interpreted as interruption ot growth rather than inherent feature, so coded as absent (i.e. smooth).';
+	TEXT TAXON=11 CHARACTER=46 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=21 CHARACTER=46 TEXT='Symmetric fila';
+	TEXT TAXON=19 CHARACTER=47 TEXT='No obvious asymmetry, even if not obviously symmetric either (Holmer et al. 2008).  Coded as ambiguous.';
+	TEXT TAXON=9 CHARACTER=47 TEXT='Ornament, such as it is, is asymmetric, with prominent outer faces (Skovsted et al. 2011).';
+	TEXT TAXON=15 CHARACTER=47 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=30 CHARACTER=47 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=8 CHARACTER=47 TEXT='Clear asymmetry (Skovsted et al. 2015).';
+	TEXT TAXON=14 CHARACTER=47 TEXT='See fig. 1715 in Williams et al. (2007)';
+	TEXT TAXON=3 CHARACTER=47 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=20 CHARACTER=47 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=24 CHARACTER=47 TEXT='Clear outer faces (Williams et al. 2000, fig. 100.2b)';
+	TEXT TAXON=2 CHARACTER=47 TEXT='Seemingly asymmetric (Williams et al. 2000, fig. 122.3c; Zhang et al. 2011A, Fig. 1)';
+	TEXT TAXON=11 CHARACTER=47 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=21 CHARACTER=47 TEXT='Symmetric fila (Balthasar 2004)';
+	TEXT TAXON=6 CHARACTER=43 TEXT='Bassett and Popov write "a dominant feature of the ventral umbo is a sub-oval perforation about 270 um long and 250 um wide": the width and height of this structure are almost identical, and we score it as (sub) circular.';
+	TEXT TAXON=15 CHARACTER=43 TEXT='The exact size and shape of the apical perforation is obscured by the emerging pedicle';
+	TEXT TAXON=30 CHARACTER=43 TEXT='Essentially circular (Holmer et al. 2009, fig. 4)';
+	TEXT TAXON=33 CHARACTER=43 TEXT='Too small to observe given quality of preservation (Holmer & Caron 2006)';
+	TEXT TAXON=14 CHARACTER=43 TEXT='Rhombic to oval -- seen as evidence for a discinid affinity (Chen et al. 2007)';
+	TEXT TAXON=17 CHARACTER=43 TEXT='Oval (Williams et al. 2000)';
+	TEXT TAXON=23 CHARACTER=43 TEXT='"close to circular" (Holmer et al. 2018E)';
+	TEXT TAXON=4 CHARACTER=43 TEXT='Based on p.92, fig.4B.';
+	TEXT TAXON=2 CHARACTER=43 TEXT='Seemingly circular (Zhang et al. 2011A).';
+	TEXT TAXON=5 CHARACTER=43 TEXT='Taller than wide in some cases, but very nearly circular in others; see Topper et al. (2013R)';
+	TEXT TAXON=13 CHARACTER=45 TEXT='The carina of  H. carinatus is an angular elevation of the ventral valve surface, rather than a septum growing inward on the interior of shell.';
+	TEXT TAXON=22 CHARACTER=45 TEXT='"Some specimens also reveal that the vault had a slight median septum, which is now visible as a notch or a groove dividing the right from the left part" -- Balthasar 2008';
+	TEXT TAXON=14 CHARACTER=45 TEXT='Reported on ''ventral'' valve by Chen et al. (2007); we consider the ''ventral'' valve to be the dorsal valve.';
+	TEXT TAXON=20 CHARACTER=45 TEXT='Ventral ridge characteristic of Micromitra (Skovsted & Peel 2010)';
+	TEXT TAXON=28 CHARACTER=45 TEXT='Described as present in Discinisca by Chen et al. 2007; assumed present also in Pelagodiscus.';
+	TEXT TAXON=24 CHARACTER=45 TEXT='Valve thin and often unmineralized.';
+	TEXT TAXON=12 CHARACTER=45 TEXT='Evident in moulds of ventral valve; see Watkins (2002).';
+	TEXT TAXON=11 CHARACTER=45 TEXT='Neither evident nor reported in Williams et al. (2000).';
+	TEXT TAXON=5 CHARACTER=45 TEXT='A short medial ridge (septum) is present in the ventral valve (Topper et al. 2013R).';
+	TEXT TAXON=35 CHARACTER=45 TEXT='Following char. 42 in table 15 in Williams et al. 2000';
+	TEXT TAXON=10 CHARACTER=45 TEXT='Prominent median septum (fig. 4d, e in Balthasar 2009T)';
+	TEXT TAXON=32 CHARACTER=45 TEXT='Present; see Popov et al. 2009, fig. 5J';
+	TEXT TAXON=14 CHARACTER=49 TEXT='The ''spines'' reported by Chen et al. (2007) are pyritized spinelike^nsetae -- see pp. 2580-2590 in Williams et al. (2007).';
+	TEXT TAXON=23 CHARACTER=49 TEXT='Bears numerous small, hollow spines (Williams et al. 2000)';
+	TEXT TAXON=11 CHARACTER=49 TEXT='Neither evident nor reported in Williams et al. (2000).';
+	TEXT TAXON=22 CHARACTER=28 TEXT='See pl. 2 panel 6 in Balthasar (2008).';
+	TEXT TAXON=15 CHARACTER=28 TEXT='Absent - fig. 129.1f in Williams et al. (2000)';
+	TEXT TAXON=14 CHARACTER=28 TEXT='Reported on ''ventral'' valve by Chen et al. (2007); we consider their ''ventral'' valve to be the dorsal valve.  ^n^nThe structure is clearly figured, contra its coding as absent in Williams et al. 2000 and its lack of mention in Williams et al. 2007 or Zhang et al. 2009.^n^n';
+	TEXT TAXON=17 CHARACTER=28 TEXT='Very weakly developed but seemingly present between muscle scars in Lingulellotreta, more prominent in Aboriginella (also Lingulellotretidae) (Williams et al. 2000, fig. 34).';
+	TEXT TAXON=23 CHARACTER=28 TEXT='Fig. 125 in Williams et al. (2000)';
+	TEXT TAXON=24 CHARACTER=28 TEXT='Median process evident: Williams et al. (2000) fig. 100.2a, d';
+	TEXT TAXON=4 CHARACTER=28 TEXT='Weakly developed septum evident in internal cast: Williams et al. 2000, fig. 508.2e';
+	TEXT TAXON=25 CHARACTER=28 TEXT='Short medial process ("low median ridge", p. 724) present in dorsal valve; see Fig. 523.3b in Williams et al. (2000)^n';
+	TEXT TAXON=11 CHARACTER=28 TEXT='Neither evident nor reported in Williams et al. (2000).';
+	TEXT TAXON=5 CHARACTER=28 TEXT='Prominent process evident (Topper et al., 2013R)';
+	TEXT TAXON=35 CHARACTER=28 TEXT='Following char 42 in table 15 in Williams et al. 2000';
+	TEXT TAXON=10 CHARACTER=28 TEXT='A "median projection" is present (fig. 4g in Balthasar 2009T)';
+	TEXT TAXON=32 CHARACTER=28 TEXT='"Dorsal interior [...] bisected by a short median ridge." -- Popov et al. 2009';
+	TEXT TAXON=14 CHARACTER=48 TEXT='See fig. 1715 in Williams et al. (2007)';
+	TEXT TAXON=3 CHARACTER=48 TEXT='"Ornament of irregularly developed, concentric growth lamellae; microornament of irregularly arranged, polygonal pits" -- Williams et al. 2000, p153; figs on p.155';
+	TEXT TAXON=12 CHARACTER=48 TEXT='"Ornament of indistinct low radial ribs" -- Williams et al. (2000, p167)';
+	TEXT TAXON=11 CHARACTER=48 TEXT='"Coarsely costate" - Williams et al. (2000, p710)';
+	TEXT TAXON=35 CHARACTER=48 TEXT='Unornamented.';
+	TEXT TAXON=10 CHARACTER=48 TEXT='Very faint costellae in some specimens but coded absent.';
+	TEXT TAXON=32 CHARACTER=48 TEXT='"Indistinct radial ribs accentuated by radial rows of tubercles" -- Popov et al. 2009';
+	TEXT TAXON=36 CHARACTER=15 TEXT='Though Williams et al. (2000, P.32) state that these muscles are absent in all carbonate-shelled brachiopods, their existence cannot be discounted with certainty in this taxon, which is therefore coded not presently available.';
+	TEXT TAXON=22 CHARACTER=15 TEXT='Though Williams et al. (2000, P.32) state that these muscles are absent in all carbonate-shelled brachiopods, their existence cannot be discounted with certainty in this taxon, which is therefore coded not presently available.';
+	TEXT TAXON=6 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=15 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods, and the coding for kutorginids in Zhang et al. (2014).';
+	TEXT TAXON=30 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=3 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that the presence of these muscles in paterinates is uncertain';
+	TEXT TAXON=20 CHARACTER=15 TEXT='Williams et al. (2000, P.32) are uncertain about the presence of these muscles in the paterinates.  Zhang et al. (2014) code absence in Paterinida, but without specifying evidence; we follow their coding here.';
+	TEXT TAXON=23 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=28 CHARACTER=15 TEXT='Musculature considered essentially equivalent to Lingula by Williams et al 2000, so Lingula coding followed here.';
+	TEXT TAXON=24 CHARACTER=15 TEXT='Following Zhang et al. (2014), and the statement of Williams et al. (2000) that such muscles are absent in all calcite-shelled brachiopods.';
+	TEXT TAXON=34 CHARACTER=15 TEXT='Williams et al. (2000, P.32) state that these muscles are absent in all carbonate-shelled brachiopods.';
+	TEXT TAXON=4 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=2 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=25 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=12 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=11 CHARACTER=15 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=5 CHARACTER=15 TEXT='This character is coded based on the score of Acrotreta in Zhang et al. (2014), and statement in Williams et al. (2000, P.32).';
+	TEXT TAXON=10 CHARACTER=15 TEXT='Not remarked upon by Balthasar (2009T).';
+	TEXT TAXON=32 CHARACTER=15 TEXT='Ventral musculature poorly constrained (Williams et al. 2000; Popov et al. 2009)';
+	TEXT TAXON=29 CHARACTER=60 TEXT='Phoronis has planktotrophic larvae. indicating a small egg size (Ruppert et al. 2004).  Carlson (1995) codes phoronids as polymorphic, as some members of the phylum have eggs of each size.';
+	TEXT TAXON=31 CHARACTER=60 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 7.';
+	TEXT TAXON=28 CHARACTER=60 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 7.';
+	TEXT TAXON=24 CHARACTER=60 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 7.';
+	TEXT TAXON=34 CHARACTER=60 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 7.';
+	TEXT TAXON=32 CHARACTER=60 TEXT='"the ventral brephic valve [was] 50 um across, [which] is close to the known lower limit of the brachiopod egg size" -- Popov et al. 2009';
+	TEXT TAXON=29 CHARACTER=61 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 9.';
+	TEXT TAXON=31 CHARACTER=61 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 9.';
+	TEXT TAXON=28 CHARACTER=61 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 9.';
+	TEXT TAXON=24 CHARACTER=61 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 9.';
+	TEXT TAXON=34 CHARACTER=61 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 9.';
+	TEXT TAXON=16 CHARACTER=84 TEXT='Preservation insufficient to evaluate';
+	TEXT TAXON=29 CHARACTER=84 TEXT='Following coding for higher group in Carlson 1995, Appendix 1, character 36.';
+	TEXT TAXON=15 CHARACTER=84 TEXT='Tentacles "cannot be confidently demonstrated in the available specimens." -- Zhang et al. 2007R';
+	TEXT TAXON=31 CHARACTER=84 TEXT='Following coding for higher group in Carlson 1995, Appendix 1, character 36.';
+	TEXT TAXON=33 CHARACTER=84 TEXT='Preservation insufficient to evaluate (Holmer & Caron 2006)';
+	TEXT TAXON=14 CHARACTER=84 TEXT='"Each lophophoral arm bears a row of long, slender flexible tentacles" -- Zhang et al. 2009';
+	TEXT TAXON=18 CHARACTER=84 TEXT='Inadequately preserved to evaluate.';
+	TEXT TAXON=17 CHARACTER=84 TEXT='"The tentacles are clearly visible, and closely arranged in a single palisade" -- Zhang et al. 2004N^n^n';
+	TEXT TAXON=28 CHARACTER=84 TEXT='Following coding for higher group in Carlson 1995, Appendix 1, character 36.';
+	TEXT TAXON=24 CHARACTER=84 TEXT='Following coding for higher group in Carlson 1995, Appendix 1, character 36.';
+	TEXT TAXON=34 CHARACTER=84 TEXT='Following coding for higher group in Carlson 1995, Appendix 1, character 36.';
+	TEXT TAXON=2 CHARACTER=84 TEXT='Preservation inadequate.';
+	TEXT TAXON=29 CHARACTER=85 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.';
+	TEXT TAXON=31 CHARACTER=85 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.';
+	TEXT TAXON=28 CHARACTER=85 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.';
+	TEXT TAXON=24 CHARACTER=85 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.  Also states in Williams et al. 2000, p. 158.';
+	TEXT TAXON=34 CHARACTER=85 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.';
+	TEXT TAXON=16 CHARACTER=86 TEXT='Preservation insufficient to evaluate';
+	TEXT TAXON=29 CHARACTER=86 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.';
+	TEXT TAXON=15 CHARACTER=86 TEXT='Tentacles "cannot be confidently demonstrated in the available specimens." -- Zhang et al. 2007R';
+	TEXT TAXON=31 CHARACTER=86 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.';
+	TEXT TAXON=33 CHARACTER=86 TEXT='Preservation insufficient to evaluate (Holmer & Caron 2006)';
+	TEXT TAXON=14 CHARACTER=86 TEXT='"The lophophoral arms bear laterofrontal tentacles with a double row of cilia along their lateral edge, as in extant lingulid brachiopods" -- Zhang et al. 2009';
+	TEXT TAXON=17 CHARACTER=86 TEXT='Single palisade (Zhang et al. 2004N)';
+	TEXT TAXON=28 CHARACTER=86 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.';
+	TEXT TAXON=24 CHARACTER=86 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.';
+	TEXT TAXON=34 CHARACTER=86 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 37.';
+	TEXT TAXON=37 CHARACTER=86 TEXT='"helical lophophore fringed with a single row of thick, widely spaced, parallel-sided and hollow tentacles" -- Zhang et al. 2014';
+	TEXT TAXON=27 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=19 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=26 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=1 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=9 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=13 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=16 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=36 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=22 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=6 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=15 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=30 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=8 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=33 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=14 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=18 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=17 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=3 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=20 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=23 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=4 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=2 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=25 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=12 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=11 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=5 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=37 CHARACTER=87 TEXT='Lophophore ontogeny presently unknown.';
+	TEXT TAXON=27 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=19 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=26 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=1 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=9 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=13 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=16 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=29 CHARACTER=90 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 55.';
+	TEXT TAXON=36 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=22 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=6 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=15 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=30 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=8 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=31 CHARACTER=90 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 55.';
+	TEXT TAXON=33 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=14 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=18 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=17 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=3 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=20 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=23 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=28 CHARACTER=90 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 55.';
+	TEXT TAXON=24 CHARACTER=90 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 55.';
+	TEXT TAXON=34 CHARACTER=90 TEXT='Following coding for higher taxon in Carlson (1995), appendix 1, character 55.';
+	TEXT TAXON=4 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=2 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=25 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=12 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=11 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=5 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=37 CHARACTER=90 TEXT='Preservation not adequate to evaluate presence or absence of this muscle.';
+	TEXT TAXON=29 CHARACTER=89 TEXT='Coiling in direction of anus (i.e. posteriad)';
+	TEXT TAXON=33 CHARACTER=89 TEXT='Arms proceed anteriad before recurving.';
+	TEXT TAXON=17 CHARACTER=89 TEXT='Arms proceed anteriad before recurving.';
+	TEXT TAXON=28 CHARACTER=89 TEXT='"converging anteriorly and coiling anterior to the body cavity" -- Zhang et al. 2009';
+	TEXT TAXON=18 CHARACTER=23 TEXT='No evidence or report of an opening at the hinge line in fossil material in Zhang et al. 2007A or Zhang et al. 2011T';
+ENDBLOCK;
+BEGIN ASSUMPTIONS;
+TYPESET * UNTITLED = unord: 1 - 95;
+ENDBLOCK;
