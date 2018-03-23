@@ -7,12 +7,13 @@ date: "`r Sys.Date()`"
 
 # Fitch parsimony {#tnt}
 
-Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using sectorial and ratchet heuristics [@Goloboff1999;@Nixon1999] under equal and implied weights [@Goloboff1997].  We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
+Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using sectorial and ratchet heuristics [@Goloboff1999;@Nixon1999] under equal and extended implied weights [@Goloboff1997;@Goloboff2014], hitting the optimal score 10 times.  We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 
 ```{R, echo=FALSE}
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 filename <- tntFiles[1]
 tnTrees <- lapply(tntFiles, ReadTntTree)
+tnConsensi <- lapply(tnTrees, consensus)
 ```
 
 ## Implied weights
@@ -21,11 +22,11 @@ The consensus of all implied weights runs is not very well resolved:
 
 ```{R, echo=FALSE, fig.wid=7.1, fig.height=4}
 par(mfrow=c(1, 2))
-ColPlot(consensus(tnTrees)) 
+ColPlot(consensus(tnConsensi)) 
 text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
 
 plotPanel <- function (i) {
-  ColPlot(tnTrees[[i]])
+  ColPlot(tnConsensi[[i]])
   text(1, 0.5, paste('k =', kValues[i]), pos=4, cex=0.6)
 }
 
@@ -55,7 +56,7 @@ This lack of resolution is largely a product of a few wildcard taxa, which obscu
 
 ```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
 omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
-ColPlot(ConsensusWithout(tnTrees, omit))
+ColPlot(ConsensusWithout(tnConsensi, omit))
 ColMissing(omit)
 ```
 
@@ -63,7 +64,7 @@ ColMissing(omit)
 
 ```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
 omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda', 'Kutorgina_chengjiangensis', 'Nisusia_sulcata')
-ColPlot(ConsensusWithout(tnTrees, omit))
+ColPlot(ConsensusWithout(tnConsensi, omit))
 ColMissing(omit)
 ```
 
