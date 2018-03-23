@@ -1,0 +1,16 @@
+macro=;
+xmult:hits 1500 level 4 chklevel 5 rat10 drift10;
+xmult:hits 5 level 4 chklevel 5 rat10 drift10; /* move below next line for quicker but less thorough run */
+outgroup Dailyatia;
+taxcode -Namacalathus;
+keep 0; hold 10000;
+piwe-    ;xmult;tsav *TNT/ew.tre;sav;tsav/;        hold 10000; 
+piwe=2   ;xmult;tsav *TNT/xpiwe2.tre;sav;tsav/;    hold 10000;
+piwe=3   ;xmult;tsav *TNT/xpiwe3.tre;sav;tsav/;    hold 10000;
+piwe=4.5 ;xmult;tsav *TNT/xpiwe4.5.tre;sav;tsav/;  hold 10000;
+piwe=7   ;xmult;tsav *TNT/xpiwe7.tre;sav;tsav/;    hold 10000;
+piwe=10.5;xmult;tsav *TNT/xpiwe10.5.tre;sav;tsav/; hold 10000;
+piwe=16  ;xmult;tsav *TNT/xpiwe16.tre;sav;tsav/;   hold 10000;
+piwe=24  ;xmult;tsav *TNT/xpiwe24.tre;sav;tsav/;   hold 10000;
+quit;
+macro -;
