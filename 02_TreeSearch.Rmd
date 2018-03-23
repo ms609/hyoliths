@@ -40,15 +40,17 @@ start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
 
 ### Implied weights analysis
 
-```{r Implied weights analysis in TreeSearch, cache=TRUE, eval=FALSE}
+```{r Implied weights analysis in TreeSearch, echo=TRUE}
 for (k in kValues) {
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
                        ratchHits = 60, searchHits=55,
                        swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
-                       verbosity=0)
+                       verbosity=0L)
   score <- IWScore(iw.tree, iw_data, concavity=k)
   # Write single best tree
-  write.nexus(iw.tree, file=paste0("TreeSearch/hy_iw_k", k, "_", signif(score, 5), ".nex", collapse=''))
+  write.nexus(iw.tree,
+              file=paste0("TreeSearch/hy_iw_k", k, "_", 
+                          signif(score, 5), ".nex", collapse=''))
 
   suboptFraction = 0.02
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, concavity=k,
@@ -56,13 +58,16 @@ for (k in kValues) {
                   searchHits=4,
                   suboptimal=score * suboptFraction,
                   nSearch=150, verbosity=0L)
-  write.nexus(iw.consensus, file=paste0("TreeSearch/hy_iw_k", k, "_", signif(IWScore(iw.tree, iw_data, concavity=k), 5), ".all.nex", collapse=''))
+  write.nexus(iw.consensus, 
+              file=paste0("TreeSearch/hy_iw_k", k, "_", 
+                          signif(IWScore(iw.tree, iw_data, concavity=k), 5),
+                          ".all.nex", collapse=''))
 }
 ```
 
 ### Equal weights analysis
 
-```{r Equal weights analysis in TreeSearch, cache=TRUE, eval=FALSE}
+```{r Equal weights analysis in TreeSearch, echo=TRUE}
 ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
                    ratchHits = 10, searchHits=55,
                    swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
@@ -78,7 +83,7 @@ write.nexus(ew.consensus, file=paste0("TreeSearch/hy_ew_", Fitch(ew.tree, my_dat
 
 ### Implied weights results
 
-```{R "Load IW trees TreeSearch", cache=TRUE}
+```{R "Load IW trees TreeSearch"}
 # Read results from files
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
@@ -97,7 +102,7 @@ iw.trees <- lapply(kValues, function (k) {
 
 
 
-```{r, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5, cache=TRUE}
+```{r, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5}
 omit=c(lon, 'Clupeafumosus_socialis',
        'Heliomedusa_orienta', 'Haplophrentis_carinatus')
 ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
@@ -106,7 +111,7 @@ ColMissing(omit)
 
 
 
-```{r, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.5, cache=TRUE}
+```{r, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.5}
 # Plot consensus results
 par(mfrow=c(4, 2), mar=rep(0.2, 4))
 
@@ -123,14 +128,14 @@ for (i in seq_along(iw.trees)) {
 
 ### Equal weights results
 
-```{r "equal weights results in TreeSearch", fig.cap="Strict consensus of equal weights results", cache=TRUE}
+```{r "equal weights results in TreeSearch", fig.cap="Strict consensus of equal weights results"}
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
 ew.tree <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
 ColPlot(consensus(ew.tree))
 ```
 
-```{R, fig.cap="Strict consensus of equal weights results, taxa excluded", cache=TRUE}
-omit <- c(lon)
-ColPlot(ConsensusWithout(ew.tree, omit))
-ColMissing(omit)
+```{R, fig.cap="Strict consensus of equal weights results, taxa excluded", eval=FALSE}
+# omit <- c("none")
+# ColPlot(ConsensusWithout(ew.tree, omit))
+# ColMissing(omit)
 ```
