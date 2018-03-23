@@ -49,7 +49,7 @@ Four MrBayes runs were executed, each sampling eight chains for 1 000 000 genera
 
 The first 10% of samples were discarded as burn-in (`burninfrac=0.1`), and a posterior tree topology was derived from the combined posterior sample of both runs.
 
-```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%", cache=TRUE}
+```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
 omit <- c("none")
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
@@ -63,8 +63,8 @@ ColPlot(consensus(thinned, p=0.5))
 
 ```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%", cache=TRUE}
 omit <- c('Heliomedusa', 'Micrina', 'Mickwitzia',
-          'Eoobolus', 'Clupeafumosus', 
-          'Yuganotheca', 'Longtancunella', 'Tomteluva', 'Nisusia', 'Kutorgina')
+          'Eoobolus', 'Clupeafumosus', 'Siphonobolus', 
+          'Yuganotheca', 'Tomteluva', 'Nisusia', 'Kutorgina')
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[2]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
@@ -74,7 +74,7 @@ ColPlot(consensus(thinned, p=0.5))
 ColMissing(omit)
 ```
 
-Convergence was indicated by PSRF = 1.00 and an average estimated sample size of > 500 for each parameter:
+Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 1000 for each parameter:
 
 ```{R, MrBayes parameter summary, echo=FALSE, asis=TRUE, cache=TRUE}
 knitr::kable(read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE),
