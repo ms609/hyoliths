@@ -62,6 +62,7 @@ tipCol <- c(
   Lingulellotreta_malongensis     = pal[2],
   Lingulellotreta     = pal[2],
   Acanthotretella                 = pal[2],
+  Siphonobolus_priscus            = pal[2],
   Lingulosacculus                 = pal[2],
   Pedunculotheca_diania           = pal[2],
   Pedunculotheca           = pal[2],
