@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-03-23 11.34.47 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-03-23 11.59.18 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=37;
@@ -622,7 +622,7 @@ BEGIN CHARACTERS;
 	'Novocrania'		                              1220-000111031011211000--001310-020-----00-001100320?211000210--0021130--00----01(0,1)01011211120-3
 	'Orthis'		                                  1221111111113?00112100121111221211121---00-000-103?0?220000??0--??????11??????13110????????????
 	'Paterimitra'		                             1210-0000-????????11100--00012120212211100-0011002?0?2(3,1)0000??1220?-00-????????1????????????????
-	'Pedunculotheca diania'		                   1210-000111???????11000--0101112020-----01?100-004?0?2?0?00??1110??00-112011233????????????21??
+	'Pedunculotheca diania'		                   1210-000111???????11000--0101112020-----01?100-004?0?220?00??1110??00-112011233????????????21??
 	'Pelagodiscus atlanticus'		                 1210-000111031100-10000--000310-010-----00-010-002101210100101121121131110012111111111111102123
 	'Phoronis'		                                0-------0------------00--000------0-----00-00-----11-------100---0-00-0------------200022002113
 	'Salanygolina'		                            1220-000111?2100??2110122(1,0)00121202112111111101000{2,3}?0?230000??12211?1121???????3????????????????
@@ -914,7 +914,9 @@ BEGIN NOTES;
 	TEXT TAXON=35 CHARACTER=4 TEXT='"articulatory structures poorly developed" -- Williams et al. 2000, p. 192';
 	TEXT TAXON=21 CHARACTER=4 TEXT='Not reported by or evident in Balthasar (2004)';
 	TEXT TAXON=5 CHARACTER=59 TEXT='The polygonal ornament reported in acrotretids by Zhang et al. (2016) is on the internal surface of the shell.';
+	TEXT TAXON=27 CHARACTER=55 TEXT='Assumed to be fibrous by analogy with the allothecomorph orthothecid described by Kouchinsky (2000).';
 	TEXT TAXON=1 CHARACTER=55 TEXT='The inner and outer layer are foliated.  The columnar inflections lack canals, and as such we do not consider them to bear any obvious homology with the hollow pillars of tommotiids and certain brachiopods, their superficial similarity to strophomenid pseudopunctae notwithstanding.';
+	TEXT TAXON=13 CHARACTER=55 TEXT='Inferred from other hyolithids (e.g. Moore & Porter 2018).';
 	TEXT TAXON=4 CHARACTER=55 TEXT='Shell structure of this taxon is laminated, rather than fibrous as previously considered.';
 	TEXT TAXON=7 CHARACTER=55 TEXT='"with calcitic or possibly aragonitic inarticulated shells with laminar (tabular) secondary layers" (Williams et al. 2000)';
 	TEXT TAXON=32 CHARACTER=55 TEXT='Prominent laminations; see Williams et al. (2004)';
