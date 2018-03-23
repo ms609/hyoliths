@@ -2,7 +2,7 @@ macro=;
 
 /* To use extended implied weighting, data must be read with implied weights on */
 /* Type piwe=2 into the command line before opening the dataset. */
-/* Then type tnt.run into the TNT command line to run this script. */
+/* Then type tnt into the TNT command line to run this script. */
 
 xmult:rat10 drift10 hits 1500 level 4 chklevel 5;
 /* Set hits to a smaller number (e.g. 5) for a quicker but less comprehensive run */
