@@ -7,7 +7,31 @@ date: "`r Sys.Date()`"
 
 # Fitch parsimony {#tnt}
 
-Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using sectorial and ratchet heuristics [@Goloboff1999;@Nixon1999] under equal and extended implied weights [@Goloboff1997;@Goloboff2014], hitting the optimal score 10 times.  We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
+Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using ratchet and tree drifting heuristics [@Goloboff1999;@Nixon1999], repeating the search until the optimal score had been hit by 1500 independent searches:
+
+> xmult:rat10 drift10 hits 1500 level 4 chklevel 5;
+
+Searches were conducted under equal weights and results saved to file:
+
+> piwe-; xmult; 
+>
+> tsav *TNT/ew.tre;sav;tsav/;
+
+Further searches were conducted under extended implied weighting [@Goloboff1997;@Goloboff2014], under the concavity constants 2, 3, 4.5, 7, 10.5, 16 and 24:
+
+> xpiwe=; /* Enable extended implied weighting */
+>
+> piwe=2; xmult; /* Conduct analysis at k = 2 */
+>
+> tsav *TNT/xpiwe2.tre; sav; tsav/; /* Save results to file */
+> 
+> keep 0; hold 10000; /* Clear trees from memory */
+>
+> piwe=3; xmult; /* Conduct analysis at k = 3 */
+>
+> tsav *TNT/xpiwe3.tre; sav ;tsav/; /* Save results to file */
+
+We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 
 ```{R, echo=FALSE}
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)

@@ -1,16 +1,26 @@
 macro=;
-xmult:hits 1500 level 4 chklevel 5 rat10 drift10;
-xmult:hits 5 level 4 chklevel 5 rat10 drift10; /* move below next line for quicker but less thorough run */
+
+/* To use extended implied weighting, data must be read with implied weights on */
+/* Type piwe=2 into the command line before opening the dataset. */
+/* Then type tnt.run into the TNT command line to run this script. */
+
+xmult:rat10 drift10 hits 1500 level 4 chklevel 5;
+/* Set hits to a smaller number (e.g. 5) for a quicker but less comprehensive run */
+
 outgroup Dailyatia;
 taxcode -Namacalathus;
+
 keep 0; hold 10000;
-piwe-    ;xmult;tsav *TNT/ew.tre;sav;tsav/;        hold 10000; 
-piwe=2   ;xmult;tsav *TNT/xpiwe2.tre;sav;tsav/;    hold 10000;
-piwe=3   ;xmult;tsav *TNT/xpiwe3.tre;sav;tsav/;    hold 10000;
-piwe=4.5 ;xmult;tsav *TNT/xpiwe4.5.tre;sav;tsav/;  hold 10000;
-piwe=7   ;xmult;tsav *TNT/xpiwe7.tre;sav;tsav/;    hold 10000;
-piwe=10.5;xmult;tsav *TNT/xpiwe10.5.tre;sav;tsav/; hold 10000;
-piwe=16  ;xmult;tsav *TNT/xpiwe16.tre;sav;tsav/;   hold 10000;
-piwe=24  ;xmult;tsav *TNT/xpiwe24.tre;sav;tsav/;   hold 10000;
+piwe-    ;xmult;tsav *TNT/ew.tre;sav;tsav/;        keep 0; hold 10000;
+
+xpiwe=;
+piwe=2   ;xmult;tsav *TNT/xpiwe2.tre;sav;tsav/;    keep 0; hold 10000;
+piwe=3   ;xmult;tsav *TNT/xpiwe3.tre;sav;tsav/;    keep 0; hold 10000;
+piwe=4.5 ;xmult;tsav *TNT/xpiwe4.5.tre;sav;tsav/;  keep 0; hold 10000;
+piwe=7   ;xmult;tsav *TNT/xpiwe7.tre;sav;tsav/;    keep 0; hold 10000;
+piwe=10.5;xmult;tsav *TNT/xpiwe10.5.tre;sav;tsav/; keep 0; hold 10000;
+piwe=16  ;xmult;tsav *TNT/xpiwe16.tre;sav;tsav/;   keep 0; hold 10000;
+piwe=24  ;xmult;tsav *TNT/xpiwe24.tre;sav;tsav/;   keep 0; hold 10000;
+
 quit;
 macro -;
