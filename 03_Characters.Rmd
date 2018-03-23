@@ -191,32 +191,47 @@ PrintCharacter <- function () {
   cat(Header(3L, paste0("[", i, "] ", 
                         paste0(char_parts_i[if(char_nesting[i] < 4) char_nesting[i] else 3:char_nesting[i]], collapse=': '), " {-}")))
 }
-PrintSoloCharacter <- function () cat(Header(2L, paste0(char_parts_i, " [", i, "] ")))
+PrintSoloCharacter <- function () {
+  cat(Header(2L, paste0(paste(char_parts_i, collapse=': '),
+                        " [", i, "] ")))
+}
 
 for (i in seq_len(n_char)) {
   
   char_parts_i <- char_parts[[i]]
   if (i > 1) char_parts_last <- char_parts[[i - 1L]]
   
-  ## NB we may need (in future?) to fix something:
-  ## if a 2-part character follows a 3-parter, it doesn't print its name
-  ## e.g. "Character: Thingamies: Item" followed by "Character: Wotsits"
-  ## Wotsits will not appear as a subheading.
-  if (char_nesting[i] == 1 && 
-      (i == n_char || char_parts[[i + 1L]][1] != char_parts_i[1])) {
+  if (char_nesting[i] == 1
+      && (i == n_char || char_parts[[i + 1L]][1] != char_parts_i[1])) {
     PrintSoloCharacter()
   } else if (i == 1) {
     PrintDivision(1)
     PrintCharacter()
   } else if (char_parts_last[1L] != char_parts_i[1L]) {
-      PrintDivision(1)
-      PrintCharacter()
-  } else if (length(char_parts_i) > 2L) {
-    if (length(char_parts_last) < 2L
-        || char_parts_last[2L] != char_parts_i[2L]) {
-      PrintDivision(2)
-    }
+    PrintDivision(2)
     PrintCharacter()
+  } else if (length(char_parts_i) > 1L) {
+    if (length(char_parts_last) < 2L) {
+      PrintDivision(2)
+      PrintCharacter()
+    } else if (char_parts_last[2L] != char_parts_i[2L]) {
+      if (char_nesting[i - 1L] > 2
+          && (
+            i == n_char
+            || char_nesting[i + 1L] < 2
+            || char_parts_i[2] != char_parts[[i + 1L]][2]
+            )
+          ) {
+        PrintSoloCharacter()
+      } else {
+        if (char_nesting[i - 1L] > 2) {
+          PrintDivision(2)
+        }
+        PrintCharacter()
+      }
+    } else {
+      PrintCharacter()
+    }
   } else {
     PrintCharacter()
   }

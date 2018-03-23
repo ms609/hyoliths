@@ -1,0 +1,124 @@
+--- 
+title: "Brachiopod origins -- Supplementary material -- Phylogenetic analysis"
+author: "Sun, Hai-Jing; Smith, Martin Ross; Zhu, Mao-Yan; Zeng, Han; Zhao, Fang-Chen"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [References.bib, MorphoBank.bib]
+csl: http://raw.githubusercontent.com/citation-style-language/styles/master/paleobiology.csl
+link-citations: yes
+github-repo: ms609/hy
+description: "Results of phylogenetic analysis"
+---
+
+# Brachiopod origins {-}
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
+---
+title: "Phylogenetic dataset"
+author: "Martin R. Smith"
+date: "`r Sys.Date()`"
+---
+
+# The dataset
+
+Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` early brachiozoan taxa, including hyoliths, tommotiids and mickwitziids, which were coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).
+
+The dataset can be viewed and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)), where each character is defined
+and its coding for each taxon discussed.
+
+Characters are coded following the recommendations of Brazeau, Guillerme and
+Smith [@Brazeau2018].  In brief, we have employed reductive coding, using a distinct state to mark character inapplicability. Character specifications follow the model of Sereno [-@Sereno2007].
+
+We have distinguished between neomorphic and transformational characters [sensu @Sereno2007] by reserving the token `0` to refer to the absence of a neomorphic character.  The states of transformational characters are represented by the tokens `1`, `2`, `3`, ...
+
+Following the recommendations of Brazeau, Guillerme and
+Smith [@Brazeau2018, supplementary discussion], we code the absence of neomorphic ontologically dependent characters [sensu @Vogt2017] as absence, rather than inapplicability.
+
+
+<!--chapter:end:01_Dataset.Rmd-->
+
+
+# Parsimony analysis {#treesearch}
+
+Placeholder
+
+
+## Search parameters
+## Analysis 
+### Load data
+### Generate starting tree
+### Implied weights analysis
+### Equal weights analysis
+## Results
+### Implied weights results
+### Equal weights results
+
+<!--chapter:end:02_TreeSearch.Rmd-->
+
+
+# Character reconstructions {#reconstructions}
+
+Placeholder
+
+
+
+<!--chapter:end:03_Characters.Rmd-->
+
+
+# Fitch parsimony {#tnt}
+
+Placeholder
+
+
+## Implied weights
+### Paterinids included
+### Paterinids excluded
+## Equal weights
+
+<!--chapter:end:04_TNT.Rmd-->
+
+
+# Bayesian analysis
+
+Placeholder
+
+
+
+<!--chapter:end:05_MrBayes.Rmd-->
+
+---
+title: "Taxonomic implications"
+author: "Martin R. Smith"
+---
+
+# Taxonomic implications
+
+This section briefly places key features of our results in the context of previous phylogenetic hypotheses.
+
+_Mummpikia_
+: Balthasar [-@Balthasar2008iMummpikia] remarks on the similarities between obolellids and linguliform brachiopods:  examples include sub-&mu;m vertical canals and the detailed configuration of the posterior shell margin.
+: Its calcitic mineralogy represents the only strong argument for a rhynchonelliform affinity.  Our analysis upholds the case for a linguliform affinity; its calcitic mineralogy represents a secondary change distinct to this lineage.  As such, _Mummpikia_ has no direct relevance to the origin of 'Calciata'.
+
+_Sanalygolina_
+: _Salanygolina_ has been interpreted as a stem-group rhynchonelliform based on its combination of paterinid and chileate features [@Holmer2009Theenigmatic]. 
+
+
+<!--chapter:end:06_Implications.Rmd-->
+
+---
+title: "References"
+author: "Martin R. Smith"
+date: "`r Sys.Date()`"
+---
+
+`r if (knitr::is_html_output()) '# References {-}'`
+
+<!--chapter:end:99_References.Rmd-->
+
