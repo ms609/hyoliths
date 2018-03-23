@@ -1,0 +1,32 @@
+---
+title: "Taxonomic implications"
+author: "Martin R. Smith"
+---
+
+# Taxonomic implications
+
+This section briefly places key features of our results in the context of previous phylogenetic hypotheses.
+
+Craniiforms
+: Trimerellids are reconstructed as paraphyletic with respect to Craniiforms.  
+: This is consistent with the affinity commonly drawn between these groups [e.g. @Williams2000BrachiopodaLinguliformea], and helps to account for the stratigraphically late (Ordovician) appearance of Craniids in the fossil record.  (Aragonite is underrepresented in early Palaeozoic strata due to taphonomic bias.)
+
+Rhynchonelliforms
+: The position of kutorginids in the brachiopod stem lineage has been tricky to resolve [@Holmer2018Theattachment]; we resolve them as sister to Rhynconellata + Obolellata (represented by _Alisina_), which is broadly in accord to previous proposals [@Holmer2018Evolutonarysignificance].  Chileids form the adelphiotaxon to this clade.
+:
+: _Salanygolina_ has been interpreted as a stem-group rhynchonelliform based on its combination of paterinid and chileate features [@Holmer2009Theenigmatic].  Our results position _Salanygolina_ between paterinids and chileids, which directly corroborates this proposed phylogenetic position.  Basal rhynchonellids are characterized by a circular umbonal perforation in the ventral valve, associated with a colleplax.
+
+Linguliforms
+: The reconstruction of Linguloformea comprising Lingulids as sister to the Discinids is as expected.
+: More novel is the reconstruction of _Mummpikia_ in the linguliform stem lineage. Balthasar [-@Balthasar2008iMummpikia] has highlighted the similarities between obolellids and linguliform brachiopods, including sub-&mu;m vertical canals and the detailed configuration of the posterior shell margin.
+: This notwithstanding, a rhynchonelliform affinity has been assumed based on its Its calcitic mineralogy.  Our analysis upholds the case for a linguliform affinity; its calcitic shell seemingly arose through an independent change within this lineage.  As such, _Mummpikia_ has no direct relevance to the origin of 'Calciata'.
+
+Tommotiids
+: Tommotiids represent a basal grade, paraphyletic to crown-group brachiopods, in line with previous interpretations.  The tree is somewhat arbitrarily rooted on _Dailyatia_, so it is worth considering the possibility that the root lies elsewhere.  In any case, _Micrina_ (+ _Paterimitra_?) represents the most crownward tommotiid.
+
+Hyoliths
+: Hyoliths are interpreted as stem-group Brachiopods, which refines the broader phylogenetic position proposed by Moysiuk _et al_. [-@Mousiuk2017Hyolithsare].  The surprising result is their placement in a clade with a suite of unusual soft-shelled conical brachiopods, _Acanthotretella_, _Lingulosacculus_ and _Lingulellotreta_.
+: 
+
+_Yuganotheca_, _Tomteluva_, _Longtancunella_, Acrotretids
+: The position of certain eccentric taxa is not robustly constrained; we opt not to hang too much on these results that are liable to change as additional data comes to light.  That said, it is notable that _Yuganotheca_ does consistently occur within the rhynchonelliform stem lineage, often in association with _Salanygolina_, suggesting that they represent aberrant offshoots of this lineage.  This places them within the brachiopod crown-group; a position in the stem lineage [@Zhang2014Anearly] is difficult to reconcile with the increasingly well-constrained nature rise of the brachiopods body plan.
