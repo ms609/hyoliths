@@ -1,4 +1,6 @@
+_bookdown_files/*
 Archive/*
+MrBayes/*/*
 *_cache
 nrun2_*
 *.ckp
