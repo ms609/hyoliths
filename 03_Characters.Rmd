@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 
 # Character reconstructions {#reconstructions}
 
-```{R load_character_data, echo=FALSE}
+```{R char_loading_functions, echo=FALSE}
 library('Inapp')
 str_replace <- stringi::stri_replace_all_fixed
 tree <- iw.trees[[3]][[1]]
@@ -152,7 +152,8 @@ PrintStates <- function (states) {
   cat(paste0(" > ", tokens, ": ", states, "  \n"))
   cat("> ", if (transformational) "Transformational" else "Neomorphic", " character.  \n>\n")
 }
-
+```
+```{R load_the_characters, echo=FALSE}
 char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
 n_char <- ncol(my_chars)
 char_parts <- strsplit(char_names, ": ")
