@@ -1,0 +1,85 @@
+#NEXUS
+[R-package APE, Fri Mar 23 23:11:05 2018]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 36;
+	TAXLABELS
+		Alisina
+		Askepasma_toddense
+		Antigonambonites_planus
+		Clupeafumosus_socialis
+		Coolinia_pecten
+		Craniops
+		Dailyatia
+		Eccentrotheca
+		Eoobolus
+		Glyptoria
+		Gasconsia
+		Haplophrentis_carinatus
+		Heliomedusa_orienta
+		Kutorgina_chengjiangensis
+		Lingulosacculus
+		Lingulellotreta_malongensis
+		Longtancunella_chengjiangensis
+		Micrina
+		Micromitra
+		Mickwitzia_muralensis
+		Mummpikia_nuda
+		Nisusia_sulcata
+		Novocrania
+		Orthis
+		Paterimitra
+		Pedunculotheca_diania
+		Pelagodiscus_atlanticus
+		Phoronis
+		Salanygolina
+		Lingula
+		Siphonobolus_priscus
+		Acanthotretella
+		Terebratulina
+		Ussunia
+		Tomteluva_perturbata
+		Yuganotheca_elegans
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Alisina,
+		2	Askepasma_toddense,
+		3	Antigonambonites_planus,
+		4	Clupeafumosus_socialis,
+		5	Coolinia_pecten,
+		6	Craniops,
+		7	Dailyatia,
+		8	Eccentrotheca,
+		9	Eoobolus,
+		10	Glyptoria,
+		11	Gasconsia,
+		12	Haplophrentis_carinatus,
+		13	Heliomedusa_orienta,
+		14	Kutorgina_chengjiangensis,
+		15	Lingulosacculus,
+		16	Lingulellotreta_malongensis,
+		17	Longtancunella_chengjiangensis,
+		18	Micrina,
+		19	Micromitra,
+		20	Mickwitzia_muralensis,
+		21	Mummpikia_nuda,
+		22	Nisusia_sulcata,
+		23	Novocrania,
+		24	Orthis,
+		25	Paterimitra,
+		26	Pedunculotheca_diania,
+		27	Pelagodiscus_atlanticus,
+		28	Phoronis,
+		29	Salanygolina,
+		30	Lingula,
+		31	Siphonobolus_priscus,
+		32	Acanthotretella,
+		33	Terebratulina,
+		34	Ussunia,
+		35	Tomteluva_perturbata,
+		36	Yuganotheca_elegans
+	;
+	TREE * UNTITLED = [&R] (7,(28,(8,(25,((18,((20,13),((((2,19),((29,(35,36)),((5,3),(14,(22,(10,(17,(1,(24,33))))))))),(11,(34,(6,23)))),(21,(27,(4,(31,(30,9)))))))),((32,(16,15)),(12,26)))))));
+END;
