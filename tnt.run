@@ -22,5 +22,4 @@ piwe=10.5;xmult;tsav *TNT/xpiwe10.5.tre;sav;tsav/; keep 0; hold 10000;
 piwe=16  ;xmult;tsav *TNT/xpiwe16.tre;sav;tsav/;   keep 0; hold 10000;
 piwe=24  ;xmult;tsav *TNT/xpiwe24.tre;sav;tsav/;   keep 0; hold 10000;
 
-quit;
 macro -;
