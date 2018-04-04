@@ -16,7 +16,7 @@ nTrees <- length(allTrees[[1]])
 postBurnin <- lapply(allTrees, function (x) x[ceiling(nTrees * 0.1):nTrees])
 ```
 
-Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk model [@Lewis2001] with a gamma parameter:
+Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk model [@Lewis2001] with gamma-distributed rate variation across characters:
 
 > lset coding=variable rates=gamma;
 
