@@ -155,7 +155,7 @@ PrintStates <- function (states) {
     transformational <- FALSE
   }
   cat(paste0(" > ", tokens, ": ", states, "  \n"))
-  cat("> ", if (transformational) "Transformational" else "Neomorphic", " character.  \n>\n")
+  cat("> ", if (transformational) "Transformational" else "Neomorphic", "character.  \n>\n")
 }
 ```
 ```{R load_the_characters, echo=FALSE}
