@@ -13,3 +13,7 @@
   margin-left: 16px;
   padding: 0.5em 0;
 }
+
+.book .book-body .page-wrapper .page-inner section.normal a {
+ color: #1e6cbb;
+}
