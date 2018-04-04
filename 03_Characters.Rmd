@@ -189,7 +189,7 @@ Italicize <- function (string) {
 #treeCol <- tipCol[tree$tip.label]
 ```
 
-This page defines each characer and accounts for its coding in particular taxa.  Citations for all codings can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
+This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where necessary.  Citations for all codings can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
 
 The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
 
