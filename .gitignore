@@ -1,6 +1,7 @@
 _bookdown_files/*
 Archive/*
 MrBayes/*/*
+* - */
 * pre-*
 *_cache
 nrun2_*
