@@ -10,14 +10,15 @@ date: "`r Sys.Date()`"
 StrReplace <- stringi::stri_replace_all_fixed
 
 LookUpReference <- function (keys, original, prefix='', suffix='') {
-  keys <- gsub("~", "", keys, fixed=TRUE)
-  keys <- gsub("^(.+?)\\b.*$", "\\1", keys, perl=TRUE)
+  keyParts <- "^~~~(.+?)(\\b.*)~~~$"
+  keySuffixes <- gsub(keyParts, "\\2", keys, perl=TRUE)
+  keys <- gsub(keyParts, "\\1", keys, perl=TRUE)
   if (length(keys) == 0) {
     return (character(0))
   } else if (length(keys) == 1) {
     matches <- grepl(keys, refKeys, fixed=TRUE)
     if (sum(matches) == 1) {
-      paste0(prefix, refKeys[matches], suffix)
+      paste0(prefix, refKeys[matches], keySuffixes, suffix)
     } else {
       paste0('<mark>', original, '</mark>')
     }
@@ -26,7 +27,7 @@ LookUpReference <- function (keys, original, prefix='', suffix='') {
     ret <- paste0('<mark>', original, '</mark>')
     uniques <- colSums(matches) == 1
     ret[uniques] <- vapply(which(uniques), function (i) 
-      Format(refKeys[matches[, i]], original[i]), character(1))
+      paste0(prefix, refKeys[matches[, i]], keySuffixes[i], suffix), character(1))
     
     # Return:
     ret
@@ -47,12 +48,12 @@ ConvertReferences <- function (string) {
                vectorize_all=FALSE)
   }
   
-  parentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? \\(((\\d\\d\\d\\d\\w?)\\b([^\\)]*)+)\\)"
+  parentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? \\((\\d\\d\\d\\d\\w?)\\b([^\\)]*)\\)"
   ReplPar <- function (keyedText, oldKey, original) {
     StrReplace(keyedText, oldKey,
                 LookUpReference(oldKey, original, 
                   prefix=paste0(gsub(parentheses, "\\1\\2", original, perl=TRUE), ' [-@'),
-                  suffix=paste0(gsub(parentheses, "\\5", original, perl=TRUE), ']')
+                  suffix=paste0(gsub(parentheses, "\\4", original, perl=TRUE), ']')
                 ), vectorize_all=FALSE)
                 
   }
@@ -60,8 +61,8 @@ ConvertReferences <- function (string) {
   ReplaceRefs <- function (pattern, strings, Replace) {
     execResults <- gregexpr(pattern, strings, perl=TRUE)
     matchText <- lapply(regmatches(strings, execResults), unique)
-    keyed <- gsub(pattern, "~~~\\1\\3\\5~~~", strings, perl=TRUE)
-    keys <- lapply(matchText, function (x) unique(gsub(pattern, "~~~\\1\\3\\5~~~",
+    keyed <- gsub(pattern, "~~~\\1\\3\\4~~~", strings, perl=TRUE)
+    keys <- lapply(matchText, function (x) unique(gsub(pattern, "~~~\\1\\3\\4~~~",
                                                        x, perl=TRUE)))
     toEdit <- which(vapply(keys, length, 0) > 0)
     strings[toEdit] <- vapply(toEdit, function (i) {
