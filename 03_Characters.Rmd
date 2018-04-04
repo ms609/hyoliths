@@ -7,12 +7,9 @@ date: "`r Sys.Date()`"
 # Character reconstructions {#reconstructions}
 
 ```{R char_loading_functions, echo=FALSE}
-library('Inapp')
-str_replace <- stringi::stri_replace_all_fixed
-tree <- iw.trees[[3]][[1]]
-tree$edge.length <- rep(1, nrow(tree$edge))
+StrReplace <- stringi::stri_replace_all_fixed
 
-LookUpReference <- function (keys, original, Format) {
+LookUpReference <- function (keys, original, prefix='', suffix='') {
   keys <- gsub("~", "", keys, fixed=TRUE)
   keys <- gsub("^(.+?)\\b.*$", "\\1", keys, perl=TRUE)
   if (length(keys) == 0) {
@@ -20,7 +17,7 @@ LookUpReference <- function (keys, original, Format) {
   } else if (length(keys) == 1) {
     matches <- grepl(keys, refKeys, fixed=TRUE)
     if (sum(matches) == 1) {
-      Format(refKeys[matches], original)
+      paste0(prefix, refKeys[matches], suffix)
     } else {
       paste0('<mark>', original, '</mark>')
     }
@@ -37,31 +34,34 @@ LookUpReference <- function (keys, original, Format) {
 }
 
 ConvertReferences <- function (string) {
-  noParentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? (\\d\\d\\d\\d\\w?)"
-  # TODO: Fix "Williams et al (1997, 2000)"
+  # TODO: Fix "Williams et al. (1997, 2000)"
+  # TODO: Fix "(Williams et al. 1997; 2000)"
   # TODO: Fix "Zhang et al. (2007A, 2011T)"
   # TODO: Fix "(Williams et al. 1997 p. 418)"
   # TODO: Fix "Williams et al. (1998T, p. 250)."
+  # A bridge too far? "(Williams et al. 1998T, p. 250; 2000, p. 102)."
+  noParentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? (\\d\\d\\d\\d\\w?)\\b"
   ReplNoPar <- function (keyedText, oldKey, original) {
-    str_replace(keyedText, oldKey,
-                LookUpReference(oldKey, original, function(x, raw) paste0('@', x)),
-                vectorize_all=FALSE)
+    StrReplace(keyedText, oldKey,
+                LookUpReference(oldKey, original, prefix='@'),
+               vectorize_all=FALSE)
   }
   
-  parentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? \\((\\d\\d\\d\\d\\w?)\\b([^\\)]*)\\)"
+  parentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? \\(((\\d\\d\\d\\d\\w?)\\b([^\\)]*)+)\\)"
   ReplPar <- function (keyedText, oldKey, original) {
-    str_replace(keyedText, pattern=oldKey, replacement=
-                LookUpReference(oldKey, original, function (x, raw)
-                  paste0(gsub(parentheses, "\\1\\2", raw, perl=TRUE), ' [-@', x,
-                  gsub(parentheses, "\\4", raw, perl=TRUE), ']')),
-                vectorize_all=FALSE)
+    StrReplace(keyedText, oldKey,
+                LookUpReference(oldKey, original, 
+                  prefix=paste0(gsub(parentheses, "\\1\\2", original, perl=TRUE), ' [-@'),
+                  suffix=paste0(gsub(parentheses, "\\5", original, perl=TRUE), ']')
+                ), vectorize_all=FALSE)
+                
   }
   
   ReplaceRefs <- function (pattern, strings, Replace) {
     execResults <- gregexpr(pattern, strings, perl=TRUE)
     matchText <- lapply(regmatches(strings, execResults), unique)
-    keyed <- gsub(pattern, "~~~\\1\\3\\4~~~", strings, perl=TRUE)
-    keys <- lapply(matchText, function (x) unique(gsub(pattern, "~~~\\1\\3\\4~~~",
+    keyed <- gsub(pattern, "~~~\\1\\3\\5~~~", strings, perl=TRUE)
+    keys <- lapply(matchText, function (x) unique(gsub(pattern, "~~~\\1\\3\\5~~~",
                                                        x, perl=TRUE)))
     toEdit <- which(vapply(keys, length, 0) > 0)
     strings[toEdit] <- vapply(toEdit, function (i) {
@@ -159,6 +159,10 @@ PrintStates <- function (states) {
 }
 ```
 ```{R load_the_characters, echo=FALSE}
+library('Inapp')
+tree <- iw.trees[[3]][[1]]
+tree$edge.length <- rep(1, nrow(tree$edge))
+
 char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
 n_char <- ncol(my_chars)
 char_parts <- strsplit(char_names, ": ")
