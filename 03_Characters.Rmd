@@ -181,7 +181,7 @@ Italicize <- function (string) {
                                       'comleyensis', 'decaius',
                                       'vascula', 'genitalia','lateralia',
                                       'media', 'myaria', 'terminalia',
-                                      'et al\\.', 'et al')),
+                                      'et al\\.', 'et al', 'sensu')),
                                collapse='|'),
               ")\\b"), "_\\1_", string, perl=TRUE, ignore.case=TRUE)
   gsub("\\b([A-Z]\\.) _([a-z])", "_\\1 \\2", string, perl=TRUE)
