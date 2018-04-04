@@ -40,11 +40,6 @@ LookUpReference <- function (keys, original, prefix='', suffix='') {
 }
 
 ConvertReferences <- function (string) {
-  # TODO: Fix "Williams et al. (1997, 2000)"
-  # TODO: Fix "(Williams et al. 1997; 2000)"
-  # TODO: Fix "Zhang et al. (2007A, 2011T)"
-  # TODO: Fix "Williams et al. (1998T, p. 250)."
-  # A bridge too far? "(Williams et al. 1998T, p. 250; 2000, p. 102)."
   noParentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? (\\d\\d\\d\\d\\w?)\\b"
   ReplNoPar <- function (keyedText, oldKey, original) {
     StrReplace(keyedText, oldKey,
