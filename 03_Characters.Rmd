@@ -38,6 +38,10 @@ LookUpReference <- function (keys, original, Format) {
 
 ConvertReferences <- function (string) {
   noParentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? (\\d\\d\\d\\d\\w?)"
+  # TODO: Fix "Williams et al (1997, 2000)"
+  # TODO: Fix "Zhang et al. (2007A, 2011T)"
+  # TODO: Fix "(Williams et al. 1997 p. 418)"
+  # TODO: Fix "Williams et al. (1998T, p. 250)."
   ReplNoPar <- function (keyedText, oldKey, original) {
     str_replace(keyedText, oldKey,
                 LookUpReference(oldKey, original, function(x, raw) paste0('@', x)),
@@ -168,7 +172,7 @@ Italicize <- function (string) {
                         paste0(gsub("_", "|", fixed = TRUE,
                                     c(taxa_names,
                                       'Bethia', 'Eichwaldia', 'Eoorthis',
-                                      'Hadrotreta', 'Lochkothele',
+                                      'Hadrotreta', 'Lochkothele', 'Neocrania',
                                       'Paracraniops', 'Paramicrocornus',
                                       'comleyensis', 'decaius',
                                       'vascula', 'genitalia','lateralia',
