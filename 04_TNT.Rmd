@@ -4,6 +4,12 @@ author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 ---
 
+```{R TNT_function_definitions, echo=FALSE}
+plotPanel <- function (i) {
+  ColPlot(tnConsensi[[i]])
+  text(1, 0.5, paste('k =', kValues[i]), pos=4, cex=0.6)
+}
+```
 
 # Fitch parsimony {#tnt}
 
@@ -48,11 +54,6 @@ The consensus of all implied weights runs is not very well resolved:
 par(mfrow=c(1, 2))
 ColPlot(consensus(tnConsensi)) 
 text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
-
-plotPanel <- function (i) {
-  ColPlot(tnConsensi[[i]])
-  text(1, 0.5, paste('k =', kValues[i]), pos=4, cex=0.6)
-}
 
 plotPanel(1)
 ```
