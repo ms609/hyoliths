@@ -22,12 +22,17 @@ LookUpReference <- function (keys, original, prefix='', suffix='') {
     } else {
       paste0('<mark>', original, '</mark>')
     }
-  } else {
-    matches <- vapply(keys, FUN=grepl, FUN.VALUE=logical(length(refKeys)), refKeys, fixed=TRUE)
+  } else { # length(keys) > 1
+     # initialize
     ret <- paste0('<mark>', original, '</mark>')
+    if (length(suffix) == 1) suffix <- rep(suffix, length(keys))
+    if (length(prefix) == 1) prefix <- rep(prefix, length(keys))
+    
+    matches <- vapply(keys, FUN=grepl, FUN.VALUE=logical(length(refKeys)), refKeys, fixed=TRUE)
     uniques <- colSums(matches) == 1
     ret[uniques] <- vapply(which(uniques), function (i) 
-      paste0(prefix, refKeys[matches[, i]], keySuffixes[i], suffix), character(1))
+      paste0(prefix[i], refKeys[matches[, i]], keySuffixes[i], suffix[i])
+      , character(1))
     
     # Return:
     ret
@@ -38,7 +43,6 @@ ConvertReferences <- function (string) {
   # TODO: Fix "Williams et al. (1997, 2000)"
   # TODO: Fix "(Williams et al. 1997; 2000)"
   # TODO: Fix "Zhang et al. (2007A, 2011T)"
-  # TODO: Fix "(Williams et al. 1997 p. 418)"
   # TODO: Fix "Williams et al. (1998T, p. 250)."
   # A bridge too far? "(Williams et al. 1998T, p. 250; 2000, p. 102)."
   noParentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? (\\d\\d\\d\\d\\w?)\\b"
@@ -53,7 +57,7 @@ ConvertReferences <- function (string) {
     StrReplace(keyedText, oldKey,
                 LookUpReference(oldKey, original, 
                   prefix=paste0(gsub(parentheses, "\\1\\2", original, perl=TRUE), ' [-@'),
-                  suffix=paste0(gsub(parentheses, "\\4", original, perl=TRUE), ']')
+                  suffix=']'
                 ), vectorize_all=FALSE)
                 
   }
