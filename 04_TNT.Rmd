@@ -48,26 +48,26 @@ plotPanel <- function (i) {
 
 The consensus of all implied weights runs is not very well resolved:
 
-```{R, echo=FALSE, fig.wid=7.1, fig.height=4}
+```{R tnt-iw-consensus, echo=FALSE, fig.wid=7.1, fig.height=4}
 par(mfrow=c(1, 2))
 ColPlot(consensus(tnConsensi)) 
 text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
 
 plotPanel(1)
 ```
-```{R, echo=FALSE}
+```{R tnt-iw-3-4.5, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(2)
 plotPanel(3)
 ```
 
-```{R, echo=FALSE}
+```{R tnt-iw-7-10.5, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(4)
 plotPanel(5)
 ```
 
-```{R, echo=FALSE}
+```{R tnt-iw-16-24, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(6)
 plotPanel(7)
@@ -77,7 +77,7 @@ This lack of resolution is largely a product of a few wildcard taxa, particularl
 
 ### Consensus of all trees, without wildcards 
 
-```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
+```{R tnt-pruned-consensus, echo=FALSE, fig.cap="TNT implied weights consensus"}
 #omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
 omit <- c("Salanygolina", "Askepasma_toddense", "Micrina", "Mickwitzia_muralensis",
           "Tomteluva_perturbata", "Yuganotheca_elegans")
@@ -87,7 +87,7 @@ ColMissing(omit)
 
 ### Consensus without k = 4.5
 
-```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
+```{R tnt-consensus-selective, echo=FALSE, fig.cap="TNT implied weights consensus"}
 omit=c("Micrina", "Mickwitzia_muralensis")
 ColPlot(ConsensusWithout(tnConsensi[-3], omit))
 ColMissing(omit)
@@ -96,7 +96,7 @@ ColMissing(omit)
 
 ## Equal weights
 
-```{R, echo=FALSE, fig.cap="TNT Equal weights consensus"}
+```{R tnt-ew-consensus, echo=FALSE, fig.cap="TNT Equal weights consensus"}
 tntEw <- list.files('TNT/', pattern='ew\\.tre', full=TRUE)
 ColPlot(ConsensusWithout(ReadTntTree(tntEw), lon))
 ColMissing(lon)
