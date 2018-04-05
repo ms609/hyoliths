@@ -183,19 +183,19 @@ date: "`r Sys.Date()`"
 
 # Parsimony analysis {#treesearch}
 
-The phylogenetic dataset contains a high proportion of inapplicable codings (`r sum(my_chars == '-')`/ `r length(my_chars)` = `r round(sum(my_chars == '-') / length(my_chars), 2) * 100`% of tokens), which are known to introduce error and bias to phylogenetic reconstruction ([@Maddison1993;@Brazeau2018]).  As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data [@Brazeau2018].  This algorithm is implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib], and phylogenetic search was conducted using the _R_ package _TreeSearch_ v0.0.8 [@Smith2018TreeSearch].
+The phylogenetic dataset contains a high proportion of inapplicable codings (`r sum(my_chars == '-')`/`r length(my_chars)` = `r round(sum(my_chars == '-') / length(my_chars), 3) * 100`% of tokens), which are known to introduce error and bias to phylogenetic reconstruction [@Maddison1993;@Brazeau2018].  As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data [@Brazeau2018].  This algorithm is implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib], and phylogenetic search was conducted using the _R_ package _TreeSearch_ v0.0.8 [@Smith2018TreeSearch].
 
 _Namacalathus_ is included in the matrix but has been excluded from analysis due to its potentially long branch, which is likely to mislead analysis.
 
 ## Search parameters
 
-Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997] with a variety of concavity constants.  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to produce higher accuracy than equal weights at any fixed level of precision [@Smith2017].
+Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997] with a variety of concavity constants.  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that has been shown to produce higher accuracy than equal weights at any fixed level of precision [@Smith2017].
 
 ## Analysis 
 
 ### Load data
 
-```{r TS Load morphoBank, echo=FALSE}
+```{r TS-Load-morphoBank, echo=FALSE}
 # Load file from MorphoBank
 my_data <- ReadAsPhyDat(filename)
 my_data$Namacalathus <- NULL # Exclude Namacalathus
@@ -208,7 +208,7 @@ kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
 _Dailyatia_ has been selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa [@Skovsted2015;@Zhao2017].
 
-```{R Starting tree, cache=TRUE}
+```{R Starting-tree}
 nj.tree <- NJTree(my_data)
 rooted.tree <- EnforceOutgroup(nj.tree, 'Dailyatia')
 start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
@@ -244,23 +244,25 @@ for (k in kValues) {
 
 ### Equal weights analysis
 
-```{r Equal weights analysis in TreeSearch, echo=TRUE, eval=FALSE}
+```{r Equal-weights-analysis-in-TreeSearch, echo=TRUE, eval=FALSE}
 ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
                    ratchHits = 10, searchHits=55,
                    swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
-write.nexus(ew.tree, file=paste0("TreeSearch/hy_ew_", Fitch(ew.tree, my_data), ".nex", collapse=''))
+write.nexus(ew.tree, file=paste0(collapse='', "TreeSearch/hy_ew_",
+                                 Fitch(ew.tree, my_data), ".nex"))
 
 ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=150,
                                  swappers=list(RootedTBRSwap, RootedNNISwap),
                                  verbosity=0L)
-write.nexus(ew.consensus, file=paste0("TreeSearch/hy_ew_", Fitch(ew.tree, my_data), ".nex", collapse=''))
+write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
+                                      Fitch(ew.tree, my_data), ".nex"))
 ```
 
 ## Results
 
 ### Implied weights results
 
-```{R "Load IW trees TreeSearch"}
+```{R "Load IW trees TreeSearch", echo=FALSE}
 # Read results from files
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
@@ -279,17 +281,17 @@ iw.trees <- lapply(kValues, function (k) {
 
 
 
-```{r, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5}
-omit=c(lon, 'Clupeafumosus_socialis', 'Tomteluva_perturbata',
-       'Yuganotheca_elegans', 'Mummpikia_nuda',
-       'Heliomedusa_orienta', 'Haplophrentis_carinatus')
+```{r IW-consensus-TreeSearch, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5, echo=FALSE}
+omit = c("Micrina", 'Mickwitzia_muralensis',
+#omit=c(lon, 'Clupeafumosus_socialis',
+       'Heliomedusa_orienta')
 ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
 ColMissing(omit)
 ```
 
 
 
-```{r, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.5}
+```{r All-IW-results-TreeSearch, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.6, echo=FALSE}
 # Plot consensus results
 par(mfrow=c(4, 2), mar=rep(0.2, 4))
 
@@ -306,13 +308,13 @@ for (i in seq_along(iw.trees)) {
 
 ### Equal weights results
 
-```{r "equal weights results in TreeSearch", fig.cap="Strict consensus of equal weights results"}
+```{r equal-weights-results-in-TreeSearch, fig.cap="Strict consensus of equal weights results", echo=FALSE}
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
-ew.tree <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
-ColPlot(consensus(ew.tree))
+ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
+ColPlot(consensus(ew.trees))
 ```
 
-```{R, fig.cap="Strict consensus of equal weights results, taxa excluded", eval=FALSE}
+```{R, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE, eval=FALSE}
 # omit <- c("none")
 # ColPlot(ConsensusWithout(ew.tree, omit))
 # ColMissing(omit)
@@ -328,7 +330,7 @@ date: "`r Sys.Date()`"
 
 # Character reconstructions {#reconstructions}
 
-```{R char_loading_functions, echo=FALSE}
+```{R char loading functions, echo=FALSE}
 StrReplace <- stringi::stri_replace_all_fixed
 
 LookUpReference <- function (keys, original, prefix='', suffix='') {
@@ -383,8 +385,12 @@ ConvertReferences <- function (string) {
     execResults <- gregexpr(pattern, strings, perl=TRUE)
     matchText <- lapply(regmatches(strings, execResults), unique)
     keyed <- gsub(pattern, "~~~\\1\\3\\4~~~", strings, perl=TRUE)
-    keys <- lapply(matchText, function (x) unique(gsub(pattern, "~~~\\1\\3\\4~~~",
-                                                       x, perl=TRUE)))
+    keys <- lapply(matchText, function (citation) {
+      ret <- gsub(pattern, "~~~\\1\\3\\4~~~", citation, perl=TRUE)
+      duplicates <- ret[duplicated(ret)]
+      substr(ret[duplicated(ret)], nchar(duplicates)-6, nchar(duplicates)-3) <- '!x2!'
+      ret
+    })
     toEdit <- which(vapply(keys, length, 0) > 0)
     strings[toEdit] <- vapply(toEdit, function (i) {
       Replace(keyed[i], keys[[i]], matchText[[i]])
@@ -418,7 +424,10 @@ MorphoBankDecode <- function (string) {
   ConvertReferences(string)
 }
 
-EndSentence <- function (string) gsub("\\s*\\.?\\s*\\.$", ".", paste0(string, '.'), perl=TRUE)
+EndSentence <- function (string) {
+  ret <- gsub("\\s*\\.?\\s*\\.$", ".", paste0(string, '.'), perl=TRUE)
+  ret <- gsub("(\\.[\"'])\\.$", "\\1", ret, perl=TRUE)
+}
 
 ReadNotes <- function (filepath) {
   lines <- readLines(filepath)
@@ -479,21 +488,8 @@ PrintStates <- function (states) {
   cat(paste0(" > ", tokens, ": ", states, "  \n"))
   cat("> ", if (transformational) "Transformational" else "Neomorphic", "character.  \n>\n")
 }
-```
-```{R load_the_characters, echo=FALSE}
-library('Inapp')
-#tree <- iw.trees[[3]][[1]]
-tree <- ew.tree
-tree$edge.length <- rep(1, nrow(tree$edge))
 
-char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
-n_char <- ncol(my_chars)
-char_parts <- strsplit(char_names, ": ")
-char_nesting <- vapply(char_parts, length, 0L)
-char_notes <- ReadNotes(filename)
-taxa_names <- c("Namacalathus", rownames(my_chars))
-taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
-taxa_italic <- paste0("_", taxa_plaintext, "_")
+
 Italicize <- function (string) {
   string <- gsub(paste0("\\b(", 
                         paste0(gsub("_", "|", fixed = TRUE,
@@ -506,9 +502,23 @@ Italicize <- function (string) {
                                       'media', 'myaria', 'terminalia',
                                       'et al\\.', 'et al', 'sensu')),
                                collapse='|'),
-              ")\\b"), "_\\1_", string, perl=TRUE, ignore.case=TRUE)
+              ")\\b"), "_\\1_", string, perl=TRUE, ignore.case=FALSE)
   gsub("\\b([A-Z]\\.) _([a-z])", "_\\1 \\2", string, perl=TRUE)
 }
+```
+```{R load-the-characters, echo=FALSE}
+library('Inapp')
+tree <- iw.trees[[3]][[1]]
+tree$edge.length <- rep(1, nrow(tree$edge))
+
+char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
+n_char <- ncol(my_chars)
+char_parts <- strsplit(char_names, ": ")
+char_nesting <- vapply(char_parts, length, 0L)
+char_notes <- ReadNotes(filename)
+taxa_names <- c("Namacalathus", rownames(my_chars))
+taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
+taxa_italic <- paste0("_", taxa_plaintext, "_")
 #treeCol <- tipCol[tree$tip.label]
 ```
 
@@ -517,7 +527,7 @@ This page provides definitions for each of the characters in our matrix, and jus
 The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
 
 
-```{R print_each_character, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
+```{R print-character-functions, echo=FALSE}
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
 PrintDivision <- function (parts) cat(Header(2L, paste(char_parts_i[1:parts],
                                                        collapse=': ')))
@@ -529,7 +539,8 @@ PrintSoloCharacter <- function () {
   cat(Header(2L, paste0(paste(char_parts_i, collapse=': '),
                         " [", i, "] ")))
 }
-
+```
+```{R character-mapping, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
 for (i in seq_len(n_char)) {
   
   char_parts_i <- char_parts[[i]]
@@ -601,13 +612,6 @@ author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 ---
 
-```{R TNT_function_definitions, echo=FALSE}
-plotPanel <- function (i) {
-  ColPlot(tnConsensi[[i]])
-  text(1, 0.5, paste('k =', kValues[i]), pos=4, cex=0.6)
-}
-```
-
 # Fitch parsimony {#tnt}
 
 Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using ratchet and tree drifting heuristics [@Goloboff1999;@Nixon1999], repeating the search until the optimal score had been hit by 1500 independent searches:
@@ -641,59 +645,66 @@ tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 filename <- tntFiles[1]
 tnTrees <- lapply(tntFiles, ReadTntTree)
 tnConsensi <- lapply(tnTrees, consensus)
+
+plotPanel <- function (i) {
+  ColPlot(tnConsensi[[i]])
+  text(1, 0.5, paste('k =', kValues[i]), pos=4, cex=0.6)
+}
 ```
 
 ## Implied weights
 
 The consensus of all implied weights runs is not very well resolved:
 
-```{R, echo=FALSE, fig.wid=7.1, fig.height=4}
+```{R tnt-iw-consensus, echo=FALSE, fig.wid=7.1, fig.height=4}
 par(mfrow=c(1, 2))
 ColPlot(consensus(tnConsensi)) 
 text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
 
 plotPanel(1)
 ```
-```{R, echo=FALSE}
+```{R tnt-iw-3-4.5, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(2)
 plotPanel(3)
 ```
 
-```{R, echo=FALSE}
+```{R tnt-iw-7-10.5, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(4)
 plotPanel(5)
 ```
 
-```{R, echo=FALSE}
+```{R tnt-iw-16-24, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(6)
 plotPanel(7)
 ```
 
-This lack of resolution is largely a product of a few wildcard taxa, which obscure relationships that are nevertheless present in all most parsimonious trees:
+This lack of resolution is largely a product of a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa:
 
-### Paterinids included
+### Consensus of all trees, without wildcards 
 
-```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
-omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
+```{R tnt-pruned-consensus, echo=FALSE, fig.cap="TNT implied weights consensus"}
+#omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
+omit <- c("Salanygolina", "Askepasma_toddense", "Micrina", "Mickwitzia_muralensis",
+          "Tomteluva_perturbata", "Yuganotheca_elegans")
 ColPlot(ConsensusWithout(tnConsensi, omit))
 ColMissing(omit)
 ```
 
-### Paterinids excluded
+### Consensus without k = 4.5
 
-```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
-omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda', 'Kutorgina_chengjiangensis', 'Nisusia_sulcata')
-ColPlot(ConsensusWithout(tnConsensi, omit))
+```{R tnt-consensus-selective, echo=FALSE, fig.cap="TNT implied weights consensus"}
+omit=c("Micrina", "Mickwitzia_muralensis")
+ColPlot(ConsensusWithout(tnConsensi[-3], omit))
 ColMissing(omit)
 ```
 
 
 ## Equal weights
 
-```{R, echo=FALSE, fig.cap="TNT Equal weights consensus"}
+```{R tnt-ew-consensus, echo=FALSE, fig.cap="TNT Equal weights consensus"}
 tntEw <- list.files('TNT/', pattern='ew\\.tre', full=TRUE)
 ColPlot(ConsensusWithout(ReadTntTree(tntEw), lon))
 ColMissing(lon)
@@ -710,7 +721,7 @@ date: "`r Sys.Date()`"
 
 # Bayesian analysis
 
-```{R, echo=FALSE, cache=TRUE}
+```{R mrbayes-ini, echo=FALSE, cache=TRUE}
 files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
 
 allTrees <- lapply(files, read.nexus)
@@ -725,7 +736,7 @@ Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk mod
 
 Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with $α_T = 1$, $β_T = 1/$(_equal weights tree length_ / _number of characters_), $α = c = 1$:
 
-> prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.tree, my_data), 3)`, 1, 1);
+> prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.trees[[1]], my_data), 3)`, 1, 1);
 
 Neomorphic and transformational characters [_sensu_ @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:
 
@@ -746,13 +757,17 @@ Neomorphic characters were not assumed to have a symmetrical transition rate –
 
 > prset applyto=(1) symdirihyperpr=fixed(1.0);
 
+_Dailyatia_ was selected as an outgroup:
+
+> outgroup Dailyatia;
+
 Four MrBayes runs were executed, each sampling eight chains for 1 000 000 generations, with samples taken every 500 generations.  The first 10% of samples were discarded as burn-in.
 
-> mcmcp ngen=1000000 samplefreq=500 nruns=2 nchains=8 burninfrac=0.1;
+> mcmcp ngen=1000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
 
 A posterior tree topology was derived from the combined posterior sample of both runs.
 
-```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
+```{R mrbayes-full-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
 omit <- c("none")
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
@@ -764,10 +779,11 @@ ColPlot(consensus(thinned, p=0.5))
 #ColMissing(omit)
 ```
 
-```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%", cache=TRUE}
-omit <- c('Heliomedusa', 'Micrina', 'Mickwitzia',
-          'Eoobolus', 'Clupeafumosus', 'Siphonobolus', 
-          'Yuganotheca', 'Tomteluva', 'Nisusia', 'Kutorgina')
+```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%", cache=TRUE}
+omit <- c('Heliomedusa_orienta', 'Micrina', 'Mickwitzia_muralensis',
+          'Eoobolus', 'Clupeafumosus_socialis', 'Siphonobolus_priscus', 
+          'Yuganotheca_elegans', 'Tomteluva_perturbata', 
+          'Nisusia_sulcata', 'Kutorgina_chengjiangensis')
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[2]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
@@ -779,7 +795,7 @@ ColMissing(omit)
 
 Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 1000 for each parameter:
 
-```{R, MrBayes parameter summary, echo=FALSE, asis=TRUE, cache=TRUE}
+```{R mrbayes-parameter-summary, fig.cap="MrBayes parameter summary", echo=FALSE, asis=TRUE, cache=TRUE}
 knitr::kable(read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE),
              caption="MrBayes parameter estimates (.pstat file)")
 ```

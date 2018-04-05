@@ -100,7 +100,10 @@ MorphoBankDecode <- function (string) {
   ConvertReferences(string)
 }
 
-EndSentence <- function (string) gsub("\\s*\\.?\\s*\\.$", ".", paste0(string, '.'), perl=TRUE)
+EndSentence <- function (string) {
+  ret <- gsub("\\s*\\.?\\s*\\.$", ".", paste0(string, '.'), perl=TRUE)
+  ret <- gsub("(\\.[\"'])\\.$", "\\1", ret, perl=TRUE)
+}
 
 ReadNotes <- function (filepath) {
   lines <- readLines(filepath)
