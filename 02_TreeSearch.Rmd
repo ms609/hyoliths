@@ -114,7 +114,7 @@ ColMissing(omit)
 
 
 
-```{r All-IW-results-TreeSearch, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.5, echo=FALSE}
+```{r All-IW-results-TreeSearch, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.6, echo=FALSE}
 # Plot consensus results
 par(mfrow=c(4, 2), mar=rep(0.2, 4))
 
