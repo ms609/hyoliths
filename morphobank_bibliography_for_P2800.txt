@@ -6,7 +6,7 @@ Book	Clarkson, E. N. K. 		2013			John Wiley & Sons			468
 Journal Article	Holmer, Lars E. ;Zhang, Zhifei ;Topper, Timothy P. ;Popov, Leonid ;Claybourn, Thomas M. 		2018	The attachment strategies of Cambrian kutorginate brachiopods: the curious case of two pedicle openings and their phylogenetic significance			92	1	33-39									
 Journal Article	Bassett, M. G. ;Popov, L. E. 		2017	Earliest ontogeny of the Silurian orthotetide brachiopod <i>Coolinia</i> and its significance for interpreting strophomenate phylogeny			50	4	504-510								10.1111/let.12204	
 Journal Article	Balthasar, Uwe 		2008	<i>Mummpikia</i> gen. nov. and the origin of calcitic-shelled brachiopods	Palaeontology		51	2	263-279		0031-0239						10.1111/j.1475-4983.2008.00754.x	
-Generic	Williams, Alwyn 		1997	Part H. Brachiopoda. Revised. Volume 1: Introduction														
+Book	Williams, Alwyn ;James, M. A. ;Emig, C. C. ;Mackay, Sarah ;Rhodes, M. C. ;Cohen, B. L. ;Gawthrop, A. B. ;Peck, L. S. ;Curry, G. B. ;Ansell, A. D. ;Cusack, Maggie ;Walton, Derek ;Brunton, C. H. C. ;Mackinnon, D. I. ;Richardson, J. R. 		1997	Brachiopoda. Revised. Introduction.			1		1-539									
 Generic	Kouchinsky, Artem V. 		2000	Skeletal microstructures of hyoliths from the Early Cambrian of Siberia			24	2	65-81									
 Generic	Holmer, Lars E. 		1989	Middle Ordovician phosphatic inarticulate brachiopods from Västergötland and Dalarna, Sweden			26											
 Generic	Cusack, Maggie ;Williams, Alwyn ;Buckman, James O. 		1999	Chemico-structural evolution of linguloid brachiopod shells			42	5	799-840									
@@ -40,7 +40,7 @@ Journal Article	Zhang, Zhi-Fei ;Li, Guo-Xiang ;Holmer, Lars Erik ;Brock, Glenn A
 Journal Article	Laurie, J.R. 		1986	Phosphatic fauna of the Early Cambrian Todd River Dolomite, Amadeus Basin, central Australia			10		431-454									
 Journal Article	Topper, T.P. ;Holmer, L.E. ;Skovsted, C.B. ;Brock, G.A. ;Balthasar, U. ;Larsson, C.M. ;Petterson Stolk, S. ;Harper, D.A.T. 		2013	The oldest brachiopods from the lower Cambrian of South Australia			58		93-109									
 Generic	Hu, Shi-Xue ;Zhang, Zhi-Fei ;Holmer, Lars E. ;Skovsted, Christian B. 		2010	Soft-part preservation in a linguliform brachiopod from the lower Cambrian Wulongqing Formation (Guanshan Fauna) of Yunnan, South China			55	3	495-505									
-Journal Article	Williams, A. ;Popov, L.E. ;Holmer, L.E. ;Cusack, M. 		1998	The diversity and phylogeny of the paterinate brachiopods			40		221-262									
+Journal Article	Williams, A. ;Popov, L.E. ;Holmer, L.E. ;Cusack, M. 		1998	The diversity and phylogeny of the paterinate brachiopods			41		221-262									
 Book	Kruse, P. D. 		1990			Northern Territory Geological Survey			1-63									
 Generic	Ushatinskaya, G.T. 		2016	Protegulum and brephic shell of the earliest organophosphatic brachiopods			50	2	141-152									
 Book Section	Williams, Alwyn ;Carlson, Sandra J. ;Brunton, C. Howard C. ;Holmer, Lars Erik ;Popov, Leonid E. ;Mergl, Michal ;Laurie, John R. ;Bassett, Michael Gwyn ;Cocks, L. Robin M. ;Rong, J.-Y. ;Lazarev, S. S. ;Grant, R. E. ;Racheboeuf, P. R. ;Jin, Y.-G. ;Wardlaw, B. R. ;Harper, David Alexander Taylor ;Wright, A. D. 		2000	Brachiopoda. Linguliformea, Craniiformea, and Rhynchonelliformea			2		1-919									
@@ -48,7 +48,6 @@ Journal Article	Robinson, Jeffrey 		2014	The muscles, body wall and valve-openin
 Generic	Williams, Alwyn ;Brunton, C. Howard C. ;Carlson, Sandra J. 		2006	Rhynchonelliformea (part)			5		1689-2320									
 Book	Ruppert, E. E. ;Barnes, R. D. 		1993			Saunders College Publishing			1056									
 Generic	Chen, Jun-Yuan ;Huang, Di-Ying ;Chuang, Shou-Hwa 		2007	Reinterpretation of the Lower Cambrian brachiopod <i>Heliomedusa orienta</i> Sun and Hou, 1987a as a discinid			81	1	38-47									
-Generic	Holmer, Lars E. ;Popov, Leonid E. ;Koneva, Svetlana P. ;Rong Jia-Yu,  		1997	Early Cambrian Lingulellotreta (Lingulata, Brachiopoda) from South Kazakhstan (Malyi Karatau Range) and South China (Eastern Yunnan)			71		577-584									
 Journal Article	Williams, Alwyn ;Carlson, Sandra J. ;Brunton, C. Howard C. ;Holmer, Lars E. ;Popov, Leonid E. 		1996	A supra-ordinal classification of the Brachiopoda			351	1344	1171-1193									
 Generic	Barczyk, W 		1973	Braehiopods Terebratulina delheidi Vincent in the Nummulite Eocene of the Tatra Mts			23	3	491-497									
 Journal Article	Ackerly, Spafford C. 		1992	Rapid shell closure in the brachiopods <i>Terebratulina retusa</i> and <i>Terebratalia transversa</i>			72		579-598								10.1017/S0025315400059361	
@@ -98,3 +97,8 @@ Journal Article	Williams, Alwyn ;Holmer, Lars E. ;Cusack, Maggie 		2004	Chemico-
 Journal Article	Havlicek, M. 		1982	Lingulacea, Paterinacea, and Siphonotretacea (Brachiopoda) in the Lower Ordovician sequence of Bohemia			25		9-82, pl. 1-16									
 Journal Article	Zhang, Zhi-Liang ;Skovsted, Christian B. ;Zhang, Zhi-Fei 		2018	A hyolithid without helens preserving the oldest hyolith muscle scars; palaeobiology of <i>Paramicrocornus</i> from the Shujingtuo Formation (Cambrian Series 2) of South China			489		1-14								10.1016/j.palaeo.2017.07.021	
 Journal Article	Moore, J. L. ;Porter, Susannah M. 		2018	Plywood-like shell microstructures in hyoliths from the middle Cambrian (Drumian) Gowers Formation, Georgina Basin, Australia													10.1111/pala.12352	
+Book Section	Popov, Leonid E. 		1992	The Cambrian radiation of brachiopods		Pergamon			399-423									
+Journal Article	Ushatinskaya, G. T. ;Korovnikov, I. V. 		2016	Revision of the superfamily Acrotheloidea (Brachiopoda, class Linguliformea, order Lingulida) from the Lower and Middle Cambrian of the Siberian Platform			50	5	450-462									
+Journal Article	Popov, Leonid E. ;Holmer, Lars E. ;Hughes, Nigel C. ;Ghobadi Pour, Mansoureh ;Myrow, Paul M. 		2015	Himalayan Cambrian brachiopods			1	4	345-399									
+Journal Article	Skovsted, Christian B. ;Holmer, Lars E. 		2005	Early Cambrian brachiopods from north-east Greenland			48	2	325-345									
+Journal Article	Skovsted, C. B. ;Knight, I. ;Balthasar, Uwe ;Boyce, W. D. 		2017	Depth related brachiopod faunas from the lower Cambrian Forteau Formation of southern Labrador and western Newfoundland, Canada			20.3.54A		1-52								10.26879/775	http://palaeo-electronica.org/content/2017/2048-brachiopods-of-the-forteau-formation
