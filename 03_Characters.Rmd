@@ -161,6 +161,23 @@ PrintStates <- function (states) {
   cat(paste0(" > ", tokens, ": ", states, "  \n"))
   cat("> ", if (transformational) "Transformational" else "Neomorphic", "character.  \n>\n")
 }
+
+
+Italicize <- function (string) {
+  string <- gsub(paste0("\\b(", 
+                        paste0(gsub("_", "|", fixed = TRUE,
+                                    c(taxa_names,
+                                      'Bethia', 'Eichwaldia', 'Eoorthis',
+                                      'Hadrotreta', 'Lochkothele', 'Neocrania',
+                                      'Paracraniops', 'Paramicrocornus',
+                                      'comleyensis', 'decaius',
+                                      'vascula', 'genitalia','lateralia',
+                                      'media', 'myaria', 'terminalia',
+                                      'et al\\.', 'et al', 'sensu')),
+                               collapse='|'),
+              ")\\b"), "_\\1_", string, perl=TRUE, ignore.case=FALSE)
+  gsub("\\b([A-Z]\\.) _([a-z])", "_\\1 \\2", string, perl=TRUE)
+}
 ```
 ```{R load_the_characters, echo=FALSE}
 library('Inapp')
@@ -175,21 +192,6 @@ char_notes <- ReadNotes(filename)
 taxa_names <- c("Namacalathus", rownames(my_chars))
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
-Italicize <- function (string) {
-  string <- gsub(paste0("\\b(", 
-                        paste0(gsub("_", "|", fixed = TRUE,
-                                    c(taxa_names,
-                                      'Bethia', 'Eichwaldia', 'Eoorthis',
-                                      'Hadrotreta', 'Lochkothele', 'Neocrania',
-                                      'Paracraniops', 'Paramicrocornus',
-                                      'comleyensis', 'decaius',
-                                      'vascula', 'genitalia','lateralia',
-                                      'media', 'myaria', 'terminalia',
-                                      'et al\\.', 'et al', 'sensu')),
-                               collapse='|'),
-              ")\\b"), "_\\1_", string, perl=TRUE, ignore.case=TRUE)
-  gsub("\\b([A-Z]\\.) _([a-z])", "_\\1 \\2", string, perl=TRUE)
-}
 #treeCol <- tipCol[tree$tip.label]
 ```
 
