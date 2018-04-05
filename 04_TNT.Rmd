@@ -12,9 +12,11 @@ Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using ratchet and tre
 
 Searches were conducted under equal weights and results saved to file:
 
-> piwe-; xmult; 
+> piwe-; xmult; <span class="comment">Conduct search with equal weighting</span>
 >
-> tsav \*TNT/ew.tre;sav;tsav/;
+> tsav \*TNT/ew.tre;sav;tsav/ <span class="comment">Save results to file</span>;
+>
+> keep 0; hold 10000; <span class="comment">Clear trees from memory</span>
 
 Further searches were conducted under extended implied weighting [@Goloboff1997;@Goloboff2014], under the concavity constants 2, 3, 4.5, 7, 10.5, 16 and 24:
 
@@ -46,7 +48,8 @@ plotPanel <- function (i) {
 
 ## Implied weights
 
-The consensus of all implied weights runs is not very well resolved:
+The consensus of all implied weights runs is not very well resolved. 
+This lack of resolution is largely a product of a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa:
 
 ```{R tnt-iw-consensus, echo=FALSE, fig.wid=7.1, fig.height=4}
 par(mfrow=c(1, 2))
@@ -73,9 +76,19 @@ plotPanel(6)
 plotPanel(7)
 ```
 
-This lack of resolution is largely a product of a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa:
+### Consensus without k = 4.5
+
+Though there's no clear reason that a single concavity constant should give such different results to values both above and below it, the results with $k = 4.5$ are so strikingly different that it is instructive to create a consensus tree that excludes this case:
+
+```{R tnt-consensus-selective, echo=FALSE, fig.cap="TNT implied weights consensus"}
+omit=c("Micrina", "Mickwitzia_muralensis")
+ColPlot(ConsensusWithout(tnConsensi[-3], omit))
+ColMissing(omit)
+```
 
 ### Consensus of all trees, without wildcards 
+
+Even with the anomalous results at $k = 4.5$, the essential relationships between most taxa are recovered under all weighting situations:
 
 ```{R tnt-pruned-consensus, echo=FALSE, fig.cap="TNT implied weights consensus"}
 #omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
@@ -85,19 +98,11 @@ ColPlot(ConsensusWithout(tnConsensi, omit))
 ColMissing(omit)
 ```
 
-### Consensus without k = 4.5
-
-```{R tnt-consensus-selective, echo=FALSE, fig.cap="TNT implied weights consensus"}
-omit=c("Micrina", "Mickwitzia_muralensis")
-ColPlot(ConsensusWithout(tnConsensi[-3], omit))
-ColMissing(omit)
-```
-
-
 ## Equal weights
 
 ```{R tnt-ew-consensus, echo=FALSE, fig.cap="TNT Equal weights consensus"}
 tntEw <- list.files('TNT/', pattern='ew\\.tre', full=TRUE)
-ColPlot(ConsensusWithout(ReadTntTree(tntEw), lon))
-ColMissing(lon)
+omit <- c("Micrina", "Mickwitzia_muralensis")
+ColPlot(ConsensusWithout(ReadTntTree(tntEw), omit))
+ColMissing(omit)
 ```
