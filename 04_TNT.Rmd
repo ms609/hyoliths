@@ -18,17 +18,17 @@ Searches were conducted under equal weights and results saved to file:
 
 Further searches were conducted under extended implied weighting [@Goloboff1997;@Goloboff2014], under the concavity constants 2, 3, 4.5, 7, 10.5, 16 and 24:
 
-> xpiwe=; /* Enable extended implied weighting */
+> xpiwe=; <span class="comment">Enable extended implied weighting</span>
 >
-> piwe=2; xmult; /* Conduct analysis at k = 2 */
+> piwe=2; xmult; <span class="comment">Conduct analysis at k = 2</span>
 >
-> tsav \*TNT/xpiwe2.tre; sav; tsav/; /* Save results to file */
+> tsav \*TNT/xpiwe2.tre; sav; tsav/; <span class="comment">Save results to file</span>
 > 
-> keep 0; hold 10000; /* Clear trees from memory */
+> keep 0; hold 10000; <span class="comment">Clear trees from memory</span>
 >
-> piwe=3; xmult; /* Conduct analysis at k = 3 */
+> piwe=3; xmult; <span class="comment">Conduct analysis at k = 3</span>
 >
-> tsav \*TNT/xpiwe3.tre; sav ;tsav/; /* Save results to file */
+> tsav \*TNT/xpiwe3.tre; sav ;tsav/; <span class="comment">Save results to file</span>
 
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 

@@ -1,11 +1,11 @@
 .smallcaps {font-variant: small-caps;}
 
 .figure {
-    text-align: center;
+  text-align: center;
 }
 
 .caption {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 .state-note {
@@ -14,6 +14,17 @@
   padding: 0.5em 0;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal a {
+.comment {
+  color: #3daf37;
+}
+
+.comment::before {
+  content: "/* ";
+}
+.comment::after {
+  content: " */";
+}
+
+.book .book-body .page-wrapper .page-inner .normal a {
  color: #1e6cbb;
 }
