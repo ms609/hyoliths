@@ -217,6 +217,7 @@ PrintSoloCharacter <- function () {
 }
 ```
 ```{R character-mapping, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
+taxa_not_to_print <- which(taxa_names %in% 'Namacalathus')
 for (i in seq_len(n_char)) {
   
   char_parts_i <- char_parts[[i]]
@@ -271,6 +272,7 @@ for (i in seq_len(n_char)) {
   cat("  \n\n")
   char_notes_i <- char_notes[[i]]
   state_notes_i <- char_notes_i[[2]]
+  state_notes_i <- state_notes_i[!names(state_notes_i) %in% taxa_not_to_print]
   if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
   if (length(state_notes_i) > 0) {
     cat("  \n", paste0("<div class='state-note'>", taxa_italic[as.integer(names(state_notes_i))],
