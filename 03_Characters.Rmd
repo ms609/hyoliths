@@ -268,7 +268,7 @@ for (i in seq_len(n_char)) {
                      use.edge.length=TRUE, legend.pos='topright')
   
   cat(paste0("  \n\n **Character ", i, ": ", char_names[i], "**  \n\n"))
-  PrintStates(my_states[[i]])
+  PrintStates(Italicize(my_states[[i]]))
   cat("  \n\n")
   char_notes_i <- char_notes[[i]]
   state_notes_i <- char_notes_i[[2]]
