@@ -4,13 +4,6 @@ author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 ---
 
-```{R TNT_function_definitions, echo=FALSE}
-plotPanel <- function (i) {
-  ColPlot(tnConsensi[[i]])
-  text(1, 0.5, paste('k =', kValues[i]), pos=4, cex=0.6)
-}
-```
-
 # Fitch parsimony {#tnt}
 
 Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using ratchet and tree drifting heuristics [@Goloboff1999;@Nixon1999], repeating the search until the optimal score had been hit by 1500 independent searches:
@@ -44,6 +37,11 @@ tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 filename <- tntFiles[1]
 tnTrees <- lapply(tntFiles, ReadTntTree)
 tnConsensi <- lapply(tnTrees, consensus)
+
+plotPanel <- function (i) {
+  ColPlot(tnConsensi[[i]])
+  text(1, 0.5, paste('k =', kValues[i]), pos=4, cex=0.6)
+}
 ```
 
 ## Implied weights
@@ -75,21 +73,23 @@ plotPanel(6)
 plotPanel(7)
 ```
 
-This lack of resolution is largely a product of a few wildcard taxa, which obscure relationships that are nevertheless present in all most parsimonious trees:
+This lack of resolution is largely a product of a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa:
 
-### Paterinids included
+### Consensus of all trees, without wildcards 
 
 ```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
-omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
+#omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
+omit <- c("Salanygolina", "Askepasma_toddense", "Micrina", "Mickwitzia_muralensis",
+          "Tomteluva_perturbata", "Yuganotheca_elegans")
 ColPlot(ConsensusWithout(tnConsensi, omit))
 ColMissing(omit)
 ```
 
-### Paterinids excluded
+### Consensus without k = 4.5
 
 ```{R, echo=FALSE, fig.cap="TNT implied weights consensus"}
-omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda', 'Kutorgina_chengjiangensis', 'Nisusia_sulcata')
-ColPlot(ConsensusWithout(tnConsensi, omit))
+omit=c("Micrina", "Mickwitzia_muralensis")
+ColPlot(ConsensusWithout(tnConsensi[-3], omit))
 ColMissing(omit)
 ```
 
