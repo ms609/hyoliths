@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 
 # Character reconstructions {#reconstructions}
 
-```{R char_loading_functions, echo=FALSE}
+```{R char loading functions, echo=FALSE}
 StrReplace <- stringi::stri_replace_all_fixed
 
 LookUpReference <- function (keys, original, prefix='', suffix='') {
@@ -179,7 +179,7 @@ Italicize <- function (string) {
   gsub("\\b([A-Z]\\.) _([a-z])", "_\\1 \\2", string, perl=TRUE)
 }
 ```
-```{R load_the_characters, echo=FALSE}
+```{R load-the-characters, echo=FALSE}
 library('Inapp')
 tree <- iw.trees[[3]][[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
@@ -200,7 +200,7 @@ This page provides definitions for each of the characters in our matrix, and jus
 The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
 
 
-```{R print_character_functions, echo=FALSE}
+```{R print-character-functions, echo=FALSE}
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
 PrintDivision <- function (parts) cat(Header(2L, paste(char_parts_i[1:parts],
                                                        collapse=': ')))
@@ -213,7 +213,7 @@ PrintSoloCharacter <- function () {
                         " [", i, "] ")))
 }
 ```
-```{R print_each_character, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
+```{R character-mapping, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
 for (i in seq_len(n_char)) {
   
   char_parts_i <- char_parts[[i]]
