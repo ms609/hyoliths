@@ -66,9 +66,10 @@ ColPlot(consensus(thinned, p=0.5))
 ```
 
 ```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%", cache=TRUE}
-omit <- c('Heliomedusa', 'Micrina', 'Mickwitzia',
-          'Eoobolus', 'Clupeafumosus', 'Siphonobolus', 
-          'Yuganotheca', 'Tomteluva', 'Nisusia', 'Kutorgina')
+omit <- c('Heliomedusa_orienta', 'Micrina', 'Mickwitzia_muralensis',
+          'Eoobolus', 'Clupeafumosus_socialis', 'Siphonobolus_priscus', 
+          'Yuganotheca_elegans', 'Tomteluva_perturbata', 
+          'Nisusia_sulcata', 'Kutorgina_chengjiangensis')
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[2]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
