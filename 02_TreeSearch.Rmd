@@ -6,19 +6,19 @@ date: "`r Sys.Date()`"
 
 # Parsimony analysis {#treesearch}
 
-The phylogenetic dataset contains a high proportion of inapplicable codings (`r sum(my_chars == '-')`/ `r length(my_chars)` = `r round(sum(my_chars == '-') / length(my_chars), 2) * 100`% of tokens), which are known to introduce error and bias to phylogenetic reconstruction ([@Maddison1993;@Brazeau2018]).  As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data [@Brazeau2018].  This algorithm is implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib], and phylogenetic search was conducted using the _R_ package _TreeSearch_ v0.0.8 [@Smith2018TreeSearch].
+The phylogenetic dataset contains a high proportion of inapplicable codings (`r sum(my_chars == '-')`/`r length(my_chars)` = `r round(sum(my_chars == '-') / length(my_chars), 3) * 100`% of tokens), which are known to introduce error and bias to phylogenetic reconstruction [@Maddison1993;@Brazeau2018].  As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data [@Brazeau2018].  This algorithm is implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib], and phylogenetic search was conducted using the _R_ package _TreeSearch_ v0.0.8 [@Smith2018TreeSearch].
 
 _Namacalathus_ is included in the matrix but has been excluded from analysis due to its potentially long branch, which is likely to mislead analysis.
 
 ## Search parameters
 
-Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997] with a variety of concavity constants.  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that is known to produce higher accuracy than equal weights at any fixed level of precision [@Smith2017].
+Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997] with a variety of concavity constants.  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that has been shown to produce higher accuracy than equal weights at any fixed level of precision [@Smith2017].
 
 ## Analysis 
 
 ### Load data
 
-```{r TS Load morphoBank, echo=FALSE}
+```{r TS-Load-morphoBank, echo=FALSE}
 # Load file from MorphoBank
 my_data <- ReadAsPhyDat(filename)
 my_data$Namacalathus <- NULL # Exclude Namacalathus
@@ -31,7 +31,7 @@ kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
 _Dailyatia_ has been selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa [@Skovsted2015;@Zhao2017].
 
-```{R Starting tree, cache=TRUE}
+```{R Starting-tree}
 nj.tree <- NJTree(my_data)
 rooted.tree <- EnforceOutgroup(nj.tree, 'Dailyatia')
 start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
@@ -40,7 +40,7 @@ start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
 
 ### Implied weights analysis
 
-```{r Implied weights analysis in TreeSearch, echo=TRUE}
+```{r Implied weights analysis in TreeSearch, echo=TRUE, eval=FALSE}
 for (k in kValues) {
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
                        ratchHits = 60, searchHits=55,
@@ -67,23 +67,25 @@ for (k in kValues) {
 
 ### Equal weights analysis
 
-```{r Equal weights analysis in TreeSearch, echo=TRUE}
+```{r Equal-weights-analysis-in-TreeSearch, echo=TRUE, eval=FALSE}
 ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
                    ratchHits = 10, searchHits=55,
                    swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
-write.nexus(ew.tree, file=paste0("TreeSearch/hy_ew_", Fitch(ew.tree, my_data), ".nex", collapse=''))
+write.nexus(ew.tree, file=paste0(collapse='', "TreeSearch/hy_ew_",
+                                 Fitch(ew.tree, my_data), ".nex"))
 
 ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=150,
                                  swappers=list(RootedTBRSwap, RootedNNISwap),
                                  verbosity=0L)
-write.nexus(ew.consensus, file=paste0("TreeSearch/hy_ew_", Fitch(ew.tree, my_data), ".nex", collapse=''))
+write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
+                                      Fitch(ew.tree, my_data), ".nex"))
 ```
 
 ## Results
 
 ### Implied weights results
 
-```{R "Load IW trees TreeSearch"}
+```{R "Load IW trees TreeSearch", echo=FALSE}
 # Read results from files
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
@@ -102,16 +104,17 @@ iw.trees <- lapply(kValues, function (k) {
 
 
 
-```{r, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5}
-omit=c(lon, 'Clupeafumosus_socialis',
-       'Heliomedusa_orienta', 'Haplophrentis_carinatus')
+```{r IW-consensus-TreeSearch, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5, echo=FALSE}
+omit = c("Micrina", 'Mickwitzia_muralensis',
+#omit=c(lon, 'Clupeafumosus_socialis',
+       'Heliomedusa_orienta')
 ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
 ColMissing(omit)
 ```
 
 
 
-```{r, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.5}
+```{r All-IW-results-TreeSearch, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.5, echo=FALSE}
 # Plot consensus results
 par(mfrow=c(4, 2), mar=rep(0.2, 4))
 
@@ -128,13 +131,13 @@ for (i in seq_along(iw.trees)) {
 
 ### Equal weights results
 
-```{r "equal weights results in TreeSearch", fig.cap="Strict consensus of equal weights results"}
+```{r equal-weights-results-in-TreeSearch, fig.cap="Strict consensus of equal weights results", echo=FALSE}
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
-ew.tree <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
-ColPlot(consensus(ew.tree))
+ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
+ColPlot(consensus(ew.trees))
 ```
 
-```{R, fig.cap="Strict consensus of equal weights results, taxa excluded", eval=FALSE}
+```{R, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE, eval=FALSE}
 # omit <- c("none")
 # ColPlot(ConsensusWithout(ew.tree, omit))
 # ColMissing(omit)
