@@ -61,8 +61,12 @@ ConvertReferences <- function (string) {
     execResults <- gregexpr(pattern, strings, perl=TRUE)
     matchText <- lapply(regmatches(strings, execResults), unique)
     keyed <- gsub(pattern, "~~~\\1\\3\\4~~~", strings, perl=TRUE)
-    keys <- lapply(matchText, function (x) unique(gsub(pattern, "~~~\\1\\3\\4~~~",
-                                                       x, perl=TRUE)))
+    keys <- lapply(matchText, function (citation) {
+      ret <- gsub(pattern, "~~~\\1\\3\\4~~~", citation, perl=TRUE)
+      duplicates <- ret[duplicated(ret)]
+      substr(ret[duplicated(ret)], nchar(duplicates)-6, nchar(duplicates)-3) <- '!x2!'
+      ret
+    })
     toEdit <- which(vapply(keys, length, 0) > 0)
     strings[toEdit] <- vapply(toEdit, function (i) {
       Replace(keyed[i], keys[[i]], matchText[[i]])
