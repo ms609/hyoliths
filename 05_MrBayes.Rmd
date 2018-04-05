@@ -22,7 +22,7 @@ Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk mod
 
 Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with $α_T = 1$, $β_T = 1/$(_equal weights tree length_ / _number of characters_), $α = c = 1$:
 
-> prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.tree, my_data), 3)`, 1, 1);
+> prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.tree[[1]], my_data), 3)`, 1, 1);
 
 Neomorphic and transformational characters [_sensu_ @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:
 
