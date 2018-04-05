@@ -18,7 +18,7 @@ Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under
 
 ### Load data
 
-```{r TS-Load-morphoBank, echo=FALSE}
+```{r treesearch-load-morphoBank, echo=FALSE}
 # Load file from MorphoBank
 my_data <- ReadAsPhyDat(filename)
 my_data$Namacalathus <- NULL # Exclude Namacalathus
@@ -31,7 +31,7 @@ kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
 _Dailyatia_ has been selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa [@Skovsted2015;@Zhao2017].
 
-```{R Starting-tree}
+```{R treesearch-starting-tree}
 nj.tree <- NJTree(my_data)
 rooted.tree <- EnforceOutgroup(nj.tree, 'Dailyatia')
 start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
@@ -40,7 +40,7 @@ start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
 
 ### Implied weights analysis
 
-```{r Implied weights analysis in TreeSearch, echo=TRUE, eval=FALSE}
+```{r treesearch-implied-weights-analysis, echo=TRUE, eval=FALSE}
 for (k in kValues) {
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
                        ratchHits = 60, searchHits=55,
@@ -67,7 +67,7 @@ for (k in kValues) {
 
 ### Equal weights analysis
 
-```{r Equal-weights-analysis-in-TreeSearch, echo=TRUE, eval=FALSE}
+```{r treesearch-equal-weights-analysis, echo=TRUE, eval=FALSE}
 ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
                    ratchHits = 10, searchHits=55,
                    swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
@@ -85,7 +85,7 @@ write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
 
 ### Implied weights results
 
-```{R "Load IW trees TreeSearch", echo=FALSE}
+```{R treesearch-load-IW-trees, echo=FALSE}
 # Read results from files
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
@@ -104,7 +104,7 @@ iw.trees <- lapply(kValues, function (k) {
 
 
 
-```{r IW-consensus-TreeSearch, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5, echo=FALSE}
+```{r treesearch-IW-consensus, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5, echo=FALSE}
 omit = c("Micrina", 'Mickwitzia_muralensis',
 #omit=c(lon, 'Clupeafumosus_socialis',
        'Heliomedusa_orienta')
@@ -114,7 +114,7 @@ ColMissing(omit)
 
 
 
-```{r All-IW-results-TreeSearch, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.6, echo=FALSE}
+```{r treesearch-all-IW-results, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.6, echo=FALSE}
 # Plot consensus results
 par(mfrow=c(4, 2), mar=rep(0.2, 4))
 
@@ -131,13 +131,13 @@ for (i in seq_along(iw.trees)) {
 
 ### Equal weights results
 
-```{r equal-weights-results-in-TreeSearch, fig.cap="Strict consensus of equal weights results", echo=FALSE}
+```{r treesearch-equal-weights-results, fig.cap="Strict consensus of equal weights results", echo=FALSE}
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
 ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
 ColPlot(consensus(ew.trees))
 ```
 
-```{R, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE, eval=FALSE}
+```{R treesearch-equal-weights-pruned-consensus, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE, eval=FALSE}
 # omit <- c("none")
 # ColPlot(ConsensusWithout(ew.tree, omit))
 # ColMissing(omit)
