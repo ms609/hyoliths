@@ -200,7 +200,7 @@ This page provides definitions for each of the characters in our matrix, and jus
 The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
 
 
-```{R print_each_character, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
+```{R print_character_functions, echo=FALSE}
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
 PrintDivision <- function (parts) cat(Header(2L, paste(char_parts_i[1:parts],
                                                        collapse=': ')))
@@ -212,7 +212,8 @@ PrintSoloCharacter <- function () {
   cat(Header(2L, paste0(paste(char_parts_i, collapse=': '),
                         " [", i, "] ")))
 }
-
+```
+```{R print_each_character, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
 for (i in seq_len(n_char)) {
   
   char_parts_i <- char_parts[[i]]
