@@ -55,7 +55,6 @@ Generic	Conklin, Edwin G. 		1902	The embryology of a brachiopod, <i>Terebratulin
 Generic	Chapman, Frederick 		1914	IV. -- Notes on shell-structure in the genus <i>Lingula</i>, Recent and fossil					28-31									
 Generic	Williams, A. ;Holmer, L.E. 		2002	Shell structure and inferred growth, functions and affinities of the sclerites of the problematic <i>Micrina</i>			45		845-873									
 Journal Article	Harper, David A. T. ;Popov, Leonid E. ;Holmer, Lars E. 		2017	Brachiopods: origin and early history			60		609-631									
-Generic	Hanken, N. M. ;Harper, David A. T. 		1985	The taxonomy, shell structure, and palaeoecology of the trimerellid brachiopod <i>Gasconsia</i> Northrop			28		243-254									
 Generic	Benedetto, Juan L. 		2009	<i>Chaniella</i>, a new lower Tremadocian (Ordovician) brachiopod from northwestern Argentina and its phylogenetic relationships within basal rhynchonelliforms			83	3	393-405									
 Journal Article	Topper, Timothy P. ;Harper, David A.T. ;Ahlberg, Per 		2013	Reappraisal of the brachiopod <i>Acrotreta socialis</i> von Seebach, 1865: clarifying 150 years of confusion			135	2	191-203									
 Journal Article	Zhang, Zhi-Liang ;Zhang, Zhi-Fei ;Wang, Hai-Zhou 		2016	Epithelial cell moulds preserved in the earliest acrotretid brachiopods from the Cambrian (Series 2) of the Three Gorges area, China			138	4	455-466									
@@ -79,7 +78,7 @@ Journal Article	Zhang, Zhi-Fei ;Han, Jian ;Zhang, Xing-Liang ;Liu, Jian-Ni ;Shu,
 Generic	Williams, Alwyn 		1989	Biomineralization in the Lophophorates			5		67-82									
 Journal Article	Freeman, Gary ;Lundelius, Judith W. 		1999	Changes in the timing of mantle formation and larval life history traits in linguliform and craniiform brachiopods			32		197-217									
 Generic	Williams, Alwyn ;Racheboeuf, P. R. ;Savage, N. M. ;Lee, D. E. ;Popov, L. E. ;Carlson, S. J. ;Logan, Alan ;Luter, Carsten ;Cusack, Maggie ;Curry, G. B. ;Wright, A. D. ;Harper, D. A. T. ;Cohen, B. L. ;Cocks, L. R. M. ;MacKinnon, D. I. ;Smirnova, T. N. ;Baker, P. G. ;Carter, J. L. ;Gourvennec, Remy ;Mancenido, M. O. ;Brunton, C. H. C. ;Dong-Li, Sun ;Boucot, A. J. ;Bassett, M. G. ;Alvarez, Fernando ;Holmer, L. E. ;Mergl, Michael ;Emig, C. C. ;Rubel, Madis ;Jia-Yu, Rong 		2007	Part H, Brachiopoda (Revised)			6		2321-3226									
-Journal Article	Gorjansky, Wladimir Ju. ;Popov, Leonid Ye. 		1986	On the origin and systematic position of the calcareous-shelled inarticulate brachiopods			19		223-240									
+Journal Article	Gorjansky, V. Yu. ;Popov, Leonid E. 		1986	On the origin and systematic position of the calcareous-shelled inarticulate brachiopods			19		223-240									
 Journal Article	Balthasar, Uwe ;Cusack, Maggie ;Faryma, L. ;Chung, P. ;Holmer, L. E. ;Jin, J. ;Percival, I. G. ;Popov, L. E. 		2011	Relic aragonite from Ordovician-Silurian brachiopods: Implications for the evolution of calcification			39	10	967-970									
 Journal Article	Skovsted, Christian B. ;Holmer, Lars E. 		2003	Early Cambrian (Botomian) stem group brachiopod <i>Mickwitzia</i> from Northeast Greenland			48	1	1-20									
 Journal Article	Balthasar, Uwe 		2009	The brachiopod <i>Eoobolus</i> from the early Cambrian Mural Formation (Canadian Rocky Mountains)			83	3	407-417									
@@ -103,5 +102,6 @@ Journal Article	Popov, Leonid E. ;Holmer, Lars E. ;Hughes, Nigel C. ;Ghobadi Pou
 Journal Article	Skovsted, Christian B. ;Holmer, Lars E. 		2005	Early Cambrian brachiopods from north-east Greenland			48	2	325-345									
 Journal Article	Skovsted, C. B. ;Knight, I. ;Balthasar, Uwe ;Boyce, W. D. 		2017	Depth related brachiopod faunas from the lower Cambrian Forteau Formation of southern Labrador and western Newfoundland, Canada			20.3.54A		1-52								10.26879/775	http://palaeo-electronica.org/content/2017/2048-brachiopods-of-the-forteau-formation
 Journal Article	Butler, Aodhan D. ;Streng, Michael ;Holmer, Lars E. ;Babcock, Loren E. 		2015	Exceptionally preserved <i>Mickwitzia</i> from the Indian Springs Lagerstatte (Cambrian Stage 3), Nevada			89	6	933-955								10.1017/jpa.2016.8	
-Journal Article	Hanken, Nils-Martin ;Harper, David Alexander Taylor 		1985	The taxonomy, shell structure, and palaeoecology of the trimerellid brachiopod <i>Gasconsia</i> Northrop			28	2	243-254									
-Journal Article	Goryanskiy, V. Yu.  Popov Leonid E.		1985	The morphology, systematic position, and origin of inarticulate brachiopods with carbonate shells			1985	3	1-11									
+Journal Article	Hanken, Nils-Martin ;Harper, David A. T. 		1985	The taxonomy, shell structure, and palaeoecology of the trimerellid brachiopod <i>Gasconsia</i> Northrop			28	2	243-254									
+Journal Article	Gorjansky, V. Yu. ;Popov, Leonid E. 		1985	The morphology, systematic position, and origin of inarticulate brachiopods with carbonate shells			1985	3	1-11									
+Journal Article	Cowen, R. 		1968	A new type of delthyrial cover in the Devonian brachiopod Mucrospirifer			11	2	317-327									
