@@ -104,4 +104,5 @@ Journal Article	Skovsted, C. B. ;Knight, I. ;Balthasar, Uwe ;Boyce, W. D. 		2017
 Journal Article	Butler, Aodhan D. ;Streng, Michael ;Holmer, Lars E. ;Babcock, Loren E. 		2015	Exceptionally preserved <i>Mickwitzia</i> from the Indian Springs Lagerstatte (Cambrian Stage 3), Nevada			89	6	933-955								10.1017/jpa.2016.8	
 Journal Article	Hanken, Nils-Martin ;Harper, David A. T. 		1985	The taxonomy, shell structure, and palaeoecology of the trimerellid brachiopod <i>Gasconsia</i> Northrop			28	2	243-254									
 Journal Article	Gorjansky, V. Yu. ;Popov, Leonid E. 		1985	The morphology, systematic position, and origin of inarticulate brachiopods with carbonate shells			1985	3	1-11									
-Journal Article	Cowen, R. 		1968	A new type of delthyrial cover in the Devonian brachiopod Mucrospirifer			11	2	317-327									
+Journal Article	Cowen, R. 		1968	A new type of delthyrial cover in the Devonian brachiopod <i>Mucrospirifer</i>			11	2	317-327									
+Journal Article	Skovsted, Christian B. ;Holmer, Lars E. ;Larsson, Cecilia M. ;Högström, Anette E. S. ;Brock, Glenn A. ;Topper, Timothy P. ;Balthasar, Uwe ;Stolk, Sandra Petterson ;Paterson, John R. 		2009	The scleritome of <i.Paterimitra</i>: an Early Cambrian stem group brachiopod from South Australia			276		1651-1656								10.1098/rspb.2008.1655	
