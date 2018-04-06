@@ -47,13 +47,13 @@ The rate of variation in neomorphic characters was also allowed to vary from tha
 
 > prset applyto=(1) ratepr=variable;
 
-_Dailyatia_ was selected as an outgroup:
+_`r outgroup`_ was selected as an outgroup:
 
-> outgroup Dailyatia;
+> outgroup `r outgroup`;
 
-Four MrBayes runs were executed, each sampling eight chains for 1 000 000 generations, with samples taken every 500 generations.  The first 10% of samples were discarded as burn-in.
+Four MrBayes runs were executed, each sampling eight chains for 5&nbsp;000&nbsp;000 generations, with samples taken every 500 generations.  The first 10% of samples were discarded as burn-in.
 
-> mcmcp ngen=1000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
+> mcmcp ngen=5000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
 
 A posterior tree topology was derived from the combined posterior sample of both runs.
 
@@ -65,13 +65,12 @@ thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
              lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
-ColPlot(consensus(thinned, p=0.5))
+ColPlot(root(consensus(thinned, p=0.5), outgroup, resolve.root=TRUE))
 #ColMissing(omit)
 ```
 
 ```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%", cache=TRUE}
 omit <- c('Heliomedusa_orienta', 'Micrina', 'Mickwitzia_muralensis',
-          'Eoobolus', 'Clupeafumosus_socialis', 'Siphonobolus_priscus', 
           'Yuganotheca_elegans', 'Tomteluva_perturbata', 
           'Nisusia_sulcata', 'Kutorgina_chengjiangensis')
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
@@ -79,7 +78,7 @@ thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
              lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
-ColPlot(consensus(thinned, p=0.5))
+ColPlot(root(consensus(thinned, p=0.5), outgroup, resolve.root = TRUE))
 ColMissing(omit)
 ```
 
