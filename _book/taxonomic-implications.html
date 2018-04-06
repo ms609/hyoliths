@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Brachiopod origins – Supplementary material – Phylogenetic analysis</title>
+  <meta name="description" content="Results of phylogenetic analysis">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Brachiopod origins – Supplementary material – Phylogenetic analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Results of phylogenetic analysis" />
+  <meta name="github-repo" content="ms609/hy" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Brachiopod origins – Supplementary material – Phylogenetic analysis" />
+  
+  <meta name="twitter:description" content="Results of phylogenetic analysis" />
+  
+
+<meta name="author" content="Sun, Hai-Jing; Smith, Martin Ross; Zhu, Mao-Yan; Zeng, Han; Zhao, Fang-Chen">
+
+
+<meta name="date" content="2018-04-06">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="bayesian-analysis.html">
+<link rel="next" href="references.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="manifest" href="icons/site.webmanifest">
+<link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+<style type="text/css">
+div.sourceLine, a.sourceLine { display: inline-block; min-height: 1.25em; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; }
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+div.sourceLine, a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource div.sourceLine, .numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource div.sourceLine::before, .numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; color: #aaaaaa;  padding-left: 4px; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; color = initial; }
+}
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.bn { color: #40a070; } /* BaseN */
+code span.fl { color: #40a070; } /* Float */
+code span.ch { color: #4070a0; } /* Char */
+code span.st { color: #4070a0; } /* String */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.ot { color: #007020; } /* Other */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.fu { color: #06287e; } /* Function */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code span.cn { color: #880000; } /* Constant */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.im { } /* Import */
+code span.va { color: #19177c; } /* Variable */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.op { color: #666666; } /* Operator */
+code span.bu { } /* BuiltIn */
+code span.ex { } /* Extension */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.at { color: #7d9029; } /* Attribute */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Brachiopod origins</a></li>
+<li class="chapter" data-level="1" data-path="the-dataset.html"><a href="the-dataset.html"><i class="fa fa-check"></i><b>1</b> The dataset</a></li>
+<li class="chapter" data-level="2" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>2</b> Parsimony analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="treesearch.html"><a href="treesearch.html#search-parameters"><i class="fa fa-check"></i><b>2.1</b> Search parameters</a></li>
+<li class="chapter" data-level="2.2" data-path="treesearch.html"><a href="treesearch.html#analysis"><i class="fa fa-check"></i><b>2.2</b> Analysis</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="treesearch.html"><a href="treesearch.html#load-data"><i class="fa fa-check"></i><b>2.2.1</b> Load data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="treesearch.html"><a href="treesearch.html#generate-starting-tree"><i class="fa fa-check"></i><b>2.2.2</b> Generate starting tree</a></li>
+<li class="chapter" data-level="2.2.3" data-path="treesearch.html"><a href="treesearch.html#implied-weights-analysis"><i class="fa fa-check"></i><b>2.2.3</b> Implied weights analysis</a></li>
+<li class="chapter" data-level="2.2.4" data-path="treesearch.html"><a href="treesearch.html#equal-weights-analysis"><i class="fa fa-check"></i><b>2.2.4</b> Equal weights analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="treesearch.html"><a href="treesearch.html#results"><i class="fa fa-check"></i><b>2.3</b> Results</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="treesearch.html"><a href="treesearch.html#implied-weights-results"><i class="fa fa-check"></i><b>2.3.1</b> Implied weights results</a></li>
+<li class="chapter" data-level="2.3.2" data-path="treesearch.html"><a href="treesearch.html#equal-weights-results"><i class="fa fa-check"></i><b>2.3.2</b> Equal weights results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reconstructions.html"><a href="reconstructions.html"><i class="fa fa-check"></i><b>3</b> Character reconstructions</a><ul>
+<li class="chapter" data-level="3.1" data-path="reconstructions.html"><a href="reconstructions.html#sclerites"><i class="fa fa-check"></i><b>3.1</b> Sclerites</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#present-in-adult"><i class="fa fa-check"></i>[1] Present in adult</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#disposition"><i class="fa fa-check"></i>[2] Disposition</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#hinge-line-shape"><i class="fa fa-check"></i>[3] Hinge line shape</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#apophyses"><i class="fa fa-check"></i>[4] Apophyses</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#apophyses-morphology"><i class="fa fa-check"></i>[5] Apophyses: Morphology</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#apophyses-dental-plates"><i class="fa fa-check"></i>[6] Apophyses: Dental plates</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#sockets"><i class="fa fa-check"></i>[7] Sockets</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#socket-ridges"><i class="fa fa-check"></i>[8] Socket ridges</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#enclosing-filtration-chamber"><i class="fa fa-check"></i>[9] Enclosing filtration chamber</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#commissure"><i class="fa fa-check"></i>[10] Commissure</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-ventral"><i class="fa fa-check"></i>[11] Muscle scars: Ventral</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-ventral-position"><i class="fa fa-check"></i>[12] Muscle scars: Ventral: Position</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-adjustor"><i class="fa fa-check"></i>[13] Muscle scars: Adjustor</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dorsal-adductor"><i class="fa fa-check"></i>[14] Muscle scars: Dorsal adductor</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-adductors-position"><i class="fa fa-check"></i>[15] Muscle scars: Adductors: Position</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dermal-muscles"><i class="fa fa-check"></i>[16] Muscle scars: Dermal muscles</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-unpaired-median-levator-ani"><i class="fa fa-check"></i>[17] Muscle scars: Unpaired median (levator ani)</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dorsal-diductor"><i class="fa fa-check"></i>[18] Muscle scars: Dorsal diductor</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dorsal-diductor-position"><i class="fa fa-check"></i>[19] Muscle scars: Dorsal diductor: Position</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="reconstructions.html"><a href="reconstructions.html#sclerites-dorsal-valve"><i class="fa fa-check"></i><b>3.2</b> Sclerites: Dorsal valve</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#growth-direction"><i class="fa fa-check"></i>[20] Growth direction</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-differentiated"><i class="fa fa-check"></i>[21] Posterior surface: Differentiated</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#differentiated-posterior-surface-morphology"><i class="fa fa-check"></i>[22] Differentiated posterior surface: Morphology</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-medial-groove"><i class="fa fa-check"></i>[23] Posterior surface: Medial groove</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-notothyrium"><i class="fa fa-check"></i>[24] Posterior surface: Notothyrium</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-notothyrium-shape"><i class="fa fa-check"></i>[25] Posterior surface: Notothyrium: Shape</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-notothyrium-chilidial-plates"><i class="fa fa-check"></i>[26] Posterior surface: Notothyrium: Chilidial plates</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#notothyrial-platform"><i class="fa fa-check"></i>[27] Notothyrial platform</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#cardinal-processes"><i class="fa fa-check"></i>[28] Cardinal processes</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#medial-septum"><i class="fa fa-check"></i>[29] Medial septum</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reconstructions.html"><a href="reconstructions.html#sclerites-ventral-valve"><i class="fa fa-check"></i><b>3.3</b> Sclerites: Ventral valve</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#relative-size"><i class="fa fa-check"></i>[30] Relative size</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#growth-direction-1"><i class="fa fa-check"></i>[31] Growth direction</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-differentiated-1"><i class="fa fa-check"></i>[32] Posterior surface: Differentiated</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-margin-growth-direction"><i class="fa fa-check"></i>[33] Posterior margin growth direction</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-planar"><i class="fa fa-check"></i>[34] Posterior surface: Planar</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-extent"><i class="fa fa-check"></i>[35] Posterior surface: Extent</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium"><i class="fa fa-check"></i>[36] Posterior surface: Delthyrium</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium-shape"><i class="fa fa-check"></i>[37] Posterior surface: Delthyrium: Shape</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium-shape-aspect-of-rounded-opening"><i class="fa fa-check"></i>[38] Posterior surface: Delthyrium: Shape: Aspect of rounded opening</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium-cover"><i class="fa fa-check"></i>[39] Posterior surface: Delthyrium: Cover</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium-cover-extent"><i class="fa fa-check"></i>[40] Posterior surface: Delthyrium: Cover: Extent</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium-cover-identity"><i class="fa fa-check"></i>[41] Posterior surface: Delthyrium: Cover: Identity</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium-pseudodeltidium-shape"><i class="fa fa-check"></i>[42] Posterior surface: Delthyrium: Pseudodeltidium: Shape</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium-pseudodeltidium-hinge-furrows"><i class="fa fa-check"></i>[43] Posterior surface: Delthyrium: Pseudodeltidium: Hinge furrows</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#umbonal-perforation"><i class="fa fa-check"></i>[44] Umbonal perforation</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#umbonal-perforation-shape"><i class="fa fa-check"></i>[45] Umbonal perforation: Shape</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#colleplax-cicatrix-or-pedicle-sheath"><i class="fa fa-check"></i>[46] Colleplax, cicatrix or pedicle sheath</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#median-septum"><i class="fa fa-check"></i>[47] Median septum</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="reconstructions.html"><a href="reconstructions.html#sclerites-ornament"><i class="fa fa-check"></i><b>3.4</b> Sclerites: Ornament</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#concentric-ornament"><i class="fa fa-check"></i>[48] Concentric ornament</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#concentric-ornament-symmetry"><i class="fa fa-check"></i>[49] Concentric ornament: Symmetry</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#radial-ornament"><i class="fa fa-check"></i>[50] Radial ornament</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#shell-penetrating-spines"><i class="fa fa-check"></i>[51] Shell-penetrating spines</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="reconstructions.html"><a href="reconstructions.html#sclerites-composition"><i class="fa fa-check"></i><b>3.5</b> Sclerites: Composition</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#mineralogy"><i class="fa fa-check"></i>[52] Mineralogy</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#cuticle-or-organic-matrix"><i class="fa fa-check"></i>[53] Cuticle or organic matrix</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#incorporation-of-sedimentary-particles"><i class="fa fa-check"></i>[54] Incorporation of sedimentary particles</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#periostracum-flexibility"><i class="fa fa-check"></i>[55] Periostracum: Flexibility</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#microstructure-layers"><i class="fa fa-check"></i>[56] Microstructure: Layers</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#microstructure-crystal-format"><i class="fa fa-check"></i>[57] Microstructure: Crystal format</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#microstructure-punctae"><i class="fa fa-check"></i>[58] Microstructure: Punctae</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#microstructure-canals"><i class="fa fa-check"></i>[59] Microstructure: Canals</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#microstructure-pseudopunctae"><i class="fa fa-check"></i>[60] Microstructure: Pseudopunctae</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#microstructure-external-polygonal-ornament"><i class="fa fa-check"></i>[61] Microstructure: External polygonal ornament</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="reconstructions.html"><a href="reconstructions.html#offspring-egg-size"><i class="fa fa-check"></i><b>3.6</b> Offspring: Egg size</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#egg-size"><i class="fa fa-check"></i>[62] Egg size</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#site-of-gamete-maturation"><i class="fa fa-check"></i>[63] Site of gamete maturation</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#embryonic-shell"><i class="fa fa-check"></i>[64] Embryonic shell</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#morphology"><i class="fa fa-check"></i>[65] Morphology</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#embryonic-shell-extended-in-larvae"><i class="fa fa-check"></i>[66] Embryonic shell extended in larvae</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#surface-ornament"><i class="fa fa-check"></i>[67] Surface ornament</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="reconstructions.html"><a href="reconstructions.html#offspring-larval-attachment-structure-68"><i class="fa fa-check"></i><b>3.7</b> Offspring: Larval attachment structure [68]</a></li>
+<li class="chapter" data-level="3.8" data-path="reconstructions.html"><a href="reconstructions.html#setae-present-in-adults"><i class="fa fa-check"></i><b>3.8</b> Setae: Present in adults</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#present-in-adults"><i class="fa fa-check"></i>[69] Present in adults</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#distribution"><i class="fa fa-check"></i>[70] Distribution</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#present-in-larva"><i class="fa fa-check"></i>[71] Present in larva</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#setal-sacs"><i class="fa fa-check"></i>[72] Setal sacs</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#setal-sacs-number"><i class="fa fa-check"></i>[73] Setal sacs: Number</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="reconstructions.html"><a href="reconstructions.html#pedicle-na"><i class="fa fa-check"></i><b>3.9</b> Pedicle: NA</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#pedicle"><i class="fa fa-check"></i>[74] Pedicle</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="reconstructions.html"><a href="reconstructions.html#pedicle-constitution"><i class="fa fa-check"></i><b>3.10</b> Pedicle: Constitution</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#constitution"><i class="fa fa-check"></i>[75] Constitution</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#biomineralization"><i class="fa fa-check"></i>[76] Biomineralization</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#bulb"><i class="fa fa-check"></i>[77] Bulb</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#distal-rootlets"><i class="fa fa-check"></i>[78] Distal rootlets</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#tapering"><i class="fa fa-check"></i>[79] Tapering</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#coelomic-region"><i class="fa fa-check"></i>[80] Coelomic region</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#surface-ornament-1"><i class="fa fa-check"></i>[81] Surface ornament</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#nerve-impression"><i class="fa fa-check"></i>[82] Nerve impression</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="reconstructions.html"><a href="reconstructions.html#mantle-canals-morphology"><i class="fa fa-check"></i><b>3.11</b> Mantle canals: Morphology</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#morphology-1"><i class="fa fa-check"></i>[83] Morphology</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#vascula-lateralia"><i class="fa fa-check"></i>[84] vascula lateralia</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#vascula-media"><i class="fa fa-check"></i>[85] vascula media</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#vascula-terminalia"><i class="fa fa-check"></i>[86] vascula terminalia</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="reconstructions.html"><a href="reconstructions.html#feeding-lophophore"><i class="fa fa-check"></i><b>3.12</b> Feeding: Lophophore</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#tentacle-disposition"><i class="fa fa-check"></i>[87] Tentacle disposition</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#tentacle-rows-per-side-trocholophe-stage"><i class="fa fa-check"></i>[88] Tentacle rows per side: Trocholophe stage</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#tentacle-rows-per-side-post-trocholophe-stage"><i class="fa fa-check"></i>[89] Tentacle rows per side: Post-trocholophe stage</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#median-tentacle-in-early-development"><i class="fa fa-check"></i>[90] Median tentacle in early development</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#forms-closed-loop"><i class="fa fa-check"></i>[91] Forms closed loop</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#coiling-direction"><i class="fa fa-check"></i>[92] Coiling direction</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#adjustor-muscle"><i class="fa fa-check"></i>[93] Adjustor muscle</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="reconstructions.html"><a href="reconstructions.html#feeding-prominent-pharynx-94"><i class="fa fa-check"></i><b>3.13</b> Feeding: Prominent pharynx [94]</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#anus"><i class="fa fa-check"></i>[95] Anus</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#migration"><i class="fa fa-check"></i>[96] Migration</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#migration-within-ring-of-tentacles"><i class="fa fa-check"></i>[97] Migration: Within ring of tentacles</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#migration-position"><i class="fa fa-check"></i>[98] Migration: Position</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tnt.html"><a href="tnt.html"><i class="fa fa-check"></i><b>4</b> Fitch parsimony</a><ul>
+<li class="chapter" data-level="4.1" data-path="tnt.html"><a href="tnt.html#implied-weights"><i class="fa fa-check"></i><b>4.1</b> Implied weights</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="tnt.html"><a href="tnt.html#consensus-without-k-4.5"><i class="fa fa-check"></i><b>4.1.1</b> Consensus without k = 4.5</a></li>
+<li class="chapter" data-level="4.1.2" data-path="tnt.html"><a href="tnt.html#consensus-of-all-trees-without-wildcards"><i class="fa fa-check"></i><b>4.1.2</b> Consensus of all trees, without wildcards</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tnt.html"><a href="tnt.html#equal-weights"><i class="fa fa-check"></i><b>4.2</b> Equal weights</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bayesian-analysis.html"><a href="bayesian-analysis.html"><i class="fa fa-check"></i><b>5</b> Bayesian analysis</a></li>
+<li class="chapter" data-level="6" data-path="taxonomic-implications.html"><a href="taxonomic-implications.html"><i class="fa fa-check"></i><b>6</b> Taxonomic implications</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Brachiopod origins – Supplementary material – Phylogenetic analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="taxonomic-implications" class="section level1">
+<h1><span class="header-section-number">6</span> Taxonomic implications</h1>
+<p>This section briefly places key features of our results in the context of previous phylogenetic hypotheses.</p>
+<dl>
+<dt>Craniiforms</dt>
+<dd>Trimerellids are reconstructed as paraphyletic with respect to Craniiforms.
+</dd>
+<dd>This is consistent with the affinity commonly drawn between these groups <span class="citation">(e.g. Williams et al. <a href="#ref-Williams2000BrachiopodaLinguliformea">2000</a>)</span>, and helps to account for the stratigraphically late (Ordovician) appearance of Craniids in the fossil record. (Aragonite is underrepresented in early Palaeozoic strata due to taphonomic bias.)
+</dd>
+<dt>Rhynchonelliforms</dt>
+<dd>The position of kutorginids in the brachiopod stem lineage has been tricky to resolve <span class="citation">(Holmer et al. <a href="#ref-Holmer2018Theattachment">2018</a><a href="#ref-Holmer2018Theattachment"><em>a</em></a>)</span>; we resolve them as sister to Rhynconellata + Obolellata (represented by <em>Alisina</em>), which is broadly in accord to previous proposals <span class="citation">(Holmer et al. <a href="#ref-Holmer2018Evolutionarysignificance">2018</a><a href="#ref-Holmer2018Evolutionarysignificance"><em>b</em></a>)</span>. Chileids form the adelphiotaxon to this clade.
+:
+</dd>
+<dd><em>Salanygolina</em> has been interpreted as a stem-group rhynchonelliform based on its combination of paterinid and chileate features <span class="citation">(Holmer et al. <a href="#ref-Holmer2009Theenigmatic">2009</a>)</span>. Our results position <em>Salanygolina</em> between paterinids and chileids, which directly corroborates this proposed phylogenetic position. Basal rhynchonellids are characterized by a circular umbonal perforation in the ventral valve, associated with a colleplax.
+</dd>
+<dt>Linguliforms</dt>
+<dd>The reconstruction of Linguloformea comprising Lingulids (including acrotretids and siphonotretids) as sister to the Discinids is as expected.
+</dd>
+<dd>More novel is the reconstruction of <em>Mummpikia</em> in the linguliform stem lineage. Balthasar <span class="citation">(<a href="#ref-Balthasar2008iMummpikia">2008</a>)</span> has highlighted the similarities between obolellids and linguliform brachiopods, including sub-μm vertical canals and the detailed configuration of the posterior shell margin.
+</dd>
+<dd>This notwithstanding, a rhynchonelliform affinity has been assumed based on its Its calcitic mineralogy. Our analysis upholds the case for a linguliform affinity; its calcitic shell seemingly arose through an independent change within this lineage. As such, <em>Mummpikia</em> has no direct relevance to the origin of ‘Calciata’.
+</dd>
+<dt>Tommotiids</dt>
+<dd>Tommotiids represent a basal grade, paraphyletic to crown-group brachiopods, in line with previous interpretations. The tree is somewhat arbitrarily rooted on <em>Dailyatia</em>, so it is worth considering the possibility that the root lies elsewhere. In any case, <em>Micrina</em> (+ <em>Paterimitra</em>?) represents the most crownward tommotiid.
+</dd>
+<dt>Hyoliths</dt>
+<dd>Hyoliths are interpreted as stem-group Brachiopods, which refines the broader phylogenetic position proposed by Moysiuk <em>et al</em>. <span class="citation">(<a href="#ref-Moysiuk2017Hyolithsare">2017</a>)</span>. Perhaps more surprising is their close relationships with a clade of soft-shelled conical brachiopods, <em>Acanthotretella</em>, <em>Lingulosacculus</em> and <em>Lingulellotreta</em>. These taxa are united by a long ventral pseudointerarea – a conical extension of the valve occupied by soft tissue, including the gut.
+</dd>
+<dd>There is some precendent for this relationship: <em>Lingulosacculus</em> has previously been linked with <em>Lingulellotreta</em> <span class="citation">(Balthasar and Butterfield <a href="#ref-Balthasar2009EarlyCambrian">2009</a>)</span> and hyoliths <span class="citation">(Moysiuk et al. <a href="#ref-Moysiuk2017Hyolithsare">2017</a>)</span>. What is more, the phylogenetic position of these taxa has been contested; a lingulid affinity has generally been assumed, but positions further from the crown group have been proposed: indeed <em>Lingulosacculus</em> has previously been reconstructed in the phoronid stem lineage <span class="citation">(Balthasar and Butterfield <a href="#ref-Balthasar2009EarlyCambrian">2009</a>)</span>.
+</dd>
+<dd>An association with hyolithids reconciles these to opposite interpretations. The unusual properties of the lingulelotretid-like taxa can be explained by their early phylogenetic branching, whereas their lingulid-like morphology denotes that the earliest brachiopods resembled modern lingulids.
+</dd>
+<dt><em>Yuganotheca</em>, <em>Tomteluva</em>, <em>Longtancunella</em>, Acrotretids</dt>
+<dd>The position of certain eccentric taxa is not robustly constrained; we opt not to hang too much on these results that are liable to change as additional data comes to light. That said, it is notable that <em>Yuganotheca</em> does consistently occur within the rhynchonelliform stem lineage, often in association with <em>Salanygolina</em>, suggesting that they represent aberrant offshoots of this lineage. This places them within the brachiopod crown-group; a position in the stem lineage <span class="citation">(Zhang et al. <a href="#ref-Zhang2014Anearly">2014</a>)</span> is difficult to reconcile with the increasingly well-constrained nature rise of the brachiopods body plan.
+</dd>
+</dl>
+
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Williams2000BrachiopodaLinguliformea">
+<p>Williams, A., S. J. Carlson, C. H. C. Brunton, L. E. Holmer, L. E. Popov, M. Mergl, J. R. Laurie, M. G. Bassett, L. R. M. Cocks, J.-Y. Rong, S. S. Lazarev, R. E. Grant, P. R. Racheboeuf, Y.-G. Jin, B. R. Wardlaw, D. A. T. Harper, and A. D. Wright. 2000: Brachiopoda. Linguliformea, Craniiformea, And Rhynchonelliformea. Vol. 2.1–919 p.</p>
+</div>
+<div id="ref-Holmer2018Theattachment">
+<p>Holmer, L. E., Z. Zhang, T. P. Topper, L. Popov, and T. M. Claybourn. 2018a: The attachment strategies of Cambrian kutorginate brachiopods: the curious case of two pedicle openings and their phylogenetic significance. 92:33–39.</p>
+</div>
+<div id="ref-Holmer2018Evolutionarysignificance">
+<p>Holmer, L. E., L. E. Popov, M. G. Pour, T. Claybourn, Z.-L. Zhang, G. A. Brock, and Z.-F. Zhang. 2018b:.</p>
+</div>
+<div id="ref-Holmer2009Theenigmatic">
+<p>Holmer, L. E., S. P. Stolk, C. B. Skovsted, U. Balthasar, and L. Popov. 2009: 52:1–10.</p>
+</div>
+<div id="ref-Balthasar2008iMummpikia">
+<p>Balthasar, U. 2008: Palaeontology 51:263–279.</p>
+</div>
+<div id="ref-Moysiuk2017Hyolithsare">
+<p>Moysiuk, J., M. R. Smith, and J.-B. Caron. 2017: Hyoliths are Palaeozoic lophophorates. 541:394–397.</p>
+</div>
+<div id="ref-Balthasar2009EarlyCambrian">
+<p>Balthasar, U., and N. J. Butterfield. 2009: Early Cambrian soft-shelled brachiopods as possible stem-group phoronids. 54:307–314.</p>
+</div>
+<div id="ref-Zhang2014Anearly">
+<p>Zhang, Z.-F., G.-X. Li, L. E. Holmer, G. A. Brock, U. Balthasar, C. B. Skovsted, D.-J. Fu, X.-L. Zhang, H.-Z. Wang, A. D. Butler, Z.-L. Zhang, C.-Q. Cao, J. Han, J.-N. Liu, and D.-G. Shu. 2014: An early Cambrian agglutinated tubular lophophorate with brachiopod characters. 4.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bayesian-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ms609/hy/edit/master/06_Implications.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
