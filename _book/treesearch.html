@@ -292,20 +292,27 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
             <section class="normal" id="section-">
 <div id="treesearch" class="section level1">
 <h1><span class="header-section-number">2</span> Parsimony analysis</h1>
-<p>The phylogenetic dataset contains a high proportion of inapplicable codings (452/3626 = 12.5% of tokens), which are known to introduce error and bias to phylogenetic reconstruction <span class="citation">(Maddison <a href="#ref-Maddison1993">1993</a>; Brazeau et al. <a href="#ref-Brazeau2018">2017</a><a href="#ref-Brazeau2018"><em>a</em></a>)</span>. As such, phylogenetic search employed a new algorithm that correctly handles inapplicable data <span class="citation">(Brazeau et al. <a href="#ref-Brazeau2018">2017</a><a href="#ref-Brazeau2018"><em>a</em></a>)</span>. This algorithm is implemented in the <em>MorphyLib</em> C library <span class="citation">(Brazeau et al. <a href="#ref-Brazeau2017Morphylib">2017</a><a href="#ref-Brazeau2017Morphylib"><em>b</em></a>)</span>, and phylogenetic search was conducted using the <em>R</em> package <em>TreeSearch</em> v0.0.8 <span class="citation">(Smith <a href="#ref-Smith2018TreeSearch">2018</a>)</span>.</p>
-<p><em>Namacalathus</em> is included in the matrix but has been excluded from analysis due to its potentially long branch, which is likely to mislead analysis.</p>
+<p>The phylogenetic dataset contains a high proportion of inapplicable codings (452/3626 = 12.5% of tokens), which are known to introduce error and bias to phylogenetic reconstruction when the Fitch algorithm is employed <span class="citation">(Maddison <a href="#ref-Maddison1993">1993</a>; Brazeau et al. <a href="#ref-Brazeau2018">2017</a><a href="#ref-Brazeau2018"><em>a</em></a>)</span>. As such, we employed a new tree-scoring algorithm that correctly handles inapplicable data <span class="citation">(Brazeau et al. <a href="#ref-Brazeau2018">2017</a><a href="#ref-Brazeau2018"><em>a</em></a>)</span>, implemented in the <em>MorphyLib</em> <em>C</em> library <span class="citation">(Brazeau et al. <a href="#ref-Brazeau2017Morphylib">2017</a><a href="#ref-Brazeau2017Morphylib"><em>b</em></a>)</span>. We employed the <em>R</em> package <em>TreeSearch</em> v0.1.2 <span class="citation">(Smith <a href="#ref-Smith2018TreeSearch">2018</a>)</span> to conduct phylogenetic tree search with this algorithm.</p>
 <div id="search-parameters" class="section level2">
 <h2><span class="header-section-number">2.1</span> Search parameters</h2>
-<p>Heuristic searches were conducted using the parsimony ratchet <span class="citation">(Nixon <a href="#ref-Nixon1999">1999</a>)</span> under equal and implied weights <span class="citation">(Goloboff <a href="#ref-Goloboff1997">1997</a>)</span> with a variety of concavity constants. The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (<em>k</em>) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that has been shown to produce higher accuracy than equal weights at any fixed level of precision <span class="citation">(Smith <a href="#ref-Smith2017">2017</a>)</span>.</p>
+<p>Heuristic searches were conducted using the parsimony ratchet <span class="citation">(Nixon <a href="#ref-Nixon1999">1999</a>)</span> under equal and implied weights <span class="citation">(Goloboff <a href="#ref-Goloboff1997">1997</a>)</span>. The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (<em>k</em>) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that has been shown to produce higher accuracy than equal weights at any given level of precision <span class="citation">(Smith <a href="#ref-Smith2017">2017</a>)</span>.</p>
 </div>
 <div id="analysis" class="section level2">
 <h2><span class="header-section-number">2.2</span> Analysis</h2>
+<p>The R commands used to conduct the analysis are reproduced below.
+The results can most readily be replicated using the <a href="@@@.com/">R markdown files</a> used
+to generate these pages.</p>
 <div id="load-data" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Load data</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1"><span class="co"># Load file from MorphoBank</span></div>
+<div class="sourceLine" id="2" href="#2" data-line-number="2">my_data &lt;-<span class="st"> </span><span class="kw">ReadAsPhyDat</span>(filename)</div>
+<div class="sourceLine" id="3" href="#3" data-line-number="3">my_data<span class="op">$</span>Namacalathus &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># Exclude Namacalathus</span></div>
+<div class="sourceLine" id="4" href="#4" data-line-number="4"></div>
+<div class="sourceLine" id="5" href="#5" data-line-number="5">iw_data &lt;-<span class="st"> </span><span class="kw">PrepareDataIW</span>(my_data)</div>
+<div class="sourceLine" id="6" href="#6" data-line-number="6">kValues &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">4.5</span>, <span class="dv">7</span>, <span class="fl">10.5</span>, <span class="dv">16</span>, <span class="dv">24</span>)</div></code></pre>
 </div>
 <div id="generate-starting-tree" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Generate starting tree</h3>
-<p><em>Dailyatia</em> has been selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa <span class="citation">(Skovsted et al. <a href="#ref-Skovsted2015">2015</a><a href="#ref-Skovsted2015"><em>a</em></a>; Zhao et al. <a href="#ref-Zhao2017">2017</a>)</span>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">nj.tree &lt;-<span class="st"> </span><span class="kw">NJTree</span>(my_data)</div>
 <div class="sourceLine" id="2" href="#2" data-line-number="2">rooted.tree &lt;-<span class="st"> </span><span class="kw">EnforceOutgroup</span>(nj.tree, <span class="st">&#39;Dailyatia&#39;</span>)</div>
 <div class="sourceLine" id="3" href="#3" data-line-number="3">start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<span class="dt">tree=</span>rooted.tree, <span class="dt">dataset=</span>my_data, <span class="dt">maxIter=</span><span class="dv">3000</span>,</div>
@@ -402,12 +409,6 @@ Figure 2.3: Strict consensus of equal weights results
 </div>
 <div id="ref-Smith2017">
 <p>Smith, M. R. 2017: Quantifying and visualising divergence between pairs of phylogenetic trees: implications for phylogenetic reconstruction. BioR<span class="math inline">\(\chi\)</span>iv.</p>
-</div>
-<div id="ref-Skovsted2015">
-<p>Skovsted, C. B., M. J. Betts, T. P. Topper, and G. A. Brock. 2015a: The early Cambrian tommotiid genus <em>Dailyatia</em> from South Australia. Memoirs of the Association of Australasian Palaeontologists 48:1–117.</p>
-</div>
-<div id="ref-Zhao2017">
-<p>Zhao, F.-C., M. R. Smith, Z.-J. Yin, H. Zeng, G.-X. Li, and M.-Y. Zhu. 2017: <em>Orthrozanclus elongata</em> n. sp. and the significance of sclerite-covered taxa for early trochozoan evolution. Scientific Reports 7:16232.</p>
 </div>
 </div>
             </section>
