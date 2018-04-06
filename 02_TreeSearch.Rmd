@@ -35,7 +35,7 @@ Start from a neighbour-joining tree, rooted on the outgroup.
 
 ```{R treesearch-starting-tree}
 nj.tree <- NJTree(my_data)
-rooted.tree <- EnforceOutgroup(nj.tree, 'Dailyatia')
+rooted.tree <- EnforceOutgroup(nj.tree, outgroup)
 start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
                          EdgeSwapper=RootedNNISwap, verbosity=0)
 ```
