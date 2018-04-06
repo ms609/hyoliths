@@ -130,14 +130,13 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <li class="chapter" data-level="2" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>2</b> Parsimony analysis</a><ul>
 <li class="chapter" data-level="2.1" data-path="treesearch.html"><a href="treesearch.html#search-parameters"><i class="fa fa-check"></i><b>2.1</b> Search parameters</a></li>
 <li class="chapter" data-level="2.2" data-path="treesearch.html"><a href="treesearch.html#analysis"><i class="fa fa-check"></i><b>2.2</b> Analysis</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="treesearch.html"><a href="treesearch.html#load-data"><i class="fa fa-check"></i><b>2.2.1</b> Load data</a></li>
+<li class="chapter" data-level="2.2.1" data-path="treesearch.html"><a href="treesearch.html#initialize-and-load-data"><i class="fa fa-check"></i><b>2.2.1</b> Initialize and load data</a></li>
 <li class="chapter" data-level="2.2.2" data-path="treesearch.html"><a href="treesearch.html#generate-starting-tree"><i class="fa fa-check"></i><b>2.2.2</b> Generate starting tree</a></li>
 <li class="chapter" data-level="2.2.3" data-path="treesearch.html"><a href="treesearch.html#implied-weights-analysis"><i class="fa fa-check"></i><b>2.2.3</b> Implied weights analysis</a></li>
 <li class="chapter" data-level="2.2.4" data-path="treesearch.html"><a href="treesearch.html#equal-weights-analysis"><i class="fa fa-check"></i><b>2.2.4</b> Equal weights analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="treesearch.html"><a href="treesearch.html#results"><i class="fa fa-check"></i><b>2.3</b> Results</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="treesearch.html"><a href="treesearch.html#implied-weights-results"><i class="fa fa-check"></i><b>2.3.1</b> Implied weights results</a></li>
-<li class="chapter" data-level="2.3.2" data-path="treesearch.html"><a href="treesearch.html#equal-weights-results"><i class="fa fa-check"></i><b>2.3.2</b> Equal weights results</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="reconstructions.html"><a href="reconstructions.html"><i class="fa fa-check"></i><b>3</b> Character reconstructions</a><ul>
@@ -300,19 +299,20 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <div id="analysis" class="section level2">
 <h2><span class="header-section-number">2.2</span> Analysis</h2>
 <p>The R commands used to conduct the analysis are reproduced below.
-The results can most readily be replicated using the <a href="@@@.com/">R markdown files</a> used
+The results can most readily be replicated using the <mark><a href="https://@@@.@@@/">R markdown files</a></mark> used
 to generate these pages.</p>
-<div id="load-data" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Load data</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1"><span class="co"># Load file from MorphoBank</span></div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">my_data &lt;-<span class="st"> </span><span class="kw">ReadAsPhyDat</span>(filename)</div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3">my_data<span class="op">$</span>Namacalathus &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># Exclude Namacalathus</span></div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4"></div>
-<div class="sourceLine" id="5" href="#5" data-line-number="5">iw_data &lt;-<span class="st"> </span><span class="kw">PrepareDataIW</span>(my_data)</div>
-<div class="sourceLine" id="6" href="#6" data-line-number="6">kValues &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">4.5</span>, <span class="dv">7</span>, <span class="fl">10.5</span>, <span class="dv">16</span>, <span class="dv">24</span>)</div></code></pre>
+<div id="initialize-and-load-data" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Initialize and load data</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">kValues &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">4.5</span>, <span class="dv">7</span>, <span class="fl">10.5</span>, <span class="dv">16</span>, <span class="dv">24</span>)</div>
+<div class="sourceLine" id="2" href="#2" data-line-number="2"></div>
+<div class="sourceLine" id="3" href="#3" data-line-number="3"><span class="co"># Load file from MorphoBank</span></div>
+<div class="sourceLine" id="4" href="#4" data-line-number="4">my_data &lt;-<span class="st"> </span><span class="kw">ReadAsPhyDat</span>(filename)</div>
+<div class="sourceLine" id="5" href="#5" data-line-number="5">my_data<span class="op">$</span>Namacalathus &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># Exclude Namacalathus</span></div>
+<div class="sourceLine" id="6" href="#6" data-line-number="6">iw_data &lt;-<span class="st"> </span><span class="kw">PrepareDataIW</span>(my_data)</div></code></pre>
 </div>
 <div id="generate-starting-tree" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Generate starting tree</h3>
+<p>Start from a neighbour-joining tree, rooted on the outgroup.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">nj.tree &lt;-<span class="st"> </span><span class="kw">NJTree</span>(my_data)</div>
 <div class="sourceLine" id="2" href="#2" data-line-number="2">rooted.tree &lt;-<span class="st"> </span><span class="kw">EnforceOutgroup</span>(nj.tree, <span class="st">&#39;Dailyatia&#39;</span>)</div>
 <div class="sourceLine" id="3" href="#3" data-line-number="3">start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<span class="dt">tree=</span>rooted.tree, <span class="dt">dataset=</span>my_data, <span class="dt">maxIter=</span><span class="dv">3000</span>,</div>
@@ -320,6 +320,7 @@ to generate these pages.</p>
 </div>
 <div id="implied-weights-analysis" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Implied weights analysis</h3>
+<p>The position of the root does not affect tree score, so keep it fixed (using <code>RootedXXXSwap</code> functions) to avoid unnecessary swaps.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1"><span class="cf">for</span> (k <span class="cf">in</span> kValues) {</div>
 <div class="sourceLine" id="2" href="#2" data-line-number="2">  iw.tree &lt;-<span class="st"> </span><span class="kw">IWRatchet</span>(start.tree, iw_data, <span class="dt">concavity=</span>k,</div>
 <div class="sourceLine" id="3" href="#3" data-line-number="3">                       <span class="dt">ratchHits =</span> <span class="dv">60</span>, <span class="dt">searchHits=</span><span class="dv">55</span>,</div>
@@ -362,6 +363,7 @@ to generate these pages.</p>
 <h2><span class="header-section-number">2.3</span> Results</h2>
 <div id="implied-weights-results" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Implied weights results</h3>
+<p>Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.</p>
 <div class="figure"><span id="fig:treesearch-IW-consensus"></span>
 <img src="Brachiopod_phylogeny_files/figure-html/treesearch-IW-consensus-1.png" alt="Consensus of implied weights analyses at all values of k" width="576" />
 <p class="caption">
@@ -374,9 +376,10 @@ Figure 2.1: Consensus of implied weights analyses at all values of k
 Figure 2.2: Implied weights results
 </p>
 </div>
-</div>
-<div id="equal-weights-results" class="section level3">
-<h3><span class="header-section-number">2.3.2</span> Equal weights results</h3>
+<p><img src="Brachiopod_phylogeny_files/figure-html/treesearch-iw-results-2-1.png" width="672" />
+<img src="Brachiopod_phylogeny_files/figure-html/treesearch-iw-results-3-1.png" width="672" />
+<img src="Brachiopod_phylogeny_files/figure-html/treesearch-iw-results-4-1.png" width="672" />
+### Equal weights results</p>
 <div class="figure"><span id="fig:treesearch-equal-weights-results"></span>
 <img src="Brachiopod_phylogeny_files/figure-html/treesearch-equal-weights-results-1.png" alt="Strict consensus of equal weights results" width="672" />
 <p class="caption">

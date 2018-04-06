@@ -15,21 +15,23 @@ Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under
 ## Analysis 
 
 The R commands used to conduct the analysis are reproduced below.
-The results can most readily be replicated using the [R markdown files](@@@.com/) used 
+The results can most readily be replicated using the <mark>[R markdown files](https://@@@.@@@/)</mark> used 
 to generate these pages.
 
-### Load data
+### Initialize and load data
 
 ```{r treesearch-load-morphoBank, echo=TRUE}
+kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
+
 # Load file from MorphoBank
 my_data <- ReadAsPhyDat(filename)
 my_data$Namacalathus <- NULL # Exclude Namacalathus
-
 iw_data <- PrepareDataIW(my_data)
-kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 ```
 
 ### Generate starting tree
+
+Start from a neighbour-joining tree, rooted on the outgroup.
 
 ```{R treesearch-starting-tree}
 nj.tree <- NJTree(my_data)
@@ -39,6 +41,8 @@ start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
 ```
 
 ### Implied weights analysis
+
+The position of the root does not affect tree score, so keep it fixed (using `RootedXXXSwap` functions) to avoid unnecessary swaps.
 
 ```{r treesearch-implied-weights-analysis, echo=TRUE, eval=FALSE}
 for (k in kValues) {
@@ -85,7 +89,7 @@ write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
 
 ### Implied weights results
 
-```{R treesearch-load-IW-trees, echo=FALSE}
+```{R treesearch-load-iw-trees, echo=FALSE}
 # Read results from files
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
@@ -102,9 +106,9 @@ iw.trees <- lapply(kValues, function (k) {
 })
 ```
 
+Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
 
-
-```{r treesearch-IW-consensus, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5, echo=FALSE}
+```{r treesearch-iw-consensus, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5, echo=FALSE}
 omit = c("Micrina", 'Mickwitzia_muralensis',
 #omit=c(lon, 'Clupeafumosus_socialis',
        'Heliomedusa_orienta')
@@ -114,21 +118,36 @@ ColMissing(omit)
 
 
 
-```{r treesearch-all-IW-results, fig.cap="Implied weights results", fig.width=7.1, fig.height=10.6, echo=FALSE}
+```{r treesearch-all-iw-results, fig.cap="Implied weights results", fig.width=7.1, fig.height=4, echo=FALSE}
 # Plot consensus results
-par(mfrow=c(4, 2), mar=rep(0.2, 4))
+par(mfrow=c(1, 2), mar=rep(0.2, 4))
 
 ColPlot(consensus(lapply(iw.trees, consensus)))
 text(-0.5, 1, pos=4, "Consensus of all k values", cex=0.8)
 
 # Plot results for each value of k
-for (i in seq_along(iw.trees)) {
+PlotPanel <- function (i) {
   ColPlot(consensus(iw.trees[[i]]))
   text(1, 1, paste0('k = ', kValues[i]), pos=4)
 }
 
+PlotPanel(1)
 ```
-
+```{R treesearch-iw-results-2, echo=FALSE}
+par(mfrow=c(1, 2), mar=rep(0.2, 4))
+PlotPanel(2)
+PlotPanel(3)
+```
+```{R treesearch-iw-results-3, echo=FALSE}
+par(mfrow=c(1, 2), mar=rep(0.2, 4))
+PlotPanel(4)
+PlotPanel(5)
+```
+```{R treesearch-iw-results-4, echo=FALSE}
+par(mfrow=c(1, 2), mar=rep(0.2, 4))
+PlotPanel(6)
+PlotPanel(7)
+```
 ### Equal weights results
 
 ```{r treesearch-equal-weights-results, fig.cap="Strict consensus of equal weights results", echo=FALSE}
