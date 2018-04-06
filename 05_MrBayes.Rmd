@@ -20,9 +20,9 @@ Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk mod
 
 > lset coding=variable rates=gamma;
 
-Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with $α_T = 1$, $β_T = 1/$(_equal weights tree length_ / _number of characters_), $α = c = 1$:
+Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with $α_T = 1$, $β_T = 1/($_equal weights tree length_$/$_number of characters_$)$, $α = c = 1$:
 
-> prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.trees[[1]], my_data), 3)`, 1, 1);
+> prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.trees[[1]], my_data), 2)`, 1, 1);
 
 Neomorphic and transformational characters [_sensu_ @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:
 
@@ -42,6 +42,10 @@ Neomorphic and transformational characters [_sensu_ @Sereno2007] were allocated 
 Neomorphic characters were not assumed to have a symmetrical transition rate – that is, the probability of the absent → present transition was allowed to differ from that of the present → absent transition, being drawn from a uniform prior:
 
 > prset applyto=(1) symdirihyperpr=fixed(1.0);
+
+The rate of variation in neomorphic characters was also allowed to vary from that of transformational characters:
+
+> prset applyto=(1) ratepr=variable;
 
 _Dailyatia_ was selected as an outgroup:
 
