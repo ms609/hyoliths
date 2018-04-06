@@ -57,7 +57,7 @@ Four MrBayes runs were executed, each sampling eight chains for 5&nbsp;000&nbsp;
 
 A posterior tree topology was derived from the combined posterior sample of both runs.
 
-```{R mrbayes-full-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
+```{R mrbayes-full-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, all taxa"}
 omit <- c("none")
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
@@ -69,10 +69,13 @@ ColPlot(root(consensus(thinned, p=0.5), outgroup, resolve.root=TRUE))
 #ColMissing(omit)
 ```
 
-```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%", cache=TRUE}
-omit <- c('Heliomedusa_orienta', 'Micrina', 'Mickwitzia_muralensis',
-          'Yuganotheca_elegans', 'Tomteluva_perturbata', 
-          'Nisusia_sulcata', 'Kutorgina_chengjiangensis')
+```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, wildcard taxa pruned", cache=TRUE}
+omit <- c(
+  'Mickwitzia_muralensis', 'Heliomedusa_orienta', 'Micrina',
+  'Craniops', 'Novocrania',
+  'Yuganotheca_elegans', 'Tomteluva_perturbata', 
+  'Nisusia_sulcata', 'Kutorgina_chengjiangensis'
+  )
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[2]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
@@ -89,10 +92,6 @@ knitr::kable(read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE),
              caption="MrBayes parameter estimates (.pstat file)")
 ```
 
-<mark>It's interesting to note that the clade of hyoliths + lingulellotretids (+ relatives) is resolved as a grade under Bayesian analysis.  
+It's interesting to note the position of _Gasconsia_, which is widely held to have an affinity with the craniid brachiopods, and is recovered in such a position using the inapplicable-safe parsimony algorithm (but not always when the standard Fitch parsimony algorithm is used). 
 
-In parsimony analysis, these taxa are always resolved as a clade when inapplicable data is correctly handled; they instead resolve as a grade under certain conditions under the [standard Fitch](#TNT) algorithm (which mishandles inapplicable data).
-
-We suggest that the failure of Bayesian analysis to recover this group as a clade may reflect inappropriate handling of inapplicable data in MrBayes, though at present (and until the algorithms used in a likelihood context are improved) it is difficult to test this hypothesis.
-
-The same goes for the position of _Gasconsia_, which is widely held to have an affinity with the craniid brachiopods, and is recovered in such a position using the inapplicable-safe parsimony algorithm (but not always when the standard Fitch parsimony algorithm is used).</mark>
+One possibility is that the failure of Bayesian analysis to recover this group as a clade reflects inappropriate handling of inapplicable data in the Mk model, though it is at present difficult to test this hypothesis.
