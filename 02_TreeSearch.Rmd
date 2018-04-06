@@ -10,13 +10,17 @@ The phylogenetic dataset contains a high proportion of inapplicable codings (`r 
 
 ## Search parameters
 
-Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997] with a variety of concavity constants.  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that has been shown to produce higher accuracy than equal weights at any fixed level of precision [@Smith2017].
+Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997].  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that has been shown to produce higher accuracy than equal weights at any given level of precision [@Smith2017].
 
 ## Analysis 
 
+The R commands used to conduct the analysis are reproduced below.
+The results can most readily be replicated using the [R markdown files](@@@.com/) used 
+to generate these pages.
+
 ### Load data
 
-```{r treesearch-load-morphoBank, echo=FALSE}
+```{r treesearch-load-morphoBank, echo=TRUE}
 # Load file from MorphoBank
 my_data <- ReadAsPhyDat(filename)
 my_data$Namacalathus <- NULL # Exclude Namacalathus
@@ -26,8 +30,6 @@ kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 ```
 
 ### Generate starting tree
-
-_Dailyatia_ has been selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa [@Skovsted2015;@Zhao2017].
 
 ```{R treesearch-starting-tree}
 nj.tree <- NJTree(my_data)

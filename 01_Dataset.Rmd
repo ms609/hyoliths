@@ -10,6 +10,8 @@ Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` early 
 
 We incorporated _Namacalathus_ in the matrix, but preliminiary results did not uphold the homology of potentially brachiozoan-like features.  As such, we excluded it from our analysis due to its potentially long branch, which is likely to mislead analysis.
 
+_Dailyatia_ was instead selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa [@Skovsted2015;@Zhao2017].
+
 Characters are coded following the recommendations of Brazeau, Guillerme and
 Smith [@Brazeau2018]:
 
