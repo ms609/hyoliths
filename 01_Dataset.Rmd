@@ -8,14 +8,17 @@ date: "`r Sys.Date()`"
 
 Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` early brachiozoan taxa, including hyoliths, tommotiids and mickwitziids, which were coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).
 
-The dataset can be viewed and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)), where each character is defined
-and its coding for each taxon discussed.
+We incorporated _Namacalathus_ in the matrix, but preliminiary results did not uphold the homology of potentially brachiozoan-like features.  As such, we excluded it from our analysis due to its potentially long branch, which is likely to mislead analysis.
 
 Characters are coded following the recommendations of Brazeau, Guillerme and
-Smith [@Brazeau2018].  In brief, we have employed reductive coding, using a distinct state to mark character inapplicability. Character specifications follow the model of Sereno [-@Sereno2007].
+Smith [@Brazeau2018]:
 
-We have distinguished between neomorphic and transformational characters [sensu @Sereno2007] by reserving the token `0` to refer to the absence of a neomorphic character.  The states of transformational characters are represented by the tokens `1`, `2`, `3`, ...
+- We have employed reductive coding, using a distinct state to mark character inapplicability. Character specifications follow the model of Sereno [-@Sereno2007].
 
-Following the recommendations of Brazeau, Guillerme and
-Smith [@Brazeau2018, supplementary discussion], we code the absence of neomorphic ontologically dependent characters [sensu @Vogt2017] as absence, rather than inapplicability.
+- We have distinguished between neomorphic and transformational characters [sensu @Sereno2007] by reserving the token `0` to refer to the absence of a neomorphic character.  The states of transformational characters are represented by the tokens `1`, `2`, `3`, ...
 
+- We code the absence of neomorphic ontologically dependent characters [sensu @Vogt2017] as absence, rather than inapplicability.
+
+
+The complete dataset can be viewed and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)), where each character is defined
+and its coding for each taxon discussed.
