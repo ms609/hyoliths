@@ -71,9 +71,9 @@ ColPlot(root(consensus(thinned, p=0.5), outgroup, resolve.root=TRUE))
 
 ```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, wildcard taxa pruned", cache=TRUE}
 omit <- c(
-  'Mickwitzia_muralensis', 'Heliomedusa_orienta', 'Micrina',
   'Craniops', 'Novocrania',
-  'Yuganotheca_elegans', 'Tomteluva_perturbata', 
+   'Micrina', 'Heliomedusa_orienta', 'Mickwitzia_muralensis',
+  'Tomteluva_perturbata', 'Yuganotheca_elegans',
   'Nisusia_sulcata', 'Kutorgina_chengjiangensis'
   )
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
