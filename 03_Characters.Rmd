@@ -6,6 +6,8 @@ date: "`r Sys.Date()`"
 
 # Character reconstructions {#reconstructions}
 
+This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Citations for all codings can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
+
 ```{R char loading functions, echo=FALSE}
 StrReplace <- stringi::stri_replace_all_fixed
 
@@ -198,10 +200,7 @@ taxa_italic <- paste0("_", taxa_plaintext, "_")
 #treeCol <- tipCol[tree$tip.label]
 ```
 
-This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where necessary.  Citations for all codings can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
-
 The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
-
 
 ```{R print-character-functions, echo=FALSE}
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
