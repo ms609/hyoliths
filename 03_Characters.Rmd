@@ -202,61 +202,70 @@ taxa_italic <- paste0("_", taxa_plaintext, "_")
 
 The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
 
-```{R print-character-functions, echo=FALSE}
+```{R character-mapping, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
+## These function definitions must be in the same block as when they are called.
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
-PrintDivision <- function (parts) cat(Header(2L, paste(char_parts_i[1:parts],
-                                                       collapse=': ')))
+PrintDivision <- function (parts) cat(Header(2L, paste(
+  Italicize(this_char_parts[1:parts]), collapse=': ')))
 PrintCharacter <- function () {
-  cat(Header(3L, paste0("[", i, "] ", 
-                        paste0(char_parts_i[if(char_nesting[i] < 4) char_nesting[i] else 3:char_nesting[i]], collapse=': '), " {-}")))
+  cat(Header(3L, paste0("[", i, "] ", paste0(
+    this_char_parts[if(char_nesting[i] < 4) char_nesting[i] else
+      3:char_nesting[i]], collapse=': '), " {-}")))
 }
 PrintSoloCharacter <- function () {
-  cat(Header(2L, paste0(paste(char_parts_i, collapse=': '),
-                        " [", i, "] ")))
+  cat(Header(2L, paste0(paste(
+    Italicize(this_char_parts), collapse=': ')," [", i, "] ")))
 }
-```
-```{R character-mapping, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
+
 taxa_not_to_print <- which(taxa_names %in% 'Namacalathus')
+prev_char_parts = "NONE"
+prev_nesting = 0
 for (i in seq_len(n_char)) {
   
-  char_parts_i <- char_parts[[i]]
-  if (i > 1) char_parts_last <- char_parts[[i - 1L]]
+  this_char_parts <- char_parts[[i]]
+  next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
+  next_nesting    <- if (i == n_char) 0 else char_nesting[i + 1L]
+  this_nesting <- char_nesting[i]
   
-  if (char_nesting[i] == 1
-      && (i == n_char || char_parts[[i + 1L]][1] != char_parts_i[1])) {
-    PrintSoloCharacter()
-  } else if (i == 1) {
-    PrintDivision(1)
-    PrintCharacter()
-  } else if (char_parts_last[1L] != char_parts_i[1L]) {
-    PrintDivision(2)
-    PrintCharacter()
-  } else if (length(char_parts_i) > 1L) {
-    if (length(char_parts_last) < 2L) {
+  if ( # Reasons to print a heading
+    (this_char_parts[1] != prev_char_parts[1]) ||
+    ( prev_nesting > 1 &&
+      this_char_parts[2] != prev_char_parts[2] && 
+      this_char_parts[2] == next_char_parts[2]) ||
+    ( this_nesting > 1L &&
+      prev_char_parts[2L] != this_char_parts[2L] && 
+      this_char_parts[2] == next_char_parts[2]
+    )
+  ) {
+    if ( # Reasons to print a Solo character
+      (this_char_parts[1] != next_char_parts[1]) ||
+      (this_nesting == 2L && next_nesting > 1L &&
+            next_char_parts[2] == this_char_parts[2]) ||
+      (this_nesting == 1L && next_nesting > 1L &&
+            next_char_parts[1] == this_char_parts[1]) ||
+      prev_nesting > 2L && (
+        next_nesting < 2L
+        || (this_nesting > 1L && next_nesting > 2L && 
+            (this_char_parts[2] != next_char_parts[2]))
+      )
+    ) {
+      PrintSoloCharacter()
+    }
+    else if ( # Reasons to print a top-level heading
+      this_nesting == 1 ||
+      (next_nesting > 1 && (this_char_parts[2] != next_char_parts[2]))
+    ) {
+      PrintDivision(1)
+      PrintCharacter()
+    } else {
       PrintDivision(2)
       PrintCharacter()
-    } else if (char_parts_last[2L] != char_parts_i[2L]) {
-      if (char_nesting[i - 1L] > 2
-          && (
-            i == n_char
-            || char_nesting[i + 1L] < 2
-            || char_parts_i[2] != char_parts[[i + 1L]][2]
-            )
-          ) {
-        PrintSoloCharacter()
-      } else {
-        if (char_nesting[i - 1L] > 2) {
-          PrintDivision(2)
-        }
-        PrintCharacter()
-      }
-    } else {
-      PrintCharacter()
     }
-  } else {
+  } else { # Just print the character
     PrintCharacter()
   }
-
+  prev_char_parts <- this_char_parts
+  prev_nesting <- char_nesting[i]
   
   par(mar=rep(0.2, 4), cex=0.7)
   
