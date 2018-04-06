@@ -22,7 +22,7 @@ my_data <- ReadAsPhyDat(filename)
 my_chars <- ReadCharacters(filename)
 my_states <- attr(my_chars, 'state.labels')
 my_chars <- my_chars[-1, ]
-neomorphic <- vapply(my_states, function(x) x[[1]] %in% c("", "''"), logical(1))
+neomorphic <- vapply(my_states, function(x) !x[[1]] %in% c("", "''"), logical(1))
 setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 
 lon <- 'Longtancunella_chengjiangensis'
