@@ -58,19 +58,19 @@ text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
 
 plotPanel(1)
 ```
-```{R tnt-iw-3-4.5, echo=FALSE}
+```{R tnt-iw-3-4.5, fig.width=7.1, fig.height=4, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(2)
 plotPanel(3)
 ```
 
-```{R tnt-iw-7-10.5, echo=FALSE}
+```{R tnt-iw-7-10.5, fig.width=7.1, fig.height=4, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(4)
 plotPanel(5)
 ```
 
-```{R tnt-iw-16-24, echo=FALSE}
+```{R tnt-iw-16-24, fig.width=7.1, fig.height=4, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(6)
 plotPanel(7)
@@ -86,7 +86,7 @@ ColPlot(ConsensusWithout(tnConsensi[-3], omit))
 ColMissing(omit)
 ```
 
-### Consensus of all trees, without wildcards 
+### Consensus of all IW trees, without wildcards
 
 Even with the anomalous results at $k = 4.5$, the essential relationships between most taxa are recovered under all weighting situations:
 
