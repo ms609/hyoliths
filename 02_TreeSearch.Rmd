@@ -118,7 +118,7 @@ ColMissing(omit)
 
 
 
-```{r treesearch-all-iw-results, fig.cap="Implied weights results", fig.width=7.1, fig.height=4, echo=FALSE}
+```{r treesearch-all-iw-results, fig.width=7.1, fig.height=4, echo=FALSE}
 # Plot consensus results
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 
@@ -133,21 +133,22 @@ PlotPanel <- function (i) {
 
 PlotPanel(1)
 ```
-```{R treesearch-iw-results-2, echo=FALSE}
+```{R treesearch-iw-results-2, fig.width=7.1, fig.height=4, echo=FALSE}
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(2)
 PlotPanel(3)
 ```
-```{R treesearch-iw-results-3, echo=FALSE}
+```{R treesearch-iw-results-3, fig.width=7.1, fig.height=4, echo=FALSE}
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(4)
 PlotPanel(5)
 ```
-```{R treesearch-iw-results-4, echo=FALSE}
+```{R treesearch-iw-results-4, fig.width=7.1, fig.height=4, fig.cap="Implied weights results", echo=FALSE}
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(6)
 PlotPanel(7)
 ```
+
 ### Equal weights results
 
 ```{r treesearch-equal-weights-results, fig.cap="Strict consensus of equal weights results", echo=FALSE}
