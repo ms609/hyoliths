@@ -143,9 +143,16 @@ RefExpand <- function (ref) {
     AddIfBlank <- function (ref, cr_attr_name, attr) {
       if (
         (is.na(ref[attr]) || ref[attr] == '') &&
-        cr_attr_name %in% names(topResult)
+        cr_attr_name %in% names(topResult) &&
+        !grepl('true date-time group', topResult[, 'title'], fixed=TRUE) &&
+        !grepl('DIGTREATISE', topResult[, cr_attr_name], fixed=TRUE) &&
+        !grepl('AccessScience', topResult[, cr_attr_name], fixed=TRUE)
+        !grepl('AAPG', topResult[, 'container.title'], fixed=TRUE)
         ) {
-        ref[attr] <- as.character(topResult[, cr_attr_name])
+        ref[attr] <- gsub("(\\w,)(\\w)", "\\1 \\2", 
+                          gsub("\\.$", "", 
+                               as.character(topResult[, cr_attr_name]), perl=TRUE),
+                          perl=TRUE)
       }
       # Return: 
       ref
