@@ -7,7 +7,7 @@ date: "`r Sys.Date()`"
 
 # Bayesian analysis
 
-```{R mrbayes-ini, echo=FALSE, cache=TRUE}
+```{R mrbayes-ini, echo=FALSE}
 files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
 
 allTrees <- lapply(files, read.nexus)
@@ -55,7 +55,7 @@ Four MrBayes runs were executed, each sampling eight chains for 5&nbsp;000&nbsp;
 
 > mcmcp ngen=5000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
 
-A posterior tree topology was derived from the combined posterior sample of both runs.
+A posterior tree topology was derived from the combined posterior sample of all runs.
 
 ```{R mrbayes-full-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, all taxa"}
 omit <- c("none")
@@ -65,14 +65,15 @@ thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
              lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
-ColPlot(root(consensus(thinned, p=0.5), outgroup, resolve.root=TRUE))
+ColPlot(UnitEdges(root(consensus(thinned, p=0.5), outgroup, resolve.root=TRUE)))
 #ColMissing(omit)
 ```
 
-```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, wildcard taxa pruned", cache=TRUE}
+```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, wildcard taxa pruned"}
 omit <- c(
-  'Craniops', 'Novocrania',
-   'Micrina', 'Heliomedusa_orienta', 'Mickwitzia_muralensis',
+  'Lingulosacculus', 'Mummpikia_nuda', 'Lingulellotreta_malongensis', 
+  'Clupeafumosus_socialis', #'Siphonobolus_priscus',
+  'Micrina', 'Heliomedusa_orienta', 'Mickwitzia_muralensis',
   'Tomteluva_perturbata', 'Yuganotheca_elegans',
   'Nisusia_sulcata', 'Kutorgina_chengjiangensis'
   )
@@ -81,13 +82,14 @@ thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
              lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
-ColPlot(root(consensus(thinned, p=0.5), outgroup, resolve.root = TRUE))
+rootedConsensus <- root(consensus(thinned, p=0.5), outgroup, resolve.root = TRUE)
+ColPlot(UnitEdges(rootedConsensus))
 ColMissing(omit)
 ```
 
 Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 1000 for each parameter:
 
-```{R mrbayes-parameter-summary, fig.cap="MrBayes parameter summary", echo=FALSE, asis=TRUE, cache=TRUE}
+```{R mrbayes-parameter-summary, fig.cap="MrBayes parameter summary", echo=FALSE, asis=TRUE}
 knitr::kable(read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE),
              caption="MrBayes parameter estimates (.pstat file)")
 ```
