@@ -65,9 +65,9 @@ BEGIN MRBAYES;
   
   outgroup Dailyatia;
   
-  mcmcp ngen=1000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
+  mcmcp ngen=5000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
 
-  mcmc printfreq=1000 checkfreq=100000 append=no;
+  mcmc printfreq=10000 checkfreq=100000 append=no;
   sumt burninf=0.1;
   sump burninf=0.1;  
 END;
