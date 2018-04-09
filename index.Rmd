@@ -6,7 +6,7 @@ site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 bibliography: [References.bib, MorphoBank.bib]
-csl: http://raw.githubusercontent.com/citation-style-language/styles/master/paleobiology.csl
+csl: http://raw.githubusercontent.com/citation-style-language/styles/master/cladistics.csl
 link-citations: yes
 github-repo: ms609/hy
 description: "Results of phylogenetic analysis"
@@ -180,7 +180,10 @@ BibEntry <- function (ref) {
          BibLine('author', 'Author', FormatAuthors(ref['Author'])),
          BibLine('doi', 'DOI'),
          BibLine('journal', 'Secondary.Title'),
-         BibLine('title', 'Title', paste0('{', gsub("</?i>", "_", ref["Title"], perl=TRUE), '}')),
+         BibLine('title', 'Title',
+                 paste0('{', gsub("<i>", "\\\\textit{", 
+                                  gsub("</i>", "}", ref["Title"], perl=TRUE),
+                                  perl=TRUE), '}')),
          BibLine('number', 'Number'),
          BibLine('pages', 'Pages', gsub("\\-+", "--", ref["Pages"], perl=TRUE)),
          BibLine('volume', "Volume"),
