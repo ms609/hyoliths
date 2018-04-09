@@ -137,7 +137,8 @@ ReadNotes <- function (filepath) {
     stateChar  <- gsub(stateNote.pattern, "\\2",
                               notesLines[stateNote.matches], perl=TRUE)
     
-    charNotes <- lapply(seq_len(max(c(stateChar, charNumbers))), function (i) {
+    seqAlongNotes <- seq_len(max(as.integer(c(stateChar, charNumbers))))
+    charNotes <- lapply(seqAlongNotes, function (i) {
       ret <- list(
         charNotes[charNumbers == i],
         stateNotes[stateChar == i])
@@ -146,7 +147,7 @@ ReadNotes <- function (filepath) {
       # Return:
       ret
     })
-    names(charNotes) <- charNumbers
+    names(charNotes) <- seqAlongNotes
     
     # Return:
     charNotes
