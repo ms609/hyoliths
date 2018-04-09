@@ -87,6 +87,11 @@ tipCol <- c(
   Terebratulina                   = pal[11])
 
 
+UnitEdges <- function (tree) {
+  tree$edge.length <- rep(1, dim(tree$edge)[1])
+  # Return: 
+  tree
+}
 ColPlot <- function (tree) {
   setPar()
   plot(tree, tip.color = tipCol[tree$tip.label], lwd=2)
