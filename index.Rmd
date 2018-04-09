@@ -114,12 +114,67 @@ FormatAuthors <- function (text) {
 RefKey <- function (ref) paste0(FirstWord(ref['Author']),
                                 trimws(ref['Year']),
                                 FirstWords(ref['Title']))
+cached_works <- R.cache::addMemoization(rcrossref::cr_works)
+
+RefExpand <- function (ref) {
+  RefDetail <- function (cr_attr_name, attr) {
+    if (attr != '' && !is.na(attr)) {
+      paste0("&", cr_attr_name, "=", attr)
+    }
+  }
+  CleanTitle <- function (title) { 
+    title <-gsub('</?i>|[.,;:\\-]', '', title, perl=TRUE)
+    # Return:
+    trimws(title)
+  }
+  cr_details <- cached_works(query=paste0('ignorefirstampersand=true',
+      RefDetail('atitle', CleanTitle(ref['Title'])),
+      RefDetail('aulast', FirstWord(ref['Author'])),
+      RefDetail('spage', FirstWord(ref['Pages'])),
+      # RefDetail('epage', LastWord(ref['Pages'])),
+      RefDetail('date', ref['Year']),
+      RefDetail('doi', ref['DOI']),
+      RefDetail('volume', ref['Volume']),
+      RefDetail('issn', ref['issn']),
+      RefDetail('title', ref['Journal'])
+  ), limit=1)
+  if (cr_details$meta[, 'total_results'] > 0) {
+    topResult <- cr_details$data[1, ]
+    AddIfBlank <- function (ref, cr_attr_name, attr) {
+      if (
+        (is.na(ref[attr]) || ref[attr] == '') &&
+        cr_attr_name %in% names(topResult) &&
+        !grepl('true date-time group', topResult[, 'title'], fixed=TRUE) &&
+        !grepl('DIGTREATISE', topResult[, cr_attr_name], fixed=TRUE) &&
+        !grepl('AccessScience', topResult[, cr_attr_name], fixed=TRUE) &&
+        (!'container.title' %in% names(topResult) || !grepl('AAPG', topResult[, 'container.title'], fixed=TRUE))
+        ) {
+        ref[attr] <- gsub("(\\w,)(\\w)", "\\1 \\2", 
+                          gsub("\\.$", "", 
+                               as.character(topResult[, cr_attr_name]), perl=TRUE),
+                          perl=TRUE)
+      }
+      # Return: 
+      ref
+    }
+    ref <- AddIfBlank(ref, 'container.title', 'Secondary.Title')
+    ref <- AddIfBlank(ref, 'DOI', 'DOI')
+    ref <- AddIfBlank(ref, 'issue', 'Issue')
+    ref <- AddIfBlank(ref, 'title', 'Title')
+    ref <- AddIfBlank(ref, 'volume', 'Volume')
+  }
+  # Return: 
+  ref
+}
+
 BibEntry <- function (ref) {
   BibLine <- function (bibKey, key, text=ref[key]) {
     if (is.na(ref[key]) || ref[key] == "") "" else  paste0("  ", bibKey, " = {", trimws(text), "},\n")
   }
   refType <- tolower(FirstWord(ref['Reference.Type']))
   if (refType %in% c('generic', 'journal')) refType <- 'article'
+  
+  ref <- RefExpand(ref)
   paste0("@", refType, '{', 
          RefKey(ref), ",\n",
          BibLine('author', 'Author', FormatAuthors(ref['Author'])),
