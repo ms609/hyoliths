@@ -90,8 +90,10 @@ ColMissing(omit)
 Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 1000 for each parameter:
 
 ```{R mrbayes-parameter-summary, fig.cap="MrBayes parameter summary", echo=FALSE, asis=TRUE}
-knitr::kable(read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(3:5)],
-             caption="MrBayes parameter estimates (.pstat file)")
+pstat <- read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]
+pstat[, 2:5] <- signif(pstat[, 2:5], 3)
+pstat[, 6] <- signif(pstat[, 6], 5)
+knitr::kable(pstat, caption="MrBayes parameter estimates (.pstat file)")
 ```
 
 It's interesting to note the position of _Gasconsia_, which is widely held to have an affinity with the craniid brachiopods, and is recovered in such a position using the inapplicable-safe parsimony algorithm (but not always when the standard Fitch parsimony algorithm is used). 
