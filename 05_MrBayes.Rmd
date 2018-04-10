@@ -9,6 +9,7 @@ date: "`r Sys.Date()`"
 
 ```{R mrbayes-ini, echo=FALSE}
 files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
+Mgen <- 4
 
 allTrees <- lapply(files, read.nexus)
 nTrees <- length(allTrees[[1]])
@@ -20,7 +21,7 @@ Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk mod
 
 > lset coding=variable rates=gamma;
 
-Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with $α_T = 1$, $β_T = 1/($_equal weights tree length_$/$_number of characters_$)$, $α = c = 1$:
+Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with $\alpha_T = 1$, $\beta_T = 1/($_equal weights tree length_$/$_number of characters_$)$, $\alpha = c = 1$:
 
 > prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.trees[[1]], my_data), 2)`, 1, 1);
 
@@ -51,9 +52,9 @@ _`r outgroup`_ was selected as an outgroup:
 
 > outgroup `r outgroup`;
 
-Four MrBayes runs were executed, each sampling eight chains for 5&nbsp;000&nbsp;000 generations, with samples taken every 500 generations.  The first 10% of samples were discarded as burn-in.
+Four MrBayes runs were executed, each sampling eight chains for `Mgen`&nbsp;000&nbsp;000 generations, with samples taken every 500 generations.  The first 10% of samples were discarded as burn-in.
 
-> mcmcp ngen=5000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
+> mcmcp ngen=`r Mgen`000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
 
 A posterior tree topology was derived from the combined posterior sample of all runs.
 
@@ -90,12 +91,8 @@ ColMissing(omit)
 Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 1000 for each parameter:
 
 ```{R mrbayes-parameter-summary, fig.cap="MrBayes parameter summary", echo=FALSE, asis=TRUE}
-pstat <- read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]
+pstat <- read.table('MrBayes/hyo.nex.pstat', skip=0, header=TRUE)[, -c(4:6)]
 pstat[, 2:5] <- signif(pstat[, 2:5], 3)
 pstat[, 6] <- signif(pstat[, 6], 5)
 knitr::kable(pstat, caption="MrBayes parameter estimates (.pstat file)")
 ```
-
-It's interesting to note the position of _Gasconsia_, which is widely held to have an affinity with the craniid brachiopods, and is recovered in such a position using the inapplicable-safe parsimony algorithm (but not always when the standard Fitch parsimony algorithm is used). 
-
-One possibility is that the failure of Bayesian analysis to recover this group as a clade reflects inappropriate handling of inapplicable data in the Mk model, though it is at present difficult to test this hypothesis.

@@ -143,9 +143,9 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <li class="chapter" data-level="3" data-path="reconstructions.html"><a href="reconstructions.html"><i class="fa fa-check"></i><b>3</b> Character reconstructions</a><ul>
 <li class="chapter" data-level="3.1" data-path="reconstructions.html"><a href="reconstructions.html#sclerites"><i class="fa fa-check"></i><b>3.1</b> Sclerites</a><ul>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#present-in-adult"><i class="fa fa-check"></i>[1] Present in adult</a></li>
-<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#accessory-sclerites-reduced"><i class="fa fa-check"></i>[2] Accessory sclerites reduced</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="reconstructions.html"><a href="reconstructions.html#sclerites-bivalved-3"><i class="fa fa-check"></i><b>3.2</b> Sclerites: Bivalved [3]</a><ul>
+<li class="chapter" data-level="3.2" data-path="reconstructions.html"><a href="reconstructions.html#sclerites-bivalved-2"><i class="fa fa-check"></i><b>3.2</b> Sclerites: Bivalved [2]</a><ul>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#accessory-sclerites-reduced"><i class="fa fa-check"></i>[3] Accessory sclerites reduced</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#hinge-line-shape"><i class="fa fa-check"></i>[4] Hinge line shape</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#apophyses"><i class="fa fa-check"></i>[5] Apophyses</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#apophyses-morphology"><i class="fa fa-check"></i>[6] Apophyses: Morphology</a></li>
@@ -157,7 +157,7 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-ventral"><i class="fa fa-check"></i>[12] Muscle scars: Ventral</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-ventral-position"><i class="fa fa-check"></i>[13] Muscle scars: Ventral: Position</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-adjustor"><i class="fa fa-check"></i>[14] Muscle scars: Adjustor</a></li>
-<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dorsal-adductor"><i class="fa fa-check"></i>[15] Muscle scars: Dorsal adductor</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dorsal-adductors"><i class="fa fa-check"></i>[15] Muscle scars: Dorsal adductors</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-adductors-position"><i class="fa fa-check"></i>[16] Muscle scars: Adductors: Position</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dermal-muscles"><i class="fa fa-check"></i>[17] Muscle scars: Dermal muscles</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-unpaired-median-levator-ani"><i class="fa fa-check"></i>[18] Muscle scars: Unpaired median (levator ani)</a></li>
@@ -307,14 +307,14 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <blockquote>
 <p>lset coding=variable rates=gamma;</p>
 </blockquote>
-<p>Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model <span class="citation">(Rannala <em>et al.</em>, <a href="#ref-Rannala2012">2012</a>)</span>, but requires a prior mean tree length within about two orders of magnitude of the true value <span class="citation">(Zhang <em>et al.</em>, <a href="#ref-Zhang2012">2012</a>)</span>. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with <span class="math inline">\(α_T = 1\)</span>, <span class="math inline">\(β_T = 1/(\)</span><em>equal weights tree length</em><span class="math inline">\(/\)</span><em>number of characters</em><span class="math inline">\()\)</span>, <span class="math inline">\(α = c = 1\)</span>:</p>
+<p>Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model <span class="citation">(Rannala <em>et al.</em>, <a href="#ref-Rannala2012">2012</a>)</span>, but requires a prior mean tree length within about two orders of magnitude of the true value <span class="citation">(Zhang <em>et al.</em>, <a href="#ref-Zhang2012">2012</a>)</span>. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with <span class="math inline">\(\alpha_T = 1\)</span>, <span class="math inline">\(\beta_T = 1/(\)</span><em>equal weights tree length</em><span class="math inline">\(/\)</span><em>number of characters</em><span class="math inline">\()\)</span>, <span class="math inline">\(\alpha = c = 1\)</span>:</p>
 <blockquote>
 <p>prset brlenspr = unconstrained: gammadir(1, 0.33, 1, 1);</p>
 </blockquote>
 <p>Neomorphic and transformational characters <span class="citation">(<em>sensu</em> Sereno, <a href="#ref-Sereno2007">2007</a>)</span> were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:</p>
 <blockquote>
-<p>charset Neomorphic = 1 2 3 5 7 8 9 10 12 14 17 18 19 22 23 24 25 28 29 30 33 35 37 44 45 47 48 49 50 51 52 55 59 60 61 62 64 65 66 67 68 69 70 71 75 76 77 79 81 84 85 89 90 91 92 93 95 96 97 100 101 103;</p>
-<p>charset Transformational = 4 6 11 13 15 16 20 21 26 27 31 32 34 36 38 39 40 41 42 43 46 53 54 56 57 58 63 72 73 74 78 80 82 83 86 87 88 94 98 99 102 104 105;</p>
+<p>charset Neomorphic = 1 2 3 5 7 8 9 10 12 14 17 18 19 22 23 24 25 28 29 30 33 35 37 44 45 47 48 49 50 51 52 55 59 60 61 62 64 65 67 68 69 70 71 75 76 77 79 81 84 85 89 91 92 93 95 96 97 100 101 103;</p>
+<p>charset Transformational = 4 6 11 13 15 16 20 21 26 27 31 32 34 36 38 39 40 41 42 43 46 53 54 56 57 58 63 66 72 73 74 78 80 82 83 86 87 88 90 94 98 99 102 104 105;</p>
 <p>partition chartype = 2: Neomorphic, Transformational;</p>
 <p>set partition = chartype;</p>
 <p>unlink shape=(all) pinvar=(all);</p>
@@ -331,9 +331,9 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <blockquote>
 <p>outgroup Dailyatia;</p>
 </blockquote>
-<p>Four MrBayes runs were executed, each sampling eight chains for 5 000 000 generations, with samples taken every 500 generations. The first 10% of samples were discarded as burn-in.</p>
+<p>Four MrBayes runs were executed, each sampling eight chains for  000 000 generations, with samples taken every 500 generations. The first 10% of samples were discarded as burn-in.</p>
 <blockquote>
-<p>mcmcp ngen=5000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;</p>
+<p>mcmcp ngen=4000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;</p>
 </blockquote>
 <p>A posterior tree topology was derived from the combined posterior sample of all runs.</p>
 <div class="figure"><span id="fig:mrbayes-full-consensus"></span>
@@ -353,16 +353,24 @@ Figure 5.2: Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pru
 <caption><span id="tab:mrbayes-parameter-summary">Table 5.1: </span>MrBayes parameter estimates (.pstat file)</caption>
 <thead>
 <tr class="header">
-<th align="left">TL.all.</th>
-<th align="right">X7.228989e.000</th>
-<th align="right">X5.303977e.001</th>
-<th align="right">X1.558667e.003</th>
-<th align="right">X3.343322e.003</th>
-<th align="right">X9.999751e.001</th>
+<th align="left">Parameter</th>
+<th align="right">Mean</th>
+<th align="right">Variance</th>
+<th align="right">minESS</th>
+<th align="right">avgESS</th>
+<th align="right">PSRF</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">TL{all}</td>
+<td align="right">7.230</td>
+<td align="right">0.5300</td>
+<td align="right">1560</td>
+<td align="right">3340</td>
+<td align="right">0.99998</td>
+</tr>
+<tr class="even">
 <td align="left">alpha_symdir{1}</td>
 <td align="right">0.320</td>
 <td align="right">0.0316</td>
@@ -370,7 +378,7 @@ Figure 5.2: Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pru
 <td align="right">7970</td>
 <td align="right">0.99998</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">pi_66(0)</td>
 <td align="right">0.391</td>
 <td align="right">0.0347</td>
@@ -378,7 +386,7 @@ Figure 5.2: Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pru
 <td align="right">7860</td>
 <td align="right">0.99999</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">pi_66(1)</td>
 <td align="right">0.289</td>
 <td align="right">0.0285</td>
@@ -386,7 +394,7 @@ Figure 5.2: Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pru
 <td align="right">7400</td>
 <td align="right">0.99995</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">pi_66(2)</td>
 <td align="right">0.371</td>
 <td align="right">0.0408</td>
@@ -394,7 +402,7 @@ Figure 5.2: Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pru
 <td align="right">3160</td>
 <td align="right">1.00010</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">pi_90(0)</td>
 <td align="right">0.138</td>
 <td align="right">0.0108</td>
@@ -402,7 +410,7 @@ Figure 5.2: Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pru
 <td align="right">6270</td>
 <td align="right">1.00000</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">pi_90(1)</td>
 <td align="right">0.294</td>
 <td align="right">0.0252</td>
@@ -410,7 +418,7 @@ Figure 5.2: Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pru
 <td align="right">4820</td>
 <td align="right">1.00000</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">pi_90(2)</td>
 <td align="right">0.198</td>
 <td align="right">0.0150</td>
@@ -418,7 +426,7 @@ Figure 5.2: Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pru
 <td align="right">6070</td>
 <td align="right">1.00000</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">pi_90(3)</td>
 <td align="right">0.721</td>
 <td align="right">0.0144</td>
@@ -489,7 +497,7 @@ gitbook.start({
 "link": "https://github.com/ms609/hy/edit/master/05_MrBayes.Rmd",
 "text": "Edit"
 },
-"download": null,
+"download": ["Brachiopod_phylogeny.pdf"],
 "toc": {
 "collapse": "subsection"
 }
