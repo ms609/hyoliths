@@ -154,8 +154,10 @@ ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
 ColPlot(consensus(ew.trees))
 ```
 
+Uncertainty in the position of _Heliomedusa_ contributes to the lack of resolution in the equal weights results:
+
 ```{R treesearch-equal-weights-pruned-consensus, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE, eval=FALSE}
-# omit <- c("none")
-# ColPlot(ConsensusWithout(ew.tree, omit))
-# ColMissing(omit)
+omit <- c('Heliomedusa_orienta')
+ColPlot(ConsensusWithout(ew.trees, omit))
+ColMissing(omit)
 ```
