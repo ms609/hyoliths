@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="dataset.html">
-<link rel="next" href="reconstructions.html">
+<link rel="prev" href="reconstructions.html">
+<link rel="next" href="bayesian-analysis.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -301,119 +301,75 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="treesearch" class="section level1">
-<h1><span class="header-section-number">2</span> Parsimony analysis</h1>
-<p>The phylogenetic dataset contains a high proportion of inapplicable codings (452/3885 = 11.6% of tokens), which are known to introduce error and bias to phylogenetic reconstruction when the Fitch algorithm is employed <span class="citation">(Maddison, <a href="#ref-Maddison1993">1993</a>; Brazeau and Guillerme <em>et al.</em>, <a href="#ref-Brazeau2018">2017</a>)</span>. As such, we employed a new tree-scoring algorithm that correctly handles inapplicable data <span class="citation">(Brazeau and Guillerme <em>et al.</em>, <a href="#ref-Brazeau2018">2017</a>)</span>, implemented in the <em>MorphyLib</em> <em>C</em> library <span class="citation">(Brazeau and Martin R. Smith <em>et al.</em>, <a href="#ref-Brazeau2017Morphylib">2017</a>)</span>. We employed the <em>R</em> package <em>TreeSearch</em> v0.1.2 <span class="citation">(Smith, <a href="#ref-Smith2018TreeSearch">2018</a>)</span> to conduct phylogenetic tree search with this algorithm.</p>
-<div id="search-parameters" class="section level2">
-<h2><span class="header-section-number">2.1</span> Search parameters</h2>
-<p>Heuristic searches were conducted using the parsimony ratchet <span class="citation">(Nixon, <a href="#ref-Nixon1999">1999</a>)</span> under equal and implied weights <span class="citation">(Goloboff, <a href="#ref-Goloboff1997">1997</a>)</span>. The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (<em>k</em>) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that has been shown to produce higher accuracy than equal weights at any given level of precision <span class="citation">(Smith, <a href="#ref-Smith2017">2017</a>)</span>.</p>
-</div>
-<div id="analysis" class="section level2">
-<h2><span class="header-section-number">2.2</span> Analysis</h2>
-<p>The R commands used to conduct the analysis are reproduced below.
-The results can most readily be replicated using the <mark><a href="https://@@@.@@@/">R markdown files</a></mark> used
-to generate these pages.</p>
-<div id="initialize-and-load-data" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Initialize and load data</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">kValues &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">4.5</span>, <span class="dv">7</span>, <span class="fl">10.5</span>, <span class="dv">16</span>, <span class="dv">24</span>)</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2"></div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3"><span class="co"># Load file from MorphoBank</span></div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4">my_data &lt;-<span class="st"> </span><span class="kw">ReadAsPhyDat</span>(filename)</div>
-<div class="sourceLine" id="5" href="#5" data-line-number="5">my_data<span class="op">$</span>Namacalathus &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># Exclude Namacalathus</span></div>
-<div class="sourceLine" id="6" href="#6" data-line-number="6">iw_data &lt;-<span class="st"> </span><span class="kw">PrepareDataIW</span>(my_data)</div></code></pre>
-</div>
-<div id="generate-starting-tree" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> Generate starting tree</h3>
-<p>Start from a neighbour-joining tree, rooted on the outgroup.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">nj.tree &lt;-<span class="st"> </span><span class="kw">NJTree</span>(my_data)</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">rooted.tree &lt;-<span class="st"> </span><span class="kw">EnforceOutgroup</span>(nj.tree, outgroup)</div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3">start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<span class="dt">tree=</span>rooted.tree, <span class="dt">dataset=</span>my_data, <span class="dt">maxIter=</span><span class="dv">3000</span>,</div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4">                         <span class="dt">EdgeSwapper=</span>RootedNNISwap, <span class="dt">verbosity=</span><span class="dv">0</span>)</div></code></pre>
-</div>
-<div id="implied-weights-analysis" class="section level3">
-<h3><span class="header-section-number">2.2.3</span> Implied weights analysis</h3>
-<p>The position of the root does not affect tree score, so keep it fixed (using <code>RootedXXXSwap</code> functions) to avoid unnecessary swaps.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1"><span class="cf">for</span> (k <span class="cf">in</span> kValues) {</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">  iw.tree &lt;-<span class="st"> </span><span class="kw">IWRatchet</span>(start.tree, iw_data, <span class="dt">concavity=</span>k,</div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3">                       <span class="dt">ratchHits =</span> <span class="dv">60</span>, <span class="dt">searchHits=</span><span class="dv">55</span>,</div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4">                       <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),</div>
-<div class="sourceLine" id="5" href="#5" data-line-number="5">                       <span class="dt">verbosity=</span>0L)</div>
-<div class="sourceLine" id="6" href="#6" data-line-number="6">  score &lt;-<span class="st"> </span><span class="kw">IWScore</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k)</div>
-<div class="sourceLine" id="7" href="#7" data-line-number="7">  <span class="co"># Write single best tree</span></div>
-<div class="sourceLine" id="8" href="#8" data-line-number="8">  <span class="kw">write.nexus</span>(iw.tree,</div>
-<div class="sourceLine" id="9" href="#9" data-line-number="9">              <span class="dt">file=</span><span class="kw">paste0</span>(<span class="st">&quot;TreeSearch/hy_iw_k&quot;</span>, k, <span class="st">&quot;_&quot;</span>, </div>
-<div class="sourceLine" id="10" href="#10" data-line-number="10">                          <span class="kw">signif</span>(score, <span class="dv">5</span>), <span class="st">&quot;.nex&quot;</span>, <span class="dt">collapse=</span><span class="st">&#39;&#39;</span>))</div>
-<div class="sourceLine" id="11" href="#11" data-line-number="11"></div>
-<div class="sourceLine" id="12" href="#12" data-line-number="12">  suboptFraction =<span class="st"> </span><span class="fl">0.02</span></div>
-<div class="sourceLine" id="13" href="#13" data-line-number="13">  iw.consensus &lt;-<span class="st"> </span><span class="kw">IWRatchetConsensus</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k,</div>
-<div class="sourceLine" id="14" href="#14" data-line-number="14">                  <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedNNISwap),</div>
-<div class="sourceLine" id="15" href="#15" data-line-number="15">                  <span class="dt">searchHits=</span><span class="dv">4</span>,</div>
-<div class="sourceLine" id="16" href="#16" data-line-number="16">                  <span class="dt">suboptimal=</span>score <span class="op">*</span><span class="st"> </span>suboptFraction,</div>
-<div class="sourceLine" id="17" href="#17" data-line-number="17">                  <span class="dt">nSearch=</span><span class="dv">150</span>, <span class="dt">verbosity=</span>0L)</div>
-<div class="sourceLine" id="18" href="#18" data-line-number="18">  <span class="kw">write.nexus</span>(iw.consensus, </div>
-<div class="sourceLine" id="19" href="#19" data-line-number="19">              <span class="dt">file=</span><span class="kw">paste0</span>(<span class="st">&quot;TreeSearch/hy_iw_k&quot;</span>, k, <span class="st">&quot;_&quot;</span>, </div>
-<div class="sourceLine" id="20" href="#20" data-line-number="20">                          <span class="kw">signif</span>(<span class="kw">IWScore</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k), <span class="dv">5</span>),</div>
-<div class="sourceLine" id="21" href="#21" data-line-number="21">                          <span class="st">&quot;.all.nex&quot;</span>, <span class="dt">collapse=</span><span class="st">&#39;&#39;</span>))</div>
-<div class="sourceLine" id="22" href="#22" data-line-number="22">}</div></code></pre>
-</div>
-<div id="equal-weights-analysis" class="section level3">
-<h3><span class="header-section-number">2.2.4</span> Equal weights analysis</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1">ew.tree &lt;-<span class="st"> </span><span class="kw">Ratchet</span>(start.tree, my_data, <span class="dt">verbosity=</span>0L,</div>
-<div class="sourceLine" id="2" href="#2" data-line-number="2">                   <span class="dt">ratchHits =</span> <span class="dv">25</span>, <span class="dt">searchHits=</span><span class="dv">55</span>, <span class="co"># ratchHits = 10 not enough</span></div>
-<div class="sourceLine" id="3" href="#3" data-line-number="3">                   <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))</div>
-<div class="sourceLine" id="4" href="#4" data-line-number="4">ew.consensus &lt;-<span class="st"> </span><span class="kw">RatchetConsensus</span>(ew.tree, my_data, <span class="dt">nSearch=</span><span class="dv">150</span>,</div>
-<div class="sourceLine" id="5" href="#5" data-line-number="5">                                 <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedNNISwap),</div>
-<div class="sourceLine" id="6" href="#6" data-line-number="6">                                 <span class="dt">verbosity=</span>0L)</div>
-<div class="sourceLine" id="7" href="#7" data-line-number="7"><span class="kw">write.nexus</span>(ew.consensus, <span class="dt">file=</span><span class="kw">paste0</span>(<span class="dt">collapse=</span><span class="st">&#39;&#39;</span>, <span class="st">&quot;TreeSearch/hy_ew_&quot;</span>,</div>
-<div class="sourceLine" id="8" href="#8" data-line-number="8">                                      <span class="kw">Fitch</span>(ew.tree, my_data), <span class="st">&quot;.nex&quot;</span>))</div></code></pre>
-</div>
-</div>
-<div id="results" class="section level2">
-<h2><span class="header-section-number">2.3</span> Results</h2>
-<div id="implied-weights-results" class="section level3">
-<h3><span class="header-section-number">2.3.1</span> Implied weights results</h3>
-<p>Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.</p>
-<div class="figure"><span id="fig:treesearch-iw-consensus"></span>
-<img src="Brachiopod_phylogeny_files/figure-html/treesearch-iw-consensus-1.png" alt="Consensus of implied weights analyses at all values of k" width="576" />
+<div id="fitch" class="section level1">
+<h1><span class="header-section-number">4</span> Fitch parsimony</h1>
+<p>Parsimony search was conducted in TNT v1.5 <span class="citation">(Goloboff and Catalano, <a href="#ref-Goloboff2016">2016</a>)</span> using ratchet and tree drifting heuristics <span class="citation">(Goloboff, <a href="#ref-Goloboff1999">1999</a>; Nixon, <a href="#ref-Nixon1999">1999</a>)</span>, repeating the search until the optimal score had been hit by 1500 independent searches:</p>
+<blockquote>
+<p>xmult:rat10 drift10 hits 1500 level 4 chklevel 5;</p>
+</blockquote>
+<p>Searches were conducted under equal weights and results saved to file:</p>
+<blockquote>
+<p>piwe-; xmult; <span class="comment">Conduct search with equal weighting</span></p>
+<p>tsav *TNT/ew.tre;sav;tsav/ <span class="comment">Save results to file</span>;</p>
+<p>keep 0; hold 10000; <span class="comment">Clear trees from memory</span></p>
+</blockquote>
+<p>Further searches were conducted under extended implied weighting <span class="citation">(Goloboff, <a href="#ref-Goloboff1997">1997</a>, <a href="#ref-Goloboff2014">2014</a>)</span>, under the concavity constants 2, 3, 4.5, 7, 10.5, 16 and 24:</p>
+<blockquote>
+<p>xpiwe=; <span class="comment">Enable extended implied weighting</span></p>
+<p>piwe=2; xmult; <span class="comment">Conduct analysis at k = 2</span></p>
+<p>tsav *TNT/xpiwe2.tre; sav; tsav/; <span class="comment">Save results to file</span></p>
+<p>keep 0; hold 10000; <span class="comment">Clear trees from memory</span></p>
+<p>piwe=3; xmult; <span class="comment">Conduct analysis at k = 3</span></p>
+<p>tsav *TNT/xpiwe3.tre; sav ;tsav/; <span class="comment">Save results to file</span></p>
+</blockquote>
+<p>We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.</p>
+<div id="implied-weights" class="section level2">
+<h2><span class="header-section-number">4.1</span> Implied weights</h2>
+<p>The consensus of all implied weights runs is not very well resolved.
+This lack of resolution is largely a product of a few wildcard taxa, particularly at <span class="math inline">\(k = 4.5\)</span>, which obscures a consistent set of relationships between the remaining taxa:</p>
+<p><img src="Brachiopod_phylogeny_files/figure-html/tnt-iw-consensus-1.png" width="672" />
+<img src="Brachiopod_phylogeny_files/figure-html/tnt-iw-3-4.5-1.png" width="681.6" /></p>
+<p><img src="Brachiopod_phylogeny_files/figure-html/tnt-iw-7-10.5-1.png" width="681.6" /></p>
+<p><img src="Brachiopod_phylogeny_files/figure-html/tnt-iw-16-24-1.png" width="681.6" /></p>
+<div id="consensus-without-k-4.5" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Consensus without k = 4.5</h3>
+<p>Though there’s no clear reason that a single concavity constant should give such different results to values both above and below it, the results with <span class="math inline">\(k = 4.5\)</span> are so strikingly different that it is instructive to create a consensus tree that excludes this case:</p>
+<div class="figure"><span id="fig:tnt-consensus-selective"></span>
+<img src="Brachiopod_phylogeny_files/figure-html/tnt-consensus-selective-1.png" alt="TNT implied weights consensus" width="672" />
 <p class="caption">
-Figure 2.1: Consensus of implied weights analyses at all values of k
-</p>
-</div>
-<img src="Brachiopod_phylogeny_files/figure-html/treesearch-all-iw-results-1.png" width="681.6" />
-<img src="Brachiopod_phylogeny_files/figure-html/treesearch-iw-results-2-1.png" width="681.6" />
-<img src="Brachiopod_phylogeny_files/figure-html/treesearch-iw-results-3-1.png" width="681.6" />
-<div class="figure"><span id="fig:treesearch-iw-results-4"></span>
-<img src="Brachiopod_phylogeny_files/figure-html/treesearch-iw-results-4-1.png" alt="Implied weights results" width="681.6" />
-<p class="caption">
-Figure 2.2: Implied weights results
+Figure 4.1: TNT implied weights consensus
 </p>
 </div>
 </div>
-<div id="equal-weights-results" class="section level3">
-<h3><span class="header-section-number">2.3.2</span> Equal weights results</h3>
-<div class="figure"><span id="fig:treesearch-equal-weights-results"></span>
-<img src="Brachiopod_phylogeny_files/figure-html/treesearch-equal-weights-results-1.png" alt="Strict consensus of equal weights results" width="672" />
+<div id="consensus-of-all-iw-trees-without-wildcards" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Consensus of all IW trees, without wildcards</h3>
+<p>Even with the anomalous results at <span class="math inline">\(k = 4.5\)</span>, the essential relationships between most taxa are recovered under all weighting situations:</p>
+<div class="figure"><span id="fig:tnt-pruned-consensus"></span>
+<img src="Brachiopod_phylogeny_files/figure-html/tnt-pruned-consensus-1.png" alt="TNT implied weights consensus" width="672" />
 <p class="caption">
-Figure 2.3: Strict consensus of equal weights results
+Figure 4.2: TNT implied weights consensus
+</p>
+</div>
+</div>
+</div>
+<div id="equal-weights" class="section level2">
+<h2><span class="header-section-number">4.2</span> Equal weights</h2>
+<div class="figure"><span id="fig:tnt-ew-consensus"></span>
+<img src="Brachiopod_phylogeny_files/figure-html/tnt-ew-consensus-1.png" alt="TNT Equal weights consensus" width="672" />
+<p class="caption">
+Figure 4.3: TNT Equal weights consensus
 </p>
 </div>
 
 </div>
 </div>
-</div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Maddison1993">
-<p>Maddison, W.P. 1993. Missing data versus missing characters in phylogenetic analysis. Systematic Biology. 42, 576–581. doi:<a href="https://doi.org/10.1093/sysbio/42.4.576">10.1093/sysbio/42.4.576</a></p>
+<div id="ref-Goloboff2016">
+<p>Goloboff, P.A., Catalano, S.A. 2016. TNT version 1.5, including a full implementation of phylogenetic morphometrics. Cladistics. 32, 221–238. doi:<a href="https://doi.org/10.1111/cla.12160">10.1111/cla.12160</a></p>
 </div>
-<div id="ref-Brazeau2018">
-<p>Brazeau, M.D., Guillerme, T., Smith, M.R. 2017. Morphological phylogenetic analysis with inapplicable data. bioR<span class="math inline">\(\chi\)</span>iv. doi:<a href="https://doi.org/10.1101/209775">10.1101/209775</a></p>
-</div>
-<div id="ref-Brazeau2017Morphylib">
-<p>Brazeau, M.D., Smith, M.R., Guillerme, T. 2017. MorphyLib: a library for phylogenetic analysis of categorical trait data with inapplicability. doi:<a href="https://doi.org/10.5281/zenodo.815372">10.5281/zenodo.815372</a></p>
-</div>
-<div id="ref-Smith2018TreeSearch">
-<p>Smith, M.R. 2018. TreeSearch: phylogenetic tree search using custom optimality criteria. doi:<a href="https://doi.org/10.5281/zenodo.1194595">10.5281/zenodo.1194595</a></p>
+<div id="ref-Goloboff1999">
+<p>Goloboff, P.A. 1999. Analyzing large data sets in reasonable times: solutions for composite optima. Cladistics. 15, 415–428. doi:<a href="https://doi.org/10.1006/clad.1999.0122">10.1006/clad.1999.0122</a></p>
 </div>
 <div id="ref-Nixon1999">
 <p>Nixon, K.C. 1999. The Parsimony Ratchet, a new method for rapid parsimony analysis. Cladistics. 15, 407–414. doi:<a href="https://doi.org/10.1111/j.1096-0031.1999.tb00277.x">10.1111/j.1096-0031.1999.tb00277.x</a></p>
@@ -421,8 +377,8 @@ Figure 2.3: Strict consensus of equal weights results
 <div id="ref-Goloboff1997">
 <p>Goloboff, P.A. 1997. Self-weighted optimization: tree searches and character state reconstructions under implied transformation costs. Cladistics. 13, 225–245. doi:<a href="https://doi.org/10.1111/j.1096-0031.1997.tb00317.x">10.1111/j.1096-0031.1997.tb00317.x</a></p>
 </div>
-<div id="ref-Smith2017">
-<p>Smith, M.R. 2017. Quantifying and visualising divergence between pairs of phylogenetic trees: implications for phylogenetic reconstruction. bioR<span class="math inline">\(\chi\)</span>iv. doi:<a href="https://doi.org/10.1101/227942">10.1101/227942</a></p>
+<div id="ref-Goloboff2014">
+<p>Goloboff, P.A. 2014. Extended implied weighting. Cladistics. 30, 260–272. doi:<a href="https://doi.org/10.1111/cla.12047">10.1111/cla.12047</a></p>
 </div>
 </div>
             </section>
@@ -430,8 +386,8 @@ Figure 2.3: Strict consensus of equal weights results
           </div>
         </div>
       </div>
-<a href="dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="reconstructions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="reconstructions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bayesian-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -461,7 +417,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ms609/hy/edit/master/02_TreeSearch.Rmd",
+"link": "https://github.com/ms609/hy/edit/master/04_TNT.Rmd",
 "text": "Edit"
 },
 "download": null,

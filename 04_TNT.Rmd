@@ -4,7 +4,7 @@ author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 ---
 
-# Fitch parsimony {#tnt}
+# Fitch parsimony {#fitch}
 
 Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using ratchet and tree drifting heuristics [@Goloboff1999;@Nixon1999], repeating the search until the optimal score had been hit by 1500 independent searches:
 

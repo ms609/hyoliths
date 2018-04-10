@@ -4,7 +4,7 @@ author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 ---
 
-# The dataset
+# The dataset {#dataset}
 
 Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` early brachiozoan taxa, including hyoliths, tommotiids and mickwitziids, which were coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).
 

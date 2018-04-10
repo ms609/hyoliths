@@ -33,7 +33,7 @@
   
   
 
-<link rel="next" href="the-dataset.html">
+<link rel="next" href="dataset.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -126,7 +126,7 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Brachiopod origins</a></li>
-<li class="chapter" data-level="1" data-path="the-dataset.html"><a href="the-dataset.html"><i class="fa fa-check"></i><b>1</b> The dataset</a></li>
+<li class="chapter" data-level="1" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>1</b> The dataset</a></li>
 <li class="chapter" data-level="2" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>2</b> Parsimony analysis</a><ul>
 <li class="chapter" data-level="2.1" data-path="treesearch.html"><a href="treesearch.html#search-parameters"><i class="fa fa-check"></i><b>2.1</b> Search parameters</a></li>
 <li class="chapter" data-level="2.2" data-path="treesearch.html"><a href="treesearch.html#analysis"><i class="fa fa-check"></i><b>2.2</b> Analysis</a><ul>
@@ -274,12 +274,12 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#position"><i class="fa fa-check"></i>[105] Position</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tnt.html"><a href="tnt.html"><i class="fa fa-check"></i><b>4</b> Fitch parsimony</a><ul>
-<li class="chapter" data-level="4.1" data-path="tnt.html"><a href="tnt.html#implied-weights"><i class="fa fa-check"></i><b>4.1</b> Implied weights</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="tnt.html"><a href="tnt.html#consensus-without-k-4.5"><i class="fa fa-check"></i><b>4.1.1</b> Consensus without k = 4.5</a></li>
-<li class="chapter" data-level="4.1.2" data-path="tnt.html"><a href="tnt.html#consensus-of-all-iw-trees-without-wildcards"><i class="fa fa-check"></i><b>4.1.2</b> Consensus of all IW trees, without wildcards</a></li>
+<li class="chapter" data-level="4" data-path="fitch.html"><a href="fitch.html"><i class="fa fa-check"></i><b>4</b> Fitch parsimony</a><ul>
+<li class="chapter" data-level="4.1" data-path="fitch.html"><a href="fitch.html#implied-weights"><i class="fa fa-check"></i><b>4.1</b> Implied weights</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="fitch.html"><a href="fitch.html#consensus-without-k-4.5"><i class="fa fa-check"></i><b>4.1.1</b> Consensus without k = 4.5</a></li>
+<li class="chapter" data-level="4.1.2" data-path="fitch.html"><a href="fitch.html#consensus-of-all-iw-trees-without-wildcards"><i class="fa fa-check"></i><b>4.1.2</b> Consensus of all IW trees, without wildcards</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="tnt.html"><a href="tnt.html#equal-weights"><i class="fa fa-check"></i><b>4.2</b> Equal weights</a></li>
+<li class="chapter" data-level="4.2" data-path="fitch.html"><a href="fitch.html#equal-weights"><i class="fa fa-check"></i><b>4.2</b> Equal weights</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="bayesian-analysis.html"><a href="bayesian-analysis.html"><i class="fa fa-check"></i><b>5</b> Bayesian analysis</a></li>
 <li class="chapter" data-level="6" data-path="taxonomic-implications.html"><a href="taxonomic-implications.html"><i class="fa fa-check"></i><b>6</b> Taxonomic implications</a></li>
@@ -308,10 +308,10 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 </div>
 <div id="brachiopod-origins" class="section level1 unnumbered">
 <h1>Brachiopod origins</h1>
-<p>This document provides a detailed discussion of analyses of the <a href="#dataset">morphological dataset</a> constructed to accompany Sun <em>et al.</em> <span class="citation">(<a href="#ref-Sun2018">2018</a>)</span>, and their results.</p>
+<p>This document provides a detailed discussion of <a href="treesearch.html#treesearch">analyses</a> of the <a href="dataset.html#dataset">morphological dataset</a> constructed to accompany Sun <em>et al.</em> <span class="citation">(<a href="#ref-Sun2018">2018</a>)</span>, and their results.</p>
 <p>We first discuss the results presented in the main paper, which employ the algorithm described by Brazeau, Guillerme and Smith <span class="citation">(<a href="#ref-Brazeau2018">2017</a>)</span> for correct handling of inapplicable data in a parsimony setting, and explore how each
 character is <a href="reconstructions.html#reconstructions">reconstructed</a> on an optimal tree.</p>
-<p>For completeness, we also document the results of <a href="tnt.html#tnt">standard Fitch parsimony</a> analysis, and the results of <a href="#MrBayes">Bayesian analysis</a>, neither of which treat inapplicable data in a logically consistent fashion.</p>
+<p>For completeness, we also document the results of <a href="fitch.html#fitch">standard Fitch parsimony</a> analysis, and the results of <a href="#MrBayes">Bayesian analysis</a>, neither of which treat inapplicable data in a logically consistent fashion.</p>
 
 </div>
 <h3>References</h3>
@@ -329,7 +329,7 @@ character is <a href="reconstructions.html#reconstructions">reconstructed</a> on
         </div>
       </div>
 
-<a href="the-dataset.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dataset.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
