@@ -18,7 +18,7 @@ Rhynchonelliforms
 
 : _Salanygolina_ has been interpreted as a stem-group rhynchonelliform based on its combination of paterinid and chileate features [@Holmer2009Theenigmatic].  Our results position _Salanygolina_ between paterinids and chileids, which directly corroborates this proposed phylogenetic position.  
 
-:Basal rhynchonellids are characterized by a circular umbonal perforation in the ventral valve, associated with a colleplax.  Partly on this basis, the aberrant taxa _Yuganotheca_ and _Tomteluva_ plot close to _Salanygolina_, the three often forming a clade -- though the reliability of this grouping is perhaps liable to change as additional data comes to light.  Nevertheless, an interpretation of _Yuganotheca_ as a stem-group brachiopod [@Zhang2014Anearly] is difficult to reconcile with the increasingly well-constrained nature of the early brachiopod body plan.
+: Basal rhynchonellids are characterized by a circular umbonal perforation in the ventral valve, associated with a colleplax.  Partly on this basis, the aberrant taxa _Yuganotheca_ and _Tomteluva_ plot close to _Salanygolina_, the three often forming a clade -- though the reliability of this grouping is perhaps liable to change as additional data comes to light.  Nevertheless, an interpretation of _Yuganotheca_ as a stem-group brachiopod [@Zhang2014Anearly] is difficult to reconcile with the increasingly well-constrained nature of the early brachiopod body plan.
 
 Linguliforms
 : The reconstruction of Linguloformea comprising Linguloidea as sister to Discinoidea is as expected, though it is notable that Acrotretids and Siphonotretids plot more closely to Linguloidea than Discinoidea does.
