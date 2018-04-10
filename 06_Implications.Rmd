@@ -20,17 +20,18 @@ Rhynchonelliforms
 :Basal rhynchonellids are characterized by a circular umbonal perforation in the ventral valve, associated with a colleplax.  Partly on this basis, the aberrant taxa _Yuganotheca_ and _Tomteluva_ plot close to _Salanygolina_, the three often forming a clade -- though the reliability of this grouping is perhaps liable to change as additional data comes to light.  Nevertheless, an interpretation of _Yuganotheca_ as a stem-group brachiopod [@Zhang2014Anearly] is difficult to reconcile with the increasingly well-constrained nature of the early brachiopod body plan.
 
 Linguliforms
-: The reconstruction of Linguloformea comprising Lingulids (including acrotretids and siphonotretids) as sister to the Discinids is as expected.
-: Lingulellotretids also sit within this linguliform grouping; a position in the phoronid stem lineage [advocated by @Balthasar2009EarlyCambrian] is not upheld.
-: More novel is the reconstruction of _Mummpikia_ in the linguliform total group: a rhynchonelliform affinity has been assumed based on its Its calcitic mineralogy.   This said, Balthasar [-@Balthasar2008iMummpikia] has highlighted the similarities between obolellids and linguliform brachiopods, including sub-&mu;m vertical canals and the detailed configuration of the posterior shell margin.
-Our analysis upholds the case for a linguliform affinity; a calcitic shell seemingly arose through an independent change within this taxon  As such, _Mummpikia_ has no direct bearing on the origin of 'Calciata', save that shell mineralogy is perhaps less static than commonly assumed.
+: The reconstruction of Linguloformea comprising Linguloidea as sister to Discinoidea is as expected, though it is notable that Acrotretids and Siphonotretids plot more closely to Linguloidea than Discinoidea does.
+: Lingulellotretids also sit within this lingulid grouping; a position in the phoronid stem lineage [advocated by @Balthasar2009EarlyCambrian] is not upheld.
+: More novel is the reconstruction of the calcitic obolellid _Mummpikia_ in the linguliform total group: a rhynchonelliform affinity has been assumed based on its calcitic mineralogy. This said, Balthasar [-@Balthasar2008iMummpikia] has highlighted the similarities between obolellids and linguliform brachiopods, including sub-&mu;m vertical canals and the detailed configuration of the posterior shell margin.
+Our analysis upholds the case for a linguliform affinity for _Mummpikia_; a calcitic shell seemingly arose through an independent change within this taxon  As such, _Mummpikia_ has no direct bearing on the origin of 'Calciata', save that shell mineralogy is perhaps less static than commonly assumed.
+: More generally, our results identify Class Obolellata as polyphyletic:  _Alisina_ (Trematobolidae) plots within Rhynchonellata;  _Tomteluva_ is harder to place, but tends to group with _Salanygolina_ stemwards of the chileids.
 
 Tommotiids
 : Tommotiids represent a basal grade, paraphyletic to phoronids and crown-group brachiopods, in line with previous interpretations.  
-: The position of _Micrina_ and _Mickwitzia_ is somewhat difficult to pin down; certain analytical configruations reconstruct then as stem-brachiopods; others place them closer to the discinids or the craniiforms.  _Heliomedusa_ is commonly associated closely with _Mickwitzia_, reflecting the similarities emphasized by Holmer and Popov in @Williams2007PartH.
+: _Micrina_ and _Mickwitzia_ are the most crownwards of the tommotiids, but beyond this, their position is somewhat difficult to pin down; certain analytical configruations reconstruct then as stem-brachiopods; others place them closer to the discinids, the lingulids or the craniiforms.  _Heliomedusa_ is commonly associated closely with _Mickwitzia_, reflecting the similarities emphasized by Holmer and Popov in @Williams2007PartH.
 
 Hyoliths
-: Hyoliths are interpreted as stem-group Brachiopods, which refines the broader phylogenetic position proposed by @Moysiuk2017Hyolithsare.  <mark>This is to say, they sit crownwards of phoronids</mark>, but no analysis places them within the Brachiopod crown group.
-: Hyoliths are interpreted as derived tommotiids; their precise position varies based on analytical details, but they tend to plot close to _Paterimitra_.  They represent an early and potentially independent move to a closed filtration chamber within the Brachiopod lineage.  
+: Hyoliths are interpreted as stem-group Brachiopods, which refines the broader phylogenetic position proposed by @Moysiuk2017Hyolithsare.  This is to say, they sit closer to brachiopods than the phoronids do, but no analysis places them within the Brachiopod crown group.
+: Hyoliths thus represent derived tommotiids; their precise position varies based on analytical details, but they tend to plot close to _Paterimitra_.  They represent an early and potentially independent move to a closed filtration chamber within the Brachiopod lineage.  
 
 
