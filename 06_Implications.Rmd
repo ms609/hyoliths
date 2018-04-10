@@ -9,15 +9,15 @@ This section briefly places key features of our results in the context of previo
 
 Craniiforms
 : Trimerellids are reconstructed as paraphyletic with respect to Craniiforms.  
-: This is consistent with the affinity commonly drawn between these groups [e.g. @Williams2000BrachiopodaLinguliformea], and helps to account for the stratigraphically late (Ordovician) appearance of Craniids in the fossil record.  (Aragonite is underrepresented in early Palaeozoic strata due to taphonomic bias.)
+: This is consistent with the affinity commonly drawn between these groups [e.g. @Williams2000BrachiopodaLinguliformea], and helps to account for the stratigraphically late (Ordovician) appearance of Craniids in the fossil record.  (Aragonite is underrepresented in early Palaeozoic strata due to taphonomic bias.)  
 : The relationship of Craniiforms with respect to Linguliforms and Rhynchonelliforms remains uncertain.  Shell characters point to a relationship with the Rhynchonelliforms, which is countered by similarities between the spermatozoa of phoronids and terebratulids, which indicate to a craniiform + linguliform clade.
 
 Rhynchonelliforms
-: The position of kutorginids in the rhynchonelliform stem lineage has been tricky to resolve [@Holmer2018Theattachment]; we resolve them as paraphyletic with respect to Rhynconellata + Obolellata (represented by _Alisina_), which is broadly in accord to previous proposals [@Holmer2018Evolutionarysignificance].  Chileids form the adelphiotaxon to this clade.  _Longtancunella_  [@Zhang2011Theexceptionally] nests crownwards of the protorthid _Glyptoria_, but stemward of the obolellid _Alisina_. 
-:
+: The position of kutorginids within the rhynchonelliform stem lineage has been tricky to resolve [@Holmer2018Theattachment]; we resolve them as paraphyletic with respect to Rhynconellata (which encompassess the obolellate _Alisina_), which is broadly in accord to previous proposals [@Holmer2018Evolutionarysignificance].  Chileids form the adelphiotaxon to this clade.  _Longtancunella_  [@Zhang2011Theexceptionally] nests crownwards of the protorthid _Glyptoria_, but stemward of the obolellid _Alisina_.  
+
 : _Salanygolina_ has been interpreted as a stem-group rhynchonelliform based on its combination of paterinid and chileate features [@Holmer2009Theenigmatic].  Our results position _Salanygolina_ between paterinids and chileids, which directly corroborates this proposed phylogenetic position.  
-:Basal rhynchonellids are characterized by a circular umbonal perforation in the ventral valve, associated with a colleplax.
-:Partly on this basis, the aberrant taxa _Yuganotheca_ and _Tomteluva_ plot close to _Salanygolina_, the three often forming a clade -- though the reliability of this grouping is perhaps liable to change as additional data comes to light.  _Yuganotheca_ is, however, consistently located within the brachiopod crown-group; a position in the stem lineage [@Zhang2014Anearly] is difficult to reconcile with the increasingly well-constrained nature of the early brachiopod body plan.
+
+:Basal rhynchonellids are characterized by a circular umbonal perforation in the ventral valve, associated with a colleplax.  Partly on this basis, the aberrant taxa _Yuganotheca_ and _Tomteluva_ plot close to _Salanygolina_, the three often forming a clade -- though the reliability of this grouping is perhaps liable to change as additional data comes to light.  Nevertheless, an interpretation of _Yuganotheca_ as a stem-group brachiopod [@Zhang2014Anearly] is difficult to reconcile with the increasingly well-constrained nature of the early brachiopod body plan.
 
 Linguliforms
 : The reconstruction of Linguloformea comprising Lingulids (including acrotretids and siphonotretids) as sister to the Discinids is as expected.
