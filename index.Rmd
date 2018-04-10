@@ -210,4 +210,4 @@ This document provides a detailed discussion of [analyses](#treesearch) of the [
 We first discuss the results presented in the main paper, which employ the algorithm described by @Brazeau2018 for correct handling of inapplicable data in a parsimony setting, and explore how each
 character is [reconstructed](#reconstructions) on an optimal tree.
 
-For completeness, we also document the results of [standard Fitch parsimony](#fitch) analysis, and the results of [Bayesian analysis](#MrBayes), neither of which treat inapplicable data in a logically consistent fashion.
+For completeness, we also document the results of [standard Fitch parsimony](#fitch) analysis, and the results of [Bayesian analysis](#bayesian), neither of which treat inapplicable data in a logically consistent fashion.

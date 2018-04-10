@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="treesearch.html">
+<link rel="prev" href="fitch.html">
+<link rel="next" href="taxonomic-implications.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -126,7 +126,7 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Brachiopod origins</a></li>
-<li class="chapter" data-level="1" data-path="the-dataset.html"><a href="the-dataset.html"><i class="fa fa-check"></i><b>1</b> The dataset</a></li>
+<li class="chapter" data-level="1" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>1</b> The dataset</a></li>
 <li class="chapter" data-level="2" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>2</b> Parsimony analysis</a><ul>
 <li class="chapter" data-level="2.1" data-path="treesearch.html"><a href="treesearch.html#search-parameters"><i class="fa fa-check"></i><b>2.1</b> Search parameters</a></li>
 <li class="chapter" data-level="2.2" data-path="treesearch.html"><a href="treesearch.html#analysis"><i class="fa fa-check"></i><b>2.2</b> Analysis</a><ul>
@@ -274,14 +274,14 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#position"><i class="fa fa-check"></i>[105] Position</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tnt.html"><a href="tnt.html"><i class="fa fa-check"></i><b>4</b> Fitch parsimony</a><ul>
-<li class="chapter" data-level="4.1" data-path="tnt.html"><a href="tnt.html#implied-weights"><i class="fa fa-check"></i><b>4.1</b> Implied weights</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="tnt.html"><a href="tnt.html#consensus-without-k-4.5"><i class="fa fa-check"></i><b>4.1.1</b> Consensus without k = 4.5</a></li>
-<li class="chapter" data-level="4.1.2" data-path="tnt.html"><a href="tnt.html#consensus-of-all-iw-trees-without-wildcards"><i class="fa fa-check"></i><b>4.1.2</b> Consensus of all IW trees, without wildcards</a></li>
+<li class="chapter" data-level="4" data-path="fitch.html"><a href="fitch.html"><i class="fa fa-check"></i><b>4</b> Fitch parsimony</a><ul>
+<li class="chapter" data-level="4.1" data-path="fitch.html"><a href="fitch.html#implied-weights"><i class="fa fa-check"></i><b>4.1</b> Implied weights</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="fitch.html"><a href="fitch.html#consensus-without-k-4.5"><i class="fa fa-check"></i><b>4.1.1</b> Consensus without k = 4.5</a></li>
+<li class="chapter" data-level="4.1.2" data-path="fitch.html"><a href="fitch.html#consensus-of-all-iw-trees-without-wildcards"><i class="fa fa-check"></i><b>4.1.2</b> Consensus of all IW trees, without wildcards</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="tnt.html"><a href="tnt.html#equal-weights"><i class="fa fa-check"></i><b>4.2</b> Equal weights</a></li>
+<li class="chapter" data-level="4.2" data-path="fitch.html"><a href="fitch.html#equal-weights"><i class="fa fa-check"></i><b>4.2</b> Equal weights</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="bayesian-analysis.html"><a href="bayesian-analysis.html"><i class="fa fa-check"></i><b>5</b> Bayesian analysis</a></li>
+<li class="chapter" data-level="5" data-path="MrBayes.html"><a href="MrBayes.html"><i class="fa fa-check"></i><b>5</b> Bayesian analysis</a></li>
 <li class="chapter" data-level="6" data-path="taxonomic-implications.html"><a href="taxonomic-implications.html"><i class="fa fa-check"></i><b>6</b> Taxonomic implications</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -301,38 +301,153 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-dataset" class="section level1">
-<h1><span class="header-section-number">1</span> The dataset</h1>
-<p>Analysis was performed on a new matrix of 37 early brachiozoan taxa, including hyoliths, tommotiids and mickwitziids, which were coded for 105 morphological characters (62 neomorphic, 43 transformational).</p>
-<p>We incorporated <em>Namacalathus</em> in the matrix, but preliminiary results did not uphold the homology of potentially brachiozoan-like features. As such, we excluded it from our analysis due to its potentially long branch, which is likely to mislead analysis.</p>
-<p><em>Dailyatia</em> was instead selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa <span class="citation">(Christian B. Skovsted <em>et al.</em>, <a href="#ref-Skovsted2015">2015</a>; Zhao <em>et al.</em>, <a href="#ref-Zhao2017">2017</a>)</span>.</p>
-<p>Characters are coded following the recommendations of Brazeau, Guillerme and
-Smith <span class="citation">(Brazeau and Guillerme <em>et al.</em>, <a href="#ref-Brazeau2018">2017</a>)</span>:</p>
-<ul>
-<li><p>We have employed reductive coding, using a distinct state to mark character inapplicability. Character specifications follow the model of Sereno <span class="citation">(<a href="#ref-Sereno2007">2007</a>)</span>.</p></li>
-<li><p>We have distinguished between neomorphic and transformational characters <span class="citation">(sensu Sereno, <a href="#ref-Sereno2007">2007</a>)</span> by reserving the token <code>0</code> to refer to the absence of a neomorphic character. The states of transformational characters are represented by the tokens <code>1</code>, <code>2</code>, <code>3</code>, …</p></li>
-<li><p>We code the absence of neomorphic ontologically dependent characters <span class="citation">(sensu Vogt, <a href="#ref-Vogt2017">2017</a>)</span> as absence, rather than inapplicability.</p></li>
-</ul>
-<p>The complete dataset can be viewed and downloaded at Morphobank (<a href="https://morphobank.org/permalink/?P2800">project 2800</a>), where each character is defined
-and its coding for each taxon discussed.</p>
+<div id="MrBayes" class="section level1">
+<h1><span class="header-section-number">5</span> Bayesian analysis</h1>
+<p>Bayesian search was conducted in MrBayes v3.2.6 <span class="citation">(Ronquist <em>et al.</em>, <a href="#ref-Ronquist2012">2012</a>)</span> using the Mk model <span class="citation">(Lewis, <a href="#ref-Lewis2001">2001</a>)</span> with gamma-distributed rate variation across characters:</p>
+<blockquote>
+<p>lset coding=variable rates=gamma;</p>
+</blockquote>
+<p>Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model <span class="citation">(Rannala <em>et al.</em>, <a href="#ref-Rannala2012">2012</a>)</span>, but requires a prior mean tree length within about two orders of magnitude of the true value <span class="citation">(Zhang <em>et al.</em>, <a href="#ref-Zhang2012">2012</a>)</span>. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with <span class="math inline">\(α_T = 1\)</span>, <span class="math inline">\(β_T = 1/(\)</span><em>equal weights tree length</em><span class="math inline">\(/\)</span><em>number of characters</em><span class="math inline">\()\)</span>, <span class="math inline">\(α = c = 1\)</span>:</p>
+<blockquote>
+<p>prset brlenspr = unconstrained: gammadir(1, 0.33, 1, 1);</p>
+</blockquote>
+<p>Neomorphic and transformational characters <span class="citation">(<em>sensu</em> Sereno, <a href="#ref-Sereno2007">2007</a>)</span> were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:</p>
+<blockquote>
+<p>charset Neomorphic = 1 2 3 5 7 8 9 10 12 14 17 18 19 22 23 24 25 28 29 30 33 35 37 44 45 47 48 49 50 51 52 55 59 60 61 62 64 65 66 67 68 69 70 71 75 76 77 79 81 84 85 89 90 91 92 93 95 96 97 100 101 103;</p>
+<p>charset Transformational = 4 6 11 13 15 16 20 21 26 27 31 32 34 36 38 39 40 41 42 43 46 53 54 56 57 58 63 72 73 74 78 80 82 83 86 87 88 94 98 99 102 104 105;</p>
+<p>partition chartype = 2: Neomorphic, Transformational;</p>
+<p>set partition = chartype;</p>
+<p>unlink shape=(all) pinvar=(all);</p>
+</blockquote>
+<p>Neomorphic characters were not assumed to have a symmetrical transition rate – that is, the probability of the absent → present transition was allowed to differ from that of the present → absent transition, being drawn from a uniform prior:</p>
+<blockquote>
+<p>prset applyto=(1) symdirihyperpr=fixed(1.0);</p>
+</blockquote>
+<p>The rate of variation in neomorphic characters was also allowed to vary from that of transformational characters:</p>
+<blockquote>
+<p>prset applyto=(1) ratepr=variable;</p>
+</blockquote>
+<p><em>Dailyatia</em> was selected as an outgroup:</p>
+<blockquote>
+<p>outgroup Dailyatia;</p>
+</blockquote>
+<p>Four MrBayes runs were executed, each sampling eight chains for 5 000 000 generations, with samples taken every 500 generations. The first 10% of samples were discarded as burn-in.</p>
+<blockquote>
+<p>mcmcp ngen=5000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;</p>
+</blockquote>
+<p>A posterior tree topology was derived from the combined posterior sample of all runs.</p>
+<div class="figure"><span id="fig:mrbayes-full-consensus"></span>
+<img src="Brachiopod_phylogeny_files/figure-html/mrbayes-full-consensus-1.png" alt="Bayesian analysis, posterior probability &gt; 50%, all taxa" width="672" />
+<p class="caption">
+Figure 5.1: Bayesian analysis, posterior probability &gt; 50%, all taxa
+</p>
+</div>
+<div class="figure"><span id="fig:mrbayes-pruned-consensus"></span>
+<img src="Brachiopod_phylogeny_files/figure-html/mrbayes-pruned-consensus-1.png" alt="Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pruned" width="672" />
+<p class="caption">
+Figure 5.2: Bayesian analysis, posterior probability &gt; 50%, wildcard taxa pruned
+</p>
+</div>
+<p>Convergence was indicated by PSRF = 1.00 and an estimated sample size of &gt; 1000 for each parameter:</p>
+<table>
+<caption><span id="tab:mrbayes-parameter-summary">Table 5.1: </span>MrBayes parameter estimates (.pstat file)</caption>
+<thead>
+<tr class="header">
+<th align="left">TL.all.</th>
+<th align="right">X7.228989e.000</th>
+<th align="right">X5.303977e.001</th>
+<th align="right">X1.558667e.003</th>
+<th align="right">X3.343322e.003</th>
+<th align="right">X9.999751e.001</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">alpha_symdir{1}</td>
+<td align="right">0.320</td>
+<td align="right">0.0316</td>
+<td align="right">7740</td>
+<td align="right">7970</td>
+<td align="right">0.99998</td>
+</tr>
+<tr class="even">
+<td align="left">pi_66(0)</td>
+<td align="right">0.391</td>
+<td align="right">0.0347</td>
+<td align="right">7750</td>
+<td align="right">7860</td>
+<td align="right">0.99999</td>
+</tr>
+<tr class="odd">
+<td align="left">pi_66(1)</td>
+<td align="right">0.289</td>
+<td align="right">0.0285</td>
+<td align="right">5800</td>
+<td align="right">7400</td>
+<td align="right">0.99995</td>
+</tr>
+<tr class="even">
+<td align="left">pi_66(2)</td>
+<td align="right">0.371</td>
+<td align="right">0.0408</td>
+<td align="right">2430</td>
+<td align="right">3160</td>
+<td align="right">1.00010</td>
+</tr>
+<tr class="odd">
+<td align="left">pi_90(0)</td>
+<td align="right">0.138</td>
+<td align="right">0.0108</td>
+<td align="right">5820</td>
+<td align="right">6270</td>
+<td align="right">1.00000</td>
+</tr>
+<tr class="even">
+<td align="left">pi_90(1)</td>
+<td align="right">0.294</td>
+<td align="right">0.0252</td>
+<td align="right">4290</td>
+<td align="right">4820</td>
+<td align="right">1.00000</td>
+</tr>
+<tr class="odd">
+<td align="left">pi_90(2)</td>
+<td align="right">0.198</td>
+<td align="right">0.0150</td>
+<td align="right">5950</td>
+<td align="right">6070</td>
+<td align="right">1.00000</td>
+</tr>
+<tr class="even">
+<td align="left">pi_90(3)</td>
+<td align="right">0.721</td>
+<td align="right">0.0144</td>
+<td align="right">524</td>
+<td align="right">1270</td>
+<td align="right">1.00000</td>
+</tr>
+</tbody>
+</table>
+<p>It’s interesting to note the position of <em>Gasconsia</em>, which is widely held to have an affinity with the craniid brachiopods, and is recovered in such a position using the inapplicable-safe parsimony algorithm (but not always when the standard Fitch parsimony algorithm is used).</p>
+<p>One possibility is that the failure of Bayesian analysis to recover this group as a clade reflects inappropriate handling of inapplicable data in the Mk model, though it is at present difficult to test this hypothesis.</p>
 
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Skovsted2015">
-<p>Skovsted, C.B., Betts, M.J., Topper, T.P., Brock, G.A. 2015. The early Cambrian tommotiid genus <em>Dailyatia</em> from South Australia. Memoirs of the Association of Australasian Palaeontologists. 48, 1–117.</p>
+<div id="ref-Ronquist2012">
+<p>Ronquist, F., Teslenko, M., van der Mark, P., Ayres, D.L., Darling, A., Hohna, S., Larget, B., Liu, L., Suchard, M.A., Huelsenbeck, J.P. 2012. MrBayes 3.2: Efficient Bayesian phylogenetic inference and model choice across a large model space. Systematic Biology. 61, 539–42. doi:<a href="https://doi.org/10.1093/sysbio/sys029">10.1093/sysbio/sys029</a></p>
 </div>
-<div id="ref-Zhao2017">
-<p>Zhao, F.-C., Smith, M.R., Yin, Z.-J., Zeng, H., Li, G.-X., Zhu, M.-Y. 2017. <em>Orthrozanclus elongata</em> n. sp. and the significance of sclerite-covered taxa for early trochozoan evolution. Scientific Reports. 7, 16232. doi:<a href="https://doi.org/10.1038/s41598-017-16304-6">10.1038/s41598-017-16304-6</a></p>
+<div id="ref-Lewis2001">
+<p>Lewis, P.O. 2001. A likelihood approach to estimating phylogeny from discrete morphological character data. Systematic Biology. 50, 913–925. doi:<a href="https://doi.org/10.1080/106351501753462876">10.1080/106351501753462876</a></p>
 </div>
-<div id="ref-Brazeau2018">
-<p>Brazeau, M.D., Guillerme, T., Smith, M.R. 2017. Morphological phylogenetic analysis with inapplicable data. bioR<span class="math inline">\(\chi\)</span>iv. doi:<a href="https://doi.org/10.1101/209775">10.1101/209775</a></p>
+<div id="ref-Rannala2012">
+<p>Rannala, B., Zhu, T.-Q., Yang, Z.-H. 2012. Tail Paradox, Partial Identifiability, and Influential Priors in Bayesian Branch Length Inference. Molecular Biology and Evolution. 29, 325–335. doi:<a href="https://doi.org/10.1093/molbev/msr210">10.1093/molbev/msr210</a></p>
+</div>
+<div id="ref-Zhang2012">
+<p>Zhang, C., Rannala, B., Yang, Z.-H. 2012. Robustness of compound Dirichlet priors for Bayesian inference of branch lengths 61, 779–84. doi:<a href="https://doi.org/10.1093/sysbio/sys030">10.1093/sysbio/sys030</a></p>
 </div>
 <div id="ref-Sereno2007">
 <p>Sereno, P.C. 2007. Logical basis for morphological characters in phylogenetics. Cladistics. 23, 565–587. doi:<a href="https://doi.org/10.1111/j.1096-0031.2007.00161.x">10.1111/j.1096-0031.2007.00161.x</a></p>
-</div>
-<div id="ref-Vogt2017">
-<p>Vogt, L. 2017. The logical basis for coding ontologically dependent characters. Cladistics. doi:<a href="https://doi.org/10.1111/cla.12209">10.1111/cla.12209</a></p>
 </div>
 </div>
             </section>
@@ -340,8 +455,8 @@ and its coding for each taxon discussed.</p>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="treesearch.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="fitch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taxonomic-implications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -371,7 +486,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ms609/hy/edit/master/01_Dataset.Rmd",
+"link": "https://github.com/ms609/hy/edit/master/05_MrBayes.Rmd",
 "text": "Edit"
 },
 "download": null,
