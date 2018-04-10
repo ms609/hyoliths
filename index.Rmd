@@ -180,7 +180,7 @@ BibEntry <- function (ref) {
   refType <- tolower(FirstWord(ref['Reference.Type']))
   if (refType %in% c('generic', 'journal')) refType <- 'article'
   
-  ref <- RefExpand(ref)
+  if (refType == 'article') ref <- RefExpand(ref)
   paste0("@", refType, '{', 
          RefKey(ref), ",\n",
          BibLine('author', 'Author', FormatAuthors(ref['Author'])),
