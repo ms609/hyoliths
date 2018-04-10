@@ -175,7 +175,13 @@ RefExpand <- function (ref) {
 
 BibEntry <- function (ref) {
   BibLine <- function (bibKey, key, text=ref[key]) {
-    if (is.na(ref[key]) || ref[key] == "") "" else  paste0("  ", bibKey, " = {", trimws(text), "},\n")
+    if (is.na(ref[key]) || ref[key] == "") {
+      "" 
+    } else {
+      paste0("  ", bibKey, " = {", 
+             gsub(" & ", " \\& ", trimws(text), fixed=TRUE),
+             "},\n")
+    }
   }
   refType <- tolower(FirstWord(ref['Reference.Type']))
   if (refType %in% c('generic', 'journal')) refType <- 'article'
