@@ -1,4 +1,5 @@
 _bookdown_files/*
+Brachiopod_phylogeny_files/*
 Archive/*
 MrBayes/*/*
 * - */
@@ -12,3 +13,4 @@ nrun2_*
 .Rdata
 *.Rproj
 .Rproj.user*
+Brachiopod_phylogeny.Rmd
