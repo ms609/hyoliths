@@ -52,7 +52,7 @@ _`r outgroup`_ was selected as an outgroup:
 
 > outgroup `r outgroup`;
 
-Four MrBayes runs were executed, each sampling eight chains for `Mgen`&nbsp;000&nbsp;000 generations, with samples taken every 500 generations.  The first 10% of samples were discarded as burn-in.
+Four MrBayes runs were executed, each sampling eight chains for `r Mgen`&nbsp;000&nbsp;000 generations, with samples taken every 500 generations.  The first 10% of samples were discarded as burn-in.
 
 > mcmcp ngen=`r Mgen`000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
 
