@@ -192,7 +192,9 @@ Italicize <- function (string) {
 ```{R load-the-characters, echo=FALSE}
 library('Inapp')
 tree <- iw.trees[[3]][[1]]
+tree <- ew.trees[[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
+tree_labels <- tree$tip.label
 
 char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
 n_char <- ncol(my_chars)
@@ -202,7 +204,7 @@ char_notes <- ReadNotes(filename)
 taxa_names <- c("Namacalathus", rownames(my_chars))
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
-#treeCol <- tipCol[tree$tip.label]
+
 ```
 
 The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
@@ -277,7 +279,6 @@ for (i in seq_len(n_char)) {
   plot.states.matrix(apply.reconstruction(tree, my_chars[, i]),
                      passes=0, counts=1:2, show.labels=1,
                      col.states=TRUE, state.labels=my_states[[i]],
-                     #tip.col=treeCol, 
                      use.edge.length=TRUE, legend.pos='topright')
   
   cat(paste0("  \n\n **Character ", i, ": ", Italicize(char_names[i]), "**  \n\n"))
