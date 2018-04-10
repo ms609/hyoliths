@@ -180,7 +180,7 @@ Italicize <- function (string) {
                                       'Paracraniops', 'Paramicrocornus',
                                       'Phoronopsis',
                                       'comleyensis', 'decaius',
-                                      'tenuis',
+                                      'schucherti', 'tenuis', 'worsleyi',
                                       'vascula', 'genitalia','lateralia',
                                       'media', 'myaria', 'terminalia',
                                       'et al\\.', 'et al', 'sensu')),

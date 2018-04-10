@@ -56,6 +56,7 @@ tipCol <- c(
   Clupeafumosus                   = pal[5],
   Lingulellotreta_malongensis     = pal[5],
   Lingulellotreta                 = pal[5],
+  Acanthotretella_spinosa         = pal[5],
   Acanthotretella                 = pal[5],
   Lingulosacculus                 = 'grey',
   Phoronis                        = pal[2],
