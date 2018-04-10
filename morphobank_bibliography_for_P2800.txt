@@ -21,7 +21,7 @@ Generic	Moysiuk, Joseph ;Smith, Martin Ross ;Caron, Jean-Bernard 		2017	Hyoliths
 Generic	Zhang, Zhi-Fei ;Li, Guo-Xiang ;Emig, Christian C. ;Han, Jian ;Holmer, Lars E. ;Shu, De-Gan 		2009	Architecture and function of the lophophore in the problematic brachiopod <i>Heliomedusa orienta</i> (Early Cambrian, South China)			42	5	649-661									
 Generic	Zhang, Zhi-Fei ;Han, Jian ;Zhang, Xing-Liang ;Liu, Jian-Ni ;Guo, Jun-Feng ;Shu, De-Gan 		2007	Note on the gut preserved in the Lower Cambrian <i>Lingulellotreta</i> (Lingulata, Brachiopoda) from southern China			88	1	65-70									
 Generic	Balthasar, Uwe ;Butterfield, Nicholas J. 		2009	Early Cambrian "soft-shelled" brachiopods as possible stem-group phoronids			54	2	307-314									
-Journal Article			0															http://
+Journal Article	Sun, H.-J. ;Smith, M.R. ;Zhu, M.-Y. ;Zeng, H. ;Zhao, F.-C. 		2018	Hyoliths with pedicles: Origin of the brachiopod body plan					submitted									http://
 Generic	Zhuravlev, A. Yu. ;Wood, R. A. ;Penny, A. M. 		2015	Ediacaran skeletal metazoan interpreted as a lophophorate			282	1818	20151860								10.1098/rspb.2015.1860	
 Generic	Bassett, M. G. ;Popov, L. E. ;Egerquist, Eva 		2008	Early ontogeny of some Ordovician-Silurian strophomenate brachiopods: Significance for interpreting evolutionary relationships within early Rhynchonelliformea			54		13-20									
 Generic	Holmer, Lars E. ;Popov, Leonid E. ;Pour, Mansoureh Ghobadi ;Claybourn, Tom ;Zhang, Zhi-Liang ;Brock, Glenn A. ;Zhang, Zhi-Fei 		2018	Evolutionary significance of a middle Cambrian (Series 3) <i>in situ</i> occurrence of the pedunculate rhynchonelliform brachiopod <i>Nisusia sulcata</i>													10.1111/let.12254	
