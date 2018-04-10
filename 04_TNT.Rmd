@@ -76,28 +76,17 @@ plotPanel(6)
 plotPanel(7)
 ```
 
-### Consensus without k = 4.5
-
-Though there's no clear reason that a single concavity constant should give such different results to values both above and below it, the results with $k = 4.5$ are so strikingly different that it is instructive to create a consensus tree that excludes this case:
-
-```{R tnt-consensus-selective, echo=FALSE, fig.cap="TNT implied weights consensus"}
-omit=c("Micrina", "Mickwitzia_muralensis")
-ColPlot(ConsensusWithout(tnConsensi[-3], omit))
-ColMissing(omit)
-```
-
-### Consensus of all IW trees, without wildcards
+<!--### Consensus of all IW trees, without wildcards
 
 Even with the anomalous results at $k = 4.5$, the essential relationships between most taxa are recovered under all weighting situations:
 
 ```{R tnt-pruned-consensus, echo=FALSE, fig.cap="TNT implied weights consensus"}
 #omit <- c('Clupeafumosus_socialis', 'Micrina', 'Mickwitzia_muralensis', 'Paterimitra', 'Heliomedusa_orienta', 'Tomteluva_perturbata', 'Yuganotheca_elegans', 'Salanygolina', 'Gasconsia', 'Mummpikia_nuda')
-omit <- c("Salanygolina", "Askepasma_toddense", "Micrina", "Mickwitzia_muralensis",
-          "Tomteluva_perturbata", "Yuganotheca_elegans")
+omit <- c("none")
 ColPlot(ConsensusWithout(tnConsensi, omit))
 ColMissing(omit)
 ```
-
+-->
 ## Equal weights
 
 ```{R tnt-ew-consensus, echo=FALSE, fig.cap="TNT Equal weights consensus"}
