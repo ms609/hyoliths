@@ -42,14 +42,14 @@ LookUpReference <- function (keys, original, prefix='', suffix='') {
 }
 
 ConvertReferences <- function (string) {
-  noParentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? (\\d\\d\\d\\d\\w?)\\b"
+  noParentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)?,? (\\d\\d\\d\\d\\w?)\\b"
   ReplNoPar <- function (keyedText, oldKey, original) {
     StrReplace(keyedText, oldKey,
                 LookUpReference(oldKey, original, prefix='@'),
                vectorize_all=FALSE)
   }
   
-  parentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)? \\((\\d\\d\\d\\d\\w?)\\b([^\\)]*)\\)"
+  parentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)?,? \\((\\d\\d\\d\\d\\w?)\\b([^\\)]*)\\)"
   ReplPar <- function (keyedText, oldKey, original) {
     StrReplace(keyedText, oldKey,
                 LookUpReference(oldKey, original, 
