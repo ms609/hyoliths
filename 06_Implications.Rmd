@@ -8,13 +8,12 @@ author: "Martin R. Smith"
 This section briefly places key features of our results in the context of previous phylogenetic hypotheses.
 
 Craniiforms
-: Trimerellids are reconstructed as paraphyletic with respect to Craniiforms.  
-: This is consistent with the affinity commonly drawn between these groups [e.g. @Williams2000BrachiopodaLinguliformea], and helps to account for the stratigraphically late (Ordovician) appearance of Craniids in the fossil record.  (Aragonite is underrepresented in early Palaeozoic strata due to taphonomic bias.)  
-: The relationship of Craniiforms with respect to Linguliforms and Rhynchonelliforms remains uncertain.  Shell characters point to a relationship with the Rhynchonelliforms, which is countered by similarities between the spermatozoa of phoronids and terebratulids, which indicate to a craniiform + linguliform clade.
-: It's worth noting that Bayesian analysis (but no parsimony results) place _Gasconsia_ as the basalmost member of the Rhynchonellid lineage, upholding suggestions [@Holmer2014OrdovicianSilurian] of a chileid rather than trimerellid affinity.  On this view, _Gasconsia_ is a close analogue for the common ancestor of Rhynchonelliforms + Craniiforms (+Linguliforms?).
+: Trimerellids are reconstructed as paraphyletic with respect to Craniiforms.  This is consistent with the affinity commonly drawn between these groups [e.g. @Williams2000BrachiopodaLinguliformea], and helps to account for the stratigraphically late (Ordovician) appearance of Craniids in the fossil record.  (Aragonite is underrepresented in early Palaeozoic strata due to taphonomic bias.)  
+: The relationship of Craniiforms with respect to Linguliforms and Rhynchonelliforms remains unclear.  Shell characters point to a relationship with the Rhynchonelliforms, which is countered by similarities between the spermatozoa of phoronids and terebratulids, which indicate a craniiform + linguliform clade.
+: It's worth noting that Bayesian and Fitch analyses place _Gasconsia_ as the basalmost member of the Rhynchonellid lineage, upholding suggestions [@Holmer2014OrdovicianSilurian] of a chileid rather than trimerellid affinity.  This placement presumably represents an artefact resulting from the incorrect handling of inapplicable data.  But if true, _Gasconsia_ would be a close analogue for the common ancestor of Rhynchonelliforms + Craniiforms (+Linguliforms?).  
 
 Rhynchonelliforms
-: The position of kutorginids within the rhynchonelliform stem lineage has been tricky to resolve [@Holmer2018Theattachment]; we resolve them as paraphyletic with respect to Rhynconellata (which encompassess the obolellate _Alisina_), which is broadly in accord to previous proposals [@Holmer2018Evolutionarysignificance].  Chileids form the adelphiotaxon to this clade.  _Longtancunella_  [@Zhang2011Theexceptionally] nests crownwards of the protorthid _Glyptoria_, but stemward of the obolellid _Alisina_.  
+: The position of kutorginids within the rhynchonelliform stem lineage has been tricky to resolve [@Holmer2018Theattachment]; we resolve them as paraphyletic with respect to Rhynconellata (which encompasses the obolellate _Alisina_), which is broadly in accord to previous proposals [@Holmer2018Evolutionarysignificance].  Chileids form the adelphiotaxon to this clade.  _Longtancunella_  [@Zhang2011Theexceptionally] nests crownwards of the protorthid _Glyptoria_, but stemward of the obolellid _Alisina_.  
 
 : _Salanygolina_ has been interpreted as a stem-group rhynchonelliform based on its combination of paterinid and chileate features [@Holmer2009Theenigmatic].  Our results position _Salanygolina_ between paterinids and chileids, which directly corroborates this proposed phylogenetic position.  
 
@@ -27,12 +26,16 @@ Linguliforms
 Our analysis upholds the case for a linguliform affinity for _Mummpikia_; a calcitic shell seemingly arose through an independent change within this taxon  As such, _Mummpikia_ has no direct bearing on the origin of 'Calciata', save that shell mineralogy is perhaps less static than commonly assumed.
 : More generally, our results identify Class Obolellata as polyphyletic:  _Alisina_ (Trematobolidae) plots within Rhynchonellata;  _Tomteluva_ is harder to place, but tends to group with _Salanygolina_ stemwards of the chileids.
 
+Paterinids
+: Paterinids have traditionally been placed within the Linguliforms on the basis of their phosphatic shell [@Williams2007PartH], which our analysis identifies as ancestral within the brachiopod crown group; our analysis places them within the Rhynchonelliforms instead.  Characters supporting this position include the strophic hinge line, planar cardinal area, the absence of a pedicle nerve impression, and the morphology of the mantle canals.
+: More generally, although some lingulids can be found which share more generic characters (e.g. shell growth direction) with paterinids, the particular combination of characters exhibited in paterinids does not occur anywhere in the linguliform lineage, but is more similar to that of basal rhynchonelliforms, particularly _Salanygolina_.
+
 Tommotiids
 : Tommotiids represent a basal grade, paraphyletic to phoronids and crown-group brachiopods, in line with previous interpretations.  
-: _Micrina_ and _Mickwitzia_ are the most crownwards of the tommotiids, but beyond this, their position is somewhat difficult to pin down; certain analytical configruations reconstruct then as stem-brachiopods; others place them closer to the discinids, the lingulids or the craniiforms.  _Heliomedusa_ is commonly associated closely with _Mickwitzia_, reflecting the similarities emphasized by Holmer and Popov in @Williams2007PartH.
+: _Micrina_ and _Mickwitzia_ are the most crownwards of the tommotiids, but beyond this, their position is somewhat difficult to pin down; certain analytical configruations reconstruct then as stem-brachiopods; others place them closer to the discinids, the lingulids or the craniiforms.  _Heliomedusa_ is commonly associated closely with _Mickwitzia_, reflecting the similarities emphasized by Holmer and Popov in @Williams2007PartH, but plots instead within the Craniiforms under certain analytical conditions, in line with earlier interpretations [@Williams2000BrachiopodaLinguliformea].
 
 Hyoliths
 : Hyoliths are interpreted as stem-group Brachiopods, which refines the broader phylogenetic position proposed by @Moysiuk2017Hyolithsare.  This is to say, they sit closer to brachiopods than the phoronids do, but no analysis places them within the Brachiopod crown group.
-: Hyoliths thus represent derived tommotiids; their precise position varies based on analytical details, but they tend to plot close to _Paterimitra_.  They represent an early and potentially independent move to a closed filtration chamber within the Brachiopod lineage.  
+: Hyoliths thus represent derived tommotiids, and are the closest relatives to the Brachiopod crown group.  
 
 
