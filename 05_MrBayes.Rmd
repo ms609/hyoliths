@@ -91,7 +91,7 @@ ColMissing(omit)
 Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 1000 for each parameter:
 
 ```{R mrbayes-parameter-summary, fig.cap="MrBayes parameter summary", echo=FALSE, asis=TRUE}
-pstat <- read.table('MrBayes/hyo.nex.pstat', skip=0, header=TRUE)[, -c(4:6)]
+pstat <- read.table('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]
 pstat[, 2:5] <- signif(pstat[, 2:5], 3)
 pstat[, 6] <- signif(pstat[, 6], 5)
 knitr::kable(pstat, caption="MrBayes parameter estimates (.pstat file)")
