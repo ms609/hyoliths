@@ -56,11 +56,9 @@ for (k in kValues) {
               file=paste0("TreeSearch/hy_iw_k", k, "_", 
                           signif(score, 5), ".nex", collapse=''))
 
-  suboptFraction = 0.02
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, concavity=k,
                   swappers=list(RootedTBRSwap, RootedNNISwap),
-                  searchHits=4,
-                  suboptimal=score * suboptFraction,
+                  searchHits=55,
                   nSearch=150, verbosity=0L)
   write.nexus(iw.consensus, 
               file=paste0("TreeSearch/hy_iw_k", k, "_", 
@@ -75,7 +73,7 @@ for (k in kValues) {
 ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
                    ratchHits = 25, searchHits=55, # ratchHits = 10 not enough
                    swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
-ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=150,
+ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=150, searchHits = 55,
                                  swappers=list(RootedTBRSwap, RootedNNISwap),
                                  verbosity=0L)
 write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
