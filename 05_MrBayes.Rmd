@@ -9,7 +9,7 @@ date: "`r Sys.Date()`"
 
 ```{R mrbayes-ini, echo=FALSE}
 files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
-Mgen <- 4
+Mgen <- 5
 
 allTrees <- lapply(files, read.nexus)
 nTrees <- length(allTrees[[1]])
