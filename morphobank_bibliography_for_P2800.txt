@@ -115,3 +115,4 @@ Journal Article	Holmer, Lars E. ;Popov, Leonid E. ;Bassett, Michael G. 		2014	Or
 Book	Jamieson, Barrie G. M. 		1991	Fish Evolution and Systematics: Evidence from Spermatozoa: With a Survey of Lophophorate, Echinoderm and Protochordate Sperm and an Account of Gamete Cryopreservation		Cambridge University Press			319									
 Journal Article	Popov, Leonid E. ;Bassett, Michael G. ;Holmer, Lars E. ;Skovsted, Christian B. ;Zuykov, Michael A. 		2010	Earliest ontogeny of Early Palaeozoic Craniiformea: Implications for brachiopod phylogeny			43	3	323-333								10.1111/j.1502-3931.2009.00197.x	
 Journal Article	Franzen, A. ;Ahlfors, K. 		1980	Ultrastructure of spermatids and spermatozoa in <i>Phoronis</i>, Phylum Phoronida			12	4	585-597									
+Book Section	Herrmann, K. 		1997	Phoronida		Wiley-Liss			207-236									
