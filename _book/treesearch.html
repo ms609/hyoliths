@@ -352,6 +352,7 @@ to generate these pages.</p>
 <div class="sourceLine" id="20" href="#20" data-line-number="20">                          <span class="kw">signif</span>(<span class="kw">IWScore</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k), <span class="dv">5</span>),</div>
 <div class="sourceLine" id="21" href="#21" data-line-number="21">                          <span class="st">&quot;.all.nex&quot;</span>, <span class="dt">collapse=</span><span class="st">&#39;&#39;</span>))</div>
 <div class="sourceLine" id="22" href="#22" data-line-number="22">}</div></code></pre>
+<pre><code>## Found 36 unique trees from 150 searches.Found 33 unique trees from 150 searches.Found 46 unique trees from 150 searches.Found 43 unique trees from 150 searches.Found 43 unique trees from 150 searches.Found 39 unique trees from 150 searches.Found 44 unique trees from 150 searches.</code></pre>
 </div>
 <div id="equal-weights-analysis" class="section level3">
 <h3><span class="header-section-number">2.2.4</span> Equal weights analysis</h3>
@@ -360,9 +361,10 @@ to generate these pages.</p>
 <div class="sourceLine" id="3" href="#3" data-line-number="3">                   <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))</div>
 <div class="sourceLine" id="4" href="#4" data-line-number="4">ew.consensus &lt;-<span class="st"> </span><span class="kw">RatchetConsensus</span>(ew.tree, my_data, <span class="dt">nSearch=</span><span class="dv">150</span>,</div>
 <div class="sourceLine" id="5" href="#5" data-line-number="5">                                 <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedNNISwap),</div>
-<div class="sourceLine" id="6" href="#6" data-line-number="6">                                 <span class="dt">verbosity=</span>0L)</div>
-<div class="sourceLine" id="7" href="#7" data-line-number="7"><span class="kw">write.nexus</span>(ew.consensus, <span class="dt">file=</span><span class="kw">paste0</span>(<span class="dt">collapse=</span><span class="st">&#39;&#39;</span>, <span class="st">&quot;TreeSearch/hy_ew_&quot;</span>,</div>
-<div class="sourceLine" id="8" href="#8" data-line-number="8">                                      <span class="kw">Fitch</span>(ew.tree, my_data), <span class="st">&quot;.nex&quot;</span>))</div></code></pre>
+<div class="sourceLine" id="6" href="#6" data-line-number="6">                                 <span class="dt">verbosity=</span>0L)</div></code></pre>
+<pre><code>## Found 63 unique trees from 150 searches.</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><div class="sourceLine" id="1" href="#1" data-line-number="1"><span class="kw">write.nexus</span>(ew.consensus, <span class="dt">file=</span><span class="kw">paste0</span>(<span class="dt">collapse=</span><span class="st">&#39;&#39;</span>, <span class="st">&quot;TreeSearch/hy_ew_&quot;</span>,</div>
+<div class="sourceLine" id="2" href="#2" data-line-number="2">                                      <span class="kw">Fitch</span>(ew.tree, my_data), <span class="st">&quot;.nex&quot;</span>))</div></code></pre>
 </div>
 </div>
 <div id="results" class="section level2">
