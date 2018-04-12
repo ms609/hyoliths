@@ -88,7 +88,7 @@ ColPlot(UnitEdges(rootedConsensus))
 ColMissing(omit)
 ```
 
-Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 1000 for each parameter:
+Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 200 for each parameter:
 
 ```{R mrbayes-parameter-summary, fig.cap="MrBayes parameter summary", echo=FALSE, asis=TRUE}
 pstat <- read.table('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]

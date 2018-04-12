@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 
 # Parsimony analysis {#treesearch}
 
-The phylogenetic dataset contains a high proportion of inapplicable codings (`r sum(my_chars == '-')`/`r length(my_chars)` = `r round(sum(my_chars == '-') / length(my_chars), 3) * 100`% of tokens), which are known to introduce error and bias to phylogenetic reconstruction when the Fitch algorithm is employed [@Maddison1993;@Brazeau2018].  As such, we employed a new tree-scoring algorithm that correctly handles inapplicable data [@Brazeau2018], implemented in the _MorphyLib_ _C_ library [@Brazeau2017Morphylib].  We employed the _R_ package _TreeSearch_ v0.1.2 [@Smith2018TreeSearch] to conduct phylogenetic tree search with this algorithm.
+The phylogenetic dataset contains a considerable proportion of inapplicable codings (`r sum(my_chars == '-')`/`r length(my_chars)` = `r round(sum(my_chars == '-') / length(my_chars), 3) * 100`% of tokens), which are known to introduce error and bias to phylogenetic reconstruction when the Fitch algorithm is employed [@Maddison1993;@Brazeau2018].  As such, we employed a new tree-scoring algorithm that correctly handles inapplicable data [@Brazeau2018], implemented in the _MorphyLib_ _C_ library [@Brazeau2017Morphylib].  We employed the _R_ package _TreeSearch_ v0.1.2 [@Smith2018TreeSearch] to conduct phylogenetic tree search with this algorithm.
 
 ## Search parameters
 
