@@ -191,7 +191,7 @@ Italicize <- function (string) {
 ```
 ```{R load-the-characters, echo=FALSE}
 library('Inapp')
-tree <- iw.trees[[3]][[1]]
+tree <- iw.trees[[3]][[2]]
 #tree <- ew.trees[[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
 tree_labels <- tree$tip.label
