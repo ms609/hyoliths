@@ -12,25 +12,25 @@ Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using ratchet and tre
 
 Searches were conducted under equal weights and results saved to file:
 
-> piwe-; xmult; <span class="comment">Conduct search with equal weighting</span>
+> piwe-; xmult; <span class="comment">/&#42; Conduct search with equal weighting &#42;/</span>
 >
-> tsav \*TNT/ew.tre;sav;tsav/ <span class="comment">Save results to file</span>;
+> tsav &#42;TNT/ew.tre;sav;tsav/; <span class="comment">/&#42; Save results to file &#42;/</span>
 >
-> keep 0; hold 10000; <span class="comment">Clear trees from memory</span>
+> keep 0; hold 10000; <span class="comment">/&#42; Clear trees from memory &#42;/</span>
 
 Further searches were conducted under extended implied weighting [@Goloboff1997;@Goloboff2014], under the concavity constants 2, 3, 4.5, 7, 10.5, 16 and 24:
 
-> xpiwe=; <span class="comment">Enable extended implied weighting</span>
+> xpiwe=; <span class="comment">/&#42; Enable extended implied weighting &#42;/</span>
 >
-> piwe=2; xmult; <span class="comment">Conduct analysis at k = 2</span>
+> piwe=2; xmult; <span class="comment">/&#42; Conduct analysis at k = 2 &#42;/</span>
 >
-> tsav \*TNT/xpiwe2.tre; sav; tsav/; <span class="comment">Save results to file</span>
+> tsav &#42;TNT/xpiwe2.tre; sav; tsav/; <span class="comment">/&#42; Save results to file &#42;/</span>
 > 
-> keep 0; hold 10000; <span class="comment">Clear trees from memory</span>
+> keep 0; hold 10000; <span class="comment">/&#42; Clear trees from memory &#42;/</span>
 >
-> piwe=3; xmult; <span class="comment">Conduct analysis at k = 3</span>
+> piwe=3; xmult; <span class="comment">/&#42; Conduct analysis at k = 3 &#42;/</span>
 >
-> tsav \*TNT/xpiwe3.tre; sav ;tsav/; <span class="comment">Save results to file</span>
+> tsav &#42;TNT/xpiwe3.tre; sav ;tsav/; <span class="comment">/&#42; Save results to file &#42;/</span>
 
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 

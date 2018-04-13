@@ -125,7 +125,7 @@ Maoyan Zhu}
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2018-04-12}
+  \date{2018-04-13}
 
 \usepackage{booktabs}
 
@@ -5709,11 +5709,11 @@ xmult:rat10 drift10 hits 1500 level 4 chklevel 5;
 Searches were conducted under equal weights and results saved to file:
 
 \begin{quote}
-piwe-; xmult; {Conduct search with equal weighting}
+piwe-; xmult; {/* Conduct search with equal weighting */}
 
-tsav *TNT/ew.tre;sav;tsav/ {Save results to file};
+tsav *TNT/ew.tre;sav;tsav/; {/* Save results to file */}
 
-keep 0; hold 10000; {Clear trees from memory}
+keep 0; hold 10000; {/* Clear trees from memory */}
 \end{quote}
 
 Further searches were conducted under extended implied weighting
@@ -5721,17 +5721,17 @@ Further searches were conducted under extended implied weighting
 4.5, 7, 10.5, 16 and 24:
 
 \begin{quote}
-xpiwe=; {Enable extended implied weighting}
+xpiwe=; {/* Enable extended implied weighting */}
 
-piwe=2; xmult; {Conduct analysis at k = 2}
+piwe=2; xmult; {/* Conduct analysis at k = 2 */}
 
-tsav *TNT/xpiwe2.tre; sav; tsav/; {Save results to file}
+tsav *TNT/xpiwe2.tre; sav; tsav/; {/* Save results to file */}
 
-keep 0; hold 10000; {Clear trees from memory}
+keep 0; hold 10000; {/* Clear trees from memory */}
 
-piwe=3; xmult; {Conduct analysis at k = 3}
+piwe=3; xmult; {/* Conduct analysis at k = 3 */}
 
-tsav *TNT/xpiwe3.tre; sav ;tsav/; {Save results to file}
+tsav *TNT/xpiwe3.tre; sav ;tsav/; {/* Save results to file */}
 \end{quote}
 
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT
