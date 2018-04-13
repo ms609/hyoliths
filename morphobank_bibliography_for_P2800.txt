@@ -29,7 +29,7 @@ Journal Article	Popov, Leonid E. ;Egerquist, Eva ;Holmer, Lars E. 		2007	Earlies
 Generic	Bassett, Michael Gwyn ;Popov, Leonid E. ;Holmer, Lars E. 		2001	Functional morphology of articulatory structures and implications for patterns of musculature in Cambrian rhynchonelliform brachiopods					163-176									
 Generic	Zhang, Zhi-Fei ;Holmer, Lars E. ;Popov, Leonid E. ;Shu, De-Gan 		2011	An obolellate brachiopod with soft-part preservation from the Early Cambrian Chengjiang fauna of China			85	3	460-463									
 Generic	Skovsted, Christian B. ;Betts, Marissa J. ;Topper, Timothy P. ;Brock, Glenn A. 		2015	The early Cambrian tommotiid genus <i>Dailyatia</i> from South Australia			48	1	1-117									
-Journal Article	Skovsted, C.B. ;Brock, G.A. ;Topper, T.P. ;Paterson, J.R. ;Holmer, Lars E. 		2011	Scleritome construction, biofacies, biostratigraphy and systematics of the tommotiid <I>Eccentrotheca helenia</i> sp. nov. from the early Cambrian of South Australia			54		253-286									
+Journal Article	Skovsted, C.B. ;Brock, G.A. ;Topper, T.P. ;Paterson, J.R. ;Holmer, Lars E. 		2011	Scleritome construction, biofacies, biostratigraphy and systematics of the tommotiid <i>Eccentrotheca helenia</i> sp. nov. from the early Cambrian of South Australia			54		253-286									
 Journal Article	Balthasar, Uwe ;Skovsted, Christian B. ;Holmer, Lars E. ;Brock, Glenn A. 		2009	Homologous skeletal secretion in tommotiids and brachiopods			37		1143-1146									
 Generic	Wright, A.D. ;Rubel, M. 		1996	 A review of the morphological features affecting the classification of clitambonitidine brachiopods			39		53-75									
 Generic	Madison, A. 		2017	Laminar shell structure of <i>Antigonambonites planus</i> (Pander, 1830) (Brachiopoda, Billingsellida)			66		183-187									
@@ -70,7 +70,7 @@ Journal Article	Robson, Sean P. ;Pratt, Brian R. 		2001	Cambrian and Ordovician 
 Journal Article	Lee, D. E. ;Brunton, C. Howard C. 		1986	<i>Neocrania</i> n. gen., and a revision of Cretaceous-Recent brachiopod genera in the family Craniidae			40	4	141-160									
 Journal Article	Dzik, Jerzy 		1980	Ontogeny of <i>Bactrotheca</i> and related hyoliths			102	3	223-233									
 Journal Article	Cooper, G. Arthur 		1976	Lower Cambrian Brachiopods from the Rift Valley (Israel and Jordan)			50	2	269-289									
-Book Section	Hou, Xian-Guang ;Siveter, David J. ;Siveter, Derek J. ;Aldridge, Richard J. ;Pei-yun, Cong ;Gabbott, Sarah E. ;Purnell, Mark A. 		2017	Brachiopoda														
+Book Section	Hou, Xian-Guang ;Siveter, David J. ;Siveter, Derek J. ;Aldridge, Richard J. ;Cong, Pei-Yun ;Gabbott, Sarah E. ;Purnell, Mark A. 		2017	Brachiopoda														
 Journal Article	Carlson, Sandra J. 		1995	Phylogenetic relationships among extant brachiopods			11		131-197									
 Book	Ruppert, E.E. ;Fox, R. S. ;Barnes, R. D. 		2004						990									
 Journal Article	Zhang, Zhi-Fei ;Shu, De-Gan ;Han, Jian ;Liu, Jian-Ni 		2004	New data on the lophophore anatomy of Early Cambrian linguloids from the Chengjiang Lagerstätte, Southwest China			4		1-7									
@@ -109,7 +109,7 @@ Journal Article	Skovsted, Christian B. ;Holmer, Lars E. ;Larsson, Cecilia M. ;Hö
 Journal Article	Hodgson, A. N. ;Reunov, A. A. 		1994	Ultrastructure of the spermatozoon and spermatogenesis of the brachiopods <i>Discinisca tenuis</i> (Inarticulata) and <i>Kraussina rubra</i> (Articulata)			25	1	23-31								10.1080/07924259.1994.9672365	
 Generic	Reunov, Arkadiy ;Klepal, Waltraud 		2004	Ultrastructural study of spermatogenesis in <i>Phoronopsis harmeri</i> (Lophophorata, Phoronida)			58	1	1-10								10.1007/s10152-003-0153-3	
 Journal Article	Sperling, Erik A. ;Pisani, Davide ;Peterson, Kevin J 		2011	Molecular paleobiological insights into the origin of the Brachiopoda			13	3	290-303								http://dx.doi.org/10.1111/j.1525-142X.2011.00480.x	
-Journal Article	Afzelius, B A ;Ferraguti, M 		1978	Fine structure of brachiopod spermatozoa			63	3	308-315									
+Journal Article	Afzelius, B. A. ;Ferraguti, M. 		1978	Fine structure of brachiopod spermatozoa			63	3	308-315									
 Book Section	Fukumoto, Makoto 		2003	The acrosome reaction of the spermatozoa of the inarticulate brachiopod <i>Lingula anatina</i>					40-45									
 Journal Article	Holmer, Lars E. ;Popov, Leonid E. ;Bassett, Michael G. 		2014	Ordovician–Silurian Chileida -- first post-Cambrian records of an enigmatic group of Brachiopoda			88	3	488-496								10.1666/13-104	
 Book	Jamieson, Barrie G. M. 		1991	Fish Evolution and Systematics: Evidence from Spermatozoa: With a Survey of Lophophorate, Echinoderm and Protochordate Sperm and an Account of Gamete Cryopreservation		Cambridge University Press			319									
