@@ -16,13 +16,7 @@
 
 .comment {
   color: #3daf37;
-}
-
-.comment::before {
-  content: "/* ";
-}
-.comment::after {
-  content: " */";
+  font-style: italic;
 }
 
 .book .book-body .page-wrapper .page-inner .normal a {
