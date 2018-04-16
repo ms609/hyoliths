@@ -13,10 +13,12 @@ github-repo: ms609/hy
 description: "Results of phylogenetic analysis"
 ---
 
-```{r setup-index, include=FALSE}
+```{r setup-index, include=FALSE, message=FALSE}
 set.seed(0)
 knitr::opts_chunk$set(echo = TRUE)
-library('TreeSearch'); library('ape'); library('phangorn')
+library('ape'); library('phangorn')
+if (!require('TreeSearch')) install.packages('TreeSearch')
+library('TreeSearch'); 
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(file.mtime(files))]
 my_data <- ReadAsPhyDat(filename)
