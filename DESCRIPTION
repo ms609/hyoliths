@@ -2,5 +2,19 @@ Package: placeholder
 Type: Book
 Title: placeholder
 Version: 0.0.1
-Imports: bookdown
-Remotes: rstudio/bookdown
+Imports: 
+  bookdown
+Suggests:
+  ape,
+  devtools,
+  geoscale,
+  Inapp,
+  knitr,
+  phangorn,
+  R.cache,
+  stringi,
+  TreeSearch,
+  zoo
+Remotes: 
+  rstudio/bookdown
+  TGuillerme/Inapp

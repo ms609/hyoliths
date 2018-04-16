@@ -1,6 +1,24 @@
-language: r
+language: R
 cache: packages
 pandoc_version: 1.19.2.1
+
+git:
+  depth: 5
+
+r_binary_packages:
+- bookdown
+- devtools
+- ape
+- geoscale
+- knitr
+- phangorn
+- R.cache
+- stringi
+- TreeSearch
+- zoo
+
+r_github_packages:
+ - TGuillerme/Inapp
 
 before_script:
   - chmod +x ./_build.sh
