@@ -134,7 +134,7 @@ RefKey <- function (ref) paste0(FirstWord(ref['Author']),
                                 FirstWords(ref['Title']))
 cached_works <- R.cache::addMemoization(rcrossref::cr_works)
 cached_dois <- R.cache::addMemoization(function(doi)
-  if (doi == '') NULL else rcrossref::cr_works(dois=doi, limit=1,                                               select='container-title,title,issue,volume,score'))
+  if (doi == '') NULL else rcrossref::cr_works(dois=doi))
                  
 RefExpand <- function (ref) {
   CleanTitle <- function (title) { 
@@ -200,7 +200,8 @@ BibEntry <- function (ref) {
       "" 
     } else {
       paste0("  ", bibKey, " = {", 
-             gsub(" & ", " \\& ", trimws(text), fixed=TRUE),
+             gsub(" & ", " [AND] ", trimws(text), fixed=TRUE),
+             #gsub(" & ", " \\& ", trimws(text), fixed=TRUE),
              "},\n")
     }
   }
