@@ -9,6 +9,7 @@ nrun2_*
 *.log
 *~*
 .Rhistory
+.Rprofile
 .Rdata
 *.Rproj
 .Rproj.user*
