@@ -1,13 +1,17 @@
 language: R
 cache: packages
+sudo: required
 pandoc_version: 1.19.2.1
 
 git:
   depth: 5
 
+branches:
+  only: master
+
 r_binary_packages:
-- bookdown
 - devtools
+- bookdown
 - ape
 - geoscale
 - knitr
