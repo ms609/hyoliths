@@ -189,7 +189,8 @@ Italicize <- function (string) {
   gsub("\\b([A-Z]\\.) _([a-z])", "_\\1 \\2", string, perl=TRUE)
 }
 ```
-```{R load-the-characters, echo=FALSE}
+```{R load-the-characters, echo=FALSE, message=FALSE}
+if (!require('Inapp')) devtools::install_github('TGuillerme/Inapp')
 library('Inapp')
 tree <- iw.trees[[3]][[2]]
 #tree <- ew.trees[[1]]

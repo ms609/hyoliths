@@ -21,7 +21,6 @@ r_binary_packages:
 
 r_github_packages:
  - rstudio/bookdown
- - TGuillerme/Inapp
 
 before_script:
   - chmod +x ./_build.sh
