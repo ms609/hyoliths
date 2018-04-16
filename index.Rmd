@@ -136,6 +136,9 @@ cached_works <- R.cache::addMemoization(function (query)
     rcrossref::cr_works(query=query, limit=1,
                         select='container-title,DOI,title,issue,volume,score'))
 
+cached_dois <- R.cache::addMemoization((function(doi)
+  if (doi == '') NULL else rcrossref::cr_works(dois=doi, limit=1,
+                                               select='container-title,title,issue,volume,score')))
 RefExpand <- function (ref) {
   RefDetail <- function (cr_attr_name, attr) {
     if (attr != '' && !is.na(attr)) {
