@@ -6,7 +6,6 @@ Imports:
   bookdown
 Suggests:
   ape,
-  devtools,
   geoscale,
   Inapp,
   knitr,
