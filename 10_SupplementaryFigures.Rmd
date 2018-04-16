@@ -80,5 +80,5 @@ plotDiv(hyo , rollOver=rollOver, col=4)
 plotDiv(tomm , rollOver=3, col=2)
 ```
 
-**Figure S3: Diversity of global brachiopods through the Paleozoic.** Points represent number of genera reported in time bin, lines represent rolling mean diversity over `r WriteNumber(rollOver)` consecutive time bins.  Data from Palaeobiology database. 
+**Figure S3: Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in time bin, lines represent rolling mean diversity over `r WriteNumber(rollOver)` consecutive time bins.  Data from Palaeobiology database. 
 
