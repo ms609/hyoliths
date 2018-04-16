@@ -1,4 +1,4 @@
-\documentclass[]{book}
+\documentclass[openany]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -24,7 +24,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={Brachiopod origins -- Supplementary material -- Phylogenetic analysis},
+            pdftitle={Brachiopod origins -- Supplementary material},
             pdfauthor={Haijing Sun; Martin Ross Smith; Han Zeng; Fangchen Zhao; Guoxiang Li; Maoyan Zhu},
             pdfborder={0 0 0},
             breaklinks=true}
@@ -116,7 +116,7 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{Brachiopod origins -- Supplementary material -- Phylogenetic analysis}
+  \title{Brachiopod origins -- Supplementary material}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
   \author{Haijing Sun; Martin Ross Smith; Han Zeng; Fangchen Zhao; Guoxiang Li;
@@ -125,9 +125,13 @@ Maoyan Zhu}
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2018-04-13}
+  \date{2018-04-16}
 
 \usepackage{booktabs}
+\raggedbottom
+\usepackage{fontspec}
+\setmainfont{Garamond}
+\setcitestyle{round}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -170,8 +174,11 @@ For completeness, we also document the results of
 results of \protect\hyperlink{bayesian}{Bayesian analysis}, neither of
 which treat inapplicable data in a logically consistent fashion.
 
+Supplementary figures and tables referenced in the main text are
+included here as appendices.
+
 \hypertarget{dataset}{%
-\chapter{The dataset}\label{dataset}}
+\chapter{Phylogenetic dataset}\label{dataset}}
 
 Analysis was performed on a new matrix of 37 early brachiozoan taxa,
 including hyoliths, tommotiids and mickwitziids, which were coded for
@@ -5986,6 +5993,75 @@ the Brachiopod crown group.
 Hyoliths thus represent derived tommotiids, and are the closest
 relatives to the Brachiopod crown group.
 \end{description}
+
+\hypertarget{supplementary-figures}{%
+\chapter{Supplementary Figures}\label{supplementary-figures}}
+
+\newpage
+
+\begin{center}\includegraphics[width=0.8\linewidth]{images/image1} \end{center}
+
+\textbf{Figure S1: \emph{Pedunculotheca diania} Sun et Smith gen. et sp.
+nov. from the Chengjiang Biota, Yunnan Province, China.} (a) NIGPAS
+166601, external mould of dorsum with dorsal apex and pedicle foramen.
+(b) NIGPAS 166597, preserving conical shell, operculum and internal soft
+tissue, showing a compressed elliptic cross-section; backscatter
+electron micrograph of boxed region shown in (c). (d) NIGPAS 166599b,
+counterpart, juvenile conical shell with operculum showing two
+longitudinal ventral grooves and circular larval shell. (e) NIGPAS
+166602, conical shell with incomplete attachment structure. (f) NIGPAS
+166598, broken shell with two ventral furrows and incomplete attachment
+structure. (g) NIGPAS 166596, incomplete shell with one medial ventral
+furrow and short attachment structure with coelomic cavity; detail of
+boxed region shown in (h). (i) NIGPAS 166603, exterior of operculum.
+
+Scale bars = 2mm (for a, b and e--g); 500~μm (for c, h and i).
+
+Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es =
+esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.
+
+\begin{center}\includegraphics[width=0.8\linewidth]{images/image2} \end{center}
+
+\textbf{Figure S2: Elemental distribution in the gut of
+\emph{Pedunculotheca diania} Sun et Smith gen. et sp. nov.} NIGPAS
+166597. Region corresponds to boxed region in Fig. S1c. Scale bar =
+100~μm.
+
+Abbreviations: BE = backscatter electron image, O = Oxygen, Si =
+Silicon, Al = Aluminium, Fe = Iron, C = Carbon.
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\textbf{Figure S3: Diversity of global brachiopods through the
+Paleozoic.} Points represent number of genera reported in time bin,
+lines represent rolling mean diversity over three consecutive time bins.
+Data from Palaeobiology database.
+
+\hypertarget{supplementary-table}{%
+\chapter{Supplementary Table}\label{supplementary-table}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+NIGPAS Specimen numbers & Fossil locality & Coordinates\tabularnewline
+\midrule
+\endhead
+166593, 166617 & Shankou Village, Anning & 24°49'53''~N,
+102°24'47.9''~E\tabularnewline
+166594, 166595 & Yaoying Village, Wuding & 25°36'01.2''~N,
+102°20'04.6''~E\tabularnewline
+166596--166616 & Ma'anshan Village, Chengjiang & 24°40'37.2''~N,
+102°58'40.2''~E\tabularnewline
+\bottomrule
+\end{longtable}
+
+Table S1: Provenance of fossil material. Individuals from the Yaoying
+section are usually bigger, with a thicker body wall, and have a smaller
+ratio of apertural width to shell length than specimens from other
+areas. In the absence of other differentiating features, we consider
+these deviations to represent ecophenotypical variation within a single
+species, perhaps reflecting the increased energetics and predation
+pressure that accompany the shallower water depth reported at the
+Yaoying section \citep{Zhao2012}.
 
 \bibliography{References.bib,MorphoBank.bib}
 

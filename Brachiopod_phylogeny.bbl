@@ -1,0 +1,845 @@
+\begin{thebibliography}{108}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Afzelius and Ferraguti(1978)]{Afzelius1978Finestructure}
+B.~A. Afzelius and M.~Ferraguti.
+\newblock {Fine structure of brachiopod spermatozoa}.
+\newblock \emph{Journal of Ultrastructure Research}, 63\penalty0 (3):\penalty0
+  308--315, 1978.
+\newblock \doi{10.1016/s0022-5320(78)80054-9}.
+
+\bibitem[Balthasar(2004)]{Balthasar2004Shellstructure}
+U.~Balthasar.
+\newblock {Shell structure, ontogeny, and affinities of the Lower Cambrian
+  bivalved problematic fossil \textit{Mickwitzia muralensis} Walcott, 1913}.
+\newblock \emph{Lethaia}, 37\penalty0 (4):\penalty0 381--400, 2004.
+\newblock \doi{10.1080/00241160410002090}.
+
+\bibitem[Balthasar(2007)]{Balthasar2007Anearly}
+U.~Balthasar.
+\newblock {An early Cambrian organophosphatic brachiopod with calcitic
+  granules}.
+\newblock \emph{Palaeontology}, 50\penalty0 (6):\penalty0 1319--1325, 2007.
+\newblock \doi{10.1111/j.1475-4983.2007.00729.x}.
+
+\bibitem[Balthasar(2008)]{Balthasar2008iMummpikia}
+U.~Balthasar.
+\newblock {\textit{Mummpikia} gen. nov. and the origin of calcitic-shelled
+  brachiopods}.
+\newblock \emph{Palaeontology}, 51\penalty0 (2):\penalty0 263--279, 2008.
+\newblock \doi{10.1111/j.1475-4983.2008.00754.x}.
+
+\bibitem[Balthasar(2009)]{Balthasar2009Thebrachiopod}
+U.~Balthasar.
+\newblock {The brachiopod \textit{Eoobolus} from the early Cambrian Mural
+  Formation (Canadian Rocky Mountains)}.
+\newblock \emph{Paläontologische Zeitschrift}, 83\penalty0 (3):\penalty0
+  407--417, 2009.
+\newblock \doi{10.1007/s12542-009-0026-4}.
+
+\bibitem[Balthasar and Butterfield(2009)]{Balthasar2009EarlyCambrian}
+U.~Balthasar and N.~J. Butterfield.
+\newblock {Early Cambrian soft-shelled brachiopods as possible stem-group
+  phoronids}.
+\newblock \emph{Acta Palaeontologica Polonica}, 54\penalty0 (2):\penalty0
+  307--314, 2009.
+\newblock \doi{10.4202/app.2008.0042}.
+
+\bibitem[Balthasar et~al.(2011)Balthasar, Cusack, Faryma, Chung, Holmer, Jin,
+  Percival, and Popov]{Balthasar2011Relicaragonite}
+U.~Balthasar, M.~Cusack, L.~Faryma, P.~Chung, L.~E. Holmer, J.~Jin, I.~G.
+  Percival, and L.~E. Popov.
+\newblock {Relic aragonite from Ordovician-Silurian brachiopods: Implications
+  for the evolution of calcification}.
+\newblock \emph{Geology}, 39\penalty0 (10):\penalty0 967--970, 2011.
+\newblock \doi{10.1130/g32269.1}.
+
+\bibitem[Bassett and Popov(2017)]{Bassett2017Earliestontogeny}
+M.~G. Bassett and L.~E. Popov.
+\newblock {Earliest ontogeny of the Silurian orthotetide brachiopod
+  \textit{Coolinia} and its significance for interpreting strophomenate
+  phylogeny}.
+\newblock \emph{Lethaia}, 50\penalty0 (4):\penalty0 504--510, 2017.
+\newblock \doi{10.1111/let.12204}.
+
+\bibitem[Bassett et~al.(2001)Bassett, Popov, and
+  Holmer]{Bassett2001Functionalmorphology}
+M.~G. Bassett, L.~E. Popov, and L.~E. Holmer.
+\newblock {Functional morphology of articulatory structures and implications
+  for patterns of musculature in Cambrian rhynchonelliform brachiopods}.
+\newblock \emph{Brachiopods, Systematics Association Special Volumes}, pages
+  163--176, 2001.
+\newblock \doi{10.1201/9780203210437.pt3}.
+
+\bibitem[Bassett et~al.(2008)Bassett, Popov, and
+  Egerquist]{Bassett2008Earlyontogeny}
+M.~G. Bassett, L.~E. Popov, and E.~Egerquist.
+\newblock {Early ontogeny of some Ordovician-Silurian strophomenate
+  brachiopods: Significance for interpreting evolutionary relationships within
+  early Rhynchonelliformea}.
+\newblock \emph{Lethaia}, 54:\penalty0 13--20, 2008.
+\newblock \doi{10.1111/let.12204}.
+
+\bibitem[Benedetto(2009)]{Benedetto2009iChaniella}
+J.~L. Benedetto.
+\newblock {\textit{Chaniella}, a new lower Tremadocian (Ordovician) brachiopod
+  from northwestern Argentina and its phylogenetic relationships within basal
+  rhynchonelliforms}.
+\newblock \emph{Paläontologische Zeitschrift}, 83\penalty0 (3):\penalty0
+  393--405, 2009.
+\newblock \doi{10.1007/s12542-009-0023-7}.
+
+\bibitem[Brazeau et~al.(2017)Brazeau, Smith, and
+  Guillerme]{Brazeau2017Morphylib}
+M.~D. Brazeau, M.~R. Smith, and T.~Guillerme.
+\newblock {MorphyLib: a library for phylogenetic analysis of categorical trait
+  data with inapplicability}, 2017.
+
+\bibitem[Brazeau et~al.(2018)Brazeau, Guillerme, and Smith]{Brazeau2018}
+M.~D. Brazeau, T.~Guillerme, and M.~R. Smith.
+\newblock {An algorithm for morphological phylogenetic analysis with
+  inapplicable data}.
+\newblock \emph{bioR$\chi$iv}, 2018.
+\newblock \doi{10.1101/209775}.
+\newblock URL \url{https://www.biorxiv.org/content/early/2017/10/26/209775}.
+
+\bibitem[Butler et~al.(2012)Butler, Streng, Garwood, Lowe, and
+  Holmer]{Butler2012ConstructingCambrian}
+A.~D. Butler, M.~Streng, R.~Garwood, T.~Lowe, and L.~E. Holmer.
+\newblock {Constructing Cambrian body-plans: critical evaluation of tommotiid
+  and stem-brachiopod character homologies [Exceptional preservation of
+  \textit{Micrina} setae and 3D MicroCT reconstruction confirm the tommotiid
+  stem-group brachiopod link]}.
+\newblock volume~56, page~61, 2012.
+
+\bibitem[Butler et~al.(2015)Butler, Streng, Holmer, and
+  Babcock]{Butler2015Exceptionallypreserved}
+A.~D. Butler, M.~Streng, L.~E. Holmer, and L.~E. Babcock.
+\newblock {Exceptionally preserved \textit{Mickwitzia} from the Indian Springs
+  Lagerstatte (Cambrian Stage 3), Nevada}.
+\newblock \emph{Journal of Paleontology}, 89\penalty0 (6):\penalty0 933--955,
+  2015.
+\newblock \doi{10.1017/jpa.2016.8}.
+
+\bibitem[Carlson(1995)]{Carlson1995Phylogeneticrelationships}
+S.~J. Carlson.
+\newblock {Phylogenetic relationships among extant brachiopods}.
+\newblock \emph{Cladistics}, 11:\penalty0 131--197, 1995.
+\newblock \doi{10.1016/0748-3007(95)90010-1}.
+
+\bibitem[Chen et~al.(2007)Chen, Huang, and Chuang]{Chen2007Reinterpretationof}
+J.-Y. Chen, D.-Y. Huang, and S.-H. Chuang.
+\newblock {Reinterpretation of the Lower Cambrian brachiopod
+  \textit{Heliomedusa orienta} Sun and Hou, 1987a as a discinid}.
+\newblock \emph{Journal of Paleontology}, 81\penalty0 (1):\penalty0 38--47,
+  2007.
+\newblock \doi{10.1666/0022-3360(2007)81[38:rotlcb]2.0.co;2}.
+
+\bibitem[Cooper(1976)]{Cooper1976LowerCambrian}
+G.~A. Cooper.
+\newblock {Lower Cambrian Brachiopods from the Rift Valley (Israel and
+  Jordan)}.
+\newblock \emph{The Jordan Rift Valley}, 50\penalty0 (2):\penalty0 269--289,
+  1976.
+\newblock \doi{10.1201/9781439834244.ch3}.
+
+\bibitem[Cusack et~al.(1999)Cusack, Williams, and
+  Buckman]{Cusack1999Chemicostructural}
+M.~Cusack, A.~Williams, and J.~O. Buckman.
+\newblock {Chemico-structural evolution of linguloid brachiopod shells}.
+\newblock \emph{Palaeontology}, 42\penalty0 (5):\penalty0 799--840, 1999.
+\newblock \doi{10.1111/1475-4983.00098}.
+
+\bibitem[Dewing(2001)]{Dewing2001Hingemodifications}
+K.~Dewing.
+\newblock {Hinge modifications and musculature of strophomenoid brachiopods:
+  examples across the Ordovician-Silurian boundary, Anticosti Island, Quebec}.
+\newblock \emph{Canadian Journal of Earth Sciences}, 38:\penalty0 125--141,
+  2001.
+\newblock \doi{10.1139/e00-027}.
+
+\bibitem[Dzik(1980)]{Dzik1980Ontogenyof}
+J.~Dzik.
+\newblock {Ontogeny of \textit{Bactrotheca} and related hyoliths}.
+\newblock \emph{Geologiska Föreningen i Stockholm Förhandlingar},
+  102\penalty0 (3):\penalty0 223--233, 1980.
+\newblock \doi{10.1080/11035898009455162}.
+
+\bibitem[Emig(1992)]{Emig1992Functionaldisposition}
+C.~C. Emig.
+\newblock {Functional disposition of the lophophore in living Brachiopoda}.
+\newblock \emph{Lethaia}, 25\penalty0 (3):\penalty0 291--302, 1992.
+\newblock \doi{10.1111/j.1502-3931.1992.tb01398.x}.
+
+\bibitem[Franzen and Ahlfors(1980)]{Franzen1980Ultrastructureof}
+A.~Franzen and K.~Ahlfors.
+\newblock {Ultrastructure of spermatids and spermatozoa in \textit{Phoronis},
+  Phylum Phoronida}.
+\newblock \emph{Zoomorphology}, 12\penalty0 (4):\penalty0 585--597, 1980.
+\newblock \doi{10.1007/s004350000030}.
+
+\bibitem[Freeman and Lundelius(1999)]{Freeman1999Changesin}
+G.~Freeman and J.~W. Lundelius.
+\newblock {Changes in the timing of mantle formation and larval life history
+  traits in linguliform and craniiform brachiopods}.
+\newblock \emph{Lethaia}, 32:\penalty0 197--217, 1999.
+\newblock \doi{10.1111/j.1502-3931.1999.tb00539.x}.
+
+\bibitem[Fukumoto(2003)]{Fukumoto2003Theacrosome}
+M.~Fukumoto.
+\newblock \emph{{The acrosome reaction of the spermatozoa of the inarticulate
+  brachiopod \textit{Lingula anatina}}}.
+\newblock 2003.
+
+\bibitem[Goloboff(1997)]{Goloboff1997}
+P.~A. Goloboff.
+\newblock {Self-weighted optimization: tree searches and character state
+  reconstructions under implied transformation costs}.
+\newblock \emph{Cladistics}, 13\penalty0 (3):\penalty0 225--245, 1997.
+\newblock \doi{10.1111/j.1096-0031.1997.tb00317.x}.
+
+\bibitem[Goloboff(1999)]{Goloboff1999}
+P.~A. Goloboff.
+\newblock {Analyzing large data sets in reasonable times: solutions for
+  composite optima}.
+\newblock \emph{Cladistics}, 15\penalty0 (4):\penalty0 415--428, dec 1999.
+\newblock ISSN 07483007.
+\newblock \doi{10.1006/clad.1999.0122}.
+
+\bibitem[Goloboff(2014)]{Goloboff2014}
+P.~A. Goloboff.
+\newblock {Extended implied weighting}.
+\newblock \emph{Cladistics}, 30\penalty0 (3):\penalty0 260--272, 2014.
+\newblock \doi{10.1111/cla.12047}.
+
+\bibitem[Goloboff and Catalano(2016)]{Goloboff2016}
+P.~A. Goloboff and S.~A. Catalano.
+\newblock {{T}{N}{T} version 1.5, including a full implementation of
+  phylogenetic morphometrics}.
+\newblock \emph{Cladistics}, 32\penalty0 (3):\penalty0 221--238, 2016.
+\newblock \doi{10.1111/cla.12160}.
+
+\bibitem[Gorjansky and Popov(1986)]{Gorjansky1986Onthe}
+V.~Y. Gorjansky and L.~E. Popov.
+\newblock {On the origin and systematic position of the calcareous-shelled
+  inarticulate brachiopods}.
+\newblock \emph{Lethaia}, 19:\penalty0 223--240, 1986.
+\newblock \doi{10.1111/j.1502-3931.1986.tb00737.x}.
+
+\bibitem[Hanken and Harper(1985)]{Hanken1985Thetaxonomy}
+N.-M. Hanken and D.~A.~T. Harper.
+\newblock {The taxonomy, shell structure, and palaeoecology of the trimerellid
+  brachiopod \textit{Gasconsia} Northrop}.
+\newblock \emph{Journal of Paleontology}, 28\penalty0 (2):\penalty0 243--254,
+  1985.
+\newblock \doi{10.1666/0022-3360(2002)076<0185:nrottb>2.0.co;2}.
+
+\bibitem[Harper et~al.(2017)Harper, Popov, and
+  Holmer]{Harper2017Brachiopodsorigin}
+D.~A.~T. Harper, L.~E. Popov, and L.~E. Holmer.
+\newblock {Brachiopods: origin and early history}.
+\newblock \emph{Palaeontology}, 60:\penalty0 609--631, 2017.
+\newblock \doi{10.1111/pala.12307}.
+
+\bibitem[Havlicek(1982)]{Havlicek1982LingulaceaPaterinacea}
+M.~Havlicek.
+\newblock {Lingulacea, Paterinacea, and Siphonotretacea (Brachiopoda) in the
+  Lower Ordovician sequence of Bohemia}.
+\newblock 25:\penalty0 9--82, pl. 1--16, 1982.
+\newblock \doi{10.4095/192360}.
+
+\bibitem[Herrmann(1997)]{Herrmann1997Phoronida}
+K.~Herrmann.
+\newblock \emph{{Phoronida}}.
+\newblock 1997.
+
+\bibitem[Hodgson and Reunov(1994)]{Hodgson1994Ultrastructureof}
+A.~N. Hodgson and A.~A. Reunov.
+\newblock {Ultrastructure of the spermatozoon and spermatogenesis of the
+  brachiopods \textit{Discinisca tenuis} (Inarticulata) and \textit{Kraussina
+  rubra} (Articulata)}.
+\newblock \emph{Invertebrate Reproduction \& Development}, 25\penalty0
+  (1):\penalty0 23--31, 1994.
+\newblock \doi{10.1080/07924259.1994.9672365}.
+
+\bibitem[Holmer(1989)]{Holmer1989MiddleOrdovician}
+L.~E. Holmer.
+\newblock {Middle Ordovician phosphatic inarticulate brachiopods from
+  Västergötland and Dalarna, Sweden}.
+\newblock \emph{Geological Journal}, 26, 1989.
+\newblock \doi{10.1002/gj.3350260308}.
+
+\bibitem[Holmer and Caron(2006)]{Holmer2006Aspinose}
+L.~E. Holmer and J.-B. Caron.
+\newblock {A spinose stem group brachiopod with pedicle from the Middle
+  Cambrian Burgess Shale}.
+\newblock \emph{Acta Zoologica}, 87:\penalty0 273--290, 2006.
+\newblock \doi{10.1111/j.1463-6395.2006.00241.x}.
+
+\bibitem[Holmer et~al.(1997)Holmer, Popov, Koneva, and
+  Rong]{Holmer1997EarlyCambrian}
+L.~E. Holmer, L.~E. Popov, S.~P. Koneva, and J.-Y. Rong.
+\newblock {Early Cambrian Lingulellotreta (Lingulata, Brachiopoda) from south
+  Kazakhstan (Malyi Karatau Range) and South China (eastern Yunnan)}.
+\newblock \emph{Journal of Paleontology}, 71\penalty0 (4):\penalty0 577--584,
+  1997.
+\newblock \doi{10.1017/s0022336000040063}.
+
+\bibitem[Holmer et~al.(2008)Holmer, Skovsted, Brock, Valentine, and
+  Paterson]{Holmer2008TheEarly}
+L.~E. Holmer, C.~B. Skovsted, G.~A. Brock, J.~L. Valentine, and J.~R. Paterson.
+\newblock {The Early Cambrian tommotiid \textit{Micrina}, a sessile bivalved
+  stem group brachiopod}.
+\newblock \emph{Biology Letters}, 4:\penalty0 724--728, 2008.
+\newblock \doi{10.1098/rsbl.2008.0277}.
+
+\bibitem[Holmer et~al.(2009)Holmer, Stolk, Skovsted, Balthasar, and
+  Popov]{Holmer2009Theenigmatic}
+L.~E. Holmer, S.~P. Stolk, C.~B. Skovsted, U.~Balthasar, and L.~E. Popov.
+\newblock {The enigmatic early Cambrian \textit{Salanygolina} - A stem group of
+  rhynchonelliform chileate brachiopods?}
+\newblock \emph{Palaeontology}, 52\penalty0 (1):\penalty0 1--10, 2009.
+\newblock \doi{10.1111/j.1475-4983.2008.00831.x}.
+
+\bibitem[Holmer et~al.(2011)Holmer, Skovsted, Larsson, Brock, and
+  Zhang]{Holmer2011Firstrecord}
+L.~E. Holmer, C.~B. Skovsted, C.~M. Larsson, G.~A. Brock, and Z.-F. Zhang.
+\newblock {First record of a bivalved larval shell in Early Cambrian tommotiids
+  and its phylogenetic significance}.
+\newblock \emph{Palaeontology}, 54\penalty0 (2):\penalty0 235--239, 2011.
+\newblock \doi{10.1111/j.1475-4983.2010.01030.x}.
+
+\bibitem[Holmer et~al.(2014)Holmer, Popov, and
+  Bassett]{Holmer2014OrdovicianSilurian}
+L.~E. Holmer, L.~E. Popov, and M.~G. Bassett.
+\newblock {Ordovician–Silurian Chileida -- first post-Cambrian records of an
+  enigmatic group of Brachiopoda}.
+\newblock \emph{Journal of Paleontology}, 88\penalty0 (3):\penalty0 488--496,
+  2014.
+\newblock \doi{10.1666/13-104}.
+
+\bibitem[Holmer et~al.(2018{\natexlab{a}})Holmer, Popov, Pour, Claybourn,
+  Zhang, Brock, and Zhang]{Holmer2018Evolutionarysignificance}
+L.~E. Holmer, L.~E. Popov, M.~G. Pour, T.~Claybourn, Z.-L. Zhang, G.~A. Brock,
+  and Z.-F. Zhang.
+\newblock {Evolutionary significance of a middle Cambrian (Series 3) \textit{in
+  situ} occurrence of the pedunculate rhynchonelliform brachiopod
+  \textit{Nisusia sulcata}}.
+\newblock \emph{Lethaia}, 2018{\natexlab{a}}.
+\newblock \doi{10.1111/let.12254}.
+
+\bibitem[Holmer et~al.(2018{\natexlab{b}})Holmer, Zhang, Topper, Popov, and
+  Claybourn]{Holmer2018Theattachment}
+L.~E. Holmer, Z.-F. Zhang, T.~P. Topper, L.~E. Popov, and T.~M. Claybourn.
+\newblock {The attachment strategies of Cambrian kutorginate brachiopods: the
+  curious case of two pedicle openings and their phylogenetic significance}.
+\newblock \emph{Journal of Paleontology}, 92\penalty0 (1):\penalty0 33--39,
+  2018{\natexlab{b}}.
+\newblock \doi{10.1017/jpa.2017.76}.
+
+\bibitem[Hou et~al.(2017)Hou, Siveter, Siveter, Aldridge, Cong, Gabbott, and
+  Purnell]{Hou2017Brachiopoda}
+X.-G. Hou, D.~J. Siveter, D.~J. Siveter, R.~J. Aldridge, P.-Y. Cong, S.~E.
+  Gabbott, and M.~A. Purnell.
+\newblock \emph{{Brachiopoda}}.
+\newblock 2017.
+
+\bibitem[Hu et~al.(2010)Hu, Zhang, Holmer, and Skovsted]{Hu2010Softpart}
+S.-X. Hu, Z.-F. Zhang, L.~E. Holmer, and C.~B. Skovsted.
+\newblock {Soft-part preservation in a linguliform brachiopod from the lower
+  Cambrian Wulongqing Formation (Guanshan Fauna) of Yunnan, South China}.
+\newblock \emph{Acta Palaeontologica Polonica}, 55\penalty0 (3):\penalty0
+  495--505, 2010.
+\newblock \doi{10.4202/app.2009.1106}.
+
+\bibitem[Jamieson(1991)]{Jamieson1991FishEvolution}
+B.~G.~M. Jamieson.
+\newblock \emph{{Fish Evolution and Systematics: Evidence from Spermatozoa:
+  With a Survey of Lophophorate, Echinoderm and Protochordate Sperm and an
+  Account of Gamete Cryopreservation}}.
+\newblock 1991.
+
+\bibitem[Jin and Wang(1992)]{Jin1992Revisionof}
+Y.-G. Jin and H.-Y. Wang.
+\newblock {Revision of the Lower Cambrian brachiopod \textit{Heliomedusa} Sun
+  \& Hou, 1987}.
+\newblock \emph{Lethaia}, 24:\penalty0 35--49, 1992.
+\newblock \doi{10.1111/j.1502-3931.1992.tb01790.x}.
+
+\bibitem[Kouchinsky(2000)]{Kouchinsky2000Skeletalmicrostructures}
+A.~V. Kouchinsky.
+\newblock {Skeletal microstructures of hyoliths from the Early Cambrian of
+  Siberia}.
+\newblock \emph{Alcheringa: An Australasian Journal of Palaeontology},
+  24\penalty0 (2):\penalty0 65--81, 2000.
+\newblock \doi{10.1080/03115510008619525}.
+
+\bibitem[Larsson et~al.(2014)Larsson, Skovsted, Brock, Balthasar, Topper, and
+  Holmer]{Larsson2014iPaterimitra}
+C.~M. Larsson, C.~B. Skovsted, G.~A. Brock, U.~Balthasar, T.~P. Topper, and
+  L.~E. Holmer.
+\newblock {\textit{Paterimitra pyramidalis} from South Australia: scleritome,
+  shell structure and evolution of a lower Cambrian stem group brachiopod}.
+\newblock \emph{Palaeontology}, 57\penalty0 (2):\penalty0 417--446, 2014.
+\newblock \doi{10.1111/pala.12072}.
+
+\bibitem[Laurie(1987)]{Laurie1987Themusculature}
+J.~Laurie.
+\newblock {The musculature and vascular systems of two species of Cambrian
+  Paterinide (Brachiopoda)}.
+\newblock \emph{The Cambrian Fossils of Chengjiang, China}, 10:\penalty0
+  261--265, 1987.
+\newblock \doi{10.1002/9780470999950.ch17}.
+
+\bibitem[Lewis(2001)]{Lewis2001}
+P.~O. Lewis.
+\newblock {A likelihood approach to estimating phylogeny from discrete
+  morphological character data}.
+\newblock \emph{Systematic Biology}, 50\penalty0 (6):\penalty0 913--925, 2001.
+\newblock \doi{10.1080/106351501753462876}.
+
+\bibitem[Maddison(1993)]{Maddison1993}
+W.~P. Maddison.
+\newblock {Missing data versus missing characters in phylogenetic analysis}.
+\newblock \emph{Systematic Biology}, 42\penalty0 (4):\penalty0 576--581, 1993.
+\newblock \doi{10.1093/sysbio/42.4.576}.
+
+\bibitem[Moore and Porter(2018)]{Moore2018Plywoodlike}
+J.~L. Moore and S.~M. Porter.
+\newblock {Plywood-like shell microstructures in hyoliths from the middle
+  Cambrian (Drumian) Gowers Formation, Georgina Basin, Australia}.
+\newblock \emph{Palaeontology}, 2018.
+\newblock \doi{10.1111/pala.12352}.
+
+\bibitem[Moysiuk et~al.(2017)Moysiuk, Smith, and Caron]{Moysiuk2017Hyolithsare}
+J.~Moysiuk, M.~R. Smith, and J.-B. Caron.
+\newblock {Hyoliths are Palaeozoic lophophorates}.
+\newblock \emph{Nature}, 541\penalty0 (7637):\penalty0 394--397, 2017.
+\newblock \doi{10.1038/nature20804}.
+
+\bibitem[Nixon(1999)]{Nixon1999}
+K.~C. Nixon.
+\newblock {The Parsimony Ratchet, a new method for rapid parsimony analysis}.
+\newblock \emph{Cladistics}, 15\penalty0 (4):\penalty0 407--414, 1999.
+\newblock ISSN 0748-3007.
+\newblock \doi{10.1111/j.1096-0031.1999.tb00277.x}.
+
+\bibitem[Owen and Williams(1969)]{Owen1969Thecaecum}
+G.~Owen and A.~Williams.
+\newblock {The caecum of articulate Brachiopoda}.
+\newblock \emph{Proceedings of the Royal Society B: Biological Sciences},
+  172:\penalty0 187--201, 1969.
+\newblock \doi{10.1098/rspb.1969.0019}.
+
+\bibitem[Popov(1992)]{Popov1992TheCambrian}
+L.~E. Popov.
+\newblock \emph{{The Cambrian radiation of brachiopods}}.
+\newblock 1992.
+
+\bibitem[Popov et~al.(2009)Popov, Bassett, Holmer, and
+  Ghobadi~Pour]{Popov2009Earlyontogeny}
+L.~E. Popov, M.~G. Bassett, L.~E. Holmer, and G.~M. Ghobadi~Pour.
+\newblock {Early ontogeny and soft tissue preservation in siphonotretide
+  brachiopods: new data from the Cambrian-Ordovician of Iran}.
+\newblock \emph{Gondwana Research}, 16\penalty0 (1):\penalty0 151--161, 2009.
+\newblock \doi{10.1016/j.gr.2009.01.009}.
+
+\bibitem[Popov et~al.(2010)Popov, Bassett, Holmer, Skovsted, and
+  Zuykov]{Popov2010Earliestontogeny}
+L.~E. Popov, M.~G. Bassett, L.~E. Holmer, C.~B. Skovsted, and M.~A. Zuykov.
+\newblock {Earliest ontogeny of Early Palaeozoic Craniiformea: Implications for
+  brachiopod phylogeny}.
+\newblock \emph{Lethaia}, 43\penalty0 (3):\penalty0 323--333, 2010.
+\newblock \doi{10.1111/j.1502-3931.2009.00197.x}.
+
+\bibitem[Rannala et~al.(2012)Rannala, Zhu, and Yang]{Rannala2012}
+B.~Rannala, T.-Q. Zhu, and Z.-H. Yang.
+\newblock Tail paradox, partial identifiability, and influential priors in
+  {B}ayesian branch length inference.
+\newblock \emph{Molecular Biology and Evolution}, 29\penalty0 (1):\penalty0
+  325--335, 2012.
+\newblock \doi{10.1093/molbev/msr210}.
+
+\bibitem[Reunov and Klepal(2004)]{Reunov2004Ultrastructuralstudy}
+A.~Reunov and W.~Klepal.
+\newblock {Ultrastructural study of spermatogenesis in \textit{Phoronopsis
+  harmeri} (Lophophorata, Phoronida)}.
+\newblock \emph{Helgoland Marine Research}, 58\penalty0 (1):\penalty0 1--10,
+  2004.
+\newblock \doi{10.1007/s10152-003-0153-3}.
+
+\bibitem[Robinson(2014)]{Robinson2014Themuscles}
+J.~Robinson.
+\newblock {The muscles, body wall and valve-opening mechanism of extant craniid
+  (inarticulated) brachiopods}.
+\newblock \emph{Journal of Natural History}, 48:\penalty0 1231--1252, 2014.
+\newblock \doi{10.1080/00222933.2013.840941}.
+
+\bibitem[Ronquist et~al.(2012)Ronquist, Teslenko, {van der Mark}, Ayres,
+  Darling, Hohna, Larget, Liu, Suchard, and Huelsenbeck]{Ronquist2012}
+F.~Ronquist, M.~Teslenko, P.~{van der Mark}, D.~L. Ayres, A.~Darling, S.~Hohna,
+  B.~Larget, L.~Liu, M.~A. Suchard, and J.~P. Huelsenbeck.
+\newblock {M}r{B}ayes 3.2: efficient {B}ayesian phylogenetic inference and
+  model choice across a large model space.
+\newblock \emph{Systematic Biology}, 61\penalty0 (3):\penalty0 539--42, 2012.
+\newblock \doi{10.1093/sysbio/sys029}.
+
+\bibitem[Rowell and Caruso(1985)]{Rowell1985Theevolutionary}
+A.~J. Rowell and N.~E. Caruso.
+\newblock {The evolutionary significance of \textit{Nisusia sulcata}, an early
+  articulate brachiopod}.
+\newblock \emph{Lethaia}, 59\penalty0 (5):\penalty0 1227--1242, 1985.
+\newblock \doi{10.1111/let.12254}.
+
+\bibitem[Ruppert et~al.(2004)Ruppert, Fox, and Barnes]{Ruppert2004}
+E.~E. Ruppert, R.~S. Fox, and R.~D. Barnes.
+\newblock 2004.
+
+\bibitem[Sereno(2007)]{Sereno2007}
+P.~C. Sereno.
+\newblock {Logical basis for morphological characters in phylogenetics}.
+\newblock \emph{Cladistics}, 23\penalty0 (6):\penalty0 565--587, 2007.
+\newblock \doi{10.1111/j.1096-0031.2007.00161.x}.
+
+\bibitem[Skovsted and Holmer(2003)]{Skovsted2003EarlyCambrian}
+C.~B. Skovsted and L.~E. Holmer.
+\newblock {Early Cambrian (Botomian) stem group brachiopod \textit{Mickwitzia}
+  from Northeast Greenland}.
+\newblock \emph{Gondwana Research}, 48\penalty0 (1):\penalty0 1--20, 2003.
+\newblock \doi{10.1016/j.gr.2009.02.002}.
+
+\bibitem[Skovsted and Holmer(2005)]{Skovsted2005EarlyCambrian}
+C.~B. Skovsted and L.~E. Holmer.
+\newblock {Early Cambrian brachiopods from north-east Greenland}.
+\newblock \emph{Palaeontology}, 48\penalty0 (2):\penalty0 325--345, 2005.
+\newblock \doi{10.1111/j.1475-4983.2005.00450.x}.
+
+\bibitem[Skovsted and Peel(2010)]{Skovsted2010EarlyCambrian}
+C.~B. Skovsted and J.~S. Peel.
+\newblock {Early Cambrian brachiopods and other shelly fossils from the basal
+  Kinzers Formation of Pennsylvania}.
+\newblock \emph{Journal of Paleontology}, 84\penalty0 (4):\penalty0 754--762,
+  2010.
+\newblock \doi{10.1017/s0022336000058467}.
+
+\bibitem[Skovsted et~al.(2009)Skovsted, Holmer, Larsson, Högström, Brock,
+  Topper, Balthasar, Stolk, and Paterson]{Skovsted2009Thescleritome}
+C.~B. Skovsted, L.~E. Holmer, C.~M. Larsson, A.~E.~S. Högström, G.~A. Brock,
+  T.~P. Topper, U.~Balthasar, S.~P. Stolk, and J.~R. Paterson.
+\newblock {The scleritome of \textit{Paterimitra}: an Early Cambrian stem group
+  brachiopod from South Australia}.
+\newblock \emph{Proceedings of the Royal Society B: Biological Sciences},
+  276:\penalty0 1651--1656, 2009.
+\newblock \doi{10.1098/rspb.2008.1655}.
+
+\bibitem[Skovsted et~al.(2011)Skovsted, Brock, Topper, Paterson, and
+  Holmer]{Skovsted2011Scleritomeconstruction}
+C.~B. Skovsted, G.~A. Brock, T.~P. Topper, J.~R. Paterson, and L.~E. Holmer.
+\newblock {Scleritome construction, biofacies, biostratigraphy and systematics
+  of the tommotiid \textit{Eccentrotheca helenia} sp. nov. from the early
+  Cambrian of South Australia}.
+\newblock \emph{Palaeontology}, 54:\penalty0 253--286, 2011.
+\newblock \doi{10.1111/j.1475-4983.2010.01031.x}.
+
+\bibitem[Skovsted et~al.(2015)Skovsted, Betts, Topper, and
+  Brock]{Skovsted2015Theearly}
+C.~B. Skovsted, M.~J. Betts, T.~P. Topper, and G.~A. Brock.
+\newblock {The early Cambrian tommotiid genus \textit{Dailyatia} from South
+  Australia}.
+\newblock \emph{Journal of Paleontology}, 48\penalty0 (1):\penalty0 1--117,
+  2015.
+\newblock \doi{10.1017/jpa.2016.5}.
+
+\bibitem[Skovsted et~al.(2017)Skovsted, Knight, Balthasar, and
+  Boyce]{Skovsted2017Depthrelated}
+C.~B. Skovsted, I.~Knight, U.~Balthasar, and W.~D. Boyce.
+\newblock {Depth related brachiopod faunas from the lower Cambrian Forteau
+  Formation of southern Labrador and western Newfoundland, Canada}.
+\newblock \emph{Palaeontologia Electronica}, 20.3.54A:\penalty0 1--52, 2017.
+\newblock \doi{10.26879/775}.
+
+\bibitem[Smith(2017)]{Smith2017}
+M.~R. Smith.
+\newblock {Quantifying and visualising divergence between pairs of phylogenetic
+  trees: implications for phylogenetic reconstruction}.
+\newblock \emph{bioR$\chi$iv}, 2017.
+\newblock \doi{10.1101/227942}.
+
+\bibitem[Smith(2018)]{Smith2018TreeSearch}
+M.~R. Smith.
+\newblock {TreeSearch: phylogenetic tree search using custom optimality
+  criteria}, 2018.
+
+\bibitem[Streng et~al.(2016)Streng, Butler, Peel, Garwood, and
+  Caron]{Streng2016Anew}
+M.~Streng, A.~D. Butler, J.~S. Peel, R.~J. Garwood, and J.-B. Caron.
+\newblock {A new family of Cambrian rhynchonelliformean brachiopods (Order
+  Naukatida) with an aberrant coral-like morphology}.
+\newblock \emph{Palaeontology}, 59\penalty0 (2):\penalty0 269--293, 2016.
+\newblock \doi{10.1111/pala.12226}.
+
+\bibitem[Sun et~al.(2018)Sun, Smith, Zhu, Zeng, and Zhao]{Sun2018Hyolithswith}
+H.-J. Sun, M.~R. Smith, M.-Y. Zhu, H.~Zeng, and F.-C. Zhao.
+\newblock {Hyoliths with pedicles: Origin of the brachiopod body plan}.
+\newblock \emph{Evolution \& Development}, 16:\penalty0 submitted, 2018.
+\newblock \doi{10.1111/ede.12059}.
+
+\bibitem[Sutton et~al.(2005)Sutton, Briggs, Siveter, and
+  Siveter]{Sutton2005Silurianbrachiopods}
+M.~D. Sutton, D.~E.~G. Briggs, D.~J. Siveter, and D.~J. Siveter.
+\newblock {Silurian brachiopods with soft-tissue preservation}.
+\newblock \emph{Nature}, 436\penalty0 (7053):\penalty0 1013--1015, 2005.
+\newblock \doi{10.1038/nature03846}.
+
+\bibitem[Topper et~al.(2013{\natexlab{a}})Topper, Harper, and
+  Ahlberg]{Topper2013Reappraisalof}
+T.~P. Topper, D.~A.~T. Harper, and P.~Ahlberg.
+\newblock {Reappraisal of the brachiopod \textit{Acrotreta socialis} von
+  Seebach, 1865: clarifying 150 years of confusion}.
+\newblock \emph{GFF}, 135\penalty0 (2):\penalty0 191--203, 2013{\natexlab{a}}.
+\newblock \doi{10.1080/11035897.2013.811440}.
+
+\bibitem[Topper et~al.(2013{\natexlab{b}})Topper, Holmer, Skovsted, Brock,
+  Balthasar, Larsson, Petterson~Stolk, and Harper]{Topper2013Theoldest}
+T.~P. Topper, L.~E. Holmer, C.~B. Skovsted, G.~A. Brock, U.~Balthasar, C.~M.
+  Larsson, P.~S. Petterson~Stolk, and D.~A.~T. Harper.
+\newblock {The oldest brachiopods from the lower Cambrian of South Australia}.
+\newblock \emph{Acta Palaeontologica Polonica}, 58:\penalty0 93--109,
+  2013{\natexlab{b}}.
+\newblock \doi{10.4202/app.2011.0146}.
+
+\bibitem[Ushatinskaya(2016)]{Ushatinskaya2016Protegulumand}
+G.~T. Ushatinskaya.
+\newblock {Protegulum and brephic shell of the earliest organophosphatic
+  brachiopods}.
+\newblock \emph{Paleontological Journal}, 50\penalty0 (2):\penalty0 141--152,
+  2016.
+\newblock \doi{10.1134/s0031030116020088}.
+
+\bibitem[Ushatinskaya and Korovnikov(2016)]{Ushatinskaya2016Revisionof}
+G.~T. Ushatinskaya and I.~V. Korovnikov.
+\newblock {Revision of the superfamily Acrotheloidea (Brachiopoda, class
+  Linguliformea, order Lingulida) from the Lower and Middle Cambrian of the
+  Siberian Platform}.
+\newblock \emph{Paleontological Journal}, 50\penalty0 (5):\penalty0 450--462,
+  2016.
+\newblock \doi{10.1134/s0031030116050130}.
+
+\bibitem[Vogt(2017)]{Vogt2017}
+L.~Vogt.
+\newblock {The logical basis for coding ontologically dependent characters}.
+\newblock \emph{Cladistics}, 2017.
+\newblock \doi{10.1111/cla.12209}.
+
+\bibitem[Watkins(2002)]{Watkins2002Newrecord}
+R.~Watkins.
+\newblock {New record of the trimerellid brachiopod \textit{Gasconsia}, a rare
+  Silurian Lazarus taxon}.
+\newblock \emph{Journal of Paleontology}, 76\penalty0 (1):\penalty0 185--186,
+  2002.
+\newblock \doi{10.1666/0022-3360(2002)076<0185:nrottb>2.0.co;2}.
+
+\bibitem[Williams and Brunton(1993)]{Williams1993Roleof}
+A.~Williams and C.~H.~C. Brunton.
+\newblock {Role of shell structure in the classification of the orthotetidine
+  brachiopods}.
+\newblock \emph{Palaeontology}, 36:\penalty0 931--966, 1993.
+\newblock \doi{10.1111/1475-4983.00206}.
+
+\bibitem[Williams et~al.(1992)Williams, Mackay, and
+  Cusack]{Williams1992Structureof}
+A.~Williams, S.~Mackay, and M.~Cusack.
+\newblock {Structure of the organo-phosphatic shell of the brachiopod
+  \textit{Discina}}.
+\newblock \emph{Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 337:\penalty0 83--104, 1992.
+\newblock \doi{10.1098/rstb.1992.0086}.
+
+\bibitem[Williams et~al.(1994)Williams, Cusack, and
+  Mackay]{Williams1994Collagenouschitino}
+A.~Williams, M.~Cusack, and S.~Mackay.
+\newblock {Collagenous chitino-phosphatic shell of the brachiopod
+  \textit{Lingula}}.
+\newblock \emph{Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 346:\penalty0 223--266, 1994.
+\newblock \doi{10.1098/rstb.1994.0143}.
+
+\bibitem[Williams et~al.(1996)Williams, Carlson, Brunton, Holmer, and
+  Popov]{Williams1996Asupra}
+A.~Williams, S.~J. Carlson, C.~H.~C. Brunton, L.~E. Holmer, and L.~E. Popov.
+\newblock {A supra-ordinal classification of the Brachiopoda}.
+\newblock \emph{Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 351\penalty0 (1344):\penalty0 1171--1193, 1996.
+\newblock \doi{10.1098/rstb.1996.0101}.
+
+\bibitem[Williams et~al.(1997)Williams, James, Emig, Mackay, Rhodes, Cohen,
+  Gawthrop, Peck, Curry, Ansell, Cusack, Walton, Brunton, Mackinnon, and
+  Richardson]{Williams1997BrachiopodaRevised}
+A.~Williams, M.~A. James, C.~C. Emig, S.~Mackay, M.~C. Rhodes, B.~L. Cohen,
+  A.~B. Gawthrop, L.~S. Peck, G.~B. Curry, A.~D. Ansell, M.~Cusack, D.~Walton,
+  C.~H.~C. Brunton, D.~I. Mackinnon, and J.~R. Richardson.
+\newblock \emph{{Brachiopoda. Revised. Introduction.}}, volume~1.
+\newblock 1997.
+
+\bibitem[Williams et~al.(1998)Williams, Popov, Holmer, and
+  Cusack]{Williams1998Thediversity}
+A.~Williams, L.~E. Popov, L.~E. Holmer, and M.~Cusack.
+\newblock {The diversity and phylogeny of the paterinate brachiopods}.
+\newblock \emph{Science}, 41:\penalty0 221--262, 1998.
+\newblock \doi{10.1126/science.279.5359.2094}.
+
+\bibitem[Williams et~al.(2000)Williams, Carlson, Brunton, Holmer, Popov, Mergl,
+  Laurie, Bassett, Cocks, Rong, Lazarev, Grant, Racheboeuf, Jin, Wardlaw,
+  Harper, and Wright]{Williams2000BrachiopodaLinguliformea}
+A.~Williams, S.~J. Carlson, C.~H.~C. Brunton, L.~E. Holmer, L.~E. Popov,
+  M.~Mergl, J.~R. Laurie, M.~G. Bassett, L.~R.~M. Cocks, J.-Y. Rong, S.~S.
+  Lazarev, R.~E. Grant, P.~R. Racheboeuf, Y.-G. Jin, B.~R. Wardlaw, D.~A.~T.
+  Harper, and A.~D. Wright.
+\newblock \emph{{Brachiopoda. Linguliformea, Craniiformea, and
+  Rhynchonelliformea}}, volume~2.
+\newblock 2000.
+
+\bibitem[Williams et~al.(2004)Williams, Holmer, and
+  Cusack]{Williams2004Chemicostructure}
+A.~Williams, L.~E. Holmer, and M.~Cusack.
+\newblock {Chemico-structure of the organophosphatic shells of siphonotretide
+  brachiopods}.
+\newblock \emph{Palaeontology}, 47\penalty0 (5):\penalty0 1313--1337, 2004.
+\newblock \doi{10.1111/j.0031-0239.2004.00404.x}.
+
+\bibitem[Williams et~al.(2006)Williams, Brunton, and
+  Carlson]{Williams2006Rhynchonelliformeapart}
+A.~Williams, C.~H.~C. Brunton, and S.~J. Carlson.
+\newblock {Rhynchonelliformea (part)}.
+\newblock 5:\penalty0 1689--2320, 2006.
+\newblock \doi{10.1036/1097-8542.053100}.
+
+\bibitem[Williams et~al.(2007)Williams, Racheboeuf, Savage, Lee, Popov,
+  Carlson, Logan, Luter, Cusack, Curry, Wright, Harper, Cohen, Cocks,
+  MacKinnon, Smirnova, Baker, Carter, Gourvennec, Mancenido, Brunton, Dong-Li,
+  Boucot, Bassett, Alvarez, Holmer, Mergl, Emig, Rubel, and
+  Jia-Yu]{Williams2007PartH}
+A.~Williams, P.~R. Racheboeuf, N.~M. Savage, D.~E. Lee, L.~E. Popov, S.~J.
+  Carlson, A.~Logan, C.~Luter, M.~Cusack, G.~B. Curry, A.~D. Wright, D.~A.~T.
+  Harper, B.~L. Cohen, L.~R.~M. Cocks, D.~I. MacKinnon, T.~N. Smirnova, P.~G.
+  Baker, J.~L. Carter, R.~Gourvennec, M.~O. Mancenido, C.~H.~C. Brunton, D.-S.
+  Dong-Li, A.~J. Boucot, M.~G. Bassett, F.~Alvarez, L.~E. Holmer, M.~Mergl,
+  C.~C. Emig, M.~Rubel, and J.-R. Jia-Yu.
+\newblock {Part H, Brachiopoda (Revised)}.
+\newblock 6:\penalty0 2321--3226, 2007.
+\newblock \doi{10.17161/dt.v0i0.5515}.
+
+\bibitem[Zhang et~al.(2012)Zhang, Rannala, and Yang]{Zhang2012}
+C.~Zhang, B.~Rannala, and Z.-H. Yang.
+\newblock {Robustness of compound Dirichlet priors for Bayesian inference of
+  branch lengths}.
+\newblock 61\penalty0 (5):\penalty0 779--84, 2012.
+\newblock \doi{10.1093/sysbio/sys030}.
+
+\bibitem[Zhang et~al.(2004)Zhang, Shu, Han, and Liu]{Zhang2004Newdata}
+Z.-F. Zhang, D.-G. Shu, J.~Han, and J.-N. Liu.
+\newblock {New data on the lophophore anatomy of Early Cambrian linguloids from
+  the Chengjiang Lagerstätte, Southwest China}.
+\newblock \emph{Carnets de géologie (Notebooks on geology)}, 4:\penalty0 1--7,
+  2004.
+\newblock \doi{10.4267/2042/310}.
+
+\bibitem[Zhang et~al.(2007{\natexlab{a}})Zhang, Han, Zhang, Liu, Guo, and
+  Shu]{Zhang2007Noteon}
+Z.-F. Zhang, J.~Han, X.-L. Zhang, J.-N. Liu, J.-F. Guo, and D.-G. Shu.
+\newblock {Note on the gut preserved in the Lower Cambrian
+  \textit{Lingulellotreta} (Lingulata, Brachiopoda) from southern China}.
+\newblock \emph{Acta Zoologica}, 88\penalty0 (1):\penalty0 65--70,
+  2007{\natexlab{a}}.
+\newblock \doi{10.1111/j.1463-6395.2007.00252.x}.
+
+\bibitem[Zhang et~al.(2007{\natexlab{b}})Zhang, Shu, Emig, Zhang, Han, Liu, Li,
+  and Guo]{Zhang2007Rhynchonelliformeanbrachiopods}
+Z.-F. Zhang, D.-G. Shu, C.~C. Emig, X.-L. Zhang, J.~Han, J.-N. Liu, Y.~Li, and
+  J.-F. Guo.
+\newblock {Rhynchonelliformean brachiopods with soft-tissue preservation from
+  the early Cambrian Chengjiang Lagerstätte of South China}.
+\newblock \emph{Palaeontology}, 50:\penalty0 1391--1402, 2007{\natexlab{b}}.
+\newblock \doi{10.1111/j.1475-4983.2007.00725.x}.
+
+\bibitem[Zhang et~al.(2007{\natexlab{c}})Zhang, Shu, Han, and
+  Liu]{Zhang2007Agregarious}
+Z.-F. Zhang, D.-G. Shu, J.~Han, and J.-N. Liu.
+\newblock {A gregarious lingulid brachiopod \textit{Longtancunella
+  chengjiangensis} from the Lower Cambrian, South China}.
+\newblock \emph{Lethaia}, 40\penalty0 (1):\penalty0 11--18, 2007{\natexlab{c}}.
+\newblock \doi{10.1111/j.1502-3931.2006.00002.x}.
+
+\bibitem[Zhang et~al.(2009)Zhang, Li, Emig, Han, Holmer, and
+  Shu]{Zhang2009Architectureand}
+Z.-F. Zhang, G.-X. Li, C.~C. Emig, J.~Han, L.~E. Holmer, and D.-G. Shu.
+\newblock {Architecture and function of the lophophore in the problematic
+  brachiopod \textit{Heliomedusa orienta} (Early Cambrian, South China)}.
+\newblock \emph{Geobios}, 42\penalty0 (5):\penalty0 649--661, 2009.
+\newblock \doi{10.1016/j.geobios.2009.04.001}.
+
+\bibitem[Zhang et~al.(2011{\natexlab{a}})Zhang, Holmer, Ou, Han, and
+  Shu]{Zhang2011Theexceptionally}
+Z.-F. Zhang, L.~E. Holmer, Q.~Ou, J.~Han, and D.-G. Shu.
+\newblock {The exceptionally preserved Early Cambrian stem rhynchonelliform
+  brachiopod \textit{Longtancunella} and its implications}.
+\newblock \emph{Lethaia}, 44\penalty0 (4):\penalty0 490--495,
+  2011{\natexlab{a}}.
+\newblock \doi{10.1111/j.1502-3931.2011.00261.x}.
+
+\bibitem[Zhang et~al.(2011{\natexlab{b}})Zhang, Holmer, Popov, and
+  Shu]{Zhang2011Anobolellate}
+Z.-F. Zhang, L.~E. Holmer, L.~E. Popov, and D.-G. Shu.
+\newblock {An obolellate brachiopod with soft-part preservation from the Early
+  Cambrian Chengjiang fauna of China}.
+\newblock \emph{Journal of Paleontology}, 85\penalty0 (3):\penalty0 460--463,
+  2011{\natexlab{b}}.
+\newblock \doi{10.1666/10-121.1}.
+
+\bibitem[Zhang et~al.(2014)Zhang, Li, Holmer, Brock, Balthasar, Skovsted, Fu,
+  Zhang, Wang, Butler, Zhang, Cao, Han, Liu, and Shu]{Zhang2014Anearly}
+Z.-F. Zhang, G.-X. Li, L.~E. Holmer, G.~A. Brock, U.~Balthasar, C.~B. Skovsted,
+  D.-J. Fu, X.-L. Zhang, H.-Z. Wang, A.~D. Butler, Z.-L. Zhang, C.-Q. Cao,
+  J.~Han, J.-N. Liu, and D.-G. Shu.
+\newblock {An early Cambrian agglutinated tubular lophophorate with brachiopod
+  characters}.
+\newblock \emph{Scientific Reports}, 4\penalty0 (4682), 2014.
+\newblock \doi{10.1038/srep05502}.
+
+\bibitem[Zhang et~al.(2016)Zhang, Zhang, and Wang]{Zhang2016Epithelialcell}
+Z.-L. Zhang, Z.-F. Zhang, and H.-Z. Wang.
+\newblock {Epithelial cell moulds preserved in the earliest acrotretid
+  brachiopods from the Cambrian (Series 2) of the Three Gorges area, China}.
+\newblock \emph{GFF}, 138\penalty0 (4):\penalty0 455--466, 2016.
+\newblock \doi{10.1080/11035897.2016.1143528}.
+
+\bibitem[Zhang et~al.(2018)Zhang, Skovsted, and Zhang]{Zhang2018Ahyolithid}
+Z.-L. Zhang, C.~B. Skovsted, and Z.-F. Zhang.
+\newblock {A hyolithid without helens preserving the oldest hyolith muscle
+  scars; palaeobiology of \textit{Paramicrocornus} from the Shujingtuo
+  Formation (Cambrian Series 2) of South China}.
+\newblock \emph{Palaeogeography, Palaeoclimatology, Palaeoecology},
+  489:\penalty0 1--14, 2018.
+\newblock \doi{10.1016/j.palaeo.2017.07.021}.
+
+\bibitem[Zhao et~al.(2017)Zhao, Smith, Yin, Zeng, Li, and Zhu]{Zhao2017}
+F.-C. Zhao, M.~R. Smith, Z.-J. Yin, H.~Zeng, G.-X. Li, and M.-Y. Zhu.
+\newblock {\textit{Orthrozanclus elongata} n. sp. and the significance of
+  sclerite-covered taxa for early trochozoan evolution}.
+\newblock \emph{Scientific Reports}, 7\penalty0 (1):\penalty0 16232, 2017.
+\newblock \doi{10.1038/s41598-017-16304-6}.
+
+\bibitem[Zhao et~al.(2012)Zhao, Hu, Caron, Zhu, Yin, and Lu]{Zhao2012}
+Fangchen Zhao, Shi-Xue Hu, Jean-Bernard Caron, Mao-Yan Zhu, Zongjun Yin, and
+  Miao Lu.
+\newblock {Spatial variation in the diversity and composition of the Lower
+  Cambrian (Series 2, Stage 3) Chengjiang Biota, Southwest China}.
+\newblock \emph{Palaeogeography, Palaeoclimatology, Palaeoecology},
+  346--347:\penalty0 54--65, 2012.
+\newblock \doi{10.1016/j.palaeo.2012.05.021}.
+
+\end{thebibliography}
