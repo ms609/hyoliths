@@ -12,6 +12,7 @@ Suggests:
   knitr,
   phangorn,
   R.cache,
+  rcrossref,
   stringi,
   zoo
 Remotes: 
