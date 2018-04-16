@@ -15,5 +15,5 @@ Suggests:
   stringi,
   zoo
 Remotes: 
-  rstudio/bookdown
+  rstudio/bookdown,
   TGuillerme/Inapp
