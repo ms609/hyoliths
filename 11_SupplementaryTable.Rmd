@@ -1,4 +1,4 @@
-# Supplementary Table
+# Supplementary Table {#table}
 
 |NIGPAS Specimen numbers|Fossil locality|Coordinates|
 |--------------|--------------|-------------|

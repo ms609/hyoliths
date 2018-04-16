@@ -1,4 +1,4 @@
-# Supplementary Figures
+# Supplementary Figures {#figures}
 \newpage
 
 ```{R, echo=FALSE, out.width="80%", fig.align='center'}
@@ -17,7 +17,7 @@ Scale bars = 2mm (for a, b and e–g); 500&nbsp;&mu;m (for c, h and i).
 Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es = esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.
 
 ```{R, echo=FALSE, out.width="80%", fig.align="center"}
-knitr::include_graphics('images/image2.tiff')
+knitr::include_graphics('images/image2.png')
 ```
 
 **Figure S2: Elemental distribution in the gut of _Pedunculotheca diania_ Sun et Smith gen. et sp. nov.** NIGPAS 166597. Region corresponds to boxed region in Fig. S1c.
