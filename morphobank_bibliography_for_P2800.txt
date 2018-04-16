@@ -48,13 +48,13 @@ Journal Article	Robinson, Jeffrey 		2014	The muscles, body wall and valve-openin
 Generic	Williams, Alwyn ;Brunton, C. Howard C. ;Carlson, Sandra J. 		2006	Rhynchonelliformea (part)			5		1689-2320									
 Book	Ruppert, E. E. ;Barnes, R. D. 		1993			Saunders College Publishing			1056									
 Generic	Chen, Jun-Yuan ;Huang, Di-Ying ;Chuang, Shou-Hwa 		2007	Reinterpretation of the Lower Cambrian brachiopod <i>Heliomedusa orienta</i> Sun and Hou, 1987a as a discinid			81	1	38-47									
-Journal Article	Williams, Alwyn ;Carlson, Sandra J. ;Brunton, C. Howard C. ;Holmer, Lars E. ;Popov, Leonid E. 		1996	A supra-ordinal classification of the Brachiopoda			351	1344	1171-1193									
+Journal Article	Williams, Alwyn ;Carlson, Sandra J. ;Brunton, C. Howard C. ;Holmer, Lars E. ;Popov, Leonid E. 		1996	A supra-ordinal classification of the Brachiopoda			351	1344	1171-1193								10.1098/rstb.1996.0101	
 Generic	Barczyk, W 		1973	Braehiopods Terebratulina delheidi Vincent in the Nummulite Eocene of the Tatra Mts			23	3	491-497									
 Journal Article	Ackerly, Spafford C. 		1992	Rapid shell closure in the brachiopods <i>Terebratulina retusa</i> and <i>Terebratalia transversa</i>			72		579-598								10.1017/S0025315400059361	
 Generic	Conklin, Edwin G. 		1902	The embryology of a brachiopod, <i>Terebratulina septentrionalis</i> Couthouy			41	168	41-76									
 Generic	Chapman, Frederick 		1914	IV. -- Notes on shell-structure in the genus <i>Lingula</i>, Recent and fossil					28-31									
 Generic	Williams, A. ;Holmer, L.E. 		2002	Shell structure and inferred growth, functions and affinities of the sclerites of the problematic <i>Micrina</i>			45		845-873									
-Journal Article	Harper, David A. T. ;Popov, Leonid E. ;Holmer, Lars E. 		2017	Brachiopods: origin and early history			60		609-631									
+Journal Article	Harper, David A. T. ;Popov, Leonid E. ;Holmer, Lars E. 		2017	Brachiopods: origin and early history			60		609-631								10.1111/pala.12307	
 Generic	Benedetto, Juan L. 		2009	<i>Chaniella</i>, a new lower Tremadocian (Ordovician) brachiopod from northwestern Argentina and its phylogenetic relationships within basal rhynchonelliforms			83	3	393-405									
 Journal Article	Topper, Timothy P. ;Harper, David A.T. ;Ahlberg, Per 		2013	Reappraisal of the brachiopod <i>Acrotreta socialis</i> von Seebach, 1865: clarifying 150 years of confusion			135	2	191-203									
 Journal Article	Zhang, Zhi-Liang ;Zhang, Zhi-Fei ;Wang, Hai-Zhou 		2016	Epithelial cell moulds preserved in the earliest acrotretid brachiopods from the Cambrian (Series 2) of the Three Gorges area, China			138	4	455-466									
@@ -98,7 +98,7 @@ Journal Article	Zhang, Zhi-Liang ;Skovsted, Christian B. ;Zhang, Zhi-Fei 		2018	
 Journal Article	Moore, J. L. ;Porter, Susannah M. 		2018	Plywood-like shell microstructures in hyoliths from the middle Cambrian (Drumian) Gowers Formation, Georgina Basin, Australia													10.1111/pala.12352	
 Book Section	Popov, Leonid E. 		1992	The Cambrian radiation of brachiopods		Pergamon			399-423									
 Journal Article	Ushatinskaya, G. T. ;Korovnikov, I. V. 		2016	Revision of the superfamily Acrotheloidea (Brachiopoda, class Linguliformea, order Lingulida) from the Lower and Middle Cambrian of the Siberian Platform			50	5	450-462									
-Journal Article	Popov, Leonid E. ;Holmer, Lars E. ;Hughes, Nigel C. ;Ghobadi Pour, Mansoureh ;Myrow, Paul M. 		2015	Himalayan Cambrian brachiopods			1	4	345-399									
+Journal Article	Popov, Leonid E. ;Holmer, Lars E. ;Hughes, Nigel C. ;Ghobadi Pour, Mansoureh ;Myrow, Paul M. 		2015	Himalayan Cambrian brachiopods			1	4	345-399								10.1002/spp2.1017	
 Journal Article	Skovsted, Christian B. ;Holmer, Lars E. 		2005	Early Cambrian brachiopods from north-east Greenland			48	2	325-345									
 Journal Article	Skovsted, C. B. ;Knight, I. ;Balthasar, Uwe ;Boyce, W. D. 		2017	Depth related brachiopod faunas from the lower Cambrian Forteau Formation of southern Labrador and western Newfoundland, Canada			20.3.54A		1-52								10.26879/775	http://palaeo-electronica.org/content/2017/2048-brachiopods-of-the-forteau-formation
 Journal Article	Butler, Aodhan D. ;Streng, Michael ;Holmer, Lars E. ;Babcock, Loren E. 		2015	Exceptionally preserved <i>Mickwitzia</i> from the Indian Springs Lagerstatte (Cambrian Stage 3), Nevada			89	6	933-955								10.1017/jpa.2016.8	
