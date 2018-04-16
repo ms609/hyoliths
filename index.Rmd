@@ -112,10 +112,10 @@ ColPlot <- function (tree) {
 ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
                                           text.col=tipCol[omit])
 ```
-```{R Morphobank bibliography, echo=FALSE}
+```{R Morphobank bibliography, echo=FALSE, message=FALSE}
 mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
 mbRecent <- mbBib[which.max(file.mtime(mbBib))]
-refs <- as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))
+refs <- trimws(as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL)))
 FirstWord <- function (text) gsub("^(\\w+).*$", "\\1", trimws(text), perl=TRUE)
 FirstWords <- function (text) gsub("^\\W*(\\w+)\\W*(\\w+)?.*", "\\1\\2", trimws(text), perl=TRUE)
 FormatAuthors <- function (text) {
@@ -132,41 +132,40 @@ FormatAuthors <- function (text) {
 RefKey <- function (ref) paste0(FirstWord(ref['Author']),
                                 trimws(ref['Year']),
                                 FirstWords(ref['Title']))
-cached_works <- R.cache::addMemoization(function (query) 
-    rcrossref::cr_works(query=query, limit=1,
-                        select='container-title,DOI,title,issue,volume,score'))
-
-cached_dois <- R.cache::addMemoization((function(doi)
-  if (doi == '') NULL else rcrossref::cr_works(dois=doi, limit=1,
-                                               select='container-title,title,issue,volume,score')))
+cached_works <- R.cache::addMemoization(rcrossref::cr_works)
+cached_dois <- R.cache::addMemoization(function(doi)
+  if (doi == '') NULL else rcrossref::cr_works(dois=doi, limit=1,                                               select='container-title,title,issue,volume,score'))
+                 
 RefExpand <- function (ref) {
-  RefDetail <- function (cr_attr_name, attr) {
-    if (attr != '' && !is.na(attr)) {
-      paste0("&", cr_attr_name, "=", attr)
-    }
-  }
   CleanTitle <- function (title) { 
     title <-gsub('</?i>|[.,;:\\-]', '', title, perl=TRUE)
     # Return:
     trimws(title)
   }
+  RefAttribute <- function (name) {
+    if (is.na(ref[name])) NULL else as.character(ref[name])
+  }
   cr_details <- cached_dois(ref['DOI'])
   if (is.null(cr_details) || is.null(cr_details$meta) || cr_details$meta[, 'total_results'] == 0) {
+      
+    flq <- c(`query.container-title`= RefAttribute('Journal'), 
+               query.author = RefAttribute('Author'),
+               query.bibliographic = paste(
+                  RefAttribute('Year'), 
+                  RefAttribute('Volume'),
+                  RefAttribute('issn'),
+                  RefAttribute('Pages'), sep=" ;")
+    )
+    flq <- flq[!is.na(flq)]
     
-    cr_details <- cached_works(query=paste0('ignorefirstampersand=true',
-        RefDetail('atitle', CleanTitle(ref['Title'])),
-        RefDetail('aulast', FirstWord(ref['Author'])),
-        RefDetail('spage', FirstWord(ref['Pages'])),
-        # RefDetail('epage', LastWord(ref['Pages'])),
-        RefDetail('date', ref['Year']),
-        RefDetail('volume', ref['Volume']),
-        RefDetail('issn', ref['issn']),
-        RefDetail('title', ref['Journal'])
-    ))
+    cr_details <- 
+      cr_works(dois=,
+                   query=CleanTitle(ref['Title']), flq=flq, limit=1,
+                   select='container-title,DOI,title,issue,volume,score')
   }
   if (cr_details$meta[, 'total_results'] > 0) {
     topResult <- cr_details$data[1, ]
-    if (as.numeric(topResult$score) > 30) {
+    if (as.numeric(topResult$score) > 50) {
       AddIfBlank <- function (ref, cr_attr_name, attr) {
         if (
           (is.na(ref[attr]) || ref[attr] == '') &&
