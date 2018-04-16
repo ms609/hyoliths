@@ -9,16 +9,6 @@ git:
 branches:
   only: master
 
-r_binary_packages:
- - devtools
- - ape
- - geoscale
- - knitr
- - phangorn
- - R.cache
- - stringi
- - zoo
-
 before_script:
   - chmod +x ./_build.sh
   - chmod +x ./_deploy.sh
