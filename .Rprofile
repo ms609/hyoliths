@@ -1,5 +1,0 @@
-library('devtools')
-#library('TreeSearch')
-#library('Inapp')
-library('ape')
-library('phangorn')
