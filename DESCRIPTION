@@ -13,7 +13,6 @@ Suggests:
   phangorn,
   R.cache,
   stringi,
-  TreeSearch,
   zoo
 Remotes: 
   rstudio/bookdown
