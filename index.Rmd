@@ -9,7 +9,7 @@ classoption: openany
 bibliography: [References.bib, MorphoBank.bib]
 csl: http://raw.githubusercontent.com/citation-style-language/styles/master/cladistics.csl
 link-citations: yes
-github-repo: ms609/hy
+github-repo: ms609/hyoliths
 description: "Results of phylogenetic analysis"
 ---
 
