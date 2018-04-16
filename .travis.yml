@@ -11,18 +11,18 @@ branches:
 
 r_binary_packages:
 - devtools
-- bookdown
 - ape
 - geoscale
 - knitr
 - phangorn
 - R.cache
 - stringi
-- TreeSearch
 - zoo
 
 r_github_packages:
+ - rstudio/bookdown
  - TGuillerme/Inapp
+ - ms609/TreeSearch
 
 before_script:
   - chmod +x ./_build.sh
