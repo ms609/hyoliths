@@ -19,9 +19,6 @@ r_binary_packages:
  - stringi
  - zoo
 
-r_packages:
- - TreeSearch
-
 r_github_packages:
  - rstudio/bookdown
  - TGuillerme/Inapp
