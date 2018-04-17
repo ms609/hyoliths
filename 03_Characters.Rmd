@@ -108,7 +108,7 @@ EndSentence <- function (string) {
 }
 
 ReadNotes <- function (filepath) {
-  lines <- readLines(filepath)
+  lines <- enc2utf8(readLines(filepath))
   charNote.pattern <- "^\\s+TEXT\\s+CHARACTER=(\\d+)\\s+TEXT='(.*)';\\s*$"
   stateNote.pattern <- "^\\s+TEXT\\s+TAXON=(\\d+)\\s+CHARACTER=(\\d+)\\s+TEXT='(.*)';\\s*$"
   upperLines <- toupper(lines)
