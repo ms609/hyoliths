@@ -213,12 +213,14 @@ BibEntry <- function (ref) {
     if (is.na(ref[key]) || ref[key] == "") {
       "" 
     } else {
-      ret <- paste0("  ", bibKey, " = {", 
+      ret <- paste0("  ", bibKey, " = {",
+                    if (bibKey == 'journal') "{" else "",
              gsub(" & ", " \\& ", 
                   gsub("–", "--",  # en dash
                     gsub("—", "---", trimws(text), fixed=TRUE), # em dash
                     fixed=TRUE),
                   fixed=TRUE),
+             if (bibKey == 'journal') "}" else "",
              "},\n")
       ret
     }
