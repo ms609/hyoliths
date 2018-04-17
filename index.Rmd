@@ -15,7 +15,7 @@ description: "Results of phylogenetic analysis"
 
 ```{r setup-index, include=FALSE, message=FALSE}
 set.seed(0)
-Sys.setlocale('LC_ALL','C')
+#Sys.setlocale('LC_ALL','C')
 knitr::opts_chunk$set(echo = TRUE)
 library('ape'); library('phangorn')
 if (!require('TreeSearch')) install.packages('TreeSearch')
@@ -116,7 +116,7 @@ ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
 ```{R Morphobank bibliography, echo=FALSE, message=FALSE}
 mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
 mbRecent <- mbBib[which.max(file.mtime(mbBib))]
-refs <- trimws(as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL)))
+refs <- trimws(enc2utf8(as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))))
 FirstWord <- function (text) gsub("^(\\w+).*$", "\\1", trimws(text), perl=TRUE)
 FirstWords <- function (text) gsub("^\\W*(\\w+)\\W*(\\w+)?.*", "\\1\\2", trimws(text), perl=TRUE)
 FormatAuthors <- function (text) {
