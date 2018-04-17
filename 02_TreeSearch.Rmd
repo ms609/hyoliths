@@ -143,6 +143,8 @@ PlotPanel(6)
 PlotPanel(7)
 ```
 
+\newpage
+
 ### Equal weights results
 
 ```{r treesearch-equal-weights-results, fig.cap="Strict consensus of equal weights results", echo=FALSE}
