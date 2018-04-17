@@ -213,9 +213,15 @@ BibEntry <- function (ref) {
     if (is.na(ref[key]) || ref[key] == "") {
       "" 
     } else {
-      paste0("  ", bibKey, " = {", 
-             gsub(" & ", " \\& ", trimws(text), fixed=TRUE),
+      ret <- paste0("  ", bibKey, " = {", 
+             gsub(" & ", " \\& ", 
+                  gsub("–", "--",  # en dash
+                    gsub("—", "---", trimws(text), fixed=TRUE), # em dash
+                    fixed=TRUE),
+                  fixed=TRUE),
              "},\n")
+      Encoding(ret) <- 'UTF-8'
+      ret
     }
   }
   refType <- tolower(FirstWord(ref['Reference.Type']))
