@@ -1,19 +1,16 @@
-_bookdown_files/*
 Archive/*
-MrBayes/*/*
-* - */
-* pre-*
 *_cache
-nrun2_*
 *.ckp
 *.log
 *~*
+
 .Rhistory
 .Rprofile
 .Rdata
 *.Rproj
 .Rproj.user*
-Brachiopod_phylogeny.Rmd
+
+Brachiopod_phylogeny.*
 
 _publish.R
 _book
