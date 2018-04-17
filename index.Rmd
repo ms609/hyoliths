@@ -142,28 +142,35 @@ RefExpand <- function (ref) {
     # Return:
     trimws(title)
   }
-  RefAttribute <- function (name) {
-    if (is.na(ref[name])) NULL else as.character(ref[name])
+  RefAttribute <- function (name, pref='', suff='') {
+    if (is.na(ref[name])) NULL else paste0(pref, ref[name], suff)
   }
   cr_details <- cached_dois(ref['DOI'])
   if (is.null(cr_details) || is.null(cr_details$data)) {
-    flq <- c(`query.container-title`= RefAttribute('Journal'), 
-               query.author = RefAttribute('Author'),
-               query.bibliographic = paste(
-                  RefAttribute('Year'), 
-                  RefAttribute('Volume'),
-                  RefAttribute('issn'),
-                  RefAttribute('Pages'), sep=" ;")
+    flq <- c(query.bibliographic = paste(
+                  RefAttribute('Author'),
+                  RefAttribute('Year', '(', ')'), 
+                  CleanTitle(ref['Title']),
+                  RefAttribute('Journal', '', ','),
+                  RefAttribute('Volume', ':'),
+                  RefAttribute('Pages'))
     )
-    flq <- flq[!is.na(flq)]
     
     cr_details <- 
-      cached_works(query=CleanTitle(ref['Title']), flq=flq, limit=1,
+      cached_works(query=CleanTitle(ref['Title']), flq=flq, limit=2,
                select='container-title,DOI,title,issue,volume,score')
     if (cr_details$meta[, 'total_results'] > 0) {
       topResult <- cr_details$data[1, ]
-      if (as.numeric(topResult$score) < 50) {
+      ref['score'] <- as.numeric(topResult$score)  ## TODO delete
+      if (cr_details$meta[, 'total_results'] == 1 &&
+          as.numeric(topResult$score) < 60) {
         return(ref)
+      }
+      relativeScore <- as.numeric(topResult$score) / 
+          as.numeric(cr_details$data[2, 'score'])
+      ref['relScore'] <- round(relativeScore, 3)
+      if (relativeScore < 1.65) {
+        return (ref)
       }
     } else {
       # No results found.
