@@ -25,7 +25,7 @@
 <meta name="author" content="Haijing Sun; Martin Ross Smith; Han Zeng; Fangchen Zhao; Guoxiang Li; Maoyan Zhu">
 
 
-<meta name="date" content="2018-04-16">
+<meta name="date" content="2018-04-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -370,6 +370,20 @@ Figure 4.1: TNT Equal weights consensus
 <p>Goloboff, P.A. 2014. Extended implied weighting. Cladistics. 30, 260–272. doi:<a href="https://doi.org/10.1111/cla.12047">10.1111/cla.12047</a></p>
 </div>
 </div>
+<script>
+/*
+Sorts the references alphabetically.
+Modified from code by Yvonne Aburrow.
+*/
+
+$(function(){
+    var elems = $('#refs').children('div').remove();
+    elems.sort(function (a, b) {
+        return $(b).children('p').html() > $(a).children('p').html() ? -1 : 1;
+    });
+    $('#refs').append(elems);
+})
+</script>
             </section>
 
           </div>

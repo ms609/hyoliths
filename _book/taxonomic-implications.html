@@ -25,7 +25,7 @@
 <meta name="author" content="Haijing Sun; Martin Ross Smith; Han Zeng; Fangchen Zhao; Guoxiang Li; Maoyan Zhu">
 
 
-<meta name="date" content="2018-04-16">
+<meta name="date" content="2018-04-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -368,7 +368,7 @@ Our analysis upholds the case for a linguliform affinity for <em>Mummpikia</em>;
 <p>Holmer, L.E., Stolk, S.P., Skovsted, C.B., Balthasar, U., Popov, L.E. 2009. The enigmatic early Cambrian <em>Salanygolina</em> - A stem group of rhynchonelliform chileate brachiopods? Palaeontology. 52, 1–10. doi:<a href="https://doi.org/10.1111/j.1475-4983.2008.00831.x">10.1111/j.1475-4983.2008.00831.x</a></p>
 </div>
 <div id="ref-Zhang2014Anearly">
-<p>Zhang, Z.-F., Li, G.-X., Holmer, L.E., Brock, G.A., Balthasar, U., Skovsted, C.B., Fu, D.-J., Zhang, X.-L., Wang, H.-Z., Butler, A.D., Zhang, Z.-L., Cao, C.-Q., Han, J., Liu, J.-N., Shu, D.-G. 2014. An early Cambrian agglutinated tubular lophophorate with brachiopod characters. Scientific Reports. 4. doi:<a href="https://doi.org/10.1038/srep05502">10.1038/srep05502</a></p>
+<p>Zhang, Z.-F., Li, G.-X., Holmer, L.E., Brock, G.A., Balthasar, U., Skovsted, C.B., Fu, D.-J., Zhang, X.-L., Wang, H.-Z., Butler, A.D., Zhang, Z.-L., Cao, C.-Q., Han, J., Liu, J.-N., Shu, D.-G. 2014. An early Cambrian agglutinated tubular lophophorate with brachiopod characters. Scientific Reports. 4. doi:<a href="https://doi.org/10.1038/srep04682">10.1038/srep04682</a></p>
 </div>
 <div id="ref-Balthasar2009EarlyCambrian">
 <p>Balthasar, U., Butterfield, N.J. 2009. Early Cambrian soft-shelled brachiopods as possible stem-group phoronids. Acta Palaeontologica Polonica. 54, 307–314. doi:<a href="https://doi.org/10.4202/app.2008.0042">10.4202/app.2008.0042</a></p>
@@ -377,12 +377,26 @@ Our analysis upholds the case for a linguliform affinity for <em>Mummpikia</em>;
 <p>Balthasar, U. 2008. <em>Mummpikia</em> gen. nov. and the origin of calcitic-shelled brachiopods. Palaeontology. 51, 263–279. doi:<a href="https://doi.org/10.1111/j.1475-4983.2008.00754.x">10.1111/j.1475-4983.2008.00754.x</a></p>
 </div>
 <div id="ref-Williams2007PartH">
-<p>Williams, A., Racheboeuf, P.R., Savage, N.M., Lee, D.E., Popov, L.E., Carlson, S.J., Logan, A., Luter, C., Cusack, M., Curry, G.B., Wright, A.D., Harper, D.A.T., Cohen, B.L., Cocks, L.R.M., MacKinnon, D.I., Smirnova, T.N., Baker, P.G., Carter, J.L., Gourvennec, R., Mancenido, M.O., Brunton, C.H.C., Dong-Li, D.-S., Boucot, A.J., Bassett, M.G., Alvarez, F., Holmer, L.E., Mergl, M., Emig, C.C., Rubel, M., Jia-Yu, J.-R. 2007. Part H, Brachiopoda (Revised) 6, 2321–3226. doi:<a href="https://doi.org/10.17161/dt.v0i0.5515">10.17161/dt.v0i0.5515</a></p>
+<p>Williams, A., Racheboeuf, P.R., Savage, N.M., Lee, D.E., Popov, L.E., Carlson, S.J., Logan, A., Luter, C., Cusack, M., Curry, G.B., Wright, A.D., Harper, D.A.T., Cohen, B.L., Cocks, L.R.M., MacKinnon, D.I., Smirnova, T.N., Baker, P.G., Carter, J.L., Gourvennec, R., Mancenido, M.O., Brunton, C.H.C., Dong-Li, D.-S., Boucot, A.J., Bassett, M.G., Alvarez, F., Holmer, L.E., Mergl, M., Emig, C.C., Rubel, M., Jia-Yu, J.-R. 2007. Part H, Brachiopoda (Revised). Part H, Brachiopoda (Revised), vol. 6, Digital Treatise (DIGTREATISE). 6, 2321–3226. doi:<a href="https://doi.org/10.17161/dt.v0i0.5526">10.17161/dt.v0i0.5526</a></p>
 </div>
 <div id="ref-Moysiuk2017Hyolithsare">
 <p>Moysiuk, J., Smith, M.R., Caron, J.-B. 2017. Hyoliths are Palaeozoic lophophorates. Nature. 541, 394–397. doi:<a href="https://doi.org/10.1038/nature20804">10.1038/nature20804</a></p>
 </div>
 </div>
+<script>
+/*
+Sorts the references alphabetically.
+Modified from code by Yvonne Aburrow.
+*/
+
+$(function(){
+    var elems = $('#refs').children('div').remove();
+    elems.sort(function (a, b) {
+        return $(b).children('p').html() > $(a).children('p').html() ? -1 : 1;
+    });
+    $('#refs').append(elems);
+})
+</script>
             </section>
 
           </div>
