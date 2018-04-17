@@ -14,3 +14,8 @@ nrun2_*
 *.Rproj
 .Rproj.user*
 Brachiopod_phylogeny.Rmd
+
+_publish.R
+_book
+_bookdown_files
+rsconnect
