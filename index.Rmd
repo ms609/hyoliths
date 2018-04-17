@@ -16,6 +16,7 @@ description: "Results of phylogenetic analysis"
 ```{r setup-index, include=FALSE, message=FALSE}
 set.seed(0)
 #Sys.setlocale('LC_ALL','C')
+Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 knitr::opts_chunk$set(echo = TRUE)
 library('ape'); library('phangorn')
 if (!require('TreeSearch')) install.packages('TreeSearch')
