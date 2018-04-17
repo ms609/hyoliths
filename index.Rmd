@@ -1,31 +1,36 @@
 --- 
-title: "Brachiopod origins - Phylogenetic analysis"
-author: "Martin Smith"
+title: "Brachiopod origins -- Supplementary material"
+author: "Haijing Sun; Martin Ross Smith; Han Zeng; Fangchen Zhao; Guoxiang Li; Maoyan Zhu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: [References.bib]
+classoption: openany
+bibliography: [References.bib, MorphoBank.bib]
+csl: http://raw.githubusercontent.com/citation-style-language/styles/master/cladistics.csl
 link-citations: yes
-github-repo: ms609/hy
+github-repo: ms609/hyoliths
 description: "Results of phylogenetic analysis"
 ---
 
-```{r setup, include=FALSE}
+```{r setup-index, include=FALSE, message=FALSE}
 set.seed(0)
+#Sys.setlocale('LC_ALL','C')
+Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 knitr::opts_chunk$set(echo = TRUE)
-library('TreeSearch'); library('ape'); library('phangorn')
+library('ape'); library('phangorn')
+if (!require('TreeSearch')) install.packages('TreeSearch')
+library('TreeSearch'); 
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(file.mtime(files))]
 my_data <- ReadAsPhyDat(filename)
 my_chars <- ReadCharacters(filename)
 my_states <- attr(my_chars, 'state.labels')
 my_chars <- my_chars[-1, ]
-neomorphic <- vapply(my_states, function(x) x[[1]] %in% c("", "''"), logical(1))
+neomorphic <- vapply(my_states, function(x) !x[[1]] %in% c("", "''"), logical(1))
 setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 
-
-lon <- 'Longtancunella_chengjiangensis'
+outgroup <- 'Dailyatia'
 
 pal <- TreeSearch::brewer[[11]]
 
@@ -42,48 +47,66 @@ tipCol <- c(
   Mickwitzia                      = pal[3],
   Micromitra                      = pal[8],
   Askepasma_toddense              = pal[8],
-  Askepasma              = pal[8],
+  Askepasma                       = pal[8],
   Pelagodiscus_atlanticus         = pal[6],
-  Pelagodiscus         = pal[6],
+  Pelagodiscus                    = pal[6],
   Mummpikia_nuda                  = pal[5],
-  Mummpikia                  = pal[5],
+  Mummpikia                       = pal[5],
   Lingula                         = pal[5],
   Eoobolus                        = pal[5],
-  Clupeafumosus_socialis          = 'grey',
-  Clupeafumosus          = 'grey',
-  Phoronis                        = pal[1],
+  Botsfordia                      = pal[5],
+  Siphonobolus_priscus            = pal[5],
+  Siphonobolus                    = pal[5],
+  Clupeafumosus_socialis          = pal[5],
+  Clupeafumosus                   = pal[5],
+  Lingulellotreta_malongensis     = pal[5],
+  Lingulellotreta                 = pal[5],
+  Acanthotretella_spinosa         = pal[5],
+  Acanthotretella                 = pal[5],
+  Lingulosacculus                 = 'grey',
+  Phoronis                        = pal[2],
   Dailyatia                       = pal[1],
   Eccentrotheca                   = pal[1],
   Yuganotheca_elegans             = 'grey',
-  Yuganotheca             = 'grey',
+  Yuganotheca                     = 'grey',
   Longtancunella_chengjiangensis  = 'grey',
-  Longtancunella  = 'grey',
+  Longtancunella                  = 'grey',
   Paterimitra                     = pal[1],
-  Lingulellotreta_malongensis     = pal[2],
-  Lingulellotreta     = pal[2],
-  Acanthotretella                 = pal[2],
-  Lingulosacculus                 = pal[2],
-  Pedunculotheca_diania           = pal[2],
-  Pedunculotheca           = pal[2],
-  Haplophrentis_carinatus         = pal[2],
-  Haplophrentis         = pal[2],
+  Pedunculotheca_diania           = 'black',
+  Pedunculotheca                  = 'black',
+  Haplophrentis_carinatus         = 'black',
+  Haplophrentis                   = 'black',
   Tomteluva_perturbata            = 'grey',
-  Tomteluva            = 'grey',
+  Tomteluva                       = 'grey',
   Salanygolina                    = pal[9],
   Coolinia_pecten                 = pal[9],
-  Coolinia                 = pal[9],
+  Coolinia                        = pal[9],
   Antigonambonites_planus         = pal[9],
-  Antigonambonites         = pal[9],
+  Antigonambonites                = pal[9],
   Kutorgina_chengjiangensis       = pal[10],
-  Kutorgina       = pal[10],
+  Kutorgina                       = pal[10],
   Nisusia_sulcata                 = pal[10],
-  Nisusia                 = pal[10],
+  Nisusia                         = pal[10],
   Alisina                         = pal[11],
   Glyptoria                       = pal[11],
   Orthis                          = pal[11],
   Terebratulina                   = pal[11])
 
 
+WriteNumber <- function (n) {
+  if (n == 0) {
+    'zero' 
+  } else if (0 < n && n < 10) {
+    c('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine')[n]
+  } else {
+    n
+  }
+}
+UnitEdges <- function (tree) {
+  tree$edge.length <- rep(1, dim(tree$edge)[1])
+  # Return: 
+  tree
+}
 ColPlot <- function (tree) {
   setPar()
   plot(tree, tip.color = tipCol[tree$tip.label], lwd=2)
@@ -91,12 +114,154 @@ ColPlot <- function (tree) {
 ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
                                           text.col=tipCol[omit])
 ```
+```{R Morphobank bibliography, echo=FALSE, message=FALSE}
+mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
+mbRecent <- mbBib[which.max(file.mtime(mbBib))]
+refs <- trimws(enc2utf8(as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))))
+FirstWord <- function (text) gsub("^(\\w+).*$", "\\1", trimws(text), perl=TRUE)
+FirstWords <- function (text) gsub("^\\W*(\\w+)\\W*(\\w+)?.*", "\\1\\2", trimws(text), perl=TRUE)
+FormatAuthors <- function (text) {
+  authors <- trimws(strsplit(text, ';')[[1]])
+  names.pattern <- "(\\w+,)\\s(.*)"
+  surnames <-  gsub(names.pattern, "\\1 ", authors)
+  forenames <- gsub(names.pattern, "\\2", authors)
+  forenames <- gsub("(\\w)\\w+\\.?", "\\1.", forenames)
+  forenames <- gsub("\\.(\\w)", ". \\1", forenames)
+  
+  # Return:
+  paste0(surnames, forenames, collapse=' and ')
+}
+RefKey <- function (ref) paste0(FirstWord(ref['Author']),
+                                trimws(ref['Year']),
+                                FirstWords(ref['Title']))
+cached_works <- R.cache::addMemoization(rcrossref::cr_works)
+cached_dois <- R.cache::addMemoization(function(doi)
+  if (doi == '') NULL else rcrossref::cr_works(dois=doi))
+                 
+RefExpand <- function (ref) {
+  CleanTitle <- function (title) { 
+    title <-gsub('</?i>|[.,;:\\-]', '', title, perl=TRUE)
+    # Return:
+    if (title=="") NULL else trimws(title)
+  }
+  RefAttribute <- function (name, pref='', suff='') {
+    if (is.na(ref[name])) NULL else paste0(pref, ref[name], suff)
+  }
+  cr_details <- cached_dois(ref['DOI'])
+  if (is.null(cr_details) || is.null(cr_details$data)) {
+    flq <- c(query.bibliographic = paste(
+                  RefAttribute('Author'),
+                  RefAttribute('Year', '(', ')'), 
+                  CleanTitle(ref['Title']),
+                  RefAttribute('Journal', '', ','),
+                  RefAttribute('Volume', ':'),
+                  RefAttribute('Pages'))
+    )
+    
+    cr_details <- 
+      cached_works(query=CleanTitle(ref['Title']), flq=flq, limit=2,
+               select='container-title,DOI,title,issue,volume,score')
+    if (cr_details$meta[, 'total_results'] > 0) {
+      topResult <- cr_details$data[1, ]
+      ref['score'] <- as.numeric(topResult$score)  ## TODO delete
+      if (cr_details$meta[, 'total_results'] == 1 &&
+          as.numeric(topResult$score) < 60) {
+        return(ref)
+      }
+      relativeScore <- as.numeric(topResult$score) / 
+          as.numeric(cr_details$data[2, 'score'])
+      ref['relScore'] <- round(relativeScore, 3)
+      if (relativeScore < 1.3) {
+        return (ref)
+      }
+    } else {
+      # No results found.
+      return(ref)
+    }
+  } else {
+    topResult <- cr_details$data
+  }
+  
+  AddIfBlank <- function (ref, cr_attr_name, attr) {
+    if (
+      (is.na(ref[attr]) || ref[attr] == '') &&
+      cr_attr_name %in% names(topResult) #&&
+      #!grepl('true date-time group', topResult[, 'title'], fixed=TRUE) &&
+      #!grepl('DIGTREATISE', topResult[, cr_attr_name], fixed=TRUE) &&
+      #!grepl('AccessScience', topResult[, cr_attr_name], fixed=TRUE) &&
+      #(!'container.title' %in% names(topResult) || !grepl('AAPG', topResult[, 'container.title'], fixed=TRUE))
+      ) {
+      ref[attr] <- gsub("(\\w,)(\\w)", "\\1 \\2", 
+                        gsub("\\.$", "", 
+                             as.character(topResult[, cr_attr_name]), perl=TRUE),
+                        perl=TRUE)
+    }
+    # Return: 
+    ref
+  }
+  ref <- AddIfBlank(ref, 'container.title', 'Secondary.Title')
+  ref <- AddIfBlank(ref, 'doi', 'DOI')
+  ref <- AddIfBlank(ref, 'issue', 'Issue')
+  ref <- AddIfBlank(ref, 'title', 'Title')
+  ref <- AddIfBlank(ref, 'volume', 'Volume')
+
+  # Return: 
+  ref
+}
+
+BibEntry <- function (ref) {
+  BibLine <- function (bibKey, key, text=ref[key]) {
+    if (is.na(ref[key]) || ref[key] == "") {
+      "" 
+    } else {
+      ret <- paste0("  ", bibKey, " = {",
+                    if (bibKey == 'journal') "{" else "",
+             gsub(" & ", " \\& ", 
+                  gsub("–", "--",  # en dash
+                    gsub("—", "---", trimws(text), fixed=TRUE), # em dash
+                    fixed=TRUE),
+                  fixed=TRUE),
+             if (bibKey == 'journal') "}" else "",
+             "},\n")
+      ret
+    }
+  }
+  refType <- tolower(FirstWord(ref['Reference.Type']))
+  if (refType %in% c('generic', 'journal')) refType <- 'article'
+  
+  if (refType == 'article') ref <- RefExpand(ref)
+  paste0("@", refType, '{', 
+         RefKey(ref), ",\n",
+         BibLine('author', 'Author', FormatAuthors(ref['Author'])),
+         BibLine('doi', 'DOI'),
+         BibLine('journal', 'Secondary.Title'),
+         #"  score = {", ref['score'], '; ', ref['relScore'], "},\n",
+         BibLine('title', 'Title',
+                 paste0('{', gsub("<i>", "\\\\textit{", 
+                                  gsub("</i>", "}", ref["Title"],
+                                       perl=TRUE, ignore.case = TRUE),
+                                  perl=TRUE, ignore.case=TRUE), '}')),
+         BibLine('number', 'Number'),
+         BibLine('pages', 'Pages', gsub("\\-+", "--", ref["Pages"], perl=TRUE)),
+         BibLine('volume', "Volume"),
+         BibLine('year', 'Year'),
+         "}\n"
+         )
+}
+
+bibFile <- file("MorphoBank.bib", encoding='UTF-8')
+writeLines(apply(refs, 1, BibEntry), bibFile)
+close(bibFile)
+refKeys <- apply(refs, 1, RefKey)
+```
 
 # Brachiopod origins {-}
 
-This document provides a detailed discussion of analyses of the [morphological dataset](#dataset) constructed to accompany Sun _et al._ [-@Sun2018], and their results.
+This document provides a detailed discussion of [analyses](#treesearch) of the [morphological dataset](#dataset) constructed to accompany @Sun2018Hyolithswith, and their results.
 
-We first discuss the results presented in the main paper, which employ the algorithm described by Brazeau, Guillerme and Smith [-@Brazeau2018] for correct handling of inapplicable data in a parsimony setting, and explore how each
+We first discuss the results presented in the main paper, which employ the algorithm described by @Brazeau2018 for correct handling of inapplicable data in a parsimony setting, and explore how each
 character is [reconstructed](#reconstructions) on an optimal tree.
 
-For completeness, we also document the results of [standard Fitch parsimony](#tnt) analysis, and the results of [Bayesian analysis](#MrBayes), neither of which treat inapplicable data in a logically consistent fashion.
+For completeness, we also document the results of [standard Fitch parsimony](#fitch) analysis, and the results of [Bayesian analysis](#bayesian), neither of which treat inapplicable data in a logically consistent fashion.
+
+Supplementary figures and tables referenced in the main text are included here as appendices.

@@ -1,11 +1,16 @@
+_bookdown_files/*
 Archive/*
-mbank_*
+MrBayes/*/*
+* - */
+* pre-*
 *_cache
-hy_*
+nrun2_*
 *.ckp
 *.log
 *~*
 .Rhistory
+.Rprofile
 .Rdata
+*.Rproj
 .Rproj.user*
-
+Brachiopod_phylogeny.Rmd

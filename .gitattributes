@@ -1,11 +1,15 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-git lfs track "*.epub"
-git lfs track "*.html"
-git lfs track "*.mcmc"
-git lfs track "*.p"
-git lfs track "*.pdf"
-git lfs track "*.png"
-git lfs track "*.t"
-git lfs track "*.trprobs"
+# Large file storage
+'*.epub' filter=lfs diff=lfs merge=lfs -text
+'*.html' filter=lfs diff=lfs merge=lfs -text
+'*.mcmc' filter=lfs diff=lfs merge=lfs -text
+'*.nex'  filter=lfs diff=lfs merge=lfs -text
+'*.p'    filter=lfs diff=lfs merge=lfs -text
+'*.pdf'  filter=lfs diff=lfs merge=lfs -text
+'*.png'  filter=lfs diff=lfs merge=lfs -text
+'*.t'    filter=lfs diff=lfs merge=lfs -text
+'*.tiff' filter=lfs diff=lfs merge=lfs -text
+'*.trprobs' filter=lfs diff=lfs merge=lfs -text
+

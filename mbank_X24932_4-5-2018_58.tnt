@@ -1,0 +1,153 @@
+nstates num 5;
+xread
+'File output by Morphobank v3.0 (http://www.morphobank.org); 2018-04-5 05.08.52'
+98 38
+
+&[num]
+Namacalathus                            11------0-------------00--000------0------00-000--03?0-310100???????0-???0-------0----????????????
+Acanthotretella                         1210-000111????1???21010--00?12121213-----00?0?0-01[1234]?0?--1?00??1????11???11110123?211?????21??211?
+Alisina                                 122120111112?320011211011110022121112-22[12]10110011003?0???0000??0---?12???12[21]0?21302110????21??????
+Askepasma_toddense                      1220-0001212?21?0??21100--00012121112-1---00-0010002?013[31]0000??1123?1?1121???????00110????????????
+Antigonambonites_planus                 12211111111?02?0???211012211122121[21]12-22121121111103?0?410010??112111?11211200223?????????????????
+Botsfordia                              1210-0001111021?00-21010--00112110112-1---00-010-002?01210000??1122???111????????12111????????????
+Clupeafumosus_socialis                  1210-0001111021100-[31]1110--0011[12]1212132----00[21]010-002?0?210100??112211?112????????0011?????????????
+Coolinia_pecten                         12211111111?02?0012311012211022121112-2212111100-103?0?210010??112111?1121???0????????????????????
+Craniops                                1210-0001111031?1??10000--000210-020------00-1011003?0?210000??11210?????0--00---0????????????????
+Dailyatia                               13------0-------------00--000------0------00-0011002?0?110001??0----??00-????????0----????????????
+Eccentrotheca                           13------0-------------00--000------0------00-0011002?0?1[31]0000?????????00-????????0----????????????
+Eoobolus                                1210-0001111021?00-21110--001[32]2110112-211100-010-00[23]?01210000??11221??1121???????12111???????1????
+Glyptoria                               1221100012111210013211012110022121112-1---00-000-103?02220000??0---??????11??????00110????????????
+Gasconsia                               1220-[01]101112011011220000--00012121112-221110-011?104?0?2[12]0000??0---??????0--00---0211?????????????
+Haplophrentis_carinatus                 1210-000111?01?????11100--0101112020------00-000-004?0?220100??13210??00-0--00---?????1?0?12?12112
+Heliomedusa_orienta                     1210-000111??1?????10000--0011212010------00-[10]01000[21]?0???1?00??1????11???0--00---?01101?1?12?1????
+Kutorgina_chengjiangensis               12[12]1300011110210012211012200012121[21]1??221?11?100-103?02220000??0---112???122001230????????21??20-3
+Lingula                                 1210-0001111021100-31010--0012312010------00-000-00210?21100010111111210-1111022111101111121012112
+Lingulosacculus                         1210-000111????1?0-2???0--00?121??2132----0??0?0-00[14]?0?--0?00??1?????????1????????2111????21?12112
+Lingulellotreta_malongensis             1210-0001111???100-21010--001121102131----00-010-002?0???0?00??1??????00-111101231211?1?0?21?12112
+Longtancunella_chengjiangensis          122???00111????????2????--?00[21]21211????????11100-00??0???0?00???????12???12100213?0?1?????11??2112
+Micrina                                 121110000-1????????21000--00012120212-211200-001[01]002?0?211100??1121111111?????????????????????????
+Micromitra                              1220-00011110??0?1?21100--00012121112-221200-0111102?013[13]0000??1124?121121???????03110????????????
+Mickwitzia_muralensis                   1210-000110-0--?00-10000--00011120[12]1[23]3221200-0010102?0?211100??122?1111121????????????????????????
+Mummpikia_nuda                          1210-000111????????2??????00022111111-1---00-010-003?0?110100????????????1???0?2?1????????????????
+Nisusia_sulcata                         1221300011110210012211012100012121[21]12-2112111000-113?0?220000??0---1?????1110022[32]00???????????2???
+Novocrania                              1220-0001111031011211000--001310-020------00-001100320?211000210---0021130--00---001[01]01011211120-3
+Orthis                                  12211111111-13?0011210012111122121112-1---00-000-103?0?220000??0---??????11??????03110????????????
+Paterimitra                             1210-0000-?????????11100--00012120212-211200-0011002?0?2[31]0000??12230?-00-?????????????????????????
+Pedunculotheca_diania                   1210-000111????????11[01]00--0101112020------01?100-004?0?220?00??11110??00-11201123?????????????21??
+Pelagodiscus_atlanticus                 1210-000111-031100-10000--000310-01131----00-010-0021012101001011211121131110012111111111111102123
+Phoronis                                0-------0-------------00--000------0------00-00-----11-------100----0-00-0-------0----200022002113
+Salanygolina                            1220-000111??2100??2110122[10]0012120[21]11-2112111101000[23]?0?230000??122111?1121???????0????????????????
+Siphonobolus_priscus                    1210-0001111???????21[01][01]0--0011[12]12[10]1132----00-11[10]-11210?2110001?11210111121???????0?11?????????????
+Terebratulina                           121120111[21]12132001121100--01022121112-212-00-000-00320?221000210---11211211111111001102010210111-4
+Ussunia                                 1210-00011???1??1??20000--000220-010------00-000-004?0?????0?????????-???0--00---0????????????????
+Tomteluva_perturbata                    1210-000121????????210012201011120111-2222111[01]00-103?0???0000??0---??????1????????????????????????
+Yuganotheca_elegans                     12??????11??????????????--00?[12]1?201????????1?100-001?1?--???0???????12???11210223?01001?0?11?1211?
+;
+
+
+cnames
+{ 0 Sclerites_Present_in_adult Absent Present;
+{ 1 Sclerites_Disposition _Transformational_character_ Single_skeletal_element Bivalved_scleritome_dominated_by_prominent_dorsal_and_ventral_valve Multiple_skeletal_elements_with_no_differentiated_pair;
+{ 2 Sclerites_Bivalved_Hinge_line_shape _Transformational_character_ Astrophic Strophic;
+{ 3 Sclerites_Bivalved_Apophyses Absent Present;
+{ 4 Sclerites_Bivalved_Apophyses_Morphology _Transformational_character_ Deltidiodont Cyrtomatodont Pseudodont;
+{ 5 Sclerites_Bivalved_Apophyses_Dental_plates Absent Present;
+{ 6 Sclerites_Bivalved_Sockets Absent Present;
+{ 7 Sclerites_Bivalved_Socket_ridges Absent Present;
+{ 8 Sclerites_Bivalved_Enclosing_filtration_chamber No_filtration_chamber_or_open_chamber Shells_close_to_form_enclosed_filtration_chamber;
+{ 9 Sclerites_Bivalved_Commissure _Transformational_character_ Rectimarginate Uniplicate Sulcate;
+{ 10 Sclerites_Bivalved_Muscle_scars_Ventral_ Absent Present;
+{ 11 Sclerites_Bivalved_Muscle_scars_Ventral_Position _Transformational_character_ Posterolateral_and_medial_attachments Medial_attachments_only;
+{ 12 Sclerites_Bivalved_Muscle_scars_Adjustor Absent Present;
+{ 13 Sclerites_Bivalved_Muscle_scars_Dorsal_adductor _Transformational_character_ Dispersed Radially_arranged Quadripartite;
+{ 14 Sclerites_Bivalved_Muscle_scars_Adductors_Position _Transformational_character_ Oblique At_high_angle;
+{ 15 Sclerites_Bivalved_Muscle_scars_Dermal_muscles Absent_or_weakly_developed Strongly_developed;
+{ 16 Sclerites_Bivalved_Muscle_scars_Unpaired_median_levator_ani_ Absent Present;
+{ 17 Sclerites_Bivalved_Muscle_scars_Dorsal_diductor Absent Present;
+{ 18 Sclerites_Bivalved_Muscle_scars_Dorsal_diductor_Position _Transformational_character_ Close_to_commissural_plane Oblique_to_commissural_plane At_high_angle_to_commissural_plane;
+{ 19 Sclerites_Dorsal_valve_Growth_direction _Transformational_character_ Holoperipheral Mixoperipheral Hemiperipheral;
+{ 20 Sclerites_Dorsal_valve_Posterior_surface_Differentiated Posterior_shell_not_differentiated Posterior_shell_forms_distinct_cardinal_area_or_pseudointerarea;
+{ 21 Sclerites_Dorsal_valve_Differentiated_posterior_surface_Morphology Curved_lateral_profile Planar_lateral_profile;
+{ 22 Sclerites_Dorsal_valve_Posterior_surface_Medial_groove Absent Present;
+{ 23 Sclerites_Dorsal_valve_Posterior_surface_Notothyrium Absent Present;
+{ 24 Sclerites_Dorsal_valve_Posterior_surface_Notothyrium_Shape _Transformational_character_ Parallel_sided_cleft Triangular;
+{ 25 Sclerites_Dorsal_valve_Posterior_surface_Notothyrium_Chilidial_plates _Transformational_character_ Open Covered_by_chilidial_plates;
+{ 26 Sclerites_Dorsal_valve_Notothyrial_platform Absent Present;
+{ 27 Sclerites_Dorsal_valve_Cardinal_processes Absent Present;
+{ 28 Sclerites_Dorsal_valve_Medial_septum Absent Present;
+{ 29 Sclerites_Ventral_valve_Relative_size _Transformational_character_ Ventral_valve_markedly_larger_than_dorsal_valve_ventribiconvex_ Equivalve_subequally_biconvex_ Dorsal_valve_markedly_larger_than_ventral_valve_dorsibiconvex_;
+{ 30 Sclerites_Ventral_valve_Growth_direction _Transformational_character_ Holoperipheral Mixoperipheral Hemiperipheral;
+{ 31 Sclerites_Ventral_valve_Posterior_surface_Differentiated Posterior_surface_of_shell_not_differentiated Posterior_surface_of_shell_forms_distinct_cardinal_area_or_pseudointerarea;
+{ 32 Sclerites_Ventral_valve_Posterior_margin_growth_direction _Transformational_character_ Inward_growing Outward_growing;
+{ 33 Sclerites_Ventral_valve_Posterior_surface_Planar Curved_lateral_profile Planar_lateral_profile;
+{ 34 Sclerites_Ventral_valve_Posterior_surface_Extent _Transformational_character_ Low High;
+{ 35 Sclerites_Ventral_valve_Posterior_surface_Delthyrium Absent Present;
+{ 36 Sclerites_Ventral_valve_Posterior_surface_Delthyrium_Shape _Transformational_character_ Parallel_sided Triangular Round;
+{ 37 Sclerites_Ventral_valve_Posterior_surface_Delthyrium_Shape_Aspect_of_rounded_opening _Transformational_character_ Elongate_oval_to_rhombic Essentially_circular Wider_than_long;
+{ 38 Sclerites_Ventral_valve_Posterior_surface_Delthyrium_Cover _Transformational_character_ Open Covered_at_least_in_part;
+{ 39 Sclerites_Ventral_valve_Posterior_surface_Delthyrium_Cover_Extent _Transformational_character_ Covered_only_partially_partially_open Completely_covered;
+{ 40 Sclerites_Ventral_valve_Posterior_surface_Delthyrium_Cover_Identity _Transformational_character_ Pseudodeltidium Deltidial_plate_s_;
+{ 41 Sclerites_Ventral_valve_Posterior_surface_Delthyrium_Pseudodeltidium_Shape _Transformational_character_ Concave Convex;
+{ 42 Sclerites_Ventral_valve_Posterior_surface_Delthyrium_Pseudodeltidium_Hinge_furrows Absent Present;
+{ 43 Sclerites_Ventral_valve_Umbonal_perforation Umbo_imperforate_or_ventral_valve_absent_ Umbonal_perforation;
+{ 44 Sclerites_Ventral_valve_Umbonal_perforation_Shape _Transformational_character_ Circular_or_subcircular_ Rhombic_to_oval;
+{ 45 Sclerites_Ventral_valve_Colleplax_cicatrix_or_pedicle_sheath Absent Present;
+{ 46 Sclerites_Ventral_valve_Median_septum Absent Present;
+{ 47 Sclerites_Ornament_Concentric_ornament Smooth_or_growth_lines_only Concentric_ornament_present;
+{ 48 Sclerites_Ornament_Concentric_ornament_Symmetry Symmetric_fila Asymmetric_fila_with_outer_faces;
+{ 49 Sclerites_Ornament_Radial_ornament Absent Present;
+{ 50 Sclerites_Ornament_Shell_penetrating_spines Absent Present;
+{ 51 Sclerites_Composition_Mineralogy _Transformational_character_ Organic_non_mineralized_ Phosphatic Calcitic Aragonitic;
+{ 52 Sclerites_Composition_Cuticle_or_organic_matrix _Transformational_character_ GAGs_chitin_and_collagen Glycoprotein;
+{ 53 Sclerites_Composition_Incorporation_of_sedimentary_particles Absent Present;
+{ 54 Sclerites_Composition_Periostracum_Flexibility _Transformational_character_ Flexible Inflexible;
+{ 55 Sclerites_Composition_Microstructure_Layers _Transformational_character_ Single_microstructural_layer Two_microstructurally_differentiated_layers Inner_and_outer_laminae_enclosing_medial_void Three_microstrurally_differentiated_layers;
+{ 56 Sclerites_Composition_Microstructure_Crystal_format _Transformational_character_ Laminated Fibrous_bundles Polygonal_columns;
+{ 57 Sclerites_Composition_Microstructure_Punctae Absent Present;
+{ 58 Sclerites_Composition_Microstructure_Canals Absent Present;
+{ 59 Sclerites_Composition_Microstructure_Pseudopunctae Absent Present;
+{ 60 Sclerites_Composition_Microstructure_External_polygonal_ornament Absent Present;
+{ 61 Offspring_Egg_size _Transformational_character_ Small_100_um_little_yolk Large_110_um_much_yolk;
+{ 62 Offspring_Site_of_gamete_maturation Body_cavity Mantle_canals;
+{ 63 Offspring_Brephic_shell_Embryonic_shell Absent Present;
+{ 64 Offspring_Brephic_shell_Morphology _Transformational_character_ Flat_disc_like_cf._Micrina_ Three_prominent_lobes_forming_a_Y_cf._Paterimitra_ Spherical;
+{ 65 Offspring_Brephic_shell_Embryonic_shell_extended_in_larvae _Transformational_character_ Not_extended_embryonic_shell_contiguous_with_adult_shell Extended_into_larval_shell_separated_from_adult_shell_by_prominent_nick;
+{ 66 Offspring_Brephic_shell_Surface_ornament _Transformational_character_ Smooth Rounded_pits Polygonal_impressions Pustulose;
+{ 67 Offspring_Larval_attachment_structure Without_evidence_of_pedicle With_evidence_of_pedicle;
+{ 68 Setae_Present_in_adults Absent Present;
+{ 69 Setae_Distribution _Transformational_character_ Uniform_ Only_present_at_margins_of_shell;
+{ 70 Setae_Embryonic_Present_in_larva No_evidence_of_setae_in_embryonic_shell Setae_present;
+{ 71 Setae_Embryonic_Setal_sacs Absent Present;
+{ 72 Setae_Embryonic_Setal_sacs_Number _Transformational_character_ One_pair Two_pairs Three_pairs;
+{ 73 Pedicle Absent Present;
+{ 74 Pedicle_Constitution _Transformational_character_ Massive_or_uniform Densely_stacked_tabular_discs;
+{ 75 Pedicle_Biomineralization _Transformational_character_ Absent Present;
+{ 76 Pedicle_Bulb Absent Present;
+{ 77 Pedicle_Distal_rootlets Absent Present;
+{ 78 Pedicle_Tapering _Transformational_character_ Uniform_thickness Tapering;
+{ 79 Pedicle_Coelomic_region _Transformational_character_ Absent Present;
+{ 80 Pedicle_Surface_ornament _Transformational_character_ Smooth Irregular_wrinkles Regular_annulations;
+{ 81 Pedicle_Nerve_impression Absent Present;
+{ 82 Mantle_canals_Morphology Pinnate_lemniscate_ Bifurcate Baculate Saccate;
+{ 83 Mantle_canals_vascula_lateralia Absent Present;
+{ 84 Mantle_canals_vascula_media Absent Present_in_dorsal_valve_;
+{ 85 Mantle_canals_vascula_terminalia Exclusively_marginal_peripheral_ Directed_peripherally_and_intero_medially;
+{ 86 Feeding_Lophophore_Tentacle_disposition _Transformational_character_ Single_side Both_sides;
+{ 87 Feeding_Lophophore_Tentacle_rows_per_side_Trocholophe_stage Single_row Ablabial_and_adlabial_row;
+{ 88 Feeding_Lophophore_Tentacle_rows_per_side_Post_trocholophe_stage Single_row Adbalial_and_ablabial_row;
+{ 89 Feeding_Lophophore_Median_tentacle_in_early_development Absent Present;
+{ 90 Feeding_Lophophore_Forms_closed_loop _Transformational_character_ Diverging_laterally Closed_loop;
+{ 91 Feeding_Lophophore_Coiling_direction _Transformational_character_ Anteriad Posteriad;
+{ 92 Feeding_Lophophore_Adjustor_muscle Absent Present;
+{ 93 Feeding_Prominent_pharynx Absent Present;
+{ 94 Feeding_Anus _Transformational_character_ Absent_digestive_tract_is_blind_sac Present_through_gut;
+{ 95 Feeding_Anus_Migration Not_migrated_straight_gut_with_dorso_posterior_anus Migrated_anus_has_migrated_posteriad_to_create_U_shaped_gut;
+{ 96 Feeding_Anus_Migration_Within_ring_of_tentacles _Transformational_character_ Not_within_ring_of_tentacles Anterior_within_ring_of_feeding_tentacles;
+{ 97 Feeding_Anus_Migration_Position _Transformational_character_ Left Right Dorsally Ventrally;
+;
+
+
+ccode  - 0.97;
+
+
+;

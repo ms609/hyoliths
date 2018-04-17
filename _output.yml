@@ -8,5 +8,8 @@ bookdown::epub_book: default
 bookdown::gitbook:
   css: style.css
   config:
-    edit: https://github.com/ms609/hy/edit/master/%s
+    edit: https://github.com/ms609/hyoliths/edit/master/%s
+  includes:
+    in_header: icons/icon_head.html
+    after_body: after_body.html
 

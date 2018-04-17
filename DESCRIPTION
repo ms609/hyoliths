@@ -1,0 +1,19 @@
+Package: placeholder
+Type: Book
+Title: placeholder
+Version: 0.0.1
+Imports: 
+  bookdown
+Suggests:
+  ape,
+  geoscale,
+  Inapp,
+  knitr,
+  phangorn,
+  R.cache,
+  rcrossref,
+  stringi,
+  zoo
+Remotes: 
+  rstudio/bookdown,
+  TGuillerme/Inapp

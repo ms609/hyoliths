@@ -2,38 +2,297 @@
 title: "Visualizing characters"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
-bibliography: [References.bib]
-csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
-output:
-  html_document: default
-  pdf_document: default
 ---
 
 # Character reconstructions {#reconstructions}
 
-Here's how each character maps onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
+This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Citations for all codings can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
 
-```{R, echo=FALSE, fig.height=6.6, fig.width=7.1}
-library('Inapp')
-tree <- iw.trees[[3]][[1]]
-tree$edge.length <- rep(1, nrow(tree$edge))
-#treeCol <- tipCol[tree$tip.label]
+```{R char loading functions, echo=FALSE}
+StrReplace <- stringi::stri_replace_all_fixed
 
-for (i in seq_len(ncol(my_chars))) {
-  par(mar=rep(0.2, 4), cex=0.7, oma=c(1.2, 0, 1.2, 0))
+LookUpReference <- function (keys, original, prefix='', suffix='') {
+  keyParts <- "^~~~(.+?)(\\b.*)~~~$"
+  keySuffixes <- gsub(keyParts, "\\2", keys, perl=TRUE)
+  keys <- gsub(keyParts, "\\1", keys, perl=TRUE)
+  if (length(keys) == 0) {
+    return (character(0))
+  } else if (length(keys) == 1) {
+    matches <- grepl(keys, refKeys, fixed=TRUE)
+    if (sum(matches) == 1) {
+      paste0(prefix, refKeys[matches], keySuffixes, suffix)
+    } else {
+      paste0('<mark>', original, '</mark>')
+    }
+  } else { # length(keys) > 1
+     # initialize
+    ret <- paste0('<mark>', original, '</mark>')
+    if (length(suffix) == 1) suffix <- rep(suffix, length(keys))
+    if (length(prefix) == 1) prefix <- rep(prefix, length(keys))
+    
+    matches <- vapply(keys, FUN=grepl, FUN.VALUE=logical(length(refKeys)), refKeys, fixed=TRUE)
+    uniques <- colSums(matches) == 1
+    ret[uniques] <- vapply(which(uniques), function (i) 
+      paste0(prefix[i], refKeys[matches[, i]], keySuffixes[i], suffix[i])
+      , character(1))
+    
+    # Return:
+    ret
+  }
+}
+
+ConvertReferences <- function (string) {
+  noParentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)?,? (\\d\\d\\d\\d\\w?)\\b"
+  ReplNoPar <- function (keyedText, oldKey, original) {
+    StrReplace(keyedText, oldKey,
+                LookUpReference(oldKey, original, prefix='@'),
+               vectorize_all=FALSE)
+  }
   
-  plot.states.matrix(apply.reconstruction(tree, my_chars[, i],
-                                          match.tip.char=TRUE),
-                     passes=0, counts=1:2, show.labels=1,
-                     col.states=TRUE, state.labels=my_states[[i]],
-                     #tip.col=treeCol, 
-                     use.edge.length=TRUE, legend.pos='topright')
+  parentheses <- "([A-Z][A-z]+)( et al\\.| ?(?:&|and) ?\\w+)?,? \\((\\d\\d\\d\\d\\w?)\\b([^\\)]*)\\)"
+  ReplPar <- function (keyedText, oldKey, original) {
+    StrReplace(keyedText, oldKey,
+                LookUpReference(oldKey, original, 
+                  prefix=paste0(gsub(parentheses, "\\1\\2", original, perl=TRUE), ' [-@'),
+                  suffix=']'
+                ), vectorize_all=FALSE)
+                
+  }
   
-  mtext(paste("Character", i, "-", colnames(my_chars)[i]),
-        c(1, 3), outer=TRUE, cex=0.8)
+  ReplaceRefs <- function (pattern, strings, Replace) {
+    execResults <- gregexpr(pattern, strings, perl=TRUE)
+    matchText <- lapply(regmatches(strings, execResults), unique)
+    keyed <- gsub(pattern, "~~~\\1\\3\\4~~~", strings, perl=TRUE)
+    keys <- lapply(matchText, function (citation) {
+      ret <- gsub(pattern, "~~~\\1\\3\\4~~~", citation, perl=TRUE)
+      duplicates <- ret[duplicated(ret)]
+      substr(ret[duplicated(ret)], nchar(duplicates)-6, nchar(duplicates)-3) <- '!x2!'
+      ret
+    })
+    toEdit <- which(vapply(keys, length, 0) > 0)
+    strings[toEdit] <- vapply(toEdit, function (i) {
+      Replace(keyed[i], keys[[i]], matchText[[i]])
+    }, character(1))
+    # Return:
+    strings
+  }
+  
+  matches <- grepl(noParentheses, string)
+  string[matches] <- ReplaceRefs(noParentheses, string[matches], ReplNoPar)
+  
+  matches <- grepl(parentheses, string)
+  string[matches] <- ReplaceRefs(parentheses, string[matches], ReplPar)
+  
+  string <- gsub("\\(([^\\)]*?@\\S+?[^\\)]*)\\)", "[\\1]", string, perl=TRUE)
+  
+  # Return:
+  string
+}
+
+MorphoBankDecode <- function (string) {
+  string <- gsub("^n", "  \n", string, fixed=TRUE)
+  string <- gsub("''", "'", string, fixed=TRUE)
+  string <- gsub(" - ", " -- ", string, fixed=TRUE)
+  string <- gsub("(\\d)\\-(\\d)", "\\1--\\2", string, perl=TRUE)
+  string <- gsub("(\\d) ?um\\b", "\\1 &mu;m", string, perl=TRUE)
+  string <- gsub(" et al ", " et al. ", string, fixed=TRUE)
+  string <- gsub(" et alia", " et al.", string, fixed=TRUE)
+  
+  # Return:
+  ConvertReferences(string)
+}
+
+EndSentence <- function (string) {
+  ret <- gsub("\\s*\\.?\\s*\\.$", ".", paste0(string, '.'), perl=TRUE)
+  ret <- gsub("(\\.[\"'])\\.$", "\\1", ret, perl=TRUE)
+}
+
+ReadNotes <- function (filepath) {
+  lines <- enc2utf8(readLines(filepath))
+  charNote.pattern <- "^\\s+TEXT\\s+CHARACTER=(\\d+)\\s+TEXT='(.*)';\\s*$"
+  stateNote.pattern <- "^\\s+TEXT\\s+TAXON=(\\d+)\\s+CHARACTER=(\\d+)\\s+TEXT='(.*)';\\s*$"
+  upperLines <- toupper(lines)
+  notesStart <- which(upperLines == "BEGIN NOTES;")
+  endBlocks <- which(upperLines == "ENDBLOCK;")
+  if (length(notesStart) == 0) {
+    return(list("NOTES block not found in Nexus file."))
+  } else if (length(notesStart) > 1) {
+    return(list("Multiple NOTES blocks found in Nexus file."))
+  } else {
+    notesEnd <- endBlocks[endBlocks > notesStart][1] - 1L
+    notesLines <- lines[(notesStart + 1):notesEnd]
+    charNote.matches <- grepl(charNote.pattern, notesLines, perl=TRUE)
+    charNotes <- gsub(charNote.pattern, "\\2",
+                       notesLines[charNote.matches], perl=TRUE)
+    charNotes <- EndSentence(MorphoBankDecode(charNotes))
+    charNumbers <- gsub(charNote.pattern, "\\1",
+                              notesLines[charNote.matches], perl=TRUE)
+    
+    stateNote.matches <- grepl(stateNote.pattern, notesLines, perl=TRUE)
+    stateNotes <- gsub(stateNote.pattern, "\\3",
+                       notesLines[stateNote.matches], perl=TRUE)
+    stateNotes <- EndSentence(MorphoBankDecode(stateNotes))
+    stateTaxon <- gsub(stateNote.pattern, "\\1",
+                              notesLines[stateNote.matches], perl=TRUE)
+    stateChar  <- gsub(stateNote.pattern, "\\2",
+                              notesLines[stateNote.matches], perl=TRUE)
+    
+    seqAlongNotes <- seq_len(max(as.integer(c(stateChar, charNumbers))))
+    charNotes <- lapply(seqAlongNotes, function (i) {
+      ret <- list(
+        charNotes[charNumbers == i],
+        stateNotes[stateChar == i])
+      names(ret[[2]]) <- stateTaxon[stateChar == i]
+      
+      # Return:
+      ret
+    })
+    names(charNotes) <- seqAlongNotes
+    
+    # Return:
+    charNotes
+  }
+}
+
+PrintStates <- function (states) {
+  states <- gsub("^'(.*)'$", "\\1", states)
+  tokens <- seq_along(states) - 1L
+  if (states[1] == "") {
+    states <- states[-1]
+    tokens <- tokens[-1]
+    transformational <- TRUE
+  } else {
+    transformational <- FALSE
+  }
+  cat(paste0(" > ", tokens, ": ", states, "  \n"))
+  cat("> ", if (transformational) "Transformational" else "Neomorphic", "character.  \n>\n")
+}
+
+
+Italicize <- function (string) {
+  string <- gsub(paste0("\\b(", 
+                        paste0(gsub("_", "|", fixed = TRUE,
+                                    c(taxa_names,
+                                      'Bethia', 'Discinisca', 
+                                      'Eichwaldia', 'Eoorthis',
+                                      'Hadrotreta', 'Kraussina',
+                                      'Lochkothele', 'Neocrania',
+                                      'Paracraniops', 'Paramicrocornus',
+                                      'Phoronopsis',
+                                      'comleyensis', 'decaius',
+                                      'schucherti', 'tenuis', 'worsleyi',
+                                      'vascula', 'genitalia','lateralia',
+                                      'media', 'myaria', 'terminalia',
+                                      'et al\\.', 'et al', 'sensu')),
+                               collapse='|'),
+              ")\\b"), "_\\1_", string, perl=TRUE, ignore.case=FALSE)
+  gsub("\\b([A-Z]\\.) _([a-z])", "_\\1 \\2", string, perl=TRUE)
 }
 ```
+```{R load-the-characters, echo=FALSE, message=FALSE}
+if (!require('Inapp')) devtools::install_github('TGuillerme/Inapp')
+library('Inapp')
+tree <- iw.trees[[3]][[2]]
+#tree <- ew.trees[[1]]
+tree$edge.length <- rep(1, nrow(tree$edge))
+tree_labels <- tree$tip.label
 
-These reconstructions were created using the _Inapp_ _R_ package [@Brazeau2018].
+char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
+n_char <- ncol(my_chars)
+char_parts <- strsplit(char_names, ": ")
+char_nesting <- vapply(char_parts, length, 0L)
+char_notes <- ReadNotes(filename)
+taxa_names <- c("Namacalathus", rownames(my_chars))
+taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
+taxa_italic <- paste0("_", taxa_plaintext, "_")
 
-Full character definitions can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
+```
+
+The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
+
+```{R character-mapping, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
+## These function definitions must be in the same block as when they are called.
+Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
+PrintDivision <- function (parts) cat(Header(2L, paste(
+  Italicize(this_char_parts[1:parts]), collapse=': ')))
+PrintCharacter <- function () {
+  cat(Header(3L, paste0("[", i, "] ", paste0(Italicize(
+    this_char_parts[if(char_nesting[i] < 4) char_nesting[i] else 3:char_nesting[i]]),
+    collapse=': '), " {-}")))
+}
+PrintSoloCharacter <- function () {
+  cat(Header(2L, paste0(paste(
+    Italicize(this_char_parts), collapse=': ')," [", i, "] ")))
+}
+
+taxa_not_to_print <- which(taxa_names %in% 'Namacalathus')
+prev_char_parts = "NONE"
+prev_nesting = 0
+for (i in seq_len(n_char)) {
+  
+  this_char_parts <- char_parts[[i]]
+  next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
+  this_nesting <- char_nesting[i]
+  next_nesting    <- if (i == n_char) 0 else char_nesting[i + 1L]
+  
+  if ( # Reasons to print a heading
+    (this_char_parts[1] != prev_char_parts[1]) ||
+    ( this_nesting > 1L && prev_nesting > 2L &&
+      this_char_parts[2] != prev_char_parts[2]) ||
+    ( this_nesting > 1L && prev_nesting > 1L && next_nesting > 2L &&
+      this_char_parts[2] == next_char_parts[2] &&
+      this_char_parts[2] != prev_char_parts[2])
+  ) {
+    if ( # Reasons to print a Solo character
+      (this_char_parts[1] != next_char_parts[1] && 
+       this_char_parts[1] != prev_char_parts[1]) ||
+      (this_nesting == 2L && next_nesting > 1L &&
+       prev_char_parts[1] == this_char_parts[1] &&
+       next_char_parts[1] == this_char_parts[1]) ||
+      (this_nesting == 1L && next_nesting > 1L &&
+            next_char_parts[1] == this_char_parts[1]) ||
+      prev_nesting > 2L && (
+        next_nesting < 2L
+        || (this_nesting > 1L && next_nesting > 2L && 
+            (this_char_parts[2] != next_char_parts[2]))
+      )
+    ) {
+      PrintSoloCharacter()
+    }
+    else if ( # Reasons to print a top-level heading
+      this_nesting == 1 ||
+      (next_nesting > 1 && (this_char_parts[2] != next_char_parts[2]))
+    ) {
+      PrintDivision(1)
+      PrintCharacter()
+    } else {
+      PrintDivision(2)
+      PrintCharacter()
+    }
+  } else { # Just print the character
+    PrintCharacter()
+  }
+  prev_char_parts <- this_char_parts
+  prev_nesting <- char_nesting[i]
+  
+  par(mar=rep(0.2, 4), cex=0.7)
+  
+  plot.states.matrix(apply.reconstruction(tree, my_chars[, i]),
+                     passes=0, counts=1:2, show.labels=1,
+                     col.states=TRUE, state.labels=my_states[[i]],
+                     use.edge.length=TRUE, legend.pos='topright')
+  
+  cat(paste0("  \n\n **Character ", i, ": ", Italicize(char_names[i]), "**  \n\n"))
+  PrintStates(Italicize(my_states[[i]]))
+  cat("  \n\n")
+  char_notes_i <- char_notes[[i]]
+  state_notes_i <- char_notes_i[[2]]
+  state_notes_i <- state_notes_i[!names(state_notes_i) %in% taxa_not_to_print]
+  if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
+  if (length(state_notes_i) > 0) {
+    cat("  \n", paste0("<div class='state-note'>", taxa_italic[as.integer(names(state_notes_i))],
+                      ": ", Italicize(state_notes_i), "</div>  \n  \n"))
+  }
+  cat("  \n") # Clear line, ready for next block
+}
+```

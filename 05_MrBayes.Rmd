@@ -2,18 +2,14 @@
 title: "Bayesian Analysis results"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
-bibliography: [References.bib]
-csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
-output:
-  html_document: default
-  pdf_document: default
 ---
 
 
-# Bayesian analysis
+# Bayesian analysis {#bayesian}
 
-```{R, echo=FALSE}
+```{R mrbayes-ini, echo=FALSE}
 files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
+Mgen <- 5
 
 allTrees <- lapply(files, read.nexus)
 nTrees <- length(allTrees[[1]])
@@ -21,15 +17,15 @@ nTrees <- length(allTrees[[1]])
 postBurnin <- lapply(allTrees, function (x) x[ceiling(nTrees * 0.1):nTrees])
 ```
 
-Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk model [@Lewis2001] with a gamma parameter:
+Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk model [@Lewis2001] with gamma-distributed rate variation across characters:
 
 > lset coding=variable rates=gamma;
 
-Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, usinga Dirichlet prior with $α_T = 1$, $β_T = 1/$(_equal weights tree length_ / _number of characters_), $α = c = 1$:
+Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with $\alpha_T = 1$, $\beta_T = 1/($_equal weights tree length_$/$_number of characters_$)$, $\alpha = c = 1$:
 
-> prset brlenspr = unconstrained: gammadir(1, 0.33, 1, 1);
+> prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.trees[[1]], my_data), 2)`, 1, 1);
 
-Neomorphic and transformational characters [sensu @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:
+Neomorphic and transformational characters [_sensu_ @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:
 
 > charset Neomorphic = `r paste(which(neomorphic), collapse=' ')`;
 >
@@ -48,39 +44,55 @@ Neomorphic characters were not assumed to have a symmetrical transition rate –
 
 > prset applyto=(1) symdirihyperpr=fixed(1.0);
 
-Four MrBayes runs were executed, each sampling eight chains for 1 000 000 generations, with samples taken every 500 generations:
+The rate of variation in neomorphic characters was also allowed to vary from that of transformational characters:
 
-> mcmcp ngen=1000000 samplefreq=500 nruns=2 nchains=8;
+> prset applyto=(1) ratepr=variable;
 
-The first 10% of samples were discarded as burn-in (`burninfrac=0.1`), and a posterior tree topology was derived from the combined posterior sample of both runs.
+_`r outgroup`_ was selected as an outgroup:
 
-```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
-omit <- c('Clupeafumosus', 'Heliomedusa')
- # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
-thinned <- c(lapply(postBurnin[[1]], drop.tip, omit), lapply(postBurnin[[2]], drop.tip, omit))
-class(thinned) <- 'multiPhylo'
-ColPlot(consensus(thinned, p=0.5))
-ColMissing(omit)
-```
+> outgroup `r outgroup`;
 
-```{R, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%"}
-omit <- c('Heliomedusa', 'Micrina', 'Mickwitzia',
-          'Eoobolus', 'Clupeafumosus', 
-          'Yuganotheca', 'Longtancunella', 'Tomteluva', 'Nisusia', 'Kutorgina')
+Four MrBayes runs were executed, each sampling eight chains for `r Mgen`&nbsp;000&nbsp;000 generations, with samples taken every 500 generations.  The first 10% of samples were discarded as burn-in.
+
+> mcmcp ngen=`r Mgen`000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
+
+A posterior tree topology was derived from the combined posterior sample of all runs.
+
+```{R mrbayes-full-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, all taxa"}
+omit <- c("none")
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
-             lapply(postBurnin[[2]], drop.tip, omit)#,
-             #lapply(postBurnin[[3]], drop.tip, omit),
-             )#lapply(postBurnin[[4]], drop.tip, omit))
+             lapply(postBurnin[[2]], drop.tip, omit),
+             lapply(postBurnin[[3]], drop.tip, omit),
+             lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
-ColPlot(consensus(thinned, p=0.5))
+ColPlot(UnitEdges(root(consensus(thinned, p=0.5), outgroup, resolve.root=TRUE)))
+#ColMissing(omit)
+```
+
+```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, wildcard taxa pruned"}
+omit <- c(
+  'Lingulosacculus', 'Mummpikia_nuda', 'Lingulellotreta_malongensis', 
+  'Clupeafumosus_socialis', #'Siphonobolus_priscus',
+  'Micrina', 'Heliomedusa_orienta', 'Mickwitzia_muralensis',
+  'Tomteluva_perturbata', 'Yuganotheca_elegans',
+  'Nisusia_sulcata', 'Kutorgina_chengjiangensis'
+  )
+thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
+             lapply(postBurnin[[2]], drop.tip, omit),
+             lapply(postBurnin[[3]], drop.tip, omit),
+             lapply(postBurnin[[4]], drop.tip, omit))
+class(thinned) <- 'multiPhylo'
+rootedConsensus <- root(consensus(thinned, p=0.5), outgroup, resolve.root = TRUE)
+ColPlot(UnitEdges(rootedConsensus))
 ColMissing(omit)
 ```
 
-Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 500 for each parameter:
+Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 200 for each parameter:
 
-```{R, MrBayes parameter summary, echo=FALSE, asis=TRUE}
-knitr::kable(read.table ('MrBayes/hyo.nex.pstat', skip=1, header=TRUE),
-             caption="MrBayes parameter estimates (.pstat file)")
+```{R mrbayes-parameter-summary, fig.cap="MrBayes parameter summary", echo=FALSE, asis=TRUE}
+pstat <- read.table('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]
+pstat[, 2:5] <- signif(pstat[, 2:5], 3)
+pstat[, 6] <- signif(pstat[, 6], 5)
+knitr::kable(pstat, caption="MrBayes parameter estimates (.pstat file)")
 ```
-

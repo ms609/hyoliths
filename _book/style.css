@@ -1,9 +1,24 @@
 .smallcaps {font-variant: small-caps;}
 
 .figure {
-    text-align: center;
+  text-align: center;
 }
 
 .caption {
-    font-size: smaller;
+  font-size: smaller;
+}
+
+.state-note {
+  text-indent: -16px;
+  margin-left: 16px;
+  padding: 0.5em 0;
+}
+
+.comment {
+  color: #3daf37;
+  font-style: italic;
+}
+
+.book .book-body .page-wrapper .page-inner .normal a {
+ color: #1e6cbb;
 }
