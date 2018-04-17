@@ -220,7 +220,6 @@ BibEntry <- function (ref) {
                     fixed=TRUE),
                   fixed=TRUE),
              "},\n")
-      Encoding(ret) <- 'UTF-8'
       ret
     }
   }
