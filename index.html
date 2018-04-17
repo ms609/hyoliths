@@ -25,7 +25,7 @@
 <meta name="author" content="Haijing Sun; Martin Ross Smith; Han Zeng; Fangchen Zhao; Guoxiang Li; Maoyan Zhu">
 
 
-<meta name="date" content="2018-04-16">
+<meta name="date" content="2018-04-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -304,7 +304,7 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <div id="header">
 <h1 class="title">Brachiopod origins – Supplementary material</h1>
 <h4 class="author"><em>Haijing Sun; Martin Ross Smith; Han Zeng; Fangchen Zhao; Guoxiang Li; Maoyan Zhu</em></h4>
-<h4 class="date"><em>2018-04-16</em></h4>
+<h4 class="date"><em>2018-04-17</em></h4>
 </div>
 <div id="brachiopod-origins" class="section level1 unnumbered">
 <h1>Brachiopod origins</h1>
@@ -318,12 +318,26 @@ character is <a href="reconstructions.html#reconstructions">reconstructed</a> on
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Sun2018Hyolithswith">
-<p>Sun, H.-J., Smith, M.R., Zhu, M.-Y., Zeng, H., Zhao, F.-C. 2018. Hyoliths with pedicles constrain the origin of the brachiopod body plan. Evolution &amp; Development. 16, submitted. doi:<a href="https://doi.org/10.1111/ede.12059">10.1111/ede.12059</a></p>
+<p>Sun, H.-J., Smith, M.R., Zhu, M.-Y., Zeng, H., Zhao, F.-C. 2018. Hyoliths with pedicles constrain the origin of the brachiopod body plan submitted.</p>
 </div>
 <div id="ref-Brazeau2018">
 <p>Brazeau, M.D., Guillerme, T., Smith, M.R. 2018. An algorithm for morphological phylogenetic analysis with inapplicable data. bioR<span class="math inline">\(\chi\)</span>iv. doi:<a href="https://doi.org/10.1101/209775">10.1101/209775</a></p>
 </div>
 </div>
+<script>
+/*
+Sorts the references alphabetically.
+Modified from code by Yvonne Aburrow.
+*/
+
+$(function(){
+    var elems = $('#refs').children('div').remove();
+    elems.sort(function (a, b) {
+        return $(b).children('p').html() > $(a).children('p').html() ? -1 : 1;
+    });
+    $('#refs').append(elems);
+})
+</script>
             </section>
 
           </div>

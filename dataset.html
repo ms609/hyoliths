@@ -25,7 +25,7 @@
 <meta name="author" content="Haijing Sun; Martin Ross Smith; Han Zeng; Fangchen Zhao; Guoxiang Li; Maoyan Zhu">
 
 
-<meta name="date" content="2018-04-16">
+<meta name="date" content="2018-04-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -318,7 +318,7 @@ and its coding for each taxon discussed.</p>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Skovsted2015Theearly">
-<p>Skovsted, C.B., Betts, M.J., Topper, T.P., Brock, G.A. 2015. The early Cambrian tommotiid genus <em>Dailyatia</em> from South Australia. Journal of Paleontology. 48, 1–117. doi:<a href="https://doi.org/10.1017/jpa.2016.5">10.1017/jpa.2016.5</a></p>
+<p>Skovsted, C.B., Betts, M.J., Topper, T.P., Brock, G.A. 2015. The early Cambrian tommotiid genus <em>Dailyatia</em> from South Australia 48, 1–117.</p>
 </div>
 <div id="ref-Zhao2017">
 <p>Zhao, F.-C., Smith, M.R., Yin, Z.-J., Zeng, H., Li, G.-X., Zhu, M.-Y. 2017. <em>Orthrozanclus elongata</em> n. sp. and the significance of sclerite-covered taxa for early trochozoan evolution. Scientific Reports. 7, 16232. doi:<a href="https://doi.org/10.1038/s41598-017-16304-6">10.1038/s41598-017-16304-6</a></p>
@@ -333,6 +333,20 @@ and its coding for each taxon discussed.</p>
 <p>Vogt, L. 2017. The logical basis for coding ontologically dependent characters. Cladistics. doi:<a href="https://doi.org/10.1111/cla.12209">10.1111/cla.12209</a></p>
 </div>
 </div>
+<script>
+/*
+Sorts the references alphabetically.
+Modified from code by Yvonne Aburrow.
+*/
+
+$(function(){
+    var elems = $('#refs').children('div').remove();
+    elems.sort(function (a, b) {
+        return $(b).children('p').html() > $(a).children('p').html() ? -1 : 1;
+    });
+    $('#refs').append(elems);
+})
+</script>
             </section>
 
           </div>
