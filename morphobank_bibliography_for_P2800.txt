@@ -70,7 +70,7 @@ Journal Article	Robson, Sean P. ;Pratt, Brian R. 		2001	Cambrian and Ordovician 
 Journal Article	Lee, D. E. ;Brunton, C. Howard C. 		1986	<i>Neocrania</i> n. gen., and a revision of Cretaceous-Recent brachiopod genera in the family Craniidae			40	4	141-160									
 Journal Article	Dzik, Jerzy 		1980	Ontogeny of <i>Bactrotheca</i> and related hyoliths			102	3	223-233									
 Journal Article	Cooper, G. Arthur 		1976	Lower Cambrian Brachiopods from the Rift Valley (Israel and Jordan)			50	2	269-289									
-Book Section	Hou, Xian-Guang ;Siveter, David J. ;Siveter, Derek J. ;Aldridge, Richard J. ;Cong, Pei-Yun ;Gabbott, Sarah E. ;Purnell, Mark A. 		2017	Brachiopoda														
+Book Section	Hou, Xian-Guang ;Siveter, David J. ;Siveter, Derek J. ;Aldridge, Richard J. ;Cong, Pei-Yun ;Gabbott, Sarah E. ;Purnell, Mark A. 		2017	Brachiopoda													10.1002/9781118896372.ch14	
 Journal Article	Carlson, Sandra J. 		1995	Phylogenetic relationships among extant brachiopods			11		131-197									
 Book	Ruppert, E.E. ;Fox, R. S. ;Barnes, R. D. 		2004						990									
 Journal Article	Zhang, Zhi-Fei ;Shu, De-Gan ;Han, Jian ;Liu, Jian-Ni 		2004	New data on the lophophore anatomy of Early Cambrian linguloids from the Chengjiang Lagerstätte, Southwest China			4		1-7									
@@ -101,7 +101,7 @@ Journal Article	Ushatinskaya, G. T. ;Korovnikov, I. V. 		2016	Revision of the su
 Journal Article	Popov, Leonid E. ;Holmer, Lars E. ;Hughes, Nigel C. ;Ghobadi Pour, Mansoureh ;Myrow, Paul M. 		2015	Himalayan Cambrian brachiopods			1	4	345-399								10.1002/spp2.1017	
 Journal Article	Skovsted, Christian B. ;Holmer, Lars E. 		2005	Early Cambrian brachiopods from north-east Greenland			48	2	325-345									
 Journal Article	Skovsted, C. B. ;Knight, I. ;Balthasar, Uwe ;Boyce, W. D. 		2017	Depth related brachiopod faunas from the lower Cambrian Forteau Formation of southern Labrador and western Newfoundland, Canada			20.3.54A		1-52								10.26879/775	http://palaeo-electronica.org/content/2017/2048-brachiopods-of-the-forteau-formation
-Journal Article	Butler, Aodhan D. ;Streng, Michael ;Holmer, Lars E. ;Babcock, Loren E. 		2015	Exceptionally preserved <i>Mickwitzia</i> from the Indian Springs Lagerstatte (Cambrian Stage 3), Nevada			89	6	933-955								10.1017/jpa.2016.8	
+Journal Article	Butler, Aodhan D. ;Streng, Michael ;Holmer, Lars E. ;Babcock, Loren E. 		2015	Exceptionally preserved <i>Mickwitzia</i> from the Indian Springs Lagerstätte (Cambrian Stage 3), Nevada			89	6	933-955								10.1017/jpa.2016.8	
 Journal Article	Hanken, Nils-Martin ;Harper, David A. T. 		1985	The taxonomy, shell structure, and palaeoecology of the trimerellid brachiopod <i>Gasconsia</i> Northrop			28	2	243-254									
 Journal Article	Gorjansky, V. Yu. ;Popov, Leonid E. 		1985	The morphology, systematic position, and origin of inarticulate brachiopods with carbonate shells			1985	3	1-11									
 Journal Article	Cowen, R. 		1968	A new type of delthyrial cover in the Devonian brachiopod <i>Mucrospirifer</i>			11	2	317-327									
