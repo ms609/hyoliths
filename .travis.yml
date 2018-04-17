@@ -12,11 +12,8 @@ branches:
 before_script:
   - chmod +x ./_build.sh
   - chmod +x ./_deploy.sh
+  - sudo apt-get -y --reinstall install ghostscript
 
 script:
   - ./_build.sh
   - ./_deploy.sh
-
-addons:
-  apt:
-   - ghostscript
