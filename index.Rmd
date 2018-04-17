@@ -146,8 +146,7 @@ RefExpand <- function (ref) {
     if (is.na(ref[name])) NULL else as.character(ref[name])
   }
   cr_details <- cached_dois(ref['DOI'])
-  if (is.null(cr_details) || is.null(cr_details$meta) || cr_details$meta[, 'total_results'] == 0) {
-      
+  if (is.null(cr_details) || is.null(cr_details$data)) {
     flq <- c(`query.container-title`= RefAttribute('Journal'), 
                query.author = RefAttribute('Author'),
                query.bibliographic = paste(
@@ -159,37 +158,44 @@ RefExpand <- function (ref) {
     flq <- flq[!is.na(flq)]
     
     cr_details <- 
-      cr_works(dois=,
-                   query=CleanTitle(ref['Title']), flq=flq, limit=1,
-                   select='container-title,DOI,title,issue,volume,score')
-  }
-  if (cr_details$meta[, 'total_results'] > 0) {
-    topResult <- cr_details$data[1, ]
-    if (as.numeric(topResult$score) > 50) {
-      AddIfBlank <- function (ref, cr_attr_name, attr) {
-        if (
-          (is.na(ref[attr]) || ref[attr] == '') &&
-          cr_attr_name %in% names(topResult) &&
-          !grepl('true date-time group', topResult[, 'title'], fixed=TRUE) &&
-          !grepl('DIGTREATISE', topResult[, cr_attr_name], fixed=TRUE) &&
-          !grepl('AccessScience', topResult[, cr_attr_name], fixed=TRUE) &&
-          (!'container.title' %in% names(topResult) || !grepl('AAPG', topResult[, 'container.title'], fixed=TRUE))
-          ) {
-          ref[attr] <- gsub("(\\w,)(\\w)", "\\1 \\2", 
-                            gsub("\\.$", "", 
-                                 as.character(topResult[, cr_attr_name]), perl=TRUE),
-                            perl=TRUE)
-        }
-        # Return: 
-        ref
+      cached_works(query=CleanTitle(ref['Title']), flq=flq, limit=1,
+               select='container-title,DOI,title,issue,volume,score')
+    if (cr_details$meta[, 'total_results'] > 0) {
+      topResult <- cr_details$data[1, ]
+      if (as.numeric(topResult$score) < 50) {
+        return(ref)
       }
-      ref <- AddIfBlank(ref, 'container.title', 'Secondary.Title')
-      ref <- AddIfBlank(ref, 'DOI', 'DOI')
-      ref <- AddIfBlank(ref, 'issue', 'Issue')
-      ref <- AddIfBlank(ref, 'title', 'Title')
-      ref <- AddIfBlank(ref, 'volume', 'Volume')
+    } else {
+      # No results found.
+      return(ref)
     }
+  } else {
+    topResult <- cr_details$data
   }
+  
+  AddIfBlank <- function (ref, cr_attr_name, attr) {
+    if (
+      (is.na(ref[attr]) || ref[attr] == '') &&
+      cr_attr_name %in% names(topResult) #&&
+      #!grepl('true date-time group', topResult[, 'title'], fixed=TRUE) &&
+      #!grepl('DIGTREATISE', topResult[, cr_attr_name], fixed=TRUE) &&
+      #!grepl('AccessScience', topResult[, cr_attr_name], fixed=TRUE) &&
+      #(!'container.title' %in% names(topResult) || !grepl('AAPG', topResult[, 'container.title'], fixed=TRUE))
+      ) {
+      ref[attr] <- gsub("(\\w,)(\\w)", "\\1 \\2", 
+                        gsub("\\.$", "", 
+                             as.character(topResult[, cr_attr_name]), perl=TRUE),
+                        perl=TRUE)
+    }
+    # Return: 
+    ref
+  }
+  ref <- AddIfBlank(ref, 'container.title', 'Secondary.Title')
+  ref <- AddIfBlank(ref, 'doi', 'DOI')
+  ref <- AddIfBlank(ref, 'issue', 'Issue')
+  ref <- AddIfBlank(ref, 'title', 'Title')
+  ref <- AddIfBlank(ref, 'volume', 'Volume')
+
   # Return: 
   ref
 }
