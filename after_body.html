@@ -1,0 +1,9 @@
+<script>
+$(function(){
+    var elems = $('#refs').children('div').remove();
+    elems.sort(function (a, b) {
+        return b.id > a.id ? -1 : 1;
+    });
+    $('#refs').append(elems);
+});
+</script>

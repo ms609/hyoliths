@@ -11,4 +11,5 @@ bookdown::gitbook:
     edit: https://github.com/ms609/hyoliths/edit/master/%s
   includes:
     in_header: icons/icon_head.html
+    after_body: after_body.html
 
