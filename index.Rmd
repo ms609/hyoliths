@@ -214,8 +214,7 @@ BibEntry <- function (ref) {
       "" 
     } else {
       paste0("  ", bibKey, " = {", 
-             gsub(" & ", " [AND] ", trimws(text), fixed=TRUE),
-             #gsub(" & ", " \\& ", trimws(text), fixed=TRUE),
+             gsub(" & ", " \\& ", trimws(text), fixed=TRUE),
              "},\n")
     }
   }
