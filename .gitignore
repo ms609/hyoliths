@@ -10,7 +10,7 @@ Archive/*
 *.Rproj
 .Rproj.user*
 
-Brachiopod_phylogeny.*
+Brachiopod_phylogeny*
 
 _publish.R
 _book
