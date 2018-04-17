@@ -140,7 +140,7 @@ RefExpand <- function (ref) {
   CleanTitle <- function (title) { 
     title <-gsub('</?i>|[.,;:\\-]', '', title, perl=TRUE)
     # Return:
-    trimws(title)
+    if (title=="") NULL else trimws(title)
   }
   RefAttribute <- function (name, pref='', suff='') {
     if (is.na(ref[name])) NULL else paste0(pref, ref[name], suff)
