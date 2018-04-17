@@ -169,7 +169,7 @@ RefExpand <- function (ref) {
       relativeScore <- as.numeric(topResult$score) / 
           as.numeric(cr_details$data[2, 'score'])
       ref['relScore'] <- round(relativeScore, 3)
-      if (relativeScore < 1.65) {
+      if (relativeScore < 1.3) {
         return (ref)
       }
     } else {
@@ -227,6 +227,7 @@ BibEntry <- function (ref) {
          BibLine('author', 'Author', FormatAuthors(ref['Author'])),
          BibLine('doi', 'DOI'),
          BibLine('journal', 'Secondary.Title'),
+         #"  score = {", ref['score'], '; ', ref['relScore'], "},\n",
          BibLine('title', 'Title',
                  paste0('{', gsub("<i>", "\\\\textit{", 
                                   gsub("</i>", "}", ref["Title"],
