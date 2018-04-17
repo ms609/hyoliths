@@ -87,6 +87,8 @@ ColPlot(ConsensusWithout(tnConsensi, omit))
 ColMissing(omit)
 ```
 -->
+\newpage
+
 ## Equal weights
 
 ```{R tnt-ew-consensus, echo=FALSE, fig.cap="TNT Equal weights consensus"}
