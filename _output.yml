@@ -1,4 +1,5 @@
 bookdown::pdf_book:
+  pandoc_args: fontfamily ebgaramond
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
