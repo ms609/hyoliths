@@ -12,7 +12,7 @@ knitr::include_graphics('images/image1.png')
 (f) NIGPAS 166598, broken shell with two ventral furrows and incomplete attachment structure. (g) NIGPAS 166596, incomplete shell with one medial ventral furrow and short attachment structure with coelomic cavity; detail of boxed region shown in (h).
 (i) NIGPAS 166603, exterior of operculum. 
 
-Scale bars = 2mm (for a, b and e–g); 500&nbsp;&mu;m (for c, h and i).
+Scale bars = 2mm (for a, b and e–g); 500&nbsp;µm (for c, h and i).
 
 Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es = esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.
 
@@ -21,7 +21,7 @@ knitr::include_graphics('images/image2.png')
 ```
 
 **Figure S2: Elemental distribution in the gut of _Pedunculotheca diania_ Sun et Smith gen. et sp. nov.** NIGPAS 166597. Region corresponds to boxed region in Fig. S1c.
-Scale bar = 100&nbsp;&mu;m. 
+Scale bar = 100&nbsp;µm. 
 
 Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = Aluminium, Fe = Iron, C = Carbon.
 
