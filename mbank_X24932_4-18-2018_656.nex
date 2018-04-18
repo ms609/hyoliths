@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-04-18 05.46.46 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-04-18 06.56.10 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=38;
@@ -1357,12 +1357,12 @@ BEGIN NOTES;
 	TEXT TAXON=12 CHARACTER=95 TEXT='Following Williams et al. 1998T, appendix 2';
 	TEXT TAXON=34 CHARACTER=95 TEXT='Not reported in Williams et al. 2000.';
 	TEXT TAXON=6 CHARACTER=95 TEXT='Following Williams et al. 1998T, appendix 2';
-	TEXT TAXON=17 CHARACTER=11 TEXT='Following Appendix 2 in Williams et al. (1998T).';
-	TEXT TAXON=33 CHARACTER=11 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=17 CHARACTER=11 TEXT='Following appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=33 CHARACTER=11 TEXT='Following appendix 2 in Williams et al. (1998T).';
 	TEXT TAXON=4 CHARACTER=11 TEXT='"ventral valve weakly to moderately sulcate" (Topper et al. 2013T); a similar description is provided by Williams et al. (2000).';
-	TEXT TAXON=23 CHARACTER=11 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=23 CHARACTER=11 TEXT='Following appendix 2 in Williams et al. (1998T).';
 	TEXT TAXON=35 CHARACTER=11 TEXT='"Anterior commissure rectimarginate to uniplicate" -- uniplicate in fig. 1425.1c of Williams et al. (2006).';
-	TEXT TAXON=13 CHARACTER=11 TEXT='Following Appendix 2 in Williams et al. (1998T).';
+	TEXT TAXON=13 CHARACTER=11 TEXT='Following appendix 2 in Williams et al. (1998T).';
 	TEXT TAXON=17 CHARACTER=58 TEXT='Following appendix 2 in Williams et al. (1998T).';
 	TEXT TAXON=33 CHARACTER=58 TEXT='Coded as uncertain in appendix 2 in Williams et al. (1998T).';
 	TEXT TAXON=4 CHARACTER=58 TEXT='Following appendix 2 in Williams et al. (1998T).';
@@ -1448,22 +1448,22 @@ BEGIN NOTES;
 	TEXT TAXON=12 CHARACTER=53 TEXT='Very faint costellae in some specimens but coded absent.';
 	TEXT TAXON=34 CHARACTER=53 TEXT='"Indistinct radial ribs accentuated by radial rows of tubercles" -- Popov et al. 2009';
 	TEXT TAXON=6 CHARACTER=53 TEXT='Following Williams et al. 1998T, Appendix 2';
-	TEXT TAXON=37 CHARACTER=17 TEXT='Though Williams et al. (2000, P.32) state that these muscles are absent in all carbonate-shelled brachiopods, their existence cannot be discounted with certainty in this taxon, which is therefore coded not presently available.';
-	TEXT TAXON=25 CHARACTER=17 TEXT='Though Williams et al. (2000, P.32) state that these muscles are absent in all carbonate-shelled brachiopods, their existence cannot be discounted with certainty in this taxon, which is therefore coded not presently available.';
-	TEXT TAXON=8 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate-shelled brachiopods.';
-	TEXT TAXON=17 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods, and the coding for kutorginids in Zhang et al. (2014).';
-	TEXT TAXON=33 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
-	TEXT TAXON=4 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that the presence of these muscles in paterinates is uncertain';
-	TEXT TAXON=23 CHARACTER=17 TEXT='Williams et al. (2000, P.32) are uncertain about the presence of these muscles in the paterinates.  Zhang et al. (2014) code absence in Paterinida, but without specifying evidence; we follow their coding here.';
-	TEXT TAXON=26 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=37 CHARACTER=17 TEXT='Though Williams et al. (2000, p. 32) state that these muscles are absent in all carbonate-shelled brachiopods, their existence cannot be discounted with certainty in this taxon, which is therefore coded not presently available.';
+	TEXT TAXON=25 CHARACTER=17 TEXT='Though Williams et al. (2000, p. 32) state that these muscles are absent in all carbonate-shelled brachiopods, their existence cannot be discounted with certainty in this taxon, which is therefore coded not presently available.';
+	TEXT TAXON=8 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that these muscle are absent in all carbonate-shelled brachiopods.';
+	TEXT TAXON=17 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that these muscle are absent in all carbonate- shelled brachiopods, and the coding for kutorginids in Zhang et al. (2014).';
+	TEXT TAXON=33 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=4 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that the presence of these muscles in paterinates is uncertain';
+	TEXT TAXON=23 CHARACTER=17 TEXT='Williams et al. (2000, p. 32) are uncertain about the presence of these muscles in the paterinates.  Zhang et al. (2014) code absence in Paterinida, but without specifying evidence; we follow their coding here.';
+	TEXT TAXON=26 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that these muscle are absent in all carbonate- shelled brachiopods.';
 	TEXT TAXON=31 CHARACTER=17 TEXT='Musculature considered essentially equivalent to Lingula by Williams et al 2000, so Lingula coding followed here.';
 	TEXT TAXON=27 CHARACTER=17 TEXT='Following Zhang et al. (2014), and the statement of Williams et al. (2000) that such muscles are absent in all calcite-shelled brachiopods.';
-	TEXT TAXON=35 CHARACTER=17 TEXT='Williams et al. (2000, P.32) state that these muscles are absent in all carbonate-shelled brachiopods.';
-	TEXT TAXON=5 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
-	TEXT TAXON=3 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
-	TEXT TAXON=28 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
-	TEXT TAXON=14 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
-	TEXT TAXON=13 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, P.32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=35 CHARACTER=17 TEXT='Williams et al. (2000, p. 32) state that these muscles are absent in all carbonate-shelled brachiopods.';
+	TEXT TAXON=5 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=3 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=28 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=14 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that these muscle are absent in all carbonate- shelled brachiopods.';
+	TEXT TAXON=13 CHARACTER=17 TEXT='According to the statement of Williams et al. (2000, p. 32) that these muscle are absent in all carbonate- shelled brachiopods.';
 	TEXT TAXON=7 CHARACTER=17 TEXT='This character is coded based on the score of Acrotreta in Zhang et al. (2014), and statement in Williams et al. (2000, P.32).';
 	TEXT TAXON=12 CHARACTER=17 TEXT='Not remarked upon by Balthasar (2009T).';
 	TEXT TAXON=34 CHARACTER=17 TEXT='Ventral musculature poorly constrained (Williams et al. 2000; Popov et al. 2009)';
