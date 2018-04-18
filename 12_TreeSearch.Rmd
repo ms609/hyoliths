@@ -81,8 +81,6 @@ write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
 
 ## Results
 
-### Implied weights results
-
 ```{R treesearch-load-iw-trees, echo=FALSE}
 # Read results from files
 iw.trees <- lapply(kValues, function (k) {
@@ -100,9 +98,9 @@ iw.trees <- lapply(kValues, function (k) {
 })
 ```
 
-Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
+(ref:ts-iw-cons) Consensus of implied weights analyses at all values of _k_. Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
 
-```{r treesearch-iw-consensus, fig.cap="Consensus of implied weights analyses at all values of k", fig.width=6, fig.height=5, echo=FALSE}
+```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE}
 omit = c("Micrina", 'Mickwitzia_muralensis',
 #omit=c(lon, 'Clupeafumosus_socialis',
        'Heliomedusa_orienta')
@@ -137,15 +135,14 @@ par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(4)
 PlotPanel(5)
 ```
-```{R treesearch-iw-results-4, fig.width=7.1, fig.height=4, fig.cap="Implied weights results", echo=FALSE}
+(ref:ts-iw-indiv) Consensus trees of implied weights analyses at specific values of _k_
+```{R treesearch-iw-results-4, fig.width=7.1, fig.height=4, fig.cap="(ref:ts-iw-indiv)", echo=FALSE}
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(6)
 PlotPanel(7)
 ```
 
-\newpage
-
-### Equal weights results
+\clearpage
 
 ```{r treesearch-equal-weights-results, fig.cap="Strict consensus of equal weights results", echo=FALSE}
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
@@ -160,3 +157,5 @@ ColPlot(ConsensusWithout(ew.trees, omit))
 ColMissing(omit)
 ```
 -->
+
+\clearpage
