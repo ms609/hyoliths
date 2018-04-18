@@ -17,6 +17,7 @@ Scale bars = 2mm (for a, b and e–g); 500&nbsp;µm (for c, h and i).
 Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es = esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.
 
 ```{R, echo=FALSE, out.width="80%", fig.align="center"}
+\newpage
 knitr::include_graphics('images/image2.png')
 ```
 
@@ -27,6 +28,7 @@ Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = A
 
 
 ```{R, echo=FALSE, fig.width=7}
+\newpage
 # Definitions
 cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # Colour-blind friendly palette
 PDBGenera <-  R.cache::addMemoization(function (taxon) read.csv(paste0('https://paleobiodb.org/data1.2/occs/diversity.txt?base_name=', taxon, '&count=genera')))
