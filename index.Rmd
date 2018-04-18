@@ -9,6 +9,7 @@ output:
       in_header: pnas_preamble.tex
     keep_tex: true
 documentclass: book
+classoption: openany
 bibliography: [References.bib,MorphoBank.bib]
 csl: http://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
 biblio-style: plainnat
