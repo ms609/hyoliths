@@ -22,7 +22,7 @@ Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = A
 knitr::include_graphics('images/image2.png')
 ```
 
-(ref:captionS3)**Figure S3: Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
+(ref:captionS3)**Figure S3: Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r rollOver <- 3; WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
 
 ```{R, echo=FALSE, fig.width=7, fig.cap='(ref:captionS3)', cache=TRUE}
 # Definitions
@@ -60,7 +60,6 @@ tomm[tomm$interval_name == 'Stage 2', addities] <- tomm[tomm$interval_name == 'S
 allIntervals <- unique(as.character(rhyn$interval_name, ling$interval_name, hyo$interval_name))
 
 # Plot
-rollOver <- 3
 yMax <- 200
 par(cex=0.8)
 
