@@ -1,5 +1,5 @@
 
-# Supplementary Figures and Table {-}{#si}
+# Supplementary Figures and Table {-}
 
 (ref:captionS1) **_Pedunculotheca diania_ Sun et Smith gen. et sp. nov. from the Chengjiang Biota, Yunnan Province, China.**
 (a) NIGPAS 166601, external mould of dorsum with dorsal apex and pedicle foramen. (b) NIGPAS 166597, preserving conical shell, operculum and internal soft tissue, showing a compressed elliptic cross-section; backscatter electron micrograph of boxed region shown in (c).
@@ -10,7 +10,7 @@
 Scale bars: 2mm (for a, b and e–g); 500&nbsp;µm (for c, h and i).\newline
 Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es = esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.
 
-```{R, echo=FALSE, out.width="80%", fig.align='center', fig.cap="(ref:captionS1)"}
+```{R more-specimens, echo=FALSE, out.width="80%", fig.align='center', fig.cap="(ref:captionS1)"}
 knitr::include_graphics('images/image1.png')
 ```
 
@@ -19,13 +19,13 @@ knitr::include_graphics('images/image1.png')
 Scale bar = 100&nbsp;µm.\newline
 Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = Aluminium, Fe = Iron, C = Carbon.
 
-```{R, echo=FALSE, out.width="80%", fig.align="center", fig.cap='(ref:captionS2)', cache=TRUE}
+```{R gut-elemental, echo=FALSE, out.width="80%", fig.align="center", fig.cap='(ref:captionS2)', cache=TRUE}
 knitr::include_graphics('images/image2.png')
 ```
 
 (ref:captionS3) **Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r rollOver <- 3; WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
 
-```{R, echo=FALSE, fig.width=7, fig.cap='(ref:captionS3)', cache=TRUE}
+```{R brach-diversity, echo=FALSE, fig.width=7, fig.cap='(ref:captionS3)', cache=TRUE}
 # Definitions
 cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # Colour-blind friendly palette
 PDBGenera <-  R.cache::addMemoization(function (taxon) read.csv(paste0('https://paleobiodb.org/data1.2/occs/diversity.txt?base_name=', taxon, '&count=genera')))
@@ -79,15 +79,21 @@ plotDiv(tomm , rollOver=3, col=2)
 ```
 
 
-\newpage
+\clearpage
 
 (ref:tableS1) **Provenance of fossil material.** Individuals from the Yaoying section are usually bigger, with a thicker body wall, and have a smaller ratio of apertural width to shell length than specimens from other areas. 
 In the absence of other differentiating features, we consider these deviations to represent ecophenotypical variation within a single species, perhaps reflecting the increased energetics and predation pressure that accompany the shallower water depth reported at the Yaoying section [@Zhao2012].
 
-```{r table-s1, fig.cap="(ref:tableS1)", echo=FALSE, asis=TRUE}
-prov <- matrix(c("166593, 166617", "Shankou Village, Anning", "24&deg;49&rsquo;53&rsquo;&rsquo;&nbsp;N, 102&deg;24&rsquo;47.9&rdquo;&nbsp;E", "166594, 166595", "Yaoying Village, Wuding", "25&deg;36&rsquo;01.2&rdquo;&nbsp;N, 102&deg;20&rsquo;04.6&rdquo;&nbsp;E", "166596--166616", "Ma’anshan Village, Chengjiang", "24&deg;40&rsquo;37.2&rdquo;&nbsp;N, 102&deg;58&rsquo;40.2&rdquo;&nbsp;E"), nrow=3, ncol=3, byrow=TRUE)
+```{r table-s1, echo=FALSE, asis=TRUE}
+prov <- matrix(c("166593, 166617", "Shankou Village, Anning", "24°49’53’’&nbsp;N, 102°24’47.9”&nbsp;E", "166594, 166595", "Yaoying Village, Wuding", "25°36’01.2”&nbsp;N, 102°20’04.6”&nbsp;E", "166596--166616", "Ma'anshan Village, Chengjiang", "24°40’37.2”&nbsp;N, 102°58’40.2”&nbsp;E"), nrow=3, ncol=3, byrow=TRUE)
 colnames(prov) <- c("NIGPAS Specimen numbers", "Fossil locality", "Coordinates")
 knitr::kable(prov, caption='(ref:tableS1)')
 ```
 
-\newpage
+```{r table-s1-backup, echo=FALSE, asis=TRUE}
+#prov <- matrix(c("166593, 166617", "Shankou Village, Anning", #"24&deg;49&rsquo;53&rsquo;&rsquo;&nbsp;N, 102&deg;24&rsquo;47.9&rdquo;&nbsp;E", "166594, #166595", "Yaoying Village, Wuding", "25&deg;36&rsquo;01.2&rdquo;&nbsp;N, #102&deg;20&rsquo;04.6&rdquo;&nbsp;E", "166596--166616", "Ma'anshan Village, Chengjiang", #"24&deg;40&rsquo;37.2&rdquo;&nbsp;N, 102&deg;58&rsquo;40.2&rdquo;&nbsp;E"), nrow=3, ncol=3, #byrow=TRUE)
+#colnames(prov) <- c("NIGPAS Specimen numbers", "Fossil locality", "Coordinates")
+#knitr::kable(prov, caption='(ref:tableS1)', escape=FALSE)
+```
+
+\clearpage
