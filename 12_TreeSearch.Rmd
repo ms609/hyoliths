@@ -32,7 +32,7 @@ iw_data <- PrepareDataIW(my_data)
 
 Start by quickly rearranging a neighbour-joining tree, rooted on the outgroup.
 
-```{R treesearch-starting-tree}
+```{R treesearch-starting-tree, echo=TRUE}
 nj.tree <- NJTree(my_data)
 rooted.tree <- EnforceOutgroup(nj.tree, outgroup)
 start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
