@@ -108,7 +108,7 @@ ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
 ColMissing(omit)
 ```
 
-
+(ref:ts-iw-indiv) Consensus trees of implied weights analyses at specific values of _k_
 
 ```{r treesearch-all-iw-results, fig.width=7.1, fig.height=4, echo=FALSE}
 # Plot consensus results
@@ -135,7 +135,6 @@ par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(4)
 PlotPanel(5)
 ```
-(ref:ts-iw-indiv) Consensus trees of implied weights analyses at specific values of _k_
 ```{R treesearch-iw-results-4, fig.width=7.1, fig.height=4, fig.cap="(ref:ts-iw-indiv)", echo=FALSE}
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(6)
