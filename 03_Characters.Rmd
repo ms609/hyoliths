@@ -212,7 +212,7 @@ taxa_italic <- paste0("_", taxa_plaintext, "_")
 
 The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$) in order to generate the indicative reconstructions displayed below.  The most parsimonious reconstruction will of course vary depending on the topology on which it is plotted; the figures below are simply to facilitate interpretation.
 
-```{R character-mapping, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
+```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
 ## These function definitions must be in the same block as when they are called.
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
 PrintDivision <- function (parts) cat(Header(2L, paste(
