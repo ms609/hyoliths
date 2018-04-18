@@ -259,7 +259,7 @@ refKeys <- apply(refs, 1, RefKey)
 
 # Brachiopod origins {-}
 
-This document provides a detailed discussion of [analyses](#treesearch) of the [morphological dataset](#dataset) constructed to accompany @Sun2018Hyolithswith, and their results.  `r if (knitr::is_latex_output()) 'It is intended to be viewed in HTML format at \url{https://ms609.github.io/hyoliths/}.'`
+This document provides a detailed discussion of [analyses](#treesearch) of the [morphological dataset](#dataset) constructed to accompany @Sun2018Hyolithswith, and their results.  `r if (knitr::is_latex_output()) 'It is intended to be viewed in HTML format at \href{https://ms609.github.io/hyoliths/}{ms609.github.io/hyoliths}.'`
 
 We first discuss the results presented in the main paper, which employ the algorithm described by @Brazeau2018 for correct handling of inapplicable data in a parsimony setting, and explore how each
 character is [reconstructed](#reconstructions) on an optimal tree.
