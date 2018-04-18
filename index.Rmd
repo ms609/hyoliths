@@ -18,9 +18,7 @@ set.seed(0)
 #Sys.setlocale('LC_ALL','C')
 Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 knitr::opts_chunk$set(echo = TRUE)
-library('ape'); library('phangorn')
-if (!require('TreeSearch')) install.packages('TreeSearch')
-library('TreeSearch'); 
+library('ape'); library('phangorn'); library('TreeSearch'); 
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(file.mtime(files))]
 my_data <- ReadAsPhyDat(filename)
