@@ -1,6 +1,7 @@
-# Supplementary Figures {#figures}
 
-(ref:captionS1)**_Pedunculotheca diania_ Sun et Smith gen. et sp. nov. from the Chengjiang Biota, Yunnan Province, China.**
+# Supplementary Figures and Table {-}{#si}
+
+(ref:captionS1) **_Pedunculotheca diania_ Sun et Smith gen. et sp. nov. from the Chengjiang Biota, Yunnan Province, China.**
 (a) NIGPAS 166601, external mould of dorsum with dorsal apex and pedicle foramen. (b) NIGPAS 166597, preserving conical shell, operculum and internal soft tissue, showing a compressed elliptic cross-section; backscatter electron micrograph of boxed region shown in (c).
 (d) NIGPAS 166599b, counterpart, juvenile conical shell with operculum showing two longitudinal ventral grooves and circular larval shell. 
 (e) NIGPAS 166602, conical shell with incomplete attachment structure.
@@ -14,7 +15,7 @@ knitr::include_graphics('images/image1.png')
 ```
 
 
-(ref:captionS2)**Elemental distribution in the gut of _Pedunculotheca diania_ Sun et Smith gen. et sp. nov.** NIGPAS 166597. Region corresponds to boxed region in Fig. S1c.
+(ref:captionS2) **Elemental distribution in the gut of _Pedunculotheca diania_ Sun et Smith gen. et sp. nov.** NIGPAS 166597. Region corresponds to boxed region in Fig. S1c.
 Scale bar = 100&nbsp;µm.\newline
 Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = Aluminium, Fe = Iron, C = Carbon.
 
@@ -22,7 +23,7 @@ Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = A
 knitr::include_graphics('images/image2.png')
 ```
 
-(ref:captionS3)**Figure S3: Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r rollOver <- 3; WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
+(ref:captionS3) **Figure S3: Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r rollOver <- 3; WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
 
 ```{R, echo=FALSE, fig.width=7, fig.cap='(ref:captionS3)', cache=TRUE}
 # Definitions
@@ -78,3 +79,17 @@ plotDiv(tomm , rollOver=3, col=2)
 ```
 
 
+\newpage
+
+**Table (\#tab:tableS1)S1: Provenance of fossil material.** Individuals from the Yaoying section are usually bigger, with a thicker body wall, and have a smaller ratio of apertural width to shell length than specimens from other areas. 
+In the absence of other differentiating features, we consider these deviations to represent ecophenotypical variation within a single species, perhaps reflecting the increased energetics and predation pressure that accompany the shallower water depth reported at the Yaoying section [@Zhao2012].
+
+
+|NIGPAS Specimen numbers|Fossil locality|Coordinates|
+|--------------|--------------|-------------|
+|166593, 166617|Shankou Village, Anning|24&deg;49&rsquo;53&rsquo;&rsquo;&nbsp;N, 102&deg;24&rsquo;47.9&rdquo;&nbsp;E|
+|166594, 166595|Yaoying Village, Wuding|25&deg;36&rsquo;01.2&rdquo;&nbsp;N, 102&deg;20&rsquo;04.6&rdquo;&nbsp;E|
+|166596--166616|Ma’anshan Village, Chengjiang|24&deg;40&rsquo;37.2&rdquo;&nbsp;N, 102&deg;58&rsquo;40.2&rdquo;&nbsp;E|
+
+
+\newpage
