@@ -58,6 +58,7 @@ text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
 
 plotPanel(1)
 ```
+
 ```{R tnt-iw-3-4.5, fig.width=7.1, fig.height=4, echo=FALSE}
 par(mfrow=c(1, 2))
 plotPanel(2)
@@ -94,6 +95,6 @@ ColMissing(omit)
 ```{R tnt-ew-consensus, echo=FALSE, fig.cap="TNT Equal weights consensus"}
 tntEw <- list.files('TNT/', pattern='ew\\.tre', full=TRUE)
 omit <- c("Micrina", "Mickwitzia_muralensis")
-ColPlot(ConsensusWithout(ReadTntTree(tntEw), omit))
+ColPlot(ConsensusWithout(ReadTntTree(tntEw, relativePath='.'), omit))
 ColMissing(omit)
 ```
