@@ -118,10 +118,10 @@ ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
 mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
 mbRecent <- mbBib[which.max(file.mtime(mbBib))]
 refs <- trimws(enc2utf8(as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))))
-FirstWord <- function (text) gsub("^(\\w+).*$", "\\1", trimws(text), perl=TRUE)
-FirstWords <- function (text) gsub("^\\W*(\\w+)\\W*(\\w+)?.*", "\\1\\2", trimws(text), perl=TRUE)
-FormatAuthors <- function (text) {
-  authors <- trimws(strsplit(text, ';')[[1]])
+FirstWord <- function (string) gsub("^(\\w+).*$", "\\1", trimws(string), perl=TRUE)
+FirstWords <- function (string) gsub("^\\W*(\\w+?)\\b\\W*(\\w+)?.*", "\\1\\2", trimws(string), perl=TRUE)
+FormatAuthors <- function (string) {
+  authors <- trimws(strsplit(string, ';')[[1]])
   names.pattern <- "(\\w+,)\\s(.*)"
   surnames <-  gsub(names.pattern, "\\1 ", authors)
   forenames <- gsub(names.pattern, "\\2", authors)
@@ -217,11 +217,15 @@ BibEntry <- function (ref) {
       ret <- paste0("  ", bibKey, " = {",
                     if (bibKey == 'journal') "{" else "",
              gsub(" & ", " \\& ", 
-                  #gsub("–", "--",  # en dash
-                    #gsub("—", "---", 
+                  gsub("–", "-!-",  # en dash
+                  gsub("—", "---", 
+                  gsub("ä", '\\"{a}', 
+                  gsub("ö", '\\"{o}', 
                          trimws(text),
-                         #fixed=TRUE), # em dash
-                   # fixed=TRUE),
+                  fixed=TRUE), # em dash
+                  fixed=TRUE),
+                  fixed=TRUE),
+                  fixed=TRUE),
                   fixed=TRUE),
              if (bibKey == 'journal') "}" else "",
              "},\n")
