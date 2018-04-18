@@ -85,7 +85,7 @@ plotDiv(tomm , rollOver=3, col=2)
 In the absence of other differentiating features, we consider these deviations to represent ecophenotypical variation within a single species, perhaps reflecting the increased energetics and predation pressure that accompany the shallower water depth reported at the Yaoying section [@Zhao2012].
 
 ```{r table-s1, echo=FALSE, asis=TRUE}
-prov <- matrix(c("166593, 166617", "Shankou Village, Anning", "24°49’53’’&nbsp;N, 102°24’47.9”&nbsp;E", "166594, 166595", "Yaoying Village, Wuding", "25°36’01.2”&nbsp;N, 102°20’04.6”&nbsp;E", "166596--166616", "Ma'anshan Village, Chengjiang", "24°40’37.2”&nbsp;N, 102°58’40.2”&nbsp;E"), nrow=3, ncol=3, byrow=TRUE)
+prov <- matrix(c("166593, 166617", "Shankou Village, Anning", "24°49’53’’ N, 102°24’47.9” E", "166594, 166595", "Yaoying Village, Wuding", "25°36’01.2” N, 102°20’04.6” E", "166596--166616", "Ma'anshan Village, Chengjiang", "24°40’37.2” N, 102°58’40.2” E"), nrow=3, ncol=3, byrow=TRUE)
 colnames(prov) <- c("NIGPAS Specimen numbers", "Fossil locality", "Coordinates")
 knitr::kable(prov, caption='(ref:tableS1)')
 ```
