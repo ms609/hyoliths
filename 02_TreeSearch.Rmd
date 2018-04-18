@@ -15,14 +15,14 @@ Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under
 ## Analysis 
 
 The R commands used to conduct the analysis are reproduced below.
-The results can most readily be replicated using the [R markdown files](https://github.com/ms609/hyoliths/) used to generate these pages.
+The results can most readily be replicated using the [R markdown files](https://github.com/ms609/hyoliths/) (.Rmd) used to generate these pages.
 
 ### Initialize and load data
 
 ```{r treesearch-load-morphoBank, echo=TRUE}
 kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
-# Load file from MorphoBank
+# Load data from locally downloaded copy of MorphoBank matrix
 my_data <- ReadAsPhyDat(filename)
 my_data$Namacalathus <- NULL # Exclude Namacalathus
 iw_data <- PrepareDataIW(my_data)
@@ -30,7 +30,7 @@ iw_data <- PrepareDataIW(my_data)
 
 ### Generate starting tree
 
-Start from a neighbour-joining tree, rooted on the outgroup.
+Start by quickly rearranging a neighbour-joining tree, rooted on the outgroup.
 
 ```{R treesearch-starting-tree}
 nj.tree <- NJTree(my_data)
@@ -41,7 +41,7 @@ start.tree <- TreeSearch(tree=rooted.tree, dataset=my_data, maxIter=3000,
 
 ### Implied weights analysis
 
-The position of the root does not affect tree score, so keep it fixed (using `RootedXXXSwap` functions) to avoid unnecessary swaps.
+The position of the root does not affect tree score, so we keep it fixed (using `RootedXXXSwap` functions) to avoid unnecessary swaps.
 
 ```{r treesearch-implied-weights-analysis, echo=TRUE, eval=FALSE}
 for (k in kValues) {
@@ -50,7 +50,7 @@ for (k in kValues) {
                        swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
                        verbosity=0L)
   score <- IWScore(iw.tree, iw_data, concavity=k)
-  # Write single best tree
+  # Write a single best tree
   write.nexus(iw.tree,
               file=paste0("TreeSearch/hy_iw_k", k, "_", 
                           signif(score, 5), ".nex", collapse=''))
