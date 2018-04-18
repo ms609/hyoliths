@@ -144,7 +144,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dorsal-adductors"><i class="fa fa-check"></i>[15] Muscle scars: Dorsal adductors</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-adductors-position"><i class="fa fa-check"></i>[16] Muscle scars: Adductors: Position</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dermal-muscles"><i class="fa fa-check"></i>[17] Muscle scars: Dermal muscles</a></li>
-<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-unpaired-median-levator-ani"><i class="fa fa-check"></i>[18] Muscle scars: Unpaired median (levator ani)</a></li>
+<li><a href="reconstructions.html#muscle-scars-unpaired-median-levator-ani">[18] Muscle scars: Unpaired median (<em>levator ani</em>)</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dorsal-diductor"><i class="fa fa-check"></i>[19] Muscle scars: Dorsal diductor</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#muscle-scars-dorsal-diductor-position"><i class="fa fa-check"></i>[20] Muscle scars: Dorsal diductor: Position</a></li>
 </ul></li>
@@ -294,19 +294,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="analysis" class="section level2">
 <h2><span class="header-section-number">2.2</span> Analysis</h2>
-<p>The R commands used to conduct the analysis are reproduced below. The results can most readily be replicated using the <a href="https://github.com/ms609/hyoliths/">R markdown files</a> used to generate these pages.</p>
+<p>The R commands used to conduct the analysis are reproduced below. The results can most readily be replicated using the <a href="https://github.com/ms609/hyoliths/">R markdown files</a> (.Rmd) used to generate these pages.</p>
 <div id="initialize-and-load-data" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Initialize and load data</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">kValues &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">4.5</span>, <span class="dv">7</span>, <span class="fl">10.5</span>, <span class="dv">16</span>, <span class="dv">24</span>)
 
-<span class="co"># Load file from MorphoBank</span>
+<span class="co"># Load data from locally downloaded copy of MorphoBank matrix</span>
 my_data &lt;-<span class="st"> </span><span class="kw">ReadAsPhyDat</span>(filename)
 my_data<span class="op">$</span>Namacalathus &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># Exclude Namacalathus</span>
 iw_data &lt;-<span class="st"> </span><span class="kw">PrepareDataIW</span>(my_data)</code></pre></div>
 </div>
 <div id="generate-starting-tree" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Generate starting tree</h3>
-<p>Start from a neighbour-joining tree, rooted on the outgroup.</p>
+<p>Start by quickly rearranging a neighbour-joining tree, rooted on the outgroup.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nj.tree &lt;-<span class="st"> </span><span class="kw">NJTree</span>(my_data)
 rooted.tree &lt;-<span class="st"> </span><span class="kw">EnforceOutgroup</span>(nj.tree, outgroup)
 start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<span class="dt">tree=</span>rooted.tree, <span class="dt">dataset=</span>my_data, <span class="dt">maxIter=</span><span class="dv">3000</span>,
@@ -314,14 +314,14 @@ start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<spa
 </div>
 <div id="implied-weights-analysis" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Implied weights analysis</h3>
-<p>The position of the root does not affect tree score, so keep it fixed (using <code>RootedXXXSwap</code> functions) to avoid unnecessary swaps.</p>
+<p>The position of the root does not affect tree score, so we keep it fixed (using <code>RootedXXXSwap</code> functions) to avoid unnecessary swaps.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (k <span class="cf">in</span> kValues) {
   iw.tree &lt;-<span class="st"> </span><span class="kw">IWRatchet</span>(start.tree, iw_data, <span class="dt">concavity=</span>k,
                        <span class="dt">ratchHits =</span> <span class="dv">60</span>, <span class="dt">searchHits=</span><span class="dv">55</span>,
                        <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
                        <span class="dt">verbosity=</span>0L)
   score &lt;-<span class="st"> </span><span class="kw">IWScore</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k)
-  <span class="co"># Write single best tree</span>
+  <span class="co"># Write a single best tree</span>
   <span class="kw">write.nexus</span>(iw.tree,
               <span class="dt">file=</span><span class="kw">paste0</span>(<span class="st">&quot;TreeSearch/hy_iw_k&quot;</span>, k, <span class="st">&quot;_&quot;</span>, 
                           <span class="kw">signif</span>(score, <span class="dv">5</span>), <span class="st">&quot;.nex&quot;</span>, <span class="dt">collapse=</span><span class="st">&#39;&#39;</span>))
