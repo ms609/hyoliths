@@ -215,12 +215,14 @@ BibEntry <- function (ref) {
       ret <- paste0("  ", bibKey, " = {",
                     if (bibKey == 'journal') "{" else "",
              gsub(" & ", " \\& ", 
-                  gsub("–", "-!-",  # en dash
-                  gsub("—", "---", 
+                  gsub("\u2013", "--",  # en dash
+                  gsub("\u2014", "---",  # em dash
                   gsub("ä", '\\"{a}', 
+                  gsub("é", "\\'{e}", 
                   gsub("ö", '\\"{o}', 
                          trimws(text),
-                  fixed=TRUE), # em dash
+                  fixed=TRUE),
+                  fixed=TRUE),
                   fixed=TRUE),
                   fixed=TRUE),
                   fixed=TRUE),
