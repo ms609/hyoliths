@@ -1,13 +1,18 @@
 --- 
-title: "Brachiopod origins -- Supplementary material"
-author: "Haijing Sun; Martin Ross Smith; Han Zeng; Fangchen Zhao; Guoxiang Li; Maoyan Zhu"
+title: "Hyoliths with pedicles constrain the origin of the brachiopod body plan"
+author: "Haijing Sun, Martin R. Smith, Han Zeng, Fangchen Zhao, Guoxiang Li and Maoyan Zhu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-classoption: openany
-bibliography: [References.bib, MorphoBank.bib]
-csl: http://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
+output: 
+  bookdown::pdf_book:
+    includes:
+      in_header: pnas_preamble.tex
+    keep_tex: true
+documentclass: pnas-new
+classoption: 9pt,twoside,openany
+bibliography: [References.bib,MorphoBank.bib]
+csl: http://raw.githubusercontent.com/citation-style-language/styles/master/pnas.csl#apa-old-doi-prefix.csl
+biblio-style: pnas-new
 link-citations: yes
 github-repo: ms609/hyoliths
 description: "Results of phylogenetic analysis"
