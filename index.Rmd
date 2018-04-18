@@ -12,7 +12,7 @@ documentclass: pnas-new
 classoption: 9pt,twoside,openany
 bibliography: [References.bib,MorphoBank.bib]
 csl: http://raw.githubusercontent.com/citation-style-language/styles/master/pnas.csl#apa-old-doi-prefix.csl
-biblio-style: pnas-new
+biblio-style: plainnat
 link-citations: yes
 github-repo: ms609/hyoliths
 description: "Results of phylogenetic analysis"

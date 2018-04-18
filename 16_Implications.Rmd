@@ -22,7 +22,7 @@ Rhynchonelliforms
 Linguliforms
 : The reconstruction of Linguloformea comprising Linguloidea as sister to Discinoidea is as expected, though it is notable that Acrotretids and Siphonotretids plot more closely to Linguloidea than Discinoidea does.
 : Lingulellotretids also sit within this lingulid grouping; a position in the phoronid stem lineage [advocated by @Balthasar2009EarlyCambrian] is not upheld.
-: More novel is the reconstruction of the calcitic obolellid _Mummpikia_ in the linguliform total group: a rhynchonelliform affinity has been assumed based on its calcitic mineralogy. This said, Balthasar [-@Balthasar2008iMummpikia] has highlighted the similarities between obolellids and linguliform brachiopods, including sub-&mu;m vertical canals and the detailed configuration of the posterior shell margin.
+: More novel is the reconstruction of the calcitic obolellid _Mummpikia_ in the linguliform total group: a rhynchonelliform affinity has been assumed based on its calcitic mineralogy. This said, @Balthasar2008iMummpikia has highlighted the similarities between obolellids and linguliform brachiopods, including sub-&mu;m vertical canals and the detailed configuration of the posterior shell margin.
 Our analysis upholds the case for a linguliform affinity for _Mummpikia_; a calcitic shell seemingly arose through an independent change within this taxon  As such, _Mummpikia_ has no direct bearing on the origin of 'Calciata', save that shell mineralogy is perhaps less static than commonly assumed.
 : More generally, our results identify Class Obolellata as polyphyletic:  _Alisina_ (Trematobolidae) plots within Rhynchonellata;  _Tomteluva_ is harder to place, but tends to group with _Salanygolina_ stemwards of the chileids.
 
