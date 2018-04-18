@@ -1,4 +1,4 @@
-\documentclass[9pt,twoside,openany]{pnas-new}
+\documentclass[openany]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -129,27 +129,27 @@ Maoyan Zhu}
 
 % \documentclass[9pt,twoside]{pnas-new}
 
-\templatetype{pnassupportinginfo}
+%\templatetype{pnassupportinginfo}
 % \readytosubmit %% Uncomment this line before submitting, so that the instruction page is removed.
 
-\correspondingauthor{Martin R. Smith.\\E-mail: martin.smith@durham.ac.uk}
+%\correspondingauthor{Martin R. Smith.\\E-mail: martin.smith@durham.ac.uk}
 
 % \setcitestyle{round}
 \usepackage[nottoc]{tocbibind}
 \raggedbottom
 
 \usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}{Corollary}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
+\newtheorem{definition}{Definition}[chapter]
 \theoremstyle{definition}
-\newtheorem{example}{Example}[section]
+\newtheorem{example}{Example}[chapter]
 \theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[section]
+\newtheorem{exercise}{Exercise}[chapter]
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{solution}{Solution}
@@ -157,11 +157,11 @@ Maoyan Zhu}
 \maketitle
 
 {
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1}
 \tableofcontents
 }
-\section*{Overview}\label{overview}
-\addcontentsline{toc}{section}{Overview}
+\chapter*{Overview}\label{overview}
+\addcontentsline{toc}{chapter}{Overview}
 
 This document comtains supplementary material to
 \citet{Sun2018Hyolithswith}. It is best viewed in HTML format at
@@ -183,8 +183,9 @@ For completeness, we also document the results of
 results of \protect\hyperlink{bayesian}{Bayesian analysis}, neither of
 which treat inapplicable data in a logically consistent fashion.
 
-\hypertarget{si}{\section{Supplementary Figures and Table
-\{-\}}\label{si}}
+\chapter*{Supplementary Figures and
+Table}\label{supplementary-figures-and-table}
+\addcontentsline{toc}{chapter}{Supplementary Figures and Table}
 
 
 
@@ -226,8 +227,10 @@ boxed region shown in (h). (i) NIGPAS 166603, exterior of
 operculum.\newline
 Scale bars: 2mm (for a, b and e--g); 500~µm (for c, h and i).\newline
 Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es =
-esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.}\label{fig:unnamed-chunk-1}
+esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.}\label{fig:more-specimens}
 \end{figure}
+
+\clearpage
 
 
 
@@ -247,8 +250,10 @@ esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.}\label{fig:un
 166597. Region corresponds to boxed region in Fig. S1c. Scale bar =
 100~µm.\newline
 Abbreviations: BE = backscatter electron image, O = Oxygen, Si =
-Silicon, Al = Aluminium, Fe = Iron, C = Carbon.}\label{fig:unnamed-chunk-2}
+Silicon, Al = Aluminium, Fe = Iron, C = Carbon.}\label{fig:gut-elemental}
 \end{figure}
+
+\clearpage
 
 
 
@@ -257,14 +262,14 @@ Silicon, Al = Aluminium, Fe = Iron, C = Carbon.}\label{fig:unnamed-chunk-2}
 
 \begin{figure}
 \centering
-\includegraphics{Brachiopod_phylogeny_files/figure-latex/unnamed-chunk-3-1.pdf}
-\caption{\label{fig:unnamed-chunk-3}\textbf{Global diversity of brachiopods through the
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/brach-diversity-1.pdf}
+\caption{\label{fig:brach-diversity}\textbf{Global diversity of brachiopods through the
 Paleozoic.} Points represent number of genera reported in each time bin;
 lines represent rolling mean diversity over three consecutive time bins.
 Data from Paleobiology database.}
 \end{figure}
 
-\newpage
+\clearpage
 
 
 
@@ -290,19 +295,18 @@ the Yaoying section \citep{Zhao2012}.}
 \hline
 NIGPAS Specimen numbers & Fossil locality & Coordinates\\
 \hline
-166593, 166617 & Shankou Village, Anning & 24\&deg;49\&rsquo;53\&rsquo;\&rsquo;\&nbsp;N, 102\&deg;24\&rsquo;47.9\&rdquo;\&nbsp;E\\
+166593, 166617 & Shankou Village, Anning & 24°49’53’’ N, 102°24’47.9” E\\
 \hline
-166594, 166595 & Yaoying Village, Wuding & 25\&deg;36\&rsquo;01.2\&rdquo;\&nbsp;N, 102\&deg;20\&rsquo;04.6\&rdquo;\&nbsp;E\\
+166594, 166595 & Yaoying Village, Wuding & 25°36’01.2” N, 102°20’04.6” E\\
 \hline
-166596--166616 & Ma’anshan Village, Chengjiang & 24\&deg;40\&rsquo;37.2\&rdquo;\&nbsp;N, 102\&deg;58\&rsquo;40.2\&rdquo;\&nbsp;E\\
+166596--166616 & Ma'anshan Village, Chengjiang & 24°40’37.2” N, 102°58’40.2” E\\
 \hline
 \end{tabular}
 \end{table}
 
-\newpage
+\clearpage
 
-\SItext
-\# Phylogenetic dataset \{\#dataset\}
+\hypertarget{dataset}{\chapter{Phylogenetic dataset}\label{dataset}}
 
 Analysis was performed on a new matrix of 37 early brachiozoan taxa,
 including hyoliths, tommotiids and mickwitziids, which were coded for
@@ -339,7 +343,7 @@ The complete dataset can be viewed and downloaded at Morphobank
 (\href{https://morphobank.org/permalink/?P2800}{project 2800}), where
 each character is defined and its coding for each taxon discussed.
 
-\hypertarget{treesearch}{\section{Parsimony analysis}\label{treesearch}}
+\hypertarget{treesearch}{\chapter{Parsimony analysis}\label{treesearch}}
 
 The phylogenetic dataset contains a considerable proportion of
 inapplicable codings (451/3959 = 11.4\% of tokens), which are known to
@@ -347,12 +351,11 @@ introduce error and bias to phylogenetic reconstruction when the Fitch
 algorithm is employed \citep{Maddison1993, Brazeau2018}. As such, we
 employed a new tree-scoring algorithm that correctly handles
 inapplicable data \citep{Brazeau2018}, implemented in the
-\emph{MorphyLib} \emph{C} library \citep{Brazeau2017Morphylib}. We
-employed the \emph{R} package \emph{TreeSearch} v0.1.2
-\citep{Smith2018TreeSearch} to conduct phylogenetic tree search with
-this algorithm.
+\emph{MorphyLib} C library \citep{Brazeau2017Morphylib}. We employed the
+R package \emph{TreeSearch} v0.1.2 \citep{Smith2018TreeSearch} to
+conduct phylogenetic tree search with this algorithm.
 
-\subsection{Search parameters}\label{search-parameters}
+\section{Search parameters}\label{search-parameters}
 
 Heuristic searches were conducted using the parsimony ratchet
 \citep{Nixon1999} under equal and implied weights \citep{Goloboff1997}.
@@ -362,14 +365,14 @@ the concavity constants (\emph{k}) 2, 3, 4.5, 7, 10.5, 16 and 24, an
 approach that has been shown to produce higher accuracy than equal
 weights at any given level of precision \citep{Smith2017}.
 
-\subsection{Analysis}\label{analysis}
+\section{Analysis}\label{analysis}
 
 The R commands used to conduct the analysis are reproduced below. The
 results can most readily be replicated using the
 \href{https://github.com/ms609/hyoliths/}{R markdown files} (.Rmd) used
 to generate these pages.
 
-\subsubsection{Initialize and load data}\label{initialize-and-load-data}
+\subsection{Initialize and load data}\label{initialize-and-load-data}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -382,7 +385,7 @@ to generate these pages.
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Generate starting tree}\label{generate-starting-tree}
+\subsection{Generate starting tree}\label{generate-starting-tree}
 
 Start by quickly rearranging a neighbour-joining tree, rooted on the
 outgroup.
@@ -396,7 +399,7 @@ outgroup.
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Implied weights analysis}\label{implied-weights-analysis}
+\subsection{Implied weights analysis}\label{implied-weights-analysis}
 
 The position of the root does not affect tree score, so we keep it fixed
 (using \texttt{RootedXXXSwap} functions) to avoid unnecessary swaps.
@@ -426,7 +429,7 @@ The position of the root does not affect tree score, so we keep it fixed
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Equal weights analysis}\label{equal-weights-analysis}
+\subsection{Equal weights analysis}\label{equal-weights-analysis}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -441,28 +444,29 @@ The position of the root does not affect tree score, so we keep it fixed
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Results}\label{results}
+\section{Results}\label{results}
 
-\subsubsection{Implied weights results}\label{implied-weights-results}
 
-Wildcard taxa have been excluded from the consensus tree shown above to
-improve resolution.
+
+
 
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-consensus-1.pdf}
-\caption{\label{fig:treesearch-iw-consensus}Consensus of implied weights
-analyses at all values of k}
+\caption{\label{fig:treesearch-iw-consensus}Consensus of implied weights analyses at all values of
+\emph{k}. Wildcard taxa have been excluded from the consensus tree shown
+above to improve resolution.}
 \end{figure}
+
+
+
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-all-iw-results-1.pdf}
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-results-2-1.pdf}
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-results-3-1.pdf}
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-results-4-1.pdf}
 
-\newpage
-
-\subsubsection{Equal weights results}\label{equal-weights-results}
+\clearpage
 
 \begin{figure}
 \centering
@@ -471,7 +475,9 @@ analyses at all values of k}
 equal weights results}
 \end{figure}
 
-\hypertarget{reconstructions}{\section{Character
+\clearpage
+
+\hypertarget{reconstructions}{\chapter{Character
 reconstructions}\label{reconstructions}}
 
 This page provides definitions for each of the characters in our matrix,
@@ -488,10 +494,10 @@ reconstructions displayed below. The most parsimonious reconstruction
 will of course vary depending on the topology on which it is plotted;
 the figures below are simply to facilitate interpretation.
 
-\subsection{Sclerites}\label{sclerites}
+\section{Sclerites}\label{sclerites}
 
-\subsubsection*{{[}1{]} Present in adult}\label{present-in-adult}
-\addcontentsline{toc}{subsubsection}{{[}1{]} Present in adult}
+\subsection*{{[}1{]} Present in adult}\label{present-in-adult}
+\addcontentsline{toc}{subsection}{{[}1{]} Present in adult}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-1.pdf}
 
@@ -507,7 +513,7 @@ Plate-like (wider than tall) skeletal elements, whether mineralized or
 non-mineralized.\\
 The definition deliberately excludes setae (which are taller than wide).
 
-\subsection{Sclerites: Bivalved {[}2{]}}\label{sclerites-bivalved-2}
+\section{Sclerites: Bivalved {[}2{]}}\label{sclerites-bivalved-2}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-2.pdf}
 
@@ -523,10 +529,9 @@ Neomorphic character.
 Scleritome dominated by prominent differentiated dorsal and ventral
 valves.
 
-\subsubsection*{{[}3{]} Accessory sclerites
+\subsection*{{[}3{]} Accessory sclerites
 reduced}\label{accessory-sclerites-reduced}
-\addcontentsline{toc}{subsubsection}{{[}3{]} Accessory sclerites
-reduced}
+\addcontentsline{toc}{subsection}{{[}3{]} Accessory sclerites reduced}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-3.pdf}
 
@@ -556,8 +561,8 @@ possibility that helens may correspond to L-elements of
 \hypertarget{Paterimitra-coding-3}{}
 \emph{Paterimitra}: L-sclerites \citep{Skovsted2009Thescleritome}.
 
-\subsubsection*{{[}4{]} Hinge line shape}\label{hinge-line-shape}
-\addcontentsline{toc}{subsubsection}{{[}4{]} Hinge line shape}
+\subsection*{{[}4{]} Hinge line shape}\label{hinge-line-shape}
+\addcontentsline{toc}{subsection}{{[}4{]} Hinge line shape}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-4.pdf}
 
@@ -624,8 +629,8 @@ ventribiconvex, astrophic shell with a unisulcate commissure'' --
 possibility of a short strophic hinge line (as in \emph{Longtancunella})
 is difficult to discount.
 
-\subsubsection*{{[}5{]} Apophyses}\label{apophyses}
-\addcontentsline{toc}{subsubsection}{{[}5{]} Apophyses}
+\subsection*{{[}5{]} Apophyses}\label{apophyses}
+\addcontentsline{toc}{subsection}{{[}5{]} Apophyses}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-5.pdf}
 
@@ -703,9 +708,8 @@ articulation structures such as teeth and sockets
 \emph{Ussunia}: ``articulatory structures poorly developed'' --
 \citet{Williams2000BrachiopodaLinguliformea}, p.~192.
 
-\subsubsection*{{[}6{]} Apophyses:
-Morphology}\label{apophyses-morphology}
-\addcontentsline{toc}{subsubsection}{{[}6{]} Apophyses: Morphology}
+\subsection*{{[}6{]} Apophyses: Morphology}\label{apophyses-morphology}
+\addcontentsline{toc}{subsection}{{[}6{]} Apophyses: Morphology}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-6.pdf}
 
@@ -765,9 +769,9 @@ dorsal interarea \citep{Holmer2018Evolutionarysignificance}. {[}Coded as
 \emph{Terebratulina}: Cyrtomatodont -- see fig. 322 in Williams \emph{et
 al}. \citeyearpar{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}7{]} Apophyses: Dental
+\subsection*{{[}7{]} Apophyses: Dental
 plates}\label{apophyses-dental-plates}
-\addcontentsline{toc}{subsubsection}{{[}7{]} Apophyses: Dental plates}
+\addcontentsline{toc}{subsection}{{[}7{]} Apophyses: Dental plates}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-7.pdf}
 
@@ -823,8 +827,8 @@ articulation]{Williams2000BrachiopodaLinguliformea}.
 \emph{Orthis}: Coded as present (short and recessive, in
 \emph{Eoorthis}) in Benedetto \citeyearpar{Benedetto2009iChaniella}.
 
-\subsubsection*{{[}8{]} Sockets}\label{sockets}
-\addcontentsline{toc}{subsubsection}{{[}8{]} Sockets}
+\subsection*{{[}8{]} Sockets}\label{sockets}
+\addcontentsline{toc}{subsection}{{[}8{]} Sockets}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-8.pdf}
 
@@ -873,8 +877,8 @@ articulation structures such as teeth and sockets
 \emph{Ussunia}: Following table 15 in
 \citet{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}9{]} Socket ridges}\label{socket-ridges}
-\addcontentsline{toc}{subsubsection}{{[}9{]} Socket ridges}
+\subsection*{{[}9{]} Socket ridges}\label{socket-ridges}
+\addcontentsline{toc}{subsection}{{[}9{]} Socket ridges}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-9.pdf}
 
@@ -909,10 +913,9 @@ distinguished here.
 articulation structures such as teeth and sockets
 \citep{Streng2016Anew}.
 
-\subsubsection*{{[}10{]} Enclosing filtration
+\subsection*{{[}10{]} Enclosing filtration
 chamber}\label{enclosing-filtration-chamber}
-\addcontentsline{toc}{subsubsection}{{[}10{]} Enclosing filtration
-chamber}
+\addcontentsline{toc}{subsection}{{[}10{]} Enclosing filtration chamber}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-10.pdf}
 
@@ -928,8 +931,8 @@ In crown-group brachiopods, the two primary shells close to form an
 enclosed filtration chamber. Further down the stem, taxa such as
 \emph{Micrina} do not.
 
-\subsubsection*{{[}11{]} Commissure}\label{commissure}
-\addcontentsline{toc}{subsubsection}{{[}11{]} Commissure}
+\subsection*{{[}11{]} Commissure}\label{commissure}
+\addcontentsline{toc}{subsection}{{[}11{]} Commissure}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-11.pdf}
 
@@ -962,9 +965,8 @@ by Williams \emph{et al}.
 uniplicate'' -- uniplicate in fig. 1425.1c of Williams \emph{et al}.
 \citeyearpar{Williams2006Rhynchonelliformeapart}.
 
-\subsubsection*{{[}12{]} Muscle scars:
-Ventral}\label{muscle-scars-ventral}
-\addcontentsline{toc}{subsubsection}{{[}12{]} Muscle scars: Ventral}
+\subsection*{{[}12{]} Muscle scars: Ventral}\label{muscle-scars-ventral}
+\addcontentsline{toc}{subsection}{{[}12{]} Muscle scars: Ventral}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-12.pdf}
 
@@ -991,9 +993,9 @@ shell's internal surface.
 \emph{Micrina}: Prominent ventral muscle scars -- see e.g.
 \citet{Holmer2008TheEarly}, fig. 1f.
 
-\subsubsection*{{[}13{]} Muscle scars: Ventral:
+\subsection*{{[}13{]} Muscle scars: Ventral:
 Position}\label{muscle-scars-ventral-position}
-\addcontentsline{toc}{subsubsection}{{[}13{]} Muscle scars: Ventral:
+\addcontentsline{toc}{subsection}{{[}13{]} Muscle scars: Ventral:
 Position}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-13.pdf}
@@ -1085,9 +1087,9 @@ directly equivalent to the canonical; see. fig 6b in Balthasar
 \emph{Siphonobolus priscus}: Coded following general siphonotretid
 condition described by Popov \citeyearpar[p.~407]{Popov1992TheCambrian}.
 
-\subsubsection*{{[}14{]} Muscle scars:
+\subsection*{{[}14{]} Muscle scars:
 Adjustor}\label{muscle-scars-adjustor}
-\addcontentsline{toc}{subsubsection}{{[}14{]} Muscle scars: Adjustor}
+\addcontentsline{toc}{subsection}{{[}14{]} Muscle scars: Adjustor}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-14.pdf}
 
@@ -1140,9 +1142,9 @@ shell's internal surface.
 \emph{Siphonobolus priscus}: Ventral musculature poorly constrained
 \citep{Williams2000BrachiopodaLinguliformea, Popov2009Earlyontogeny}.
 
-\subsubsection*{{[}15{]} Muscle scars: Dorsal
+\subsection*{{[}15{]} Muscle scars: Dorsal
 adductors}\label{muscle-scars-dorsal-adductors}
-\addcontentsline{toc}{subsubsection}{{[}15{]} Muscle scars: Dorsal
+\addcontentsline{toc}{subsection}{{[}15{]} Muscle scars: Dorsal
 adductors}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-15.pdf}
@@ -1274,9 +1276,9 @@ characteristic of paterinates and chileates'' -- Holmer \emph{et al}.
 \emph{Ussunia}: Following table 15 in
 \citet{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}16{]} Muscle scars: Adductors:
+\subsection*{{[}16{]} Muscle scars: Adductors:
 Position}\label{muscle-scars-adductors-position}
-\addcontentsline{toc}{subsubsection}{{[}16{]} Muscle scars: Adductors:
+\addcontentsline{toc}{subsection}{{[}16{]} Muscle scars: Adductors:
 Position}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-16.pdf}
@@ -1332,10 +1334,9 @@ followed here.
 \emph{Siphonobolus priscus}: Ventral musculature poorly constrained
 \citep{Williams2000BrachiopodaLinguliformea, Popov2009Earlyontogeny}.
 
-\subsubsection*{{[}17{]} Muscle scars: Dermal
+\subsection*{{[}17{]} Muscle scars: Dermal
 muscles}\label{muscle-scars-dermal-muscles}
-\addcontentsline{toc}{subsubsection}{{[}17{]} Muscle scars: Dermal
-muscles}
+\addcontentsline{toc}{subsection}{{[}17{]} Muscle scars: Dermal muscles}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-17.pdf}
 
@@ -1430,11 +1431,11 @@ followed here.
 \citeyearpar[p.~32]{Williams2000BrachiopodaLinguliformea} state that
 these muscles are absent in all carbonate-shelled brachiopods.
 
-\subsubsection*{\texorpdfstring{{[}18{]} Muscle scars: Unpaired median
+\subsection*{\texorpdfstring{{[}18{]} Muscle scars: Unpaired median
 (\emph{levator
 ani})}{{[}18{]} Muscle scars: Unpaired median (levator ani)}}\label{muscle-scars-unpaired-median-levator-ani}
-\addcontentsline{toc}{subsubsection}{{[}18{]} Muscle scars: Unpaired
-median (\emph{levator ani})}
+\addcontentsline{toc}{subsection}{{[}18{]} Muscle scars: Unpaired median
+(\emph{levator ani})}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-18.pdf}
 
@@ -1500,9 +1501,9 @@ followed here.
 \emph{Ussunia}: Following table 15 in
 \citet{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}19{]} Muscle scars: Dorsal
+\subsection*{{[}19{]} Muscle scars: Dorsal
 diductor}\label{muscle-scars-dorsal-diductor}
-\addcontentsline{toc}{subsubsection}{{[}19{]} Muscle scars: Dorsal
+\addcontentsline{toc}{subsection}{{[}19{]} Muscle scars: Dorsal
 diductor}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-19.pdf}
@@ -1544,9 +1545,9 @@ acrotretid by Williams \emph{et al}.
 \emph{Siphonobolus priscus}: Ventral musculature poorly constrained
 \citep{Williams2000BrachiopodaLinguliformea, Popov2009Earlyontogeny}.
 
-\subsubsection*{{[}20{]} Muscle scars: Dorsal diductor:
+\subsection*{{[}20{]} Muscle scars: Dorsal diductor:
 Position}\label{muscle-scars-dorsal-diductor-position}
-\addcontentsline{toc}{subsubsection}{{[}20{]} Muscle scars: Dorsal
+\addcontentsline{toc}{subsection}{{[}20{]} Muscle scars: Dorsal
 diductor: Position}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-20.pdf}
@@ -1568,10 +1569,10 @@ After Bassett \emph{et al}.
 \emph{Siphonobolus priscus}: Ventral musculature poorly constrained
 \citep{Williams2000BrachiopodaLinguliformea, Popov2009Earlyontogeny}.
 
-\subsection{Sclerites: Dorsal valve}\label{sclerites-dorsal-valve}
+\section{Sclerites: Dorsal valve}\label{sclerites-dorsal-valve}
 
-\subsubsection*{{[}21{]} Growth direction}\label{growth-direction}
-\addcontentsline{toc}{subsubsection}{{[}21{]} Growth direction}
+\subsection*{{[}21{]} Growth direction}\label{growth-direction}
+\addcontentsline{toc}{subsection}{{[}21{]} Growth direction}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-21.pdf}
 
@@ -1624,9 +1625,9 @@ the ventral valve.
 \emph{Ussunia}: Following description of order in
 \citet{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}22{]} Posterior surface:
+\subsection*{{[}22{]} Posterior surface:
 Differentiated}\label{posterior-surface-differentiated}
-\addcontentsline{toc}{subsubsection}{{[}22{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}22{]} Posterior surface:
 Differentiated}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-22.pdf}
@@ -1759,9 +1760,9 @@ two-dimensional preservation style of Chengjiang material makes details
 of dorsal valve difficult to distinguish, and the possibility of a
 diminutive pseudointerarea cannot be excluded with confidence.
 
-\subsubsection*{{[}23{]} Differentiated posterior surface:
+\subsection*{{[}23{]} Differentiated posterior surface:
 Morphology}\label{differentiated-posterior-surface-morphology}
-\addcontentsline{toc}{subsubsection}{{[}23{]} Differentiated posterior
+\addcontentsline{toc}{subsection}{{[}23{]} Differentiated posterior
 surface: Morphology}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-23.pdf}
@@ -1814,9 +1815,9 @@ material, given low nature of valve and compressed preservation.
 example Popov et a. 2009 fig. 6A), but its short length makes it
 difficult to establish whether slight curvature is present.
 
-\subsubsection*{{[}24{]} Posterior surface: Medial
+\subsection*{{[}24{]} Posterior surface: Medial
 groove}\label{posterior-surface-medial-groove}
-\addcontentsline{toc}{subsubsection}{{[}24{]} Posterior surface: Medial
+\addcontentsline{toc}{subsection}{{[}24{]} Posterior surface: Medial
 groove}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-24.pdf}
@@ -1868,9 +1869,9 @@ species it is divided by a ``wide, poorly defined median groove''
 \citep{Williams2000BrachiopodaLinguliformea}. Coded, therefore, as
 polymorphic.
 
-\subsubsection*{{[}25{]} Posterior surface:
+\subsection*{{[}25{]} Posterior surface:
 Notothyrium}\label{posterior-surface-notothyrium}
-\addcontentsline{toc}{subsubsection}{{[}25{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}25{]} Posterior surface:
 Notothyrium}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-25.pdf}
@@ -1896,9 +1897,9 @@ pedicle, and may be filled with plates.
 opening at the hinge line in fossil material in
 \citet{Zhang2007Agregarious} or \citet{Zhang2011Theexceptionally}.
 
-\subsubsection*{{[}26{]} Posterior surface: Notothyrium:
+\subsection*{{[}26{]} Posterior surface: Notothyrium:
 Shape}\label{posterior-surface-notothyrium-shape}
-\addcontentsline{toc}{subsubsection}{{[}26{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}26{]} Posterior surface:
 Notothyrium: Shape}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-26.pdf}
@@ -1918,9 +1919,9 @@ pedicle, and may be filled with plates.
 A simplification of character 5 in
 \citet{Bassett2001Functionalmorphology}.
 
-\subsubsection*{{[}27{]} Posterior surface: Notothyrium: Chilidial
+\subsection*{{[}27{]} Posterior surface: Notothyrium: Chilidial
 plates}\label{posterior-surface-notothyrium-chilidial-plates}
-\addcontentsline{toc}{subsubsection}{{[}27{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}27{]} Posterior surface:
 Notothyrium: Chilidial plates}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-27.pdf}
@@ -1940,9 +1941,8 @@ No included taxa exhibit more than one chilidial plate.\\
 Transformational as it is not self-evident whether the ancestral taxon
 had an open or closed notothyrium.
 
-\subsubsection*{{[}28{]} Notothyrial
-platform}\label{notothyrial-platform}
-\addcontentsline{toc}{subsubsection}{{[}28{]} Notothyrial platform}
+\subsection*{{[}28{]} Notothyrial platform}\label{notothyrial-platform}
+\addcontentsline{toc}{subsection}{{[}28{]} Notothyrial platform}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-28.pdf}
 
@@ -1987,8 +1987,8 @@ score as absent in Table 18.1.
 \emph{Ussunia}: ``Visceral platforms absent in both valves'' --
 \citet{Williams2000BrachiopodaLinguliformea}, p.~192.
 
-\subsubsection*{{[}29{]} Cardinal shield}\label{cardinal-shield}
-\addcontentsline{toc}{subsubsection}{{[}29{]} Cardinal shield}
+\subsection*{{[}29{]} Cardinal shield}\label{cardinal-shield}
+\addcontentsline{toc}{subsection}{{[}29{]} Cardinal shield}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-29.pdf}
 
@@ -2004,8 +2004,8 @@ A prominent platform in the hyolith operculum. With no obvious sites for
 muscle attachment, it is unlikely to be homologous to the notothyrial
 platform.
 
-\subsubsection*{{[}30{]} Cardinal processes}\label{cardinal-processes}
-\addcontentsline{toc}{subsubsection}{{[}30{]} Cardinal processes}
+\subsection*{{[}30{]} Cardinal processes}\label{cardinal-processes}
+\addcontentsline{toc}{subsection}{{[}30{]} Cardinal processes}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-30.pdf}
 
@@ -2030,8 +2030,8 @@ platform, even if their function is similar.
 \emph{Longtancunella chengjiangensis}: Not evident, and ought arguably
 to be discernable if present given the quality of preservation.
 
-\subsubsection*{{[}31{]} Medial septum}\label{medial-septum}
-\addcontentsline{toc}{subsubsection}{{[}31{]} Medial septum}
+\subsection*{{[}31{]} Medial septum}\label{medial-septum}
+\addcontentsline{toc}{subsection}{{[}31{]} Medial septum}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-31.pdf}
 
@@ -2127,8 +2127,8 @@ by a short median ridge.'' -- \citet{Popov2009Earlyontogeny}.
 \emph{Ussunia}: Following char 42 in table 15 in
 \citet{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}32{]} Clavicles}\label{clavicles}
-\addcontentsline{toc}{subsubsection}{{[}32{]} Clavicles}
+\subsection*{{[}32{]} Clavicles}\label{clavicles}
+\addcontentsline{toc}{subsection}{{[}32{]} Clavicles}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-32.pdf}
 
@@ -2143,10 +2143,10 @@ Neomorphic character.
 Prominent symmetrical ridges on the inner surface of the hyolith
 operculum.
 
-\subsection{Sclerites: Ventral valve}\label{sclerites-ventral-valve}
+\section{Sclerites: Ventral valve}\label{sclerites-ventral-valve}
 
-\subsubsection*{{[}33{]} Relative size}\label{relative-size}
-\addcontentsline{toc}{subsubsection}{{[}33{]} Relative size}
+\subsection*{{[}33{]} Relative size}\label{relative-size}
+\addcontentsline{toc}{subsection}{{[}33{]} Relative size}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-33.pdf}
 
@@ -2216,8 +2216,8 @@ size \citep{Balthasar2008iMummpikia}.
 \emph{Ussunia}: Subequally biconvex
 \citep[p.~192]{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}34{]} Growth direction}\label{growth-direction-1}
-\addcontentsline{toc}{subsubsection}{{[}34{]} Growth direction}
+\subsection*{{[}34{]} Growth direction}\label{growth-direction-1}
+\addcontentsline{toc}{subsection}{{[}34{]} Growth direction}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-34.pdf}
 
@@ -2267,9 +2267,9 @@ mixoperipheral in adulthood, so coded as polymorphic.
 \emph{Ussunia}: Following description of order in
 \citet{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}35{]} Posterior surface:
+\subsection*{{[}35{]} Posterior surface:
 Differentiated}\label{posterior-surface-differentiated-1}
-\addcontentsline{toc}{subsubsection}{{[}35{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}35{]} Posterior surface:
 Differentiated}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-35.pdf}
@@ -2359,9 +2359,9 @@ poorly defined'' -- \citet{Williams2000BrachiopodaLinguliformea}.
 \emph{Ussunia}: Following char 17 in table 15 in
 \citet{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}36{]} Posterior margin growth
+\subsection*{{[}36{]} Posterior margin growth
 direction}\label{posterior-margin-growth-direction}
-\addcontentsline{toc}{subsubsection}{{[}36{]} Posterior margin growth
+\addcontentsline{toc}{subsection}{{[}36{]} Posterior margin growth
 direction}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-36.pdf}
@@ -2408,9 +2408,9 @@ visceral platform {[}\ldots{}{]} An inward-growing posterior margin is
 otherwise known only from the pseudointerareas of linguliform
 brachiopods''.
 
-\subsubsection*{{[}37{]} Posterior surface:
+\subsection*{{[}37{]} Posterior surface:
 Planar}\label{posterior-surface-planar}
-\addcontentsline{toc}{subsubsection}{{[}37{]} Posterior surface: Planar}
+\addcontentsline{toc}{subsection}{{[}37{]} Posterior surface: Planar}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-37.pdf}
 
@@ -2469,9 +2469,9 @@ strophic hinge line.
 \emph{Siphonobolus priscus}: `Almost' planar -- see Popov \emph{et al}.
 \citeyearpar[fig. 4]{Popov2009Earlyontogeny}. Coded as ambiguous.
 
-\subsubsection*{{[}38{]} Posterior surface:
+\subsection*{{[}38{]} Posterior surface:
 Extent}\label{posterior-surface-extent}
-\addcontentsline{toc}{subsubsection}{{[}38{]} Posterior surface: Extent}
+\addcontentsline{toc}{subsection}{{[}38{]} Posterior surface: Extent}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-38.pdf}
 
@@ -2545,9 +2545,9 @@ ventral pseudointerarea as high, the shell lacks the deeply conical
 aspect that this character is intended to capture; we thus code the
 taxon as ambiguous.
 
-\subsubsection*{{[}39{]} Posterior surface:
+\subsection*{{[}39{]} Posterior surface:
 Delthyrium}\label{posterior-surface-delthyrium}
-\addcontentsline{toc}{subsubsection}{{[}39{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}39{]} Posterior surface:
 Delthyrium}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-39.pdf}
@@ -2630,9 +2630,9 @@ acrotretids.
 \emph{Yuganotheca elegans}: Details of the hinge region are unclear due
 to the flattened and overprinted nature of fossil preservation.
 
-\subsubsection*{{[}40{]} Posterior surface: Delthyrium:
+\subsection*{{[}40{]} Posterior surface: Delthyrium:
 Shape}\label{posterior-surface-delthyrium-shape}
-\addcontentsline{toc}{subsubsection}{{[}40{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}40{]} Posterior surface:
 Delthyrium: Shape}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-40.pdf}
@@ -2671,10 +2671,10 @@ is conceivably homologous with the pedicle foramen of acrotretid
 brachiopods and their ilk. To reflect this possible homology,
 \emph{Mickwitzia} is coded as polymorphic (triangular/round).
 
-\subsubsection*{{[}41{]} Posterior surface: Delthyrium: Shape: Aspect of
+\subsection*{{[}41{]} Posterior surface: Delthyrium: Shape: Aspect of
 rounded
 opening}\label{posterior-surface-delthyrium-shape-aspect-of-rounded-opening}
-\addcontentsline{toc}{subsubsection}{{[}41{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}41{]} Posterior surface:
 Delthyrium: Shape: Aspect of rounded opening}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-41.pdf}
@@ -2704,9 +2704,9 @@ tissue{]}.
 \emph{Mickwitzia muralensis}: Wider than long: see fig. 10 in
 \citet{Balthasar2004Shellstructure}.
 
-\subsubsection*{{[}42{]} Posterior surface: Delthyrium:
+\subsection*{{[}42{]} Posterior surface: Delthyrium:
 Cover}\label{posterior-surface-delthyrium-cover}
-\addcontentsline{toc}{subsubsection}{{[}42{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}42{]} Posterior surface:
 Delthyrium: Cover}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-42.pdf}
@@ -2752,9 +2752,9 @@ pseudodeltitium'' -- \citet{Holmer2018Evolutionarysignificance}.
 \hypertarget{Paterimitra-coding-42}{}
 \emph{Paterimitra}: Covered by subaical flange, in part.
 
-\subsubsection*{{[}43{]} Posterior surface: Delthyrium: Cover:
+\subsection*{{[}43{]} Posterior surface: Delthyrium: Cover:
 Extent}\label{posterior-surface-delthyrium-cover-extent}
-\addcontentsline{toc}{subsubsection}{{[}43{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}43{]} Posterior surface:
 Delthyrium: Cover: Extent}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-43.pdf}
@@ -2776,9 +2776,9 @@ Transformational character.
 closes only the apical part of\\
 the delthyrium \citep{Rowell1985Theevolutionary}.
 
-\subsubsection*{{[}44{]} Posterior surface: Delthyrium: Cover:
+\subsection*{{[}44{]} Posterior surface: Delthyrium: Cover:
 Identity}\label{posterior-surface-delthyrium-cover-identity}
-\addcontentsline{toc}{subsubsection}{{[}44{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}44{]} Posterior surface:
 Delthyrium: Cover: Identity}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-44.pdf}
@@ -2822,9 +2822,9 @@ homeodeltidium of \emph{Micromitra} \citep{Larsson2014iPaterimitra}.
 delthyrium, covered by a convex pseudodeltidium'' --
 \citet{Holmer2008TheEarly}.
 
-\subsubsection*{{[}45{]} Posterior surface: Delthyrium: Pseudodeltidium:
+\subsection*{{[}45{]} Posterior surface: Delthyrium: Pseudodeltidium:
 Shape}\label{posterior-surface-delthyrium-pseudodeltidium-shape}
-\addcontentsline{toc}{subsubsection}{{[}45{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}45{]} Posterior surface:
 Delthyrium: Pseudodeltidium: Shape}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-45.pdf}
@@ -2891,10 +2891,10 @@ Cambrian Chileida'' -- \citet{Holmer2009Theenigmatic}, p.~9.
 \hypertarget{Tomteluva_perturbata-coding-45}{}
 \emph{Tomteluva perturbata}: Convex \citep{Streng2016Anew}.
 
-\subsubsection*{{[}46{]} Posterior surface: Delthyrium: Pseudodeltidium:
+\subsection*{{[}46{]} Posterior surface: Delthyrium: Pseudodeltidium:
 Hinge
 furrows}\label{posterior-surface-delthyrium-pseudodeltidium-hinge-furrows}
-\addcontentsline{toc}{subsubsection}{{[}46{]} Posterior surface:
+\addcontentsline{toc}{subsection}{{[}46{]} Posterior surface:
 Delthyrium: Pseudodeltidium: Hinge furrows}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-46.pdf}
@@ -2927,8 +2927,8 @@ inapplicability of neomorphic character.
 \emph{Salanygolina}: The presence of this feature is impossible to
 determine based on the available material.
 
-\subsubsection*{{[}47{]} Umbonal perforation}\label{umbonal-perforation}
-\addcontentsline{toc}{subsubsection}{{[}47{]} Umbonal perforation}
+\subsection*{{[}47{]} Umbonal perforation}\label{umbonal-perforation}
+\addcontentsline{toc}{subsection}{{[}47{]} Umbonal perforation}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-47.pdf}
 
@@ -3018,10 +3018,9 @@ wall of the pedicle tube'', but do not consider this tomteluvid dube to
 be homologous with the pedicle tube of acrotretids and their ilk,
 stating (p.~274) that it appears to be unique within Brachiopoda.
 
-\subsubsection*{{[}48{]} Umbonal perforation:
+\subsection*{{[}48{]} Umbonal perforation:
 Shape}\label{umbonal-perforation-shape}
-\addcontentsline{toc}{subsubsection}{{[}48{]} Umbonal perforation:
-Shape}
+\addcontentsline{toc}{subsection}{{[}48{]} Umbonal perforation: Shape}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-48.pdf}
 
@@ -3071,9 +3070,9 @@ perforation is obscured by the emerging pedicle.
 \emph{Salanygolina}: Essentially circular \citep[fig.
 4]{Holmer2009Theenigmatic}.
 
-\subsubsection*{{[}49{]} Colleplax, cicatrix or pedicle
+\subsection*{{[}49{]} Colleplax, cicatrix or pedicle
 sheath}\label{colleplax-cicatrix-or-pedicle-sheath}
-\addcontentsline{toc}{subsubsection}{{[}49{]} Colleplax, cicatrix or
+\addcontentsline{toc}{subsection}{{[}49{]} Colleplax, cicatrix or
 pedicle sheath}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-49.pdf}
@@ -3161,8 +3160,8 @@ is coded as ambiguous here.
 \emph{Yuganotheca elegans}: The median collar or conical tube is
 conceivably homologous with the pedicle sheath.
 
-\subsubsection*{{[}50{]} Median septum}\label{median-septum}
-\addcontentsline{toc}{subsubsection}{{[}50{]} Median septum}
+\subsection*{{[}50{]} Median septum}\label{median-septum}
+\addcontentsline{toc}{subsection}{{[}50{]} Median septum}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-50.pdf}
 
@@ -3245,10 +3244,10 @@ also in \emph{Pelagodiscus}.
 \emph{Ussunia}: Following char. 42 in table 15 in
 \citet{Williams2000BrachiopodaLinguliformea}.
 
-\subsection{Sclerites: Ornament}\label{sclerites-ornament}
+\section{Sclerites: Ornament}\label{sclerites-ornament}
 
-\subsubsection*{{[}51{]} Concentric ornament}\label{concentric-ornament}
-\addcontentsline{toc}{subsubsection}{{[}51{]} Concentric ornament}
+\subsection*{{[}51{]} Concentric ornament}\label{concentric-ornament}
+\addcontentsline{toc}{subsection}{{[}51{]} Concentric ornament}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-51.pdf}
 
@@ -3314,9 +3313,9 @@ ornament the operculum.
 interpreted as interruption ot growth rather than inherent feature, so
 coded as absent (i.e.~smooth).
 
-\subsubsection*{{[}52{]} Concentric ornament:
+\subsection*{{[}52{]} Concentric ornament:
 Symmetry}\label{concentric-ornament-symmetry}
-\addcontentsline{toc}{subsubsection}{{[}52{]} Concentric ornament:
+\addcontentsline{toc}{subsection}{{[}52{]} Concentric ornament:
 Symmetry}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-52.pdf}
@@ -3367,8 +3366,8 @@ either \citep{Holmer2008TheEarly}. Coded as ambiguous.
 \emph{Novocrania}: Clear outer faces \citep[fig.
 100.2b]{Williams2000BrachiopodaLinguliformea}.
 
-\subsubsection*{{[}53{]} Radial ornament}\label{radial-ornament}
-\addcontentsline{toc}{subsubsection}{{[}53{]} Radial ornament}
+\subsection*{{[}53{]} Radial ornament}\label{radial-ornament}
+\addcontentsline{toc}{subsection}{{[}53{]} Radial ornament}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-53.pdf}
 
@@ -3415,9 +3414,9 @@ radial rows of tubercles'' -- \citet{Popov2009Earlyontogeny}.
 \hypertarget{Ussunia-coding-53}{}
 \emph{Ussunia}: Unornamented.
 
-\subsubsection*{{[}54{]} Shell-penetrating
+\subsection*{{[}54{]} Shell-penetrating
 spines}\label{shell-penetrating-spines}
-\addcontentsline{toc}{subsubsection}{{[}54{]} Shell-penetrating spines}
+\addcontentsline{toc}{subsection}{{[}54{]} Shell-penetrating spines}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-54.pdf}
 
@@ -3446,10 +3445,10 @@ setae -- see pp.~2580--2590 in Williams \emph{et al}.
 \emph{Nisusia sulcata}: Bears numerous small, hollow spines
 \citep{Williams2000BrachiopodaLinguliformea}.
 
-\subsection{Sclerites: Composition}\label{sclerites-composition}
+\section{Sclerites: Composition}\label{sclerites-composition}
 
-\subsubsection*{{[}55{]} Mineralogy}\label{mineralogy}
-\addcontentsline{toc}{subsubsection}{{[}55{]} Mineralogy}
+\subsection*{{[}55{]} Mineralogy}\label{mineralogy}
+\addcontentsline{toc}{subsection}{{[}55{]} Mineralogy}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-55.pdf}
 
@@ -3545,9 +3544,9 @@ as calcitic as calcite-mineralizing pathways are present.
 mineralised and anticipated to be phosphatic
 \citep{Holmer2009Theenigmatic}.
 
-\subsubsection*{{[}56{]} Cuticle or organic
+\subsection*{{[}56{]} Cuticle or organic
 matrix}\label{cuticle-or-organic-matrix}
-\addcontentsline{toc}{subsubsection}{{[}56{]} Cuticle or organic matrix}
+\addcontentsline{toc}{subsection}{{[}56{]} Cuticle or organic matrix}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-56.pdf}
 
@@ -3592,10 +3591,10 @@ interpreted as degraded GAG residue
 \emph{Terebratulina}: Coded as glycoprotein for terebratulids by
 Williams \emph{et al}. \citeyearpar{Williams1996Asupra}.
 
-\subsubsection*{{[}57{]} Incorporation of sedimentary
+\subsection*{{[}57{]} Incorporation of sedimentary
 particles}\label{incorporation-of-sedimentary-particles}
-\addcontentsline{toc}{subsubsection}{{[}57{]} Incorporation of
-sedimentary particles}
+\addcontentsline{toc}{subsection}{{[}57{]} Incorporation of sedimentary
+particles}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-57.pdf}
 
@@ -3611,9 +3610,9 @@ Neomorphic character.
 Phoronids and \emph{Yuganotheca} aggulutinate particles into their
 sclerites.
 
-\subsubsection*{{[}58{]} Periostracum:
+\subsection*{{[}58{]} Periostracum:
 Flexibility}\label{periostracum-flexibility}
-\addcontentsline{toc}{subsubsection}{{[}58{]} Periostracum: Flexibility}
+\addcontentsline{toc}{subsection}{{[}58{]} Periostracum: Flexibility}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-58.pdf}
 
@@ -3646,9 +3645,9 @@ chengjiangensis}, \emph{Micromitra}: Following appendix 2 in Williams
 \emph{Salanygolina}: Coded as uncertain in appendix 2 in Williams
 \emph{et al}. \citeyearpar{Williams1998Thediversity}.
 
-\subsubsection*{{[}59{]} Microstructure:
+\subsection*{{[}59{]} Microstructure:
 Layers}\label{microstructure-layers}
-\addcontentsline{toc}{subsubsection}{{[}59{]} Microstructure: Layers}
+\addcontentsline{toc}{subsection}{{[}59{]} Microstructure: Layers}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-59.pdf}
 
@@ -3716,9 +3715,9 @@ linguliforms \citep{Holmer2011Firstrecord}.
 \emph{Siphonobolus priscus}: ``Orthodoxly secreted primary and secondary
 layers'' -- \citet{Williams2004Chemicostructure}.
 
-\subsubsection*{{[}60{]} Microstructure: Crystal
+\subsection*{{[}60{]} Microstructure: Crystal
 format}\label{microstructure-crystal-format}
-\addcontentsline{toc}{subsubsection}{{[}60{]} Microstructure: Crystal
+\addcontentsline{toc}{subsection}{{[}60{]} Microstructure: Crystal
 format}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-60.pdf}
@@ -3782,9 +3781,9 @@ allothecomorph orthothecid described by Kouchinsky
 \emph{Siphonobolus priscus}: Prominent laminations; see Williams
 \emph{et al}. \citeyearpar{Williams2004Chemicostructure}.
 
-\subsubsection*{{[}61{]} Microstructure:
+\subsection*{{[}61{]} Microstructure:
 Punctae}\label{microstructure-punctae}
-\addcontentsline{toc}{subsubsection}{{[}61{]} Microstructure: Punctae}
+\addcontentsline{toc}{subsection}{{[}61{]} Microstructure: Punctae}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-61.pdf}
 
@@ -3875,9 +3874,9 @@ falling within the definition of punctae used herein.
 \emph{Terebratulina}: Endopunctae are relatively large canals, diameter
 vary greatly from 5--20 m.
 
-\subsubsection*{{[}62{]} Microstructure:
+\subsection*{{[}62{]} Microstructure:
 Canals}\label{microstructure-canals}
-\addcontentsline{toc}{subsubsection}{{[}62{]} Microstructure: Canals}
+\addcontentsline{toc}{subsection}{{[}62{]} Microstructure: Canals}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-62.pdf}
 
@@ -3958,9 +3957,9 @@ diameter of c. 20 µm \citep[text-fig. 2a]{Williams2004Chemicostructure},
 falling within the definition of punctae (rather than canals) used
 herein.
 
-\subsubsection*{{[}63{]} Microstructure:
+\subsection*{{[}63{]} Microstructure:
 Pseudopunctae}\label{microstructure-pseudopunctae}
-\addcontentsline{toc}{subsubsection}{{[}63{]} Microstructure:
+\addcontentsline{toc}{subsection}{{[}63{]} Microstructure:
 Pseudopunctae}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-63.pdf}
@@ -3986,9 +3985,9 @@ sulcata}: Scored absent in data matrix of Benedetto
 \emph{Orthis}: Scored absent (in \emph{Eoorthis}) in data matrix of
 Benedetto \citeyearpar{Benedetto2009iChaniella}.
 
-\subsubsection*{{[}64{]} Microstructure: External polygonal
+\subsection*{{[}64{]} Microstructure: External polygonal
 ornament}\label{microstructure-external-polygonal-ornament}
-\addcontentsline{toc}{subsubsection}{{[}64{]} Microstructure: External
+\addcontentsline{toc}{subsection}{{[}64{]} Microstructure: External
 polygonal ornament}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-64.pdf}
@@ -4014,10 +4013,10 @@ of other paterinid-like groups.
 acrotretids by Zhang \emph{et al}. \citeyearpar{Zhang2016Epithelialcell}
 is on the internal surface of the shell.
 
-\subsection{Gametes}\label{gametes}
+\section{Gametes}\label{gametes}
 
-\subsubsection*{{[}65{]} Egg size}\label{egg-size}
-\addcontentsline{toc}{subsubsection}{{[}65{]} Egg size}
+\subsection*{{[}65{]} Egg size}\label{egg-size}
+\addcontentsline{toc}{subsection}{{[}65{]} Egg size}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-65.pdf}
 
@@ -4054,8 +4053,8 @@ polymorphic, as some members of the phylum have eggs of each size.
 across, {[}which{]} is close to the known lower limit of the brachiopod
 egg size'' -- \citet{Popov2009Earlyontogeny}.
 
-\subsubsection*{{[}66{]} Site of maturation}\label{site-of-maturation}
-\addcontentsline{toc}{subsubsection}{{[}66{]} Site of maturation}
+\subsection*{{[}66{]} Site of maturation}\label{site-of-maturation}
+\addcontentsline{toc}{subsection}{{[}66{]} Site of maturation}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-66.pdf}
 
@@ -4082,11 +4081,11 @@ cavity, where gametes are produced.
 \citeyearpar{Carlson1995Phylogeneticrelationships} Appendix 1, character
 9.
 
-\subsection{Gametes: Spermatozoa}\label{gametes-spermatozoa}
+\section{Gametes: Spermatozoa}\label{gametes-spermatozoa}
 
-\subsubsection*{{[}67{]} Nucleus: Broad anterior
+\subsection*{{[}67{]} Nucleus: Broad anterior
 invagination}\label{nucleus-broad-anterior-invagination}
-\addcontentsline{toc}{subsubsection}{{[}67{]} Nucleus: Broad anterior
+\addcontentsline{toc}{subsection}{{[}67{]} Nucleus: Broad anterior
 invagination}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-67.pdf}
@@ -4114,8 +4113,8 @@ Following discussion in \citet{Hodgson1994Ultrastructureof}.
 \hypertarget{Terebratulina-coding-67}{}
 \emph{Terebratulina}: \citet{Hodgson1994Ultrastructureof}.
 
-\subsubsection*{{[}68{]} Acrosome: Shape}\label{acrosome-shape}
-\addcontentsline{toc}{subsubsection}{{[}68{]} Acrosome: Shape}
+\subsection*{{[}68{]} Acrosome: Shape}\label{acrosome-shape}
+\addcontentsline{toc}{subsection}{{[}68{]} Acrosome: Shape}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-68.pdf}
 
@@ -4145,9 +4144,9 @@ Transformational character.
 \emph{Terebratulina}: Disc-shaped (in \emph{Kraussina})
 \citep{Hodgson1994Ultrastructureof}.
 
-\subsubsection*{{[}69{]} Acrosome: Differentiated
+\subsection*{{[}69{]} Acrosome: Differentiated
 internally}\label{acrosome-differentiated-internally}
-\addcontentsline{toc}{subsubsection}{{[}69{]} Acrosome: Differentiated
+\addcontentsline{toc}{subsection}{{[}69{]} Acrosome: Differentiated
 internally}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-69.pdf}
@@ -4189,9 +4188,9 @@ secondarily lost \citep{Reunov2004Ultrastructuralstudy}.
 \emph{Terebratulina}: Following Hodgson \& Reunov
 \citeyearpar{Hodgson1994Ultrastructureof}.
 
-\subsubsection*{{[}70{]} Acrosome: Sub-acrosomal
+\subsection*{{[}70{]} Acrosome: Sub-acrosomal
 space}\label{acrosome-sub-acrosomal-space}
-\addcontentsline{toc}{subsubsection}{{[}70{]} Acrosome: Sub-acrosomal
+\addcontentsline{toc}{subsection}{{[}70{]} Acrosome: Sub-acrosomal
 space}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-70.pdf}
@@ -4226,8 +4225,8 @@ tube-like structure \citep[summarized in
 \emph{Terebratulina}: No subacrosomal material, let alone a subacrosomal
 space \citep[e.g.][]{Hodgson1994Ultrastructureof}.
 
-\subsubsection*{{[}71{]} Mid-piece}\label{mid-piece}
-\addcontentsline{toc}{subsubsection}{{[}71{]} Mid-piece}
+\subsection*{{[}71{]} Mid-piece}\label{mid-piece}
+\addcontentsline{toc}{subsection}{{[}71{]} Mid-piece}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-71.pdf}
 
@@ -4258,8 +4257,8 @@ Following Hodgson \& Reunov \citeyearpar{Hodgson1994Ultrastructureof}.
 spermiogenesis to become a pair of mitochondria
 \citep{Reunov2004Ultrastructuralstudy}.
 
-\subsubsection*{{[}72{]} Centrioles}\label{centrioles}
-\addcontentsline{toc}{subsubsection}{{[}72{]} Centrioles}
+\subsection*{{[}72{]} Centrioles}\label{centrioles}
+\addcontentsline{toc}{subsection}{{[}72{]} Centrioles}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-72.pdf}
 
@@ -4291,10 +4290,10 @@ Following \citet{Hodgson1994Ultrastructureof}.
 \citep[p.~7]{Reunov2004Ultrastructuralstudy}, but centrioles are
 perpendicularly oriented in spermatogonia (ibid., p.~2).
 
-\subsection{Brephic shell}\label{brephic-shell}
+\section{Brephic shell}\label{brephic-shell}
 
-\subsubsection*{{[}73{]} Embryonic shell}\label{embryonic-shell}
-\addcontentsline{toc}{subsubsection}{{[}73{]} Embryonic shell}
+\subsection*{{[}73{]} Embryonic shell}\label{embryonic-shell}
+\addcontentsline{toc}{subsection}{{[}73{]} Embryonic shell}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-73.pdf}
 
@@ -4317,8 +4316,8 @@ before hatching.
 \emph{Novocrania}: Shell not secreted until after metamorphosis
 \citep{Popov2010Earliestontogeny}.
 
-\subsubsection*{{[}74{]} Morphology}\label{morphology}
-\addcontentsline{toc}{subsubsection}{{[}74{]} Morphology}
+\subsection*{{[}74{]} Morphology}\label{morphology}
+\addcontentsline{toc}{subsection}{{[}74{]} Morphology}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-74.pdf}
 
@@ -4380,10 +4379,10 @@ prominent attachment rudiment and bunching of setal sacs
 \emph{Pelagodiscus atlanticus}: See e.g.~fig 169 in Williams \emph{et
 al}. \citeyearpar{Williams1997BrachiopodaRevised}.
 
-\subsubsection*{{[}75{]} Embryonic shell extended in
+\subsection*{{[}75{]} Embryonic shell extended in
 larvae}\label{embryonic-shell-extended-in-larvae}
-\addcontentsline{toc}{subsubsection}{{[}75{]} Embryonic shell extended
-in larvae}
+\addcontentsline{toc}{subsection}{{[}75{]} Embryonic shell extended in
+larvae}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-75.pdf}
 
@@ -4420,8 +4419,8 @@ ventral valve in smaller specimens conceivably represents an embryonic
 shell, though it may alternatively represent a cicatrix or
 colleplax-like structure.
 
-\subsubsection*{{[}76{]} Surface ornament}\label{surface-ornament}
-\addcontentsline{toc}{subsubsection}{{[}76{]} Surface ornament}
+\subsection*{{[}76{]} Surface ornament}\label{surface-ornament}
+\addcontentsline{toc}{subsection}{{[}76{]} Surface ornament}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-76.pdf}
 
@@ -4467,10 +4466,9 @@ table 6.
 \hypertarget{Salanygolina-coding-76}{}
 \emph{Salanygolina}: Smooth \citep{Holmer2009Theenigmatic}.
 
-\subsubsection*{{[}77{]} Larval attachment
+\subsection*{{[}77{]} Larval attachment
 structure}\label{larval-attachment-structure}
-\addcontentsline{toc}{subsubsection}{{[}77{]} Larval attachment
-structure}
+\addcontentsline{toc}{subsection}{{[}77{]} Larval attachment structure}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-77.pdf}
 
@@ -4506,8 +4504,8 @@ attachment rudiment in fig. 2 of \citet{Balthasar2009Thebrachiopod}.
 \emph{Siphonobolus priscus}: Interpreted as having planktotrophic (and
 thus non-attached) larvae \citep{Popov2009Earlyontogeny}.
 
-\subsubsection*{{[}78{]} Setulose}\label{setulose}
-\addcontentsline{toc}{subsubsection}{{[}78{]} Setulose}
+\subsection*{{[}78{]} Setulose}\label{setulose}
+\addcontentsline{toc}{subsection}{{[}78{]} Setulose}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-78.pdf}
 
@@ -4540,7 +4538,7 @@ smooth (williams \emph{et al}.,2000, p.72).
 \hypertarget{Mickwitzia_muralensis-coding-78}{}
 \emph{Mickwitzia muralensis}: Four setal sacs.
 
-\subsection{Brephic shell: Setal sacs
+\section{Brephic shell: Setal sacs
 {[}79{]}}\label{brephic-shell-setal-sacs-79}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-79.pdf}
@@ -4583,8 +4581,8 @@ smooth (williams \emph{et al}.,2000, p.72).
 \emph{Novocrania}, \emph{Pelagodiscus atlanticus}: Three pairs
 \citep{Carlson1995Phylogeneticrelationships}.
 
-\subsubsection*{{[}80{]} Number}\label{number}
-\addcontentsline{toc}{subsubsection}{{[}80{]} Number}
+\subsection*{{[}80{]} Number}\label{number}
+\addcontentsline{toc}{subsection}{{[}80{]} Number}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-80.pdf}
 
@@ -4621,10 +4619,10 @@ Ushatinskaya \citeyearpar{Ushatinskaya2016Protegulumand}.
 \emph{Siphonobolus priscus}: Two pairs of setal sacs
 \citep{Popov2009Earlyontogeny}.
 
-\subsection{Setae}\label{setae}
+\section{Setae}\label{setae}
 
-\subsubsection*{{[}81{]} Present in adults}\label{present-in-adults}
-\addcontentsline{toc}{subsubsection}{{[}81{]} Present in adults}
+\subsection*{{[}81{]} Present in adults}\label{present-in-adults}
+\addcontentsline{toc}{subsection}{{[}81{]} Present in adults}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-81.pdf}
 
@@ -4663,8 +4661,8 @@ shells of which are also cemented).'' -- \citet{Williams2007PartH}.
 \emph{Siphonobolus priscus}: Phosphatised setae emerge from hollow
 spines \citep{Popov2009Earlyontogeny}.
 
-\subsubsection*{{[}82{]} Distribution}\label{distribution}
-\addcontentsline{toc}{subsubsection}{{[}82{]} Distribution}
+\subsection*{{[}82{]} Distribution}\label{distribution}
+\addcontentsline{toc}{subsection}{{[}82{]} Distribution}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-82.pdf}
 
@@ -4691,7 +4689,7 @@ no fossil evidence.
 \citet{Williams2007PartH} -- causing the pustulose appearance remarked
 upon by \citet{Chen2007Reinterpretationof}.
 
-\subsection{Pedicle {[}83{]}}\label{pedicle-83}
+\section{Pedicle {[}83{]}}\label{pedicle-83}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-83.pdf}
 
@@ -4771,8 +4769,8 @@ posterior opening'' -- \citet{Skovsted2009Thescleritome}.
 \emph{Siphonobolus priscus}: Presumed present, based on ventral foramen
 with colleplax.
 
-\subsubsection*{{[}84{]} Constitution}\label{constitution}
-\addcontentsline{toc}{subsubsection}{{[}84{]} Constitution}
+\subsection*{{[}84{]} Constitution}\label{constitution}
+\addcontentsline{toc}{subsection}{{[}84{]} Constitution}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-84.pdf}
 
@@ -4795,8 +4793,8 @@ consisting of a thick outer chitinous cuticle, a pedicle epithelium, and
 a core composed of collagen fibres and cartilage-like connective tissue
 \citep{Holmer2018Evolutionarysignificance}.
 
-\subsubsection*{{[}85{]} Biomineralization}\label{biomineralization}
-\addcontentsline{toc}{subsubsection}{{[}85{]} Biomineralization}
+\subsection*{{[}85{]} Biomineralization}\label{biomineralization}
+\addcontentsline{toc}{subsection}{{[}85{]} Biomineralization}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-85.pdf}
 
@@ -4811,8 +4809,8 @@ Transformational character.
 The pedicle of strophomenates such as \emph{Antigonambonites} is
 biomineralized \citep{Holmer2018Evolutionarysignificance}.
 
-\subsubsection*{{[}86{]} Bulb}\label{bulb}
-\addcontentsline{toc}{subsubsection}{{[}86{]} Bulb}
+\subsection*{{[}86{]} Bulb}\label{bulb}
+\addcontentsline{toc}{subsection}{{[}86{]} Bulb}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-86.pdf}
 
@@ -4832,8 +4830,8 @@ the sediment to improve anchorage.
 \citeyearpar{Holmer2006Aspinose} interpret the presence of a bulb as
 tentative; we score it as ambiguous.
 
-\subsubsection*{{[}87{]} Distal rootlets}\label{distal-rootlets}
-\addcontentsline{toc}{subsubsection}{{[}87{]} Distal rootlets}
+\subsection*{{[}87{]} Distal rootlets}\label{distal-rootlets}
+\addcontentsline{toc}{subsection}{{[}87{]} Distal rootlets}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-87.pdf}
 
@@ -4848,8 +4846,8 @@ Neomorphic character.
 Observed in \emph{Pedunculotheca} and \emph{Bethia}
 \citep{Sutton2005Silurianbrachiopods}.
 
-\subsubsection*{{[}88{]} Tapering}\label{tapering}
-\addcontentsline{toc}{subsubsection}{{[}88{]} Tapering}
+\subsection*{{[}88{]} Tapering}\label{tapering}
+\addcontentsline{toc}{subsection}{{[}88{]} Tapering}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-88.pdf}
 
@@ -4874,8 +4872,8 @@ distinguishing it from many other taxa (\emph{Eichwaldia},
 \emph{Pedunculotheca diania}: The pedicle thickness does not obviously
 change between the apex of the shell and the holdfast.
 
-\subsubsection*{{[}89{]} Coelomic region}\label{coelomic-region}
-\addcontentsline{toc}{subsubsection}{{[}89{]} Coelomic region}
+\subsection*{{[}89{]} Coelomic region}\label{coelomic-region}
+\addcontentsline{toc}{subsection}{{[}89{]} Coelomic region}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-89.pdf}
 
@@ -4899,8 +4897,8 @@ with which the pedicle is deformed
 \citep{Holmer2018Evolutionarysignificance}, but its presence is not
 known for certain so is coded ambiguous.
 
-\subsubsection*{{[}90{]} Surface ornament}\label{surface-ornament-1}
-\addcontentsline{toc}{subsubsection}{{[}90{]} Surface ornament}
+\subsection*{{[}90{]} Surface ornament}\label{surface-ornament-1}
+\addcontentsline{toc}{subsection}{{[}90{]} Surface ornament}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-90.pdf}
 
@@ -4951,8 +4949,8 @@ is not clear whether these represent true annulations or wrinkles.
 \hypertarget{Yuganotheca_elegans-coding-90}{}
 \emph{Yuganotheca elegans}: Annulations present in median collar.
 
-\subsubsection*{{[}91{]} Nerve impression}\label{nerve-impression}
-\addcontentsline{toc}{subsubsection}{{[}91{]} Nerve impression}
+\subsection*{{[}91{]} Nerve impression}\label{nerve-impression}
+\addcontentsline{toc}{subsection}{{[}91{]} Nerve impression}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-91.pdf}
 
@@ -5014,10 +5012,10 @@ probable impression of a pedicle nerve.
 \emph{Siphonobolus priscus}: Coded as absent in Siphonotretidae
 \citep[table 6]{Williams2000BrachiopodaLinguliformea}.
 
-\subsection{Mantle canals}\label{mantle-canals}
+\section{Mantle canals}\label{mantle-canals}
 
-\subsubsection*{{[}92{]} Morphology}\label{morphology-1}
-\addcontentsline{toc}{subsubsection}{{[}92{]} Morphology}
+\subsection*{{[}92{]} Morphology}\label{morphology-1}
+\addcontentsline{toc}{subsection}{{[}92{]} Morphology}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-92.pdf}
 
@@ -5149,9 +5147,9 @@ al}. \citeyearpar{Williams1998Thediversity}.
 \emph{Tomteluva perturbata}: Preservation not adequate to evaluate
 \citep{Streng2016Anew}.
 
-\subsubsection*{\texorpdfstring{{[}93{]} \emph{vascula}
+\subsection*{\texorpdfstring{{[}93{]} \emph{vascula}
 \emph{lateralia}}{{[}93{]} vascula lateralia}}\label{vascula-lateralia}
-\addcontentsline{toc}{subsubsection}{{[}93{]} \emph{vascula}
+\addcontentsline{toc}{subsection}{{[}93{]} \emph{vascula}
 \emph{lateralia}}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-93.pdf}
@@ -5272,10 +5270,9 @@ reference to Havlicek \citeyearpar{Havlicek1982LingulaceaPaterinacea}.
 are interpreted as lateral, with no clear \emph{vascula} \emph{media}
 present.
 
-\subsubsection*{\texorpdfstring{{[}94{]} \emph{vascula}
+\subsection*{\texorpdfstring{{[}94{]} \emph{vascula}
 \emph{media}}{{[}94{]} vascula media}}\label{vascula-media}
-\addcontentsline{toc}{subsubsection}{{[}94{]} \emph{vascula}
-\emph{media}}
+\addcontentsline{toc}{subsection}{{[}94{]} \emph{vascula} \emph{media}}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-94.pdf}
 
@@ -5392,9 +5389,9 @@ reference to Havlicek \citeyearpar{Havlicek1982LingulaceaPaterinacea}.
 are interpreted as lateral, with no clear \emph{vascula} \emph{media}
 present.
 
-\subsubsection*{\texorpdfstring{{[}95{]} \emph{vascula}
+\subsection*{\texorpdfstring{{[}95{]} \emph{vascula}
 \emph{terminalia}}{{[}95{]} vascula terminalia}}\label{vascula-terminalia}
-\addcontentsline{toc}{subsubsection}{{[}95{]} \emph{vascula}
+\addcontentsline{toc}{subsection}{{[}95{]} \emph{vascula}
 \emph{terminalia}}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-95.pdf}
@@ -5475,11 +5472,10 @@ see fig. 1.A1 in \citet{Balthasar2009EarlyCambrian}.
 \emph{Terebratulina}: Following idealised plectolophous terebratulid of
 Emig \citeyearpar{Emig1992Functionaldisposition}.
 
-\subsection{Lophophore}\label{lophophore}
+\section{Lophophore}\label{lophophore}
 
-\subsubsection*{{[}96{]} Tentacle
-disposition}\label{tentacle-disposition}
-\addcontentsline{toc}{subsubsection}{{[}96{]} Tentacle disposition}
+\subsection*{{[}96{]} Tentacle disposition}\label{tentacle-disposition}
+\addcontentsline{toc}{subsection}{{[}96{]} Tentacle disposition}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-96.pdf}
 
@@ -5527,9 +5523,9 @@ and closely arranged in a single palisade'' -- \citet{Zhang2004Newdata}.
 \emph{Longtancunella chengjiangensis}: Inadequately preserved to
 evaluate.
 
-\subsubsection*{{[}97{]} Tentacle rows per side in trocholophe
+\subsection*{{[}97{]} Tentacle rows per side in trocholophe
 stage}\label{tentacle-rows-per-side-in-trocholophe-stage}
-\addcontentsline{toc}{subsubsection}{{[}97{]} Tentacle rows per side in
+\addcontentsline{toc}{subsection}{{[}97{]} Tentacle rows per side in
 trocholophe stage}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-97.pdf}
@@ -5560,9 +5556,9 @@ character 37.
 character 37. Also states in
 \citet{Williams2000BrachiopodaLinguliformea}, p.~158.
 
-\subsubsection*{{[}98{]} Tentacle rows per side in post-trocholophe
+\subsection*{{[}98{]} Tentacle rows per side in post-trocholophe
 stage}\label{tentacle-rows-per-side-in-post-trocholophe-stage}
-\addcontentsline{toc}{subsubsection}{{[}98{]} Tentacle rows per side in
+\addcontentsline{toc}{subsection}{{[}98{]} Tentacle rows per side in
 post-trocholophe stage}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-98.pdf}
@@ -5613,9 +5609,9 @@ in Carlson \citeyearpar{Carlson1995Phylogeneticrelationships}, appendix
 row of thick, widely spaced, parallel-sided and hollow tentacles'' --
 \citet{Zhang2014Anearly}.
 
-\subsubsection*{{[}99{]} Median tentacle in early
+\subsection*{{[}99{]} Median tentacle in early
 development}\label{median-tentacle-in-early-development}
-\addcontentsline{toc}{subsubsection}{{[}99{]} Median tentacle in early
+\addcontentsline{toc}{subsection}{{[}99{]} Median tentacle in early
 development}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-99.pdf}
@@ -5645,8 +5641,8 @@ planus}, \emph{Askepasma toddense}, \emph{Clupeafumosus socialis},
 \emph{Salanygolina}, \emph{Tomteluva perturbata}, \emph{Yuganotheca
 elegans}: Lophophore ontogeny presently unknown.
 
-\subsubsection*{{[}100{]} Forms closed loop}\label{forms-closed-loop}
-\addcontentsline{toc}{subsubsection}{{[}100{]} Forms closed loop}
+\subsection*{{[}100{]} Forms closed loop}\label{forms-closed-loop}
+\addcontentsline{toc}{subsection}{{[}100{]} Forms closed loop}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-100.pdf}
 
@@ -5674,8 +5670,8 @@ reconstructed by \citet{Zhang2007Agregarious}.
 \emph{Nisusia sulcata}: No specimens of \emph{Nisusia} preserve the
 lophophore.
 
-\subsubsection*{{[}101{]} Coiling direction}\label{coiling-direction}
-\addcontentsline{toc}{subsubsection}{{[}101{]} Coiling direction}
+\subsection*{{[}101{]} Coiling direction}\label{coiling-direction}
+\addcontentsline{toc}{subsection}{{[}101{]} Coiling direction}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-101.pdf}
 
@@ -5702,8 +5698,8 @@ anterior to the body cavity'' -- \citet{Zhang2009Architectureand}.
 \hypertarget{Phoronis-coding-101}{}
 \emph{Phoronis}: Coiling in direction of anus (i.e.~posteriad).
 
-\subsubsection*{{[}102{]} Adjustor muscle}\label{adjustor-muscle}
-\addcontentsline{toc}{subsubsection}{{[}102{]} Adjustor muscle}
+\subsection*{{[}102{]} Adjustor muscle}\label{adjustor-muscle}
+\addcontentsline{toc}{subsection}{{[}102{]} Adjustor muscle}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-102.pdf}
 
@@ -5739,7 +5735,7 @@ this muscle.
 in Carlson \citeyearpar{Carlson1995Phylogeneticrelationships}, appendix
 1, character 55.
 
-\subsection{Prominent pharynx {[}103{]}}\label{prominent-pharynx-103}
+\section{Prominent pharynx {[}103{]}}\label{prominent-pharynx-103}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-103.pdf}
 
@@ -5785,7 +5781,7 @@ homologous with that of \emph{Heliomedusa}
 \emph{Yuganotheca elegans}: Possibly present, following interpretation
 of mouth \citep[see fig. 2c, d in][]{Zhang2014Anearly}.
 
-\subsection{Anus {[}104{]}}\label{anus-104}
+\section{Anus {[}104{]}}\label{anus-104}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-104.pdf}
 
@@ -5810,8 +5806,8 @@ evidence {[}\ldots{}{]} leads us to reject the possibility of a
 blind-ending intestine'' --
 \citet{Zhang2007Rhynchonelliformeanbrachiopods}, p.~1399.
 
-\subsubsection*{{[}105{]} Migration}\label{migration}
-\addcontentsline{toc}{subsubsection}{{[}105{]} Migration}
+\subsection*{{[}105{]} Migration}\label{migration}
+\addcontentsline{toc}{subsection}{{[}105{]} Migration}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-105.pdf}
 
@@ -5839,9 +5835,9 @@ into a C-shape and the (blind) anus becomes posteroventral in
 position.'' -- \citet{Williams2007PartH}, p.\\
 2884.
 
-\subsubsection*{{[}106{]} Within ring of
+\subsection*{{[}106{]} Within ring of
 tentacles}\label{within-ring-of-tentacles}
-\addcontentsline{toc}{subsubsection}{{[}106{]} Within ring of tentacles}
+\addcontentsline{toc}{subsection}{{[}106{]} Within ring of tentacles}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-106.pdf}
 
@@ -5861,8 +5857,8 @@ A migrated anus may be located laterally or within the lophophore ring
 functional anus located near the proximal end of the pedicle.'' --
 \citet{Zhang2007Rhynchonelliformeanbrachiopods}.
 
-\subsubsection*{{[}107{]} Position}\label{position}
-\addcontentsline{toc}{subsubsection}{{[}107{]} Position}
+\subsection*{{[}107{]} Position}\label{position}
+\addcontentsline{toc}{subsection}{{[}107{]} Position}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-107.pdf}
 
@@ -5926,7 +5922,7 @@ impressed possible anus at the lateral side of the anterior body wall''
 is not yet confident, so this character is coded as not presently
 available.
 
-\hypertarget{fitch}{\section{Fitch parsimony}\label{fitch}}
+\hypertarget{fitch}{\chapter{Fitch parsimony}\label{fitch}}
 
 Parsimony search was conducted in TNT v1.5 \citep{Goloboff2016} using
 ratchet and tree drifting heuristics \citep{Goloboff1999, Nixon1999},
@@ -5968,7 +5964,7 @@ tsav *TNT/xpiwe3.tre; sav ;tsav/; {/* Save results to file */}
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT
 software.
 
-\subsection{Implied weights}\label{implied-weights}
+\section{Implied weights}\label{implied-weights}
 
 The consensus of all implied weights runs is not very well resolved.
 This lack of resolution is largely a product of a few wildcard taxa,
@@ -5985,7 +5981,7 @@ relationships between the remaining taxa:
 
 \newpage
 
-\subsection{Equal weights}\label{equal-weights}
+\section{Equal weights}\label{equal-weights}
 
 \begin{figure}
 \centering
@@ -5993,7 +5989,7 @@ relationships between the remaining taxa:
 \caption{\label{fig:tnt-ew-consensus}TNT Equal weights consensus}
 \end{figure}
 
-\hypertarget{bayesian}{\section{Bayesian analysis}\label{bayesian}}
+\hypertarget{bayesian}{\chapter{Bayesian analysis}\label{bayesian}}
 
 Bayesian search was conducted in MrBayes v3.2.6 \citep{Ronquist2012}
 using the Mk model \citep{Lewis2001} with gamma-distributed rate
@@ -6102,7 +6098,7 @@ m\{1\} & 0.609 & 0.00984 & 733 & 2790 & 1.00000\\
 \end{tabular}
 \end{table}
 
-\section{Taxonomic implications}\label{taxonomic-implications}
+\chapter{Taxonomic implications}\label{taxonomic-implications}
 
 This section briefly places key features of our results in the context
 of previous phylogenetic hypotheses.
