@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 
 # Character reconstructions {#reconstructions}
 
-This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Citations for all codings can be found by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
+This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
 
 ```{R char loading functions, echo=FALSE}
 StrReplace <- stringi::stri_replace_all_fixed
@@ -183,6 +183,7 @@ Italicize <- function (string) {
                                       'schucherti', 'tenuis', 'worsleyi',
                                       'vascula', 'genitalia','lateralia',
                                       'media', 'myaria', 'terminalia',
+                                      'levator ani',
                                       'et al\\.', 'et al', 'sensu')),
                                collapse='|'),
               ")\\b"), "_\\1_", string, perl=TRUE, ignore.case=FALSE)
@@ -203,12 +204,13 @@ char_parts <- strsplit(char_names, ": ")
 char_nesting <- vapply(char_parts, length, 0L)
 char_notes <- ReadNotes(filename)
 taxa_names <- c("Namacalathus", rownames(my_chars))
+taxa_sort <- taxa_names
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
 
 ```
 
-The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$):
+The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$) in order to generate the indicative reconstructions displayed below.  The most parsimonious reconstruction will of course vary depending on the topology on which it is plotted; the figures below are simply to facilitate interpretation.
 
 ```{R character-mapping, echo=FALSE, fig.height=6.6, fig.width=7.1, results="asis"}
 ## These function definitions must be in the same block as when they are called.
@@ -223,6 +225,33 @@ PrintCharacter <- function () {
 PrintSoloCharacter <- function () {
   cat(Header(2L, paste0(paste(
     Italicize(this_char_parts), collapse=': ')," [", i, "] ")))
+}
+DuplicateOf <- function (x) {
+  duplicates <- duplicated(x)
+  masters <- x[!duplicates]
+  vapply(masters, function (d) x == d, logical(length(x)))
+}
+PrintStateNotes <- function (notes) {
+  PrintThisNote <- function (note) {
+    afflictedTaxa <- names(note)[note]
+    master <- afflictedTaxa[1]
+    cat("  \n",
+        paste0("<div class='state-note' id='",
+                     taxa_names[as.integer(master)], "-coding-", i,
+                     "'>",
+               paste(taxa_italic[as.integer(afflictedTaxa)], collapse=', '),
+                      ": ", Italicize(notes[master]), "</div>  \n  \n"))
+  }
+  
+  if (length(notes) == 1) {
+    onlyOne <- TRUE
+    names(onlyOne) <- names(notes)
+    PrintThisNote(onlyOne)
+  } else {
+    notes <- notes[order(taxa_sort[as.integer(names(notes))])]
+    duplicates <- DuplicateOf(toupper(notes))
+    apply(duplicates, 2, PrintThisNote)
+  }
 }
 
 taxa_not_to_print <- which(taxa_names %in% 'Namacalathus')
@@ -289,10 +318,7 @@ for (i in seq_len(n_char)) {
   state_notes_i <- char_notes_i[[2]]
   state_notes_i <- state_notes_i[!names(state_notes_i) %in% taxa_not_to_print]
   if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
-  if (length(state_notes_i) > 0) {
-    cat("  \n", paste0("<div class='state-note'>", taxa_italic[as.integer(names(state_notes_i))],
-                      ": ", Italicize(state_notes_i), "</div>  \n  \n"))
-  }
+  if (length(state_notes_i) > 0) PrintStateNotes(state_notes_i)
   cat("  \n") # Clear line, ready for next block
 }
 ```
