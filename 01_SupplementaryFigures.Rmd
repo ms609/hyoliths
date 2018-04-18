@@ -1,4 +1,3 @@
-
 # Supplementary Figures and Table {-}
 
 (ref:captionS1) **_Pedunculotheca diania_ Sun et Smith gen. et sp. nov. from the Chengjiang Biota, Yunnan Province, China.**
@@ -14,6 +13,7 @@ Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es = esophagus
 knitr::include_graphics('images/image1.png')
 ```
 
+\clearpage
 
 (ref:captionS2) **Elemental distribution in the gut of _Pedunculotheca diania_ Sun et Smith gen. et sp. nov.** NIGPAS 166597. Region corresponds to boxed region in Fig. S1c.
 Scale bar = 100&nbsp;µm.\newline
@@ -22,6 +22,8 @@ Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = A
 ```{R gut-elemental, echo=FALSE, out.width="80%", fig.align="center", fig.cap='(ref:captionS2)', cache=TRUE}
 knitr::include_graphics('images/image2.png')
 ```
+
+\clearpage
 
 (ref:captionS3) **Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r rollOver <- 3; WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
 
