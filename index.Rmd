@@ -222,9 +222,9 @@ BibEntry <- function (ref) {
              gsub(" & ", " \\& ", 
                   gsub("\u2013", "--",  # en dash
                   gsub("\u2014", "---",  # em dash
-                  gsub("ä", '\\"{a}', 
-                  gsub("é", "\\'{e}", 
-                  gsub("ö", '\\"{o}', 
+                  gsub("ä", '{\\"a}', 
+                  gsub("é", "{\\'e}", 
+                  gsub("ö", '{\\"o}', 
                          trimws(text),
                   fixed=TRUE),
                   fixed=TRUE),
