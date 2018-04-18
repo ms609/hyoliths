@@ -15,5 +15,6 @@ Suggests:
   stringi,
   zoo
 Remotes: 
+  ms609/TreeSearch,
   rstudio/bookdown,
   TGuillerme/Inapp
