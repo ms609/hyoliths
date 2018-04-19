@@ -161,6 +161,12 @@ RefExpand <- function (ref) {
       if (grepl("interpreting evolutionary relationships within early Rhynchonelliformea",
                 title, fixed=TRUE)) {
         "Fossils and Strata"
+      } else if (grepl("Lower Cambrian brachiopods from the rift valley",
+                title, ignore.case=TRUE)) {
+        "Journal of Paleontology"
+      } else if (grepl(". Ultrastructure of spermatids and spermatozoa in",
+                title, fixed=TRUE)) {
+        "Journal of Submicroscopic Cytology"
       } else ref['Secondary.Title']
     
     
@@ -238,6 +244,9 @@ RefExpand <- function (ref) {
       } else if (grepl('10.1201/9780203210437', doi, fixed=TRUE)) {
         ref['Secondary.Author'] <- "Brunton, H,; Cocks, R. M.; Long, S. L."
         "Brachiopods, Past and Present"
+      } else if (grepl("setae and 3D MicroCT", title, fixed=TRUE, ignore.case=TRUE)) {
+        ref['DOI'] <- ''
+        "Palaeontological Association Annual Meeting"
       } else ref['Secondary.Title']
     }
   }
@@ -270,18 +279,22 @@ BibEntry <- function (ref) {
       ret
     }
   }
-  refType <- tolower(FirstWord(ref['Reference.Type']))
-  if (refType %in% c('generic', 'journal')) refType <- 'article'
+  refType <- tolower(ref['Reference.Type'])
+  refType <- if (refType %in% c('generic', 'journal', 'journal article')) 'article' else
+    if (refType == 'book section') 'inbook' else 
+    if (refType == 'conference proceedings') 'incollection' else refType
   
-  if (refType != 'conference') ref <- RefExpand(ref)
+  ref <- RefExpand(ref)
   paste0("@", refType, '{', 
          RefKey(ref), ",\n",
          BibLine('author', 'Author', FormatAuthors(ref['Author'])),
          BibLine('doi', 'DOI'),
          BibLine('editor', 'Secondary.Author', FormatAuthors(ref['Secondary.Author'])),
-         BibLine('journal', 'Secondary.Title'),
+         BibLine(if (refType == 'article') 'journal' else
+                 if (refType == 'inbook') 'title' else
+                 'booktitle', 'Secondary.Title'),
          #"  score = {", ref['score'], '; ', ref['relScore'], "},\n",
-         BibLine('title', 'Title',
+         BibLine(if (refType == 'inbook') 'chapter' else 'title', 'Title',
                  paste0('{', gsub("<i>", "\\\\textit{", 
                                   gsub("</i>", "}", ref["Title"],
                                        perl=TRUE, ignore.case = TRUE),
