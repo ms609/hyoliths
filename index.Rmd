@@ -161,6 +161,16 @@ RefExpand <- function (ref) {
   RefAttribute <- function (name, pref='', suff='') {
     if (is.na(ref[name])) NULL else paste0(pref, ref[name], suff)
   }
+  if (!is.null(ref['DOI']) && ref['DOI'] != "") {
+    doi <- ref['DOI']
+    ref['Secondary.Title'] <- 
+    if (grepl('10.1002/9781118896372', doi, fixed=TRUE)) {
+      "The Cambrian Fossils of Chengjiang, China: The Flowering of Early Animal Life"
+    } else if (grepl('10.17161/dt.v0i0', doi, fixed=TRUE)) {
+      "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised)"
+    } else ref['Secondary.Title']
+  }
+  
   cr_details <- cached_dois(ref['DOI'])
   if (is.null(cr_details) || is.null(cr_details$data)) {
     flq <- c(query.bibliographic = paste(
@@ -251,7 +261,7 @@ BibEntry <- function (ref) {
   refType <- tolower(FirstWord(ref['Reference.Type']))
   if (refType %in% c('generic', 'journal')) refType <- 'article'
   
-  if (refType == 'article') ref <- RefExpand(ref)
+  ref <- RefExpand(ref)
   paste0("@", refType, '{', 
          RefKey(ref), ",\n",
          BibLine('author', 'Author', FormatAuthors(ref['Author'])),
