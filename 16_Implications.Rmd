@@ -8,7 +8,7 @@ author: "Martin R. Smith"
 This section briefly places key features of our results in the context of previous phylogenetic hypotheses.
 
 Craniiforms
-: Trimerellids are reconstructed as paraphyletic with respect to Craniiforms.  This is consistent with the affinity commonly drawn between these groups [e.g. @Williams2000BrachiopodaLinguliformea], and helps to account for the stratigraphically late (Ordovician) appearance of Craniids in the fossil record.  (Aragonite is underrepresented in early Palaeozoic strata due to taphonomic bias.)  
+: Trimerellids are reconstructed as paraphyletic with respect to Craniiforms.  This is consistent with the affinity commonly drawn between these groups [e.g. @Williams2000LinguliformeaCraniiformea], and helps to account for the stratigraphically late (Ordovician) appearance of Craniids in the fossil record.  (Aragonite is underrepresented in early Palaeozoic strata due to taphonomic bias.)  
 : The relationship of Craniiforms with respect to Linguliforms and Rhynchonelliforms remains unclear.  Shell characters point to a relationship with the Rhynchonelliforms, which is countered by similarities between the spermatozoa of phoronids and terebratulids, which indicate a craniiform + linguliform clade.
 : It's worth noting that Bayesian and Fitch analyses place _Gasconsia_ as the basalmost member of the Rhynchonellid lineage, upholding suggestions [@Holmer2014OrdovicianSilurian] of a chileid rather than trimerellid affinity.  This placement presumably represents an artefact resulting from the incorrect handling of inapplicable data.  But if true, _Gasconsia_ would be a close analogue for the common ancestor of Rhynchonelliforms + Craniiforms (+Linguliforms?).  
 
