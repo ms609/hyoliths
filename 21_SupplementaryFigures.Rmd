@@ -28,7 +28,7 @@ Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = A
 
 
 \clearpage
-
+`r rollOver <- 3;`
 
 ```{R brach-diversity, echo=FALSE, fig.width=7, cache=TRUE}
 # Definitions
@@ -83,6 +83,6 @@ plotDiv(hyo , rollOver=rollOver, col=4)
 plotDiv(tomm , rollOver=3, col=2)
 ```
 
-**Fig. S3. Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r rollOver <- 3; WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
+**Fig. S3. Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
 
 \clearpage
