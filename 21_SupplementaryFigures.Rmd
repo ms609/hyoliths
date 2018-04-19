@@ -1,4 +1,4 @@
-# Supplementary Figures {-}
+# Supplementary Figures {-#figures}
 
 ```{R more-specimens, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics('images/image1.png')
