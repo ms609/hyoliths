@@ -1,33 +1,36 @@
-# Supplementary Figures and Table {-}
+# Supplementary Figures {-}
 
-(ref:captionS1) **_Pedunculotheca diania_ Sun et Smith gen. et sp. nov. from the Chengjiang Biota, Yunnan Province, China.**
+```{R more-specimens, echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics('images/image1.png')
+```
+**Fig. S1. _Pedunculotheca diania_ Sun et Smith gen. et sp. nov. from the Chengjiang Biota, Yunnan Province, China.**
 (a) NIGPAS 166601, external mould of dorsum with dorsal apex and pedicle foramen. (b) NIGPAS 166597, preserving conical shell, operculum and internal soft tissue, showing a compressed elliptic cross-section; backscatter electron micrograph of boxed region shown in (c).
 (d) NIGPAS 166599b, counterpart, juvenile conical shell with operculum showing two longitudinal ventral grooves and circular larval shell. 
 (e) NIGPAS 166602, conical shell with incomplete attachment structure.
 (f) NIGPAS 166598, broken shell with two ventral furrows and incomplete attachment structure. (g) NIGPAS 166596, incomplete shell with one medial ventral furrow and short attachment structure with coelomic cavity; detail of boxed region shown in (h).
-(i) NIGPAS 166603, exterior of operculum.\newline
-Scale bars: 2mm (for a, b and e–g); 500&nbsp;µm (for c, h and i).\newline
-Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es = esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.
+(i) NIGPAS 166603, exterior of operculum.
 
-```{R more-specimens, echo=FALSE, out.width="80%", fig.align='center', fig.cap="(ref:captionS1)"}
-knitr::include_graphics('images/image1.png')
-```
+Scale bars: 2mm (for a, b and e–g); 500&nbsp;µm (for c, h and i).
+
+Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es = esophagus, in = intestine, mo = mouth, pe = pedicle, st = stomach.
 
 \clearpage
 
-(ref:captionS2) **Elemental distribution in the gut of _Pedunculotheca diania_ Sun et Smith gen. et sp. nov.** NIGPAS 166597. Region corresponds to boxed region in Fig. S1c.
-Scale bar = 100&nbsp;µm.\newline
-Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = Aluminium, Fe = Iron, C = Carbon.
-
-```{R gut-elemental, echo=FALSE, out.width="80%", fig.align="center", fig.cap='(ref:captionS2)', cache=TRUE}
+```{R gut-elemental, echo=FALSE, out.width="80%", fig.align="center", cache=TRUE}
 knitr::include_graphics('images/image2.png')
 ```
 
+**Fig. S2. Elemental distribution in the gut of _Pedunculotheca diania_ Sun et Smith gen. et sp. nov.** NIGPAS 166597. Region corresponds to boxed region in Fig. S1c.
+
+Scale bar = 100&nbsp;µm.
+
+Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = Aluminium, Fe = Iron, C = Carbon.
+
+
 \clearpage
 
-(ref:captionS3) **Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r rollOver <- 3; WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
 
-```{R brach-diversity, echo=FALSE, fig.width=7, fig.cap='(ref:captionS3)', cache=TRUE}
+```{R brach-diversity, echo=FALSE, fig.width=7, cache=TRUE}
 # Definitions
 cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # Colour-blind friendly palette
 PDBGenera <-  R.cache::addMemoization(function (taxon) read.csv(paste0('https://paleobiodb.org/data1.2/occs/diversity.txt?base_name=', taxon, '&count=genera')))
@@ -80,22 +83,6 @@ plotDiv(hyo , rollOver=rollOver, col=4)
 plotDiv(tomm , rollOver=3, col=2)
 ```
 
-
-\clearpage
-
-(ref:tableS1) **Provenance of fossil material.** Individuals from the Yaoying section are usually bigger, with a thicker body wall, and have a smaller ratio of apertural width to shell length than specimens from other areas. 
-In the absence of other differentiating features, we consider these deviations to represent ecophenotypical variation within a single species, perhaps reflecting the increased energetics and predation pressure that accompany the shallower water depth reported at the Yaoying section [@Zhao2012].
-
-```{r table-s1, echo=FALSE, asis=TRUE}
-prov <- matrix(c("166593, 166617", "Shankou Village, Anning", "24°49’53’’ N, 102°24’47.9” E", "166594, 166595", "Yaoying Village, Wuding", "25°36’01.2” N, 102°20’04.6” E", "166596--166616", "Ma'anshan Village, Chengjiang", "24°40’37.2” N, 102°58’40.2” E"), nrow=3, ncol=3, byrow=TRUE)
-colnames(prov) <- c("NIGPAS Specimen numbers", "Fossil locality", "Coordinates")
-knitr::kable(prov, caption='(ref:tableS1)')
-```
-
-```{r table-s1-backup, echo=FALSE, asis=TRUE}
-#prov <- matrix(c("166593, 166617", "Shankou Village, Anning", #"24&deg;49&rsquo;53&rsquo;&rsquo;&nbsp;N, 102&deg;24&rsquo;47.9&rdquo;&nbsp;E", "166594, #166595", "Yaoying Village, Wuding", "25&deg;36&rsquo;01.2&rdquo;&nbsp;N, #102&deg;20&rsquo;04.6&rdquo;&nbsp;E", "166596--166616", "Ma'anshan Village, Chengjiang", #"24&deg;40&rsquo;37.2&rdquo;&nbsp;N, 102&deg;58&rsquo;40.2&rdquo;&nbsp;E"), nrow=3, ncol=3, #byrow=TRUE)
-#colnames(prov) <- c("NIGPAS Specimen numbers", "Fossil locality", "Coordinates")
-#knitr::kable(prov, caption='(ref:tableS1)', escape=FALSE)
-```
+**Fig. S3. Global diversity of brachiopods through the Paleozoic.** Points represent number of genera reported in each time bin; lines represent rolling mean diversity over `r rollOver <- 3; WriteNumber(rollOver)` consecutive time bins.  Data from Paleobiology database. 
 
 \clearpage
