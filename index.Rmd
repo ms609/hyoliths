@@ -281,7 +281,7 @@ BibEntry <- function (ref) {
   }
   refType <- tolower(ref['Reference.Type'])
   refType <- if (refType %in% c('generic', 'journal', 'journal article')) 'article' else
-    if (refType == 'book section') 'inbook' else 
+    if (refType == 'book section') 'incollection' else 
     if (refType == 'conference proceedings') 'incollection' else refType
   
   ref <- RefExpand(ref)
