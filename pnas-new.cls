@@ -22,9 +22,6 @@
 % For compiling with plain latex, please use latex+dvipdfm
 % to produce the PDF, not dvis -> ps -> pdf nor dvipdf
 %
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{pnas-new}[23/08/2017, v1.43]
-\AtEndOfClass{\RequirePackage{microtype}}
 % Option for line numbers
 \newif\if@pnaslineno
 \DeclareOption{lineno}{\@pnaslinenotrue}
@@ -84,8 +81,8 @@
 \renewcommand\Authands{, and }
 
 %% Choose template type
-\newcommand*{\templatetype}[1]{%
-  \RequirePackage{#1}}
+%%\newcommand*{\templatetype}[1]{%
+%%  \RequirePackage{#1}}
 
 %% Options for element switching
 \RequirePackage{xifthen}
@@ -115,24 +112,24 @@
 \newcommand{\copyrightstatement}{\, \textcopyright\, 2015 by The National Academy of Sciences of the USA}
 
 %% Graphics, tables and other formatting
-% \RequirePackage{graphicx,xcolor}
+\RequirePackage{graphicx,xcolor}
 \RequirePackage{colortbl}
 \RequirePackage{booktabs}
 \RequirePackage{algorithm}
 \RequirePackage[noend]{algpseudocode}
 \RequirePackage{changepage}
-%\PassOptionsToPackage[twoside,%
-%				letterpaper,includeheadfoot,%
-%				layoutsize={8.125in,10.875in},%
-%                layouthoffset=0.1875in,%
-%                layoutvoffset=0.0625in,%
-%                left=38.5pt,%
-%                right=43pt,%
-%                top=43pt,% 10pt provided by headsep
-%                bottom=32pt,%
-%                headheight=0pt,% No Header
-%                headsep=10pt,%
-%                footskip=25pt]{geometry}
+\RequirePackage[twoside,%
+				letterpaper,includeheadfoot,%
+				layoutsize={8.125in,10.875in},%
+                layouthoffset=0.1875in,%
+                layoutvoffset=0.0625in,%
+                left=38.5pt,%
+                right=43pt,%
+                top=43pt,% 10pt provided by headsep
+                bottom=32pt,%
+                headheight=0pt,% No Header
+                headsep=10pt,%
+                footskip=25pt]{geometry}
 \RequirePackage[labelfont={bf,sf},%
                 labelsep=period,%
                 figurename=Fig.]{caption}
@@ -147,6 +144,8 @@
 % For sig statement box
 \definecolor{pnasbluetext}{RGB}{0,101,165} %
 \definecolor{pnasblueback}{RGB}{205,217,235} %
+%\definecolor{pnasbluetext}{RGB}{0,115,209} % Not used
+%\definecolor{pnasblueback}{RGB}{210,230,247} % Not used
 
 %% Bibliography
 %% v1.41 (15/11/2016)
@@ -154,27 +153,27 @@
 %% If not, try to use pnas2011.bst instead
 %% If both aren't available, fall back to
 %% unsrtnat
- \RequirePackage[numbers,sort&compress,merge,round]{natbib}
-% \setlength{\bibsep}{0.0pt}
-% \IfFileExists{pnas-new.bst}{
-%   \bibliographystyle{pnas-new}
-% }{
-%   \IfFileExists{pnas2011.bst}{
-%     \bibliographystyle{pnas2011}
-%     \PackageWarning{pnas-new}{pnas-new.bst not found; using pnas2011.bst instead}
-%   }{
-%     \bibliographystyle{unsrtnat}
-%     \PackageWarning{pnas-new}{pnas-new.bst and pnas2011.bst not found; falling back to unsrtnat % instead}
-%   }
-% }
-% \renewcommand{\bibsection}{} % Remove header
-% \renewcommand\bibfont{\normalfont\sffamily\fontsize{6}{8}\selectfont} % set font to be sans serif
-%
-% \makeatletter
-% \renewcommand\@biblabel[1]{ #1.} % Remove brackets from label
-% \def\tagform@#1{\maketag@@@{\bfseries(\ignorespaces#1\unskip\@@italiccorr)}}
-% \renewcommand{\eqref}[1]{\textup{{\normalfont Eq.~(\ref{#1}}\normalfont)}}
-% \makeatother
+\RequirePackage[numbers,sort&compress,merge,round]{natbib}
+\setlength{\bibsep}{0.0pt}
+\IfFileExists{pnas-new.bst}{
+  \bibliographystyle{pnas-new}
+}{
+  \IfFileExists{pnas2011.bst}{
+    \bibliographystyle{pnas2011}
+    \PackageWarning{pnas-new}{pnas-new.bst not found; using pnas2011.bst instead}
+  }{
+    \bibliographystyle{unsrtnat}
+    \PackageWarning{pnas-new}{pnas-new.bst and pnas2011.bst not found; falling back to unsrtnat instead}
+  }
+}
+\renewcommand{\bibsection}{} % Remove header
+\renewcommand\bibfont{\normalfont\sffamily\fontsize{6}{8}\selectfont} % set font to be sans serif
+
+\makeatletter
+\renewcommand\@biblabel[1]{ #1.} % Remove brackets from label
+\def\tagform@#1{\maketag@@@{\bfseries(\ignorespaces#1\unskip\@@italiccorr)}}
+\renewcommand{\eqref}[1]{\textup{{\normalfont Eq.~(\ref{#1}}\normalfont)}}
+\makeatother
 
 %% Figure caption style
 \DeclareCaptionFormat{pnasformat}{\normalfont\sffamily\fontsize{7}{9}\selectfont#1#2#3}
