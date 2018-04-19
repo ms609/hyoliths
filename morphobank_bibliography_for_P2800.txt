@@ -107,7 +107,7 @@ Journal Article	Gorjansky, V. Yu. ;Popov, Leonid E. 		1985	The morphology, syste
 Journal Article	Cowen, R. 		1968	A new type of delthyrial cover in the Devonian brachiopod <i>Mucrospirifer</i>			11	2	317-327									
 Journal Article	Skovsted, Christian B. ;Holmer, Lars E. ;Larsson, Cecilia M. ;Högström, Anette E. S. ;Brock, Glenn A. ;Topper, Timothy P. ;Balthasar, Uwe ;Stolk, Sandra Petterson ;Paterson, John R. 		2009	The scleritome of <i>Paterimitra</i>: an Early Cambrian stem group brachiopod from South Australia			276		1651-1656								10.1098/rspb.2008.1655	
 Journal Article	Hodgson, A. N. ;Reunov, A. A. 		1994	Ultrastructure of the spermatozoon and spermatogenesis of the brachiopods <i>Discinisca tenuis</i> (Inarticulata) and <i>Kraussina rubra</i> (Articulata)			25	1	23-31								10.1080/07924259.1994.9672365	
-Generic	Reunov, Arkadiy ;Klepal, Waltraud 		2004	Ultrastructural study of spermatogenesis in <i>Phoronopsis harmeri</i> (Lophophorata, Phoronida)			58	1	1-10								10.1007/s10152-003-0153-3	
+Journal Article	Reunov, Arkadiy A. ;Klepal, Waltraud 		2004	Ultrastructural study of spermatogenesis in <i>Phoronopsis harmeri</i> (Lophophorata, Phoronida)			58	1	1-10								10.1007/s10152-003-0153-3	
 Journal Article	Sperling, Erik A. ;Pisani, Davide ;Peterson, Kevin J 		2011	Molecular paleobiological insights into the origin of the Brachiopoda			13	3	290-303								http://dx.doi.org/10.1111/j.1525-142X.2011.00480.x	
 Journal Article	Afzelius, B. A. ;Ferraguti, M. 		1978	Fine structure of brachiopod spermatozoa			63	3	308-315									
 Book Section	Fukumoto, Makoto 		2003	The acrosome reaction of the spermatozoa of the inarticulate brachiopod <i>Lingula anatina</i>					40-45									
