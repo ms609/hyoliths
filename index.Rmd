@@ -18,6 +18,18 @@ github-repo: ms609/hyoliths
 description: "Results of phylogenetic analysis"
 ---
 
+# Supplementary Text {-}
+
+This document comtains supplementary material to @Sun2018Hyolithswith.  `r if (knitr::is_latex_output()) 'It is best viewed in HTML format at \\href{https://ms609.github.io/hyoliths/}{ms609.github.io/hyoliths}.'`
+
+It opens with a detailed discussion of [analyses](#treesearch) of the [morphological dataset](#dataset) constructed to accompany , and their results.
+
+The results presented in the main paper employ the algorithm described by @Brazeau2018 for correct handling of inapplicable data in a parsimony setting.  We explore how each character is [reconstructed](#reconstructions) on an optimal tree.
+
+For completeness, we also document the results of [standard Fitch parsimony](#fitch) analysis, and the results of [Bayesian analysis](#bayesian), neither of which treat inapplicable data in a logically consistent fashion.
+
+Supplementary [figures and tables](#si) appear at the end of the document.
+
 ```{r setup-index, include=FALSE, message=FALSE}
 set.seed(0)
 #Sys.setlocale('LC_ALL','C')
@@ -266,12 +278,4 @@ close(bibFile)
 refKeys <- apply(refs, 1, RefKey)
 ```
 
-# Overview {-}
 
-This document comtains supplementary material to @Sun2018Hyolithswith.  `r if (knitr::is_latex_output()) 'It is best viewed in HTML format at \\href{https://ms609.github.io/hyoliths/}{ms609.github.io/hyoliths}.'`
-
-Supplementary [figures and tables](#si) referenced in the main text appear first.  These are followed with a detailed discussion of [analyses](#treesearch) of the [morphological dataset](#dataset) constructed to accompany , and their results.
-
-The results presented in the main paper employ the algorithm described by @Brazeau2018 for correct handling of inapplicable data in a parsimony setting.  We explore how each character is [reconstructed](#reconstructions) on an optimal tree.
-
-For completeness, we also document the results of [standard Fitch parsimony](#fitch) analysis, and the results of [Bayesian analysis](#bayesian), neither of which treat inapplicable data in a logically consistent fashion.
