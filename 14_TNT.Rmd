@@ -36,7 +36,7 @@ We acknowledge the Willi Hennig Society for their sponsorship of the TNT softwar
 
 ## Results
 
-```{R, echo=FALSE}
+```{R tnt-results-init, echo=FALSE}
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 filename <- tntFiles[1]
 tnTrees <- lapply(tntFiles, ReadTntTree, relativePath='.', keepEnd=1)
@@ -48,32 +48,25 @@ plotPanel <- function (i) {
 }
 ```
 
+(ref:tnt-iw-results) Strict consensus of all trees recovered by TNT using Fitch parsimony with implied weighting
 
-(ref:tnt-iw-results) Strict consensus of all trees recovered by TNT using Fitch parsimony with implied weighting.  The consensus of all implied weights runs is not very well resolved. 
-This lack of resolution is largely a product of a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa.
+(ref:tnt-iw-explanation) The consensus of all implied weights runs is not very well resolved, largely due to a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa.
 
-```{R tnt-iw-consensus, echo=FALSE, fig.wid=7.1, fig.height=4}
-par(mfrow=c(1, 2))
+
+```{R tnt-iw-consensus, fig.wid=7.1, fig.height=8, fig.cap='(ref:tnt-iw-results). (ref:first-panels). (ref:tnt-iw-explanation)', echo=FALSE}
+par(mfrow=c(2, 2))
 ColPlot(consensus(tnConsensi)) 
 text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
 
 plotPanel(1)
-```
-
-```{R tnt-iw-3-4.5, fig.width=7.1, fig.height=4, echo=FALSE}
-par(mfrow=c(1, 2))
 plotPanel(2)
 plotPanel(3)
 ```
 
-```{R tnt-iw-7-10.5, fig.width=7.1, fig.height=4, echo=FALSE}
-par(mfrow=c(1, 2))
+```{R tnt-iw-7-24, fig.width=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results), (ref:second-panels)", echo=FALSE}
+par(mfrow=c(2, 2))
 plotPanel(4)
 plotPanel(5)
-```
-
-```{R tnt-iw-16-24, fig.width=7.1, fig.height=4, echo=FALSE, fig.cap='(ref:tnt-iw-results)'}
-par(mfrow=c(1, 2))
 plotPanel(6)
 plotPanel(7)
 ```
@@ -93,7 +86,7 @@ ColMissing(omit)
 
 (ref:tnt-ew-cons) Consensus of all trees obtained using equally weighted Fitch parsimony in TNT.
 
-```{R tnt-ew-consensus, echo=FALSE, fig.cap="(ref:tnt-ew-cons"}
+```{R tnt-ew-consensus, echo=FALSE, fig.cap="(ref:tnt-ew-cons)"}
 tntEw <- list.files('TNT/', pattern='ew\\.tre', full=TRUE)
 omit <- c("Micrina", "Mickwitzia_muralensis")
 ColPlot(ConsensusWithout(ReadTntTree(tntEw, relativePath='.'), omit))

@@ -108,13 +108,15 @@ ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
 ColMissing(omit)
 ```
 
-(ref:ts-iw-indiv-1) Consensus trees of implied weights analyses at all values of _k_, and at the individual values _k_ = `r kValues[1]`, `r kValues[2]` and `r kValues[3]`.
+(ref:ts-iw-indiv) Consensus trees of implied weights analyses
 
-(ref:ts-iw-indiv-2) Consensus trees of implied weights analyses at _k_ = `r paste(kValues[4:6], sep=', ')` and `r kValues[7]`.
+(ref:first-panels) at all values of _k_, and at the individual values _k_ = `r kValues[1]`, `r kValues[2]` and `r kValues[3]`.
+
+(ref:second-panels) at _k_ = `r paste(kValues[4:6], sep=', ')` and `r kValues[7]`.
 
 \clearpage 
 
-```{r treesearch-all-iw-results, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv-1)", echo=FALSE}
+```{r treesearch-all-iw-results, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:first-panels)", echo=FALSE}
 # Plot consensus results
 par(mfrow=c(2, 2), mar=rep(0.2, 4))
 
@@ -133,7 +135,7 @@ PlotPanel(3)
 
 \clearpage 
 
-```{R treesearch-iw-results-3, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv-2)", echo=FALSE}
+```{R treesearch-iw-results-3, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:second-panels)", echo=FALSE}
 par(mfrow=c(2, 2), mar=rep(0.2, 4))
 PlotPanel(4)
 PlotPanel(5)
