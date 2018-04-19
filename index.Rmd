@@ -12,6 +12,7 @@ documentclass: book
 classoption: openany
 bibliography: [References.bib,MorphoBank.bib]
 csl: http://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
+biblio-style: apalike
 link-citations: yes
 github-repo: ms609/hyoliths
 description: "Results of phylogenetic analysis"
