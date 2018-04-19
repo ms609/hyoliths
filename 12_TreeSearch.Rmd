@@ -108,11 +108,15 @@ ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
 ColMissing(omit)
 ```
 
-(ref:ts-iw-indiv) Consensus trees of implied weights analyses at specific values of _k_
+(ref:ts-iw-indiv-1) Consensus trees of implied weights analyses at all values of _k_, and at the individual values _k_ = `r kValues[1]`, `r kValues[2]` and `r kValues[3]`.
 
-```{r treesearch-all-iw-results, fig.width=7.1, fig.height=4, echo=FALSE}
+(ref:ts-iw-indiv-2) Consensus trees of implied weights analyses at _k_ = `r paste(kValues[4:6], sep=', ')` and `r kValues[7]`.
+
+\clearpage 
+
+```{r treesearch-all-iw-results, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv-1)", echo=FALSE}
 # Plot consensus results
-par(mfrow=c(1, 2), mar=rep(0.2, 4))
+par(mfrow=c(2, 2), mar=rep(0.2, 4))
 
 ColPlot(consensus(lapply(iw.trees, consensus)))
 text(-0.5, 1, pos=4, "Consensus of all k values", cex=0.8)
@@ -122,28 +126,24 @@ PlotPanel <- function (i) {
   ColPlot(consensus(iw.trees[[i]]))
   text(1, 1, paste0('k = ', kValues[i]), pos=4)
 }
-
 PlotPanel(1)
-```
-```{R treesearch-iw-results-2, fig.width=7.1, fig.height=4, echo=FALSE}
-par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(2)
 PlotPanel(3)
 ```
-```{R treesearch-iw-results-3, fig.width=7.1, fig.height=4, echo=FALSE}
-par(mfrow=c(1, 2), mar=rep(0.2, 4))
+
+\clearpage 
+
+```{R treesearch-iw-results-3, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv-2)", echo=FALSE}
+par(mfrow=c(2, 2), mar=rep(0.2, 4))
 PlotPanel(4)
 PlotPanel(5)
-```
-```{R treesearch-iw-results-4, fig.width=7.1, fig.height=4, fig.cap="(ref:ts-iw-indiv)", echo=FALSE}
-par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(6)
 PlotPanel(7)
 ```
 
 \clearpage
 
-```{r treesearch-equal-weights-results, fig.cap="Strict consensus of equal weights results", echo=FALSE}
+```{r treesearch-equal-weights-results, fig.cap="Strict consensus of most parsimonious trees under equally weighted parsimony", echo=FALSE}
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
 ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
 ColPlot(consensus(ew.trees))

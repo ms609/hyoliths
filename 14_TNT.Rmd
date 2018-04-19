@@ -34,6 +34,8 @@ Further searches were conducted under extended implied weighting [@Goloboff1997;
 
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 
+## Results
+
 ```{R, echo=FALSE}
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 filename <- tntFiles[1]
@@ -46,10 +48,9 @@ plotPanel <- function (i) {
 }
 ```
 
-## Implied weights
 
-The consensus of all implied weights runs is not very well resolved. 
-This lack of resolution is largely a product of a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa:
+(ref:tnt-iw-results) Strict consensus of all trees recovered by TNT using Fitch parsimony with implied weighting.  The consensus of all implied weights runs is not very well resolved. 
+This lack of resolution is largely a product of a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa.
 
 ```{R tnt-iw-consensus, echo=FALSE, fig.wid=7.1, fig.height=4}
 par(mfrow=c(1, 2))
@@ -71,7 +72,7 @@ plotPanel(4)
 plotPanel(5)
 ```
 
-```{R tnt-iw-16-24, fig.width=7.1, fig.height=4, echo=FALSE}
+```{R tnt-iw-16-24, fig.width=7.1, fig.height=4, echo=FALSE, fig.cap='(ref:tnt-iw-results)'}
 par(mfrow=c(1, 2))
 plotPanel(6)
 plotPanel(7)
@@ -90,9 +91,9 @@ ColMissing(omit)
 -->
 \newpage
 
-## Equal weights
+(ref:tnt-ew-cons) Consensus of all trees obtained using equally weighted Fitch parsimony in TNT.
 
-```{R tnt-ew-consensus, echo=FALSE, fig.cap="TNT Equal weights consensus"}
+```{R tnt-ew-consensus, echo=FALSE, fig.cap="(ref:tnt-ew-cons"}
 tntEw <- list.files('TNT/', pattern='ew\\.tre', full=TRUE)
 omit <- c("Micrina", "Mickwitzia_muralensis")
 ColPlot(ConsensusWithout(ReadTntTree(tntEw, relativePath='.'), omit))

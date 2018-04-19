@@ -58,7 +58,7 @@ Four MrBayes runs were executed, each sampling eight chains for `r Mgen`&nbsp;00
 
 A posterior tree topology was derived from the combined posterior sample of all runs.
 
-```{R mrbayes-full-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, all taxa"}
+```{R mrbayes-full-consensus, echo=FALSE, fig.cap="Results of Bayesian analysis, posterior probability > 50%, all taxa"}
 omit <- c("none")
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
@@ -70,7 +70,7 @@ ColPlot(UnitEdges(root(consensus(thinned, p=0.5), outgroup, resolve.root=TRUE)))
 #ColMissing(omit)
 ```
 
-```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Bayesian analysis, posterior probability > 50%, wildcard taxa pruned"}
+```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Results of Bayesian analysis, posterior probability > 50%, wildcard taxa pruned"}
 omit <- c(
   'Lingulosacculus', 'Mummpikia_nuda', 'Lingulellotreta_malongensis', 
   'Clupeafumosus_socialis', #'Siphonobolus_priscus',
@@ -88,11 +88,11 @@ ColPlot(UnitEdges(rootedConsensus))
 ColMissing(omit)
 ```
 
-Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 200 for each parameter:
+(ref:bayes-pstat) Parameter estimates. Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 200 for each parameter.
 
-```{R mrbayes-parameter-summary, fig.cap="MrBayes parameter summary", echo=FALSE, asis=TRUE}
+```{R mrbayes-parameter-summary, echo=FALSE, asis=TRUE}
 pstat <- read.table('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]
 pstat[, 2:5] <- signif(pstat[, 2:5], 3)
 pstat[, 6] <- signif(pstat[, 6], 5)
-knitr::kable(pstat, caption="MrBayes parameter estimates (.pstat file)")
+knitr::kable(pstat, caption="(ref:bayes-pstat)")
 ```
