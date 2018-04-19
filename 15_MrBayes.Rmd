@@ -56,9 +56,20 @@ Four MrBayes runs were executed, each sampling eight chains for `r Mgen`&nbsp;00
 
 > mcmcp ngen=`r Mgen`000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
 
-A posterior tree topology was derived from the combined posterior sample of all runs.
+A posterior tree topology was derived from the combined posterior sample of all runs. Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 200 for each parameter.
 
-```{R mrbayes-full-consensus, echo=FALSE, fig.cap="Results of Bayesian analysis, posterior probability > 50%, all taxa"}
+## Parameter estimates
+
+```{R mrbayes-parameter-summary, echo=FALSE, asis=TRUE}
+pstat <- read.table('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]
+pstat[, 2:5] <- signif(pstat[, 2:5], 3)
+pstat[, 6] <- signif(pstat[, 6], 5)
+knitr::kable(pstat)
+```
+
+## Results
+
+```{R mrbayes-full-consensus, fig.width=6, fig.height=4.5, fig.cap="Results of Bayesian analysis, posterior probability > 50%, all taxa", echo=FALSE}
 omit <- c("none")
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
@@ -70,7 +81,7 @@ ColPlot(UnitEdges(root(consensus(thinned, p=0.5), outgroup, resolve.root=TRUE)))
 #ColMissing(omit)
 ```
 
-```{R mrbayes-pruned-consensus, echo=FALSE, fig.cap="Results of Bayesian analysis, posterior probability > 50%, wildcard taxa pruned"}
+```{R mrbayes-pruned-consensus, fig.width=7.1, fig.height=4.2, fig.cap="Results of Bayesian analysis, posterior probability > 50%, wildcard taxa pruned", echo=FALSE}
 omit <- c(
   'Lingulosacculus', 'Mummpikia_nuda', 'Lingulellotreta_malongensis', 
   'Clupeafumosus_socialis', #'Siphonobolus_priscus',
@@ -86,13 +97,4 @@ class(thinned) <- 'multiPhylo'
 rootedConsensus <- root(consensus(thinned, p=0.5), outgroup, resolve.root = TRUE)
 ColPlot(UnitEdges(rootedConsensus))
 ColMissing(omit)
-```
-
-(ref:bayes-pstat) Parameter estimates. Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 200 for each parameter.
-
-```{R mrbayes-parameter-summary, echo=FALSE, asis=TRUE}
-pstat <- read.table('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]
-pstat[, 2:5] <- signif(pstat[, 2:5], 3)
-pstat[, 6] <- signif(pstat[, 6], 5)
-knitr::kable(pstat, caption="(ref:bayes-pstat)")
 ```
