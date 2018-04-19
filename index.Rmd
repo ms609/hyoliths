@@ -28,7 +28,7 @@ The results presented in the main paper employ the algorithm described by @Braze
 
 For completeness, we also document the results of [standard Fitch parsimony](#fitch) analysis, and the results of [Bayesian analysis](#bayesian), neither of which treat inapplicable data in a logically consistent fashion.
 
-Supplementary [figures](#figures) and [tables](#tables) appear after the text.
+Supplementary [figures](#figures) and [tables](#table) appear after the text.
 
 ```{r setup-index, include=FALSE, message=FALSE}
 set.seed(0)
