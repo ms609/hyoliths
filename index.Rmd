@@ -155,6 +155,14 @@ cached_dois <- R.cache::addMemoization(function(doi)
 RefExpand <- function (ref) {
   # Blacklisted titles
   if (!ref['Title'] %in% "Invertebrate zoology: a functional evolutionary approach") {
+    # Manual overrides based on title cannot assume DOI present, so go first.
+    title <- ref['Title']
+    ref['Secondary.Title'] <- 
+      if (grepl("interpreting evolutionary relationships within early Rhynchonelliformea",
+                title, fixed=TRUE)) {
+        "Fossils and Strata"
+      } else ref['Secondary.Title']
+    
     
     CleanTitle <- function (title) { 
       title <-gsub('</?i>|[.,;:\\-]', '', title, perl=TRUE)
