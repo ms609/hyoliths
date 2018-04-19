@@ -163,7 +163,8 @@ RefExpand <- function (ref) {
           grepl("Dalarna, Sweden", title, fixed=TRUE)) {
         "Fossils and Strata"
       } else if (grepl("Lower Cambrian brachiopods from the rift valley",
-                title, ignore.case=TRUE)) {
+                title, ignore.case=TRUE) || 
+                grepl("an early articulate brachiopod", title, fixed=TRUE)) {
         "Journal of Paleontology"
       } else if (grepl("Ultrastructure of spermatids and spermatozoa in",
                 title, fixed=TRUE)) {
@@ -174,8 +175,18 @@ RefExpand <- function (ref) {
       } else if (grepl("in the Lower Ordovician sequence of Bohemia",
                        title, fixed=TRUE)) {
         "Sbornik geolgickych ved, Paleontologie"
+      } else if (grepl("musculature and vascular systems of two species of Cambrian Paterinide",
+                       title, fixed=TRUE)) {
+        "Bureau of Mineral Resources Journal of Australian Geology and Geophysics"
+      } else if (title ==  "The Cambrian radiation of brachiopods") {
+        ref['Secondary.Author'] <- "Lipps, J. H. and Signor, Philip W."
+        ref['Publisher'] <- "Pergamon"
+        "Origin and Early Evolution of Metazoa"
       } else ref['Secondary.Title']
-    
+    if (grepl('Fish Evolution and Systematics', title, fixed=TRUE)) {
+      ref['Publisher'] <- "Cambridge University Press"
+    }
+      
     
     CleanTitle <- function (title) { 
       title <-gsub('</?i>|[.,;:\\-]', '', title, perl=TRUE)
