@@ -12,7 +12,7 @@ documentclass: book
 classoption: openany
 bibliography: [References.bib,MorphoBank.bib]
 csl: http://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
-biblio-style: apalike
+biblio-style: apalike-doi
 link-citations: yes
 github-repo: ms609/hyoliths
 description: "Results of phylogenetic analysis"
@@ -282,7 +282,7 @@ RefExpand <- function (ref) {
       ref['Secondary.Author'] <- "Brunton, H.; Cocks, R. M.; Long, S. L."
       ref['Publisher'] <- 'Taylor & Francis'
       "Brachiopods, Past and Present"
-    } else if (grepl("setae and 3D MicroCT", title, fixed=TRUE, ignore.case=TRUE)) {
+    } else if (grepl("setae and 3D MicroCT", title, ignore.case=TRUE)) {
       ref['DOI'] <- ''
       ref['Publisher'] <- "The Palaeontological Association"
       "Palaeontological Association Annual Meeting"
