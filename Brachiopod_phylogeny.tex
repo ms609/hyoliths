@@ -24,7 +24,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={Supplementary Information for ewline Hyoliths with pedicles constrain the origin of the brachiopod body plan},
+            pdftitle={Supplementary Information for: Hyoliths with pedicles constrain the origin of the brachiopod body plan},
             pdfauthor={Haijing Sun, Martin R. Smith, Han Zeng, Fangchen Zhao, Guoxiang Li and Maoyan Zhu},
             pdfborder={0 0 0},
             breaklinks=true}
@@ -116,8 +116,8 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{Supplementary Information for ewline Hyoliths with pedicles constrain
-the origin of the brachiopod body plan}
+  \title{Supplementary Information for: \newline\newline Hyoliths with pedicles
+constrain the origin of the brachiopod body plan}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
   \author{Haijing Sun, Martin R. Smith, Han Zeng, Fangchen Zhao, Guoxiang Li and
@@ -128,16 +128,9 @@ Maoyan Zhu}
   \postdate{\par}
   \date{2018-04-19}
 
-% \documentclass[9pt,twoside]{pnas-new}
-
-%\templatetype{pnassupportinginfo}
-% \readytosubmit %% Uncomment this line before submitting, so that the instruction page is removed.
-
-%\correspondingauthor{Martin R. Smith.\\E-mail: martin.smith@durham.ac.uk}
-
-% \setcitestyle{round}
-\usepackage[nottoc]{tocbibind}
-\raggedbottom
+\setcitestyle{round}
+\usepackage[nottoc]{tocbibind} % list references in TOC
+\raggedbottom % already in pnas-new
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -175,16 +168,17 @@ accompany , and their results.
 
 The results presented in the main paper employ the algorithm described
 by \citet{Brazeau2018} for correct handling of inapplicable data in a
-parsimony setting. We explore how each character is
-\protect\hyperlink{reconstructions}{reconstructed} on an optimal tree.
+parsimony setting. This document depicts how each character is most
+parsimoniously \protect\hyperlink{reconstructions}{reconstructed} on an
+optimal tree.
 
 For completeness, we also document the results of
 \protect\hyperlink{fitch}{standard Fitch parsimony} analysis, and the
 results of \protect\hyperlink{bayesian}{Bayesian analysis}, neither of
 which treat inapplicable data in a logically consistent fashion.
 
-Supplementary \protect\hyperlink{si}{figures and tables} appear at the
-end of the document.
+Supplementary \protect\hyperlink{figures}{figures} and
+\protect\hyperlink{tables}{tables} appear after the text.
 
 \hypertarget{dataset}{\chapter{Phylogenetic dataset}\label{dataset}}
 
@@ -341,10 +335,28 @@ above to improve resolution.}
 
 
 
+
+
+
+
+\clearpage 
+
+\begin{figure}
+\centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-all-iw-results-1.pdf}
-\includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-results-2-1.pdf}
+\caption{\label{fig:treesearch-all-iw-results}Consensus trees of implied weights analyses
+at all values of \emph{k}, and at the individual
+values \emph{k} = 2, 3 and 4.5.}
+\end{figure}
+
+\clearpage 
+
+\begin{figure}
+\centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-results-3-1.pdf}
-\includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-results-4-1.pdf}
+\caption{\label{fig:treesearch-iw-results-3}Consensus trees of implied weights analyses
+at \emph{k} = 7, 10.5, 16 and 24.}
+\end{figure}
 
 \clearpage
 
@@ -352,7 +364,7 @@ above to improve resolution.}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-equal-weights-results-1.pdf}
 \caption{\label{fig:treesearch-equal-weights-results}Strict consensus of
-equal weights results}
+most parsimonious trees under equally weighted parsimony}
 \end{figure}
 
 \clearpage
@@ -372,7 +384,7 @@ each character onto one of the most parsimonious trees (obtained under
 implied weighting, \(k = 4.5\)) in order to generate the indicative
 reconstructions displayed below. The most parsimonious reconstruction
 will of course vary depending on the topology on which it is plotted;
-the figures below are simply to facilitate interpretation.
+the figures below nevertheless facilitated interpretation.
 
 \section{Sclerites}\label{sclerites}
 
@@ -5844,29 +5856,45 @@ tsav *TNT/xpiwe3.tre; sav ;tsav/; {/* Save results to file */}
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT
 software.
 
-\section{Implied weights}\label{implied-weights}
+\section{Results}\label{results-1}
 
-The consensus of all implied weights runs is not very well resolved.
-This lack of resolution is largely a product of a few wildcard taxa,
-particularly at \(k = 4.5\), which obscures a consistent set of
-relationships between the remaining taxa:
 
+
+
+
+
+
+
+
+\begin{figure}
+\centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/tnt-iw-consensus-1.pdf}
+\caption{\label{fig:tnt-iw-consensus}Strict consensus of all trees recovered by TNT
+using Fitch parsimony with implied weighting.
+at all values of \emph{k}, and at the individual
+values \emph{k} = 2, 3 and 4.5. The consensus of all implied weights runs is
+not very well resolved, largely due to a few wildcard taxa, particularly
+at \(k = 4.5\), which obscures a consistent set of relationships between
+the remaining taxa.}
+\end{figure}
 
-\includegraphics{Brachiopod_phylogeny_files/figure-latex/tnt-iw-3-4.5-1.pdf}
-
-\includegraphics{Brachiopod_phylogeny_files/figure-latex/tnt-iw-7-10.5-1.pdf}
-
-\includegraphics{Brachiopod_phylogeny_files/figure-latex/tnt-iw-16-24-1.pdf}
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/tnt-iw-7-24-1.pdf}
+\caption{\label{fig:tnt-iw-7-24}Strict consensus of all trees recovered by TNT
+using Fitch parsimony with implied weighting, at \emph{k} = 7, 10.5, 16 and 24.}
+\end{figure}
 
 \newpage
 
-\section{Equal weights}\label{equal-weights}
+
+
 
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/tnt-ew-consensus-1.pdf}
-\caption{\label{fig:tnt-ew-consensus}TNT Equal weights consensus}
+\caption{\label{fig:tnt-ew-consensus}Consensus of all trees obtained using equally weighted
+Fitch parsimony in TNT.}
 \end{figure}
 
 \hypertarget{bayesian}{\chapter{Bayesian analysis}\label{bayesian}}
@@ -5949,23 +5977,26 @@ of all runs.
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/mrbayes-full-consensus-1.pdf}
-\caption{\label{fig:mrbayes-full-consensus}Bayesian analysis, posterior
-probability \textgreater{} 50\%, all taxa}
+\caption{\label{fig:mrbayes-full-consensus}Results of Bayesian analysis,
+posterior probability \textgreater{} 50\%, all taxa}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/mrbayes-pruned-consensus-1.pdf}
-\caption{\label{fig:mrbayes-pruned-consensus}Bayesian analysis, posterior
-probability \textgreater{} 50\%, wildcard taxa pruned}
+\caption{\label{fig:mrbayes-pruned-consensus}Results of Bayesian analysis,
+posterior probability \textgreater{} 50\%, wildcard taxa pruned}
 \end{figure}
 
-Convergence was indicated by PSRF = 1.00 and an estimated sample size of
-\textgreater{} 200 for each parameter:
+
+
+
 
 \begin{table}
 
-\caption{\label{tab:mrbayes-parameter-summary}MrBayes parameter estimates (.pstat file)}
+\caption{\label{tab:mrbayes-parameter-summary}Parameter estimates. Convergence was indicated by PSRF
+= 1.00 and an estimated sample size of \textgreater{} 200 for each
+parameter.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r}
 \hline
@@ -6093,7 +6124,7 @@ Hyoliths thus represent derived tommotiids, and are the closest
 relatives to the Brachiopod crown group.
 \end{description}
 
-\chapter*{Supplementary Figures}\label{supplementary-figures}
+\hypertarget{figures}{\chapter*{Supplementary Figures}\label{figures}}
 \addcontentsline{toc}{chapter}{Supplementary Figures}
 
 \begin{center}\includegraphics[width=0.8\linewidth]{images/image1} \end{center}
@@ -6141,7 +6172,7 @@ from Paleobiology database.
 
 \clearpage
 
-\chapter*{Supplementary Table}\label{supplementary-table}
+\chapter*{Supplementary Table}\label{table}
 \addcontentsline{toc}{chapter}{Supplementary Table}
 
 \begin{tabular}{l|l|l}
