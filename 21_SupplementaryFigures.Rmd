@@ -3,7 +3,7 @@
 ```{R more-specimens, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics('images/image1.png')
 ```
-**Fig. S1. _Pedunculotheca diania_ Sun, Zhao et Smith gen. et sp. nov. from the Chengjiang Biota, Yunnan Province, China.**
+**Fig. S1. _Pedunculotheca diania_ Sun, Zhao et Zhu gen. et sp. nov. from the Chengjiang Biota, Yunnan Province, China.**
 (a) NIGPAS 166601, external mould of dorsum with dorsal apex and pedicle foramen. (b) NIGPAS 166597, preserving conical shell, operculum and internal soft tissue, showing a compressed elliptic cross-section; backscatter electron micrograph of boxed region shown in (c).
 (d) NIGPAS 166599b, counterpart, juvenile conical shell with operculum showing two longitudinal ventral grooves and circular larval shell. 
 (e) NIGPAS 166602, conical shell with incomplete attachment structure.
@@ -19,7 +19,7 @@ Abbreviations: an = anus, cc = coelomic cavity, da = dorsal apex, es = esophagus
 knitr::include_graphics('images/image2.png')
 ```
 
-**Fig. S2. Elemental distribution in the gut of _Pedunculotheca diania_ Sun, Zhao et Smith gen. et sp. nov.** NIGPAS 166597. Region corresponds to boxed region in Fig. S1c. 
+**Fig. S2. Elemental distribution in the gut of _Pedunculotheca diania_ Sun, Zhao et Zhu gen. et sp. nov.** NIGPAS 166597. Region corresponds to boxed region in Fig. S1c. 
 Scale bar = 100&nbsp;µm.
 
 Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = Aluminium, Fe = Iron, C = Carbon.
