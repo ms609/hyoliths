@@ -1,4 +1,5 @@
 language: R
+r: release
 cache: packages
 sudo: required
 pandoc_version: 1.19.2.1

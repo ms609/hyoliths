@@ -1,4 +1,6 @@
-.smallcaps {font-variant: small-caps;}
+.smallcaps {
+  font-variant: small-caps;
+}
 
 .figure {
   text-align: center;
@@ -20,5 +22,5 @@
 }
 
 .book .book-body .page-wrapper .page-inner .normal a {
- color: #1e6cbb;
+  color: #1e6cbb;
 }
