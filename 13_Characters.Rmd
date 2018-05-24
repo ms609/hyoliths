@@ -220,6 +220,10 @@ fitch_steps <- fitch(tree, my_data, site='site')[attr(my_data, 'index')]
 min_steps <- fitch_consistency_index * fitch_steps
 # Maximum steps is tricky to calculate, so we'll leave RI [= max-obs / max-min]
 # unless referees insist on it; neither it nor CI mean much in any case.
+fitch_retention_index <- RI(tree, my_data, sitewise=TRUE)
+RetentionIndex <- function (i) {
+  if (retention_index[i] == 'NaN') 'n/a' else signif(retention_index[i], 2)
+}
 
 ```
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
@@ -321,7 +325,10 @@ for (i in seq_len(n_char)) {
                      passes=0, counts=1:2, show.labels=1,
                      col.states=TRUE, state.labels=my_states[[i]],
                      use.edge.length=TRUE, legend.pos='topright')
-  legend('bottomleft', paste0('CI = ', signif(min_steps[i] / character_reconstruction$score, 2)))
+  legend('bottomleft', paste0('CI = ', 
+                              signif(min_steps[i] / character_reconstruction$score, 2),
+                              '; Fitch CI = ', fitch_consistency_index[i],
+                              '; Fitch RI = ', RetentionIndex(i)))
   
   cat(paste0("  \n\n **Character ", i, ": ", Italicize(char_names[i]), "**  \n\n"))
   PrintStates(Italicize(my_states[[i]]))
