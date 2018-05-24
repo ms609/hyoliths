@@ -84,8 +84,10 @@ write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
 
 ## Results
 
-```{R treesearch-load-iw-trees, echo=FALSE}
+```{R treesearch-load-trees, echo=FALSE}
 # Read results from files
+ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
+ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
                       pattern=paste0('hy_iw_k',
@@ -99,14 +101,70 @@ iw.trees <- lapply(kValues, function (k) {
     read.nexus(iw.best[which.max(file.mtime(iw.best))])
   }
 })
+
+if (length(kValues) != 7) stop("You need to change this ugly code manually")
+# Eugh.  Still, easier than trying to battle multiPhylo's compression
+allTrees <- c(ew.trees, iw.trees[[1]], iw.trees[[2]],
+           iw.trees[[3]], iw.trees[[4]], iw.trees[[5]],
+           iw.trees[[6]], iw.trees[[7]])
+```
+
+(ref:ts-all-cons) Consensus of all parsimony results. 
+
+(ref:node-support) Node labels denote the proportion of trees obtained under all analytical conditions that support the clade.
+
+```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
+majCon <- consensus(allTrees, p=0.5)
+nTip <- Ntip(majCon)
+splits <- Descendants(majCon, nTip + seq_len(Nnode(majCon)), type='tips')
+splits <- lapply(splits, function (x) sort(majCon$tip.label[x]))
+internalNodes <- nTip + seq_len(nTip - 1)
+supporters <- vapply(splits, function (tips) sum(vapply(allTrees, function (tree) {
+  treeSplits <- Descendants(tree, internalNodes, type='tips')
+  splitLengths <- vapply(treeSplits, length, integer(1))
+  tipLabels <- tree$tip.label
+  treeSplits <- vapply(treeSplits[splitLengths == length(tips)],
+                       function (x) sort(tipLabels[x]), character(length(tips)))
+  any(apply(treeSplits, 2, identical, tips))
+}, logical(1))), integer(1))
+
+
+ColPlot(majCon)
+nodelabels(paste0("\n", signif(supporters / length(allTrees), 3)),
+            adj=0, pos=2, frame='none', cex=0.75)
+
+```
+
+(ref:ts-trim-cons) Consensus of all parsimony results, with taxa omitted to show underlying clade support.  
+
+```{r treesearch-maj-consensus-pruned, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
+omit <- c("Micrina", 'Mickwitzia_muralensis',
+       'Heliomedusa_orienta')
+majCon <- ConsensusWithout(allTrees, omit, p=0.5)
+nTip <- Ntip(majCon)
+splits <- Descendants(majCon, nTip + seq_len(Nnode(majCon)), type='tips')
+splits <- lapply(splits, function (x) sort(majCon$tip.label[x]))
+internalNodes <- nTip + seq_len(nTip - 1)
+prunedTrees <- lapply(trees, drop.tip, tip=omit)
+supporters <- vapply(splits, function (tips) sum(vapply(prunedTrees, function (tree) {
+  treeSplits <- Descendants(tree, internalNodes, type='tips')
+  splitLengths <- vapply(treeSplits, length, integer(1))
+  tipLabels <- tree$tip.label
+  treeSplits <- vapply(treeSplits[splitLengths == length(tips)],
+                       function (x) sort(tipLabels[x]), character(length(tips)))
+  any(apply(treeSplits, 2, identical, tips))
+}, logical(1))), integer(1))
+
+
+ColPlot(majCon)
+nodelabels(paste0("\n", signif(supporters / length(allTrees), 3)),
+            adj=0, pos=2, frame='none', cex=0.75)
+
 ```
 
 (ref:ts-iw-cons) Consensus of implied weights analyses at all values of _k_. Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
 
 ```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE}
-omit = c("Micrina", 'Mickwitzia_muralensis',
-#omit=c(lon, 'Clupeafumosus_socialis',
-       'Heliomedusa_orienta')
 ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
 ColMissing(omit)
 ```
@@ -149,8 +207,6 @@ PlotPanel(7)
 \clearpage
 
 ```{r treesearch-equal-weights-results, fig.cap="Strict consensus of most parsimonious trees under equally weighted parsimony", echo=FALSE}
-ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
-ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
 ColPlot(consensus(ew.trees))
 ```
 
