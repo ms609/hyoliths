@@ -346,10 +346,12 @@ for (i in seq_len(n_char)) {
   
   par(mar=rep(0.2, 4), cex=0.7)
   
+  stateLabels <- my_states[[i]]
+  my_chars_i <- my_chars[, i]
   lapply(seq_along(trees), function (treeNo) {
-    plot.states.matrix(apply.reconstruction(trees[[treeNo]], my_chars[, i]),
+    plot.states.matrix(apply.reconstruction(trees[[treeNo]], my_chars_i),
                        passes=0, counts=1:2, show.labels=1,
-                       col.states=TRUE, state.labels=my_states[[i]],
+                       col.states=TRUE, state.labels=stateLabels,
                        use.edge.length=TRUE, legend.pos='topright')
     legend('bottomleft',  bty='n', ci_text[i, treeNo])
   })
