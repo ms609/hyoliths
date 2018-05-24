@@ -12,7 +12,7 @@ Alongside each character's definition, we have shown how the character maps onto
 
 We emphasize that this is only one most parsimonious tree, selected arbitrarily.  Different trees will give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how well the character fits onto the given tree.  We consider this more intuitive than the use of the flawed [@Archie1989] Consistency Index, but include this value because of its historic significance.
 
-We judge that the reader would be overwhelmed if presented with every possible MPT, and that detail would be lost if characters were only displayed on a consensus tree.  We refer the reader back to the [results][#treesearch] that they may evaluate how the tree presented compares to the consensus tree obtained under their preferred analytical parameters.
+We judge that the reader would be overwhelmed if presented with every possible MPT, and that detail would be lost if characters were only displayed on a consensus tree.  We refer the reader back to the [results](#treesearch) that they may evaluate how the tree presented compares to the consensus tree obtained under their preferred analytical parameters.
 
 
 ```{R char loading functions, echo=FALSE}
