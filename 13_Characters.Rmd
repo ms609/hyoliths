@@ -200,11 +200,8 @@ Italicize <- function (string) {
 if (!require('Inapp')) devtools::install_github('TGuillerme/Inapp')
 library('Inapp')
 if (knitr::is_html_output()) {
-  if (length(kValues) != 7) stop("You need to change this ugly code manually")
-  # Eugh.  Still, easier than trying to battle multiPhylo's compression
-  trees <- c(ew.trees, iw.trees[[1]], iw.trees[[2]],
-             iw.trees[[3]], iw.trees[[4]], iw.trees[[5]],
-             iw.trees[[6]], iw.trees[[7]])
+  trees <- unique(allTrees)
+  treeIndex <- vapply(allTrees, function (tr1) which(vapply(trees, all.equal, logical(1), tr1, use.tip.label=TRUE, use.edge.length=FALSE)), integer(1))
 } else {
   trees <- iw.trees[[3]][2] # Single [] to keep as a list of 1 tree.
 }
@@ -239,15 +236,13 @@ ci_text <- vapply(trees, function (tree) {
 if (knitr::is_html_output()) {
   nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
   nTrees <- sum(nTree)
-  treeIndex <- cumsum(nTree)
-  treeOffset <- treeIndex - nTree
   TreeLink <- function (iNo, offset) {
     globalNo <- offset + iNo
-    paste0('<span class="showTree" id="showTree', globalNo, '" onclick="showTree(', 
+    paste0('<span class="showTree uniqueTree', globalNo, '" onclick="showTree(', 
            globalNo, ', ', n_char, ');">[', iNo, ']</span>')
   }
   rows <- vapply(seq_along(nTree), function (i) {
-    paste(TreeLink(1:nTree[i], treeOffset[i]), collapse=' ')
+    paste(TreeLink(1:nTree[i], treeIndex[i]), collapse=' ')
   }, '')
   names(rows) <- c('Equal weights', paste0('Implied weights, k = ', kValues))
   knitr::kable(rows, col.names='')
