@@ -347,7 +347,7 @@ for (i in seq_len(n_char)) {
   
   par(mar=rep(0.2, 4), cex=0.7)
   
-  lapply(seq_len(trees), function (treeNo) {
+  lapply(seq_along(trees), function (treeNo) {
     plot.states.matrix(apply.reconstruction(trees[[treeNo]], my_chars[, i]),
                        passes=0, counts=1:2, show.labels=1,
                        col.states=TRUE, state.labels=my_states[[i]],
