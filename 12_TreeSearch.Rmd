@@ -87,7 +87,7 @@ write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
 ```{R treesearch-load-trees, echo=FALSE}
 # Read results from files
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
-ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
+ew.trees <- unique(read.nexus(file=ew.best[which.max(file.mtime(ew.best))]))
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
                       pattern=paste0('hy_iw_k',
@@ -98,7 +98,7 @@ iw.trees <- lapply(kValues, function (k) {
   if (length(iw.best) == 0) {
     list()
   } else {
-    read.nexus(iw.best[which.max(file.mtime(iw.best))])
+    unique(read.nexus(iw.best[which.max(file.mtime(iw.best))]))
   }
 })
 
