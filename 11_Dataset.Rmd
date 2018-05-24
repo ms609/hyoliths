@@ -13,12 +13,13 @@ _Namacalathus_ was incorporated as a `r length(names(my_data))`^th^ taxon, but p
 
 Characters are coded following the recommendations of @Brazeau2018:
 
-- We have employed reductive coding, using a distinct state to mark character inapplicability. Character specifications follow the model of @Sereno2007.
+- We have employed reductive coding, using a distinct state to mark character inapplicability. Character specifications follow the structural syntax of @Sereno2007 in order to highlight ontological dependence between characters and emphasize the structure of the dataset.
 
-- We have distinguished between neomorphic and transformational characters [sensu @Sereno2007] by reserving the token `0` to refer to the absence of a neomorphic character.  The states of transformational characters are represented by the tokens `1`, `2`, `3`, ...
+- We have distinguished between neomorphic and transformational characters [sensu @Sereno2007] by reserving the token `0` to refer to the absence of a neomorphic (i.e. presence/absence) character.  The states of transformational characters (i.e. characters that describe a property of a feature) are represented by the tokens `1`, `2`, `3`, ...
 
 - We code the absence of neomorphic ontologically dependent characters [sensu @Vogt2017] as absence, rather than inapplicability.
 
 
-The complete dataset can be viewed and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)), where each character is defined
-and its coding for each taxon discussed.  <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark>
+The complete dataset can be viewed and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)) <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark>
+, where each character is defined and its coding for each taxon discussed.
+A static version of the NEXUS file used to generate this supplementary information can be downloaded directly from [https://raw.githubusercontent.com/ms609/hyoliths/master/`r filename`]

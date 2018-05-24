@@ -37,7 +37,18 @@ Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 knitr::opts_chunk$set(echo = TRUE)
 library('ape'); library('phangorn'); library('TreeSearch'); 
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
-filename <- files[which.max(file.mtime(files))]
+NexusTime <- function (filename, format='double') {
+  FILE <- file(filename)
+  open(FILE)
+  comment <- readLines(FILE, n=3)[3]
+  close(FILE)
+  if (format == 'double') {
+    as.double(sub('.*(\\d{4})\\-(\\d{2})\\-(\\d{2})\\s(\\d{2})\\.(\\d{2}\\.\\d{2}).*', "\\1\\2\\3\\4\\5", comment, perl=TRUE))
+  } else {
+    sub('.*(\\d{4}\\-\\d{2}\\-\\d{2}\\s\\d{2})\\.(\\d{2})\\.(\\d{2}).*', "\\1:\\2:\\3", comment, perl=TRUE)
+  }
+}
+filename <- files[which.max(vapply(files, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(filename)
 my_chars <- ReadCharacters(filename)
 my_states <- attr(my_chars, 'state.labels')
