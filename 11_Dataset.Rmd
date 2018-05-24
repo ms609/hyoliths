@@ -20,11 +20,23 @@ Characters are coded following the recommendations of @Brazeau2018:
 - We code the absence of neomorphic ontologically dependent characters [sensu @Vogt2017] as absence, rather than inapplicability.
 
 
-The complete dataset comprises `r length(my_chars)` character codings, of which `r sum(my_chars == '-')` are inapplicable and `r sum(!my_chars %in% c('-', '?'))` were neither ambiguous nor inapplicable.  The amount and quality of data that _is_ coded is more instructive than a measure of how many cells are ambiguous [@Wiens1998;@Wiens2003]. Of the `r ncol(my_chars)` character, the number of coded entries for each taxon is:
+The complete dataset comprises `r length(my_chars)` character codings, of which `r sum(my_chars == '-')` are inapplicable and `r sum(!my_chars %in% c('-', '?'))` were neither ambiguous nor inapplicable.  The amount and quality of data that _is_ coded is more instructive than a measure of how many cells are ambiguous [@Wiens1998;@Wiens2003]. Of the `r ncol(my_chars)` characters, the number that were coded with an applicable token for each taxon is:
 
 ```{r Coded per taxon, echo=FALSE, asis=TRUE}
-apply(my_chars, 1, function (x) sum(!(x %in% c('?', '-'))))
+coded <- apply(my_chars, 1, function (x) sum(!(x %in% c('?', '-'))))
+columns <- 3
+roundLength <- ceiling(length(coded) / columns) * columns
+padding <- rep('', roundLength - length(coded))
+colStart <- ceiling(seq(1, roundLength + 1, len=columns + 1))[-(columns+1)]
+colEnd <- c(colStart[-1] - 1, length(coded))
+codeMat <- matrix('', ncol=columns * 2, nrow=colEnd[1])
+codeMat[, seq_len(columns)* 2 - 1] <-
+  c(paste0('_', gsub('_', ' ', names(coded), fixed=TRUE), '_'), padding)
+codeMat[, seq_len(columns)* 2] <- c(paste0(coded, "   &nbsp;"), padding)
+
+knitr::kable(codeMat, col.names=rep('', columns * 2))
 ```
 
 The matrix can be viewed interactively and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)). <mark>[This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.]</mark>
 A static version of the NEXUS file used to generate this supplementary information can be downloaded directly from https://raw.githubusercontent.com/ms609/hyoliths/master/`r gsub('^\\./', '', filename)`
+ 
