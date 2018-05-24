@@ -50,6 +50,12 @@ NexusTime <- function (filename, format='double') {
 }
 filename <- files[which.max(vapply(files, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(filename)
+# my_data contains an inapplicable state that we should convert to ambiguous for 
+# standard fitch, for CI etc.
+fitch_data <- my_data
+cont <- attr(fitch_data, 'contrast')
+cont[cont[, '-'] == 1, ] <- 1
+attr(fitch_data, 'contrast') <- cont
 my_chars <- ReadCharacters(filename)
 my_states <- attr(my_chars, 'state.labels')
 my_chars <- my_chars[-1, ]

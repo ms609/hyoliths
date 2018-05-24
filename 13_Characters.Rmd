@@ -215,12 +215,12 @@ taxa_sort <- taxa_names
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
 
-fitch_consistency_index <- CI(tree, my_data, sitewise=TRUE)
-fitch_steps <- fitch(tree, my_data, site='site')[attr(my_data, 'index')]
+fitch_consistency_index <- CI(tree, fitch_data, sitewise=TRUE)
+fitch_steps <- fitch(tree, fitch_data, site='site')[attr(my_data, 'index')]
 min_steps <- fitch_consistency_index * fitch_steps
 # Maximum steps is tricky to calculate, so we'll leave RI [= max-obs / max-min]
 # unless referees insist on it; neither it nor CI mean much in any case.
-fitch_retention_index <- RI(tree, my_data, sitewise=TRUE)
+fitch_retention_index <- RI(tree, fitch_data, sitewise=TRUE)
 RetentionIndex <- function (i) {
   if (fitch_retention_index[i] == 'NaN') 'n/a' else signif(fitch_retention_index[i], 2)
 }
@@ -327,7 +327,7 @@ for (i in seq_len(n_char)) {
                      use.edge.length=TRUE, legend.pos='topright')
   legend('bottomleft',  bty='n',
          paste0('CI = ', signif(min_steps[i] / character_reconstruction$score, 2),
-                '; Fitch CI = ', fitch_consistency_index[i],
+                '; Fitch CI = ', signif(fitch_consistency_index[i], 2),
                 '; Fitch RI = ', RetentionIndex(i)))
   
   cat(paste0("  \n\n **Character ", i, ": ", Italicize(char_names[i]), "**  \n\n"))
