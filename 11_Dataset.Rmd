@@ -20,7 +20,7 @@ Characters are coded following the recommendations of @Brazeau2018:
 - We code the absence of neomorphic ontologically dependent characters [sensu @Vogt2017] as absence, rather than inapplicability.
 
 
-The complete dataset comprises `r length(my_chars)` character codings, of which `r sum(my_chars == '-')` are inapplicable and `r sum(my_chars == '?')` were ambiguous.  Of course, the absolute of 'missing' data is entirely irrelevant; what is important is the amount and quality of data that _is_ available, not what is missing [@Weins1998;@Weins2003]. Of the `r ncol(my_chars)` character, the number of coded entries for each taxon is:
+The complete dataset comprises `r length(my_chars)` character codings, of which `r sum(my_chars == '-')` are inapplicable and `r sum(!my_chars %in% c('-', '?'))` were neither ambiguous nor inapplicable.  The amount and quality of data that _is_ coded is more instructive than a measure of how many cells are ambiguous [@Wiens1998;@Wiens2003]. Of the `r ncol(my_chars)` character, the number of coded entries for each taxon is:
 
 ```{r Coded per taxon, echo=FALSE, asis=TRUE}
 apply(my_chars, 1, function (x) sum(!(x %in% c('?', '-'))))
