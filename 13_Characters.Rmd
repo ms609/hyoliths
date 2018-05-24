@@ -215,6 +215,13 @@ taxa_sort <- taxa_names
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
 
+consistency_index <- CI(tree, my_data, sitewise=TRUE)
+retention_index <- RI(tree, my_data, sitewise=TRUE)
+RetentionIndex <- function (i) {
+  if (retention_index[i] == 'NaN') 'n/a' else signif(retention_index[i], 2)
+}
+
+
 ```
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
 ## These function definitions must be in the same block as when they are called.
@@ -314,6 +321,8 @@ for (i in seq_len(n_char)) {
                      passes=0, counts=1:2, show.labels=1,
                      col.states=TRUE, state.labels=my_states[[i]],
                      use.edge.length=TRUE, legend.pos='topright')
+  legend('bottomleft', paste0('CI = ', signif(consistency_index[i], 2),
+                              '; RI = ', RetentionIndex(i)), bty='n')
   
   cat(paste0("  \n\n **Character ", i, ": ", Italicize(char_names[i]), "**  \n\n"))
   PrintStates(Italicize(my_states[[i]]))
