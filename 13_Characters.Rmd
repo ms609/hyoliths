@@ -325,10 +325,10 @@ for (i in seq_len(n_char)) {
                      passes=0, counts=1:2, show.labels=1,
                      col.states=TRUE, state.labels=my_states[[i]],
                      use.edge.length=TRUE, legend.pos='topright')
-  legend('bottomleft', paste0('CI = ', 
-                              signif(min_steps[i] / character_reconstruction$score, 2),
-                              '; Fitch CI = ', fitch_consistency_index[i],
-                              '; Fitch RI = ', RetentionIndex(i)))
+  legend('bottomleft',  bty='n',
+         paste0('CI = ', signif(min_steps[i] / character_reconstruction$score, 2),
+                '; Fitch CI = ', fitch_consistency_index[i],
+                '; Fitch RI = ', RetentionIndex(i)))
   
   cat(paste0("  \n\n **Character ", i, ": ", Italicize(char_names[i]), "**  \n\n"))
   PrintStates(Italicize(my_states[[i]]))
