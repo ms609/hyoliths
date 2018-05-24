@@ -365,5 +365,5 @@ for (i in seq_len(n_char)) {
   if (length(state_notes_i) > 0) PrintStateNotes(state_notes_i)
   cat("  \n") # Clear line, ready for next block
 }
-cat("<script>showTree(1, ", nChar, ");</script>")
+cat("<script>showTree(1, ", n_char, ");</script>")
 ```
