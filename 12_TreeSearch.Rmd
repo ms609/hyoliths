@@ -145,7 +145,7 @@ nTip <- Ntip(majCon)
 splits <- Descendants(majCon, nTip + seq_len(Nnode(majCon)), type='tips')
 splits <- lapply(splits, function (x) sort(majCon$tip.label[x]))
 internalNodes <- nTip + seq_len(nTip - 1)
-prunedTrees <- lapply(trees, drop.tip, tip=omit)
+prunedTrees <- lapply(allTrees, drop.tip, tip=omit)
 supporters <- vapply(splits, function (tips) sum(vapply(prunedTrees, function (tree) {
   treeSplits <- Descendants(tree, internalNodes, type='tips')
   splitLengths <- vapply(treeSplits, length, integer(1))

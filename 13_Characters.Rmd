@@ -201,7 +201,6 @@ if (!require('Inapp')) devtools::install_github('TGuillerme/Inapp')
 library('Inapp')
 if (knitr::is_html_output()) {
   trees <- unique(allTrees)
-  treeIndex <- vapply(allTrees, function (tr1) which(vapply(trees, all.equal, logical(1), tr1, use.tip.label=TRUE, use.edge.length=FALSE)), integer(1))
 } else {
   trees <- iw.trees[[3]][2] # Single [] to keep as a list of 1 tree.
 }
@@ -236,6 +235,11 @@ ci_text <- vapply(trees, function (tree) {
 if (knitr::is_html_output()) {
   nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
   nTrees <- sum(nTree)
+  treeIndex <- vapply(allTrees, 
+                      function (tr1)
+                        which(vapply(trees, all.equal, logical(1), tr1, 
+                                     use.tip.label=TRUE, use.edge.length=FALSE)),
+                      integer(1))
   TreeLink <- function (iNo, offset) {
     globalNo <- offset + iNo
     paste0('<span class="showTree uniqueTree', globalNo, '" onclick="showTree(', 

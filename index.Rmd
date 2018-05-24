@@ -367,9 +367,9 @@ BibEntry <- function (ref) {
          )
 }
 
-bibFile <- file("MorphoBank.bib", encoding='UTF-8')
-writeLines(apply(refs, 1, BibEntry), bibFile)
-close(bibFile)
+#bibFile <- file("MorphoBank.bib", encoding='UTF-8')
+#writeLines(apply(refs, 1, BibEntry), bibFile)
+#close(bibFile)
 refKeys <- apply(refs, 1, RefKey)
 ```
 
