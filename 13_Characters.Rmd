@@ -222,7 +222,7 @@ min_steps <- fitch_consistency_index * fitch_steps
 # unless referees insist on it; neither it nor CI mean much in any case.
 fitch_retention_index <- RI(tree, my_data, sitewise=TRUE)
 RetentionIndex <- function (i) {
-  if (retention_index[i] == 'NaN') 'n/a' else signif(retention_index[i], 2)
+  if (fitch_retention_index[i] == 'NaN') 'n/a' else signif(fitch_retention_index[i], 2)
 }
 
 ```
