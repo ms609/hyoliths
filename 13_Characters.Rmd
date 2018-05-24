@@ -6,9 +6,11 @@ date: "`r Sys.Date()`"
 
 # Character reconstructions {#reconstructions}
 
-This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)).
+This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)). <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark>
 
-The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$) in order to generate the indicative reconstructions displayed below.  The most parsimonious reconstruction will of course vary depending on the topology on which it is plotted; the figures below nevertheless facilitated interpretation.
+The _Inapp_ _R_ package [@Brazeau2018] was used to map each character onto one of the most parsimonious trees (obtained under implied weighting, $k = 4.5$) in order to generate the indicative reconstructions displayed below.  The most parsimonious reconstruction will of course vary depending on the topology on which it is plotted; the figures below nevertheless facilitate interpretation.
+
+
 
 ```{R char loading functions, echo=FALSE}
 StrReplace <- stringi::stri_replace_all_fixed

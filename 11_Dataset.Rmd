@@ -21,4 +21,4 @@ Characters are coded following the recommendations of @Brazeau2018:
 
 
 The complete dataset can be viewed and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)), where each character is defined
-and its coding for each taxon discussed.
+and its coding for each taxon discussed.  <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark>

@@ -8,6 +8,9 @@ date: "`r Sys.Date()`"
 
 The phylogenetic dataset contains a considerable proportion of inapplicable codings (`r sum(my_chars == '-')`/`r length(my_chars)` = `r round(sum(my_chars == '-') / length(my_chars), 3) * 100`% of tokens), which are known to introduce error and bias to phylogenetic reconstruction when the Fitch algorithm is employed [@Maddison1993;@Brazeau2018].  As such, we employed a new tree-scoring algorithm that correctly handles inapplicable data [@Brazeau2018], implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib].  We employed the R package _TreeSearch_ v0.1.2 [@Smith2018TreeSearch] to conduct phylogenetic tree search with this algorithm.
 
+As this is a new method, we also employed the traditional, Fitch algorithm, even though this approach is known to generate erroneous trees.  The results of this analysis can be viewed in [a later section][#fitch].
+
+
 ## Search parameters
 
 Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997].  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that has been shown to produce higher accuracy than equal weights at any given level of precision [@Smith2017].
