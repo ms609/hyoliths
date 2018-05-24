@@ -24,3 +24,8 @@
 .book .book-body .page-wrapper .page-inner .normal a {
   color: #1e6cbb;
 }
+
+.showTree {
+  font-size: x-small;
+  color: #4183c4;
+}

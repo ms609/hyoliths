@@ -1,0 +1,11 @@
+<script>
+  function showTree (tree, n) {
+    $('.showTree').css('font-weight', 'normal');
+    $('#showTree' + tree).css('font-weight', 'bold');
+
+    $('img').css('display', 'none');
+    for (i = 0; i < n; i++) {
+      $('img[src$="-' + tree + (i * n) + '.png"]').css('display', 'block');
+    }
+  }
+</script>

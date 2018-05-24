@@ -8,6 +8,9 @@ output:
     includes:
       in_header: preamble.tex
     keep_tex: true
+  bookdown::gitbook:
+    includes:
+      in_header: javascript.html
 documentclass: book
 classoption: openany
 bibliography: [References.bib,MorphoBank.bib]
