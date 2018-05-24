@@ -20,6 +20,11 @@ Characters are coded following the recommendations of @Brazeau2018:
 - We code the absence of neomorphic ontologically dependent characters [sensu @Vogt2017] as absence, rather than inapplicability.
 
 
-The complete dataset can be viewed and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)) <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark>
-, where each character is defined and its coding for each taxon discussed.
+The complete dataset comprises `r length(my_chars)` character codings, of which `r sum(my_chars == '-')` are inapplicable and `r sum(my_chars == '?')` were ambiguous.  Of course, the absolute of 'missing' data is entirely irrelevant; what is important is the amount and quality of data that _is_ available, not what is missing [@Weins2003]. Of the `r ncol(my_chars)` character, the number of coded entries for each taxon is:
+
+```{r Coded per taxon, echo=FALSE, asis=TRUE}
+apply(my_chars, 1, function (x) sum(!(x %in% c('?', '-'))))
+```
+
+The matrix can be viewed interactively and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)). <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark>
 A static version of the NEXUS file used to generate this supplementary information can be downloaded directly from [https://raw.githubusercontent.com/ms609/hyoliths/master/`r filename`]
