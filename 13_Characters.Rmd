@@ -348,7 +348,7 @@ for (i in seq_len(n_char)) {
   
   stateLabels <- my_states[[i]]
   my_chars_i <- my_chars[, i]
-  lapply(seq_along(trees), function (treeNo) {
+  null <- lapply(seq_along(trees), function (treeNo) {
     plot.states.matrix(apply.reconstruction(trees[[treeNo]], my_chars_i),
                        passes=0, counts=1:2, show.labels=1,
                        col.states=TRUE, state.labels=stateLabels,
@@ -365,4 +365,5 @@ for (i in seq_len(n_char)) {
   if (length(state_notes_i) > 0) PrintStateNotes(state_notes_i)
   cat("  \n") # Clear line, ready for next block
 }
+cat("<script>showTree(1, ", nChar, ");</script>")
 ```
