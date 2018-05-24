@@ -217,7 +217,10 @@ Characters are coded following the recommendations of
 
 The complete dataset can be viewed and downloaded at Morphobank
 (\href{https://morphobank.org/permalink/?P2800}{project 2800}), where
-each character is defined and its coding for each taxon discussed.
+each character is defined and its coding for each taxon discussed. This
+link will become live on publication of the paper. Referees should
+follow the pre-publication link to the dataset that has been provided in
+the main manuscript.
 
 \hypertarget{treesearch}{\chapter{Parsimony analysis}\label{treesearch}}
 
@@ -230,6 +233,11 @@ inapplicable data \citep{Brazeau2018}, implemented in the
 \emph{MorphyLib} C library \citep{Brazeau2017Morphylib}. We employed the
 R package \emph{TreeSearch} v0.1.2 \citep{Smith2018TreeSearch} to
 conduct phylogenetic tree search with this algorithm.
+
+As this is a new method, we also employed the traditional, Fitch
+algorithm, even though this approach is known to generate erroneous
+trees. The results of this analysis can be viewed in {[}a later
+section{]}{[}\#fitch{]}.
 
 \section{Search parameters}\label{search-parameters}
 
@@ -379,14 +387,30 @@ and justifies codings in particular taxa where relevant. Further
 citations for codings that are not discussed in the text can be viewed
 by browsing the \protect\hyperlink{dataset}{morphological dataset} on
 MorphoBank (\href{https://morphobank.org/permalink/?P2800}{project
-2800}).
+2800}). This link will become live on publication of the paper. Referees
+should follow the pre-publication link to the dataset that has been
+provided in the main manuscript.
 
-The \emph{Inapp} \emph{R} package \citep{Brazeau2018} was used to map
-each character onto one of the most parsimonious trees (obtained under
-implied weighting, \(k = 4.5\)) in order to generate the indicative
-reconstructions displayed below. The most parsimonious reconstruction
-will of course vary depending on the topology on which it is plotted;
-the figures below nevertheless facilitated interpretation.
+Alongside each character's definition, we have shown how the character
+maps onto one of the most parsimonious trees (obtained under implied
+weighting, \(k = 4.5\)). Each tip is labelled as it is coded in the
+matrix, and these states are used to reconstruct the condition of each
+internal node, using the parsimony method of \citet{Brazeau2018} as
+implemented in the \emph{Inapp} \emph{R} package.
+
+We emphasize that this is only one most parsimonious tree, selected
+arbitrarily. Different trees will give different reconstructions. The
+character mappings are not intended to definitively establish how each
+character evolved, but to help the reader quickly establish how each
+character has been coded, and to visualize at a glance how well the
+character fits onto the given tree.
+
+We judge that the reader would be overwhelmed if presented with every
+possible MPT, and that detail would be lost if characters were only
+displayed on a consensus tree. We refer the reader back to the
+{[}results{]}{[}\#treesearch{]} that they may evaluate how the tree
+presented compares to the consensus tree obtained under their preferred
+analytical parameters.
 
 \section{Sclerites}\label{sclerites}
 
@@ -5896,11 +5920,23 @@ using Fitch parsimony with implied weighting, at \emph{k} = 7, 10.5, 16 and 24.}
 
 
 
+
+
+
+
+
+
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/tnt-ew-consensus-1.pdf}
 \caption{\label{fig:tnt-ew-consensus}Consensus of all trees obtained using equally weighted
-Fitch parsimony in TNT.}
+Fitch parsimony in TNT. \emph{Mickwitzia} and \emph{Micrina} may equally
+parsimoniously be reconstructed in the basal region of the linguliform
+or rhynchonelliform lineages; as such, the inclusion of these taxa in
+the consensus tree reduces resolution. These taxa were still included in
+the analysis used to generate this tree, but were removed from each MPT
+before the consensus was calculated in order that the relationships that
+are present in each tree might be more easily observed.}
 \end{figure}
 
 \hypertarget{bayesian}{\chapter{Bayesian analysis}\label{bayesian}}
