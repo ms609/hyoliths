@@ -24,3 +24,62 @@
 .book .book-body .page-wrapper .page-inner .normal a {
   color: #1e6cbb;
 }
+
+svg {
+  clear: both;
+}
+
+.tree {
+  margin-bottom: -595px;
+}
+
+path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 2.5;
+}
+
+path.inapplicable {
+  stroke-dasharray: 6;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal text.taxonLabel {
+  fill: black;
+  font-style: italic;
+  font-size: 9.5pt;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal svg text{
+  font-size: 10pt;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .selectTree {
+  height: 1.3em;
+  float: left;
+  font-size: 10pt;
+  font-style: italic;
+  color: #34caaf;
+}
+
+tspan.score, tspan.flag {
+  font-weight: bold;
+}
+
+text.stepsLabel {
+  fill: #aab;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .switch {
+  float: left;
+  padding: 0 1px;
+  margin: 1px 1px;
+  height: 1.3em;
+  min-width: 1.3em;
+  text-align: center;
+  font-size: 10pt;
+  background-color: #fcfcfc;
+  border-radius: 1.2em;
+  color: #34caaf;
+  font-weight : bold;
+  box-shadow: 1px 2px #dddde4;
+}
