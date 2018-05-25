@@ -8,9 +8,6 @@ output:
     includes:
       in_header: preamble.tex
     keep_tex: true
-  bookdown::gitbook:
-    includes:
-      in_header: javascript.html
 documentclass: book
 classoption: openany
 bibliography: [References.bib,MorphoBank.bib]
@@ -64,6 +61,8 @@ my_states <- attr(my_chars, 'state.labels')
 my_chars <- my_chars[-1, ]
 neomorphic <- vapply(my_states, function(x) !x[[1]] %in% c("", "''"), logical(1))
 setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
+
+kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
 outgroup <- 'Dailyatia'
 
