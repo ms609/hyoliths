@@ -365,16 +365,16 @@ if (knitr::is_html_output()) {
                         which(vapply(trees, all.equal, logical(1), tr1, 
                                      use.tip.label=TRUE, use.edge.length=FALSE)),
                       integer(1))
-  TreeLink <- function (iNo, offset) {
-    globalNo <- offset + iNo
-    paste0('<span class="showTree uniqueTree', globalNo, '" onclick="showTree(', 
-           globalNo, ', ', n_char, ');">[', iNo, ']</span>')
-  }
-  rows <- vapply(seq_along(nTree), function (i) {
-    paste(TreeLink(1:nTree[i], treeIndex[i]), collapse=' ')
-  }, '')
-  names(rows) <- c('Equal weights', paste0('Implied weights, k = ', kValues))
-  knitr::kable(rows, col.names='')
+  #TreeLink <- function (iNo, offset) {
+  #  globalNo <- offset + iNo
+  #  paste0('<span class="showTree uniqueTree', globalNo, '" onclick="showTree(', 
+  #         globalNo, ', ', n_char, ');">[', iNo, ']</span>')
+  #}
+  #rows <- vapply(seq_along(nTree), function (i) {
+  #  paste(TreeLink(1:nTree[i], treeIndex[i]), collapse=' ')
+  #}, '')
+  #names(rows) <- c('Equal weights', paste0('Implied weights, k = ', kValues))
+  #knitr::kable(rows, col.names='')
 }
 ```
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
