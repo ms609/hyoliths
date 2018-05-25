@@ -8,7 +8,7 @@ date: "`r Sys.Date()`"
 
 This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)). <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark>
 
-Alongside each character's definition, we mapped each character onto a tree.
+Alongside each character's definition, each character is mapped onto a tree.
  `r if (knitr::is_html_output()) 'The tree used for reconstruction can be selected using the links below.' else 'Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting, $k = 4.5$. Other trees can be viewed in the HTML version of this file at \\href{https://ms609.github.io/hyoliths/reconstructions.html}{ms609.github.io/hyoliths}.'`
 Each tip is labelled as it is coded in the matrix, and these states are used to reconstruct the condition of each internal node, using the parsimony method of @Brazeau2018 as implemented in the _Inapp_ _R_ package.
 
@@ -358,13 +358,15 @@ ci_text <- vapply(trees, function (tree) {
 ```{R Javascript selection, echo=FALSE, asis=TRUE}
 if (knitr::is_html_output()) {
   nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
-  treeNames <- rep(c('Equal weights', paste0('Implied weights, k = ', kValues)), nTree)
+  analysisNames <- c('Equal weights', paste0('Implied weights, k = ', kValues))
+  treeNames <- rep(analysisNames, nTree)
   nTrees <- sum(nTree)
   treeIndex <- vapply(allTrees,
                       function (tr1)
                         which(vapply(trees, all.equal, logical(1), tr1, 
                                      use.tip.label=TRUE, use.edge.length=FALSE)),
                       integer(1))
+  eachTree <- seq_along(trees)
   #TreeLink <- function (iNo, offset) {
   #  globalNo <- offset + iNo
   #  paste0('<span class="showTree uniqueTree', globalNo, '" onclick="showTree(', 
@@ -422,8 +424,8 @@ PrintStateNotes <- function (notes) {
 taxa_not_to_print <- which(taxa_names %in% 'Namacalathus')
 prev_char_parts = "NONE"
 prev_nesting = 0
-#for (i in 1:4) {
-for (i in seq_len(n_char)) {
+for (i in 1:4) {
+#for (i in seq_len(n_char)) {
   
   this_char_parts <- char_parts[[i]]
   next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
@@ -482,7 +484,6 @@ for (i in seq_len(n_char)) {
                             ');">', eachTree, '</div>', collapse=''),
           '</div>'))
     
-    eachTree <- seq_along(trees)
     for (treeNo in eachTree) {
       tree <- trees[[treeNo]]
       states_matrix <- apply.reconstruction(tree, my_chars_i)
@@ -513,6 +514,11 @@ for (i in seq_len(n_char)) {
       nodeY <- double(length(nAncestors))
       nodeY[child[child <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
       yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
+      
+      analysisBoxes <- paste0('<path d="M', svgWidth -1L, ',', 
+                              yStep * 5L + (seq_along(analysisNames) * 16L), 
+                              'h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>')
+
       for (nodeI in rev(internal)) {
         nodeY[nodeI] <- mean(nodeY[Children(tree, nodeI)])
       }
@@ -539,36 +545,41 @@ for (i in seq_len(n_char)) {
                        legendLabels, '</text>')
       nRegions <- states_matrix$regions
       if (length(nRegions) == 0) nRegions <- 0
-      ciCaption <- paste0('<text x="', svgWidth,
+      ciCaption <- paste0('<text x="', svgWidth - 4L,
                    '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
                     'Character adds <tspan class="score">', states_matrix$score,
-                   '</tspan> to tree score</text><text x="', svgWidth,
+                   '</tspan> to tree score</text><text x="', svgWidth - 4L,
                    '" y="', (yStep * 2) + textY, '" text-anchor="end" class="stepsLabel">',
                    '<tspan class="score">', states_matrix$regions,
                    '</tspan> additional region', ifelse(states_matrix$regions == 1, '', 's'), 
-                   '</text><text x="', svgWidth,
+                   '</text><text x="', svgWidth - 4L,
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
                     ci_text[i, treeNo], '</text>',
-                   '</text><text x="', svgWidth,
-                   '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
-                   '<tspan dy="1.2em">', 
-                   paste0(c('A most parsimonious tree under:',
-                            treeNames[treeIndex==treeNo]),
-                          collapse=paste0('</tspan><tspan x="', svgWidth, 
-                          '" style="font-style:italic" dy="1.2em">')),
-                    '</tspan></text>')
-      
+                   '</text>')
       
       cat(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
           '" height="', svgHeight, ifelse(treeNo==1, '', '" display="none'),
-          '" class="tree', treeNo, '">',
+          '" class="tree tree', treeNo, '">',
           paste0(tips, collapse=''),
           paste0(edges, collapse=''),
-          paste0(legend, collapse=''),
-          ciCaption,
+          ciCaption, analysisBoxes[analysisNames %in% treeNames[treeIndex==treeNo]],
           '</svg>'))
+      
+      
     }
-    
+    # Static legend overlay
+    cat(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
+        '" height="', svgHeight, '" class="treeOverlay">',
+        paste0(legend, collapse=''),
+        paste0('<text x="', svgWidth - 4L,
+                   '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
+                   '<tspan dy="16">', 
+                   paste0(c('A most parsimonious tree under:',
+                            analysisNames),
+                          collapse=paste0('</tspan><tspan x="', svgWidth - 2L, 
+                          '" style="font-style:italic" dy="1.2em">')),
+                    '</tspan></text>'),
+        '</svg>'))
   } else {
     plot.states.matrix(apply.reconstruction(trees[[1]], my_chars_i),
                        passes=0, counts=1:2, show.labels=1,

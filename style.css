@@ -29,6 +29,10 @@ svg {
   clear: both;
 }
 
+.tree {
+  margin-bottom: -595px;
+}
+
 path {
   fill: none;
   stroke-linecap: round;
