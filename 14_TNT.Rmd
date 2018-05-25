@@ -34,6 +34,7 @@ Further searches were conducted under extended implied weighting [@Goloboff1997;
 
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 
+<!-- "Jackknife resampling should be used rather than bootstrap resampling" -- @Simmons2011-->
 ## Results
 
 ```{R tnt-results-init, echo=FALSE}
