@@ -476,6 +476,12 @@ for (i in seq_len(n_char)) {
   my_chars_i <- my_chars[, i]
   
   if (knitr::is_html_output()) {
+    cat(paste0('<div class="switcher"><div class="selectTree">Select tree:</div>',
+           paste0('<div class="switch switch', eachTree, 
+                  '" onmouseover="showTree(', eachTree, 
+                            ');">', eachTree, '</div>', collapse=''),
+          '</div>'))
+    
     eachTree <- seq_along(trees)
     for (treeNo in eachTree) {
       tree <- trees[[treeNo]]
@@ -563,11 +569,6 @@ for (i in seq_len(n_char)) {
           '</svg>'))
     }
     
-    cat(paste0('<div class="switcher"><div class="selectTree">Select tree:</div>',
-           paste0('<div class="switch switch', eachTree, 
-                  '" onmouseover="showTree(', eachTree, 
-                            ');">', eachTree, '</div>', collapse=''),
-          '</div><div style="clear: both"></div>'))
   } else {
     plot.states.matrix(apply.reconstruction(trees[[1]], my_chars_i),
                        passes=0, counts=1:2, show.labels=1,

@@ -25,8 +25,8 @@
   color: #1e6cbb;
 }
 
-.showTree:hover {
-  color: #223;
+svg {
+  clear: both;
 }
 
 path {
