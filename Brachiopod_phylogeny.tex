@@ -126,7 +126,7 @@ Maoyan Zhu}
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2018-05-24}
+  \date{2018-05-25}
 
 \usepackage{doi} % Adds hyperlinks to dois
 \setcitestyle{round}
@@ -307,8 +307,6 @@ to generate these pages.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{kValues <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\FloatTok{4.5}\NormalTok{, }\DecValTok{7}\NormalTok{, }\FloatTok{10.5}\NormalTok{, }\DecValTok{16}\NormalTok{, }\DecValTok{24}\NormalTok{)}
-
 \CommentTok{# Load data from locally downloaded copy of MorphoBank matrix}
 \NormalTok{my_data <-}\StringTok{ }\KeywordTok{ReadAsPhyDat}\NormalTok{(filename)}
 \NormalTok{my_data}\OperatorTok{$}\NormalTok{Namacalathus <-}\StringTok{ }\OtherTok{NULL} \CommentTok{# Exclude Namacalathus}
@@ -376,6 +374,30 @@ The position of the root does not affect tree score, so we keep it fixed
 \end{Shaded}
 
 \section{Results}\label{results}
+
+
+
+
+
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-maj-consensus-1.pdf}
+\caption{\label{fig:treesearch-maj-consensus}Consensus of all parsimony results.
+Node labels denote the proportion of trees obtained
+under all analytical conditions that support the clade.}
+\end{figure}
+
+
+
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-maj-consensus-pruned-1.pdf}
+\caption{\label{fig:treesearch-maj-consensus-pruned}Consensus of all parsimony results.
+Node labels denote the proportion of trees obtained
+under all analytical conditions that support the clade.}
+\end{figure}
 
 
 
