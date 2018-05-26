@@ -128,16 +128,6 @@ MatrixData <- function (x, state.labels) {
         tips_colours = as.character(state_colours[tips_colours]))
 }
 ```
-<script>
-function showTree (tree) {
-  $('svg').css('display', 'none');
-  $('svg.tree' + tree).css('display', 'block');
-  $('.switch').css('color', '#34caaf');
-  $('.switch' + tree).css('color', '#223');
-  $('.switch').css('background-color', '#fcfcfc');
-  $('.switch' + tree).css('background-color', '#eee');
-}
-</script>
 ```{R char loading functions, echo=FALSE}
 StrReplace <- stringi::stri_replace_all_fixed
 
@@ -420,6 +410,16 @@ if (knitr::is_html_output()) {
   #knitr::kable(rows, col.names='')
 }
 ```
+<script>
+function showTree (tree) {
+  $("img.tree").attr("src", str.replace("`r sprintf(treeNamer, '\\d+', '(\\d+')')`",
+    "`r sprintf(treeNamer, '" + tree + "', "\\1")`"));
+  $(".switch").css("color", "#34caaf");
+  $(".switch" + tree).css("color", "#223");
+  $(".switch").css("background-color", "#fcfcfc");
+  $(".switch" + tree).css("background-color", "#eee");
+}
+</script>
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
 ## These function definitions must be in the same block as when they are called.
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
