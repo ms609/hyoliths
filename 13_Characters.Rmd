@@ -346,10 +346,14 @@ ci_text <- vapply(trees, function (tree) {
 }, character(n_char), USE.NAMES=FALSE)
 ```
 ```{R SVG-setup, echo=FALSE, asis=TRUE}
+CheckDirExists <- function (x) if (!dir.exists(x)) dir.create(x)
+CheckDirExists('_bookdown_files')
+CheckDirExists('_bookdown_files/Brachiopod_phylogeny_files')
+CheckDirExists('_bookdown_files/Brachiopod_phylogeny_files/figure_html')
+fileNamer <- './_bookdown_files/Brachiopod_phylogeny_files/figure_html/tree%s-char%s.svg'
 if (knitr::is_html_output()) {
   nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
   analysisNames <- c('Equal weights', paste0('Implied weights, k = ', kValues))
-  fileNamer <- 'Brachiopod_phylogeny_files/images/tree%s-char%s.svg'
   treeNames <- rep(analysisNames, nTree)
   nTrees <- sum(nTree)
   treeIndex <- vapply(allTrees,
