@@ -345,7 +345,7 @@ ci_text <- vapply(trees, function (tree) {
                   '; Fitch RI = ', fitch_retention_index)
 }, character(n_char), USE.NAMES=FALSE)
 ```
-```{R SVG-setup, echo=FALSE, asis=TRUE}
+```{R SVG-setup, echo=FALSE}
 CheckDirExists <- function (x) if (!dir.exists(x)) dir.create(x)
 CheckDirExists('_bookdown_files')
 CheckDirExists('_bookdown_files/Brachiopod_phylogeny_files')
@@ -373,8 +373,9 @@ if (knitr::is_html_output()) {
   internal <- n_tip + seq_len(n_tip - 1)
   terminal <- seq_len(n_tip)
   tipLabel <- matrix('', n_tree, n_tip)
-  parent <- child <- matrix(0, n_tree, n_tip)
-  eachEdge <- seq_len(dim(tree$edge)[1])
+  n_edge <- dim(tree$edge)[1]
+  eachEdge <- seq_len(n_edge)
+  parent <- child <- matrix(0, n_tree, n_edge)
   xStep <- nodeX <- nodeY <- vector('list', n_tree)
   yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
   textY <- 3L
@@ -391,11 +392,11 @@ if (knitr::is_html_output()) {
                        len=max(nAncestors) + 1L), 1)
     nodeX[[i]] <- xStep[[i]][nAncestors + 1L]
     nodeYi <- double(length(nAncestors))
-    nodeYi[child[treeNo, child[treeNo, ] <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
+    nodeYi[child[i, child[i, ] <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
     
     analysisBoxes[i] <- paste0('<path d="M', svgWidth -1L, ',', 
                             yStep * 5L + (seq_along(analysisNames) * 16L), 
-                            'h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>')
+                            'h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>', collapse='')
 
     for (nodeI in rev(internal)) {
       nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
@@ -417,8 +418,8 @@ if (knitr::is_html_output()) {
 ```
 <script>
 function showTree (tree) {
-  $("img.tree").attr("src", str.replace("`r sprintf(treeNamer, '\\d+', '(\\d+')')`",
-    "`r sprintf(treeNamer, '" + tree + "', "\\1")`"));
+  $("object.tree").attr("data", str.replace("`r sprintf(fileNamer, '\\d+', '(\\d+)')`",
+    "`r sprintf(fileNamer, '" + tree + "', "\\1")`"));
   $(".switch").css("color", "#34caaf");
   $(".switch" + tree).css("color", "#223");
   $(".switch").css("background-color", "#fcfcfc");
@@ -468,8 +469,8 @@ PrintStateNotes <- function (notes) {
 }
 
 taxa_not_to_print <- which(taxa_names %in% 'Namacalathus')
-prev_char_parts = "NONE"
-prev_nesting = 0
+prev_char_parts <- "NONE"
+prev_nesting <- 0
 for (i in 1:4) {
 #for (i in seq_len(n_char)) {
   
@@ -532,6 +533,8 @@ for (i in 1:4) {
     
     for (treeNo in eachTree) {
       tree <- trees[[treeNo]]
+      nodeXi <- nodeX[[treeNo]]
+      nodeYi <- nodeY[[treeNo]]
       states_matrix <- apply.reconstruction(tree, my_chars_i)
       matrix_data <- MatrixData(states_matrix, state.labels=stateLabels)
       legendLabels <- matrix_data$legend
@@ -542,48 +545,46 @@ for (i in 1:4) {
       
       
       LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
-      edges <- paste0('<path d="M', nodeX[parent[treeNo, eachEdge]], ',', nodeY[parent[treeNo, eachEdge]],
-             'V', nodeY[child[treeNo, eachEdge]],
-             'H', nodeX[child[treeNo, eachEdge]],
-             '" stroke="', edgeCol[eachEdge],
-             LineStyle(edgeCol[eachEdge]),
-             '"></path>')
-      tips <- paste0('<text x="', (nodeX[terminal] + 2L), '" y="', nodeY[terminal] + textY,
+      edges <- paste0('\n\t<path d="M', nodeXi[parent[treeNo, eachEdge]],
+                      ',', nodeYi[parent[treeNo, eachEdge]],
+                      'V', nodeYi[child[treeNo, eachEdge]],
+                      'H', nodeXi[child[treeNo, eachEdge]],
+                      '" stroke="', edgeCol[eachEdge],
+                      LineStyle(edgeCol[eachEdge]), '"></path>')
+      tips <- paste0('\n\t<text x="', (nodeXi[terminal] + 2L), '" y="', nodeYi[terminal] + textY,
                      '" fill="', tipCol[terminal],
                      '" class="flag">[', tipFlag[terminal], ']</text>',
-                     '<text x="', (nodeX[terminal] + 22L), '" y="', nodeY[terminal] + textY,
+                     '\n\t<text x="', (nodeXi[terminal] + 22L), '" y="', nodeYi[terminal] + textY,
                      '" class="taxonLabel">', 
-                     gsub('_', ' ', tipLabel[terminal], fixed=TRUE), '</text>')
+                     gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>')
       legendY <- round(rev(svgHeight - (yStep * seq_along(legendLabels))), 1)
-      legend <- paste0('<path d="M0,', legendY, 'h22" stroke="', legendCol,
+      legend <- paste0('\n\t<path d="M0,', legendY, 'h22" stroke="', legendCol,
                        LineStyle(legendCol), '"></path>',
-                       '<text x="30" y="', legendY + textY, '" class="legendLabel">', 
+                       '\n\t<text x="30" y="', legendY + textY, '" class="legendLabel">', 
                        legendLabels, '</text>')
       nRegions <- states_matrix$regions
       if (length(nRegions) == 0) nRegions <- 0
-      ciCaption <- paste0('<text x="', svgWidth - 4L,
+      ciCaption <- paste0('\n\t<text x="', svgWidth - 4L,
                    '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
                     'Character adds <tspan class="score">', states_matrix$score,
-                   '</tspan> to tree score</text><text x="', svgWidth - 4L,
+                   '</tspan> to tree score</text>\n\t<text x="', svgWidth - 4L,
                    '" y="', (yStep * 2) + textY, '" text-anchor="end" class="stepsLabel">',
                    '<tspan class="score">', states_matrix$regions,
                    '</tspan> additional region', ifelse(states_matrix$regions == 1, '', 's'), 
-                   '</text><text x="', svgWidth - 4L,
+                   '</text>\n\t<text x="', svgWidth - 4L,
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
-                    ci_text[i, treeNo], '</text>',
-                   '</text>')
+                    ci_text[i, treeNo], '</text>')
       
       write(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
           '" height="', svgHeight, '">',
           paste0(tips, collapse=''),
           paste0(edges, collapse=''),
           ciCaption, analysisBoxes[analysisNames %in% treeNames[treeIndex==treeNo]],
-          '</svg>'), file=sprintf(fileNamer, treeNo, i))
-      cat(paste0('<img src="', sprintf(fileNamer, treeNo, i), 
-                 '" width="', svgWidth, '" height="', svgHeight, 
-                 '" class="tree" />'))
-      
+          '\n</svg>'), file=sprintf(fileNamer, treeNo, i))
     }
+    cat(paste0('<object type="image/svg+xml" data="', sprintf(fileNamer, treeNo, i), 
+           '" width="', svgWidth, '" height="', svgHeight, 
+           '" class="tree"></object>'))
     # Static legend overlay
     cat(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
         '" height="', svgHeight, '" class="treeOverlay">',
