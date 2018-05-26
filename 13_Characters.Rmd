@@ -349,6 +349,7 @@ ci_text <- vapply(trees, function (tree) {
 if (knitr::is_html_output()) {
   nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
   analysisNames <- c('Equal weights', paste0('Implied weights, k = ', kValues))
+  fileNamer <- 'Brachiopod_phylogeny_files/images/tree%s-char%s.svg'
   treeNames <- rep(analysisNames, nTree)
   nTrees <- sum(nTree)
   treeIndex <- vapply(allTrees,
@@ -568,14 +569,15 @@ for (i in 1:4) {
                     ci_text[i, treeNo], '</text>',
                    '</text>')
       
-      cat(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
-          '" height="', svgHeight, ifelse(treeNo==1, '', '" display="none'),
-          '" class="tree tree', treeNo, '">',
+      write(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
+          '" height="', svgHeight, '">',
           paste0(tips, collapse=''),
           paste0(edges, collapse=''),
           ciCaption, analysisBoxes[analysisNames %in% treeNames[treeIndex==treeNo]],
-          '</svg>'))
-      
+          '</svg>'), file=sprintf(fileNamer, treeNo, i))
+      cat(paste0('<img src="', sprintf(fileNamer, treeNo, i), 
+                 '" width="', svgWidth, '" height="', svgHeight, 
+                 '" class="tree" />'))
       
     }
     # Static legend overlay
