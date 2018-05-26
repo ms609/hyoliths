@@ -355,7 +355,7 @@ ci_text <- vapply(trees, function (tree) {
                   '; Fitch RI = ', fitch_retention_index)
 }, character(n_char), USE.NAMES=FALSE)
 ```
-```{R Javascript selection, echo=FALSE, asis=TRUE}
+```{R SVG-setup, echo=FALSE, asis=TRUE}
 if (knitr::is_html_output()) {
   nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
   analysisNames <- c('Equal weights', paste0('Implied weights, k = ', kValues))
@@ -366,7 +366,48 @@ if (knitr::is_html_output()) {
                         which(vapply(trees, all.equal, logical(1), tr1, 
                                      use.tip.label=TRUE, use.edge.length=FALSE)),
                       integer(1))
-  eachTree <- seq_along(trees)
+  
+  svgWidth <- 682
+  svgHeight <- 595
+  treeXMargins <- c(10, 180)
+  treeYMargins <- c(12, 80)
+  
+  n_tree <- length(trees)
+  eachTree <- seq_len(n_tree)
+  n_tip <- length(trees[[1]]$tip.label)
+  internal <- n_tip + seq_len(n_tip - 1)
+  terminal <- seq_len(n_tip)
+  tipLabel <- matrix('', n_tree, n_tip)
+  parent <- child <- matrix(0, n_tree, n_tip)
+  eachEdge <- seq_len(dim(tree$edge)[1])
+  xStep <- nodeX <- nodeY <- vector('list', n_tree)
+  yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
+  textY <- 3L
+  analysisBoxes <- character(n_tree)
+  for (i in eachTree) {
+    tree <- trees[[i]]
+    tipLabel[i, ] <- tree$tip.label
+    treeEdge <- tree$edge
+    parent[i, ] <- treeEdge[, 1]
+    child[i, ] <- treeEdge[, 2]
+    ancestors <- Ancestors(tree, type='all')
+    nAncestors <- vapply(ancestors, length, 1)
+    xStep[[i]] <- round(seq(treeXMargins[1], to=svgWidth-treeXMargins[2],
+                       len=max(nAncestors) + 1L), 1)
+    nodeX[[i]] <- xStep[[i]][nAncestors + 1L]
+    nodeYi <- double(length(nAncestors))
+    nodeYi[child[treeNo, child[treeNo, ] <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
+    
+    analysisBoxes[i] <- paste0('<path d="M', svgWidth -1L, ',', 
+                            yStep * 5L + (seq_along(analysisNames) * 16L), 
+                            'h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>')
+
+    for (nodeI in rev(internal)) {
+      nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
+    }
+    nodeY[[i]] <- round(nodeYi, 1)
+  }
+  
   #TreeLink <- function (iNo, offset) {
   #  globalNo <- offset + iNo
   #  paste0('<span class="showTree uniqueTree', globalNo, '" onclick="showTree(', 
@@ -490,45 +531,15 @@ for (i in 1:4) {
       matrix_data <- MatrixData(states_matrix, state.labels=stateLabels)
       legendLabels <- matrix_data$legend
       legendCol <- matrix_data$legend_col
-      
-      tipLabel <- tree$tip.label
-      n_tip <- length(tipLabel)
-      internal <- n_tip + seq_len(n_tip - 1)
-      terminal <- seq_len(n_tip)
-      treeEdge <- tree$edge
-      parent <- treeEdge[, 1]
-      child <- treeEdge[, 2]
-      eachEdge <- seq_along(parent)
       edgeCol <- matrix_data$edge_col
       tipCol <- matrix_data$tips_colours
       tipFlag <- matrix_data$tips_labels
-      svgWidth <- 682
-      svgHeight <- 595
-      treeXMargins <- c(10, 180)
-      treeYMargins <- c(12, 80)
-      ancestors <- Ancestors(tree, type='all')
-      nAncestors <- vapply(ancestors, length, 1)
-      xStep <- round(seq(treeXMargins[1], to=svgWidth-treeXMargins[2],
-                         len=max(nAncestors) + 1L), 1)
-      nodeX <- xStep[nAncestors + 1L]
-      nodeY <- double(length(nAncestors))
-      nodeY[child[child <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
-      yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
       
-      analysisBoxes <- paste0('<path d="M', svgWidth -1L, ',', 
-                              yStep * 5L + (seq_along(analysisNames) * 16L), 
-                              'h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>')
-
-      for (nodeI in rev(internal)) {
-        nodeY[nodeI] <- mean(nodeY[Children(tree, nodeI)])
-      }
-      nodeY <- round(nodeY, 1)
       
       LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
-      textY <- 3L
-      edges <- paste0('<path d="M', nodeX[parent[eachEdge]], ',', nodeY[parent[eachEdge]],
-             'V', nodeY[child[eachEdge]],
-             'H', nodeX[child[eachEdge]],
+      edges <- paste0('<path d="M', nodeX[parent[treeNo, eachEdge]], ',', nodeY[parent[treeNo, eachEdge]],
+             'V', nodeY[child[treeNo, eachEdge]],
+             'H', nodeX[child[treeNo, eachEdge]],
              '" stroke="', edgeCol[eachEdge],
              LineStyle(edgeCol[eachEdge]),
              '"></path>')
