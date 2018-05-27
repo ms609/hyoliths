@@ -433,11 +433,13 @@ function showTree (tree) {
       datatype: 'xml'
     }).done(function (newTree) {
       $(this).replaceWith($('svg', newTree));
+      $(".switch").css("color", "#34caaf");
+      $(".switch" + tree).css("color", "#223");
+      $(".switch").css("background-color", "#fcfcfc");
+      $(".switch" + tree).css("background-color", "#eee");
     })
   });
-  $(".switch").css("color", "#34caaf");
-  $(".switch" + tree).css("color", "#223");
-  $(".switch").css("background-color", "#fcfcfc");
+  // $(".switch" + tree).css("color", "#223");
   $(".switch" + tree).css("background-color", "#eee");
 }
 $(document).ready(function(){
