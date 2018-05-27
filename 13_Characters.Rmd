@@ -425,14 +425,15 @@ if (knitr::is_html_output()) {
 ```
 <script>
 function showTree (tree) {
-  $(".tree").each(function() {
-    var cachedTree = $(this);
-    $.get("`r sprintf(fileNamer, '" + tree + "', '" + $(".tree").attr("char") + "')`", 
-      function (newTree) {
-        cachedTree.replaceWith(newTree)
-      },
-      'xml'
-    )
+  $(".tree").each(function(index, item) {
+    var oldTree = $(item);
+    $.ajax({
+       url: "`r sprintf(fileNamer, '" + tree + "', '" + $(".tree").attr("char") + "')`",
+      context: item,
+      datatype: 'xml'
+    }).done(function (newTree) {
+      $(this).replaceWith($('svg', newTree));
+    })
   });
   $(".switch").css("color", "#34caaf");
   $(".switch" + tree).css("color", "#223");
