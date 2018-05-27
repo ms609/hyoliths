@@ -1,8 +1,4 @@
-<?xml version="1.0" standalone="no"?>
-<?xml-stylesheet type="text/css" href="../../style.svg.css"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
-"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="682" height="595">
+
 	<text x="40.9" y="15" fill="#91bfdb" class="flag">[1]</text>
 	<text x="60.9" y="15" class="taxonLabel">Dailyatia</text>
 	<text x="98.8" y="42.9" fill="#91bfdb" class="flag">[1]</text>
@@ -151,5 +147,4 @@
 	<path d="M328.4,508V515H357.3" stroke="#91bfdb"></path>
 	<text x="678" y="16.6" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">1</tspan> to tree score</text>
 	<text x="678" y="30.2" text-anchor="end" class="stepsLabel"><tspan class="score"></tspan> additional region</text>
-	<text x="678" y="43.8" text-anchor="end" class="stepsLabel">CI = 1; Fitch CI = 1; Fitch RI = n/a</text><path d="M681,100h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>
-</svg>
+	<text x="678" y="43.8" text-anchor="end" class="stepsLabel">CI = 1; Fitch CI = 1; Fitch RI = n/a</text><path d="M681,100h-156v14h156z" class="analysis"></path>
