@@ -1,0 +1,159 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/css" href="../../style.svg.css"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="682" height="595">
+	<text x="40.9" y="15" fill="#fc8d59" class="flag">[0]</text>
+	<text x="60.9" y="15" class="taxonLabel">Dailyatia</text>
+	<text x="98.8" y="42.9" fill="#fc8d59" class="flag">[0]</text>
+	<text x="118.8" y="42.9" class="taxonLabel">Eccentrotheca</text>
+	<text x="98.8" y="29" fill="lightgrey" class="flag">[-]</text>
+	<text x="118.8" y="29" class="taxonLabel">Phoronis</text>
+	<text x="98.8" y="56.9" fill="#fc8d59" class="flag">[0]</text>
+	<text x="118.8" y="56.9" class="taxonLabel">Paterimitra</text>
+	<text x="156.7" y="84.9" fill="#91bfdb" class="flag">[1]</text>
+	<text x="176.7" y="84.9" class="taxonLabel">Pedunculotheca diania</text>
+	<text x="156.7" y="70.9" fill="grey" class="flag">[01]</text>
+	<text x="176.7" y="70.9" class="taxonLabel">Haplophrentis carinatus</text>
+	<text x="214.6" y="98.8" fill="#91bfdb" class="flag">[1]</text>
+	<text x="234.6" y="98.8" class="taxonLabel">Gasconsia</text>
+	<text x="243.5" y="112.8" fill="#91bfdb" class="flag">[1]</text>
+	<text x="263.5" y="112.8" class="taxonLabel">Heliomedusa orienta</text>
+	<text x="272.5" y="126.8" fill="#91bfdb" class="flag">[1]</text>
+	<text x="292.5" y="126.8" class="taxonLabel">Ussunia</text>
+	<text x="301.4" y="154.7" fill="#91bfdb" class="flag">[1]</text>
+	<text x="321.4" y="154.7" class="taxonLabel">Craniops</text>
+	<text x="301.4" y="140.8" fill="#91bfdb" class="flag">[1]</text>
+	<text x="321.4" y="140.8" class="taxonLabel">Novocrania</text>
+	<text x="214.6" y="168.7" fill="#91bfdb" class="flag">[1]</text>
+	<text x="234.6" y="168.7" class="taxonLabel">Pelagodiscus atlanticus</text>
+	<text x="243.5" y="182.7" fill="#91bfdb" class="flag">[1]</text>
+	<text x="263.5" y="182.7" class="taxonLabel">Mickwitzia muralensis</text>
+	<text x="272.5" y="196.6" fill="#91bfdb" class="flag">[1]</text>
+	<text x="292.5" y="196.6" class="taxonLabel">Micrina</text>
+	<text x="301.4" y="210.6" fill="#91bfdb" class="flag">[1]</text>
+	<text x="321.4" y="210.6" class="taxonLabel">Lingula</text>
+	<text x="330.4" y="224.6" fill="#91bfdb" class="flag">[1]</text>
+	<text x="350.4" y="224.6" class="taxonLabel">Eoobolus</text>
+	<text x="359.3" y="238.6" fill="#91bfdb" class="flag">[1]</text>
+	<text x="379.3" y="238.6" class="taxonLabel">Mummpikia nuda</text>
+	<text x="388.2" y="252.5" fill="#91bfdb" class="flag">[1]</text>
+	<text x="408.2" y="252.5" class="taxonLabel">Botsfordia</text>
+	<text x="446.1" y="280.5" fill="#91bfdb" class="flag">[1]</text>
+	<text x="466.1" y="280.5" class="taxonLabel">Lingulosacculus</text>
+	<text x="417.2" y="266.5" fill="#91bfdb" class="flag">[1]</text>
+	<text x="437.2" y="266.5" class="taxonLabel">Lingulellotreta malongensis</text>
+	<text x="475.1" y="294.4" fill="#91bfdb" class="flag">[1]</text>
+	<text x="495.1" y="294.4" class="taxonLabel">Clupeafumosus socialis</text>
+	<text x="504" y="322.4" fill="#91bfdb" class="flag">[1]</text>
+	<text x="524" y="322.4" class="taxonLabel">Acanthotretella spinosa</text>
+	<text x="504" y="308.4" fill="#91bfdb" class="flag">[1]</text>
+	<text x="524" y="308.4" class="taxonLabel">Siphonobolus priscus</text>
+	<text x="214.6" y="336.4" fill="#91bfdb" class="flag">[1]</text>
+	<text x="234.6" y="336.4" class="taxonLabel">Askepasma toddense</text>
+	<text x="214.6" y="350.3" fill="#91bfdb" class="flag">[1]</text>
+	<text x="234.6" y="350.3" class="taxonLabel">Micromitra</text>
+	<text x="243.5" y="364.3" fill="#91bfdb" class="flag">[1]</text>
+	<text x="263.5" y="364.3" class="taxonLabel">Salanygolina</text>
+	<text x="272.5" y="392.2" fill="#91bfdb" class="flag">[1]</text>
+	<text x="292.5" y="392.2" class="taxonLabel">Tomteluva perturbata</text>
+	<text x="272.5" y="378.3" fill="#91bfdb" class="flag">[1]</text>
+	<text x="292.5" y="378.3" class="taxonLabel">Yuganotheca elegans</text>
+	<text x="272.5" y="434.2" fill="#91bfdb" class="flag">[1]</text>
+	<text x="292.5" y="434.2" class="taxonLabel">Kutorgina chengjiangensis</text>
+	<text x="301.4" y="448.1" fill="#91bfdb" class="flag">[1]</text>
+	<text x="321.4" y="448.1" class="taxonLabel">Nisusia sulcata</text>
+	<text x="330.4" y="462.1" fill="#91bfdb" class="flag">[1]</text>
+	<text x="350.4" y="462.1" class="taxonLabel">Glyptoria</text>
+	<text x="359.3" y="476.1" fill="#91bfdb" class="flag">[1]</text>
+	<text x="379.3" y="476.1" class="taxonLabel">Longtancunella chengjiangensis</text>
+	<text x="388.2" y="490.1" fill="#91bfdb" class="flag">[1]</text>
+	<text x="408.2" y="490.1" class="taxonLabel">Alisina</text>
+	<text x="417.2" y="518" fill="#91bfdb" class="flag">[1]</text>
+	<text x="437.2" y="518" class="taxonLabel">Orthis</text>
+	<text x="417.2" y="504" fill="#91bfdb" class="flag">[1]</text>
+	<text x="437.2" y="504" class="taxonLabel">Terebratulina</text>
+	<text x="272.5" y="420.2" fill="#91bfdb" class="flag">[1]</text>
+	<text x="292.5" y="420.2" class="taxonLabel">Coolinia pecten</text>
+	<text x="272.5" y="406.2" fill="#91bfdb" class="flag">[1]</text>
+	<text x="292.5" y="406.2" class="taxonLabel">Antigonambonites planus</text>
+	<path d="M10,41.7V12H38.9" stroke="#fc8d59"></path>
+	<path d="M10,41.7V71.5H38.9" stroke="#fc8d59"></path>
+	<path d="M38.9,71.5V33H67.9" stroke="#fc8d59"></path>
+	<path d="M67.9,33V26H96.8" stroke="lightgrey" class="inapplicable"></path>
+	<path d="M67.9,33V39.9H96.8" stroke="#fc8d59"></path>
+	<path d="M38.9,71.5V110H67.9" stroke="#fc8d59"></path>
+	<path d="M67.9,110V53.9H96.8" stroke="#fc8d59"></path>
+	<path d="M67.9,110V166H96.8" stroke="#91bfdb"></path>
+	<path d="M96.8,166V74.9H125.8" stroke="#91bfdb"></path>
+	<path d="M125.8,74.9V67.9H154.7" stroke="#91bfdb"></path>
+	<path d="M125.8,74.9V81.9H154.7" stroke="#91bfdb"></path>
+	<path d="M96.8,166V257.2H125.8" stroke="#91bfdb"></path>
+	<path d="M125.8,257.2V144.3H154.7" stroke="#91bfdb"></path>
+	<path d="M154.7,144.3V108.9H183.6" stroke="#91bfdb"></path>
+	<path d="M183.6,108.9V95.8H212.6" stroke="#91bfdb"></path>
+	<path d="M183.6,108.9V122H212.6" stroke="#91bfdb"></path>
+	<path d="M212.6,122V109.8H241.5" stroke="#91bfdb"></path>
+	<path d="M212.6,122V134.3H241.5" stroke="#91bfdb"></path>
+	<path d="M241.5,134.3V123.8H270.5" stroke="#91bfdb"></path>
+	<path d="M241.5,134.3V144.7H270.5" stroke="#91bfdb"></path>
+	<path d="M270.5,144.7V137.8H299.4" stroke="#91bfdb"></path>
+	<path d="M270.5,144.7V151.7H299.4" stroke="#91bfdb"></path>
+	<path d="M154.7,144.3V179.7H183.6" stroke="#91bfdb"></path>
+	<path d="M183.6,179.7V165.7H212.6" stroke="#91bfdb"></path>
+	<path d="M183.6,179.7V193.6H212.6" stroke="#91bfdb"></path>
+	<path d="M212.6,193.6V179.7H241.5" stroke="#91bfdb"></path>
+	<path d="M212.6,193.6V207.6H241.5" stroke="#91bfdb"></path>
+	<path d="M241.5,207.6V193.6H270.5" stroke="#91bfdb"></path>
+	<path d="M241.5,207.6V221.5H270.5" stroke="#91bfdb"></path>
+	<path d="M270.5,221.5V207.6H299.4" stroke="#91bfdb"></path>
+	<path d="M270.5,221.5V235.4H299.4" stroke="#91bfdb"></path>
+	<path d="M299.4,235.4V221.6H328.4" stroke="#91bfdb"></path>
+	<path d="M299.4,235.4V249.3H328.4" stroke="#91bfdb"></path>
+	<path d="M328.4,249.3V235.6H357.3" stroke="#91bfdb"></path>
+	<path d="M328.4,249.3V263.1H357.3" stroke="#91bfdb"></path>
+	<path d="M357.3,263.1V249.5H386.2" stroke="#91bfdb"></path>
+	<path d="M357.3,263.1V276.6H386.2" stroke="#91bfdb"></path>
+	<path d="M386.2,276.6V263.5H415.2" stroke="#91bfdb"></path>
+	<path d="M386.2,276.6V289.7H415.2" stroke="#91bfdb"></path>
+	<path d="M415.2,289.7V277.5H444.1" stroke="#91bfdb"></path>
+	<path d="M415.2,289.7V301.9H444.1" stroke="#91bfdb"></path>
+	<path d="M444.1,301.9V291.4H473.1" stroke="#91bfdb"></path>
+	<path d="M444.1,301.9V312.4H473.1" stroke="#91bfdb"></path>
+	<path d="M473.1,312.4V305.4H502" stroke="#91bfdb"></path>
+	<path d="M473.1,312.4V319.4H502" stroke="#91bfdb"></path>
+	<path d="M125.8,257.2V370H154.7" stroke="#91bfdb"></path>
+	<path d="M154.7,370V340.3H183.6" stroke="#91bfdb"></path>
+	<path d="M183.6,340.3V333.4H212.6" stroke="#91bfdb"></path>
+	<path d="M183.6,340.3V347.3H212.6" stroke="#91bfdb"></path>
+	<path d="M154.7,370V399.7H183.6" stroke="#91bfdb"></path>
+	<path d="M183.6,399.7V371.8H212.6" stroke="#91bfdb"></path>
+	<path d="M212.6,371.8V361.3H241.5" stroke="#91bfdb"></path>
+	<path d="M212.6,371.8V382.3H241.5" stroke="#91bfdb"></path>
+	<path d="M241.5,382.3V375.3H270.5" stroke="#91bfdb"></path>
+	<path d="M241.5,382.3V389.2H270.5" stroke="#91bfdb"></path>
+	<path d="M183.6,399.7V427.6H212.6" stroke="#91bfdb"></path>
+	<path d="M212.6,427.6V410.2H241.5" stroke="#91bfdb"></path>
+	<path d="M241.5,410.2V403.2H270.5" stroke="#91bfdb"></path>
+	<path d="M241.5,410.2V417.2H270.5" stroke="#91bfdb"></path>
+	<path d="M212.6,427.6V444.9H241.5" stroke="#91bfdb"></path>
+	<path d="M241.5,444.9V431.2H270.5" stroke="#91bfdb"></path>
+	<path d="M241.5,444.9V458.7H270.5" stroke="#91bfdb"></path>
+	<path d="M270.5,458.7V445.1H299.4" stroke="#91bfdb"></path>
+	<path d="M270.5,458.7V472.2H299.4" stroke="#91bfdb"></path>
+	<path d="M299.4,472.2V459.1H328.4" stroke="#91bfdb"></path>
+	<path d="M299.4,472.2V485.3H328.4" stroke="#91bfdb"></path>
+	<path d="M328.4,485.3V473.1H357.3" stroke="#91bfdb"></path>
+	<path d="M328.4,485.3V497.5H357.3" stroke="#91bfdb"></path>
+	<path d="M357.3,497.5V487.1H386.2" stroke="#91bfdb"></path>
+	<path d="M357.3,497.5V508H386.2" stroke="#91bfdb"></path>
+	<path d="M386.2,508V501H415.2" stroke="#91bfdb"></path>
+	<path d="M386.2,508V515H415.2" stroke="#91bfdb"></path>
+	<text x="678" y="16.6" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">1</tspan> to tree score</text>
+	<text x="678" y="30.2" text-anchor="end" class="stepsLabel"><tspan class="score"></tspan> additional region</text>
+	<text x="678" y="43.8" text-anchor="end" class="stepsLabel">CI = 1; Fitch CI = 1; Fitch RI = 1</text><path d="M681,100h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>
+<path d="M681,164h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>
+<path d="M681,180h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>
+<path d="M681,196h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>
+<path d="M681,212h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>
+</svg>
