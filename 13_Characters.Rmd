@@ -345,12 +345,13 @@ ci_text <- vapply(trees, function (tree) {
                   '; Fitch RI = ', fitch_retention_index)
 }, character(n_char), USE.NAMES=FALSE)
 ```
-```{R SVG-setup, echo=FALSE}
+```{R SVG-setup, echo=FALSE, results="asis"}
 CheckDirExists <- function (x) if (!dir.exists(x)) dir.create(x)
-CheckDirExists('_bookdown_files')
-CheckDirExists('_bookdown_files/Brachiopod_phylogeny_files')
-CheckDirExists('_bookdown_files/Brachiopod_phylogeny_files/figure_html')
-fileNamer <- './_bookdown_files/Brachiopod_phylogeny_files/figure_html/tree%s-char%s.svg'
+#CheckDirExists('_bookdown_files')
+CheckDirExists('_book')
+CheckDirExists('_book/Brachiopod_phylogeny_files')
+CheckDirExists('_book/Brachiopod_phylogeny_files/figure-html')
+fileNamer <- 'Brachiopod_phylogeny_files/figure-html/tree%s-char%s.svg'
 if (knitr::is_html_output()) {
   nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
   analysisNames <- c('Equal weights', paste0('Implied weights, k = ', kValues))
@@ -379,7 +380,8 @@ if (knitr::is_html_output()) {
   xStep <- nodeX <- nodeY <- vector('list', n_tree)
   yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
   textY <- 3L
-  analysisBoxes <- character(n_tree)
+  nAnalyses <- length(analysisNames)
+  analysisBoxes <- matrix('', n_tree, nAnalyses)
   for (i in eachTree) {
     tree <- trees[[i]]
     tipLabel[i, ] <- tree$tip.label
@@ -394,9 +396,9 @@ if (knitr::is_html_output()) {
     nodeYi <- double(length(nAncestors))
     nodeYi[child[i, child[i, ] <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
     
-    analysisBoxes[i] <- paste0('<path d="M', svgWidth -1L, ',', 
-                            yStep * 5L + (seq_along(analysisNames) * 16L), 
-                            'h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>', collapse='')
+    analysisBoxes[i, ] <- paste0('<path d="M', svgWidth -1L, ',', 
+                            yStep * 5L + 16L + (seq_len(nAnalyses) * 16L), 
+                            'h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>') 
 
     for (nodeI in rev(internal)) {
       nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
@@ -414,17 +416,32 @@ if (knitr::is_html_output()) {
   #}, '')
   #names(rows) <- c('Equal weights', paste0('Implied weights, k = ', kValues))
   #knitr::kable(rows, col.names='')
+  cat(paste0('<div id="switcherTemplate" class="switcher"><div class="selectTree">Select tree:</div>',
+           paste0('<div class="switch switch', eachTree, 
+                  '" onmouseover="showTree(', eachTree, 
+                            ');">', eachTree, '</div>', collapse=''),
+          '</div>'))
 }
 ```
 <script>
 function showTree (tree) {
-  $("object.tree").attr("data", str.replace("`r sprintf(fileNamer, '\\d+', '(\\d+)')`",
-    "`r sprintf(fileNamer, '" + tree + "', "\\1")`"));
+  $("object.tree").attr("data", 
+    $("object.tree").attr("data")
+                    .replace(/tree\d+\-char(\d+)/, 
+                             "tree" + tree + "-char$1")
+  );
   $(".switch").css("color", "#34caaf");
   $(".switch" + tree).css("color", "#223");
   $(".switch").css("background-color", "#fcfcfc");
   $(".switch" + tree).css("background-color", "#eee");
 }
+$(document).ready(function(){
+  var originalSwitcher = $("#switcherTemplate");
+  $("object.tree").each(function()
+    {originalSwitcher.clone().insertBefore($(this));}
+  );
+  originalSwitcher.remove()
+})
 </script>
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
 ## These function definitions must be in the same block as when they are called.
@@ -525,11 +542,7 @@ for (i in 1:4) {
   my_chars_i <- my_chars[, i]
   
   if (knitr::is_html_output()) {
-    cat(paste0('<div class="switcher"><div class="selectTree">Select tree:</div>',
-           paste0('<div class="switch switch', eachTree, 
-                  '" onmouseover="showTree(', eachTree, 
-                            ');">', eachTree, '</div>', collapse=''),
-          '</div>'))
+    
     
     for (treeNo in eachTree) {
       tree <- trees[[treeNo]]
@@ -575,12 +588,17 @@ for (i in 1:4) {
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
                     ci_text[i, treeNo], '</text>')
       
-      write(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
-          '" height="', svgHeight, '">',
-          paste0(tips, collapse=''),
-          paste0(edges, collapse=''),
-          ciCaption, analysisBoxes[analysisNames %in% treeNames[treeIndex==treeNo]],
-          '\n</svg>'), file=sprintf(fileNamer, treeNo, i))
+      write(paste0('<?xml version="1.0" standalone="no"?>\n',
+                   '<?xml-stylesheet type="text/css" href="../../style.svg.css"?>\n',
+                   '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" \n',
+                   '"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n',
+                   '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
+                   svgWidth, '" height="', svgHeight, '">',
+                    paste0(tips, collapse=''),
+                    paste0(edges, collapse=''),
+                    ciCaption, 
+                    paste0(analysisBoxes[treeNo, analysisNames %in% treeNames[treeIndex==treeNo]], collapse='\n'),
+          '\n</svg>'), file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
     }
     cat(paste0('<object type="image/svg+xml" data="', sprintf(fileNamer, treeNo, i), 
            '" width="', svgWidth, '" height="', svgHeight, 
@@ -590,13 +608,12 @@ for (i in 1:4) {
         '" height="', svgHeight, '" class="treeOverlay">',
         paste0(legend, collapse=''),
         paste0('<text x="', svgWidth - 4L,
-                   '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
-                   '<tspan dy="16">', 
-                   paste0(c('A most parsimonious tree under:',
-                            analysisNames),
-                          collapse=paste0('</tspan><tspan x="', svgWidth - 2L, 
-                          '" style="font-style:italic" dy="1.2em">')),
-                    '</tspan></text>'),
+               '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
+               '<tspan dy="16">', 
+               paste0(c('A most parsimonious tree under:', analysisNames),
+                      collapse=paste0('</tspan><tspan x="', svgWidth - 2L,
+                                      '" style="font-style:italic" dy="1.2em">')),
+               '</tspan></text>'),
         '</svg>'))
   } else {
     plot.states.matrix(apply.reconstruction(trees[[1]], my_chars_i),
