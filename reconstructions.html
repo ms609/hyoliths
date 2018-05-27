@@ -404,9 +404,12 @@ Select tree:
 </div>
 <script>
 function showTree (tree) {
-  $(".tree").html(
-    $.get("Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + 
-      $(".tree").attr("char") + ".svg"
+  $(".tree").each(
+    $.get("Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + $(".tree").attr("char") + ".svg", 
+      function (newTree) {
+        $(this).replaceWith(newTree)
+      },
+      'xml'
     )
   );
   $(".switch").css("color", "#34caaf");
