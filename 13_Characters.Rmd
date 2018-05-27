@@ -425,9 +425,12 @@ if (knitr::is_html_output()) {
 ```
 <script>
 function showTree (tree) {
-  $(".tree").html(
-    $.get("`r sprintf(fileNamer, '" + tree + "', '" + 
-      $(".tree").attr("char") + "')`"
+  $(".tree").each(
+    $.get("`r sprintf(fileNamer, '" + tree + "', '" + $(".tree").attr("char") + "')`", 
+      function (newTree) {
+        $(this).replaceWith(newTree)
+      },
+      'xml'
     )
   );
   $(".switch").css("color", "#34caaf");
@@ -588,16 +591,16 @@ for (i in 1:4) {
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
                     ci_text[i, treeNo], '</text>')
       
-      svgSource <- paste0(
+      svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
+                    svgWidth, '" height="', svgHeight, '" class="tree" char="', i, '">',
                     paste0(tips, collapse=''),
                     paste0(edges, collapse=''),
                     ciCaption, 
-                    paste0(analysisBoxes[treeNo, analysisNames %in% treeNames[treeIndex==treeNo]], collapse='\n'))
+                    paste0(analysisBoxes[treeNo, analysisNames %in% treeNames[treeIndex==treeNo]], collapse='\n'),
+                    '</svg>')
       write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
     }
-    cat(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
-                   svgWidth, '" height="', svgHeight, '" class="tree" char="', i, '">',
-               svgSource, '</svg>'))
+    cat(svgSource)
     # Static legend overlay
     cat(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
         '" height="', svgHeight, '" class="treeOverlay">',
