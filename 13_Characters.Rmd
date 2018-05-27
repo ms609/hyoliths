@@ -426,9 +426,10 @@ if (knitr::is_html_output()) {
 <script>
 function showTree (tree) {
   $(".tree").each(
+    var cachedTree = $(this);
     $.get("`r sprintf(fileNamer, '" + tree + "', '" + $(".tree").attr("char") + "')`", 
       function (newTree) {
-        $(this).replaceWith(newTree)
+        cachedTree.replaceWith(newTree)
       },
       'xml'
     )
