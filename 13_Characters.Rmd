@@ -425,7 +425,7 @@ if (knitr::is_html_output()) {
 ```
 <script>
 function showTree (tree) {
-  $(".tree").each(
+  $(".tree").each(function() {
     var cachedTree = $(this);
     $.get("`r sprintf(fileNamer, '" + tree + "', '" + $(".tree").attr("char") + "')`", 
       function (newTree) {
@@ -433,7 +433,7 @@ function showTree (tree) {
       },
       'xml'
     )
-  );
+  });
   $(".switch").css("color", "#34caaf");
   $(".switch" + tree).css("color", "#223");
   $(".switch").css("background-color", "#fcfcfc");
