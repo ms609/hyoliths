@@ -1,0 +1,28 @@
+path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 2.5;
+}
+
+path.inapplicable {
+  stroke-dasharray: 6;
+}
+
+text.taxonLabel {
+  fill: black;
+  font-style: italic;
+  font-size: 9.5pt;
+}
+
+text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+}
+
+tspan.score, .flag {
+  font-weight: bold;
+}
+
+text.stepsLabel {
+  fill: #aab;
+}
