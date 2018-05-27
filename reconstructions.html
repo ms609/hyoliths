@@ -405,9 +405,10 @@ Select tree:
 <script>
 function showTree (tree) {
   $(".tree").each(
+    var cachedTree = $(this);
     $.get("Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + $(".tree").attr("char") + ".svg", 
       function (newTree) {
-        $(this).replaceWith(newTree)
+        cachedTree.replaceWith(newTree)
       },
       'xml'
     )
