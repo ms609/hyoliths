@@ -8,6 +8,11 @@ path.inapplicable {
   stroke-dasharray: 6;
 }
 
+path.analysis {
+  stroke: "#34caafdd";
+  fill: "#34caaf55";
+}
+
 text.taxonLabel {
   fill: black;
   font-style: italic;

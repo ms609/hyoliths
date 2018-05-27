@@ -398,7 +398,7 @@ if (knitr::is_html_output()) {
     
     analysisBoxes[i, ] <- paste0('<path d="M', svgWidth -1L, ',', 
                             yStep * 5L + 16L + (seq_len(nAnalyses) * 16L), 
-                            'h-156v14h156z" stroke="#34caaf" fill="#34caafdd"></path>') 
+                            'h-156v14h156z" class="analysis"></path>') 
 
     for (nodeI in rev(internal)) {
       nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
@@ -425,10 +425,10 @@ if (knitr::is_html_output()) {
 ```
 <script>
 function showTree (tree) {
-  $("object.tree").attr("data", 
-    $("object.tree").attr("data")
-                    .replace(/tree\d+\-char(\d+)/, 
-                             "tree" + tree + "-char$1")
+  $(".tree").html(
+    $.get("`r sprintf(fileNamer, '" + tree + "', '" + 
+      $(".tree").attr("char") + "')`"
+    )
   );
   $(".switch").css("color", "#34caaf");
   $(".switch" + tree).css("color", "#223");
@@ -437,7 +437,7 @@ function showTree (tree) {
 }
 $(document).ready(function(){
   var originalSwitcher = $("#switcherTemplate");
-  $("object.tree").each(function()
+  $(".tree").each(function()
     {originalSwitcher.clone().insertBefore($(this));}
   );
   originalSwitcher.remove()
@@ -588,21 +588,16 @@ for (i in 1:4) {
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
                     ci_text[i, treeNo], '</text>')
       
-      write(paste0('<?xml version="1.0" standalone="no"?>\n',
-                   '<?xml-stylesheet type="text/css" href="../../style.svg.css"?>\n',
-                   '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" \n',
-                   '"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n',
-                   '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
-                   svgWidth, '" height="', svgHeight, '">',
+      svgSource <- paste0(
                     paste0(tips, collapse=''),
                     paste0(edges, collapse=''),
                     ciCaption, 
-                    paste0(analysisBoxes[treeNo, analysisNames %in% treeNames[treeIndex==treeNo]], collapse='\n'),
-          '\n</svg>'), file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
+                    paste0(analysisBoxes[treeNo, analysisNames %in% treeNames[treeIndex==treeNo]], collapse='\n'))
+      write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
     }
-    cat(paste0('<object type="image/svg+xml" data="', sprintf(fileNamer, treeNo, i), 
-           '" width="', svgWidth, '" height="', svgHeight, 
-           '" class="tree"></object>'))
+    cat(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
+                   svgWidth, '" height="', svgHeight, '" class="tree" char="', i, '">',
+               svgSource, '</svg>'))
     # Static legend overlay
     cat(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
         '" height="', svgHeight, '" class="treeOverlay">',
