@@ -561,33 +561,33 @@ for (i in 1:4) {
       
       
       LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
-      edges <- paste0('\n\t<path d="M', nodeXi[parent[treeNo, eachEdge]],
+      edges <- paste0('\n <path d="M', nodeXi[parent[treeNo, eachEdge]],
                       ',', nodeYi[parent[treeNo, eachEdge]],
                       'V', nodeYi[child[treeNo, eachEdge]],
                       'H', nodeXi[child[treeNo, eachEdge]],
                       '" stroke="', edgeCol[eachEdge],
                       LineStyle(edgeCol[eachEdge]), '"></path>')
-      tips <- paste0('\n\t<text x="', (nodeXi[terminal] + 2L), '" y="', nodeYi[terminal] + textY,
+      tips <- paste0('\n <text x="', (nodeXi[terminal] + 2L), '" y="', nodeYi[terminal] + textY,
                      '" fill="', tipCol[terminal],
                      '" class="flag">[', tipFlag[terminal], ']</text>',
-                     '\n\t<text x="', (nodeXi[terminal] + 22L), '" y="', nodeYi[terminal] + textY,
+                     '\n <text x="', (nodeXi[terminal] + 22L), '" y="', nodeYi[terminal] + textY,
                      '" class="taxonLabel">', 
                      gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>')
       legendY <- round(rev(svgHeight - (yStep * seq_along(legendLabels))), 1)
-      legend <- paste0('\n\t<path d="M0,', legendY, 'h22" stroke="', legendCol,
+      legend <- paste0('\n <path d="M0,', legendY, 'h22" stroke="', legendCol,
                        LineStyle(legendCol), '"></path>',
-                       '\n\t<text x="30" y="', legendY + textY, '" class="legendLabel">', 
+                       '\n <text x="30" y="', legendY + textY, '" class="legendLabel">', 
                        legendLabels, '</text>')
       nRegions <- states_matrix$regions
       if (length(nRegions) == 0) nRegions <- 0
-      ciCaption <- paste0('\n\t<text x="', svgWidth - 4L,
+      ciCaption <- paste0('\n <text x="', svgWidth - 4L,
                    '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
                     'Character adds <tspan class="score">', states_matrix$score,
-                   '</tspan> to tree score</text>\n\t<text x="', svgWidth - 4L,
+                   '</tspan> to tree score</text>\n <text x="', svgWidth - 4L,
                    '" y="', (yStep * 2) + textY, '" text-anchor="end" class="stepsLabel">',
                    '<tspan class="score">', states_matrix$regions,
                    '</tspan> additional region', ifelse(states_matrix$regions == 1, '', 's'), 
-                   '</text>\n\t<text x="', svgWidth - 4L,
+                   '</text>\n <text x="', svgWidth - 4L,
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
                     ci_text[i, treeNo], '</text>')
       
