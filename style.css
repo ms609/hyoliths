@@ -61,6 +61,10 @@ text.stepsLabel {
   fill: #aab;
 }
 
+text.thisAn {
+  fill: #34caaf;
+}
+
 .book .book-body .page-wrapper .page-inner section.normal .switcher {
   height: 1.3em;
   font-size: 10pt;

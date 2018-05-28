@@ -603,14 +603,24 @@ for (i in 1:4) {
                    '</tspan> additional region', ifelse(states_matrix$regions == 1, '', 's'), 
                    '</text>\n <text x="', svgWidth - 4L,
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
-                    ci_text[i, treeNo], '</text>')
+                    ci_text[i, treeNo],
+                   '</text>\n <text x="', svgWidth - 4L,
+                    '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
+                    '<tspan dy="16">', 
+                   paste0(c('A most parsimonious tree under:', analysisNames),
+                      collapse=paste0('</tspan><tspan x="', svgWidth - 2L,
+                                      '" style="font-style:italic" class="',
+                                      ifelse(analysisNames %in% treeNames[treeIndex==treeNo], 'this', 'notThis'),
+                                      'An" dy="1.2em">', collapse='')),
+                    '</tspan></text>')
+        
+                   
       
       svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
                     svgWidth, '" height="', svgHeight, '" class="tree" char="', i, '">',
+                    ciCaption, 
                     paste0(tips, collapse=''),
                     paste0(edges, collapse=''),
-                    ciCaption, 
-                    paste0(analysisBoxes[treeNo, analysisNames %in% treeNames[treeIndex==treeNo]], collapse='\n'),
                     '</svg>')
       write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
     }
@@ -621,11 +631,7 @@ for (i in 1:4) {
         paste0(legend, collapse=''),
         paste0('<text x="', svgWidth - 4L,
                '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
-               '<tspan dy="16">', 
-               paste0(c('A most parsimonious tree under:', analysisNames),
-                      collapse=paste0('</tspan><tspan x="', svgWidth - 2L,
-                                      '" style="font-style:italic" dy="1.2em">')),
-               '</tspan></text>'),
+               '</text>'),
         '</svg>'))
   } else {
     plot.states.matrix(apply.reconstruction(trees[[1]], my_chars_i),
