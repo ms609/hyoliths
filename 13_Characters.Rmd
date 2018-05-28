@@ -293,8 +293,9 @@ PrintStates <- function (states) {
 }
 
 continuousScale <- rev(colorspace::heat_hcl(101, h=c(300, 75), c.=c(35, 95), l=c(15, 90), power=c(0.8, 1.2)))
+divergingScale <- rev(colorspace::diverge_hcl(101, h=c(260, 0), c=100, l=c(50, 90), power=1.0))
 NodeColour <- function (support) {
-  ifelse(is.na(support), 'red', continuousScale[(support * 100) + 1L])
+  ifelse(is.na(support), 'red', divergingScale[(support * 100) + 1L])
 }
 
 Italicize <- function (string) {
