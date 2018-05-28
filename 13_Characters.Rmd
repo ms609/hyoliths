@@ -573,7 +573,7 @@ for (i in 1:4) {
                collapse=''),
                '" stroke="', colour, LineStyle(colour), '"></path>')
       }, character(1)), collapse='')
-      tips <- paste0('\n <text x="', (nodeXi[terminal] + 2L), '" y="', nodeYi[terminal] + textY,
+      tips <- paste0('\n <text x="', (nodeXi[terminal] + 0L), '" y="', nodeYi[terminal] + textY,
                      '" fill="', tipCol[terminal],
                      '" class="flag">[', tipFlag[terminal], ']</text>',
                      '\n <text x="', (nodeXi[terminal] + 22L), '" y="', nodeYi[terminal] + textY,
