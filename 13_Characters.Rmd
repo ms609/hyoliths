@@ -8,11 +8,11 @@ date: "`r Sys.Date()`"
 
 This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)). <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark>
 
-Alongside each character's definition, each character is mapped onto a tree.
- `r if (knitr::is_html_output()) 'The tree used for reconstruction can be selected using the links below.' else 'Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting, $k = 4.5$. Other trees can be viewed in the HTML version of this file at \\href{https://ms609.github.io/hyoliths/reconstructions.html}{ms609.github.io/hyoliths}.'`
-Each tip is labelled as it is coded in the matrix, and these states are used to reconstruct the condition of each internal node, using the parsimony method of @Brazeau2018 as implemented in the _Inapp_ _R_ package.
+Alongside its definition, each character has been mapped onto a tree.
+ `r if (knitr::is_html_output()) 'Any of the optimal trees can be selected by modifying the tree number listed above each diagram.' else 'Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting, $k = 4.5$. Other trees can be viewed in the HTML version of this document at \\href{https://ms609.github.io/hyoliths/reconstructions.html}{ms609.github.io/hyoliths}.'`
+Each tip is labelled according to its coding in the matrix.  These states have been used to reconstruct the condition of each internal node, using the parsimony method of @Brazeau2018 as implemented in the _Inapp_ _R_ package.
 
-We emphasize that different trees will give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how well the character fits onto the given tree.  We consider this more intuitive than the use of the flawed [@Archie1989] Consistency Index, but include this value because of its historic significance.
+We emphasize that different trees will give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how well the character fits onto the given tree.  Consistency indices [@Archie1989] are also provided for each character.
 
 ```{R states matrix function, echo=FALSE, message=FALSE}
 NewickTree <- function(tree) gsub('_', ' ', write.tree(tree), fixed=TRUE)
@@ -350,7 +350,6 @@ ci_text <- vapply(trees, function (tree) {
 ```
 ```{R SVG-setup, echo=FALSE, results="asis"}
 CheckDirExists <- function (x) if (!dir.exists(x)) dir.create(x)
-#CheckDirExists('_bookdown_files')
 CheckDirExists('_book')
 CheckDirExists('_book/Brachiopod_phylogeny_files')
 CheckDirExists('_book/Brachiopod_phylogeny_files/figure-html')
@@ -493,8 +492,8 @@ taxa_not_to_print <- which(taxa_names %in% 'Namacalathus')
 prev_char_parts <- "NONE"
 prev_nesting <- 0
 
-for (i in 1:4) {
-#for (i in seq_len(n_char)) {
+#for (i in 1:4) {
+for (i in seq_len(n_char)) {
   
   this_char_parts <- char_parts[[i]]
   next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
