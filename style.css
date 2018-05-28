@@ -58,7 +58,7 @@ path.inapplicable {
   font-size: 10pt;
 }
 
-tspan.score, tspan.flag {
+tspan.score, text.flag {
   font-weight: bold;
 }
 
