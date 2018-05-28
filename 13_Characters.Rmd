@@ -483,15 +483,16 @@ PrintStateNotes <- function (notes) {
   PrintThisNote <- function (note) {
     afflictedTaxa <- names(note)[note]
     master <- afflictedTaxa[1]
-    cat("  \n<div class='state-notes'>",
-        paste0("<div class='state-note' id='",
+    cat(paste0("<div class='state-note' id='",
                      taxa_names[as.integer(master)], "-coding-", i,
                      "'>",
                paste(taxa_italic[as.integer(afflictedTaxa)], collapse=', '),
-                      ": ", Italicize(notes[master]), "</div>  \n  \n"),
-        '</div>  \n  \n')
+                      ": ", Italicize(notes[master]), "</div>  \n  \n"))
   }
   
+  if (length(notes) > 0) {
+    cat('  \n<div class="state-notes">')
+  }
   if (length(notes) == 1) {
     onlyOne <- TRUE
     names(onlyOne) <- names(notes)
@@ -500,6 +501,9 @@ PrintStateNotes <- function (notes) {
     notes <- notes[order(taxa_sort[as.integer(names(notes))])]
     duplicates <- DuplicateOf(toupper(notes))
     apply(duplicates, 2, PrintThisNote)
+  }
+  if (length(notes) > 0) {
+    cat('</div>  \n  \n')
   }
 }
 
