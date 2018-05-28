@@ -131,7 +131,8 @@ supporters <- SplitSupport(majCon)
 
 ColPlot(majCon)
 nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
-            adj=0, pos=2, frame='none', cex=0.75)
+           col=NodeColour(round(supporters / length(allTrees), 2)),
+           adj=0, pos=2, frame='none', cex=0.75)
 
 ```
 
@@ -158,7 +159,8 @@ supporters <- vapply(splits, function (tips) sum(vapply(prunedTrees, function (t
 
 ColPlot(majCon)
 nodelabels(paste0("\n", signif(supporters / length(allTrees), 3)),
-            adj=0, pos=2, frame='none', cex=0.75)
+           col=NodeColour(round(supporters / length(allTrees), 2)),
+           adj=0, pos=2, frame='none', cex=0.75)
 
 ```
 

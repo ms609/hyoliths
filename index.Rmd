@@ -145,6 +145,12 @@ ColPlot <- function (tree) {
   setPar()
   plot(tree, tip.color = tipCol[tree$tip.label], lwd=2)
 }
+# continuousScale <- rev(colorspace::heat_hcl(101, h=c(300, 75), c.=c(35, 95), l=c(15, 90), power=c(0.8, 1.2))) # Viridis prefered 
+divergingScale <- rev(colorspace::diverge_hcl(101, h=c(260, 0), c=100, l=c(50, 90), power=1.0))
+NodeColour <- function (support) {
+  ifelse(is.na(support), 'red', divergingScale[(support * 100) + 1L])
+}
+
 ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
                                           text.col=tipCol[omit])
 ```
