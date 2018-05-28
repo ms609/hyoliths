@@ -10,7 +10,12 @@
   font-size: smaller;
 }
 
-.state-note {
+.book .book-body .page-wrapper .page-inner section.normal .state-notes {
+  border-top: solid 1px #aaa;
+  font-size: smaller;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .state-note {
   text-indent: -16px;
   margin-left: 16px;
   padding: 0.5em 0;
@@ -61,20 +66,28 @@ text.stepsLabel {
   fill: #aab;
 }
 
-text.thisAn {
+tspan.thisAn {
   fill: #34caaf;
 }
 
+.switcher {
+  width: 678px;
+  text-align: right;
+}
 .book .book-body .page-wrapper .page-inner section.normal .switcher, input.switcherNumber {
   height: 1.3em;
   font-size: 10pt;
   color: #34caaf;
-  float: right;
 }
 
 input.switcherNumber {
   border: #34caaf solid 1px;
+  margin-left: 6px;
+  /*position: relative;*/
+  /*top: 2px;*/
 }
+
 .book .book-body .page-wrapper .page-inner section.normal .selectTree {
   font-style: italic;
 }
+
