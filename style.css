@@ -34,10 +34,6 @@ svg {
   clear: both;
 }
 
-.tree {
-  margin-bottom: -595px;
-}
-
 path {
   fill: none;
   stroke-linecap: round;
@@ -54,7 +50,7 @@ path.inapplicable {
   font-size: 9.5pt;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal svg text{
+.book .book-body .page-wrapper .page-inner section.normal svg.tree text{
   font-size: 10pt;
 }
 
@@ -68,6 +64,10 @@ text.stepsLabel {
 
 tspan.thisAn {
   fill: #34caaf;
+}
+
+.legendLabel {
+  fill: #858585; /* To match blockquote style */
 }
 
 .switcher {
