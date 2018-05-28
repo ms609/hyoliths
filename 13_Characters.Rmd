@@ -370,7 +370,7 @@ if (knitr::is_html_output()) {
   svgWidth <- 682
   svgHeight <- 555
   treeXMargins <- c(5L, 200L)
-  treeYMargins <- c(5L, 5L)
+  treeYMargins <- c(7L, 8L)
   
   n_tree <- length(trees)
   eachTree <- seq_len(n_tree)
