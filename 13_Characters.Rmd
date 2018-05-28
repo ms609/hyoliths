@@ -417,7 +417,7 @@ if (knitr::is_html_output()) {
   #names(rows) <- c('Equal weights', paste0('Implied weights, k = ', kValues))
   #knitr::kable(rows, col.names='')
   cat(paste0('<div class="switcher">',
-             '<span class="selectTree">Select tree:</span>',
+             '<span class="selectTree">Tree number:</span>',
              '<input class="switcherNumber" type="number" min="1" max="', n_tree,
              '"  oninput="switchTree(this)" value="1"></input>',
           '</div>'))
