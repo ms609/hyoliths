@@ -274,6 +274,10 @@ ReadNotes <- function (filepath) {
   }
 }
 
+IsTransformational <- function (states) {
+  gsub("^'(.*)'$", "\\1", states)[1] == ""
+}
+
 PrintStates <- function (states) {
   states <- gsub("^'(.*)'$", "\\1", states)
   tokens <- seq_along(states) - 1L
@@ -596,11 +600,6 @@ for (i in 1:4) {
                      '\n <text x="', (nodeXi[terminal] + 22L), '" y="', nodeYi[terminal] + textY,
                      '" class="taxonLabel">', 
                      gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>')
-      legendY <- round(rev(svgHeight - (yStep * seq_along(legendLabels))), 1)
-      legend <- paste0('\n <path d="M0,', legendY, 'h22" stroke="', legendCol,
-                       LineStyle(legendCol), '"></path>',
-                       '\n <text x="30" y="', legendY + textY, '" class="legendLabel">', 
-                       legendLabels, '</text>')
       nRegions <- states_matrix$regions
       if (length(nRegions) == 0) nRegions <- 0
       ciCaption <- paste0('\n <text x="', svgWidth - 4L,
@@ -633,14 +632,6 @@ for (i in 1:4) {
       write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
     }
     cat(svgSource)
-    # Static legend overlay
-    cat(paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
-        '" height="', svgHeight, '" class="treeOverlay">',
-        paste0(legend, collapse=''),
-        paste0('<text x="', svgWidth - 4L,
-               '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
-               '</text>'),
-        '</svg>'))
   } else {
     plot.states.matrix(apply.reconstruction(trees[[1]], my_chars_i),
                        passes=0, counts=1:2, show.labels=1,
@@ -650,7 +641,24 @@ for (i in 1:4) {
   
   }
   cat(paste0("  \n\n **Character ", i, ": ", Italicize(char_names[i]), "**  \n\n"))
-  PrintStates(Italicize(my_states[[i]]))
+  if (knitr::is_html_output()) {
+    lineHeight <- 24L
+    legendY <- round(lineHeight * seq_along(legendLabels), 1)
+    cat(paste0('>  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
+        '" height="', lineHeight * length(legendLabels), '" class="statesLegend">',
+        paste0('\n <path d="M0,', legendY - 5L, 'h22" stroke="', legendCol,
+                       LineStyle(legendCol), '"></path>',
+                       '\n <text x="30" y="0" class="legendLabel"><tspan dy="',
+                       legendY, '">', 
+                       legendLabels, '</tspan></text>', collapse=''),
+        paste0('<text x="', svgWidth - 4L,
+               '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
+               '</text>'),
+        '</svg> \n>\n'))
+    cat("> ", if (IsTransformational(my_states[[i]])) "Transformational" else "Neomorphic", "character.  \n>\n")
+  } else {
+    PrintStates(Italicize(my_states[[i]]))
+  }
   cat("  \n\n")
   char_notes_i <- char_notes[[i]]
   state_notes_i <- char_notes_i[[2]]
