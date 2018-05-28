@@ -433,7 +433,7 @@ function showTree(tree, char) {
   var oldTree = $('.tree[char=' + char + ']');
   $.ajax({
      url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
-    context: item,
+    context: oldTree,
     datatype: 'xml'
   }).done(function (newTree) {
     $(this).replaceWith($('svg', newTree));
