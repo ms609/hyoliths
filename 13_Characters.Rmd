@@ -659,10 +659,10 @@ for (i in seq_len(n_char)) {
   cat("  \n") # Clear line, ready for next block
 }
 if (knitr::is_html_output()) {
-  cat('<div class="switcher">',
+  cat(paste0('<div class="switcher">',
     '<span class="selectTree">Tree number:</span>',
     '<input class="switcherNumber" type="number" min="1" max="',
     n_tree, '"  oninput="switchTree(this)" value="', n_tree, '"></input>',
-    '</div>')
+    '</div>'))
 }
 ```

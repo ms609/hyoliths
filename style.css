@@ -87,8 +87,7 @@ input.switcherNumber {
   border: #34caaf solid 1px;
   margin-left: 6px;
   padding-left: 2px;
-  position: relative;
-  top: 1px;
+  width: 3em;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .selectTree {
