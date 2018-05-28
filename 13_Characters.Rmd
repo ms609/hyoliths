@@ -385,7 +385,6 @@ if (knitr::is_html_output()) {
   yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
   textY <- 3L
   nAnalyses <- length(analysisNames)
-  analysisBoxes <- matrix('', n_tree, nAnalyses)
   for (i in eachTree) {
     tree <- trees[[i]]
     tipLabel[i, ] <- tree$tip.label
@@ -399,10 +398,6 @@ if (knitr::is_html_output()) {
     nodeX[[i]] <- xStep[[i]][nAncestors + 1L]
     nodeYi <- double(length(nAncestors))
     nodeYi[child[i, child[i, ] <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
-    
-    analysisBoxes[i, ] <- paste0('<path d="M', svgWidth -1L, ',', 
-                            yStep * 5L + 16L + (seq_len(nAnalyses) * 16L), 
-                            'h-156v14h156z" class="analysis"></path>') 
 
     for (nodeI in rev(internal)) {
       nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
