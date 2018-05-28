@@ -419,7 +419,7 @@ if (knitr::is_html_output()) {
   cat(paste0('<div class="switcher">',
              '<span class="selectTree">Select tree:</span>',
              '<input class="switcherNumber" type="number" min="1" max="', n_tree,
-             '"  onchange="switchTree(this)" value="1"></input>',
+             '"  oninput="switchTree(this)" value="1"></input>',
           '</div>'))
 }
 ```
