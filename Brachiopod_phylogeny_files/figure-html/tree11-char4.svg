@@ -2,7 +2,7 @@
  <text x="678" y="16.6" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">5</tspan> to tree score</text>
  <text x="678" y="30.2" text-anchor="end" class="stepsLabel"><tspan class="score"></tspan> additional region</text>
  <text x="678" y="43.8" text-anchor="end" class="stepsLabel">CI = 0.2; Fitch CI = 0.2; Fitch RI = 0.64</text>
- <text x="678" y="71" text-anchor="end" class="stepsLabel"><tspan dy="16">A most parsimonious tree under:</tspan>Equal weights<tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Equal weights</tspan>Implied weights, k = 2<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan>Implied weights, k = 3<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 3</tspan>Implied weights, k = 4.5<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 4.5</tspan>Implied weights, k = 7<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 7</tspan>Implied weights, k = 10.5<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 10.5</tspan>Implied weights, k = 16<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 16</tspan>Implied weights, k = 24<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 24</tspan></text>
+ <text x="678" y="71" text-anchor="end" class="stepsLabel"><tspan dy="16">A most parsimonious tree under:</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 3</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 4.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 7</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 10.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 16</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 24</tspan></text>
  <text x="40.9" y="15" fill="lightgrey" class="flag">[-]</text>
  <text x="60.9" y="15" class="taxonLabel">Dailyatia</text>
  <text x="69.9" y="29" fill="lightgrey" class="flag">[-]</text>
@@ -77,75 +77,7 @@
  <text x="379.3" y="476.1" class="taxonLabel">Coolinia pecten</text>
  <text x="359.3" y="490.1" fill="#91bfdb" class="flag">[2]</text>
  <text x="379.3" y="490.1" class="taxonLabel">Antigonambonites planus</text>
- <path d="M10,43.8V12H38.9" stroke="lightgrey" class="inapplicable"></path>
- <path d="M10,43.8V75.6H38.9" stroke="lightgrey" class="inapplicable"></path>
- <path d="M38.9,75.6V26H67.9" stroke="lightgrey" class="inapplicable"></path>
- <path d="M38.9,75.6V125.2H67.9" stroke="lightgrey" class="inapplicable"></path>
- <path d="M67.9,125.2V39.9H96.8" stroke="lightgrey" class="inapplicable"></path>
- <path d="M67.9,125.2V210.4H96.8" stroke="#e2e2a2"></path>
- <path d="M96.8,210.4V53.9H125.8" stroke="#e2e2a2"></path>
- <path d="M96.8,210.4V366.8H125.8" stroke="#e2e2a2"></path>
- <path d="M125.8,366.8V225.6H154.7" stroke="#e2e2a2"></path>
- <path d="M154.7,225.6V116.4H183.6" stroke="#e2e2a2"></path>
- <path d="M183.6,116.4V81H212.6" stroke="#e2e2a2"></path>
- <path d="M212.6,81V67.9H241.5" stroke="#91bfdb"></path>
- <path d="M212.6,81V94.1H241.5" stroke="#e2e2a2"></path>
- <path d="M241.5,94.1V81.9H270.5" stroke="#e2e2a2"></path>
- <path d="M241.5,94.1V106.3H270.5" stroke="#e2e2a2"></path>
- <path d="M270.5,106.3V95.8H299.4" stroke="#e2e2a2"></path>
- <path d="M270.5,106.3V116.8H299.4" stroke="#e2e2a2"></path>
- <path d="M299.4,116.8V109.8H328.4" stroke="#e2e2a2"></path>
- <path d="M299.4,116.8V123.8H328.4" stroke="#91bfdb"></path>
- <path d="M183.6,116.4V151.8H212.6" stroke="#e2e2a2"></path>
- <path d="M212.6,151.8V137.8H241.5" stroke="#e2e2a2"></path>
- <path d="M212.6,151.8V165.8H241.5" stroke="#e2e2a2"></path>
- <path d="M241.5,165.8V151.7H270.5" stroke="#e2e2a2"></path>
- <path d="M241.5,165.8V179.9H270.5" stroke="#e2e2a2"></path>
- <path d="M270.5,179.9V165.7H299.4" stroke="#e2e2a2"></path>
- <path d="M270.5,179.9V194.2H299.4" stroke="#e2e2a2"></path>
- <path d="M299.4,194.2V179.7H328.4" stroke="#e2e2a2"></path>
- <path d="M299.4,194.2V208.7H328.4" stroke="#e2e2a2"></path>
- <path d="M328.4,208.7V193.6H357.3" stroke="#e2e2a2"></path>
- <path d="M328.4,208.7V223.8H357.3" stroke="#e2e2a2"></path>
- <path d="M357.3,223.8V207.6H386.2" stroke="#e2e2a2"></path>
- <path d="M357.3,223.8V239.9H386.2" stroke="#e2e2a2"></path>
- <path d="M386.2,239.9V221.6H415.2" stroke="#e2e2a2"></path>
- <path d="M386.2,239.9V258.3H415.2" stroke="#e2e2a2"></path>
- <path d="M415.2,258.3V242.5H444.1" stroke="#e2e2a2"></path>
- <path d="M444.1,242.5V235.6H473.1" stroke="#e2e2a2"></path>
- <path d="M444.1,242.5V249.5H473.1" stroke="#e2e2a2"></path>
- <path d="M415.2,258.3V274H444.1" stroke="#e2e2a2"></path>
- <path d="M444.1,274V263.5H473.1" stroke="#e2e2a2"></path>
- <path d="M444.1,274V284.5H473.1" stroke="#e2e2a2"></path>
- <path d="M473.1,284.5V277.5H502" stroke="#e2e2a2"></path>
- <path d="M473.1,284.5V291.4H502" stroke="#e2e2a2"></path>
- <path d="M154.7,225.6V334.9H183.6" stroke="#91bfdb"></path>
- <path d="M183.6,334.9V312.4H212.6" stroke="#91bfdb"></path>
- <path d="M212.6,312.4V305.4H241.5" stroke="#91bfdb"></path>
- <path d="M212.6,312.4V319.4H241.5" stroke="#91bfdb"></path>
- <path d="M183.6,334.9V357.3H212.6" stroke="#91bfdb"></path>
- <path d="M212.6,357.3V333.4H241.5" stroke="#91bfdb"></path>
- <path d="M212.6,357.3V381.3H241.5" stroke="#91bfdb"></path>
- <path d="M241.5,381.3V354.3H270.5" stroke="#91bfdb"></path>
- <path d="M270.5,354.3V347.3H299.4" stroke="darkgrey"></path>
- <path d="M270.5,354.3V361.3H299.4" stroke="#e2e2a2"></path>
- <path d="M241.5,381.3V408.4H270.5" stroke="#91bfdb"></path>
- <path d="M270.5,408.4V375.3H299.4" stroke="#91bfdb"></path>
- <path d="M270.5,408.4V441.4H299.4" stroke="#91bfdb"></path>
- <path d="M299.4,441.4V402.8H328.4" stroke="#91bfdb"></path>
- <path d="M328.4,402.8V389.2H357.3" stroke="#91bfdb"></path>
- <path d="M328.4,402.8V416.3H357.3" stroke="#91bfdb"></path>
- <path d="M357.3,416.3V403.2H386.2" stroke="#91bfdb"></path>
- <path d="M357.3,416.3V429.4H386.2" stroke="#91bfdb"></path>
- <path d="M386.2,429.4V417.2H415.2" stroke="#91bfdb"></path>
- <path d="M386.2,429.4V441.6H415.2" stroke="#91bfdb"></path>
- <path d="M415.2,441.6V431.2H444.1" stroke="#91bfdb"></path>
- <path d="M415.2,441.6V452.1H444.1" stroke="#91bfdb"></path>
- <path d="M444.1,452.1V445.1H473.1" stroke="#91bfdb"></path>
- <path d="M444.1,452.1V459.1H473.1" stroke="#e2e2a2"></path>
- <path d="M299.4,441.4V480.1H328.4" stroke="#91bfdb"></path>
- <path d="M328.4,480.1V473.1H357.3" stroke="#91bfdb"></path>
- <path d="M328.4,480.1V487.1H357.3" stroke="#91bfdb"></path>
- <path d="M125.8,366.8V508H154.7" stroke="#e2e2a2"></path>
- <path d="M154.7,508V501H183.6" stroke="#e2e2a2"></path>
- <path d="M154.7,508V515H183.6" stroke="#e2e2a2"></path></svg>
+ <path d="M10,43.8V12H38.9M10,43.8V75.6H38.9M38.9,75.6V26H67.9M38.9,75.6V125.2H67.9M67.9,125.2V39.9H96.8" stroke="lightgrey" class="inapplicable"></path>
+ <path d="M67.9,125.2V210.4H96.8M96.8,210.4V53.9H125.8M96.8,210.4V366.8H125.8M125.8,366.8V225.6H154.7M154.7,225.6V116.4H183.6M183.6,116.4V81H212.6M212.6,81V94.1H241.5M241.5,94.1V81.9H270.5M241.5,94.1V106.3H270.5M270.5,106.3V95.8H299.4M270.5,106.3V116.8H299.4M299.4,116.8V109.8H328.4M183.6,116.4V151.8H212.6M212.6,151.8V137.8H241.5M212.6,151.8V165.8H241.5M241.5,165.8V151.7H270.5M241.5,165.8V179.9H270.5M270.5,179.9V165.7H299.4M270.5,179.9V194.2H299.4M299.4,194.2V179.7H328.4M299.4,194.2V208.7H328.4M328.4,208.7V193.6H357.3M328.4,208.7V223.8H357.3M357.3,223.8V207.6H386.2M357.3,223.8V239.9H386.2M386.2,239.9V221.6H415.2M386.2,239.9V258.3H415.2M415.2,258.3V242.5H444.1M444.1,242.5V235.6H473.1M444.1,242.5V249.5H473.1M415.2,258.3V274H444.1M444.1,274V263.5H473.1M444.1,274V284.5H473.1M473.1,284.5V277.5H502M473.1,284.5V291.4H502M270.5,354.3V361.3H299.4M444.1,452.1V459.1H473.1M125.8,366.8V508H154.7M154.7,508V501H183.6M154.7,508V515H183.6" stroke="#e2e2a2"></path>
+ <path d="M212.6,81V67.9H241.5M299.4,116.8V123.8H328.4M154.7,225.6V334.9H183.6M183.6,334.9V312.4H212.6M212.6,312.4V305.4H241.5M212.6,312.4V319.4H241.5M183.6,334.9V357.3H212.6M212.6,357.3V333.4H241.5M212.6,357.3V381.3H241.5M241.5,381.3V354.3H270.5M241.5,381.3V408.4H270.5M270.5,408.4V375.3H299.4M270.5,408.4V441.4H299.4M299.4,441.4V402.8H328.4M328.4,402.8V389.2H357.3M328.4,402.8V416.3H357.3M357.3,416.3V403.2H386.2M357.3,416.3V429.4H386.2M386.2,429.4V417.2H415.2M386.2,429.4V441.6H415.2M415.2,441.6V431.2H444.1M415.2,441.6V452.1H444.1M444.1,452.1V445.1H473.1M299.4,441.4V480.1H328.4M328.4,480.1V473.1H357.3M328.4,480.1V487.1H357.3" stroke="#91bfdb"></path>
+ <path d="M270.5,354.3V347.3H299.4" stroke="darkgrey"></path></svg>

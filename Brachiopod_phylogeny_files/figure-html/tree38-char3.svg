@@ -2,7 +2,7 @@
  <text x="678" y="16.6" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">1</tspan> to tree score</text>
  <text x="678" y="30.2" text-anchor="end" class="stepsLabel"><tspan class="score"></tspan> additional region</text>
  <text x="678" y="43.8" text-anchor="end" class="stepsLabel">CI = 1; Fitch CI = 1; Fitch RI = 1</text>
- <text x="678" y="71" text-anchor="end" class="stepsLabel"><tspan dy="16">A most parsimonious tree under:</tspan>Equal weights<tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Equal weights</tspan>Implied weights, k = 2<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan>Implied weights, k = 3<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 3</tspan>Implied weights, k = 4.5<tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 4.5</tspan>Implied weights, k = 7<tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 7</tspan>Implied weights, k = 10.5<tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 10.5</tspan>Implied weights, k = 16<tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 16</tspan>Implied weights, k = 24<tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 24</tspan></text>
+ <text x="678" y="71" text-anchor="end" class="stepsLabel"><tspan dy="16">A most parsimonious tree under:</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 3</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 4.5</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 7</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 10.5</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 16</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 24</tspan></text>
  <text x="42.8" y="15" fill="#fc8d59" class="flag">[0]</text>
  <text x="62.8" y="15" class="taxonLabel">Dailyatia</text>
  <text x="104.2" y="29" fill="#fc8d59" class="flag">[0]</text>
@@ -77,75 +77,6 @@
  <text x="308.8" y="392.2" class="taxonLabel">Coolinia pecten</text>
  <text x="288.8" y="378.3" fill="#91bfdb" class="flag">[1]</text>
  <text x="308.8" y="378.3" class="taxonLabel">Antigonambonites planus</text>
- <path d="M10,43.9V12H40.8" stroke="#fc8d59"></path>
- <path d="M10,43.9V75.8H40.8" stroke="#fc8d59"></path>
- <path d="M40.8,75.8V33H71.5" stroke="#fc8d59"></path>
- <path d="M71.5,33V26H102.2" stroke="#fc8d59"></path>
+ <path d="M10,43.9V12H40.8M10,43.9V75.8H40.8M40.8,75.8V33H71.5M71.5,33V26H102.2M40.8,75.8V118.7H71.5M71.5,118.7V53.9H102.2" stroke="#fc8d59"></path>
  <path d="M71.5,33V39.9H102.2" stroke="lightgrey" class="inapplicable"></path>
- <path d="M40.8,75.8V118.7H71.5" stroke="#fc8d59"></path>
- <path d="M71.5,118.7V53.9H102.2" stroke="#fc8d59"></path>
- <path d="M71.5,118.7V183.5H102.2" stroke="#91bfdb"></path>
- <path d="M102.2,183.5V74.9H133" stroke="#91bfdb"></path>
- <path d="M133,74.9V67.9H163.8" stroke="#91bfdb"></path>
- <path d="M133,74.9V81.9H163.8" stroke="#91bfdb"></path>
- <path d="M102.2,183.5V292.1H133" stroke="#91bfdb"></path>
- <path d="M133,292.1V144.3H163.8" stroke="#91bfdb"></path>
- <path d="M163.8,144.3V108.9H194.5" stroke="#91bfdb"></path>
- <path d="M194.5,108.9V95.8H225.2" stroke="#91bfdb"></path>
- <path d="M194.5,108.9V122H225.2" stroke="#91bfdb"></path>
- <path d="M225.2,122V109.8H256" stroke="#91bfdb"></path>
- <path d="M225.2,122V134.3H256" stroke="#91bfdb"></path>
- <path d="M256,134.3V123.8H286.8" stroke="#91bfdb"></path>
- <path d="M256,134.3V144.7H286.8" stroke="#91bfdb"></path>
- <path d="M286.8,144.7V137.8H317.5" stroke="#91bfdb"></path>
- <path d="M286.8,144.7V151.7H317.5" stroke="#91bfdb"></path>
- <path d="M163.8,144.3V179.7H194.5" stroke="#91bfdb"></path>
- <path d="M194.5,179.7V165.7H225.2" stroke="#91bfdb"></path>
- <path d="M194.5,179.7V193.7H225.2" stroke="#91bfdb"></path>
- <path d="M225.2,193.7V179.7H256" stroke="#91bfdb"></path>
- <path d="M225.2,193.7V207.7H256" stroke="#91bfdb"></path>
- <path d="M256,207.7V193.6H286.8" stroke="#91bfdb"></path>
- <path d="M256,207.7V221.8H286.8" stroke="#91bfdb"></path>
- <path d="M286.8,221.8V207.6H317.5" stroke="#91bfdb"></path>
- <path d="M286.8,221.8V236H317.5" stroke="#91bfdb"></path>
- <path d="M317.5,236V221.6H348.2" stroke="#91bfdb"></path>
- <path d="M317.5,236V250.4H348.2" stroke="#91bfdb"></path>
- <path d="M348.2,250.4V235.6H379" stroke="#91bfdb"></path>
- <path d="M348.2,250.4V265.2H379" stroke="#91bfdb"></path>
- <path d="M379,265.2V249.5H409.8" stroke="#91bfdb"></path>
- <path d="M379,265.2V281H409.8" stroke="#91bfdb"></path>
- <path d="M409.8,281V263.5H440.5" stroke="#91bfdb"></path>
- <path d="M409.8,281V298.4H440.5" stroke="#91bfdb"></path>
- <path d="M440.5,298.4V284.5H471.2" stroke="#91bfdb"></path>
- <path d="M471.2,284.5V277.5H502" stroke="#91bfdb"></path>
- <path d="M471.2,284.5V291.4H502" stroke="#91bfdb"></path>
- <path d="M440.5,298.4V312.4H471.2" stroke="#91bfdb"></path>
- <path d="M471.2,312.4V305.4H502" stroke="#91bfdb"></path>
- <path d="M471.2,312.4V319.4H502" stroke="#91bfdb"></path>
- <path d="M133,292.1V439.9H163.8" stroke="#91bfdb"></path>
- <path d="M163.8,439.9V371.7H194.5" stroke="#91bfdb"></path>
- <path d="M194.5,371.7V343.8H225.2" stroke="#91bfdb"></path>
- <path d="M225.2,343.8V333.4H256" stroke="#91bfdb"></path>
- <path d="M225.2,343.8V354.3H256" stroke="#91bfdb"></path>
- <path d="M256,354.3V347.3H286.8" stroke="#91bfdb"></path>
- <path d="M256,354.3V361.3H286.8" stroke="#91bfdb"></path>
- <path d="M194.5,371.7V399.6H225.2" stroke="#91bfdb"></path>
- <path d="M225.2,399.6V382.3H256" stroke="#91bfdb"></path>
- <path d="M256,382.3V375.3H286.8" stroke="#91bfdb"></path>
- <path d="M256,382.3V389.2H286.8" stroke="#91bfdb"></path>
- <path d="M225.2,399.6V417H256" stroke="#91bfdb"></path>
- <path d="M256,417V403.2H286.8" stroke="#91bfdb"></path>
- <path d="M256,417V430.7H286.8" stroke="#91bfdb"></path>
- <path d="M286.8,430.7V417.2H317.5" stroke="#91bfdb"></path>
- <path d="M286.8,430.7V444.3H317.5" stroke="#91bfdb"></path>
- <path d="M317.5,444.3V431.2H348.2" stroke="#91bfdb"></path>
- <path d="M317.5,444.3V457.4H348.2" stroke="#91bfdb"></path>
- <path d="M348.2,457.4V445.1H379" stroke="#91bfdb"></path>
- <path d="M348.2,457.4V469.6H379" stroke="#91bfdb"></path>
- <path d="M379,469.6V459.1H409.8" stroke="#91bfdb"></path>
- <path d="M379,469.6V480.1H409.8" stroke="#91bfdb"></path>
- <path d="M409.8,480.1V473.1H440.5" stroke="#91bfdb"></path>
- <path d="M409.8,480.1V487.1H440.5" stroke="#91bfdb"></path>
- <path d="M163.8,439.9V508H194.5" stroke="#91bfdb"></path>
- <path d="M194.5,508V501H225.2" stroke="#91bfdb"></path>
- <path d="M194.5,508V515H225.2" stroke="#91bfdb"></path></svg>
+ <path d="M71.5,118.7V183.5H102.2M102.2,183.5V74.9H133M133,74.9V67.9H163.8M133,74.9V81.9H163.8M102.2,183.5V292.1H133M133,292.1V144.3H163.8M163.8,144.3V108.9H194.5M194.5,108.9V95.8H225.2M194.5,108.9V122H225.2M225.2,122V109.8H256M225.2,122V134.3H256M256,134.3V123.8H286.8M256,134.3V144.7H286.8M286.8,144.7V137.8H317.5M286.8,144.7V151.7H317.5M163.8,144.3V179.7H194.5M194.5,179.7V165.7H225.2M194.5,179.7V193.7H225.2M225.2,193.7V179.7H256M225.2,193.7V207.7H256M256,207.7V193.6H286.8M256,207.7V221.8H286.8M286.8,221.8V207.6H317.5M286.8,221.8V236H317.5M317.5,236V221.6H348.2M317.5,236V250.4H348.2M348.2,250.4V235.6H379M348.2,250.4V265.2H379M379,265.2V249.5H409.8M379,265.2V281H409.8M409.8,281V263.5H440.5M409.8,281V298.4H440.5M440.5,298.4V284.5H471.2M471.2,284.5V277.5H502M471.2,284.5V291.4H502M440.5,298.4V312.4H471.2M471.2,312.4V305.4H502M471.2,312.4V319.4H502M133,292.1V439.9H163.8M163.8,439.9V371.7H194.5M194.5,371.7V343.8H225.2M225.2,343.8V333.4H256M225.2,343.8V354.3H256M256,354.3V347.3H286.8M256,354.3V361.3H286.8M194.5,371.7V399.6H225.2M225.2,399.6V382.3H256M256,382.3V375.3H286.8M256,382.3V389.2H286.8M225.2,399.6V417H256M256,417V403.2H286.8M256,417V430.7H286.8M286.8,430.7V417.2H317.5M286.8,430.7V444.3H317.5M317.5,444.3V431.2H348.2M317.5,444.3V457.4H348.2M348.2,457.4V445.1H379M348.2,457.4V469.6H379M379,469.6V459.1H409.8M379,469.6V480.1H409.8M409.8,480.1V473.1H440.5M409.8,480.1V487.1H440.5M163.8,439.9V508H194.5M194.5,508V501H225.2M194.5,508V515H225.2" stroke="#91bfdb"></path></svg>
