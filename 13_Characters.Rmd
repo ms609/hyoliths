@@ -419,7 +419,7 @@ function showTree (tree) {
   $(".tree").each(function(index, item) {
     var oldTree = $(item);
     $.ajax({
-       url: "`r sprintf(fileNamer, '" + tree + "', '" + $(".tree").attr("char") + "')`",
+       url: "`r sprintf(fileNamer, '" + tree + "', '" + $(oldTree).attr("char") + "')`",
       context: item,
       datatype: 'xml'
     }).done(function (newTree) {
