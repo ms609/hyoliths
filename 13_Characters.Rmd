@@ -576,12 +576,16 @@ for (i in 1:4) {
       
       
       LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
-      edges <- paste0('\n <path d="M', nodeXi[parent[treeNo, eachEdge]],
-                      ',', nodeYi[parent[treeNo, eachEdge]],
-                      'V', nodeYi[child[treeNo, eachEdge]],
-                      'H', nodeXi[child[treeNo, eachEdge]],
-                      '" stroke="', edgeCol[eachEdge],
-                      LineStyle(edgeCol[eachEdge]), '"></path>')
+      edges <- paste0(vapply(unique(edgeCol), function(colour) {
+        theseEdges <- edgeCol == colour
+        paste0('\n <path d="', paste0(
+               'M', nodeXi[parent[treeNo, theseEdges]],
+               ',', nodeYi[parent[treeNo, theseEdges]],
+               'V', nodeYi[child[treeNo, theseEdges]],
+               'H', nodeXi[child[treeNo, theseEdges]],
+               collapse=''),
+               '" stroke="', colour, LineStyle(colour), '"></path>')
+      }, character(1)), collapse='')
       tips <- paste0('\n <text x="', (nodeXi[terminal] + 2L), '" y="', nodeYi[terminal] + textY,
                      '" fill="', tipCol[terminal],
                      '" class="flag">[', tipFlag[terminal], ']</text>',
