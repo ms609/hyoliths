@@ -318,7 +318,7 @@ function showTree(tree, char) {
   var oldTree = $('.tree[char=' + char + ']');
   $.ajax({
      url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + char + ".svg",
-    context: item,
+    context: oldTree,
     datatype: 'xml'
   }).done(function (newTree) {
     $(this).replaceWith($('svg', newTree));
