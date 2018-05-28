@@ -105,6 +105,15 @@ if (length(kValues) != 7) stop("You need to change this ugly code manually")
 allTrees <- c(ew.trees, iw.trees[[1]], iw.trees[[2]],
            iw.trees[[3]], iw.trees[[4]], iw.trees[[5]],
            iw.trees[[6]], iw.trees[[7]])
+
+nTip <- Ntip(allTrees[[1]])
+tipLabels <- sort(allTrees[[1]]$tip.label)
+powersOf2 <- 2^(seq_len(nTip)- 1)
+SplitNumber <- function (tips, tr) sum(powersOf2[tipLabels %in% tr$tip.label[tips]])
+splitOccurrences <- table(vapply(allTrees, function (tr) {
+  vapply(Descendants(tr, nTip + seq_len(nTip - 1L), type='tips'),
+         SplitNumber, double(1), tr)
+  }, double(nTip - 1L)))
 ```
 
 (ref:ts-all-cons) Consensus of all parsimony results.  
@@ -113,19 +122,9 @@ allTrees <- c(ew.trees, iw.trees[[1]], iw.trees[[2]],
 
 ```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
 majCon <- consensus(allTrees, p=0.5)
-nTip <- Ntip(majCon)
 splits <- Descendants(majCon, nTip + seq_len(Nnode(majCon)), type='tips')
-splits <- lapply(splits, function (x) sort(majCon$tip.label[x]))
-internalNodes <- nTip + seq_len(nTip - 1)
-supporters <- vapply(splits, function (tips) sum(vapply(allTrees, function (tree) {
-  treeSplits <- Descendants(tree, internalNodes, type='tips')
-  splitLengths <- vapply(treeSplits, length, integer(1))
-  tipLabels <- tree$tip.label
-  treeSplits <- vapply(treeSplits[splitLengths == length(tips)],
-                       function (x) sort(tipLabels[x]), character(length(tips)))
-  any(apply(treeSplits, 2, identical, tips))
-}, logical(1))), integer(1))
-
+splitNumbers <- vapply(splits, SplitNumber, double(1), majCon)
+supporters <- splitOccurrences[as.character(splitNumbers)]
 
 ColPlot(majCon)
 nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
