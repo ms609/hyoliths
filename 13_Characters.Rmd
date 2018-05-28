@@ -576,7 +576,7 @@ for (i in 1:4) {
       edgeCol <- matrix_data$edge_col
       tipCol <- matrix_data$tips_colours
       tipFlag <- matrix_data$tips_labels
-      
+      nodeSupport <- round(SplitSupport(tree) / length(allTrees), 2)
       
       LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
       edges <- paste0(vapply(unique(edgeCol), function(colour) {
@@ -594,7 +594,11 @@ for (i in 1:4) {
                      '" class="flag">[', tipFlag[terminal], ']</text>',
                      '\n <text x="', (nodeXi[terminal] + 22L), '" y="', nodeYi[terminal] + textY,
                      '" class="taxonLabel">', 
-                     gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>')
+                     gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>',
+                     collapse='')
+      nodes <- paste0('\n <text x="', (nodeXi[internal] + 2L), 
+                           '" y="', nodeYi[internal] + textY,
+                     '" class="node">', nodeSupport, '</text>', collapse='')
       nRegions <- states_matrix$regions
       if (length(nRegions) == 0) nRegions <- 0
       ciCaption <- paste0('\n <text x="', svgWidth - 4L,
@@ -620,9 +624,7 @@ for (i in 1:4) {
       
       svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
                     svgWidth, '" height="', svgHeight, '" class="tree" char="', i, '">',
-                    ciCaption, 
-                    paste0(tips, collapse=''),
-                    paste0(edges, collapse=''),
+                    ciCaption, tips, edges, nodes,
                     '</svg>')
       write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
     }
