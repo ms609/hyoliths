@@ -415,7 +415,8 @@ function switchTree(input) {
     showTree(newValue, input.char);
   }
 }
-function updateAllTrees (tree) {
+
+function updateAllTrees(tree) {
   $(".tree").each(function(index, item) {
     var oldTree = $(item);
     $.ajax({
@@ -427,18 +428,19 @@ function updateAllTrees (tree) {
     })
   });
 }
-function showTree (tree, char) {
+
+function showTree(tree, char) {
   var oldTree = $('.tree[char=' + char + ']');
-    $.ajax({
-       url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
-      context: item,
-      datatype: 'xml'
-    }).done(function (newTree) {
-      $(this).replaceWith($('svg', newTree));
-      updateAllTrees(tree);
-    })
+  $.ajax({
+     url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
+    context: item,
+    datatype: 'xml'
+  }).done(function (newTree) {
+    $(this).replaceWith($('svg', newTree));
+    updateAllTrees(tree);
   });
 }
+
 $(document).ready(function(){
   var originalSwitcher = $(".switcher");
   $(".tree").each(function()
