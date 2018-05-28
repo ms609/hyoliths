@@ -289,9 +289,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant. Further citations for codings that are not discussed in the text can be viewed by browsing the <a href="dataset.html#dataset">morphological dataset</a> on MorphoBank (<a href="https://morphobank.org/permalink/?P2800">project 2800</a>). <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark></p>
 <p>Alongside its definition, each character has been mapped onto a tree. Any of the optimal trees can be selected by modifying the tree number listed above each diagram. Each tip is labelled according to its coding in the matrix. These states have been used to reconstruct the condition of each internal node, using the parsimony method of <span class="citation">Brazeau et al. (<a href="#ref-Brazeau2018">2018</a>)</span> as implemented in the <em>Inapp</em> <em>R</em> package.</p>
 <p>We emphasize that different trees will give different reconstructions. The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how well the character fits onto the given tree. Consistency indices <span class="citation">(Archie, <a href="#ref-Archie1989">1989</a>)</span> are also provided for each character.</p>
-<div class="switcher">
-<span class="selectTree">Tree number:</span><input class="switcherNumber" type="number" min="1" max="78"  oninput="switchTree(this)" value="78"></input>
-</div>
 <script>
 function switchTree(input) {
   newValue = input.value * 1;
@@ -300,14 +297,14 @@ function switchTree(input) {
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
     $("switcherNumber").val(newValue);
-    showTree(newValue);
+    showTree(newValue, input.char);
   }
 }
-function showTree (tree) {
+function updateAllTrees (tree) {
   $(".tree").each(function(index, item) {
     var oldTree = $(item);
     $.ajax({
-       url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + $(".tree").attr("char") + ".svg",
+       url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + $(oldTree).attr("char") + ".svg",
       context: item,
       datatype: 'xml'
     }).done(function (newTree) {
@@ -315,10 +312,26 @@ function showTree (tree) {
     })
   });
 }
+function showTree (tree, char) {
+  var oldTree = $('.tree[char=' + char + ']');
+    $.ajax({
+       url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + char + ".svg",
+      context: item,
+      datatype: 'xml'
+    }).done(function (newTree) {
+      $(this).replaceWith($('svg', newTree));
+      updateAllTrees(tree);
+    })
+  });
+}
 $(document).ready(function(){
   var originalSwitcher = $(".switcher");
   $(".tree").each(function()
-    {originalSwitcher.clone().insertBefore($(this));}
+    {
+      var switcherClone = originalSwitcher.clone();
+      switcherClone.attr("char", $(this).attr("char"));
+      switcherClone.insertBefore($(this));
+    }
   );
   originalSwitcher.remove()
 })
@@ -3743,6 +3756,9 @@ But in contrast, <span class="citation">Williams et al. (<a href="#ref-Williams2
 <div id="Yuganotheca_elegans-coding-107" class="state-note">
 <em>Yuganotheca elegans</em>: The identification of the “very poorly impressed possible anus at the lateral side of the anterior body wall” is not yet confident, so this character is coded as not presently available.
 </div>
+</div>
+<div class="switcher">
+<span class="selectTree">Tree number:</span> <input class="switcherNumber" type="number" min="1" max=" 78 "  oninput="switchTree(this)" value=" 78 "></input>
 </div>
 
 </div>
