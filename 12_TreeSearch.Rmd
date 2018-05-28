@@ -107,9 +107,9 @@ allTrees <- c(ew.trees, iw.trees[[1]], iw.trees[[2]],
            iw.trees[[6]], iw.trees[[7]])
 
 nTip <- Ntip(allTrees[[1]])
-tipLabels <- sort(allTrees[[1]]$tip.label)
+tipIndex <- sort(allTrees[[1]]$tip.label)
 powersOf2 <- 2^(seq_len(nTip)- 1)
-SplitNumber <- function (tips, tr) sum(powersOf2[tipLabels %in% tr$tip.label[tips]])
+SplitNumber <- function (tips, tr) sum(powersOf2[tipIndex %in% tr$tip.label[tips]])
 splitOccurrences <- table(vapply(allTrees, function (tr) {
   vapply(Descendants(tr, nTip + seq_len(nTip - 1L), type='tips'),
          SplitNumber, double(1), tr)
@@ -142,20 +142,7 @@ nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
 omit <- c("Micrina", 'Mickwitzia_muralensis',
        'Heliomedusa_orienta')
 majCon <- ConsensusWithout(allTrees, omit, p=0.5)
-nTip <- Ntip(majCon)
-splits <- Descendants(majCon, nTip + seq_len(Nnode(majCon)), type='tips')
-splits <- lapply(splits, function (x) sort(majCon$tip.label[x]))
-internalNodes <- nTip + seq_len(nTip - 1)
-prunedTrees <- lapply(allTrees, drop.tip, tip=omit)
-supporters <- vapply(splits, function (tips) sum(vapply(prunedTrees, function (tree) {
-  treeSplits <- Descendants(tree, internalNodes, type='tips')
-  splitLengths <- vapply(treeSplits, length, integer(1))
-  tipLabels <- tree$tip.label
-  treeSplits <- vapply(treeSplits[splitLengths == length(tips)],
-                       function (x) sort(tipLabels[x]), character(length(tips)))
-  any(apply(treeSplits, 2, identical, tips))
-}, logical(1))), integer(1))
-
+supporters <- SplitSupport(majCon)
 
 ColPlot(majCon)
 nodelabels(paste0("\n", signif(supporters / length(allTrees), 3)),
