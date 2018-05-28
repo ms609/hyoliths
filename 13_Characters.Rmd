@@ -547,7 +547,6 @@ for (i in 1:4) {
   my_chars_i <- my_chars[, i]
   
   if (knitr::is_html_output()) {
-    
     for (treeNo in eachTree) {
       tree <- trees[[treeNo]]
       nodeXi <- nodeX[[treeNo]]
@@ -575,14 +574,15 @@ for (i in 1:4) {
       tips <- paste0('\n <text x="', (nodeXi[terminal] + 0L), '" y="', nodeYi[terminal] + textY,
                      '" fill="', tipCol[terminal],
                      '" class="flag">[', tipFlag[terminal], ']</text>',
-                     '\n <text x="', (nodeXi[terminal] + 22L), '" y="', nodeYi[terminal] + textY,
+                     '\n <text x="', (nodeXi[terminal] + 22L),
+                     '" y="', nodeYi[terminal] + textY,
                      '" class="taxonLabel">', 
                      gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>',
                      collapse='')
       nodes <- paste0('\n <text x="', (nodeXi[internal] + 2L), 
-                           '" y="', nodeYi[internal] + textY,
-                     '" class="node" fill="', NodeColour(nodeSupport), 
-                     '">', nodeSupport, '</text>', collapse='')
+                      '" y="', nodeYi[internal] + textY,
+                      '" class="node" fill="', NodeColour(nodeSupport), 
+                      '">', nodeSupport, '</text>', collapse='')
       nRegions <- states_matrix$regions
       if (length(nRegions) == 0) nRegions <- 0
       ciCaption <- paste0('\n <text x="', svgWidth - 4L,
