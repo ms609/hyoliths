@@ -483,12 +483,13 @@ PrintStateNotes <- function (notes) {
   PrintThisNote <- function (note) {
     afflictedTaxa <- names(note)[note]
     master <- afflictedTaxa[1]
-    cat("  \n",
+    cat("  \n<div class='state-notes'>",
         paste0("<div class='state-note' id='",
                      taxa_names[as.integer(master)], "-coding-", i,
                      "'>",
                paste(taxa_italic[as.integer(afflictedTaxa)], collapse=', '),
-                      ": ", Italicize(notes[master]), "</div>  \n  \n"))
+                      ": ", Italicize(notes[master]), "</div>  \n  \n"),
+        '</div>  \n  \n')
   }
   
   if (length(notes) == 1) {
@@ -606,13 +607,12 @@ for (i in 1:4) {
                     ci_text[i, treeNo],
                    '</text>\n <text x="', svgWidth - 4L,
                     '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
-                    '<tspan dy="16">', 
-                   paste0(c('A most parsimonious tree under:', analysisNames),
-                      collapse=paste0('</tspan><tspan x="', svgWidth - 2L,
-                                      '" style="font-style:italic" class="',
-                                      ifelse(analysisNames %in% treeNames[treeIndex==treeNo], 'this', 'notThis'),
-                                      'An" dy="1.2em">', collapse='')),
-                    '</tspan></text>')
+                    '<tspan dy="16">A most parsimonious tree under:</tspan>', 
+                   paste0(analysisNames, '<tspan x="', svgWidth - 2L,
+                          '" style="font-style:italic" class="',
+                          ifelse(analysisNames %in% treeNames[treeIndex==treeNo], 'this', 'notThis'),
+                          'An" dy="1.2em">', analysisNames, '</tspan>', collapse=''),
+                    '</text>')
         
                    
       
