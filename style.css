@@ -61,12 +61,15 @@ text.stepsLabel {
   fill: #aab;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal .selectTree {
+.book .book-body .page-wrapper .page-inner section.normal .switcher {
   height: 1.3em;
-  float: left;
   font-size: 10pt;
-  font-style: italic;
   color: #34caaf;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .selectTree {
+  font-style: italic;
+  float: right;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .switch {
