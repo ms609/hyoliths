@@ -83,8 +83,8 @@ tspan.thisAn {
 input.switcherNumber {
   border: #34caaf solid 1px;
   margin-left: 6px;
-  /*position: relative;*/
-  /*top: 2px;*/
+  position: relative;
+  top: 1px;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .selectTree {
