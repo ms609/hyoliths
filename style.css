@@ -50,12 +50,16 @@ path.inapplicable {
   font-size: 9.5pt;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal svg.tree text{
+.book .book-body .page-wrapper .page-inner section.normal svg.tree text {
   font-size: 10pt;
 }
 
 tspan.score, text.flag {
   font-weight: bold;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal svg.tree text.node {
+  font-size: 8pt;
 }
 
 text.stepsLabel {
@@ -75,7 +79,6 @@ tspan.thisAn {
   text-align: right;
 }
 .book .book-body .page-wrapper .page-inner section.normal .switcher, input.switcherNumber {
-  height: 1.3em;
   font-size: 10pt;
   color: #34caaf;
 }
@@ -83,6 +86,7 @@ tspan.thisAn {
 input.switcherNumber {
   border: #34caaf solid 1px;
   margin-left: 6px;
+  padding-left: 2px;
   position: relative;
   top: 1px;
 }
