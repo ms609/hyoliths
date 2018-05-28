@@ -608,7 +608,7 @@ for (i in 1:4) {
                    '</text>\n <text x="', svgWidth - 4L,
                     '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
                     '<tspan dy="16">A most parsimonious tree under:</tspan>', 
-                   paste0(analysisNames, '<tspan x="', svgWidth - 2L,
+                   paste0('<tspan x="', svgWidth - 2L,
                           '" style="font-style:italic" class="',
                           ifelse(analysisNames %in% treeNames[treeIndex==treeNo], 'this', 'notThis'),
                           'An" dy="1.2em">', analysisNames, '</tspan>', collapse=''),
