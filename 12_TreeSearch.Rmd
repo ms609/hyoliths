@@ -107,9 +107,9 @@ allTrees <- c(ew.trees, iw.trees[[1]], iw.trees[[2]],
            iw.trees[[6]], iw.trees[[7]])
 ```
 
-(ref:ts-all-cons) Consensus of all parsimony results. 
+(ref:ts-all-cons) Consensus of all parsimony results.  
 
-(ref:node-support) Node labels denote the proportion of trees obtained under all analytical conditions that support the clade.
+(ref:node-support) Node labels denote the proportion of trees obtained under all analytical conditions that support the clade.  
 
 ```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
 majCon <- consensus(allTrees, p=0.5)
@@ -128,7 +128,7 @@ supporters <- vapply(splits, function (tips) sum(vapply(allTrees, function (tree
 
 
 ColPlot(majCon)
-nodelabels(paste0("\n", signif(supporters / length(allTrees), 3)),
+nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
             adj=0, pos=2, frame='none', cex=0.75)
 
 ```
