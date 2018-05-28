@@ -656,7 +656,7 @@ for (i in seq_len(n_char)) {
   if (length(state_notes_i) > 0) PrintStateNotes(state_notes_i)
   cat("  \n") # Clear line, ready for next block
 }
-if (knitr::html_output()) {
+if (knitr::is_html_output()) {
   cat('<div class="switcher">',
     '<span class="selectTree">Tree number:</span>',
     '<input class="switcherNumber" type="number" min="1" max="',

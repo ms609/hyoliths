@@ -150,9 +150,9 @@ prunedTrees <- lapply(allTrees, drop.tip, tip=omit)
 supporters <- vapply(splits, function (tips) sum(vapply(prunedTrees, function (tree) {
   treeSplits <- Descendants(tree, internalNodes, type='tips')
   splitLengths <- vapply(treeSplits, length, integer(1))
-  tipLabels <- tree$tip.label
+  prunedTips <- tree$tip.label
   treeSplits <- vapply(treeSplits[splitLengths == length(tips)],
-                       function (x) sort(tipLabels[x]), character(length(tips)))
+                       function (x) sort(prunedTips[x]), character(length(tips)))
   any(apply(treeSplits, 2, identical, tips))
 }, logical(1))), integer(1))
 
