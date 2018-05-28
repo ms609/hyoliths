@@ -50,12 +50,16 @@ path.inapplicable {
   font-size: 9.5pt;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal svg.tree text{
+.book .book-body .page-wrapper .page-inner section.normal svg.tree text {
   font-size: 10pt;
 }
 
 tspan.score, text.flag {
   font-weight: bold;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal svg.tree text.node {
+  font-size: 8pt;
 }
 
 text.stepsLabel {

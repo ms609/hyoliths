@@ -405,16 +405,6 @@ if (knitr::is_html_output()) {
     nodeY[[i]] <- round(nodeYi, 1)
   }
   
-  #TreeLink <- function (iNo, offset) {
-  #  globalNo <- offset + iNo
-  #  paste0('<span class="showTree uniqueTree', globalNo, '" onclick="showTree(', 
-  #         globalNo, ', ', n_char, ');">[', iNo, ']</span>')
-  #}
-  #rows <- vapply(seq_along(nTree), function (i) {
-  #  paste(TreeLink(1:nTree[i], treeIndex[i]), collapse=' ')
-  #}, '')
-  #names(rows) <- c('Equal weights', paste0('Implied weights, k = ', kValues))
-  #knitr::kable(rows, col.names='')
   cat(paste0('<div class="switcher">',
              '<span class="selectTree">Tree number:</span>',
              '<input class="switcherNumber" type="number" min="1" max="', n_tree,
@@ -442,14 +432,8 @@ function showTree (tree) {
       datatype: 'xml'
     }).done(function (newTree) {
       $(this).replaceWith($('svg', newTree));
-      $(".switch").css("color", "#34caaf");
-      $(".switch" + tree).css("color", "#223");
-      $(".switch").css("background-color", "#fcfcfc");
-      $(".switch" + tree).css("background-color", "#eee");
     })
   });
-  // $(".switch" + tree).css("color", "#223");
-  $(".switch" + tree).css("background-color", "#eee");
 }
 $(document).ready(function(){
   var originalSwitcher = $(".switcher");
@@ -509,6 +493,7 @@ PrintStateNotes <- function (notes) {
 taxa_not_to_print <- which(taxa_names %in% 'Namacalathus')
 prev_char_parts <- "NONE"
 prev_nesting <- 0
+
 for (i in 1:4) {
 #for (i in seq_len(n_char)) {
   
@@ -563,7 +548,6 @@ for (i in 1:4) {
   my_chars_i <- my_chars[, i]
   
   if (knitr::is_html_output()) {
-    
     
     for (treeNo in eachTree) {
       tree <- trees[[treeNo]]
