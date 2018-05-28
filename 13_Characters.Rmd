@@ -292,6 +292,10 @@ PrintStates <- function (states) {
   cat("> ", if (transformational) "Transformational" else "Neomorphic", "character.  \n>\n")
 }
 
+continuousScale <- rev(colorspace::heat_hcl(101, h=c(300, 75), c.=c(35, 95), l=c(15, 90), power=c(0.8, 1.2)))
+NodeColour <- function (support) {
+  ifelse(is.na(support), 'red', continuousScale[(support * 100) + 1L])
+}
 
 Italicize <- function (string) {
   string <- gsub(paste0("\\b(", 
@@ -582,7 +586,8 @@ for (i in 1:4) {
                      collapse='')
       nodes <- paste0('\n <text x="', (nodeXi[internal] + 2L), 
                            '" y="', nodeYi[internal] + textY,
-                     '" class="node">', nodeSupport, '</text>', collapse='')
+                     '" class="node" fill="', NodeColour(nodeSupport), 
+                     '">', nodeSupport, '</text>', collapse='')
       nRegions <- states_matrix$regions
       if (length(nRegions) == 0) nRegions <- 0
       ciCaption <- paste0('\n <text x="', svgWidth - 4L,
