@@ -65,28 +65,16 @@ text.thisAn {
   fill: #34caaf;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal .switcher {
+.book .book-body .page-wrapper .page-inner section.normal .switcher, input.switcherNumber {
   height: 1.3em;
   font-size: 10pt;
   color: #34caaf;
-}
-
-.book .book-body .page-wrapper .page-inner section.normal .selectTree {
-  font-style: italic;
   float: right;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal .switch {
-  float: left;
-  padding: 0 1px;
-  margin: 1px 1px;
-  height: 1.3em;
-  min-width: 1.3em;
-  text-align: center;
-  font-size: 10pt;
-  background-color: #fcfcfc;
-  border-radius: 1.2em;
-  color: #34caaf;
-  font-weight : bold;
-  box-shadow: 1px 2px #dddde4;
+input.switcherNumber {
+  border: #34caaf solid 1px;
+}
+.book .book-body .page-wrapper .page-inner section.normal .selectTree {
+  font-style: italic;
 }
