@@ -368,9 +368,9 @@ if (knitr::is_html_output()) {
                       integer(1))
   
   svgWidth <- 682
-  svgHeight <- 595
-  treeXMargins <- c(10, 180)
-  treeYMargins <- c(12, 80)
+  svgHeight <- 555
+  treeXMargins <- c(5L, 200L)
+  treeYMargins <- c(5L, 5L)
   
   n_tree <- length(trees)
   eachTree <- seq_len(n_tree)
@@ -614,7 +614,7 @@ for (i in 1:4) {
                     ci_text[i, treeNo],
                    '</text>\n <text x="', svgWidth - 4L,
                     '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
-                    '<tspan dy="16">A most parsimonious tree under:</tspan>', 
+                    '<tspan dy="16">An optimal tree under:</tspan>', 
                    paste0('<tspan x="', svgWidth - 2L,
                           '" style="font-style:italic" class="',
                           ifelse(analysisNames %in% treeNames[treeIndex==treeNo], 'this', 'notThis'),
