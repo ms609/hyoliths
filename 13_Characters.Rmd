@@ -354,7 +354,7 @@ CheckDirExists('_book/Brachiopod_phylogeny_files/figure-html')
 fileNamer <- 'Brachiopod_phylogeny_files/figure-html/tree%s-char%s.svg'
 if (knitr::is_html_output()) {
   nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
-  analysisNames <- c('Equal weights', paste0('Implied weights, k = ', kValues))
+  analysisNames <- c('Equal weights', paste0(c('Implied weights, k = ', rep('IW, k = ', length(kValues) - 1L)), kValues))
   treeNames <- rep(analysisNames, nTree)
   nTrees <- sum(nTree)
   treeIndex <- vapply(allTrees,
