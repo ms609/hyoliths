@@ -412,10 +412,10 @@ function switchTree(input) {
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
     $("switcherNumber").val(newValue);
-    showTree(newValue);
+    showTree(newValue, input.char);
   }
 }
-function showTree (tree) {
+function updateAllTrees (tree) {
   $(".tree").each(function(index, item) {
     var oldTree = $(item);
     $.ajax({
@@ -427,10 +427,26 @@ function showTree (tree) {
     })
   });
 }
+function showTree (tree, char) {
+  var oldTree = $('.tree[char=' + char + ']');
+    $.ajax({
+       url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
+      context: item,
+      datatype: 'xml'
+    }).done(function (newTree) {
+      $(this).replaceWith($('svg', newTree));
+      updateAllTrees(tree);
+    })
+  });
+}
 $(document).ready(function(){
   var originalSwitcher = $(".switcher");
   $(".tree").each(function()
-    {originalSwitcher.clone().insertBefore($(this));}
+    {
+      var switcherClone = originalSwitcher.clone();
+      switcherClone.attr("char", $(this).attr("char"));
+      switcherClone.insertBefore($(this));
+    }
   );
   originalSwitcher.remove()
 })
