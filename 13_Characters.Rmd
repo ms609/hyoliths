@@ -416,14 +416,24 @@ if (knitr::is_html_output()) {
   #}, '')
   #names(rows) <- c('Equal weights', paste0('Implied weights, k = ', kValues))
   #knitr::kable(rows, col.names='')
-  cat(paste0('<div id="switcherTemplate" class="switcher"><div class="selectTree">Select tree:</div>',
-           paste0('<div class="switch switch', eachTree, 
-                  '" onmouseover="showTree(', eachTree, 
-                            ');">', eachTree, '</div>', collapse=''),
+  cat(paste0('<div class="switcher">',
+             '<span class="selectTree">Select tree:</span>',
+             '<input class="switcherNumber" min="1" max="', n_tree,
+             '"  onchange="switchTree(this)" value="1"></input>',
           '</div>'))
 }
 ```
 <script>
+function switchTree(input) {
+  newValue = input.value * 1;
+  if (!isNaN(newValue)) {
+    newValue = Math.floor(newValue);
+    newValue = Math.max(newValue, 1);
+    newValue = Math.min(newValue, input.max);
+    $("switcherNumber").val(newValue);
+    showTree(newValue);
+  }
+}
 function showTree (tree) {
   $(".tree").each(function(index, item) {
     var oldTree = $(item);
@@ -443,7 +453,7 @@ function showTree (tree) {
   $(".switch" + tree).css("background-color", "#eee");
 }
 $(document).ready(function(){
-  var originalSwitcher = $("#switcherTemplate");
+  var originalSwitcher = $(".switcher");
   $(".tree").each(function()
     {originalSwitcher.clone().insertBefore($(this));}
   );
