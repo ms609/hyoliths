@@ -299,7 +299,7 @@ Italicize <- function (string) {
                                       'Bethia', 'Discinisca', 
                                       'Eichwaldia', 'Enchytraeus', 'Eoorthis', 'Galeolaria',
                                       'Hadrotreta', 'Harmothoe', 'Hydroides', 'Kraussina',
-                                      'Lochkothele', 'Magelona', 'Neocrania',
+                                      'Lochkothele', 'Magelona', 'Mopalia', 'Neocrania',
                                       'Oikozetetes',
                                       'Paracraniops', 'Paramicrocornus',
                                       'Phascolion', 'Phoronopsis',
