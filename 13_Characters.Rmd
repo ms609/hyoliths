@@ -302,7 +302,7 @@ Italicize <- function (string) {
                                       'Lochkothele', 'Magelona', 'Neocrania',
                                       'Oikozetetes',
                                       'Paracraniops', 'Paramicrocornus',
-                                      'Phoronopsis',
+                                      'Phascolion', 'Phoronopsis',
                                       'comleyensis', 'decaius',
                                       'schucherti', 'tenuis', 'worsleyi',
                                       'vascula', 'genitalia','lateralia',
