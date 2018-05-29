@@ -300,6 +300,7 @@ Italicize <- function (string) {
                                       'Eichwaldia', 'Enchytraeus', 'Eoorthis',
                                       'Hadrotreta', 'Harmothoe', 'Kraussina',
                                       'Lochkothele', 'Magelona', 'Neocrania',
+                                      'Oikozetetes',
                                       'Paracraniops', 'Paramicrocornus',
                                       'Phoronopsis',
                                       'comleyensis', 'decaius',
