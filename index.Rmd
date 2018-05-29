@@ -35,7 +35,7 @@ set.seed(0)
 #Sys.setlocale('LC_ALL','C')
 Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 knitr::opts_chunk$set(echo = TRUE)
-library('ape'); library('phangorn'); library('TreeSearch'); 
+library('ape'); library('phangorn'); library('TreeSearch');
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 NexusTime <- function (filename, format='double') {
   FILE <- file(filename)
@@ -64,7 +64,7 @@ setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 
 kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
-outgroup <- 'Dailyatia'
+outgroup <- 'Flustra'
 
 pal <- TreeSearch::brewer[[11]]
 
