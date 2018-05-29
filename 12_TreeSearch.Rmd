@@ -25,7 +25,7 @@ The results can most readily be replicated using the [R markdown files](https://
 ```{r treesearch-load-morphoBank, echo=TRUE}
 # Load data from locally downloaded copy of MorphoBank matrix
 my_data <- ReadAsPhyDat(filename)
-my_data$Namacalathus <- NULL # Exclude Namacalathus
+# my_data$Namacalathus <- NULL # Exclude Namacalathus
 iw_data <- PrepareDataIW(my_data)
 ```
 
@@ -73,7 +73,7 @@ for (k in kValues) {
 ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
                    ratchHits = 25, searchHits=55, # ratchHits = 10 not enough
                    swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
-ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=150, searchHits = 55,
+ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=250, searchHits = 55,
                                  swappers=list(RootedTBRSwap, RootedNNISwap),
                                  verbosity=0L)
 write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",

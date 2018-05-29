@@ -64,7 +64,7 @@ setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 
 kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
-outgroup <- 'Flustra'
+outgroup <- 'Namacalathus'
 
 pal <- TreeSearch::brewer[[11]]
 
