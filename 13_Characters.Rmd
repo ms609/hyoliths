@@ -443,7 +443,8 @@ function showTree(tree, char) {
     datatype: 'xml'
   }).done(function (newTree) {
     $(this).replaceWith($('svg', newTree));
-    updateAllTrees(tree);
+    if (typeof (updateTimeout) != 'undefined') window.clearTimeout(updateTimeout);
+    updateTimeout = window.setTimeout(updateAllTrees(tree), 350);
   });
 }
 
