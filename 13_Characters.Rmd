@@ -488,15 +488,15 @@ $(document).ready(function() {
 
   // Produce switcher box by each SVG plot
   var originalSwitcher = $("div.switcher");
-  $my.trees.each(function()
-    {
+  $my.trees.each(function() {
       var switcherClone = originalSwitcher.clone();
-      $('input.switcherNumber', switcherClone).data("char", $(this).data("char"));
+      $('input.switcherNumber', switcherClone).data("char",
+        $(this).data("char"));
       switcherClone.insertBefore($(this));
       return false;
     }
   );
-  originalSwitcher.remove()
+  originalSwitcher.remove();
   
   enableTaxonHighlighting();
   return false;
