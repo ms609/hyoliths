@@ -108,11 +108,14 @@ for (i in seq_along(iw.trees)) {
 nTip <- Ntip(allTrees[[1]])
 tipIndex <- sort(allTrees[[1]]$tip.label)
 powersOf2 <- 2^(seq_len(nTip)- 1)
-SplitNumber <- function (tips, tr) sum(powersOf2[tipIndex %in% tr$tip.label[tips]])
+SplitNumber <- function (tips, tr) {
+  included <- tipIndex %in% tr$tip.label[tips]
+  c(sum(powersOf2[included]), sum(powersOf2[!included]))
+}
 splitOccurrences <- table(vapply(allTrees, function (tr) {
   vapply(Descendants(tr, nTip + seq_len(nTip - 1L), type='tips'),
-         SplitNumber, double(1), tr)
-  }, double(nTip - 1L)))
+         SplitNumber, double(2), tr)
+  }, double(2 * (nTip - 1L))))
 SplitSupport <- function(tr) {
   splits <- Descendants(tr, nTip + seq_len(Nnode(tr)), type='tips')
   splitNumbers <- vapply(splits, SplitNumber, double(1), tr)
