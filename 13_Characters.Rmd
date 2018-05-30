@@ -389,7 +389,7 @@ if (knitr::is_html_output()) {
   textY <- 3L
   nAnalyses <- length(analysisNames)
   for (i in eachTree) {
-    tree <- trees[[i]]
+    tree <- rootedTrees[[i]]
     tipLabel[i, ] <- tree$tip.label
     treeEdge <- tree$edge
     parent[i, ] <- treeEdge[, 1]
