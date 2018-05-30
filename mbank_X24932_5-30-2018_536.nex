@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-05-30 05.20.02 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-05-30 05.36.34 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=47;
@@ -1351,7 +1351,7 @@ BEGIN NOTES;
 	TEXT CHARACTER=135 TEXT='Character 1 in @Haszprunar2000.';
 	TEXT CHARACTER=136 TEXT='Character 19 in @Haszprunar1996; see also character 13 in @Haszprunar2000';
 	TEXT CHARACTER=137 TEXT='See character 18 in @Haszprunar1996';
-	TEXT CHARACTER=138 TEXT='Characters 1.13, 1.40 & 2.08 in @Scheltema1993; 90 in @Lindgren1996; 114 in @Giribet2002; 1.53 in @SPS1996; 9 in @Haszprunar1996';
+	TEXT CHARACTER=138 TEXT='Characters 1.13, 1.40 & 2.08 in @Scheltema1993; 114 in @Giribet2002; 1.53 in @SPS1996; 9 in @Haszprunar1996';
 	TEXT CHARACTER=140 TEXT='The embryonic shell or protegulum is secreted by the embryo immediately before hatching.';
 	TEXT CHARACTER=141 TEXT='The brephic shell is the shell possessed by the young organism (see Ushatinskaya & Korovnikov 2016R and references therein for discussion of terminology).^n^nMicrina resembles linguliforms (Holmer et al. 2011): in both, the brephic mitral shell has one pair of setal sacs enclosed by lateral lobes, whereas the brephic ventral shell has two lateral setal tubes.^n^nPaterimitra and Salanygolina have "identical" ventral brephic shells (Holmer et al 2011), resembling the shape of a ship''s propeller.^n^nHaplophrentis is coded following typical hyoliths, which have a spherical brephic shell; Pedunculotheca''s, in contrast, is seemingly cap-shaped.';
 	TEXT CHARACTER=142 TEXT='Many taxa add to their embryonic shell (the protegulum possessed by the embryo upon hatching) during the larval phase of their life cycle.  The shell that exists at metamorphosis, marked by a halo or nick point, is variously termed the "first formed shell", "metamorphic shell" or "larval shell" (Bassett & Popov 2017).^n';
@@ -1363,11 +1363,11 @@ BEGIN NOTES;
 	TEXT CHARACTER=148 TEXT='Although preservation of setae (in adults) is exceptional, their presence can be inferred from shelly material (see Holmer & Caron 2006).';
 	TEXT CHARACTER=149 TEXT='Setae penetrate the valves of many brachiopods.  In certain taxa, they are apparent only at the margins of the valves, in association with the commissure, being reduced or lost over the surface of the shell. ';
 	TEXT CHARACTER=150 TEXT='Serial repetition in adult, whether expressed in valves, soft tissues or exoskeletal elements.  See character 13 in @Rouse1999; 19 in @Vinther2008; 38 in @Haszprunar1996; 40--41 in @Sutton2012; @Wanninger2009^n';
-	TEXT CHARACTER=151 TEXT='See characters 8 in @Haszprunar1996; 4 in @Vinther2008; 137 in @Rouse1999; 21 in @BucklandNicks2009;  37 in @Sutton2012.^nIt is assumed that the adult foot is homologous with (and thus contingent on) the larval foot.^n';
+	TEXT CHARACTER=151 TEXT='See characters 8 in @Haszprunar1996; 4 in @Vinther2008; 137 in @Rouse1999; 21 in @BucklandNicks2008; 37 in @Sutton2012.^nIt is assumed that the adult foot is homologous with (and thus contingent on) the larval foot.^n';
 	TEXT CHARACTER=152 TEXT='Character 27 in @Haszprunar2000';
 	TEXT CHARACTER=153 TEXT='Gills (or ctenidia) surround the molluscan foot.^nCharacter 1.59-60, 2.09, 4.49 in @SPS1996; 10--11 in @Haszprunar2000; 45 in @Sutton2012';
 	TEXT CHARACTER=154 TEXT='Character 14 in @Haszprunar1996. Paired longitudinal nerve cords regularly interconnected by transversal commissures to form a rectangular pattern.';
-	TEXT CHARACTER=155 TEXT='After character 23 in @Haszprunar1996; 24 in @Haszprunar2000; 41 in @Rouse1999; 39 in @Lindgren2004; 16 in @Scheltema1993; 16 in @Vinther2008';
+	TEXT CHARACTER=155 TEXT='After character 23 in @Haszprunar1996; 24 in @Haszprunar2000; 41 in @Rouse1999; 16 in @Scheltema1993; 16 in @Vinther2008';
 	TEXT CHARACTER=156 TEXT='Character 16 in @Haszprunar1996.  The Gliointerstitial system interconnects the nervous and muscle systems.';
 	TEXT CHARACTER=157 TEXT='Character 7b in @Haszprunar2008';
 	TEXT CHARACTER=158 TEXT='Character 1.22 in @SPS1996';
