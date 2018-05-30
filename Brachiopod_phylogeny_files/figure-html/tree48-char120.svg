@@ -99,92 +99,47 @@
  <path d="M34.8,72.4V19H64.6M34.8,72.4V125.8H64.6M64.6,125.8V43.2H94.4M94.4,43.2V31H124.2M94.4,43.2V55.5H124.2M124.2,55.5V43H154.1M124.2,55.5V67.9H154.1M154.1,67.9V55H183.9M154.1,67.9V80.9H183.9M183.9,80.9V67H213.7M183.9,80.9V94.8H213.7M213.7,94.8V79H243.5M213.7,94.8V110.5H243.5M243.5,110.5V97H273.3M273.3,97V91H303.1M243.5,474.9V463H273.3M243.5,474.9V486.8H273.3" stroke="darkgrey"></path>
  <path d="M273.3,486.8V475H303.1M273.3,486.8V498.6H303.1" stroke="#fc8d59"></path>
  <text x="7" y="42.7" class="node" fill="#4A6FE3">1</text>
- <text x="36.8" y="75.4" class="node" fill="#4A6FE3">1</text>
+ <text x="36.8" y="75.4" class="node" fill="#ABB4E2">0.7</text>
  <text x="66.6" y="128.8" class="node" fill="#ABB4E2">0.7</text>
  <text x="96.4" y="46.2" class="node" fill="#ABB4E2">0.7</text>
  <text x="126.2" y="58.5" class="node" fill="#ABB4E2">0.7</text>
- <text x="156.1" y="70.9" class="node" fill="#ABB4E2">0.7</text>
- <text x="185.9" y="83.9" class="node" fill="#ABB4E2">0.7</text>
- <text x="215.7" y="97.8" class="node" fill="#ABB4E2">0.7</text>
- <text x="245.5" y="113.5" class="node" fill="#ABB4E2">0.7</text>
- <text x="275.3" y="100" class="node" fill="#ABB4E2">0.7</text>
- <text x="275.3" y="127" class="node" fill="#E28699">0.2</text>
- <text x="305.1" y="136" class="node" fill="#E28699">0.2</text>
- <text x="96.4" y="211.3" class="node" fill="#CACDE3">0.59</text>
- <text x="126.2" y="268.6" class="node" fill="#CACDE3">0.59</text>
- <text x="156.1" y="175" class="node" fill="#7388E1">0.89</text>
- <text x="185.9" y="184" class="node" fill="#7388E1">0.89</text>
- <text x="156.1" y="362.2" class="node" fill="#4A6FE3">1</text>
- <text x="185.9" y="277.9" class="node" fill="#4A6FE3">1</text>
- <text x="215.7" y="212.5" class="node" fill="#5B78E2">0.96</text>
- <text x="245.5" y="223" class="node" fill="#5B78E2">0.96</text>
- <text x="275.3" y="232" class="node" fill="#ABB4E2">0.7</text>
- <text x="215.7" y="343.4" class="node" fill="#ABB4E2">0.7</text>
- <text x="245.5" y="286.7" class="node" fill="#4A6FE3">1</text>
- <text x="275.3" y="259" class="node" fill="#4A6FE3">1</text>
- <text x="305.1" y="268" class="node" fill="#5B78E2">0.96</text>
- <text x="275.3" y="314.4" class="node" fill="#5B78E2">0.96</text>
- <text x="305.1" y="342.8" class="node" fill="#4A6FE3">1</text>
- <text x="334.9" y="309.6" class="node" fill="#4A6FE3">1</text>
- <text x="364.8" y="321.2" class="node" fill="#4A6FE3">1</text>
- <text x="394.6" y="332.5" class="node" fill="#4A6FE3">1</text>
- <text x="424.4" y="343" class="node" fill="#4A6FE3">1</text>
- <text x="454.2" y="352" class="node" fill="#4A6FE3">1</text>
- <text x="334.9" y="376" class="node" fill="#4A6FE3">1</text>
- <text x="245.5" y="400" class="node" fill="#4A6FE3">1</text>
- <text x="185.9" y="446.5" class="node" fill="#929FE1">0.79</text>
- <text x="215.7" y="427" class="node" fill="#929FE1">0.79</text>
- <text x="245.5" y="436" class="node" fill="#5B78E2">0.96</text>
- <text x="215.7" y="466" class="node" fill="#5B78E2">0.96</text>
- <text x="245.5" y="477.9" class="node" fill="#C4C9E3">0.61</text>
- <text x="275.3" y="489.8" class="node" fill="#C4C9E3">0.61</text>
- <text x="305.1" y="501.6" class="node" fill="#627DE1">0.94</text>
- <text x="334.9" y="513.2" class="node" fill="#627DE1">0.94</text>
- <text x="364.8" y="524.5" class="node" fill="#4A6FE3">1</text>
- <text x="394.6" y="535" class="node" fill="#4A6FE3">1</text>
- <text x="424.4" y="544" class="node" fill="#E3DFE0">0.49</text>
- <text x="7" y="42.7" class="node" fill="#E3DFE0">0.49</text>
- <text x="36.8" y="75.4" class="node" fill="#E3DFE0">0.49</text>
- <text x="66.6" y="128.8" class="node" fill="#E3DFE0">0.49</text>
- <text x="96.4" y="46.2" class="node" fill="#E3DFE0">0.49</text>
- <text x="126.2" y="58.5" class="node" fill="#E3DFE0">0.49</text>
- <text x="156.1" y="70.9" class="node" fill="#E3DFE0">0.49</text>
- <text x="185.9" y="83.9" class="node" fill="#E3DFE0">0.49</text>
- <text x="215.7" y="97.8" class="node" fill="#4A6FE3">1</text>
+ <text x="156.1" y="70.9" class="node" fill="#E28699">0.2</text>
+ <text x="185.9" y="83.9" class="node" fill="#CACDE3">0.59</text>
+ <text x="215.7" y="97.8" class="node" fill="#7388E1">0.89</text>
  <text x="245.5" y="113.5" class="node" fill="#4A6FE3">1</text>
- <text x="275.3" y="100" class="node" fill="#E28699">0.2</text>
- <text x="275.3" y="127" class="node" fill="#E28699">0.2</text>
+ <text x="275.3" y="100" class="node" fill="#5B78E2">0.96</text>
+ <text x="275.3" y="127" class="node" fill="#ABB4E2">0.7</text>
  <text x="305.1" y="136" class="node" fill="#4A6FE3">1</text>
- <text x="96.4" y="211.3" class="node" fill="#4A6FE3">1</text>
+ <text x="96.4" y="211.3" class="node" fill="#5B78E2">0.96</text>
  <text x="126.2" y="268.6" class="node" fill="#4A6FE3">1</text>
  <text x="156.1" y="175" class="node" fill="#4A6FE3">1</text>
- <text x="185.9" y="184" class="node" fill="#ABB4E2">0.7</text>
- <text x="156.1" y="362.2" class="node" fill="#ABB4E2">0.7</text>
- <text x="185.9" y="277.9" class="node" fill="#ABB4E2">0.7</text>
- <text x="215.7" y="212.5" class="node" fill="#ABB4E2">0.7</text>
- <text x="245.5" y="223" class="node" fill="#ABB4E2">0.7</text>
- <text x="275.3" y="232" class="node" fill="#ABB4E2">0.7</text>
- <text x="215.7" y="343.4" class="node" fill="#ABB4E2">0.7</text>
- <text x="245.5" y="286.7" class="node" fill="#ABB4E2">0.7</text>
- <text x="275.3" y="259" class="node" fill="#ABB4E2">0.7</text>
- <text x="305.1" y="268" class="node" fill="#ABB4E2">0.7</text>
- <text x="275.3" y="314.4" class="node" fill="#ABB4E2">0.7</text>
- <text x="305.1" y="342.8" class="node" fill="#ABB4E2">0.7</text>
- <text x="334.9" y="309.6" class="node" fill="#ABB4E2">0.7</text>
- <text x="364.8" y="321.2" class="node" fill="#ABB4E2">0.7</text>
- <text x="394.6" y="332.5" class="node" fill="#ABB4E2">0.7</text>
+ <text x="185.9" y="184" class="node" fill="#4A6FE3">1</text>
+ <text x="156.1" y="362.2" class="node" fill="#4A6FE3">1</text>
+ <text x="185.9" y="277.9" class="node" fill="#929FE1">0.79</text>
+ <text x="215.7" y="212.5" class="node" fill="#5B78E2">0.96</text>
+ <text x="245.5" y="223" class="node" fill="#C4C9E3">0.61</text>
+ <text x="275.3" y="232" class="node" fill="#627DE1">0.94</text>
+ <text x="215.7" y="343.4" class="node" fill="#4A6FE3">1</text>
+ <text x="245.5" y="286.7" class="node" fill="#E3DFE0">0.49</text>
+ <text x="275.3" y="259" class="node" fill="#E3DFE0">0.49</text>
+ <text x="305.1" y="268" class="node" fill="#E3DFE0">0.49</text>
+ <text x="275.3" y="314.4" class="node" fill="#E3DFE0">0.49</text>
+ <text x="305.1" y="342.8" class="node" fill="#4A6FE3">1</text>
+ <text x="334.9" y="309.6" class="node" fill="#E28699">0.2</text>
+ <text x="364.8" y="321.2" class="node" fill="#4A6FE3">1</text>
+ <text x="394.6" y="332.5" class="node" fill="#4A6FE3">1</text>
  <text x="424.4" y="343" class="node" fill="#ABB4E2">0.7</text>
- <text x="454.2" y="352" class="node" fill="#E6AEB8">0.33</text>
- <text x="334.9" y="376" class="node" fill="#E6AEB8">0.33</text>
- <text x="245.5" y="400" class="node" fill="#E0E0E2">0.51</text>
- <text x="185.9" y="446.5" class="node" fill="#E0E0E2">0.51</text>
- <text x="215.7" y="427" class="node" fill="#4A6FE3">1</text>
- <text x="245.5" y="436" class="node" fill="#4A6FE3">1</text>
+ <text x="454.2" y="352" class="node" fill="#ABB4E2">0.7</text>
+ <text x="334.9" y="376" class="node" fill="#ABB4E2">0.7</text>
+ <text x="245.5" y="400" class="node" fill="#ABB4E2">0.7</text>
+ <text x="185.9" y="446.5" class="node" fill="#ABB4E2">0.7</text>
+ <text x="215.7" y="427" class="node" fill="#ABB4E2">0.7</text>
+ <text x="245.5" y="436" class="node" fill="#ABB4E2">0.7</text>
  <text x="215.7" y="466" class="node" fill="#ABB4E2">0.7</text>
- <text x="245.5" y="477.9" class="node" fill="#ABB4E2">0.7</text>
- <text x="275.3" y="489.8" class="node" fill="#4A6FE3">1</text>
+ <text x="245.5" y="477.9" class="node" fill="#E6AEB8">0.33</text>
+ <text x="275.3" y="489.8" class="node" fill="#E0E0E2">0.51</text>
  <text x="305.1" y="501.6" class="node" fill="#4A6FE3">1</text>
  <text x="334.9" y="513.2" class="node" fill="#ABB4E2">0.7</text>
- <text x="364.8" y="524.5" class="node" fill="#ABB4E2">0.7</text>
+ <text x="364.8" y="524.5" class="node" fill="#4A6FE3">1</text>
  <text x="394.6" y="535" class="node" fill="#ABB4E2">0.7</text>
  <text x="424.4" y="544" class="node" fill="#ABB4E2">0.7</text></svg>
