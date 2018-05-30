@@ -96,7 +96,8 @@ iw.trees <- lapply(kValues, function (k) {
   if (length(iw.best) == 0) {
     list()
   } else {
-    unique(read.nexus(iw.best[which.max(file.mtime(iw.best))]))
+    loadedTrees <- read.nexus(iw.best[which.max(file.mtime(iw.best))])
+    if (class(loadedTrees) == 'multiPhylo') unique(loadedTrees) else loadedTrees
   }
 })
 
