@@ -23,7 +23,7 @@
  <text x="353.4" y="394" class="taxonLabel">Siphonobolus priscus</text>
  <text x="331.4" y="406" fill="lightgrey" class="flag">[-]</text>
  <text x="353.4" y="406" class="taxonLabel">Acanthotretella spinosa</text>
- <text x="381.6" y="322" fill="lightgrey" class="flag">[-]</text>
+ <text x="381.6" y="322" fill="#fdae61" class="flag">[1]</text>
  <text x="403.6" y="322" class="taxonLabel">Lingulellotreta malongensis</text>
  <text x="406.7" y="334" fill="lightgrey" class="flag">[-]</text>
  <text x="428.7" y="334" class="taxonLabel">Botsfordia</text>
@@ -47,13 +47,13 @@
  <text x="403.6" y="106" class="taxonLabel">Craniops</text>
  <text x="381.6" y="118" fill="lightgrey" class="flag">[-]</text>
  <text x="403.6" y="118" class="taxonLabel">Novocrania</text>
- <text x="331.4" y="154" fill="lightgrey" class="flag">[-]</text>
+ <text x="331.4" y="154" fill="#abd9e9" class="flag">[2]</text>
  <text x="353.4" y="154" class="taxonLabel">Salanygolina</text>
- <text x="356.5" y="166" fill="lightgrey" class="flag">[-]</text>
+ <text x="356.5" y="166" fill="#fdae61" class="flag">[1]</text>
  <text x="378.5" y="166" class="taxonLabel">Tomteluva perturbata</text>
- <text x="356.5" y="178" fill="grey" class="flag">[?]</text>
+ <text x="356.5" y="178" fill="#abd9e9" class="flag">[2]</text>
  <text x="378.5" y="178" class="taxonLabel">Yuganotheca elegans</text>
- <text x="356.5" y="190" fill="#fdae61" class="flag">[1]</text>
+ <text x="356.5" y="190" fill="grey" class="flag">[?]</text>
  <text x="378.5" y="190" class="taxonLabel">Coolinia pecten</text>
  <text x="356.5" y="202" fill="#fdae61" class="flag">[1]</text>
  <text x="378.5" y="202" class="taxonLabel">Antigonambonites planus</text>
@@ -63,15 +63,15 @@
  <text x="403.6" y="226" class="taxonLabel">Nisusia sulcata</text>
  <text x="406.7" y="238" fill="#fdae61" class="flag">[1]</text>
  <text x="428.7" y="238" class="taxonLabel">Glyptoria</text>
- <text x="431.8" y="250" fill="grey" class="flag">[?]</text>
+ <text x="431.8" y="250" fill="#fdae61" class="flag">[1]</text>
  <text x="453.8" y="250" class="taxonLabel">Longtancunella chengjiangensis</text>
- <text x="456.9" y="262" fill="#abd9e9" class="flag">[2]</text>
+ <text x="456.9" y="262" fill="lightgrey" class="flag">[-]</text>
  <text x="478.9" y="262" class="taxonLabel">Alisina</text>
- <text x="482" y="274" fill="#abd9e9" class="flag">[2]</text>
+ <text x="482" y="274" fill="grey" class="flag">[?]</text>
  <text x="504" y="274" class="taxonLabel">Terebratulina</text>
- <text x="482" y="286" fill="#fdae61" class="flag">[1]</text>
+ <text x="482" y="286" fill="lightgrey" class="flag">[-]</text>
  <text x="504" y="286" class="taxonLabel">Orthis</text>
- <text x="256.1" y="418" fill="#fdae61" class="flag">[1]</text>
+ <text x="256.1" y="418" fill="lightgrey" class="flag">[-]</text>
  <text x="278.1" y="418" class="taxonLabel">Micrina</text>
  <text x="256.1" y="430" fill="lightgrey" class="flag">[-]</text>
  <text x="278.1" y="430" class="taxonLabel">Mickwitzia muralensis</text>
@@ -101,47 +101,92 @@
  <path d="M331.4,222.8V211H356.5M356.5,234.6V223H381.6" stroke="#2c7bb6"></path>
  <path d="M431.8,268V259H456.9M456.9,277V271H482" stroke="#abd9e9"></path>
  <text x="7" y="38.8" class="node" fill="#4A6FE3">1</text>
- <text x="32.1" y="67.6" class="node" fill="#E5A5B1">0.3</text>
- <text x="57.2" y="113.3" class="node" fill="#E5A5B1">0.3</text>
- <text x="82.3" y="192.5" class="node" fill="#E5A5B1">0.3</text>
+ <text x="32.1" y="67.6" class="node" fill="#4A6FE3">1</text>
+ <text x="57.2" y="113.3" class="node" fill="#E498A7">0.26</text>
+ <text x="82.3" y="192.5" class="node" fill="#E498A7">0.26</text>
  <text x="107.4" y="339.1" class="node" fill="#E498A7">0.26</text>
- <text x="132.5" y="191.3" class="node" fill="#4A6FE3">1</text>
- <text x="157.6" y="324.7" class="node" fill="#5B78E2">0.96</text>
- <text x="182.7" y="201.3" class="node" fill="#E498A7">0.26</text>
- <text x="207.8" y="332.7" class="node" fill="#5B78E2">0.96</text>
+ <text x="132.5" y="191.3" class="node" fill="#E498A7">0.26</text>
+ <text x="157.6" y="324.7" class="node" fill="#E5A5B1">0.3</text>
+ <text x="182.7" y="201.3" class="node" fill="#E5A5B1">0.3</text>
+ <text x="207.8" y="332.7" class="node" fill="#E5A5B1">0.3</text>
  <text x="232.9" y="241.3" class="node" fill="#E5A5B1">0.3</text>
  <text x="258.1" y="150.6" class="node" fill="#4A6FE3">1</text>
- <text x="283.2" y="114.2" class="node" fill="#DD6F88">0.13</text>
- <text x="308.3" y="92.5" class="node" fill="#4A6FE3">1</text>
- <text x="333.4" y="103" class="node" fill="#4A6FE3">1</text>
- <text x="358.5" y="112" class="node" fill="#4A6FE3">1</text>
- <text x="308.3" y="136" class="node" fill="#4A6FE3">1</text>
+ <text x="283.2" y="114.2" class="node" fill="#4A6FE3">1</text>
+ <text x="308.3" y="92.5" class="node" fill="#5B78E2">0.96</text>
+ <text x="333.4" y="103" class="node" fill="#5B78E2">0.96</text>
+ <text x="358.5" y="112" class="node" fill="#E498A7">0.26</text>
+ <text x="308.3" y="136" class="node" fill="#E498A7">0.26</text>
  <text x="283.2" y="187" class="node" fill="#5B78E2">0.96</text>
- <text x="308.3" y="163" class="node" fill="#C4C9E3">0.61</text>
- <text x="333.4" y="172" class="node" fill="#627DE1">0.94</text>
- <text x="308.3" y="210.9" class="node" fill="#4A6FE3">1</text>
+ <text x="308.3" y="163" class="node" fill="#5B78E2">0.96</text>
+ <text x="333.4" y="172" class="node" fill="#E5A5B1">0.3</text>
+ <text x="308.3" y="210.9" class="node" fill="#E5A5B1">0.3</text>
  <text x="333.4" y="196" class="node" fill="#4A6FE3">1</text>
- <text x="333.4" y="225.8" class="node" fill="#E0E0E2">0.51</text>
- <text x="358.5" y="237.6" class="node" fill="#E0E0E2">0.51</text>
- <text x="383.6" y="249.2" class="node" fill="#E0E0E2">0.51</text>
- <text x="408.7" y="260.5" class="node" fill="#E0E0E2">0.51</text>
+ <text x="333.4" y="225.8" class="node" fill="#4A6FE3">1</text>
+ <text x="358.5" y="237.6" class="node" fill="#DD6F88">0.13</text>
+ <text x="383.6" y="249.2" class="node" fill="#DD6F88">0.13</text>
+ <text x="408.7" y="260.5" class="node" fill="#4A6FE3">1</text>
  <text x="433.8" y="271" class="node" fill="#4A6FE3">1</text>
- <text x="458.9" y="280" class="node" fill="#8F9DE1">0.8</text>
- <text x="258.1" y="332" class="node" fill="#E5A5B1">0.3</text>
- <text x="283.2" y="366.1" class="node" fill="#E5A5B1">0.3</text>
- <text x="308.3" y="332.1" class="node" fill="#DB6581">0.1</text>
- <text x="333.4" y="354.2" class="node" fill="#E5A5B1">0.3</text>
- <text x="358.5" y="332.5" class="node" fill="#E5A5B1">0.3</text>
- <text x="383.6" y="343" class="node" fill="#E5A5B1">0.3</text>
- <text x="408.7" y="352" class="node" fill="#E5A5B1">0.3</text>
- <text x="358.5" y="376" class="node" fill="#E5A5B1">0.3</text>
- <text x="308.3" y="400" class="node" fill="#4A6FE3">1</text>
- <text x="232.9" y="424" class="node" fill="#E498A7">0.26</text>
- <text x="182.7" y="448" class="node" fill="#4A6FE3">1</text>
- <text x="132.5" y="486.8" class="node" fill="#E498A7">0.26</text>
+ <text x="458.9" y="280" class="node" fill="#4A6FE3">1</text>
+ <text x="258.1" y="332" class="node" fill="#4A6FE3">1</text>
+ <text x="283.2" y="366.1" class="node" fill="#4A6FE3">1</text>
+ <text x="308.3" y="332.1" class="node" fill="#4A6FE3">1</text>
+ <text x="333.4" y="354.2" class="node" fill="#4A6FE3">1</text>
+ <text x="358.5" y="332.5" class="node" fill="#4A6FE3">1</text>
+ <text x="383.6" y="343" class="node" fill="#5B78E2">0.96</text>
+ <text x="408.7" y="352" class="node" fill="#5B78E2">0.96</text>
+ <text x="358.5" y="376" class="node" fill="#C4C9E3">0.61</text>
+ <text x="308.3" y="400" class="node" fill="#C4C9E3">0.61</text>
+ <text x="232.9" y="424" class="node" fill="#627DE1">0.94</text>
+ <text x="182.7" y="448" class="node" fill="#627DE1">0.94</text>
+ <text x="132.5" y="486.8" class="node" fill="#4A6FE3">1</text>
  <text x="157.6" y="472" class="node" fill="#4A6FE3">1</text>
+ <text x="157.6" y="501.6" class="node" fill="#4A6FE3">1</text>
+ <text x="182.7" y="513.2" class="node" fill="#4A6FE3">1</text>
+ <text x="207.8" y="524.5" class="node" fill="#E0E0E2">0.51</text>
+ <text x="232.9" y="535" class="node" fill="#E0E0E2">0.51</text>
+ <text x="258.1" y="544" class="node" fill="#E0E0E2">0.51</text>
+ <text x="7" y="38.8" class="node" fill="#E0E0E2">0.51</text>
+ <text x="32.1" y="67.6" class="node" fill="#E0E0E2">0.51</text>
+ <text x="57.2" y="113.3" class="node" fill="#E0E0E2">0.51</text>
+ <text x="82.3" y="192.5" class="node" fill="#E0E0E2">0.51</text>
+ <text x="107.4" y="339.1" class="node" fill="#E0E0E2">0.51</text>
+ <text x="132.5" y="191.3" class="node" fill="#4A6FE3">1</text>
+ <text x="157.6" y="324.7" class="node" fill="#4A6FE3">1</text>
+ <text x="182.7" y="201.3" class="node" fill="#8F9DE1">0.8</text>
+ <text x="207.8" y="332.7" class="node" fill="#8F9DE1">0.8</text>
+ <text x="232.9" y="241.3" class="node" fill="#E5A5B1">0.3</text>
+ <text x="258.1" y="150.6" class="node" fill="#E5A5B1">0.3</text>
+ <text x="283.2" y="114.2" class="node" fill="#E5A5B1">0.3</text>
+ <text x="308.3" y="92.5" class="node" fill="#E5A5B1">0.3</text>
+ <text x="333.4" y="103" class="node" fill="#DB6581">0.1</text>
+ <text x="358.5" y="112" class="node" fill="#DB6581">0.1</text>
+ <text x="308.3" y="136" class="node" fill="#E5A5B1">0.3</text>
+ <text x="283.2" y="187" class="node" fill="#E5A5B1">0.3</text>
+ <text x="308.3" y="163" class="node" fill="#E5A5B1">0.3</text>
+ <text x="333.4" y="172" class="node" fill="#E5A5B1">0.3</text>
+ <text x="308.3" y="210.9" class="node" fill="#E5A5B1">0.3</text>
+ <text x="333.4" y="196" class="node" fill="#E5A5B1">0.3</text>
+ <text x="333.4" y="225.8" class="node" fill="#E5A5B1">0.3</text>
+ <text x="358.5" y="237.6" class="node" fill="#E5A5B1">0.3</text>
+ <text x="383.6" y="249.2" class="node" fill="#E5A5B1">0.3</text>
+ <text x="408.7" y="260.5" class="node" fill="#E5A5B1">0.3</text>
+ <text x="433.8" y="271" class="node" fill="#4A6FE3">1</text>
+ <text x="458.9" y="280" class="node" fill="#4A6FE3">1</text>
+ <text x="258.1" y="332" class="node" fill="#E498A7">0.26</text>
+ <text x="283.2" y="366.1" class="node" fill="#E498A7">0.26</text>
+ <text x="308.3" y="332.1" class="node" fill="#4A6FE3">1</text>
+ <text x="333.4" y="354.2" class="node" fill="#4A6FE3">1</text>
+ <text x="358.5" y="332.5" class="node" fill="#E498A7">0.26</text>
+ <text x="383.6" y="343" class="node" fill="#E498A7">0.26</text>
+ <text x="408.7" y="352" class="node" fill="#4A6FE3">1</text>
+ <text x="358.5" y="376" class="node" fill="#4A6FE3">1</text>
+ <text x="308.3" y="400" class="node" fill="#E498A7">0.26</text>
+ <text x="232.9" y="424" class="node" fill="#E498A7">0.26</text>
+ <text x="182.7" y="448" class="node" fill="#E498A7">0.26</text>
+ <text x="132.5" y="486.8" class="node" fill="#E498A7">0.26</text>
+ <text x="157.6" y="472" class="node" fill="#E498A7">0.26</text>
  <text x="157.6" y="501.6" class="node" fill="#E498A7">0.26</text>
- <text x="182.7" y="513.2" class="node" fill="#E498A7">0.26</text>
- <text x="207.8" y="524.5" class="node" fill="#E498A7">0.26</text>
- <text x="232.9" y="535" class="node" fill="#E5A5B1">0.3</text>
- <text x="258.1" y="544" class="node" fill="#E5A5B1">0.3</text></svg>
+ <text x="182.7" y="513.2" class="node" fill="#E5A5B1">0.3</text>
+ <text x="207.8" y="524.5" class="node" fill="#E5A5B1">0.3</text>
+ <text x="232.9" y="535" class="node" fill="#7388E1">0.89</text>
+ <text x="258.1" y="544" class="node" fill="#7388E1">0.89</text></svg>
