@@ -440,7 +440,7 @@ function updateAllTrees(tree) {
 }
 
 function showTree(tree, char) {
-  var oldTree = $('[char=' + char + ']', $my.trees);
+  var oldTree = $('[data-char=' + char + ']', $my.trees);
   $.ajax({
      //url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
     url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
@@ -667,7 +667,7 @@ for (i in seq_len(n_char)) {
                    
       
       svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
-                    svgWidth, '" height="', svgHeight, '" class="tree" char="', i, '">',
+                    svgWidth, '" height="', svgHeight, '" class="tree" data-char="', i, '">',
                     ciCaption, tips, edges, nodes,
                     '</svg>')
       write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
