@@ -186,7 +186,7 @@ Supplementary \protect\hyperlink{figures}{figures} and
 
 Analysis was performed on a new matrix of 45 early brachiozoan taxa,
 including hyoliths, tommotiids and mickwitziids, which were coded for
-196 morphological characters (127 neomorphic, 69 transformational).
+196 morphological characters (126 neomorphic, 70 transformational).
 
 \emph{Namacalathus} was incorporated as a 46\textsuperscript{th} taxon,
 but preliminary results did not uphold the homology of its potentially
@@ -218,8 +218,8 @@ Characters are coded following the recommendations of
   \citep[sensu][]{Vogt2017} as absence, rather than inapplicability.
 \end{itemize}
 
-The complete dataset comprises 9016 character codings, of which 781 are
-inapplicable and 3815 were neither ambiguous nor inapplicable. The
+The complete dataset comprises 9016 character codings, of which 786 are
+inapplicable and 3810 were neither ambiguous nor inapplicable. The
 amount and quality of data that \emph{is} coded is more instructive than
 a measure of how many cells are ambiguous \citep{Wiens1998, Wiens2003}.
 Of the 196 characters, the number that were coded with an applicable
@@ -231,19 +231,19 @@ token for each taxon is:
 \hline
 \_Cotyledion tylodes\_ & 59   \&nbsp; & \_Alisina\_ & 78   \&nbsp; & \_Longtancunella chengjiangensis\_ & 52   \&nbsp;\\
 \hline
-\_Loxosomella\_ & 147   \&nbsp; & \_Askepasma toddense\_ & 68   \&nbsp; & \_Micrina\_ & 61   \&nbsp;\\
+\_Loxosomella\_ & 146   \&nbsp; & \_Askepasma toddense\_ & 68   \&nbsp; & \_Micrina\_ & 61   \&nbsp;\\
 \hline
-\_Flustra\_ & 146   \&nbsp; & \_Antigonambonites planus\_ & 75   \&nbsp; & \_Micromitra\_ & 72   \&nbsp;\\
+\_Flustra\_ & 145   \&nbsp; & \_Antigonambonites planus\_ & 75   \&nbsp; & \_Micromitra\_ & 72   \&nbsp;\\
 \hline
 \_Novocrania\_ & 171   \&nbsp; & \_Botsfordia\_ & 67   \&nbsp; & \_Mickwitzia muralensis\_ & 65   \&nbsp;\\
 \hline
 \_Lingula\_ & 177   \&nbsp; & \_Clupeafumosus socialis\_ & 69   \&nbsp; & \_Mummpikia nuda\_ & 47   \&nbsp;\\
 \hline
-\_Phoronis\_ & 125   \&nbsp; & \_Coolinia pecten\_ & 71   \&nbsp; & \_Nisusia sulcata\_ & 76   \&nbsp;\\
+\_Phoronis\_ & 124   \&nbsp; & \_Coolinia pecten\_ & 71   \&nbsp; & \_Nisusia sulcata\_ & 76   \&nbsp;\\
 \hline
-\_Sipunculus\_ & 146   \&nbsp; & \_Craniops\_ & 59   \&nbsp; & \_Orthis\_ & 65   \&nbsp;\\
+\_Sipunculus\_ & 145   \&nbsp; & \_Craniops\_ & 59   \&nbsp; & \_Orthis\_ & 65   \&nbsp;\\
 \hline
-\_Serpula\_ & 149   \&nbsp; & \_Eccentrotheca\_ & 40   \&nbsp; & \_Paterimitra\_ & 57   \&nbsp;\\
+\_Serpula\_ & 148   \&nbsp; & \_Eccentrotheca\_ & 40   \&nbsp; & \_Paterimitra\_ & 57   \&nbsp;\\
 \hline
 \_Chiton\_ & 157   \&nbsp; & \_Eoobolus\_ & 73   \&nbsp; & \_Pedunculotheca diania\_ & 62   \&nbsp;\\
 \hline
@@ -271,13 +271,13 @@ the main manuscript.{]}
 
 A static version of the NEXUS file used to generate this supplementary
 information can be downloaded directly from
-\url{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_5-30-2018_1058.nex}
+\url{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_5-30-2018_1119.nex}
 .
 
 \hypertarget{treesearch}{\chapter{Parsimony analysis}\label{treesearch}}
 
 The phylogenetic dataset contains a considerable proportion of
-inapplicable codings (781/9016 = 8.7\% of tokens), which are known to
+inapplicable codings (786/9016 = 8.7\% of tokens), which are known to
 introduce error and bias to phylogenetic reconstruction when the Fitch
 algorithm is employed \citep{Maddison1993, Brazeau2018}. As such, we
 employed a new tree-scoring algorithm that correctly handles
@@ -517,6 +517,10 @@ Plate-like (wider than tall) skeletal elements, whether mineralized or
 non-mineralized.\\
 The definition deliberately excludes setae (which are taller than wide).
 
+\hypertarget{Chiton-coding-1}{}
+\emph{Chiton}, \emph{Dentalium}: Molluscan valves are treated as
+potential homologues of brachiopod valves.
+
 \hypertarget{Halkieria_evangelista-coding-1}{}
 \emph{Halkieria evangelista}: Halkieriid sclerites are interpreted as
 potentially homologous with those of \emph{Dailyatia} and hence the
@@ -571,9 +575,9 @@ reduced}\label{accessory-sclerites-reduced}
 \begin{quote}
 \textbf{Character 3: Sclerites: Bivalved: Accessory sclerites reduced}
 
-0: Accessory sclerites not reduced\\
-1: Accessory sclerites absent: two valves only\\
-Neomorphic character.
+1: Accessory sclerites not reduced\\
+2: Accessory sclerites absent: two valves only\\
+Transformational character.
 \end{quote}
 
 Taxa in the bivalved condition may retain sclerites as small additional
@@ -583,6 +587,16 @@ elements, such as the L-elements of \emph{Paterimitra}
 This character is treated as neomorphic, with accessory sclerites
 ancestrally present, recognizing the likely origin of brachiozoans (and
 Lophotrochozoans more generally) from a scleritomous organism.
+
+\hypertarget{Chiton-coding-3}{}
+\emph{Chiton}: The intermediate shell plates are treated as accessory
+sclerites; the girdle elements are homologous with annelid chaetae /
+brachiopod setae \citep{Leise1982}.
+
+\hypertarget{Dentalium-coding-3}{}
+\emph{Dentalium}: The scaphopod valve arises posterior of the prototroch
+and is thus homologous with the posterior valves of \emph{Chiton},
+assuming that molluscan shell fields are homologous features.
 
 \hypertarget{Haplophrentis_carinatus-coding-3}{}
 \emph{Haplophrentis carinatus}: Coded as ambiguous to recognize the
@@ -612,7 +626,8 @@ Following \citet{Zhao2017}.
 
 \hypertarget{Chiton-coding-4}{}
 \emph{Chiton}: The eight valves are interpreted as corresponding to a
-medial field; the girdle elements to a peripheral field.
+medial field. The girdle elements are homologous with chaetae rather
+than valves.
 
 \hypertarget{Dailyatia-coding-4}{}
 \emph{Dailyatia}: Following the reconstruction of
@@ -8156,18 +8171,18 @@ partitions whose proportion of invariant characters and gamma shape
 parameters were allowed to vary independently:
 
 \begin{quote}
-charset Neomorphic = 1 2 3 4 5 7 9 10 11 12 14 16 19 20 21 24 25 26 27
-30 31 32 33 34 37 39 41 48 49 51 52 53 54 55 56 59 63 64 65 66 67 69 70
-71 72 73 75 76 77 78 80 81 82 83 84 85 87 90 95 96 98 99 100 101 102 103
+charset Neomorphic = 1 2 4 5 7 9 10 11 12 14 16 19 20 21 24 25 26 27 30
+31 32 33 34 37 39 41 48 49 51 52 53 54 55 56 59 63 64 65 66 67 69 70 71
+72 73 75 76 77 78 80 81 82 83 84 85 87 90 95 96 98 99 100 101 102 103
 104 105 110 111 112 113 114 115 117 119 120 121 123 126 129 130 131 132
 133 134 135 136 137 138 139 140 144 145 146 148 150 151 153 154 156 157
 158 159 161 162 163 166 167 171 172 173 175 176 178 180 181 182 185 186
 187 188 189 190 191 192 194;
 
-charset Transformational = 6 8 13 15 17 18 22 23 28 29 35 36 38 40 42 43
-44 45 46 47 50 57 58 60 61 62 68 74 79 86 88 89 91 92 93 94 97 106 107
-108 109 116 118 122 124 125 127 128 141 142 143 147 149 152 155 160 164
-165 168 169 170 174 177 179 183 184 193 195 196;
+charset Transformational = 3 6 8 13 15 17 18 22 23 28 29 35 36 38 40 42
+43 44 45 46 47 50 57 58 60 61 62 68 74 79 86 88 89 91 92 93 94 97 106
+107 108 109 116 118 122 124 125 127 128 141 142 143 147 149 152 155 160
+164 165 168 169 170 174 177 179 183 184 193 195 196;
 
 partition chartype = 2: Neomorphic, Transformational;
 
