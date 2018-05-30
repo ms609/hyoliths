@@ -11,10 +11,10 @@ date: "`r Sys.Date()`"
 files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
 Mgen <- 5
 
-allTrees <- lapply(files, read.nexus)
-nTrees <- length(allTrees[[1]])
+bayesTrees <- lapply(files, read.nexus)
+nTrees <- length(bayesTrees[[1]])
 
-postBurnin <- lapply(allTrees, function (x) x[ceiling(nTrees * 0.1):nTrees])
+postBurnin <- lapply(bayesTrees, function (x) x[ceiling(nTrees * 0.1):nTrees])
 ```
 
 Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk model [@Lewis2001] with gamma-distributed rate variation across characters:
