@@ -7,13 +7,13 @@ date: "`r Sys.Date()`"
 
 # Bayesian analysis {#bayesian}
 
-```{R mrbayes-ini, echo=FALSE, eval=FALSE}
+```{R mrbayes-ini, echo=FALSE}
 files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
 Mgen <- 5
-
+```
+```{R mrbayes-load-trees, echo=FALSE, eval=FALSE}
 bayesTrees <- lapply(files, read.nexus)
 nTrees <- length(bayesTrees[[1]])
-
 postBurnin <- lapply(bayesTrees, function (x) x[ceiling(nTrees * 0.1):nTrees])
 ```
 
