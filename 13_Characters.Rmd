@@ -491,7 +491,6 @@ $(document).ready(function() {
   $my.trees.each(function()
     {
       var switcherClone = originalSwitcher.clone();
-      $('.switcherNumber', switcherClone).attr("char", $(this).data("char"));
       $('input.switcherNumber', switcherClone).attr("char", $(this).data("char"));
       switcherClone.insertBefore($(this));
       return false;
