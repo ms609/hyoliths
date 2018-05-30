@@ -416,13 +416,13 @@ function switchTree(input) {
     newValue = Math.floor(newValue);
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
-    $(".switcherNumber").val(newValue);
+    $("input.switcherNumber").val(newValue);
     showTree(newValue, $(input).attr("char"));
   }
 }
 
 function updateAllTrees(tree) {
-  $(".tree").each(function(index, item) {
+  $("svg.tree").each(function(index, item) {
     var oldTree = $(item);
     $.ajax({
        url: "`r sprintf(fileNamer, '" + tree + "', '" + $(oldTree).attr("char") + "')`",
@@ -436,7 +436,7 @@ function updateAllTrees(tree) {
 }
 
 function showTree(tree, char) {
-  var oldTree = $('.tree[char=' + char + ']');
+  var oldTree = $('svg.tree[char=' + char + ']');
   $.ajax({
      url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
     context: oldTree,
