@@ -1,0 +1,105 @@
+#NEXUS
+[R-package APE, Wed May 30 11:12:28 2018]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 46;
+	TAXLABELS
+		Cotyledion_tylodes
+		Loxosomella
+		Flustra
+		Novocrania
+		Lingula
+		Phoronis
+		Sipunculus
+		Serpula
+		Chiton
+		Dentalium
+		Pelagodiscus_atlanticus
+		Terebratulina
+		Wiwaxia_corrugata
+		Halkieria_evangelista
+		Dailyatia
+		Acanthotretella_spinosa
+		Alisina
+		Askepasma_toddense
+		Antigonambonites_planus
+		Botsfordia
+		Clupeafumosus_socialis
+		Coolinia_pecten
+		Craniops
+		Eccentrotheca
+		Eoobolus
+		Glyptoria
+		Gasconsia
+		Haplophrentis_carinatus
+		Heliomedusa_orienta
+		Kutorgina_chengjiangensis
+		Lingulosacculus
+		Lingulellotreta_malongensis
+		Longtancunella_chengjiangensis
+		Micrina
+		Micromitra
+		Mickwitzia_muralensis
+		Mummpikia_nuda
+		Nisusia_sulcata
+		Orthis
+		Paterimitra
+		Pedunculotheca_diania
+		Salanygolina
+		Siphonobolus_priscus
+		Ussunia
+		Tomteluva_perturbata
+		Yuganotheca_elegans
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Cotyledion_tylodes,
+		2	Loxosomella,
+		3	Flustra,
+		4	Novocrania,
+		5	Lingula,
+		6	Phoronis,
+		7	Sipunculus,
+		8	Serpula,
+		9	Chiton,
+		10	Dentalium,
+		11	Pelagodiscus_atlanticus,
+		12	Terebratulina,
+		13	Wiwaxia_corrugata,
+		14	Halkieria_evangelista,
+		15	Dailyatia,
+		16	Acanthotretella_spinosa,
+		17	Alisina,
+		18	Askepasma_toddense,
+		19	Antigonambonites_planus,
+		20	Botsfordia,
+		21	Clupeafumosus_socialis,
+		22	Coolinia_pecten,
+		23	Craniops,
+		24	Eccentrotheca,
+		25	Eoobolus,
+		26	Glyptoria,
+		27	Gasconsia,
+		28	Haplophrentis_carinatus,
+		29	Heliomedusa_orienta,
+		30	Kutorgina_chengjiangensis,
+		31	Lingulosacculus,
+		32	Lingulellotreta_malongensis,
+		33	Longtancunella_chengjiangensis,
+		34	Micrina,
+		35	Micromitra,
+		36	Mickwitzia_muralensis,
+		37	Mummpikia_nuda,
+		38	Nisusia_sulcata,
+		39	Orthis,
+		40	Paterimitra,
+		41	Pedunculotheca_diania,
+		42	Salanygolina,
+		43	Siphonobolus_priscus,
+		44	Ussunia,
+		45	Tomteluva_perturbata,
+		46	Yuganotheca_elegans
+	;
+	TREE * UNTITLED = [&R] (3,((2,((10,(13,9)),(7,8))),(6,(1,(24,((15,14),(29,((40,(28,41)),(((34,(11,36)),(5,(25,(37,(20,((31,32),(21,(43,16)))))))),(((35,18),(((30,(38,(26,(33,(17,(12,39)))))),(22,19)),(42,(45,46)))),(27,(44,(23,4)))))))))))));
+END;
