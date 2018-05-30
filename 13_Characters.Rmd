@@ -423,7 +423,7 @@ function switchTree(input) {
 }
 
 function updateAllTrees(tree) {
-  $my.trees.each(function(index, item) {
+  $("svg.tree").each(function(index, item) {
     var oldTree = $(item);
     $.ajax({
        //url: "`r sprintf(fileNamer, '" + tree + "', '" + $(oldTree).data("char") + "')`",
@@ -456,7 +456,7 @@ function showTree(tree, char) {
 }
 
 function enableTaxonHighlighting() {
-  $my.trees.click(function (e) {
+  $("svg.tree").click(function (e) {
     var target = e.target; // Which node triggered the click
     $target = $(target);
     if (target.nodeName === 'text') {
@@ -472,7 +472,7 @@ function enableTaxonHighlighting() {
     }
     return false;
   })
-  $('text', $my.trees).each(function () {
+  $('text', $("svg.tree")).each(function () {
     if(localStorage.getItem($(this).text())) {
       $(this).addClass("highlightTaxon");
     }
