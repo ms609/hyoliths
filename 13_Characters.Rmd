@@ -438,6 +438,7 @@ function updateAllTrees(tree) {
       $(this).replaceWith($('svg', newTree));
     })
   });
+  enableTaxonHighlighting();
 }
 
 function showTree(tree, char) {
@@ -452,6 +453,12 @@ function showTree(tree, char) {
   });
 }
 
+function enableTaxonHighlighting() {
+  $('text.taxonLabel').click(function () {
+    $('text:contains("' + $(this).html() + '")').toggleClass("highlightTaxon");
+  })
+}
+
 $(document).ready(function(){
   // Produce switcher box by each SVG plot
   var originalSwitcher = $(".switcher");
@@ -464,10 +471,7 @@ $(document).ready(function(){
   );
   originalSwitcher.remove()
   
-  // Highlight taxa by clicking on them
-  $('text.taxonLabel').click(function () {
-    $('text:contains("' + $(this).html() + '")').toggleClass("highlightTaxon");
-  })
+  enableTaxonHighlighting()
 })
 </script>
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
