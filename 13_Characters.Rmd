@@ -622,7 +622,7 @@ for (i in seq_len(n_char)) {
                     'Character adds <tspan class="score">', states_matrix$score,
                    '</tspan> to tree score</text>\n <text x="', svgWidth - 4L,
                    '" y="', (yStep * 2) + textY, '" text-anchor="end" class="stepsLabel">',
-                   '<tspan class="score">', states_matrix$regions,
+                   '<tspan class="score">', nRegions,
                    '</tspan> additional region', ifelse(states_matrix$regions == 1, '', 's'), 
                    '</text>\n <text x="', svgWidth - 4L,
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
