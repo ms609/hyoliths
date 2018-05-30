@@ -417,15 +417,18 @@ function switchTree(input) {
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
     $("input.switcherNumber").val(newValue);
-    showTree(newValue, $(input).attr("char"));
+    showTree(newValue, $(input).data("char"));
   }
+  return false;
 }
 
 function updateAllTrees(tree) {
-  $("svg.tree").each(function(index, item) {
+  $my.trees.each(function(index, item) {
     var oldTree = $(item);
     $.ajax({
-       url: "`r sprintf(fileNamer, '" + tree + "', '" + $(oldTree).attr("char") + "')`",
+       //url: "`r sprintf(fileNamer, '" + tree + "', '" + $(oldTree).data("char") + "')`",
+       url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
+            $(oldTree).data("char") + ".svg"
       context: item,
       datatype: 'xml'
     }).done(function (newTree) {
@@ -433,12 +436,15 @@ function updateAllTrees(tree) {
     })
   });
   enableTaxonHighlighting();
+  return false;
 }
 
 function showTree(tree, char) {
-  var oldTree = $('svg.tree[char=' + char + ']');
+  var oldTree = $('[char=' + char + ']', $my.trees);
   $.ajax({
-     url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
+     //url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
+    url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
+            $(oldTree).data("char") + ".svg"
     context: oldTree,
     datatype: 'xml'
   }).done(function (newTree) {
@@ -446,27 +452,39 @@ function showTree(tree, char) {
     if (typeof (updateTimeout) != 'undefined') window.clearTimeout(updateTimeout);
     updateTimeout = window.setTimeout(updateAllTrees(tree), 350);
   });
+  return false;
 }
 
 function enableTaxonHighlighting() {
-  $('text.taxonLabel').click(function () {
-    $('text:contains("' + $(this).html() + '")').toggleClass("highlightTaxon");
+  $my.trees.click(function (e) {
+    var target = e.target; // Which node triggered the click
+    $target = $(target);
+    if (target.nodeName === 'TEXT') {
+      $('text:contains("' + $(this).html() + '")').toggleClass("highlightTaxon");
+    }
   })
+  return false;
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
+  window.$my = {
+    trees : $("svg.tree")
+  };
+
   // Produce switcher box by each SVG plot
-  var originalSwitcher = $(".switcher");
-  $(".tree").each(function()
+  var originalSwitcher = $("div.switcher");
+  $my.trees.each(function()
     {
       var switcherClone = originalSwitcher.clone();
-      $('.switcherNumber', switcherClone).attr("char", $(this).attr("char"));
+      $('.switcherNumber', switcherClone)data("char", $(this).data("char"));
       switcherClone.insertBefore($(this));
+      return false;
     }
   );
   originalSwitcher.remove()
   
   enableTaxonHighlighting()
+  return false;
 })
 </script>
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
