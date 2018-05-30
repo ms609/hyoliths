@@ -446,6 +446,7 @@ function showTree(tree, char) {
 }
 
 $(document).ready(function(){
+  // Produce switcher box by each SVG plot
   var originalSwitcher = $(".switcher");
   $(".tree").each(function()
     {
@@ -454,7 +455,12 @@ $(document).ready(function(){
       switcherClone.insertBefore($(this));
     }
   );
+  
   originalSwitcher.remove()
+  // Highlight taxa by clicking on them
+  $('text.taxonLabel').click(function () {
+    $('text:contains("' + $(this).html() + '")').toggleClass("highlightTaxon");
+  })
 })
 </script>
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
