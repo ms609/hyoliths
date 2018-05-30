@@ -440,7 +440,7 @@ function updateAllTrees(tree) {
 }
 
 function showTree(tree, char) {
-  var oldTree = $my.trees[char];
+  var oldTree = $('svg.tree[data-char="' + char + '"]');
   $.ajax({
      //url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
     url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
