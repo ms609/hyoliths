@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-05-30 11.19.49 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-05-30 11.35.09 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=47;
@@ -14,7 +14,7 @@ BEGIN TAXA;
 		'Phoronis'
 		'Sipunculus'
 		'Serpula'
-		'Chiton'
+		'Tonicella'
 		'Dentalium'
 		'Pelagodiscus atlanticus'
 		'Terebratulina'
@@ -1165,7 +1165,7 @@ BEGIN CHARACTERS;
 	'Phoronis'		                                00-00-0-0000-------------00--00000------0------00-00-----11-------01000112?00020100002?2?011?2102101010?0122?00010011100-10211111011100?0000----00-0-00?001?0???000-------000-00-1200022000?01002113
 	'Sipunculus'		                              00-00-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000021110011?013110?101112122?1101000110112-221010112021112111121101011111000----00-0-10101110112110--00---010-00-0-000--0100010021-?
 	'Serpula'		                                 00-00-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000011110011?0030101?01012122111110101111121121011012110111021111101111111000----00-1310201310112110--00---010-00-0-000--0000010020--
-	'Chiton'		                                  10100-0-0000-0-0--000--0000--00000--0-0-0------00-000-004?0?440000121000011?104100?113012012110010101101121111110112021111111112111001100111113000-1111111211012110--00---000-00-0-000--0011101120--
+	'Tonicella'		                               1010011?0000-0-0--000--0000--00000--0-0-0------00-000-004?0?440000121000011?104100?113012012110010101101121111110112021111111112111001100111113000-1111111211012110--00---000-00-0-000--0011101120--
 	'Dentalium'		                               10200-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000021000010?10401001110110221101101011001211?1110112121112111111111001000111121000-0-01110211111110--00---000-00-0-000--001110112114
 	'Pelagodiscus atlanticus'		                 1120010-000111-031100-10000--00000310-01131----00-010-002101210100011????1?0?111000?0??????1????????????01???000?00??????????12??????0??0001121111312???0111010-001110012110121121111111100?01002123
 	'Terebratulina'		                           112001120111(2,1)12132001121100--0010022121112-212-00-000-00320?221000021????1?1?030011?0??????1????????????01???000?00??????????12??????0??0000---111212???0111010-001111111100111111201021010?010011-4
@@ -1208,6 +1208,7 @@ ENDBLOCK;
 
 BEGIN NOTES;
 	[Taxon comments]
+	TEXT TAXON=10 TEXT='Selected as sperm morphology well documented by Buckland-Nicks et al. 1988';
 	TEXT TAXON=20 TEXT='Strophomenata -> Billingsellida -> Polytoechiidae';
 	TEXT TAXON=21 TEXT='General references: *Skovsted & Holmer (2005); Popov (1992); Williams et al (2000); Ushatinskaya & Koronikov 2016R; Popov et al. 2015';
 	TEXT TAXON=22 TEXT='Phylum: Brachiopoda, Class: Lingulata, Order: Acrotretida, Family: Acrotretidae';
@@ -1638,6 +1639,7 @@ BEGIN NOTES;
 	TEXT TAXON=22 CHARACTER=7 TEXT='No articulating processes evident or reported by Topper et al. (2013R).';
 	TEXT TAXON=45 CHARACTER=7 TEXT='"articulatory structures poorly developed" -- Williams et al. 2000, p. 192';
 	TEXT TAXON=37 CHARACTER=7 TEXT='Not reported by or evident in Balthasar (2004)';
+	TEXT TAXON=10 CHARACTER=7 TEXT='Sutural laminae are termed apophyses, and correspond in function and position to those of brachiopods [@Connors2012]; apophyses are thus coded as present.';
 	TEXT TAXON=22 CHARACTER=66 TEXT='The polygonal ornament reported in acrotretids by Zhang et al. (2016) is on the internal surface of the shell.';
 	TEXT TAXON=42 CHARACTER=62 TEXT='Assumed to be fibrous by analogy with the allothecomorph orthothecid described by Kouchinsky (2000).';
 	TEXT TAXON=1 CHARACTER=62 TEXT='The inner and outer layer are foliated.  The columnar inflections lack canals, and as such we do not consider them to bear any obvious homology with the hollow pillars of tommotiids and certain brachiopods, their superficial similarity to strophomenid pseudopunctae notwithstanding.';
@@ -1675,6 +1677,7 @@ BEGIN NOTES;
 	TEXT TAXON=37 CHARACTER=6 TEXT='Non-strophic';
 	TEXT TAXON=21 CHARACTER=6 TEXT='Coded as dissociated in Williams et al. (1998T), appendix 2';
 	TEXT TAXON=15 CHARACTER=6 TEXT='Non-strophic';
+	TEXT TAXON=10 CHARACTER=6 TEXT='The relevant margins of the anterior and tail valves are almost but not quite planar [@Connors2012], and the hinge line (should the valves articulate) could not be described as strophic.';
 	TEXT TAXON=41 CHARACTER=36 TEXT='The apical flange notwithstanding, the umbo of the S1 sclerite is posterior of the hinge line and the posterior edge of the lateral plate -- see Larsson et al. 2014, fig. 2a, c.';
 	TEXT TAXON=30 CHARACTER=36 TEXT='Williams et al. (2000, 2007) reconstruct mixoperipheral growth in the ventral valve (though Chen et al. (2007) reconstruct the valves the other way round, i.e. it is the ventral valve that grows holoperipherally, and the dorsal mixoperipherally). ';
 	TEXT TAXON=22 CHARACTER=36 TEXT='Inferred from Topper et al. (2013R).';
