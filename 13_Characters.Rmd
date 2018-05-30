@@ -616,7 +616,7 @@ for (i in seq_len(n_char)) {
       legendLabels <- matrix_data$legend
       legendCol <- matrix_data$legend_col
       edgeCol <- matrix_data$edge_col
-      tipCol <- matrix_data$tips_colours
+      flagCol <- matrix_data$tips_colours
       tipFlag <- matrix_data$tips_labels
       nodeSupport <- round(SplitSupport(tree) / length(allTrees), 2)
       
@@ -631,8 +631,9 @@ for (i in seq_len(n_char)) {
                collapse=''),
                '" stroke="', colour, LineStyle(colour), '"></path>')
       }, character(1)), collapse='')
-      tips <- paste0('\n <text x="', (nodeXi[terminal] + 0L), '" y="', nodeYi[terminal] + textY,
-                     '" fill="', tipCol[terminal],
+      tips <- paste0('\n <text x="', (nodeXi[terminal] + 0L), 
+                     '" y="', nodeYi[terminal] + textY,
+                     '" fill="', flagCol[terminal],
                      '" class="flag">[', tipFlag[terminal], ']</text>',
                      '\n <text x="', (nodeXi[terminal] + 22L),
                      '" y="', nodeYi[terminal] + textY,
