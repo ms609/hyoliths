@@ -100,11 +100,10 @@ iw.trees <- lapply(kValues, function (k) {
   }
 })
 
-if (length(kValues) != 7) stop("You need to change this ugly code manually")
-# Eugh.  Still, easier than trying to battle multiPhylo's compression
-allTrees <- c(ew.trees, iw.trees[[1]], iw.trees[[2]],
-           iw.trees[[3]], iw.trees[[4]], iw.trees[[5]],
-           iw.trees[[6]], iw.trees[[7]])
+allTrees <- ew.trees
+for (i in seq_along(iw.trees)) {
+  allTrees <- c(allTrees, iw.trees[[i]])
+}
 
 nTip <- Ntip(allTrees[[1]])
 tipIndex <- sort(allTrees[[1]]$tip.label)
