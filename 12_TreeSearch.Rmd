@@ -128,7 +128,7 @@ SplitSupport <- function(tr) {
 (ref:node-support) Node labels denote the proportion of trees obtained under all analytical conditions that support the clade.  
 
 ```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
-majCon <- consensus(allTrees, p=0.5)
+majCon <- RootTree(consensus(allTrees, p=0.5), rootingTips)
 supporters <- SplitSupport(majCon)
 
 ColPlot(majCon)
@@ -143,7 +143,7 @@ nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
 ```{r treesearch-maj-consensus-pruned, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
 omit <- c("Micrina", 'Mickwitzia_muralensis',
        'Heliomedusa_orienta')
-majCon <- ConsensusWithout(allTrees, omit, p=0.5)
+majCon <- RootTree(ConsensusWithout(allTrees, omit, p=0.5), rootingTips)
 conTip <- Ntip(majCon)
 splits <- Descendants(majCon, conTip + seq_len(Nnode(majCon)), type='tips')
 splits <- lapply(splits, function (x) sort(majCon$tip.label[x]))

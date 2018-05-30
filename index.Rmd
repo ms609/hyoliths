@@ -69,6 +69,7 @@ kValues <- c(2, 3, 4.5)
 
 outgroup <- 'Namacalathus'
 outgroup <- 'Flustra'
+rootingTips <- c('Chiton', 'Serpula')
 
 pal <- TreeSearch::brewer[[11]]
 
