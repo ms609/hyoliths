@@ -187,8 +187,12 @@ text(-0.5, 1, pos=4, "Consensus of all k values", cex=0.8)
 
 # Plot results for each value of k
 PlotPanel <- function (i) {
-  ColPlot(consensus(iw.trees[[i]]))
-  text(1, 1, paste0('k = ', kValues[i]), pos=4)
+  if (i > length(iw.trees)) {
+    cat("\n > Results not available for panel", i)
+  } else {
+    ColPlot(consensus(iw.trees[[i]]))
+    text(1, 1, paste0('k = ', kValues[i]), pos=4)
+  }
 }
 PlotPanel(1)
 PlotPanel(2)
