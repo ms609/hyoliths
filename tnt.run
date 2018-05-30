@@ -7,8 +7,9 @@ macro=;
 xmult:rat10 drift10 hits 15 level 4 chklevel 5;
 /* 15 hits gives a quick but less comprehensive run */
 
-/*outgroup Dailyatia;*/
-/*taxcode -Namacalathus;*/
+/* outgroup Dailyatia; */
+/* taxcode -Namacalathus; */
+
 outgroup Namacalathus;
 
 keep 0; hold 10000;
