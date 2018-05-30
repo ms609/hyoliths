@@ -498,9 +498,9 @@ $(document).ready(function() {
   );
   originalSwitcher.remove()
   
-  enableTaxonHighlighting()
+  enableTaxonHighlighting();
   return false;
-})
+});
 </script>
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
 ## These function definitions must be in the same block as when they are called.
