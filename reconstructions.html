@@ -432,7 +432,7 @@ function switchTree(input) {
     newValue = Math.floor(newValue);
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
-    $("switcherNumber").val(newValue);
+    $(".switcherNumber").val(newValue);
     showTree(newValue, input.char);
   }
 }
@@ -463,15 +463,21 @@ function showTree(tree, char) {
 }
 
 $(document).ready(function(){
+  // Produce switcher box by each SVG plot
   var originalSwitcher = $(".switcher");
   $(".tree").each(function()
     {
       var switcherClone = originalSwitcher.clone();
-      switcherClone.attr("char", $(this).attr("char"));
+      $('.switcherNumber', switcherClone).attr("char", $(this).attr("char"));
       switcherClone.insertBefore($(this));
     }
   );
+  
   originalSwitcher.remove()
+  // Highlight taxa by clicking on them
+  $('text.taxonLabel').click(function () {
+    $('text:contains("' + $(this).html() + '")').toggleClass("highlightTaxon");
+  })
 })
 </script>
 <div id="sclerites" class="section level2">
