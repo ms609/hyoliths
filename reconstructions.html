@@ -433,7 +433,7 @@ function switchTree(input) {
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
     $("input.switcherNumber").val(newValue);
-    showTree(newValue, $(input).data("char"));
+    showTree(newValue, $(input).attr("char"));
   }
   return false;
 }
@@ -507,16 +507,16 @@ $(document).ready(function() {
   $my.trees.each(function()
     {
       var switcherClone = originalSwitcher.clone();
-      $('.switcherNumber', switcherClone).data("char", $(this).data("char"));
+      $('.switcherNumber', switcherClone).attr("char", $(this).data("char"));
       switcherClone.insertBefore($(this));
       return false;
     }
   );
   originalSwitcher.remove()
   
-  enableTaxonHighlighting()
+  enableTaxonHighlighting();
   return false;
-})
+});
 </script>
 <div id="sclerites" class="section level2">
 <h2><span class="header-section-number">3.1</span> Sclerites</h2>
