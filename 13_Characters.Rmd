@@ -475,9 +475,9 @@ function enableTaxonHighlighting() {
   $my.trees('text').each(function () {
     if(localStorage.getItem($(this).text())) {
       $(this).addClass("highlightTaxon");
-    })
+    }
     return false;
-  }
+  })
   return false;
 }
 
