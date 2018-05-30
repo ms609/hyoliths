@@ -623,7 +623,7 @@ for (i in seq_len(n_char)) {
                    '</tspan> to tree score</text>\n <text x="', svgWidth - 4L,
                    '" y="', (yStep * 2) + textY, '" text-anchor="end" class="stepsLabel">',
                    '<tspan class="score">', nRegions,
-                   '</tspan> additional region', ifelse(states_matrix$regions == 1, '', 's'), 
+                   '</tspan> additional region', ifelse(nRegions == 1, '', 's'), 
                    '</text>\n <text x="', svgWidth - 4L,
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
                     ci_text[i, treeNo],
