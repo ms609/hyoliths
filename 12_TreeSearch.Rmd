@@ -118,7 +118,7 @@ splitOccurrences <- table(vapply(allTrees, function (tr) {
   }, double(2 * (nTip - 1L))))
 SplitSupport <- function(tr) {
   splits <- Descendants(tr, nTip + seq_len(Nnode(tr)), type='tips')
-  splitNumbers <- vapply(splits, SplitNumber, double(2), tr)
+  splitNumbers <- vapply(splits, SplitNumber, double(2), tr)[1, ]
   splitOccurrences[as.character(splitNumbers)]
 }
 ```
