@@ -637,6 +637,7 @@ for (i in seq_len(n_char)) {
                      '" class="flag">[', tipFlag[terminal], ']</text>',
                      '\n <text x="', (nodeXi[terminal] + 22L),
                      '" y="', nodeYi[terminal] + textY,
+                     '" fill="', ifelse(flagCol[terminal]=='lightgrey', '#d3d3d3', '#111'),
                      '" class="taxonLabel">', 
                      gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>',
                      collapse='')
