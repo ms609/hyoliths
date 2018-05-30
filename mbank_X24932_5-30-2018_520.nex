@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-05-29 12.02.36 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-05-30 05.20.02 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=47;
@@ -270,7 +270,7 @@ BEGIN CHARACTERS;
 		'Bivalved: scleritome dominated by prominent dorsal and ventral valve'
 		,
 		3
-		'Accessory sclerites present'
+		'Accessory sclerites not reduced'
 		'Accessory sclerites absent: two valves only'
 		,
 		4
@@ -1155,17 +1155,17 @@ BEGIN CHARACTERS;
 	;
 
 	MATRIX
-	'Namacalathus'		                            00-00------0-------------00--00000------0------00-000--03?0-3101000????????????????????????????????????????????????????????????????????????????????0-?????????????0-------0?0-00-???????????????????
+	'Namacalathus'		                            00000------0-------------00--00000------0------00-000--03?0-3101000????????????????????????????????????????????????????????????????????????????????0-?????????????0-------0?0-00-???????????????????
 	'Cotyledion tylodes'		                      10000-0-0000-0-0--000--0000--00000--0-0-0------00-001100(3,4,2)?0??????0?????????????????????????????????????????????????????????????????????????????????0-0{0,1}?0?????????{1,0}--00---??0-00-11?0?{1,2}?000???0?212-
-	'Loxosomella'		                             00-00-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000010001120?114011?0021221121110211-11010211-00100010101111220--00010101(0,1)100----00-0-01-01201012100--00---000-00-110002200000100212-
-	'Flustra'		                                 00-00-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---000002000112021140001102021011?100100-1?0?0212??0000011100-10211210000000(1,0)0000----00-0-00?01100?11010--00---0000?0-1200022000001002114
+	'Loxosomella'		                             00000-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000010001120?114011?0021221121110211-11010211-00100010101111220--00010101(0,1)100----00-0-01-01201012100--00---000-00-110002200000100212-
+	'Flustra'		                                 00000-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---000002000112021140001102021011?100100-1?0?0212??0000011100-10211210000000(1,0)0000----00-0-00?01100?11010--00---0000?0-1200022000001002114
 	'Novocrania'		                              1110020-0001111031011211000--00010310-020------00-001100320?2110000210000101012110000103?0112200200100100122100010010?0101022121?010100(1,0)0000---0113020020011010-000--00---00111{0,1}111011211101010020-3
 	'Lingula'		                                 1110010-0001111021100-31010--000102312010------00-000-00210?2110000110000100011110000?03?0112200200100100122100010010?0101022121?010100(1,0)0001111110-120020011010-001111022110121021111121010101002112
-	'Phoronis'		                                00-00------0-------------00--00000------0------00-00-----11-------01000112?00020100002?2?011?2102101010?0122?00010011100-10211111011100?0000----00-0-00?001?0???000-------000-00-1200022000?01002113
-	'Sipunculus'		                              00-00-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000021110011?013110?101112122?1101000110112-221010112021112111121101011111000----00-0-10101110112110--00---010-00-0-000--0100010021-?
-	'Serpula'		                                 00-00-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000011110011?0030101?01012122111110101111121121011012110111021111101111111000----00-1310201310112110--00---010-00-0-000--0000010020--
-	'Chiton'		                                  10-10-0-000--0-0--000--0000--00000--0-0-0------00-000-004?0?440000121000011?104100?113012012110010101101121111110112021111111112111001100111113000-1111111211012110--00---000-00-0-000--0011101120--
-	'Dentalium'		                               00-00-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000021000010?10401001110110221101101011001211?1110112121112111111111001000111121000-0-01110211111110--00---000-00-0-000--001110112114
+	'Phoronis'		                                00000------0-------------00--00000------0------00-00-----11-------01000112?00020100002?2?011?2102101010?0122?00010011100-10211111011100?0000----00-0-00?001?0???000-------000-00-1200022000?01002113
+	'Sipunculus'		                              00000-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000021110011?013110?101112122?1101000110112-221010112021112111121101011111000----00-0-10101110112110--00---010-00-0-000--0100010021-?
+	'Serpula'		                                 00000-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000011110011?0030101?01012122111110101111121121011012110111021111101111111000----00-1310201310112110--00---010-00-0-000--0000010020--
+	'Chiton'		                                  10010-0-000--0-0--000--0000--00000--0-0-0------00-000-004?0?440000121000011?104100?113012012110010101101121111110112021111111112111001100111113000-1111111211012110--00---000-00-0-000--0011101120--
+	'Dentalium'		                               00000-0-0000-0-----00--0000--00000--0-0-0------00-000000--0---0000021000010?10401001110110221101101011001211?1110112121112111111111001000111121000-0-01110211111110--00---000-00-0-000--001110112114
 	'Pelagodiscus atlanticus'		                 1110010-000111-031100-10000--00000310-01131----00-010-002101210100011????1?0?111000?0??????1????????????01???000?00??????????12??????0??0001121111312???0111010-001110012110121121111111100?01002123
 	'Terebratulina'		                           111001120111(2,1)12132001121100--0010022121112-212-00-000-00320?221000021????1?1?030011?0??????1????????????01???000?00??????????12??????0??0000---111212???0111010-001111111100111111201021010?010011-4
 	'Wiwaxia corrugata'		                       00000-0-0000-0-0--000--0000--00000--0-0-0------00-000-00-?0---0000-????????????????????????????????????????????????????????????????????????????????1311?1?????????0--00---00?-00-0-000--001???{0,1}120--
@@ -1222,7 +1222,7 @@ BEGIN NOTES;
 	[Character comments]
 	TEXT CHARACTER=1 TEXT='Plate-like (wider than tall) skeletal elements, whether mineralized or non-mineralized.^nThe definition deliberately excludes setae (which are taller than wide).^n';
 	TEXT CHARACTER=2 TEXT='Scleritome dominated by prominent differentiated dorsal and ventral valves';
-	TEXT CHARACTER=3 TEXT='Taxa in the bivalved condition may retain sclerites as small additional elements, such as the L-elements of Paterimitra (Skovsted et al. 2015).^n^nThis character is treated as neomorphic, with accessory sclerites ancestrally present, recognizing the likely origin of brachiozoans (and Lophotrochozoans more generally) from a scleritomous organism.^n^nCoded as inapplicable in taxa that lack multiple skeletal elements.';
+	TEXT CHARACTER=3 TEXT='Taxa in the bivalved condition may retain sclerites as small additional elements, such as the L-elements of Paterimitra (Skovsted et al. 2015).^n^nThis character is treated as neomorphic, with accessory sclerites ancestrally present, recognizing the likely origin of brachiozoans (and Lophotrochozoans more generally) from a scleritomous organism.';
 	TEXT CHARACTER=4 TEXT='Following @Zhao2017';
 	TEXT CHARACTER=5 TEXT='Following @Zhao2017';
 	TEXT CHARACTER=7 TEXT='Many brachiopods, in addition to Micrina and others, bear tooth-like structures or processes that articulate the two primary valves.^nCaution must be applied before taxa are coded as "absent", as teeth can be subtle and may be overlooked.^n^nKutorginata don''t have teeth or dental sockets, but their shells are articulated by "two triangular plates formed by dorsal interarea, bearing oblique ridges on the inner sides" (Williams et al 2000, p. 211); this simple hinge mechanism is different from other rhynchonelliforms (Williams et al. 2000, p.208), but serves an equivalent purpose and is thus potentially homologous.  We thus code kutorginids as present, using a subsequent character to capture difference in tooth morphology.';
@@ -1299,10 +1299,10 @@ BEGIN NOTES;
 	TEXT CHARACTER=83 TEXT='Following Hodgson & Reunov 1994.';
 	TEXT CHARACTER=84 TEXT='Following @Smith2012; see @BucklandNicks2008';
 	TEXT CHARACTER=85 TEXT='Following @Smith2012, after character 48 in @Ponder1997.';
-	TEXT CHARACTER=86 TEXT='After character 5 in @BucklandNicks2009; see also character 43 in @Ponder1997.';
+	TEXT CHARACTER=86 TEXT='After character 5 in @BucklandNicks2008; see also character 43 in @Ponder1997.';
 	TEXT CHARACTER=87 TEXT='After character 44 in @Ponder1997.  Cristae are internal compartments formed by inner mitochondrial membranes.';
-	TEXT CHARACTER=88 TEXT='After @Smith2012; see also character 43 in @Ponder1997; character 164 in @Giribet2002; character 71 in @Lindgren2004';
-	TEXT CHARACTER=89 TEXT='Following characters 170 in @Giribet2000; 64 in @Lindgren1996';
+	TEXT CHARACTER=88 TEXT='After @Smith2012; see also character 43 in @Ponder1997; character 164 in @Giribet2002';
+	TEXT CHARACTER=89 TEXT='Following character 170 in @Giribet2002';
 	TEXT CHARACTER=90 TEXT='The "molluscan cross" and "annelid cross" cannot be systematically discriminated from one another, so are treated as a single state.  ^nSee characters 127 & 128 in @Rouse1999; 1.49 in @SPS1996;^ncharacter 34 in @Haszprunar1996; 35 in @Haszprunar2000; 172 in @Giribet2002.';
 	TEXT CHARACTER=91 TEXT='Following character 171 in @Giribet2002';
 	TEXT CHARACTER=92 TEXT='See characters 32-33 in @Haszprunar1996; character 1.48 in @SPS1996; character 29 in @Glenner2004.';
@@ -1346,8 +1346,8 @@ BEGIN NOTES;
 	TEXT CHARACTER=130 TEXT='Pore cells.  Character 20 in @Haszprunar2000.';
 	TEXT CHARACTER=131 TEXT='See character 4.46 in @SPS1996.';
 	TEXT CHARACTER=132 TEXT='Also termed cyrtocytes.  Character 21 in @Grobe2007; 1.47 in @SPS1996; 138 in @Rouse1999; 20 in @Haszprunar1996; 90 in @Glenner2004';
-	TEXT CHARACTER=133 TEXT='See characters 35 in @Rouse1997; 28 in @Haszpurnar2000; 93 in @Glenner2004; 1.47 in @SPS1996; 21 in @Grobe2007; 138 in @Rouse1999; 20 in @Haszprunar1996.';
-	TEXT CHARACTER=134 TEXT='Character 1 in @Haszprunar1996^n';
+	TEXT CHARACTER=133 TEXT='See characters 35 in @Rouse1999; 28 in @Haszprunar2000; 93 in @Glenner2004; 1.47 in @SPS1996; 21 in @Grobe2007; 138 in @Rouse1999; 20 in @Haszprunar1996.';
+	TEXT CHARACTER=134 TEXT='Character 1 in @Haszprunar1996';
 	TEXT CHARACTER=135 TEXT='Character 1 in @Haszprunar2000.';
 	TEXT CHARACTER=136 TEXT='Character 19 in @Haszprunar1996; see also character 13 in @Haszprunar2000';
 	TEXT CHARACTER=137 TEXT='See character 18 in @Haszprunar1996';
@@ -1364,10 +1364,10 @@ BEGIN NOTES;
 	TEXT CHARACTER=149 TEXT='Setae penetrate the valves of many brachiopods.  In certain taxa, they are apparent only at the margins of the valves, in association with the commissure, being reduced or lost over the surface of the shell. ';
 	TEXT CHARACTER=150 TEXT='Serial repetition in adult, whether expressed in valves, soft tissues or exoskeletal elements.  See character 13 in @Rouse1999; 19 in @Vinther2008; 38 in @Haszprunar1996; 40--41 in @Sutton2012; @Wanninger2009^n';
 	TEXT CHARACTER=151 TEXT='See characters 8 in @Haszprunar1996; 4 in @Vinther2008; 137 in @Rouse1999; 21 in @BucklandNicks2009;  37 in @Sutton2012.^nIt is assumed that the adult foot is homologous with (and thus contingent on) the larval foot.^n';
-	TEXT CHARACTER=152 TEXT='Character 27 in @Haszprunar2000; 99 in @Lindgren2009.';
+	TEXT CHARACTER=152 TEXT='Character 27 in @Haszprunar2000';
 	TEXT CHARACTER=153 TEXT='Gills (or ctenidia) surround the molluscan foot.^nCharacter 1.59-60, 2.09, 4.49 in @SPS1996; 10--11 in @Haszprunar2000; 45 in @Sutton2012';
 	TEXT CHARACTER=154 TEXT='Character 14 in @Haszprunar1996. Paired longitudinal nerve cords regularly interconnected by transversal commissures to form a rectangular pattern.';
-	TEXT CHARACTER=155 TEXT='After character 23 in @Haszprunar1996; 24 in @HAszprunar2000; 41 in @Rouse1999; 39 in @Lindgren2004; 16 in @Scheltema1993; 16 in @Vinther2008';
+	TEXT CHARACTER=155 TEXT='After character 23 in @Haszprunar1996; 24 in @Haszprunar2000; 41 in @Rouse1999; 39 in @Lindgren2004; 16 in @Scheltema1993; 16 in @Vinther2008';
 	TEXT CHARACTER=156 TEXT='Character 16 in @Haszprunar1996.  The Gliointerstitial system interconnects the nervous and muscle systems.';
 	TEXT CHARACTER=157 TEXT='Character 7b in @Haszprunar2008';
 	TEXT CHARACTER=158 TEXT='Character 1.22 in @SPS1996';
@@ -1709,7 +1709,7 @@ BEGIN NOTES;
 	TEXT TAXON=35 CHARACTER=14 TEXT='Prominent ventral muscle scars - see e.g. Holmer et al 2008, fig. 1f';
 	TEXT TAXON=18 CHARACTER=14 TEXT='Muscle scars scored based on Alisina comleyensis (Bassett et al. 2001)';
 	TEXT TAXON=37 CHARACTER=14 TEXT='Scars absent; instead, cones ornament shell''s internal surface.';
-	TEXT TAXON=15 CHARACTER=14 TEXT='Muscle scars are known from the Type A, but not Type B, morphs of the halkieriid Oikozetetes [@Skovsted2009;@Jacquet2014].';
+	TEXT TAXON=15 CHARACTER=14 TEXT='Muscle scars are known from the Type A, but not Type B, morphs of the halkieriid Oikozetetes [@Paterson2009;@Jacquet2014].';
 	TEXT TAXON=19 CHARACTER=16 TEXT='Following the interpretation of the musculature presented by Williams et al. (2000), fig. 81.';
 	TEXT TAXON=18 CHARACTER=16 TEXT='Muscle scars scored based on Alisina comleyensis (Bassett et al. 2001). The presence of an adjustor is marked as not presently available, as it is not clear that a scar, if present, could be distinguished from the diminutive muscle scars present.';
 	TEXT TAXON=28 CHARACTER=16 TEXT='No mention of an adjustor muscle in Gasconsia or Trimerellida more generally on pp. 184-185 of Williams et al. 2000, nor in discussion in Williams et al. 2007 (p. 2850).  Coded as absent.';
@@ -2333,9 +2333,9 @@ BEGIN NOTES;
 	TEXT TAXON=4 CHARACTER=88 TEXT='Long [@Franzen1981]';
 	TEXT TAXON=8 CHARACTER=88 TEXT='Short ring of five mitochondria around the central centriole [@Rice1993]. ';
 	TEXT TAXON=9 CHARACTER=88 TEXT='Five mitochondria surround the base of the flagellum in short midpiece, comparable to that of Sipunculus and Dentalium [@Gherardi2011]';
-	TEXT TAXON=7 CHARACTER=78 TEXT='Nucleus "almost round" [@Reunov2004]';
+	TEXT TAXON=7 CHARACTER=78 TEXT='Nucleus "almost round" [@Reunov2004Ultrastructuralstudy]';
 	TEXT TAXON=12 CHARACTER=78 TEXT='Present in Discinisca tenuis (Hodgson & Reunov, 1994).';
-	TEXT TAXON=13 CHARACTER=78 TEXT='No anterior invagination [@Hodgson1994]';
+	TEXT TAXON=13 CHARACTER=78 TEXT='No anterior invagination [@Hodgson1994Ultrastructureof]';
 	TEXT TAXON=3 CHARACTER=78 TEXT='Present in Loxosoma [@Franzen 2000]';
 	TEXT TAXON=4 CHARACTER=78 TEXT='Present [in Tubulipora; @Franzen1984]';
 	TEXT TAXON=8 CHARACTER=78 TEXT='Prominent in Phascolion [@Rice1993]';
@@ -2352,7 +2352,7 @@ BEGIN NOTES;
 	TEXT TAXON=9 CHARACTER=99 TEXT='"Groups such as Sabellariidae [...] have evolved downstream-feeding without the aid of a metatroch" -- [@Rouse2000]';
 	TEXT TAXON=4 CHARACTER=103 TEXT='Absent [@Zimmer2013]';
 	TEXT TAXON=4 CHARACTER=96 TEXT='Absent [@Zimmer2013]';
-	TEXT TAXON=11 CHARACTER=104 TEXT='Apical organ has disappeared before musculature is set in place [@Wanninger2002]';
+	TEXT TAXON=11 CHARACTER=104 TEXT='Apical organ has disappeared before musculature is set in place [@Wanninger2002M]';
 	TEXT TAXON=4 CHARACTER=97 TEXT='Metamorphose almost immediately after release from gonozooid [@Zimmer2013]';
 	TEXT TAXON=15 CHARACTER=150 TEXT='Present in dorsal field only [@Zhao2017]';
 	TEXT TAXON=3 CHARACTER=109 TEXT='Coelomoducts absent [@Haszprunar2000]';
@@ -2378,11 +2378,11 @@ BEGIN NOTES;
 	TEXT TAXON=14 CHARACTER=187 TEXT='@Smith2012M';
 	TEXT TAXON=9 CHARACTER=129 TEXT='Present in serpulids [@Bartolomaeus2005]';
 	TEXT TAXON=4 CHARACTER=75 TEXT='"Eggs have a loose consistency and are capable of changing form" [@Franzen2013]';
-	TEXT TAXON=4 CHARACTER=162 TEXT='The nervous system is "wedged in between the mouth and anus" [@Schwaka2015] and thus occupies a ventral position';
+	TEXT TAXON=4 CHARACTER=162 TEXT='The nervous system is "wedged in between the mouth and anus" [@Schwaha2015] and thus occupies a ventral position';
 	TEXT TAXON=2 CHARACTER=178 TEXT='The tentacular crown [@Zhang2013] is interpreted as a lophophore';
-	TEXT TAXON=16 CHARACTER=4 TEXT='Following the reconstruction of @Skovsted2015';
+	TEXT TAXON=16 CHARACTER=4 TEXT='Following the reconstruction of @Skovsted2015Theearly';
 	TEXT TAXON=10 CHARACTER=4 TEXT='The eight valves are interpreted as corresponding to a medial field; the girdle elements to a peripheral field';
-	TEXT TAXON=25 CHARACTER=5 TEXT='@Skovsted2008';
+	TEXT TAXON=25 CHARACTER=5 TEXT='@Skovsted2008Thescleritome';
 	TEXT TAXON=29 CHARACTER=5 TEXT='Coded as ambiguous to recognize the possibility that helens may correspond to L-elements of Paterimitra (Moysiuk et al. 2017)';
 ENDBLOCK;
 BEGIN ASSUMPTIONS;
