@@ -323,7 +323,7 @@ library('Inapp')
 if (knitr::is_html_output()) {
   trees <- unique(allTrees)
 } else {
-  trees <- iw.trees[[3]][2] # Single [] to keep as a list of 1 tree.
+  trees <- iw.trees[[ceiling(length(iw.trees)/2L)]][2] # Single [] to keep as a list of 1 tree.
 }
 tree <- trees[[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
