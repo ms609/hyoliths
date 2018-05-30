@@ -35,6 +35,7 @@ set.seed(0)
 #Sys.setlocale('LC_ALL','C')
 Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 knitr::opts_chunk$set(echo = TRUE)
+devtools::install_github('ms609/TreeSearch')
 library('ape'); library('phangorn'); library('TreeSearch');
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 NexusTime <- function (filename, format='double') {
@@ -52,6 +53,7 @@ filename <- files[which.max(vapply(files, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(filename)
 # my_data contains an inapplicable state that we should convert to ambiguous for 
 # standard fitch, for CI etc.
+my_data$Namacalathus <- NULL ## DELETE 
 iw_data <- PrepareDataIW(my_data)
 fitch_data <- my_data
 cont <- attr(fitch_data, 'contrast')
@@ -66,6 +68,7 @@ setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 kValues <- c(2, 3, 4.5)
 
 outgroup <- 'Namacalathus'
+outgroup <- 'Flustra'
 
 pal <- TreeSearch::brewer[[11]]
 
