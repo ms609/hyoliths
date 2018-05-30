@@ -2,7 +2,7 @@
  <text x="678" y="14.7" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">2</tspan> to tree score</text>
  <text x="678" y="26.4" text-anchor="end" class="stepsLabel"><tspan class="score">0</tspan> additional regions</text>
  <text x="678" y="38.1" text-anchor="end" class="stepsLabel">CI = 0.5; Fitch CI = 0.5; Fitch RI = 0.67</text>
- <text x="678" y="61.5" text-anchor="end" class="stepsLabel"><tspan dy="16">An optimal tree under:</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 3</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 4.5</tspan></text>
+ <text x="678" y="61.5" text-anchor="end" class="stepsLabel"><tspan dy="16">An optimal tree under:</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 3</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 4.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 7</tspan></text>
  <text x="31.5" y="10" fill="#91bfdb" class="flag">[1]</text>
  <text x="53.5" y="10" class="taxonLabel">Dailyatia</text>
  <text x="58" y="22" fill="grey" class="flag">[?]</text>
@@ -102,35 +102,35 @@
  <text x="60" y="271.7" class="node" fill="#ABB4E2">0.7</text>
  <text x="86.5" y="89.2" class="node" fill="#ABB4E2">0.7</text>
  <text x="113" y="144.4" class="node" fill="#ABB4E2">0.7</text>
- <text x="139.5" y="55" class="node" fill="#E28699">0.2</text>
+ <text x="139.5" y="55" class="node" fill="#E2899B">0.21</text>
  <text x="166" y="64" class="node" fill="#CACDE3">0.59</text>
  <text x="139.5" y="233.8" class="node" fill="#7388E1">0.89</text>
  <text x="166" y="110.6" class="node" fill="#4A6FE3">1</text>
  <text x="192.5" y="91" class="node" fill="#5B78E2">0.96</text>
- <text x="219" y="100" class="node" fill="#ABB4E2">0.7</text>
+ <text x="219" y="100" class="node" fill="#AEB6E2">0.69</text>
  <text x="192.5" y="130.2" class="node" fill="#4A6FE3">1</text>
  <text x="219" y="142.4" class="node" fill="#5B78E2">0.96</text>
- <text x="245.5" y="154.8" class="node" fill="#ABB4E2">0.7</text>
- <text x="272" y="167.5" class="node" fill="#ABB4E2">0.7</text>
+ <text x="245.5" y="154.8" class="node" fill="#AEB6E2">0.69</text>
+ <text x="272" y="167.5" class="node" fill="#AEB6E2">0.69</text>
  <text x="298.5" y="181" class="node" fill="#ABB4E2">0.7</text>
  <text x="325" y="196" class="node" fill="#ABB4E2">0.7</text>
  <text x="351.5" y="184" class="node" fill="#ABB4E2">0.7</text>
- <text x="351.5" y="208" class="node" fill="#ABB4E2">0.7</text>
- <text x="166" y="357" class="node" fill="#ABB4E2">0.7</text>
- <text x="192.5" y="309.4" class="node" fill="#ABB4E2">0.7</text>
- <text x="219" y="242.9" class="node" fill="#E6AEB8">0.33</text>
+ <text x="351.5" y="208" class="node" fill="#AEB6E2">0.69</text>
+ <text x="166" y="357" class="node" fill="#AEB6E2">0.69</text>
+ <text x="192.5" y="309.4" class="node" fill="#AEB6E2">0.69</text>
+ <text x="219" y="242.9" class="node" fill="#E6B1BB">0.34</text>
  <text x="245.5" y="259.7" class="node" fill="#DB6581">0.1</text>
  <text x="272" y="281.5" class="node" fill="#4A6FE3">1</text>
  <text x="298.5" y="312.9" class="node" fill="#4A6FE3">1</text>
  <text x="325" y="273.8" class="node" fill="#929FE1">0.79</text>
  <text x="351.5" y="285.6" class="node" fill="#5B78E2">0.96</text>
- <text x="378" y="297.2" class="node" fill="#E6C1C7">0.39</text>
+ <text x="378" y="297.2" class="node" fill="#E6BDC5">0.38</text>
  <text x="404.5" y="308.5" class="node" fill="#D85778">0.06</text>
  <text x="431" y="319" class="node" fill="#4A6FE3">1</text>
- <text x="457.5" y="328" class="node" fill="#E0E0E2">0.51</text>
- <text x="325" y="352" class="node" fill="#E0E0E2">0.51</text>
- <text x="219" y="376" class="node" fill="#E0E0E2">0.51</text>
- <text x="192.5" y="404.5" class="node" fill="#E0E0E2">0.51</text>
+ <text x="457.5" y="328" class="node" fill="#DDDEE3">0.52</text>
+ <text x="325" y="352" class="node" fill="#DDDEE3">0.52</text>
+ <text x="219" y="376" class="node" fill="#DDDEE3">0.52</text>
+ <text x="192.5" y="404.5" class="node" fill="#DDDEE3">0.52</text>
  <text x="219" y="415" class="node" fill="#4A6FE3">1</text>
  <text x="245.5" y="424" class="node" fill="#8F9DE1">0.8</text>
  <text x="86.5" y="454.2" class="node" fill="#4A6FE3">1</text>
