@@ -428,7 +428,7 @@ function updateAllTrees(tree) {
     $.ajax({
        //url: "`r sprintf(fileNamer, '" + tree + "', '" + $(oldTree).data("char") + "')`",
        url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
-            $(oldTree).data("char") + ".svg"
+            $(oldTree).data("char") + ".svg",
       context: item,
       datatype: 'xml'
     }).done(function (newTree) {
@@ -491,7 +491,7 @@ $(document).ready(function() {
   $my.trees.each(function()
     {
       var switcherClone = originalSwitcher.clone();
-      $('.switcherNumber', switcherClone)data("char", $(this).data("char"));
+      $('.switcherNumber', switcherClone).data("char", $(this).data("char"));
       switcherClone.insertBefore($(this));
       return false;
     }
