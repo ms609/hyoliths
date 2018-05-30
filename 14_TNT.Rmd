@@ -18,7 +18,7 @@ Searches were conducted under equal weights and results saved to file:
 >
 > keep 0; hold 10000; <span class="comment">/&#42; Clear trees from memory &#42;/</span>
 
-Further searches were conducted under extended implied weighting [@Goloboff1997;@Goloboff2014], under the concavity constants 2, 3, 4.5, 7, 10.5, 16 and 24:
+Further searches were conducted under extended implied weighting [@Goloboff1997;@Goloboff2014], under the concavity constants `r paste(kValues[-length(kValues)], collapse=', ')` and `r kValues[length(kValues)]`:
 
 > xpiwe=; <span class="comment">/&#42; Enable extended implied weighting &#42;/</span>
 >
