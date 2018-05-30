@@ -423,7 +423,7 @@ function switchTree(input) {
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
     $(".switcherNumber").val(newValue);
-    showTree(newValue, input.char);
+    showTree(newValue, $(input).attr("char"));
   }
 }
 
@@ -462,8 +462,8 @@ $(document).ready(function(){
       switcherClone.insertBefore($(this));
     }
   );
-  
   originalSwitcher.remove()
+  
   // Highlight taxa by clicking on them
   $('text.taxonLabel').click(function () {
     $('text:contains("' + $(this).html() + '")').toggleClass("highlightTaxon");
