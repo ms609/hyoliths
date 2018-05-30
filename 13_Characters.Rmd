@@ -459,7 +459,7 @@ function enableTaxonHighlighting() {
   $my.trees.click(function (e) {
     var target = e.target; // Which node triggered the click
     $target = $(target);
-    if (target.nodeName === 'TEXT') {
+    if (target.nodeName === 'text') {
       taxonText = $(target).text();
       $withSameText = $('#reconstructions svg text:contains("' + taxonText + '")')
       if (localStorage.getItem(taxonText)) {
@@ -472,7 +472,7 @@ function enableTaxonHighlighting() {
     }
     return false;
   })
-  $my.trees('text').each(function () {
+  $('text', $my.trees).each(function () {
     if(localStorage.getItem($(this).text())) {
       $(this).addClass("highlightTaxon");
     }
