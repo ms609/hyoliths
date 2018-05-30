@@ -333,7 +333,7 @@ n_char <- ncol(my_chars)
 char_parts <- strsplit(char_names, ": ")
 char_nesting <- vapply(char_parts, length, 0L)
 char_notes <- ReadNotes(filename)
-taxa_names <- c("Namacalathus", rownames(my_chars))
+taxa_names <- unique(c("Namacalathus", rownames(my_chars)))
 taxa_sort <- taxa_names
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
