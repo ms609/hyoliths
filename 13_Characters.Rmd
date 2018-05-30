@@ -460,9 +460,24 @@ function enableTaxonHighlighting() {
     var target = e.target; // Which node triggered the click
     $target = $(target);
     if (target.nodeName === 'TEXT') {
-      $('text:contains("' + $(this).html() + '")').toggleClass("highlightTaxon");
+      taxonText = $(target).text();
+      $withSameText = $('#reconstructions svg text:contains("' + taxonText + '")')
+      if (localStorage.getItem(taxonText)) {
+        localStorage.removeItem(taxonText)
+        $withSameText.removeClass("highlightTaxon");
+      } else {
+        localStorage.setItem(taxonText, 1)
+        $withSameText.addClass("highlightTaxon");
+      }
     }
+    return false;
   })
+  $my.trees('text').each(function () {
+    if(localStorage.getItem($(this).text())) {
+      $(this).addClass("highlightTaxon");
+    })
+    return false;
+  }
   return false;
 }
 
