@@ -415,7 +415,7 @@ function switchTree(input) {
     newValue = Math.floor(newValue);
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
-    $("switcherNumber").val(newValue);
+    $(".switcherNumber").val(newValue);
     showTree(newValue, input.char);
   }
 }
@@ -451,7 +451,7 @@ $(document).ready(function(){
   $(".tree").each(function()
     {
       var switcherClone = originalSwitcher.clone();
-      switcherClone.attr("char", $(this).attr("char"));
+      $('.switcherNumber', switcherClone).attr("char", $(this).attr("char"));
       switcherClone.insertBefore($(this));
     }
   );
