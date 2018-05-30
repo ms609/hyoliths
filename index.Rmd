@@ -72,7 +72,7 @@ outgroup <- 'Flustra'
 
 pal <- TreeSearch::brewer[[11]]
 
-tipCol <- c(
+taxonColour <- c(
   Namacalathus                    = pal[1],
   Novocrania                      = pal[4],
   Craniops                        = pal[4],
@@ -147,7 +147,7 @@ UnitEdges <- function (tree) {
 }
 ColPlot <- function (tree) {
   setPar()
-  plot(tree, tip.color = tipCol[tree$tip.label], lwd=2)
+  plot(tree, tip.color = taxonColour[tree$tip.label], lwd=2)
 }
 # continuousScale <- rev(colorspace::heat_hcl(101, h=c(300, 75), c.=c(35, 95), l=c(15, 90), power=c(0.8, 1.2))) # Viridis prefered 
 divergingScale <- rev(colorspace::diverge_hcl(101, h=c(260, 0), c=100, l=c(50, 90), power=1.0))
@@ -156,7 +156,7 @@ NodeColour <- function (support) {
 }
 
 ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
-                                          text.col=tipCol[omit])
+                                          text.col=taxonColour[omit])
 ```
 ```{R Morphobank bibliography, echo=FALSE, message=FALSE}
 mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
