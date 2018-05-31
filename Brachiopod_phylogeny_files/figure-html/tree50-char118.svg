@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="682" height="555" class="tree" data-char="118">
- <text x="678" y="14.7" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">2</tspan> to tree score</text>
+ <text x="678" y="14.7" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">1</tspan> to tree score</text>
  <text x="678" y="26.4" text-anchor="end" class="stepsLabel"><tspan class="score">0</tspan> additional regions</text>
- <text x="678" y="38.1" text-anchor="end" class="stepsLabel">CI = 0.5; Fitch CI = 0.5; Fitch RI = 0.5</text>
- <text x="678" y="61.5" text-anchor="end" class="stepsLabel"><tspan dy="16">An optimal tree under:</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 3</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 4.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 7</tspan></text>
- <text x="94.4" y="538" fill="#91bfdb" class="flag">[2]</text>
+ <text x="678" y="38.1" text-anchor="end" class="stepsLabel">CI = 1; Fitch CI = 1; Fitch RI = 1</text>
+ <text x="678" y="61.5" text-anchor="end" class="stepsLabel"><tspan dy="16">An optimal tree under:</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 3</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 4.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 7</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 10.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 16</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 24</tspan></text>
+ <text x="94.4" y="538" fill="#91bfdb" class="flag">[1]</text>
  <text x="116.4" y="538" fill="#111" class="taxonLabel">Sipunculus</text>
- <text x="94.4" y="550" fill="#e2e2a2" class="flag">[1]</text>
+ <text x="94.4" y="550" fill="#91bfdb" class="flag">[1]</text>
  <text x="116.4" y="550" fill="#111" class="taxonLabel">Serpula</text>
  <text x="154.1" y="514" fill="grey" class="flag">[?]</text>
  <text x="176.1" y="514" fill="#111" class="taxonLabel">Dailyatia</text>
  <text x="154.1" y="526" fill="grey" class="flag">[?]</text>
  <text x="176.1" y="526" fill="#111" class="taxonLabel">Halkieria evangelista</text>
- <text x="124.2" y="502" fill="#91bfdb" class="flag">[2]</text>
- <text x="146.2" y="502" fill="#111" class="taxonLabel">Chiton</text>
+ <text x="124.2" y="502" fill="#fc8d59" class="flag">[0]</text>
+ <text x="146.2" y="502" fill="#111" class="taxonLabel">Tonicella</text>
  <text x="124.2" y="478" fill="grey" class="flag">[?]</text>
  <text x="146.2" y="478" fill="#111" class="taxonLabel">Wiwaxia corrugata</text>
- <text x="124.2" y="490" fill="#91bfdb" class="flag">[2]</text>
+ <text x="124.2" y="490" fill="#fc8d59" class="flag">[0]</text>
  <text x="146.2" y="490" fill="#111" class="taxonLabel">Dentalium</text>
  <text x="332.9" y="454" fill="grey" class="flag">[?]</text>
  <text x="354.9" y="454" fill="#111" class="taxonLabel">Coolinia pecten</text>
@@ -39,7 +39,7 @@
  <text x="354.9" y="346" fill="#111" class="taxonLabel">Askepasma toddense</text>
  <text x="332.9" y="358" fill="grey" class="flag">[?]</text>
  <text x="354.9" y="358" fill="#111" class="taxonLabel">Micromitra</text>
- <text x="392.6" y="322" fill="grey" class="flag">[?]</text>
+ <text x="392.6" y="322" fill="#fc8d59" class="flag">[0]</text>
  <text x="414.6" y="322" fill="#111" class="taxonLabel">Novocrania</text>
  <text x="392.6" y="334" fill="grey" class="flag">[?]</text>
  <text x="414.6" y="334" fill="#111" class="taxonLabel">Craniops</text>
@@ -65,7 +65,7 @@
  <text x="414.6" y="202" fill="#111" class="taxonLabel">Botsfordia</text>
  <text x="362.8" y="190" fill="grey" class="flag">[?]</text>
  <text x="384.8" y="190" fill="#111" class="taxonLabel">Lingulellotreta malongensis</text>
- <text x="362.8" y="166" fill="grey" class="flag">[?]</text>
+ <text x="362.8" y="166" fill="#fc8d59" class="flag">[0]</text>
  <text x="384.8" y="166" fill="#111" class="taxonLabel">Lingula</text>
  <text x="362.8" y="178" fill="grey" class="flag">[?]</text>
  <text x="384.8" y="178" fill="#111" class="taxonLabel">Pelagodiscus atlanticus</text>
@@ -89,57 +89,56 @@
  <text x="146.2" y="46" fill="#111" class="taxonLabel">Eccentrotheca</text>
  <text x="124.2" y="58" fill="grey" class="flag">[?]</text>
  <text x="146.2" y="58" fill="#111" class="taxonLabel">Cotyledion tylodes</text>
- <text x="154.1" y="10" fill="#e2e2a2" class="flag">[1]</text>
+ <text x="154.1" y="10" fill="#fc8d59" class="flag">[0]</text>
  <text x="176.1" y="10" fill="#111" class="taxonLabel">Flustra</text>
- <text x="154.1" y="22" fill="#e2e2a2" class="flag">[1]</text>
+ <text x="154.1" y="22" fill="#fc8d59" class="flag">[0]</text>
  <text x="176.1" y="22" fill="#111" class="taxonLabel">Loxosomella</text>
- <text x="124.2" y="34" fill="#e2e2a2" class="flag">[1]</text>
+ <text x="124.2" y="34" fill="#fc8d59" class="flag">[0]</text>
  <text x="146.2" y="34" fill="#111" class="taxonLabel">Phoronis</text>
- <path d="M5,289.7V61.7H34.8M34.8,61.7V35.5H64.6M64.6,35.5V49H94.4M94.4,49V43H124.2M94.4,49V55H124.2M34.8,61.7V88H64.6M64.6,88V67H94.4M64.6,88V108.9H94.4M94.4,108.9V79H124.2M94.4,108.9V138.8H124.2M124.2,138.8V97H154.1M154.1,97V91H183.9M154.1,97V103H183.9M124.2,138.8V180.6H154.1M154.1,180.6V121H183.9M183.9,121V115H213.7M183.9,121V127H213.7M154.1,180.6V240.3H183.9M183.9,240.3V160.3H213.7M213.7,160.3V139H243.5M213.7,160.3V181.6H243.5M243.5,181.6V151H273.3M243.5,181.6V212.1H273.3M273.3,212.1V183.2H303.1M303.1,183.2V169H332.9M332.9,169V163H362.8M332.9,169V175H362.8M303.1,183.2V197.5H332.9M332.9,197.5V187H362.8M332.9,197.5V208H362.8M362.8,208V199H392.6M362.8,208V217H392.6M392.6,217V211H422.4M392.6,217V223H422.4M273.3,212.1V241H303.1M303.1,241V235H332.9M303.1,241V247H332.9M183.9,240.3V320.3H213.7M213.7,320.3V268H243.5M243.5,268V259H273.3M243.5,268V277H273.3M273.3,277V271H303.1M273.3,277V283H303.1M213.7,320.3V372.6H243.5M243.5,372.6V327.2H273.3M273.3,327.2V305.5H303.1M303.1,305.5V295H332.9M303.1,305.5V316H332.9M332.9,316V307H362.8M332.9,316V325H362.8M362.8,325V319H392.6M362.8,325V331H392.6M273.3,327.2V349H303.1M303.1,349V343H332.9M303.1,349V355H332.9M243.5,372.6V417.9H273.3M273.3,417.9V378.8H303.1M303.1,378.8V367H332.9M303.1,378.8V390.6H332.9M332.9,390.6V379H362.8M332.9,390.6V402.2H362.8M362.8,402.2V391H392.6M362.8,402.2V413.5H392.6M392.6,413.5V403H422.4M392.6,413.5V424H422.4M422.4,424V415H452.2M422.4,424V433H452.2M452.2,433V427H482M452.2,433V439H482M273.3,417.9V457H303.1M303.1,457V451H332.9M303.1,457V463H332.9M5,289.7V517.8H34.8M34.8,517.8V541H64.6" stroke="darkgrey"></path>
- <path d="M64.6,35.5V22H94.4M94.4,22V13H124.2M124.2,13V7H154.1M124.2,13V19H154.1M94.4,22V31H124.2M64.6,541V547H94.4" stroke="#e2e2a2"></path>
- <path d="M34.8,517.8V494.5H64.6M64.6,494.5V481H94.4M94.4,481V475H124.2M94.4,481V487H124.2M64.6,494.5V508H94.4M94.4,508V499H124.2M94.4,508V517H124.2M124.2,517V511H154.1M124.2,517V523H154.1M64.6,541V535H94.4" stroke="#91bfdb"></path>
+ <path d="M5,289.7V61.7H34.8M34.8,61.7V35.5H64.6M64.6,35.5V22H94.4M94.4,22V13H124.2M124.2,13V7H154.1M124.2,13V19H154.1M94.4,22V31H124.2M64.6,35.5V49H94.4M94.4,49V43H124.2M94.4,49V55H124.2M34.8,61.7V88H64.6M64.6,88V67H94.4M64.6,88V108.9H94.4M94.4,108.9V79H124.2M94.4,108.9V138.8H124.2M124.2,138.8V97H154.1M154.1,97V91H183.9M154.1,97V103H183.9M124.2,138.8V180.6H154.1M154.1,180.6V121H183.9M183.9,121V115H213.7M183.9,121V127H213.7M154.1,180.6V240.3H183.9M183.9,240.3V160.3H213.7M213.7,160.3V139H243.5M213.7,160.3V181.6H243.5M243.5,181.6V151H273.3M243.5,181.6V212.1H273.3M273.3,212.1V183.2H303.1M303.1,183.2V169H332.9M332.9,169V163H362.8M332.9,169V175H362.8M303.1,183.2V197.5H332.9M332.9,197.5V187H362.8M332.9,197.5V208H362.8M362.8,208V199H392.6M362.8,208V217H392.6M392.6,217V211H422.4M392.6,217V223H422.4M273.3,212.1V241H303.1M303.1,241V235H332.9M303.1,241V247H332.9M183.9,240.3V320.3H213.7M213.7,320.3V268H243.5M243.5,268V259H273.3M243.5,268V277H273.3M273.3,277V271H303.1M273.3,277V283H303.1M213.7,320.3V372.6H243.5M243.5,372.6V327.2H273.3M273.3,327.2V305.5H303.1M303.1,305.5V295H332.9M303.1,305.5V316H332.9M332.9,316V307H362.8M332.9,316V325H362.8M362.8,325V319H392.6M362.8,325V331H392.6M273.3,327.2V349H303.1M303.1,349V343H332.9M303.1,349V355H332.9M243.5,372.6V417.9H273.3M273.3,417.9V378.8H303.1M303.1,378.8V367H332.9M303.1,378.8V390.6H332.9M332.9,390.6V379H362.8M332.9,390.6V402.2H362.8M362.8,402.2V391H392.6M362.8,402.2V413.5H392.6M392.6,413.5V403H422.4M392.6,413.5V424H422.4M422.4,424V415H452.2M422.4,424V433H452.2M452.2,433V427H482M452.2,433V439H482M273.3,417.9V457H303.1M303.1,457V451H332.9M303.1,457V463H332.9M5,289.7V517.8H34.8M34.8,517.8V494.5H64.6M64.6,494.5V481H94.4M94.4,481V475H124.2M94.4,481V487H124.2M64.6,494.5V508H94.4M94.4,508V499H124.2M94.4,508V517H124.2M124.2,517V511H154.1M124.2,517V523H154.1" stroke="#fc8d59"></path>
+ <path d="M34.8,517.8V541H64.6M64.6,541V535H94.4M64.6,541V547H94.4" stroke="#91bfdb"></path>
  <text x="7" y="292.7" class="node" fill="#4A6FE3">1</text>
- <text x="36.8" y="64.7" class="node" fill="#D64F73">0.04</text>
- <text x="66.6" y="38.5" class="node" fill="#D64F73">0.04</text>
- <text x="96.4" y="25" class="node" fill="#E5A5B1">0.3</text>
- <text x="126.2" y="16" class="node" fill="#E5A5B1">0.3</text>
- <text x="96.4" y="52" class="node" fill="#E2899B">0.21</text>
+ <text x="36.8" y="64.7" class="node" fill="#D54C71">0.03</text>
+ <text x="66.6" y="38.5" class="node" fill="#D54C71">0.03</text>
+ <text x="96.4" y="25" class="node" fill="#E17F94">0.18</text>
+ <text x="126.2" y="16" class="node" fill="#E17F94">0.18</text>
+ <text x="96.4" y="52" class="node" fill="#E495A5">0.25</text>
  <text x="66.6" y="91" class="node" fill="#4A6FE3">1</text>
- <text x="96.4" y="111.9" class="node" fill="#D64F73">0.04</text>
- <text x="126.2" y="141.8" class="node" fill="#D64F73">0.04</text>
- <text x="156.1" y="100" class="node" fill="#D64F73">0.04</text>
- <text x="156.1" y="183.6" class="node" fill="#D64F73">0.04</text>
+ <text x="96.4" y="111.9" class="node" fill="#D54C71">0.03</text>
+ <text x="126.2" y="141.8" class="node" fill="#D54C71">0.03</text>
+ <text x="156.1" y="100" class="node" fill="#D54C71">0.03</text>
+ <text x="156.1" y="183.6" class="node" fill="#D54C71">0.03</text>
  <text x="185.9" y="124" class="node" fill="#4A6FE3">1</text>
- <text x="185.9" y="243.3" class="node" fill="#E5A5B1">0.3</text>
- <text x="215.7" y="163.3" class="node" fill="#E5A5B1">0.3</text>
- <text x="245.5" y="184.6" class="node" fill="#E5A5B1">0.3</text>
- <text x="275.3" y="215.1" class="node" fill="#DB6581">0.1</text>
- <text x="305.1" y="186.2" class="node" fill="#E5A5B1">0.3</text>
- <text x="334.9" y="172" class="node" fill="#E5A5B1">0.3</text>
- <text x="334.9" y="200.5" class="node" fill="#E5A8B3">0.31</text>
- <text x="364.8" y="211" class="node" fill="#E5A8B3">0.31</text>
- <text x="394.6" y="220" class="node" fill="#E5A8B3">0.31</text>
+ <text x="185.9" y="243.3" class="node" fill="#E17F94">0.18</text>
+ <text x="215.7" y="163.3" class="node" fill="#E17F94">0.18</text>
+ <text x="245.5" y="184.6" class="node" fill="#E17F94">0.18</text>
+ <text x="275.3" y="215.1" class="node" fill="#D85778">0.06</text>
+ <text x="305.1" y="186.2" class="node" fill="#E17F94">0.18</text>
+ <text x="334.9" y="172" class="node" fill="#E17F94">0.18</text>
+ <text x="334.9" y="200.5" class="node" fill="#E18297">0.19</text>
+ <text x="364.8" y="211" class="node" fill="#E18297">0.19</text>
+ <text x="394.6" y="220" class="node" fill="#E18297">0.19</text>
  <text x="305.1" y="244" class="node" fill="#4A6FE3">1</text>
  <text x="215.7" y="323.3" class="node" fill="#4A6FE3">1</text>
- <text x="245.5" y="271" class="node" fill="#C1C6E3">0.62</text>
- <text x="275.3" y="280" class="node" fill="#627DE1">0.94</text>
- <text x="245.5" y="375.6" class="node" fill="#D64F73">0.04</text>
- <text x="275.3" y="330.2" class="node" fill="#DD6F88">0.13</text>
+ <text x="245.5" y="271" class="node" fill="#9AA6E2">0.76</text>
+ <text x="275.3" y="280" class="node" fill="#5B78E2">0.96</text>
+ <text x="245.5" y="375.6" class="node" fill="#D54C71">0.03</text>
+ <text x="275.3" y="330.2" class="node" fill="#DA5E7D">0.08</text>
  <text x="305.1" y="308.5" class="node" fill="#4A6FE3">1</text>
  <text x="334.9" y="319" class="node" fill="#4A6FE3">1</text>
  <text x="364.8" y="328" class="node" fill="#4A6FE3">1</text>
  <text x="305.1" y="352" class="node" fill="#4A6FE3">1</text>
  <text x="275.3" y="420.9" class="node" fill="#4A6FE3">1</text>
- <text x="305.1" y="381.8" class="node" fill="#DDDEE3">0.52</text>
- <text x="334.9" y="393.6" class="node" fill="#DDDEE3">0.52</text>
- <text x="364.8" y="405.2" class="node" fill="#DDDEE3">0.52</text>
- <text x="394.6" y="416.5" class="node" fill="#DDDEE3">0.52</text>
+ <text x="305.1" y="381.8" class="node" fill="#ABB4E2">0.7</text>
+ <text x="334.9" y="393.6" class="node" fill="#ABB4E2">0.7</text>
+ <text x="364.8" y="405.2" class="node" fill="#ABB4E2">0.7</text>
+ <text x="394.6" y="416.5" class="node" fill="#ABB4E2">0.7</text>
  <text x="424.4" y="427" class="node" fill="#4A6FE3">1</text>
- <text x="454.2" y="436" class="node" fill="#8F9DE1">0.8</text>
+ <text x="454.2" y="436" class="node" fill="#768BE1">0.88</text>
  <text x="305.1" y="460" class="node" fill="#4A6FE3">1</text>
- <text x="36.8" y="520.8" class="node" fill="#D64F73">0.04</text>
- <text x="66.6" y="497.5" class="node" fill="#D64F73">0.04</text>
- <text x="96.4" y="484" class="node" fill="#D64F73">0.04</text>
- <text x="96.4" y="511" class="node" fill="#E5A5B1">0.3</text>
- <text x="126.2" y="520" class="node" fill="#7388E1">0.89</text>
+ <text x="36.8" y="520.8" class="node" fill="#D54C71">0.03</text>
+ <text x="66.6" y="497.5" class="node" fill="#D54C71">0.03</text>
+ <text x="96.4" y="484" class="node" fill="#D54C71">0.03</text>
+ <text x="96.4" y="511" class="node" fill="#E17F94">0.18</text>
+ <text x="126.2" y="520" class="node" fill="#667FE1">0.93</text>
  <text x="66.6" y="544" class="node" fill="#4A6FE3">1</text></svg>

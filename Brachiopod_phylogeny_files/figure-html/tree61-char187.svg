@@ -2,16 +2,16 @@
  <text x="678" y="14.7" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">1</tspan> to tree score</text>
  <text x="678" y="26.4" text-anchor="end" class="stepsLabel"><tspan class="score">0</tspan> additional regions</text>
  <text x="678" y="38.1" text-anchor="end" class="stepsLabel">CI = 1; Fitch CI = 1; Fitch RI = 1</text>
- <text x="678" y="61.5" text-anchor="end" class="stepsLabel"><tspan dy="16">An optimal tree under:</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">IW, k = 3</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">IW, k = 4.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 7</tspan></text>
+ <text x="678" y="61.5" text-anchor="end" class="stepsLabel"><tspan dy="16">An optimal tree under:</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">IW, k = 3</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">IW, k = 4.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 7</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 10.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 16</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 24</tspan></text>
  <text x="213.7" y="538" fill="grey" class="flag">[?]</text>
  <text x="235.7" y="538" fill="#111" class="taxonLabel">Dailyatia</text>
  <text x="213.7" y="550" fill="grey" class="flag">[?]</text>
  <text x="235.7" y="550" fill="#111" class="taxonLabel">Halkieria evangelista</text>
  <text x="183.9" y="526" fill="#91bfdb" class="flag">[1]</text>
- <text x="205.9" y="526" fill="#111" class="taxonLabel">Chiton</text>
+ <text x="205.9" y="526" fill="#111" class="taxonLabel">Tonicella</text>
  <text x="154.1" y="514" fill="grey" class="flag">[?]</text>
  <text x="176.1" y="514" fill="#111" class="taxonLabel">Eccentrotheca</text>
- <text x="124.2" y="502" fill="#91bfdb" class="flag">[1]</text>
+ <text x="124.2" y="502" fill="grey" class="flag">[?]</text>
  <text x="146.2" y="502" fill="#111" class="taxonLabel">Wiwaxia corrugata</text>
  <text x="94.4" y="490" fill="#91bfdb" class="flag">[1]</text>
  <text x="116.4" y="490" fill="#111" class="taxonLabel">Dentalium</text>
@@ -93,52 +93,52 @@
  <text x="176.1" y="22" fill="#111" class="taxonLabel">Loxosomella</text>
  <text x="124.2" y="34" fill="#fc8d59" class="flag">[0]</text>
  <text x="146.2" y="34" fill="#111" class="taxonLabel">Phoronis</text>
- <text x="94.4" y="46" fill="#fc8d59" class="flag">[0]</text>
+ <text x="94.4" y="46" fill="grey" class="flag">[?]</text>
  <text x="116.4" y="46" fill="#111" class="taxonLabel">Cotyledion tylodes</text>
  <path d="M5,296.2V108.6H34.8M34.8,108.6V32.5H64.6M64.6,32.5V22H94.4M94.4,22V13H124.2M124.2,13V7H154.1M124.2,13V19H154.1M94.4,22V31H124.2M64.6,32.5V43H94.4M34.8,108.6V184.8H64.6M64.6,184.8V55H94.4M64.6,184.8V314.6H94.4M94.4,314.6V184.2H124.2M124.2,184.2V67H154.1M124.2,184.2V301.3H154.1M154.1,301.3V181.7H183.9M183.9,181.7V95.8H213.7M213.7,95.8V79H243.5M213.7,95.8V112.6H243.5M243.5,112.6V91H273.3M243.5,112.6V134.1H273.3M273.3,134.1V109H303.1M303.1,109V103H332.9M303.1,109V115H332.9M273.3,134.1V159.2H303.1M303.1,159.2V137.5H332.9M332.9,137.5V127H362.8M332.9,137.5V148H362.8M362.8,148V139H392.6M362.8,148V157H392.6M392.6,157V151H422.4M392.6,157V163H422.4M303.1,159.2V181H332.9M332.9,181V175H362.8M332.9,181V187H362.8M183.9,181.7V267.6H213.7M213.7,267.6V231.2H243.5M243.5,231.2V209.5H273.3M273.3,209.5V199H303.1M273.3,209.5V220H303.1M303.1,220V211H332.9M303.1,220V229H332.9M332.9,229V223H362.8M332.9,229V235H362.8M243.5,231.2V253H273.3M273.3,253V247H303.1M273.3,253V259H303.1M213.7,267.6V304H243.5M243.5,304V280H273.3M273.3,280V271H303.1M273.3,280V289H303.1M303.1,289V283H332.9M303.1,289V295H332.9M243.5,304V327.9H273.3M273.3,327.9V313H303.1M303.1,313V307H332.9M303.1,313V319H332.9M273.3,327.9V342.8H303.1M303.1,342.8V331H332.9M303.1,342.8V354.6H332.9M332.9,354.6V343H362.8M332.9,354.6V366.2H362.8M362.8,366.2V355H392.6M362.8,366.2V377.5H392.6M392.6,377.5V367H422.4M392.6,377.5V388H422.4M422.4,388V379H452.2M422.4,388V397H452.2M452.2,397V391H482M452.2,397V403H482M154.1,301.3V421H183.9M183.9,421V415H213.7M183.9,421V427H213.7M94.4,314.6V445H124.2M124.2,445V439H154.1M124.2,445V451H154.1M5,296.2V483.8H34.8M34.8,483.8V469H64.6M64.6,469V463H94.4M64.6,469V475H94.4" stroke="#fc8d59"></path>
  <path d="M34.8,483.8V498.6H64.6M64.6,498.6V487H94.4M64.6,498.6V510.2H94.4M94.4,510.2V499H124.2M94.4,510.2V521.5H124.2M124.2,521.5V511H154.1M124.2,521.5V532H154.1M154.1,532V523H183.9M154.1,532V541H183.9M183.9,541V535H213.7M183.9,541V547H213.7" stroke="#91bfdb"></path>
  <text x="7" y="299.2" class="node" fill="#4A6FE3">1</text>
- <text x="36.8" y="111.6" class="node" fill="#E495A5">0.25</text>
- <text x="66.6" y="35.5" class="node" fill="#E495A5">0.25</text>
- <text x="96.4" y="25" class="node" fill="#E5A5B1">0.3</text>
- <text x="126.2" y="16" class="node" fill="#E5A5B1">0.3</text>
+ <text x="36.8" y="111.6" class="node" fill="#DF798F">0.16</text>
+ <text x="66.6" y="35.5" class="node" fill="#DF798F">0.16</text>
+ <text x="96.4" y="25" class="node" fill="#E17F94">0.18</text>
+ <text x="126.2" y="16" class="node" fill="#E17F94">0.18</text>
  <text x="66.6" y="187.8" class="node" fill="#4A6FE3">1</text>
- <text x="96.4" y="317.6" class="node" fill="#5B78E2">0.96</text>
- <text x="126.2" y="187.2" class="node" fill="#E49CAA">0.27</text>
- <text x="156.1" y="304.3" class="node" fill="#5B78E2">0.96</text>
- <text x="185.9" y="184.7" class="node" fill="#E5A5B1">0.3</text>
- <text x="215.7" y="98.8" class="node" fill="#E5A5B1">0.3</text>
- <text x="245.5" y="115.6" class="node" fill="#E5A5B1">0.3</text>
- <text x="275.3" y="137.1" class="node" fill="#DB6581">0.1</text>
+ <text x="96.4" y="317.6" class="node" fill="#5776E2">0.97</text>
+ <text x="126.2" y="187.2" class="node" fill="#E07C92">0.17</text>
+ <text x="156.1" y="304.3" class="node" fill="#5776E2">0.97</text>
+ <text x="185.9" y="184.7" class="node" fill="#E17F94">0.18</text>
+ <text x="215.7" y="98.8" class="node" fill="#E17F94">0.18</text>
+ <text x="245.5" y="115.6" class="node" fill="#E17F94">0.18</text>
+ <text x="275.3" y="137.1" class="node" fill="#D85778">0.06</text>
  <text x="305.1" y="112" class="node" fill="#4A6FE3">1</text>
- <text x="305.1" y="162.2" class="node" fill="#E5A5B1">0.3</text>
- <text x="334.9" y="140.5" class="node" fill="#E5A8B3">0.31</text>
- <text x="364.8" y="151" class="node" fill="#E5A8B3">0.31</text>
- <text x="394.6" y="160" class="node" fill="#E5A8B3">0.31</text>
- <text x="334.9" y="184" class="node" fill="#E5A5B1">0.3</text>
+ <text x="305.1" y="162.2" class="node" fill="#E17F94">0.18</text>
+ <text x="334.9" y="140.5" class="node" fill="#E18297">0.19</text>
+ <text x="364.8" y="151" class="node" fill="#E18297">0.19</text>
+ <text x="394.6" y="160" class="node" fill="#E18297">0.19</text>
+ <text x="334.9" y="184" class="node" fill="#E17F94">0.18</text>
  <text x="215.7" y="270.6" class="node" fill="#4A6FE3">1</text>
- <text x="245.5" y="234.2" class="node" fill="#DD6F88">0.13</text>
+ <text x="245.5" y="234.2" class="node" fill="#DA5E7D">0.08</text>
  <text x="275.3" y="212.5" class="node" fill="#4A6FE3">1</text>
  <text x="305.1" y="223" class="node" fill="#4A6FE3">1</text>
  <text x="334.9" y="232" class="node" fill="#4A6FE3">1</text>
  <text x="275.3" y="256" class="node" fill="#4A6FE3">1</text>
- <text x="245.5" y="307" class="node" fill="#5B78E2">0.96</text>
- <text x="275.3" y="283" class="node" fill="#C1C6E3">0.62</text>
- <text x="305.1" y="292" class="node" fill="#627DE1">0.94</text>
+ <text x="245.5" y="307" class="node" fill="#5776E2">0.97</text>
+ <text x="275.3" y="283" class="node" fill="#9AA6E2">0.76</text>
+ <text x="305.1" y="292" class="node" fill="#5B78E2">0.96</text>
  <text x="275.3" y="330.9" class="node" fill="#4A6FE3">1</text>
  <text x="305.1" y="316" class="node" fill="#4A6FE3">1</text>
- <text x="305.1" y="345.8" class="node" fill="#DDDEE3">0.52</text>
- <text x="334.9" y="357.6" class="node" fill="#DDDEE3">0.52</text>
- <text x="364.8" y="369.2" class="node" fill="#DDDEE3">0.52</text>
- <text x="394.6" y="380.5" class="node" fill="#DDDEE3">0.52</text>
+ <text x="305.1" y="345.8" class="node" fill="#ABB4E2">0.7</text>
+ <text x="334.9" y="357.6" class="node" fill="#ABB4E2">0.7</text>
+ <text x="364.8" y="369.2" class="node" fill="#ABB4E2">0.7</text>
+ <text x="394.6" y="380.5" class="node" fill="#ABB4E2">0.7</text>
  <text x="424.4" y="391" class="node" fill="#4A6FE3">1</text>
- <text x="454.2" y="400" class="node" fill="#8F9DE1">0.8</text>
- <text x="185.9" y="424" class="node" fill="#E495A5">0.25</text>
+ <text x="454.2" y="400" class="node" fill="#768BE1">0.88</text>
+ <text x="185.9" y="424" class="node" fill="#DF798F">0.16</text>
  <text x="126.2" y="448" class="node" fill="#4A6FE3">1</text>
- <text x="36.8" y="486.8" class="node" fill="#E495A5">0.25</text>
+ <text x="36.8" y="486.8" class="node" fill="#DF798F">0.16</text>
  <text x="66.6" y="472" class="node" fill="#4A6FE3">1</text>
- <text x="66.6" y="501.6" class="node" fill="#E495A5">0.25</text>
- <text x="96.4" y="513.2" class="node" fill="#E495A5">0.25</text>
- <text x="126.2" y="524.5" class="node" fill="#E495A5">0.25</text>
- <text x="156.1" y="535" class="node" fill="#E5A5B1">0.3</text>
- <text x="185.9" y="544" class="node" fill="#7388E1">0.89</text></svg>
+ <text x="66.6" y="501.6" class="node" fill="#DF798F">0.16</text>
+ <text x="96.4" y="513.2" class="node" fill="#DF798F">0.16</text>
+ <text x="126.2" y="524.5" class="node" fill="#DF798F">0.16</text>
+ <text x="156.1" y="535" class="node" fill="#E17F94">0.18</text>
+ <text x="185.9" y="544" class="node" fill="#667FE1">0.93</text></svg>
