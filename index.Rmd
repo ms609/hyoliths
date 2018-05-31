@@ -79,10 +79,23 @@ RootTree <- function (tree, outgroupTips) {
   Renumber(root(tree, Descendants(tree, lca)[[1]], resolve.root = TRUE))
 }
 
-pal <- TreeSearch::brewer[[11]]
+#pal <- TreeSearch::brewer[[11]]
+pal <- c("#F07894", "#E18758", "#C49800", "#99A700", "#55B23A", "#00B97B", "#00BAAE", "#00B3D7", "#52A2EF", "#AF8BF2", "#DE77DD") # <- colorspace::rainbow_hcl(11, 80, 65, 0, 308)
 
 taxonColour <- c(
   Namacalathus                    = pal[1],
+  Flustra                         = pal[1],
+  Loxosomella                     = pal[1],
+  Serpula                         = pal[1],
+  Sipunculus                      = pal[1],
+  Dentalium                       = pal[1],
+  Tonicella                       = pal[1],
+  Halkieria                       = pal[1],
+  Halkieria_evangelista           = pal[1],
+  Wiwaxia_corrugata               = pal[1],
+  Wiwaxia                         = pal[1],
+  Cotyledion_tylodes              = pal[1],
+  Cotyledion                      = pal[1],
   Novocrania                      = pal[4],
   Craniops                        = pal[4],
   Ussunia                         = pal[4],
