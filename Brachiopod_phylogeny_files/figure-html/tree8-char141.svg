@@ -1,145 +1,145 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="682" height="555" class="tree" data-char="141">
- <text x="678" y="14.7" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">1</tspan> to tree score</text>
- <text x="678" y="26.4" text-anchor="end" class="stepsLabel"><tspan class="score">0</tspan> additional regions</text>
- <text x="678" y="38.1" text-anchor="end" class="stepsLabel">CI = 1; Fitch CI = 1; Fitch RI = 1</text>
- <text x="678" y="61.5" text-anchor="end" class="stepsLabel"><tspan dy="16">An optimal tree under:</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 3</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 4.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 7</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 10.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 16</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 24</tspan></text>
- <text x="76.6" y="538" fill="grey" class="flag">[?]</text>
- <text x="98.6" y="538" fill="#111" class="taxonLabel">Sipunculus</text>
- <text x="76.6" y="550" fill="#e2e2a2" class="flag">[1]</text>
- <text x="98.6" y="550" fill="#111" class="taxonLabel">Serpula</text>
- <text x="100.4" y="514" fill="#e2e2a2" class="flag">[1]</text>
- <text x="122.4" y="514" fill="#111" class="taxonLabel">Tonicella</text>
- <text x="100.4" y="526" fill="grey" class="flag">[?]</text>
- <text x="122.4" y="526" fill="#111" class="taxonLabel">Wiwaxia corrugata</text>
- <text x="76.6" y="502" fill="#e2e2a2" class="flag">[1]</text>
- <text x="98.6" y="502" fill="#111" class="taxonLabel">Dentalium</text>
- <text x="148.1" y="442" fill="grey" class="flag">[?]</text>
- <text x="170.1" y="442" fill="#111" class="taxonLabel">Eccentrotheca</text>
- <text x="148.1" y="454" fill="grey" class="flag">[?]</text>
- <text x="170.1" y="454" fill="#111" class="taxonLabel">Cotyledion tylodes</text>
- <text x="434.3" y="418" fill="grey" class="flag">[?]</text>
- <text x="456.3" y="418" fill="#111" class="taxonLabel">Siphonobolus priscus</text>
- <text x="434.3" y="430" fill="grey" class="flag">[?]</text>
- <text x="456.3" y="430" fill="#111" class="taxonLabel">Acanthotretella spinosa</text>
- <text x="410.5" y="406" fill="grey" class="flag">[?]</text>
- <text x="432.5" y="406" fill="#111" class="taxonLabel">Clupeafumosus socialis</text>
- <text x="386.6" y="394" fill="grey" class="flag">[?]</text>
- <text x="408.6" y="394" fill="#111" class="taxonLabel">Lingulellotreta malongensis</text>
- <text x="362.8" y="382" fill="grey" class="flag">[?]</text>
- <text x="384.8" y="382" fill="#111" class="taxonLabel">Lingulosacculus</text>
- <text x="338.9" y="370" fill="grey" class="flag">[?]</text>
- <text x="360.9" y="370" fill="#111" class="taxonLabel">Botsfordia</text>
- <text x="315.1" y="358" fill="grey" class="flag">[?]</text>
- <text x="337.1" y="358" fill="#111" class="taxonLabel">Mummpikia nuda</text>
- <text x="291.2" y="346" fill="grey" class="flag">[?]</text>
- <text x="313.2" y="346" fill="#111" class="taxonLabel">Eoobolus</text>
- <text x="267.4" y="334" fill="#91bfdb" class="flag">[2]</text>
- <text x="289.4" y="334" fill="#111" class="taxonLabel">Lingula</text>
- <text x="291.2" y="310" fill="grey" class="flag">[?]</text>
- <text x="313.2" y="310" fill="#111" class="taxonLabel">Mickwitzia muralensis</text>
- <text x="291.2" y="322" fill="grey" class="flag">[?]</text>
- <text x="313.2" y="322" fill="#111" class="taxonLabel">Pelagodiscus atlanticus</text>
- <text x="267.4" y="298" fill="grey" class="flag">[?]</text>
- <text x="289.4" y="298" fill="#111" class="taxonLabel">Micrina</text>
- <text x="315.1" y="274" fill="#91bfdb" class="flag">[2]</text>
- <text x="337.1" y="274" fill="#111" class="taxonLabel">Novocrania</text>
- <text x="315.1" y="286" fill="grey" class="flag">[?]</text>
- <text x="337.1" y="286" fill="#111" class="taxonLabel">Craniops</text>
- <text x="291.2" y="262" fill="grey" class="flag">[?]</text>
- <text x="313.2" y="262" fill="#111" class="taxonLabel">Ussunia</text>
- <text x="267.4" y="250" fill="grey" class="flag">[?]</text>
- <text x="289.4" y="250" fill="#111" class="taxonLabel">Gasconsia</text>
- <text x="291.2" y="226" fill="grey" class="flag">[?]</text>
- <text x="313.2" y="226" fill="#111" class="taxonLabel">Askepasma toddense</text>
- <text x="291.2" y="238" fill="grey" class="flag">[?]</text>
- <text x="313.2" y="238" fill="#111" class="taxonLabel">Micromitra</text>
- <text x="386.6" y="202" fill="grey" class="flag">[?]</text>
- <text x="408.6" y="202" fill="#111" class="taxonLabel">Coolinia pecten</text>
- <text x="386.6" y="214" fill="grey" class="flag">[?]</text>
- <text x="408.6" y="214" fill="#111" class="taxonLabel">Antigonambonites planus</text>
- <text x="482" y="178" fill="grey" class="flag">[?]</text>
- <text x="504" y="178" fill="#111" class="taxonLabel">Alisina</text>
- <text x="482" y="190" fill="grey" class="flag">[?]</text>
- <text x="504" y="190" fill="#111" class="taxonLabel">Terebratulina</text>
- <text x="458.2" y="166" fill="grey" class="flag">[?]</text>
- <text x="480.2" y="166" fill="#111" class="taxonLabel">Orthis</text>
- <text x="434.3" y="154" fill="grey" class="flag">[?]</text>
- <text x="456.3" y="154" fill="#111" class="taxonLabel">Glyptoria</text>
- <text x="410.5" y="142" fill="grey" class="flag">[?]</text>
- <text x="432.5" y="142" fill="#111" class="taxonLabel">Nisusia sulcata</text>
- <text x="386.6" y="130" fill="grey" class="flag">[?]</text>
- <text x="408.6" y="130" fill="#111" class="taxonLabel">Kutorgina chengjiangensis</text>
- <text x="338.9" y="118" fill="grey" class="flag">[?]</text>
- <text x="360.9" y="118" fill="#111" class="taxonLabel">Longtancunella chengjiangensis</text>
- <text x="338.9" y="94" fill="grey" class="flag">[?]</text>
- <text x="360.9" y="94" fill="#111" class="taxonLabel">Yuganotheca elegans</text>
- <text x="338.9" y="106" fill="grey" class="flag">[?]</text>
- <text x="360.9" y="106" fill="#111" class="taxonLabel">Tomteluva perturbata</text>
- <text x="291.2" y="82" fill="grey" class="flag">[?]</text>
- <text x="313.2" y="82" fill="#111" class="taxonLabel">Salanygolina</text>
- <text x="243.5" y="58" fill="grey" class="flag">[?]</text>
- <text x="265.5" y="58" fill="#111" class="taxonLabel">Pedunculotheca diania</text>
- <text x="243.5" y="70" fill="grey" class="flag">[?]</text>
- <text x="265.5" y="70" fill="#111" class="taxonLabel">Haplophrentis carinatus</text>
- <text x="219.7" y="46" fill="grey" class="flag">[?]</text>
- <text x="241.7" y="46" fill="#111" class="taxonLabel">Paterimitra</text>
- <text x="172" y="34" fill="grey" class="flag">[?]</text>
- <text x="194" y="34" fill="#111" class="taxonLabel">Heliomedusa orienta</text>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="682" height="612" class="tree" data-char="141">
+ <text x="678" y="16" text-anchor="end" class="stepsLabel">Character adds <tspan class="score">1</tspan> to tree score</text>
+ <text x="678" y="29" text-anchor="end" class="stepsLabel"><tspan class="score">0</tspan> additional regions</text>
+ <text x="678" y="42" text-anchor="end" class="stepsLabel">CI = 1; Fitch CI = 1; Fitch RI = 1</text>
+ <text x="678" y="68" text-anchor="end" class="stepsLabel"><tspan dy="16">An optimal tree under:</tspan><tspan x="680" style="font-style:italic" class="thisAn" dy="1.2em">Equal weights</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">Implied weights, k = 2</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 3</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 4.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 7</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 10.5</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 16</tspan><tspan x="680" style="font-style:italic" class="notThisAn" dy="1.2em">IW, k = 24</tspan></text>
+ <text x="76.6" y="593.7" fill="grey" class="flag">[?]</text>
+ <text x="98.6" y="593.7" fill="grey" class="taxonLabel">Sipunculus</text>
+ <text x="76.6" y="607" fill="#e2e2a2" class="flag">[1]</text>
+ <text x="98.6" y="607" fill="#111" class="taxonLabel">Serpula</text>
+ <text x="100.4" y="567.2" fill="#e2e2a2" class="flag">[1]</text>
+ <text x="122.4" y="567.2" fill="#111" class="taxonLabel">Tonicella</text>
+ <text x="100.4" y="580.5" fill="grey" class="flag">[?]</text>
+ <text x="122.4" y="580.5" fill="grey" class="taxonLabel">Wiwaxia corrugata</text>
+ <text x="76.6" y="553.9" fill="#e2e2a2" class="flag">[1]</text>
+ <text x="98.6" y="553.9" fill="#111" class="taxonLabel">Dentalium</text>
+ <text x="148.1" y="487.6" fill="grey" class="flag">[?]</text>
+ <text x="170.1" y="487.6" fill="grey" class="taxonLabel">Eccentrotheca</text>
+ <text x="148.1" y="500.9" fill="grey" class="flag">[?]</text>
+ <text x="170.1" y="500.9" fill="grey" class="taxonLabel">Cotyledion tylodes</text>
+ <text x="434.3" y="461.1" fill="grey" class="flag">[?]</text>
+ <text x="456.3" y="461.1" fill="grey" class="taxonLabel">Siphonobolus priscus</text>
+ <text x="434.3" y="474.3" fill="grey" class="flag">[?]</text>
+ <text x="456.3" y="474.3" fill="grey" class="taxonLabel">Acanthotretella spinosa</text>
+ <text x="410.5" y="447.8" fill="grey" class="flag">[?]</text>
+ <text x="432.5" y="447.8" fill="grey" class="taxonLabel">Clupeafumosus socialis</text>
+ <text x="386.6" y="434.5" fill="grey" class="flag">[?]</text>
+ <text x="408.6" y="434.5" fill="grey" class="taxonLabel">Lingulellotreta malongensis</text>
+ <text x="362.8" y="421.3" fill="grey" class="flag">[?]</text>
+ <text x="384.8" y="421.3" fill="grey" class="taxonLabel">Lingulosacculus</text>
+ <text x="338.9" y="408" fill="grey" class="flag">[?]</text>
+ <text x="360.9" y="408" fill="grey" class="taxonLabel">Botsfordia</text>
+ <text x="315.1" y="394.7" fill="grey" class="flag">[?]</text>
+ <text x="337.1" y="394.7" fill="grey" class="taxonLabel">Mummpikia nuda</text>
+ <text x="291.2" y="381.5" fill="grey" class="flag">[?]</text>
+ <text x="313.2" y="381.5" fill="grey" class="taxonLabel">Eoobolus</text>
+ <text x="267.4" y="368.2" fill="#91bfdb" class="flag">[2]</text>
+ <text x="289.4" y="368.2" fill="#111" class="taxonLabel">Lingula</text>
+ <text x="291.2" y="341.7" fill="grey" class="flag">[?]</text>
+ <text x="313.2" y="341.7" fill="grey" class="taxonLabel">Mickwitzia muralensis</text>
+ <text x="291.2" y="354.9" fill="grey" class="flag">[?]</text>
+ <text x="313.2" y="354.9" fill="grey" class="taxonLabel">Pelagodiscus atlanticus</text>
+ <text x="267.4" y="328.4" fill="grey" class="flag">[?]</text>
+ <text x="289.4" y="328.4" fill="grey" class="taxonLabel">Micrina</text>
+ <text x="315.1" y="301.9" fill="#91bfdb" class="flag">[2]</text>
+ <text x="337.1" y="301.9" fill="#111" class="taxonLabel">Novocrania</text>
+ <text x="315.1" y="315.1" fill="grey" class="flag">[?]</text>
+ <text x="337.1" y="315.1" fill="grey" class="taxonLabel">Craniops</text>
+ <text x="291.2" y="288.6" fill="grey" class="flag">[?]</text>
+ <text x="313.2" y="288.6" fill="grey" class="taxonLabel">Ussunia</text>
+ <text x="267.4" y="275.3" fill="grey" class="flag">[?]</text>
+ <text x="289.4" y="275.3" fill="grey" class="taxonLabel">Gasconsia</text>
+ <text x="291.2" y="248.8" fill="grey" class="flag">[?]</text>
+ <text x="313.2" y="248.8" fill="grey" class="taxonLabel">Askepasma toddense</text>
+ <text x="291.2" y="262.1" fill="grey" class="flag">[?]</text>
+ <text x="313.2" y="262.1" fill="grey" class="taxonLabel">Micromitra</text>
+ <text x="386.6" y="222.3" fill="grey" class="flag">[?]</text>
+ <text x="408.6" y="222.3" fill="grey" class="taxonLabel">Coolinia pecten</text>
+ <text x="386.6" y="235.5" fill="grey" class="flag">[?]</text>
+ <text x="408.6" y="235.5" fill="grey" class="taxonLabel">Antigonambonites planus</text>
+ <text x="482" y="195.7" fill="grey" class="flag">[?]</text>
+ <text x="504" y="195.7" fill="grey" class="taxonLabel">Alisina</text>
+ <text x="482" y="209" fill="grey" class="flag">[?]</text>
+ <text x="504" y="209" fill="grey" class="taxonLabel">Terebratulina</text>
+ <text x="458.2" y="182.5" fill="grey" class="flag">[?]</text>
+ <text x="480.2" y="182.5" fill="grey" class="taxonLabel">Orthis</text>
+ <text x="434.3" y="169.2" fill="grey" class="flag">[?]</text>
+ <text x="456.3" y="169.2" fill="grey" class="taxonLabel">Glyptoria</text>
+ <text x="410.5" y="155.9" fill="grey" class="flag">[?]</text>
+ <text x="432.5" y="155.9" fill="grey" class="taxonLabel">Nisusia sulcata</text>
+ <text x="386.6" y="142.7" fill="grey" class="flag">[?]</text>
+ <text x="408.6" y="142.7" fill="grey" class="taxonLabel">Kutorgina chengjiangensis</text>
+ <text x="338.9" y="129.4" fill="grey" class="flag">[?]</text>
+ <text x="360.9" y="129.4" fill="grey" class="taxonLabel">Longtancunella chengjiangensis</text>
+ <text x="338.9" y="102.9" fill="grey" class="flag">[?]</text>
+ <text x="360.9" y="102.9" fill="grey" class="taxonLabel">Yuganotheca elegans</text>
+ <text x="338.9" y="116.1" fill="grey" class="flag">[?]</text>
+ <text x="360.9" y="116.1" fill="grey" class="taxonLabel">Tomteluva perturbata</text>
+ <text x="291.2" y="89.6" fill="grey" class="flag">[?]</text>
+ <text x="313.2" y="89.6" fill="grey" class="taxonLabel">Salanygolina</text>
+ <text x="243.5" y="63.1" fill="grey" class="flag">[?]</text>
+ <text x="265.5" y="63.1" fill="grey" class="taxonLabel">Pedunculotheca diania</text>
+ <text x="243.5" y="76.3" fill="grey" class="flag">[?]</text>
+ <text x="265.5" y="76.3" fill="grey" class="taxonLabel">Haplophrentis carinatus</text>
+ <text x="219.7" y="49.8" fill="grey" class="flag">[?]</text>
+ <text x="241.7" y="49.8" fill="grey" class="taxonLabel">Paterimitra</text>
+ <text x="172" y="36.5" fill="grey" class="flag">[?]</text>
+ <text x="194" y="36.5" fill="grey" class="taxonLabel">Heliomedusa orienta</text>
  <text x="172" y="10" fill="grey" class="flag">[?]</text>
- <text x="194" y="10" fill="#111" class="taxonLabel">Dailyatia</text>
- <text x="172" y="22" fill="grey" class="flag">[?]</text>
- <text x="194" y="22" fill="#111" class="taxonLabel">Halkieria evangelista</text>
- <text x="100.4" y="466" fill="grey" class="flag">[?]</text>
- <text x="122.4" y="466" fill="#111" class="taxonLabel">Phoronis</text>
- <text x="76.6" y="478" fill="grey" class="flag">[?]</text>
- <text x="98.6" y="478" fill="#111" class="taxonLabel">Flustra</text>
- <text x="52.7" y="490" fill="#e2e2a2" class="flag">[1]</text>
- <text x="74.7" y="490" fill="#111" class="taxonLabel">Loxosomella</text>
- <path d="M5,487.9V451.3H28.9M28.9,451.3V415.6H52.7M28.9,451.3V487H52.7M5,487.9V524.5H28.9M28.9,524.5V508H52.7M52.7,508V499H76.6M52.7,508V517H76.6M76.6,517V511H100.4M76.6,517V523H100.4M28.9,524.5V541H52.7M52.7,541V535H76.6M52.7,541V547H76.6" stroke="#e2e2a2"></path>
- <path d="M52.7,415.6V356.3H76.6M76.6,356.3V249.6H100.4M100.4,249.6V54.1H124.2M124.2,54.1V13H148.1M148.1,13V7H172M148.1,13V19H172M124.2,54.1V95.3H148.1M148.1,95.3V31H172M148.1,95.3V159.6H172M172,159.6V52H195.8M195.8,52V43H219.7M195.8,52V61H219.7M219.7,61V55H243.5M219.7,61V67H243.5M100.4,249.6V445H124.2M124.2,445V439H148.1M124.2,445V451H148.1M76.6,356.3V463H100.4M52.7,415.6V475H76.6" stroke="darkgrey"></path>
- <path d="M172,159.6V267.2H195.8M195.8,267.2V210.9H219.7M219.7,210.9V164.3H243.5M243.5,164.3V99.6H267.4M267.4,99.6V79H291.2M267.4,99.6V120.2H291.2M291.2,120.2V97H315.1M315.1,97V91H338.9M315.1,97V103H338.9M291.2,120.2V143.4H315.1M315.1,143.4V115H338.9M315.1,143.4V171.8H338.9M338.9,171.8V138.6H362.8M362.8,138.6V127H386.6M362.8,138.6V150.2H386.6M386.6,150.2V139H410.5M386.6,150.2V161.5H410.5M410.5,161.5V151H434.3M410.5,161.5V172H434.3M434.3,172V163H458.2M434.3,172V181H458.2M458.2,181V175H482M458.2,181V187H482M338.9,171.8V205H362.8M362.8,205V199H386.6M362.8,205V211H386.6M243.5,164.3V229H267.4M267.4,229V223H291.2M267.4,229V235H291.2M219.7,210.9V257.5H243.5M243.5,257.5V247H267.4M243.5,257.5V268H267.4M267.4,268V259H291.2M267.4,268V277H291.2M291.2,277V271H315.1M291.2,277V283H315.1M195.8,267.2V323.5H219.7M219.7,323.5V304H243.5M243.5,304V295H267.4M243.5,304V313H267.4M267.4,313V307H291.2M267.4,313V319H291.2M219.7,323.5V343H243.5M243.5,343V331H267.4M243.5,343V354.9H267.4M267.4,354.9V343H291.2M267.4,354.9V366.8H291.2M291.2,366.8V355H315.1M291.2,366.8V378.6H315.1M315.1,378.6V367H338.9M315.1,378.6V390.2H338.9M338.9,390.2V379H362.8M338.9,390.2V401.5H362.8M362.8,401.5V391H386.6M362.8,401.5V412H386.6M386.6,412V403H410.5M386.6,412V421H410.5M410.5,421V415H434.3M410.5,421V427H434.3" stroke="#91bfdb"></path>
- <text x="7" y="490.9" class="node" fill="#4A6FE3">1</text>
- <text x="30.9" y="454.3" class="node" fill="#8998E1">0.82</text>
- <text x="54.7" y="418.6" class="node" fill="#8998E1">0.82</text>
- <text x="78.6" y="359.3" class="node" fill="#8998E1">0.82</text>
- <text x="102.4" y="252.6" class="node" fill="#8998E1">0.82</text>
- <text x="126.2" y="57.1" class="node" fill="#9DA8E2">0.75</text>
- <text x="150.1" y="16" class="node" fill="#667FE1">0.93</text>
- <text x="150.1" y="98.3" class="node" fill="#4A6FE3">1</text>
- <text x="174" y="162.6" class="node" fill="#5776E2">0.97</text>
- <text x="197.8" y="55" class="node" fill="#8C9BE1">0.81</text>
- <text x="221.7" y="64" class="node" fill="#4A6FE3">1</text>
- <text x="197.8" y="270.2" class="node" fill="#5776E2">0.97</text>
- <text x="221.7" y="213.9" class="node" fill="#4A6FE3">1</text>
- <text x="245.5" y="167.3" class="node" fill="#7A8DE1">0.87</text>
- <text x="269.4" y="102.6" class="node" fill="#5776E2">0.97</text>
- <text x="293.2" y="123.2" class="node" fill="#E392A2">0.24</text>
- <text x="317.1" y="100" class="node" fill="#5B78E2">0.96</text>
- <text x="317.1" y="146.4" class="node" fill="#4A6FE3">1</text>
- <text x="340.9" y="174.8" class="node" fill="#E5A5B1">0.3</text>
- <text x="364.8" y="141.6" class="node" fill="#E5A5B1">0.3</text>
- <text x="388.6" y="153.2" class="node" fill="#E5A5B1">0.3</text>
- <text x="412.5" y="164.5" class="node" fill="#E5A5B1">0.3</text>
- <text x="436.3" y="175" class="node" fill="#4A6FE3">1</text>
- <text x="460.2" y="184" class="node" fill="#DD6C86">0.12</text>
- <text x="364.8" y="208" class="node" fill="#4A6FE3">1</text>
- <text x="269.4" y="232" class="node" fill="#4A6FE3">1</text>
- <text x="245.5" y="260.5" class="node" fill="#4A6FE3">1</text>
- <text x="269.4" y="271" class="node" fill="#4A6FE3">1</text>
- <text x="293.2" y="280" class="node" fill="#4A6FE3">1</text>
- <text x="221.7" y="326.5" class="node" fill="#8C9BE1">0.81</text>
- <text x="245.5" y="307" class="node" fill="#8C9BE1">0.81</text>
- <text x="269.4" y="316" class="node" fill="#8998E1">0.82</text>
- <text x="245.5" y="346" class="node" fill="#8998E1">0.82</text>
- <text x="269.4" y="357.9" class="node" fill="#8998E1">0.82</text>
- <text x="293.2" y="369.8" class="node" fill="#8C9BE1">0.81</text>
- <text x="317.1" y="381.6" class="node" fill="#8C9BE1">0.81</text>
- <text x="340.9" y="393.2" class="node" fill="#8C9BE1">0.81</text>
- <text x="364.8" y="404.5" class="node" fill="#E28699">0.2</text>
- <text x="388.6" y="415" class="node" fill="#D5D7E3">0.55</text>
- <text x="412.5" y="424" class="node" fill="#4A6FE3">1</text>
- <text x="126.2" y="448" class="node" fill="#E495A5">0.25</text>
- <text x="30.9" y="527.5" class="node" fill="#8998E1">0.82</text>
- <text x="54.7" y="511" class="node" fill="#8998E1">0.82</text>
- <text x="78.6" y="520" class="node" fill="#8998E1">0.82</text>
- <text x="54.7" y="544" class="node" fill="#4A6FE3">1</text></svg>
+ <text x="194" y="10" fill="grey" class="taxonLabel">Dailyatia</text>
+ <text x="172" y="23.3" fill="grey" class="flag">[?]</text>
+ <text x="194" y="23.3" fill="grey" class="taxonLabel">Halkieria evangelista</text>
+ <text x="100.4" y="514.1" fill="grey" class="flag">[?]</text>
+ <text x="122.4" y="514.1" fill="grey" class="taxonLabel">Phoronis</text>
+ <text x="76.6" y="527.4" fill="grey" class="flag">[?]</text>
+ <text x="98.6" y="527.4" fill="grey" class="taxonLabel">Flustra</text>
+ <text x="52.7" y="540.7" fill="#e2e2a2" class="flag">[1]</text>
+ <text x="74.7" y="540.7" fill="#111" class="taxonLabel">Loxosomella</text>
+ <path d="M5,538.7V498.2H28.9M28.9,498.2V458.8H52.7M28.9,498.2V537.7H52.7M5,538.7V579.1H28.9M28.9,579.1V560.9H52.7M52.7,560.9V550.9H76.6M52.7,560.9V570.8H76.6M76.6,570.8V564.2H100.4M76.6,570.8V577.5H100.4M28.9,579.1V597.4H52.7M52.7,597.4V590.7H76.6M52.7,597.4V604H76.6" stroke="#e2e2a2"></path>
+ <path d="M52.7,458.8V393.2H76.6M76.6,393.2V275.2H100.4M100.4,275.2V59.1H124.2M124.2,59.1V13.6H148.1M148.1,13.6V7H172M148.1,13.6V20.3H172M124.2,59.1V104.6H148.1M148.1,104.6V33.5H172M148.1,104.6V175.7H172M172,175.7V56.8H195.8M195.8,56.8V46.8H219.7M195.8,56.8V66.7H219.7M219.7,66.7V60.1H243.5M219.7,66.7V73.3H243.5M100.4,275.2V491.2H124.2M124.2,491.2V484.6H148.1M124.2,491.2V497.9H148.1M76.6,393.2V511.1H100.4M52.7,458.8V524.4H76.6" stroke="darkgrey"></path>
+ <path d="M172,175.7V294.7H195.8M195.8,294.7V232.4H219.7M219.7,232.4V180.9H243.5M243.5,180.9V109.4H267.4M267.4,109.4V86.6H291.2M267.4,109.4V132.2H291.2M291.2,132.2V106.5H315.1M315.1,106.5V99.9H338.9M315.1,106.5V113.1H338.9M291.2,132.2V157.8H315.1M315.1,157.8V126.4H338.9M315.1,157.8V189.2H338.9M338.9,189.2V152.5H362.8M362.8,152.5V139.7H386.6M362.8,152.5V165.4H386.6M386.6,165.4V152.9H410.5M386.6,165.4V177.8H410.5M410.5,177.8V166.2H434.3M410.5,177.8V189.4H434.3M434.3,189.4V179.5H458.2M434.3,189.4V199.4H458.2M458.2,199.4V192.7H482M458.2,199.4V206H482M338.9,189.2V225.9H362.8M362.8,225.9V219.3H386.6M362.8,225.9V232.5H386.6M243.5,180.9V252.4H267.4M267.4,252.4V245.8H291.2M267.4,252.4V259.1H291.2M219.7,232.4V283.9H243.5M243.5,283.9V272.3H267.4M243.5,283.9V295.6H267.4M267.4,295.6V285.6H291.2M267.4,295.6V305.5H291.2M291.2,305.5V298.9H315.1M291.2,305.5V312.1H315.1M195.8,294.7V356.9H219.7M219.7,356.9V335.4H243.5M243.5,335.4V325.4H267.4M243.5,335.4V345.3H267.4M267.4,345.3V338.7H291.2M267.4,345.3V351.9H291.2M219.7,356.9V378.4H243.5M243.5,378.4V365.2H267.4M243.5,378.4V391.6H267.4M267.4,391.6V378.5H291.2M267.4,391.6V404.8H291.2M291.2,404.8V391.7H315.1M291.2,404.8V417.9H315.1M315.1,417.9V405H338.9M315.1,417.9V430.7H338.9M338.9,430.7V418.3H362.8M338.9,430.7V443.1H362.8M362.8,443.1V431.5H386.6M362.8,443.1V454.8H386.6M386.6,454.8V444.8H410.5M386.6,454.8V464.7H410.5M410.5,464.7V458.1H434.3M410.5,464.7V471.3H434.3" stroke="#91bfdb"></path>
+ <text x="7" y="541.7" class="node" fill="#4A6FE3">1</text>
+ <text x="30.9" y="501.2" class="node" fill="#8998E1">0.82</text>
+ <text x="54.7" y="461.8" class="node" fill="#8998E1">0.82</text>
+ <text x="78.6" y="396.2" class="node" fill="#8998E1">0.82</text>
+ <text x="102.4" y="278.2" class="node" fill="#8998E1">0.82</text>
+ <text x="126.2" y="62.1" class="node" fill="#9DA8E2">0.75</text>
+ <text x="150.1" y="16.6" class="node" fill="#667FE1">0.93</text>
+ <text x="150.1" y="107.6" class="node" fill="#4A6FE3">1</text>
+ <text x="174" y="178.7" class="node" fill="#5776E2">0.97</text>
+ <text x="197.8" y="59.8" class="node" fill="#8C9BE1">0.81</text>
+ <text x="221.7" y="69.7" class="node" fill="#4A6FE3">1</text>
+ <text x="197.8" y="297.7" class="node" fill="#5776E2">0.97</text>
+ <text x="221.7" y="235.4" class="node" fill="#4A6FE3">1</text>
+ <text x="245.5" y="183.9" class="node" fill="#7A8DE1">0.87</text>
+ <text x="269.4" y="112.4" class="node" fill="#5776E2">0.97</text>
+ <text x="293.2" y="135.2" class="node" fill="#E392A2">0.24</text>
+ <text x="317.1" y="109.5" class="node" fill="#5B78E2">0.96</text>
+ <text x="317.1" y="160.8" class="node" fill="#4A6FE3">1</text>
+ <text x="340.9" y="192.2" class="node" fill="#E5A5B1">0.3</text>
+ <text x="364.8" y="155.5" class="node" fill="#E5A5B1">0.3</text>
+ <text x="388.6" y="168.4" class="node" fill="#E5A5B1">0.3</text>
+ <text x="412.5" y="180.8" class="node" fill="#E5A5B1">0.3</text>
+ <text x="436.3" y="192.4" class="node" fill="#4A6FE3">1</text>
+ <text x="460.2" y="202.4" class="node" fill="#DD6C86">0.12</text>
+ <text x="364.8" y="228.9" class="node" fill="#4A6FE3">1</text>
+ <text x="269.4" y="255.4" class="node" fill="#4A6FE3">1</text>
+ <text x="245.5" y="286.9" class="node" fill="#4A6FE3">1</text>
+ <text x="269.4" y="298.6" class="node" fill="#4A6FE3">1</text>
+ <text x="293.2" y="308.5" class="node" fill="#4A6FE3">1</text>
+ <text x="221.7" y="359.9" class="node" fill="#8C9BE1">0.81</text>
+ <text x="245.5" y="338.4" class="node" fill="#8C9BE1">0.81</text>
+ <text x="269.4" y="348.3" class="node" fill="#8998E1">0.82</text>
+ <text x="245.5" y="381.4" class="node" fill="#8998E1">0.82</text>
+ <text x="269.4" y="394.6" class="node" fill="#8998E1">0.82</text>
+ <text x="293.2" y="407.8" class="node" fill="#8C9BE1">0.81</text>
+ <text x="317.1" y="420.9" class="node" fill="#8C9BE1">0.81</text>
+ <text x="340.9" y="433.7" class="node" fill="#8C9BE1">0.81</text>
+ <text x="364.8" y="446.1" class="node" fill="#E28699">0.2</text>
+ <text x="388.6" y="457.8" class="node" fill="#D5D7E3">0.55</text>
+ <text x="412.5" y="467.7" class="node" fill="#4A6FE3">1</text>
+ <text x="126.2" y="494.2" class="node" fill="#E495A5">0.25</text>
+ <text x="30.9" y="582.1" class="node" fill="#8998E1">0.82</text>
+ <text x="54.7" y="563.9" class="node" fill="#8998E1">0.82</text>
+ <text x="78.6" y="573.8" class="node" fill="#8998E1">0.82</text>
+ <text x="54.7" y="600.4" class="node" fill="#4A6FE3">1</text></svg>
