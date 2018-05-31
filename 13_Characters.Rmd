@@ -623,7 +623,7 @@ for (i in seq_len(n_char)) {
       LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
       edges <- paste0(vapply(unique(edgeCol), function(colour) {
         theseEdges <- edgeCol == colour
-        paste0('\n <path d="', paste0(
+        paste0('<path d="', paste0(
                'M', nodeXi[parent[treeNo, theseEdges]],
                ',', nodeYi[parent[treeNo, theseEdges]],
                'V', nodeYi[child[treeNo, theseEdges]],
@@ -631,32 +631,32 @@ for (i in seq_len(n_char)) {
                collapse=''),
                '" stroke="', colour, LineStyle(colour), '"></path>')
       }, character(1)), collapse='')
-      tips <- paste0('\n <text x="', (nodeXi[terminal] + 0L), 
+      tips <- paste0('<text x="', (nodeXi[terminal] + 0L), 
                      '" y="', nodeYi[terminal] + textY,
                      '" fill="', flagCol[terminal],
                      '" class="flag">[', tipFlag[terminal], ']</text>',
-                     '\n <text x="', (nodeXi[terminal] + 22L),
+                     '<text x="', (nodeXi[terminal] + 22L),
                      '" y="', nodeYi[terminal] + textY,
                      '" fill="', ifelse(flagCol %in% c('lightgrey', 'grey'), flagCol, '#111'),
                      '" class="taxonLabel">', 
                      gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>',
                      collapse='')
-      nodes <- paste0('\n <text x="', (nodeXi[internal] + 2L), 
+      nodes <- paste0('<text x="', (nodeXi[internal] + 2L), 
                       '" y="', nodeYi[internal] + textY,
                       '" class="node" fill="', NodeColour(nodeSupport), 
                       '">', nodeSupport, '</text>', collapse='')
       nRegions <- length(states_matrix$regions)
-      ciCaption <- paste0('\n <text x="', svgWidth - 4L,
+      ciCaption <- paste0('<text x="', svgWidth - 4L,
                    '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
                     'Character adds <tspan class="score">', states_matrix$score,
-                   '</tspan> to tree score</text>\n <text x="', svgWidth - 4L,
+                   '</tspan> to tree score</text><text x="', svgWidth - 4L,
                    '" y="', (yStep * 2) + textY, '" text-anchor="end" class="stepsLabel">',
                    '<tspan class="score">', nRegions,
                    '</tspan> additional region', ifelse(nRegions == 1, '', 's'), 
-                   '</text>\n <text x="', svgWidth - 4L,
+                   '</text><text x="', svgWidth - 4L,
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
                     ci_text[i, treeNo],
-                   '</text>\n <text x="', svgWidth - 4L,
+                   '</text><text x="', svgWidth - 4L,
                     '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
                     '<tspan dy="16">An optimal tree under:</tspan>', 
                    paste0('<tspan x="', svgWidth - 2L,
@@ -688,10 +688,10 @@ for (i in seq_len(n_char)) {
     legendY <- round(lineHeight * seq_along(legendLabels), 1)
     cat(paste0('>  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
         '" height="', lineHeight * length(legendLabels) + lineHeight - 5L, # For T/N statement
-        '" class="statesLegend">\n ',
+        '" class="statesLegend">',
         paste0('<path d="M0,', legendY - 15L, 'h22" stroke="', legendCol,
-                       LineStyle(legendCol), '"></path>', collapse='\n '),
-        '\n <text x="30" y="-10" class="legendLabels">', 
+                       LineStyle(legendCol), '"></path>', collapse=''),
+        '<text x="30" y="-10" class="legendLabels">', 
         paste0('<tspan x="30" dy="', lineHeight, '">', legendLabels, '</tspan>', collapse=''),
         '<tspan x=0 dy="', lineHeight, '">', 
         ifelse (IsTransformational(my_states[[i]]), "Transformational", "Neomorphic"),
