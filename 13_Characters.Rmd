@@ -489,10 +489,9 @@ $(document).ready(function() {
   // Produce switcher box by each SVG plot
   var originalSwitcher = $("div.switcher");
   $my.trees.each(function() {
-      var switcherClone = originalSwitcher.clone();
-      $('input.switcherNumber', switcherClone).data("char",
-        $(this).data("char"));
-      switcherClone.insertBefore($(this));
+      var thisTree = $(this);
+      var switcherClone = originalSwitcher.clone().insertBefore(thisTree);
+      $('input.switcherNumber', switcherClone).data("char", thisTree.data("char"));
     }
   );
   originalSwitcher.remove();
