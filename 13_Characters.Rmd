@@ -371,7 +371,7 @@ if (knitr::is_html_output()) {
                       integer(1))
   
   svgWidth <- 682
-  svgHeight <- 555
+  svgHeight <- 612
   treeXMargins <- c(5L, 200L)
   treeYMargins <- c(7L, 8L)
   
