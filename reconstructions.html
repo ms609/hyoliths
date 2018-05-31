@@ -473,9 +473,9 @@ function onScroll() {
   requestTick();
 }
 
-function requrestTick() {
+function requestTick() {
   if (!ticking) {
-    requestAnimationFrame(updateVisible());
+    requestAnimationFrame(updateVisible);
   }
   ticking = true;
 }
