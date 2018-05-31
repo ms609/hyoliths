@@ -216,7 +216,7 @@ PlotPanel(7)
 \clearpage
 
 ```{r treesearch-equal-weights-results, fig.cap="Strict consensus of most parsimonious trees under equally weighted parsimony", echo=FALSE}
-ColPlot(consensus(ew.trees))
+ColPlot(RootTree(consensus(ew.trees), rootingTips))
 ```
 
 <!--
