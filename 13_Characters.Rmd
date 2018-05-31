@@ -305,7 +305,7 @@ Italicize <- function (string) {
                                       'Oikozetetes',
                                       'Paracraniops', 'Paramicrocornus',
                                       'Phascolion', 'Phoronopsis',
-                                      'Tubulipora', 
+                                      'Themiste', 'Tubulipora', 
                                       'comleyensis', 'decaius',
                                       'schucherti', 'tenuis', 'worsleyi',
                                       'vascula', 'genitalia','lateralia',
