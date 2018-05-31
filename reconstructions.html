@@ -432,9 +432,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Alongside its definition, each character has been mapped onto a tree. Any of the optimal trees can be selected by modifying the tree number listed above each diagram. Each tip is labelled according to its coding in the matrix. These states have been used to reconstruct the condition of each internal node, using the parsimony method of <span class="citation">Brazeau et al. (<a href="#ref-Brazeau2018">2018</a>)</span> as implemented in the <em>Inapp</em> <em>R</em> package.</p>
 <p>We emphasize that different trees will give different reconstructions. The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.</p>
 <script>
-function onScreen(e) {
-  var viewTop = $(window).scrollTop();
-  var viewBottom = viewTop + ($(window).height());
+var latestKnownScrollY = 0,
+  latestKnownY = 0,
+    ticking = false;
+
+function onScreen(e, viewTop, viewHeight) {
+  var viewBottom = viewTop + viewHeight;
   var elemTop = $(e).offset().top;
   return ((elemTop <= viewBottom) && (elemTop >= viewTop));
 }
@@ -463,10 +466,27 @@ function applyHighlighting () {
   return false;
 }
 
+function onScroll() {
+  //Optimised via https://www.html5rocks.com/en/tutorials/speed/animations/
+  latestKnownScrollY = window.scrollY;
+  latestKnownY = $(window).height();
+  requestTick();
+}
+
+function requrestTick() {
+  if (!ticking) {
+    requestAnimationFrame(updateVisible());
+  }
+  ticking = true;
+}
+
 function updateVisible() {
+  ticking = false; // Reset, ready to capture next scroll/resize
   chosenTree = localStorage.getItem("chosenTree");
+  var currentScrollY = latestKnownScrollY;
+  var currentHeight = latestKnownY;
   $("svg.tree").each(function(index, item) {
-    if (onScreen($(this))) {
+    if (onScreen($(this), currentScrollY, currentHeight)) {
       if ($(this).data('tree') != chosenTree) {        
         var oldTree = $(item);
         $.ajax({
@@ -520,7 +540,8 @@ $(document).ready(function() {
   $my.trees.data('tree', originalSwitcher.val());
   $('text', $my.trees).each(applyHighlighting)
   
-  $('.book-body').scroll(updateVisible);
+  $('.book-body').scroll(onScroll);
+  $('.book-body').resize(onScroll);
 
   originalSwitcher.remove();
   return false;
