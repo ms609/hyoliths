@@ -422,8 +422,63 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">3</span> Character reconstructions</h1>
 <p>This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant. Further citations for codings that are not discussed in the text can be viewed by browsing the <a href="dataset.html#dataset">morphological dataset</a> on MorphoBank (<a href="https://morphobank.org/permalink/?P2800">project 2800</a>). <mark>This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.</mark></p>
 <p>Alongside its definition, each character has been mapped onto a tree. Any of the optimal trees can be selected by modifying the tree number listed above each diagram. Each tip is labelled according to its coding in the matrix. These states have been used to reconstruct the condition of each internal node, using the parsimony method of <span class="citation">Brazeau et al. (<a href="#ref-Brazeau2018">2018</a>)</span> as implemented in the <em>Inapp</em> <em>R</em> package.</p>
-<p>We emphasize that different trees will give different reconstructions. The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how well the character fits onto the given tree. Consistency indices <span class="citation">(Archie, <a href="#ref-Archie1989">1989</a>)</span> are also provided for each character.</p>
+<p>We emphasize that different trees will give different reconstructions. The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.</p>
 <script>
+function onScreen(e) {
+  var viewTop = $(window).scrollTop();
+  var viewBottom = viewTop + ($(window).height());
+  var elemTop = $(e).offset().top;
+  return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+function highlightTaxon (e) {
+  var target = e.target; // Which node triggered the click
+  $target = $(target);
+  if (target.nodeName === 'text') {
+    taxonText = $(target).text();
+    $withSameText = $('#reconstructions svg text:contains("' + taxonText + '")')
+    if (localStorage.getItem(taxonText)) {
+      localStorage.removeItem(taxonText)
+      $withSameText.removeClass("highlightTaxon");
+    } else {
+      localStorage.setItem(taxonText, 1)
+      $withSameText.addClass("highlightTaxon");
+    }
+  }
+  return false;
+}
+
+function applyHighlighting () {
+  if(localStorage.getItem($(this).text())) {
+    $(this).addClass("highlightTaxon");
+  }
+  return false;
+}
+
+function updateVisible() {
+  chosenTree = localStorage.getItem("chosenTree");
+  $("svg.tree").each(function(index, item) {
+    if (onScreen($(this))) {
+      if ($(this).data('tree') != chosenTree) {        
+        var oldTree = $(item);
+        $.ajax({
+           //url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + $(oldTree).data("char") + ".svg",
+           url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
+                $(oldTree).data("char") + ".svg",
+          context: item,
+          datatype: 'xml'
+        }).done(function (newTree) {
+          newTree.data('tree', chosenTree);
+          newTree.click(highlightTaxon)
+          $('text', newTree).each(applyHighlighting)
+          $(this).replaceWith($('svg', newTree));
+        })
+      }
+    }
+  });
+  return false;
+}
+
 function switchTree(input) {
   newValue = input.value * 1;
   if (!isNaN(newValue)) {
@@ -431,69 +486,12 @@ function switchTree(input) {
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
     $("input.switcherNumber").val(newValue);
-    showTree(newValue, $(input).data("char"));
+    localStorage.setItem("chosenTree", newValue);
+    updateVisible()
   }
   return false;
 }
 
-function updateAllTrees(tree) {
-  $("svg.tree").each(function(index, item) {
-    var oldTree = $(item);
-    $.ajax({
-       //url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + $(oldTree).data("char") + ".svg",
-       url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
-            $(oldTree).data("char") + ".svg",
-      context: item,
-      datatype: 'xml'
-    }).done(function (newTree) {
-      $(this).replaceWith($('svg', newTree));
-    })
-  });
-  enableTaxonHighlighting();
-  return false;
-}
-
-function showTree(tree, char) {
-  var oldTree = $('svg.tree[data-char="' + char + '"]');
-  $.ajax({
-     //url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" + char + ".svg",
-    url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
-            $(oldTree).data("char") + ".svg",
-    context: oldTree,
-    datatype: 'xml'
-  }).done(function (newTree) {
-    $(this).replaceWith($('svg', newTree));
-    if (typeof (updateTimeout) != 'undefined') window.clearTimeout(updateTimeout);
-    updateTimeout = window.setTimeout(updateAllTrees(tree), 350);
-  });
-  return false;
-}
-
-function enableTaxonHighlighting() {
-  $("svg.tree").click(function (e) {
-    var target = e.target; // Which node triggered the click
-    $target = $(target);
-    if (target.nodeName === 'text') {
-      taxonText = $(target).text();
-      $withSameText = $('#reconstructions svg text:contains("' + taxonText + '")')
-      if (localStorage.getItem(taxonText)) {
-        localStorage.removeItem(taxonText)
-        $withSameText.removeClass("highlightTaxon");
-      } else {
-        localStorage.setItem(taxonText, 1)
-        $withSameText.addClass("highlightTaxon");
-      }
-    }
-    return false;
-  })
-  $('text', $("svg.tree")).each(function () {
-    if(localStorage.getItem($(this).text())) {
-      $(this).addClass("highlightTaxon");
-    }
-    return false;
-  })
-  return false;
-}
 
 $(document).ready(function() {
   window.$my = {
@@ -503,15 +501,21 @@ $(document).ready(function() {
   // Produce switcher box by each SVG plot
   var originalSwitcher = $("div.switcher");
   $my.trees.each(function() {
-      var switcherClone = originalSwitcher.clone();
-      $('input.switcherNumber', switcherClone).data("char",
-        $(this).data("char"));
-      switcherClone.insertBefore($(this));
+      var thisTree = $(this);
+      var switcherClone = originalSwitcher.clone().insertBefore(thisTree);
+      $('input.switcherNumber', switcherClone).data("char", thisTree.data("char"));
     }
   );
-  originalSwitcher.remove();
   
-  enableTaxonHighlighting();
+  
+  $my.trees.click(highlightTaxon)
+  $my.trees.data('tree', originalSwitcher.val());
+  $('text', $my.trees).each(applyHighlighting)
+  
+  $('.book-body').scroll(updateVisible);
+
+  
+  originalSwitcher.remove();
   return false;
 });
 </script>
@@ -5580,9 +5584,6 @@ The ciliary necklace is defined by <span class="citation">Gilula &amp; Satir (<a
 <div id="refs" class="references">
 <div id="ref-Brazeau2018">
 <p>Brazeau, M. D., Guillerme, T., &amp; Smith, M. R. (2018). An algorithm for morphological phylogenetic analysis with inapplicable data. <em>Systematic Biology</em>. doi:<a href="https://doi.org/10.1101/209775">10.1101/209775</a></p>
-</div>
-<div id="ref-Archie1989">
-<p>Archie, J. W. (1989). Homoplasy excess ratios: new indices for measuring levels of homoplasy in phylogenetic systematics and a critique of the Consistency Index. <em>Systematic Zoology</em>, <em>38</em>(3), 253. doi:<a href="https://doi.org/10.2307/2992286">10.2307/2992286</a></p>
 </div>
 <div id="ref-Topper2013Reappraisalof">
 <p>Topper, T. P., Harper, D. A. T., &amp; Ahlberg, P. (2013a). Reappraisal of the brachiopod <em>Acrotreta socialis</em> von Seebach, 1865: clarifying 150 years of confusion. <em>GFF</em>, <em>135</em>(2), 191–203. doi:<a href="https://doi.org/10.1080/11035897.2013.811440">10.1080/11035897.2013.811440</a></p>
