@@ -414,7 +414,7 @@ function onScreen(e) {
   var viewTop = $(window).scrollTop();
   var viewBottom = viewTop + ($(window).height());
   var elemTop = $(e).offset().top;
-  return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+  return ((elemTop <= viewBottom) && (elemTop >= viewTop));
 }
 
 function highlightTaxon (e) {
