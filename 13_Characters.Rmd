@@ -410,6 +410,61 @@ if (knitr::is_html_output()) {
 }
 ```
 <script>
+function onScreen(e) {
+  var viewTop = $(window).scrollTop();
+  var viewBottom = viewTop + ($(window).height());
+  var elemTop = $(e).offset().top;
+  return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+function highlightTaxon (e) {
+  var target = e.target; // Which node triggered the click
+  $target = $(target);
+  if (target.nodeName === 'text') {
+    taxonText = $(target).text();
+    $withSameText = $('#reconstructions svg text:contains("' + taxonText + '")')
+    if (localStorage.getItem(taxonText)) {
+      localStorage.removeItem(taxonText)
+      $withSameText.removeClass("highlightTaxon");
+    } else {
+      localStorage.setItem(taxonText, 1)
+      $withSameText.addClass("highlightTaxon");
+    }
+  }
+  return false;
+}
+
+function applyHighlighting () {
+  if(localStorage.getItem($(this).text())) {
+    $(this).addClass("highlightTaxon");
+  }
+  return false;
+}
+
+function updateVisible() {
+  chosenTree = localStorage.getItem("chosenTree");
+  $("svg.tree").each(function(index, item) {
+    if (onScreen($(this))) {
+      if ($(this).data('tree') != chosenTree) {        
+        var oldTree = $(item);
+        $.ajax({
+           //url: "`r sprintf(fileNamer, '" + tree + "', '" + $(oldTree).data("char") + "')`",
+           url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
+                $(oldTree).data("char") + ".svg",
+          context: item,
+          datatype: 'xml'
+        }).done(function (newTree) {
+          newTree.data('tree', chosenTree);
+          newTree.click(highlightTaxon)
+          $('text', newTree).each(applyHighlighting)
+          $(this).replaceWith($('svg', newTree));
+        })
+      }
+    }
+  });
+  return false;
+}
+
 function switchTree(input) {
   newValue = input.value * 1;
   if (!isNaN(newValue)) {
@@ -417,69 +472,12 @@ function switchTree(input) {
     newValue = Math.max(newValue, 1);
     newValue = Math.min(newValue, input.max);
     $("input.switcherNumber").val(newValue);
-    showTree(newValue, $(input).data("char"));
+    localStorage.setItem("chosenTree", newValue);
+    updateVisible()
   }
   return false;
 }
 
-function updateAllTrees(tree) {
-  $("svg.tree").each(function(index, item) {
-    var oldTree = $(item);
-    $.ajax({
-       //url: "`r sprintf(fileNamer, '" + tree + "', '" + $(oldTree).data("char") + "')`",
-       url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
-            $(oldTree).data("char") + ".svg",
-      context: item,
-      datatype: 'xml'
-    }).done(function (newTree) {
-      $(this).replaceWith($('svg', newTree));
-    })
-  });
-  enableTaxonHighlighting();
-  return false;
-}
-
-function showTree(tree, char) {
-  var oldTree = $('svg.tree[data-char="' + char + '"]');
-  $.ajax({
-     //url: "`r sprintf(fileNamer, '" + tree + "', '" + char + "')`",
-    url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
-            $(oldTree).data("char") + ".svg",
-    context: oldTree,
-    datatype: 'xml'
-  }).done(function (newTree) {
-    $(this).replaceWith($('svg', newTree));
-    if (typeof (updateTimeout) != 'undefined') window.clearTimeout(updateTimeout);
-    updateTimeout = window.setTimeout(updateAllTrees(tree), 350);
-  });
-  return false;
-}
-
-function enableTaxonHighlighting() {
-  $("svg.tree").click(function (e) {
-    var target = e.target; // Which node triggered the click
-    $target = $(target);
-    if (target.nodeName === 'text') {
-      taxonText = $(target).text();
-      $withSameText = $('#reconstructions svg text:contains("' + taxonText + '")')
-      if (localStorage.getItem(taxonText)) {
-        localStorage.removeItem(taxonText)
-        $withSameText.removeClass("highlightTaxon");
-      } else {
-        localStorage.setItem(taxonText, 1)
-        $withSameText.addClass("highlightTaxon");
-      }
-    }
-    return false;
-  })
-  $('text', $("svg.tree")).each(function () {
-    if(localStorage.getItem($(this).text())) {
-      $(this).addClass("highlightTaxon");
-    }
-    return false;
-  })
-  return false;
-}
 
 $(document).ready(function() {
   window.$my = {
@@ -495,6 +493,13 @@ $(document).ready(function() {
     }
   );
   originalSwitcher.remove();
+  
+  
+  $my.trees.click(highlightTaxon)
+  $('text', $my.trees).each(applyHighlighting)
+  
+  $('.book-body').scroll(updateVisible);
+
   
   enableTaxonHighlighting();
   return false;
