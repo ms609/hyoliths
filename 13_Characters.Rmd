@@ -645,8 +645,7 @@ for (i in seq_len(n_char)) {
                       '" y="', nodeYi[internal] + textY,
                       '" class="node" fill="', NodeColour(nodeSupport), 
                       '">', nodeSupport, '</text>', collapse='')
-      nRegions <- states_matrix$regions
-      if (length(nRegions) == 0) nRegions <- 0
+      nRegions <- length(states_matrix$regions)
       ciCaption <- paste0('\n <text x="', svgWidth - 4L,
                    '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
                     'Character adds <tspan class="score">', states_matrix$score,
