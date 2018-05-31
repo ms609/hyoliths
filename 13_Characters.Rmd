@@ -493,14 +493,13 @@ $(document).ready(function() {
     }
   );
   
-  
+  localStorage.setItem("chosenTree", originalSwitcher.val());
   $my.trees.click(highlightTaxon)
   $my.trees.data('tree', originalSwitcher.val());
   $('text', $my.trees).each(applyHighlighting)
   
   $('.book-body').scroll(updateVisible);
 
-  
   originalSwitcher.remove();
   return false;
 });
