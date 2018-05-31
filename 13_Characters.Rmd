@@ -298,7 +298,7 @@ Italicize <- function (string) {
                                     c(taxa_names,
                                       'Bethia', 'Discinisca', 
                                       'Eichwaldia', 'Electra', 'Enchytraeus',
-                                      'Eoorthis', 'Galeolaria',
+                                      'Eoorthis', 'Galeolaria', 'Gryphus',
                                       'Hadrotreta', 'Harmothoe', 'Hydroides', 'Kraussina',
                                       'Lochkothele', 'Loxosoma',
                                       'Magelona', 'Mopalia', 'Neocrania',
