@@ -45,7 +45,6 @@ path.inapplicable {
 }
 
 .book .book-body .page-wrapper .page-inner section.normal text.taxonLabel {
-  fill: black;
   font-style: italic;
   font-size: 9.5pt;
 }
