@@ -292,6 +292,13 @@ PrintStates <- function (states) {
   cat("> ", if (transformational) "Transformational" else "Neomorphic", "character.  \n>\n")
 }
 
+PrintNaughtyInapplicables <- function (states) {
+  if (any(states == '-'))
+  cat("  \n Oh dear! <mark>**You included the inapplicable token in a neomorphic character!**</mark>",
+      "  \n That's really very naughty, as @Brazeau2018 will tell you.",
+      "  \n Unless you are very sure that you understand the consequences, you should re-code  \n\n - ", paste(names(states[states == '-']), collapse="  \n - "))
+}
+
 Italicize <- function (string) {
   string <- gsub(paste0("\\b(", 
                         paste0(gsub("_", "|", fixed = TRUE,
@@ -730,6 +737,7 @@ for (i in seq_len(n_char)) {
   state_notes_i <- state_notes_i[!names(state_notes_i) %in% taxa_not_to_print]
   if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
   if (length(state_notes_i) > 0) PrintStateNotes(state_notes_i)
+  if (my_states[[i]][[1]] != "''") PrintNaughtyInapplicables(my_chars[, i])
   cat("  \n") # Clear line, ready for next block
 }
 if (knitr::is_html_output()) {
