@@ -448,8 +448,8 @@ function updateVisible() {
       if ($(this).data('tree') != chosenTree) {        
         var oldTree = $(item);
         $.ajax({
-           //url: "`r sprintf(fileNamer, '" + tree + "', '" + $(oldTree).data("char") + "')`",
-           url: "Brachiopod_phylogeny_files/figure-html/tree" + tree + "-char" +
+           //url: "`r sprintf(fileNamer, '" + chosenTree + "', '" + $(oldTree).data("char") + "')`",
+           url: "Brachiopod_phylogeny_files/figure-html/tree" + chosenTree + "-char" +
                 $(oldTree).data("char") + ".svg",
           context: item,
           datatype: 'xml'
