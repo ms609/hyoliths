@@ -94,7 +94,7 @@ taxonColour <- c(
   Halkieria_evangelista           = pal[1],
   Wiwaxia_corrugata               = pal[1],
   Wiwaxia                         = pal[1],
-  Cotyledion_tylodes              = pal[1],
+  Cotyledion_tylodes              = 'grey',
   Cotyledion                      = pal[1],
   Novocrania                      = pal[4],
   Craniops                        = pal[4],
