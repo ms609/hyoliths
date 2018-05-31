@@ -12,7 +12,7 @@ BEGIN TAXA;
 		Phoronis
 		Sipunculus
 		Serpula
-		Chiton
+		Tonicella
 		Dentalium
 		Pelagodiscus_atlanticus
 		Terebratulina
@@ -62,7 +62,7 @@ BEGIN TREES;
 		6	Phoronis,
 		7	Sipunculus,
 		8	Serpula,
-		9	Chiton,
+		9	Tonicella,
 		10	Dentalium,
 		11	Pelagodiscus_atlanticus,
 		12	Terebratulina,
