@@ -16,7 +16,7 @@ We emphasize that different trees will give different reconstructions.  The char
 
 ```{R states matrix function, echo=FALSE, message=FALSE}
 NewickTree <- function(tree) gsub('_', ' ', write.tree(tree), fixed=TRUE)
-MatrixData <- function (x, state.labels) {
+MatrixData <- function (states_matrix, state.labels) {
   tree <- states_matrix$tree
   regions <- states_matrix$regions
   changes <- states_matrix$changes
