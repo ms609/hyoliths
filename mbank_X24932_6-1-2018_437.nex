@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-05-31 11.48.58 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-1 04.37.16 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=47;
@@ -1204,16 +1204,16 @@ BEGIN CHARACTERS;
 	'Namacalathus'		                            ????????0-????0-------00-00-????????????????????????00-00-0-0000-------------00--00000------0------00-000--03?0-3101000????????????????????????????????????????????????????????????????????????????????????
 	'Cotyledion tylodes'		                      ????????0-0{0,1}?0{1,0}--00---?0-00-1?1?0?????{1,2}?000???0?222-10100-0-0000-0-0--000--0000--00000--0-0-0------00-001100(3,4,2)?0??????0?????????????????????????????????????????????????????????????????????????????????????
 	'Loxosomella'		                             0----00-0-01-00--00---00-00-121000????2200000100232-00-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---0000010001120?114011?0021221121110211-110120211-00100010101111220--000101?01(0,1)102101101221
-	'Flustra'		                                 0----00-0-00?00--00---00-00-1?200012012200000100221400-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---000002000112021140001102021011?100100-1?0??0212??0000011100-1021121000000?0(1,0)00011000?1110
+	'Flustra'		                                 0----00-0-00?00--00---00-00-12200012012200000100221400-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---000002000112021140001102021011?100100-1?0??0212??0000011100-1021121000000?0(1,0)00011000?1110
 	'Novocrania'		                              0---01130200200--00---0111{0,1}11210112???211101010021-31120020-0001111031011211000--00010310-020------00-001100320?2110000210000101012110000103?011220020010010?0122100010010?0101022121?01010?0(1,0)0001010010-10
 	'Lingula'		                                 1111110-120020111102211121021?11112210210101010022121120010-0001111021100-31010--000102312010------00-000-00210?2110000110000100011110000?03?011220020010010?0122100010010?0101022121?01010?0(1,0)0001010010-10
 	'Phoronis'		                                0----00-0-00?00-------00-00-132000121022000?0100221300-00-0-0000-------------00--00000------0------00-00-----11-------01000112?00020100002?2?011?2102101010??0122?00010011100-1021111101110?0?00010?00???10
 	'Sipunculus'		                              0----00-0-10100--00---00-00-1110001100120100010022-?00-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---0000021110011?013110?101112122?11010001101212-221010112021112111121101011?111001110111211
 	'Serpula'		                                 0----00-1310200--00---00-00-112000?100120000010021--00-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---0000011110011?0030101?01012122111110101111?121121011012110111021111101111?111003110111211
-	'Tonicella'		                               1113000-1111110--00---00-00-0?-000--00--0011101123--112001110000-0-0--000-311012100000(1,2)1120112-223-00-000-004?0?440000021000011?104100?1130120121100101011012121111110112021111111112111001?100112111101221
-	'Dentalium'		                               1121000-0-01110--00---00-00-121000?100--0011101123--10200-0-0000-0-----00--0000--00000--0-0-0------00-000-00--0---0000021000010?104010011101102211011010110011211?1110112121112111111111001?000112011111121
+	'Tonicella'		                               0----00-1111110--00---00-00-0?-000--00--0011101123--112001110000-0-0--000-311012100000(1,2)1120112-223-00-000-004?0?440000021000011?104100?1130120121100101011012121111110112021111111112111001?100112111101221
+	'Dentalium'		                               0----00-0-01110--00---00-00-121000?100--0011101123--10200-0-0000-0-----00--0000--00000--0-0-0------00-000-00--0---0000021000010?104010011101102211011010110011211?1110112121112111111111001?000112011111121
 	'Pelagodiscus atlanticus'		                 1121111312???0111001211121121?11112???11100?010022231120010-000111-031100-10000--00000310-01131----00-010-002101210100011????1?0?111000?0??????1?????????????01???000?00??????????12??????0???0001110010-10
-	'Terebratulina'		                           0---111212???0111111110111111?2010221021010?010012-4112001120111(2,1)12132001121100--0010022121112-212-00-000-00320?221000021????1?1?030011?0??????1?????????????01???000?00??????????12??????0???0001110010-10
+	'Terebratulina'		                           0---111212???011111111011111122010221021010?010012-4112001120111(2,1)12132001121100--0010022121112-212-00-000-00320?221000021????1?1?030011?0??????1?????????????01???000?00??????????12??????0???0001110010-10
 	'Wiwaxia corrugata'		                       ?????00-1311?10--00---0?-00-0?-000????--001???{0,1}121--00100-0-0000-0-0--000--0000--00000--0-0-0------00-000-00-?0---0000-????????????????????????????????????????????????????????????????????????????????????
 	'Halkieria evangelista'		                   ??????????0???0--00---00-00-????????????????????????1111110-0000-0-0??00??20000--000002212110------00-0011004?0?1200001????????????????????????????????????????????????????????????????????????????????????
 	'Dailyatia'		                               0----00-??????????????00-00-????????????????????????10111-0-0000-------------00--00000------0------00-0011002?0?110001?????????????????????????????????????????????????????????????????????????????????????
@@ -1641,14 +1641,13 @@ BEGIN NOTES;
 	TEXT TAXON=5 CHARACTER=1 TEXT='Shell not secreted until after metamorphosis (Popov et al. 2010)';
 	TEXT TAXON=22 CHARACTER=1 TEXT='Described by Topper et al. (2013R).';
 	TEXT TAXON=3 CHARACTER=1 TEXT='Absent, with no possible equivalent [@Nielsen1966]';
-	TEXT TAXON=10 CHARACTER=1 TEXT='The chiton Mopalia has two distinct shell fields: that anterior to the prototroch will develop into the first shell plate; the one posterior to the prototroch becomes the subsequent plates [@Wanninger2002C].  As the latter corresponds to the position of the shell field in scaphopods [@Wanninger2001], this field is treated as the brephic shell for the purposes of the present analysis.';
-	TEXT TAXON=11 CHARACTER=1 TEXT='Codings for the embryonic shell follow the situation in Antalis, which has been exquisitely described [@Wanninger2001]';
+	TEXT TAXON=10 CHARACTER=1 TEXT='On hatching, the polyplacophoran larva lacks a shell field.  ^n^nShell fields develop during the trochophore larva stage. The larva of the chiton Mopalia has two distinct shell fields: that anterior to the prototroch will develop into the first shell plate; the one posterior to the prototroch becomes the subsequent plates [@Wanninger2002C].^n^nThis disc-shaped posterior plate, whose position corresponds to the conchiferan shell field, bears a polygonal ornament and is subdivided by a series of grooves that prefigure the adult shell plates [@Wanninger2002C].';
+	TEXT TAXON=11 CHARACTER=1 TEXT='The shell does not form until the trochophore larval stage, which has been exquisitely described in Antalis [@Wanninger2001].^nThis shell field is initially disc-like, subsequently expanding to fuse ventrally and produce the cylindrical protoconch. The prototroch is clearly delineated fro the telotroch in post-metamorphic juveniles [@Wanninger2001].';
 	TEXT TAXON=42 CHARACTER=3 TEXT='The flattened region at the umbo of the ventral valve in smaller specimens conceivably represents an embryonic shell, though it may alternatively represent a cicatrix or colleplax-like structure.';
 	TEXT TAXON=22 CHARACTER=3 TEXT='Described by Topper et al. (2013R).';
 	TEXT TAXON=24 CHARACTER=3 TEXT='Prominent nick; see Freeman & Lundelius 1999, fig. 6A';
 	TEXT TAXON=26 CHARACTER=3 TEXT='Nick point indicated by arrows in fig. 1 of Balthasar (2009T).';
 	TEXT TAXON=10 CHARACTER=3 TEXT='@Wanninger2002C';
-	TEXT TAXON=11 CHARACTER=3 TEXT='Prototroch and telotroch are clearly delineated in post-metamorphic juveniles [@Wanninger2001]';
 	TEXT TAXON=23 CHARACTER=2 TEXT='See fig. 3 in Bassett et al. 2017';
 	TEXT TAXON=6 CHARACTER=2 TEXT='See fig. 159 in Williams et al. 1997';
 	TEXT TAXON=19 CHARACTER=2 TEXT='Renoid -- see fig. 4B3 in Topper et al. 2013T';
@@ -1658,7 +1657,6 @@ BEGIN NOTES;
 	TEXT TAXON=24 CHARACTER=2 TEXT='The embryonic shell is more or less circular in outline -- see Freeman & Lundelius, 1999, fig. 6A';
 	TEXT TAXON=37 CHARACTER=2 TEXT='Trifoliate appearance results from prominent attachment rudiment and bunching of setal sacs (Balthasar 2009T).';
 	TEXT TAXON=10 CHARACTER=2 TEXT='Disc-like, subdivided by transverse grooves [@Wanninger2002C]';
-	TEXT TAXON=11 CHARACTER=2 TEXT='The shell field is initially disc-like, subsequently expanding to fuse ventrally and produce the cylindircal protoconch [@Wanninger2001]';
 	TEXT TAXON=33 CHARACTER=6 TEXT='Familial character: larval shell smooth (Williams et al.,2000, p.72).';
 	TEXT TAXON=22 CHARACTER=6 TEXT='Setal bundles interpreted as present in acrotretids by Ushatinskaya (2016P).';
 	TEXT TAXON=37 CHARACTER=6 TEXT='Four setal sacs';
@@ -2316,7 +2314,6 @@ BEGIN NOTES;
 	TEXT TAXON=36 CHARACTER=4 TEXT='Pustolose in Paterinidae (Williams et al. 2000, table 6)';
 	TEXT TAXON=12 CHARACTER=4 TEXT='Smooth, following family-level codings of Williams et al. 2000, table 6';
 	TEXT TAXON=26 CHARACTER=4 TEXT='Pitted (Williams et al. 2000, table 8)';
-	TEXT TAXON=10 CHARACTER=4 TEXT='[@Wanninger2002C]';
 	TEXT TAXON=38 CHARACTER=23 TEXT='Balthasar (2008, p. 274) identifies a canal as a probable impression of a pedicle nerve.';
 	TEXT TAXON=31 CHARACTER=23 TEXT='Following Williams et al. 1998T, appendix 2';
 	TEXT TAXON=43 CHARACTER=23 TEXT='Following Williams et al. 1998T, appendix 2';
@@ -2480,7 +2477,9 @@ BEGIN NOTES;
 	TEXT TAXON=4 CHARACTER=38 TEXT='"Most species of bryozoans have only the inner" nerve ring -- @Temereva2017Innervationof';
 	TEXT TAXON=7 CHARACTER=30 TEXT='At the posterior of the head, at the late larval stage [@Santagata2004]';
 	TEXT TAXON=5 CHARACTER=30 TEXT='"At metamorphosis [....] the second pair of coelomic sacs develop small attachment areas at the edge of the dorsal valve and become the lophophore coelom" [@Nielsen1991]^n^n"The larval lobes are retained during the first steps of metamorphosis and are^nsubsequently remodeled to form the lophophore and other adult organs" -- @Altenburger2013';
+	TEXT TAXON=13 CHARACTER=30 TEXT='Lophophore of Terebratalia arises post metamorphosis [@Young2002]; lophophore conceivably arising from vesicular bodies at base of apical lobe?';
 	TEXT TAXON=3 CHARACTER=30 TEXT='Arising after metamorphosis [@Nielsen1971]';
+	TEXT TAXON=4 CHARACTER=30 TEXT='The tentacles appear at metamorphosis, seemingly from below the corona (=prototroch) [@Young2002]';
 	TEXT TAXON=8 CHARACTER=30 TEXT='[@Adrianov2006]';
 	TEXT TAXON=11 CHARACTER=30 TEXT='The captacula arise close to the mouth after metamorphosis [@Wanninger2002M], in a position not dissimilar from that of the phoronid tentacles [@Santagata2004].';
 	TEXT TAXON=8 CHARACTER=36 TEXT='@Rice1993';
