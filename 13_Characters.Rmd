@@ -425,7 +425,7 @@ var latestKnownScrollY = 0,
 function onScreen(e, viewTop, viewHeight) {
   var viewBottom = viewTop + viewHeight;
   var elemTop = $(e).offset().top;
-  return ((elemTop <= viewBottom) && (elemTop >= viewTop));
+  return ((elemTop <= viewBottom + 1000) && (elemTop >= viewTop - 1000));
 }
 
 function highlightTaxon (e) {
