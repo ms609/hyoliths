@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-1 05.57.57 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-1 06.30.48 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=47;
@@ -1128,6 +1128,7 @@ BEGIN CHARACTERS;
 		188
 		'[Transformational character]'
 		'Chitinous'
+		'Collagen'
 		,
 		189
 		'Labile'
@@ -1203,16 +1204,16 @@ BEGIN CHARACTERS;
 	'Namacalathus'		                            ????????0-????0-------00-00-????????????????????????00-00-0-0000-------------00--00000------0------00-000--03?0-3101000????????????????????????????????????????????????????????????????????????????????????
 	'Cotyledion tylodes'		                      ????????0-0{0,1}?0{1,0}--00---?0-00-1?1?0?????2?000???0?022-10100-0-0000-0-0--000--0000--00000--0-0-0------00-001100(3,4,2)?0??????0?????????????????????????????????????????????????????????????????????????????????????
 	'Loxosomella'		                             0----00-0-01200--00---00-00-121000????2200000100032-00-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---0000010001120?114011?0021221121110211-110120211-00100010101111220--000101101(0,1)102101101221
-	'Flustra'		                                 0----00-0-00200--00---00-00-12200012012200000100021400-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---000002000112021140001102021011?100100-1?0??0212??0000011100-1021121000000?0(1,0)00011000?1110
-	'Novocrania'		                              0---01130200200--00---0111{0,1}11210112???211101010001-31120020-0001111031011211000--00010310-020------00-001100320?2110000210000101012110000103?011220020010010?0122100010010?0101022121?01010?0(1,0)0001010010-10
-	'Lingula'		                                 1111110-120020111102211121021?11112210210101010002121120010-0001111021100-31010--000102312010------00-000-00210?2110000110000100011110000?03?011220020010010?0122100010010?0101022121?01010?0(1,0)0001010010-10
-	'Phoronis'		                                0----00-0-00200-------00-00-13200012102200010100021300-00-0-0000-------------00--00000------0------00-00-----11-------01000112?00020100002?2?011?2102101010??0122?00010011100-1021111101110?0?00010?00???10
-	'Sipunculus'		                              0----00-0-10100--00---00-00-1110001100220100010002-?00-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---0000021110011?013110?101112122?11010001101212-221010112021112111121101011?111001110111211
-	'Serpula'		                                 0----00-1310200--00---00-00-112000?100220000010001--00-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---0000011110011?0030101?01012122111110101111?121121011012110111021111101111?111003110111211
+	'Flustra'		                                 0----00-0-00200--00---00-00-12200012012200000100021400-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---000002000112021140001102021011?100100-1?0??0212??0000011100-102112100000020(1,0)00011000?1110
+	'Novocrania'		                              0---01130200200--00---0111{0,1}11210112???211101010001-31120020-0001111031011211000--00010310-020------00-001100320?2110000210000101012110000103?011220020010010?0122100010010?0101022121?0101020(1,0)0001010010-10
+	'Lingula'		                                 1111110-120020111102211121021?11112210210101010002121120010-0001111021100-31010--000102312010------00-000-00210?2110000110000100011110000?03?011220020010010?0122100010010?0101022121?01010(1,2)0(1,0)0001010010-10
+	'Phoronis'		                                0----00-0-00200-------00-00-13200012102200010100021300-00-0-0000-------------00--00000------0------00-00-----11-------01000112?00020100002?2?011?2102101010??0122?00010011100-102111110111020?00010?00???10
+	'Sipunculus'		                              0----00-0-10100--00---00-00-1110001100220100010002-?00-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---0000021110011?013110?101112122?11010001101212-2210101120211121111211010112111001110111211
+	'Serpula'		                                 0----00-1310200--00---00-00-112000?100220000010001--00-00-0-0000-0-----00--0000--00000--0-0-0------00-000200--0---0000011110011?0030101?01012122111110101111?1211210110121101110211111011112111003110111211
 	'Tonicella'		                               0----00-1111110--00---00-00-0?-000--00--0011101103--112001110000-0-0--000-311012100000(1,2)1120112-223-00-000-004?0?440000021000011?104100?11301201211001010110121211111101120211111111121110011100112111101221
 	'Dentalium'		                               0----00-0-01110--00---00-00-121000?100--0011101103--10200-0-0000-0-----00--0000--00000--0-0-0------00-000-00--0---0000021000010?104010011101102211011010110011211?11101121211121111111110011000112011111121
-	'Pelagodiscus atlanticus'		                 1121111312???0111001211121121?11112???11100?010002231120010-000111-031100-10000--00000310-01131----00-010-002101210100011????1?0?111000?0??????1?????????????01???000?00??????????12??????0???0001110010-10
-	'Terebratulina'		                           0---111212???011111111011111122010221021010?010012-4112001120111(2,1)12132001121100--0010022121112-212-00-000-00320?221000021????1?1?030011?0??????1?????????????01???000?00??????????12??????0???0001110010-10
+	'Pelagodiscus atlanticus'		                 1121111312???0111001211121121?11112???11100?010002231120010-000111-031100-10000--00000310-01131----00-010-002101210100011????1?0?111000?0??????1?????????????01???000?00??????????12??????0(1,2)??0001110010-10
+	'Terebratulina'		                           0---111212???011111111011111122010221021010?010012-4112001120111(2,1)12132001121100--0010022121112-212-00-000-00320?221000021????1?1?030011?0??????1?????????????01???000?00??????????12??????0(1,2)??0001110010-10
 	'Wiwaxia corrugata'		                       ?????00-1311?10--00---00-00-0?-000????--001???{0,1}101--00100-0-0000-0-0--000--0000--00000--0-0-0------00-000-00-?0---0000-????????????????????????????????????????????????????????????????????????????????????
 	'Halkieria evangelista'		                   ??????????0???0--00---00-00-????????????????????????1111110-0000-0-0??00??20000--000002212110------00-0011004?0?1200001????????????????????????????????????????????????????????????????????????????????????
 	'Dailyatia'		                               0----00-??????????????00-00-????????????????????????10111-0-0000-------------00--00000------0------00-0011002?0?110001?????????????????????????????????????????????????????????????????????????????????????
@@ -1747,7 +1748,7 @@ BEGIN NOTES;
 	TEXT TAXON=22 CHARACTER=75 TEXT='Appears hemiperipheral in fig. 3 in Topper et al (2013R), though bordering on holoperipheral, so scored as ambiguous.';
 	TEXT TAXON=24 CHARACTER=75 TEXT='"both valves with growth holoperipheral" - Williams et al. 2000 p164';
 	TEXT TAXON=45 CHARACTER=75 TEXT='Following description of order in Williams et al. 2000.';
-	TEXT TAXON=10 CHARACTER=75 TEXT='For the purposes of this analysis, we must treat polyplacophoran and brachiopod valves as potentially homologous.  ^n^nIn brachiopods, the dorsal valve bears the lophophore, which arises from the anterior lobe of the larva [@Altenberger2013] -- indicating that the dorsal shell field is associated with the anterior lobe.^n^nIn polyplacophorans, the head valve arises from a shell field on the anterior (pre-prototroch) lobe of the larva [@Wanninger2002C], which we therefore treat as homologous with the brachiopod dorsal valve.^n^nIn support of this hypothesis, we note that the posterior (but not anterior) valves of chitons bear apophyses [@Schwabe2010;@Connors2012], which are most prominent in the ventral (but not dorsal) valves of brachiopods (Williams et al 1997, fig. 322), and which occur in the morph A shell of Oikozetetes, which is interpreted as the posterior valve of a halkieriid [@Paterson2009].^n^nAs the single posterior shell field of polyplacophorans subdivides to give rise to the six intermediate valves plus the tail valve [@Wanninger2002C], we prefer to consider the intermediate valves as representing "subdivisions" of a single valve rather than additional valves added to the body plan.^n^nGrowth is hemiperipheral in the anterior valve of polyplacophorans and holoperipheral in the posterior valves [@Schwabe2010;@Connors2012]';
+	TEXT TAXON=10 CHARACTER=75 TEXT='For the purposes of this analysis, we must treat polyplacophoran and brachiopod valves as potentially homologous.  ^n^nIn brachiopods, the dorsal valve bears the lophophore, which arises from the anterior lobe of the larva [@Altenburger2013] -- indicating that the dorsal shell field is associated with the anterior lobe.^n^nIn polyplacophorans, the head valve arises from a shell field on the anterior (pre-prototroch) lobe of the larva [@Wanninger2002C], which we therefore treat as homologous with the brachiopod dorsal valve.^n^nIn support of this hypothesis, we note that the posterior (but not anterior) valves of chitons bear apophyses [@Schwabe2010;@Connors2012], which are most prominent in the ventral (but not dorsal) valves of brachiopods (Williams et al 1997, fig. 322), and which occur in the morph A shell of Oikozetetes, which is interpreted as the posterior valve of a halkieriid [@Paterson2009].^n^nAs the single posterior shell field of polyplacophorans subdivides to give rise to the six intermediate valves plus the tail valve [@Wanninger2002C], we prefer to consider the intermediate valves as representing "subdivisions" of a single valve rather than additional valves added to the body plan.^n^nGrowth is hemiperipheral in the anterior valve of polyplacophorans and holoperipheral in the posterior valves [@Schwabe2010;@Connors2012]';
 	TEXT TAXON=41 CHARACTER=101 TEXT='The presumed pedicle foramen is an opening between the S1 and S2 sclerites, neither of which are perforated (Skovsted et al. 2009).';
 	TEXT TAXON=25 CHARACTER=101 TEXT='The sclerites of Eccentrotheca form a ring that surrounds the inferred attachment structure; the attachment structure does not emerge from an aperture within an individual sclerite.  Thus no feature in Eccentrotheca is judged to be potentially homologous with the apical perforation in bivalved brachiopods.';
 	TEXT TAXON=32 CHARACTER=101 TEXT='The apical termination of the fossil is unknown.';
@@ -2461,7 +2462,7 @@ BEGIN NOTES;
 	TEXT TAXON=14 CHARACTER=43 TEXT='@Smith2012M';
 	TEXT TAXON=9 CHARACTER=182 TEXT='Present in serpulids [@Bartolomaeus2005]';
 	TEXT TAXON=4 CHARACTER=127 TEXT='"Eggs have a loose consistency and are capable of changing form" [@Franzen2013]';
-	TEXT TAXON=29 CHARACTER=29 TEXT='@Moysiuk2017';
+	TEXT TAXON=29 CHARACTER=29 TEXT='@Moysiuk2017Hyolithsare';
 	TEXT TAXON=2 CHARACTER=29 TEXT='The tentacular crown [@Zhang2013] is interpreted as a lophophore';
 	TEXT TAXON=11 CHARACTER=29 TEXT='The scaphopod captacula is conceivably equivalent to the tentacular apparatus of other lophotrochozoans.  It is developmentally pre-oral, and has tentatively been homologised with the pre-oral tentacles of Monoplacophora and Gastropoda [@Steiner1992], though their musculature and late development suggests instead that they may derive from the molluscan foot, as do the arms of cephalopods [@Wanninger2002M]';
 	TEXT TAXON=16 CHARACTER=56 TEXT='Following the reconstruction of @Skovsted2015Theearly';
@@ -2474,7 +2475,7 @@ BEGIN NOTES;
 	TEXT TAXON=13 CHARACTER=35 TEXT='Following @Temereva2017Innervationof';
 	TEXT TAXON=4 CHARACTER=35 TEXT='Following @Temereva2017Innervationof';
 	TEXT TAXON=8 CHARACTER=35 TEXT='New branches added at each lateral extreme, behind mouth [@Adrianov2006]';
-	TEXT TAXON=7 CHARACTER=37 TEXT='[@Temereva2017]';
+	TEXT TAXON=7 CHARACTER=37 TEXT='[@Temereva2017Innervationof]';
 	TEXT TAXON=6 CHARACTER=37 TEXT='@Temereva2017Thefirst';
 	TEXT TAXON=13 CHARACTER=37 TEXT='In Gryphus [@Temereva2017Thefirst]';
 	TEXT TAXON=4 CHARACTER=37 TEXT='Following @Temereva2017Innervationof';
@@ -2492,7 +2493,14 @@ BEGIN NOTES;
 	TEXT TAXON=8 CHARACTER=36 TEXT='@Rice1993';
 	TEXT TAXON=11 CHARACTER=36 TEXT='The captacula each bear an individual nerve fibre emanating from the cerebral ganglia, which is also associated with the circumoesophageal nerve ring [@SumnerRooney2015], recalling the situation in annelids and sipunculans.';
 	TEXT TAXON=9 CHARACTER=36 TEXT='@Orrhage2005';
+	TEXT TAXON=7 CHARACTER=188 TEXT='Collagen fibres in tentacle cuticle [@Bartolomaeus2001U]; chitin only present in tubes [@Jeuniaux1971]';
+	TEXT TAXON=6 CHARACTER=188 TEXT='The brachiopod pedicle has a chitinous cuticle  [@Williams1997Introduction;@MacKay1978], but the tentacles are associated with collagen [@Williams1997Introduction]; marked as polymorphic.';
+	TEXT TAXON=12 CHARACTER=188 TEXT='The brachiopod pedicle has a chitinous cuticle  [@Williams1997Introduction;@MacKay1978], but the tentacles are associated with collagen [@Williams1997Introduction]; marked as polymorphic.';
+	TEXT TAXON=5 CHARACTER=188 TEXT='No (chitinous) pedicle, so only collagenous cuticle present [@Williams1997Introduction]';
+	TEXT TAXON=13 CHARACTER=188 TEXT='The brachiopod pedicle has a chitinous cuticle  [@Williams1997Introduction;@MacKay1978], but the tentacles are associated with collagen [@Williams1997Introduction]; marked as polymorphic.';
 	TEXT TAXON=3 CHARACTER=188 TEXT='@Haszprunar2008';
+	TEXT TAXON=4 CHARACTER=188 TEXT='Collagenous [@Schopf1967]';
+	TEXT TAXON=8 CHARACTER=188 TEXT='Collagenous [@Goffinet1978]';
 	TEXT TAXON=10 CHARACTER=188 TEXT='@Haszprunar2008';
 	TEXT TAXON=11 CHARACTER=188 TEXT='@Haszprunar2008';
 	TEXT TAXON=3 CHARACTER=157 TEXT='Six to eight apical cells; eight peripheral cells [@Wanninger2007], indicating a probable equivalence to polyplacophorans [@Haszprunar2008]';
