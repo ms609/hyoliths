@@ -184,7 +184,7 @@ ColMissing(omit)
 # Plot consensus results
 par(mfrow=c(2, 2), mar=rep(0.2, 4))
 
-ColPlot(consensus(lapply(iw.trees, consensus)))
+ColPlot(RootTree(consensus(lapply(iw.trees, consensus))), rootingTips)
 text(-0.5, 1, pos=4, "Strict consensus of all k values", cex=0.8)
 
 # Plot results for each value of k
@@ -192,7 +192,7 @@ PlotPanel <- function (i) {
   if (i > length(iw.trees)) {
     cat("\n > Results not available for panel", i)
   } else {
-    ColPlot(consensus(iw.trees[[i]]))
+    ColPlot(RootTree(consensus(iw.trees[[i]]), rootingTips))
     text(1, 1, paste0('k = ', kValues[i]), pos=4)
   }
 }
