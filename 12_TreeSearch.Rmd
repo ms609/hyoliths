@@ -106,22 +106,27 @@ for (i in seq_along(iw.trees)) {
   allTrees <- c(allTrees, iw.trees[[i]])
 }
 
-nTip <- Ntip(allTrees[[1]])
-tipIndex <- sort(allTrees[[1]]$tip.label)
 powersOf2 <- 2^(seq_len(nTip)- 1)
-SplitNumber <- function (tips, tr) {
+SplitNumber <- function (tips, tr, tipIndex) {
   included <- tipIndex %in% tr$tip.label[tips]
-  c(sum(powersOf2[included]), sum(powersOf2[!included]))
+  as.character(c(sum(powersOf2[included]), sum(powersOf2[!included])))
 }
-splitOccurrences <- table(vapply(allTrees, function (tr) {
-  vapply(Descendants(tr, nTip + seq_len(nTip - 1L), type='tips'),
-         SplitNumber, double(2), tr)
-  }, double(2 * (nTip - 1L))))
-SplitSupport <- function(tr) {
+SplitSupport <- function(tr, splitOccurrences, tipIndex) {
+  nTip <- length(tipIndex)
   splits <- Descendants(tr, nTip + seq_len(Nnode(tr)), type='tips')
-  splitNumbers <- vapply(splits, SplitNumber, double(2), tr)[1, ]
-  splitOccurrences[as.character(splitNumbers)]
+  splitNumbers <- vapply(splits, SplitNumber, character(2), tr, tipIndex)[1, ]
+  splitOccurrences[splitNumbers]
 }
+GetSplits <- function (trees, tipIndex) {
+  nTip <- length(tipIndex)
+  table(vapply(trees, function (tr) {
+  vapply(Descendants(tr, nTip + seq_len(nTip - 1L), type='tips'),
+         SplitNumber, character(2), tr, tipIndex)
+  }, character(2 * (nTip - 1L))))
+}
+
+tipIndex <- sort(allTrees[[1]]$tip.label)
+allSplits <- GetSplits(allTrees, tipIndex)
 ```
 
 (ref:ts-all-cons) Consensus of all parsimony results.  
@@ -130,7 +135,7 @@ SplitSupport <- function(tr) {
 
 ```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
 majCon <- RootTree(consensus(allTrees, p=0.5), rootingTips)
-supporters <- SplitSupport(majCon)
+supporters <- SplitSupport(majCon, allSplits, tipIndex)
 
 ColPlot(majCon)
 nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
@@ -141,33 +146,26 @@ nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
 
 (ref:ts-trim-cons) Consensus of all parsimony results, with taxa omitted to show underlying clade support.  
 
-```{r treesearch-maj-consensus-pruned, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
+```{r treesearch-maj-consensus-pruned, fig.cap="(ref:ts-trim-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
 omit <- c("Micrina", 'Mickwitzia_muralensis',
        'Heliomedusa_orienta')
-majCon <- RootTree(ConsensusWithout(allTrees, omit, p=0.5), rootingTips)
-conTip <- Ntip(majCon)
-splits <- Descendants(majCon, conTip + seq_len(Nnode(majCon)), type='tips')
-splits <- lapply(splits, function (x) sort(majCon$tip.label[x]))
-internalNodes <- conTip + seq_len(conTip - 1)
-prunedTrees <- lapply(allTrees, drop.tip, tip=omit)
-supporters <- vapply(splits, function (tips) sum(vapply(prunedTrees, function (tree) {
-  treeSplits <- Descendants(tree, internalNodes, type='tips')
-  splitLengths <- vapply(treeSplits, length, integer(1))
-  prunedTips <- tree$tip.label
-  treeSplits <- vapply(treeSplits[splitLengths == length(tips)],
-                       function (x) sort(prunedTips[x]), character(length(tips)))
-  any(apply(treeSplits, 2, identical, tips))
-}, logical(1))), integer(1))
+allPruned <- lapply(allTrees, drop.tip, omit)
+majCon <- RootTree(consensus(allPruned, p=0.5), rootingTips)
+conTipIndex <- sort(majCon$tip.label)
+conSplits <- GetSplits(allPruned, conTipIndex)
 
-
+####
+supporters <- SplitSupport(majCon, conSplits, conTipIndex)
+####
 ColPlot(majCon)
 nodelabels(paste0("\n", signif(supporters / length(allTrees), 3)),
            col=NodeColour(round(supporters / length(allTrees), 2)),
            adj=0, pos=2, frame='none', cex=0.75)
+ColMissing(omit)
 
 ```
 
-(ref:ts-iw-cons) Consensus of implied weights analyses at all values of _k_. Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
+(ref:ts-iw-cons) Strict consensus of implied weights analyses at all values of _k_. Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
 
 ```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE}
 ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
@@ -187,7 +185,7 @@ ColMissing(omit)
 par(mfrow=c(2, 2), mar=rep(0.2, 4))
 
 ColPlot(consensus(lapply(iw.trees, consensus)))
-text(-0.5, 1, pos=4, "Consensus of all k values", cex=0.8)
+text(-0.5, 1, pos=4, "Strict consensus of all k values", cex=0.8)
 
 # Plot results for each value of k
 PlotPanel <- function (i) {
