@@ -649,7 +649,7 @@ for (i in seq_len(n_char)) {
       edgeCol <- matrix_data$edge_col
       flagCol <- matrix_data$tips_colours
       tipFlag <- matrix_data$tips_labels
-      nodeSupport <- round(SplitSupport(tree) / length(allTrees), 2)
+      nodeSupport <- round(SplitSupport(tree, allSplits, tipIndex) / length(allTrees), 2)
       
       LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
       edges <- paste0(vapply(unique(edgeCol), function(colour) {
