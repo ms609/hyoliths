@@ -106,7 +106,7 @@ for (i in seq_along(iw.trees)) {
   allTrees <- c(allTrees, iw.trees[[i]])
 }
 
-powersOf2 <- 2^(seq_len(nTip)- 1)
+powersOf2 <- 2^(seq_along(allTrees[[1]]$tip.label)- 1)
 SplitNumber <- function (tips, tr, tipIndex) {
   included <- tipIndex %in% tr$tip.label[tips]
   as.character(c(sum(powersOf2[included]), sum(powersOf2[!included])))
@@ -184,7 +184,7 @@ ColMissing(omit)
 # Plot consensus results
 par(mfrow=c(2, 2), mar=rep(0.2, 4))
 
-ColPlot(RootTree(consensus(lapply(iw.trees, consensus))), rootingTips)
+ColPlot(RootTree(consensus(lapply(iw.trees, consensus)), rootingTips))
 text(-0.5, 1, pos=4, "Strict consensus of all k values", cex=0.8)
 
 # Plot results for each value of k
