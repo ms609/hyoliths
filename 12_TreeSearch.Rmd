@@ -103,7 +103,8 @@ iw.trees <- lapply(kValues, function (k) {
 
 allTrees <- ew.trees
 for (i in seq_along(iw.trees)) {
-  allTrees <- c(allTrees, iw.trees[[i]])
+  iTrees <- iw.trees[[i]]
+  if (length(iTrees) > 0) allTrees <- c(allTrees, iTrees)
 }
 
 powersOf2 <- 2^(seq_along(allTrees[[1]]$tip.label)- 1)
