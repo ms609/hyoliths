@@ -100,11 +100,11 @@ iw.trees <- lapply(kValues, function (k) {
     if (class(loadedTrees) == 'multiPhylo') unique(loadedTrees) else loadedTrees
   }
 })
+iw.exist <- iw.trees[vapply(iw.trees, length, 0) > 0]
 
 allTrees <- ew.trees
-for (i in seq_along(iw.trees)) {
-  iTrees <- iw.trees[[i]]
-  if (length(iTrees) > 0) allTrees <- c(allTrees, iTrees)
+for (i in seq_along(iw.exist)) {
+  allTrees <- c(allTrees, iw.trees[[i]])
 }
 
 powersOf2 <- 2^(seq_along(allTrees[[1]]$tip.label)- 1)
@@ -169,7 +169,7 @@ ColMissing(omit)
 (ref:ts-iw-cons) Strict consensus of implied weights analyses at all values of _k_. Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
 
 ```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE}
-ColPlot(ConsensusWithout(lapply(iw.trees, consensus), omit))
+ColPlot(ConsensusWithout(lapply(iw.exist, consensus), omit))
 ColMissing(omit)
 ```
 
@@ -185,12 +185,12 @@ ColMissing(omit)
 # Plot consensus results
 par(mfrow=c(2, 2), mar=rep(0.2, 4))
 
-ColPlot(RootTree(consensus(lapply(iw.trees, consensus)), rootingTips))
+ColPlot(RootTree(consensus(lapply(iw.exist, consensus)), rootingTips))
 text(-0.5, 1, pos=4, "Strict consensus of all k values", cex=0.8)
 
 # Plot results for each value of k
 PlotPanel <- function (i) {
-  if (i > length(iw.trees)) {
+  if (i > length(iw.trees) || length(iw.trees[[i]]) == 0) {
     cat("\n > Results not available for panel", i)
   } else {
     ColPlot(RootTree(consensus(iw.trees[[i]]), rootingTips))
