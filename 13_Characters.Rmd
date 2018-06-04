@@ -450,7 +450,6 @@ function applyHighlighting () {
   if(localStorage.getItem($(this).text())) {
     $(this).addClass("highlightTaxon");
   }
-  return false;
 }
 
 function onScroll() {
