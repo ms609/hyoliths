@@ -54,7 +54,6 @@ filename <- files[which.max(vapply(files, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(filename)
 # my_data contains an inapplicable state that we should convert to ambiguous for 
 # standard fitch, for CI etc.
-my_data$Namacalathus <- NULL ## DELETE 
 iw_data <- PrepareDataIW(my_data)
 fitch_data <- my_data
 cont <- attr(fitch_data, 'contrast')
