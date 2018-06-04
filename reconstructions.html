@@ -501,10 +501,11 @@ function updateVisible() {
           context: item,
           datatype: 'xml'
         }).done(function (newTree) {
-          $(newTree).data('tree', chosenTree);
-          $(newTree).click(highlightTaxon);
-          $('text', newTree).each(applyHighlighting);
-          $(this).replaceWith($('svg', newTree));
+          $newSvg = $('svg', newTree);
+          $newSvg.data('tree', chosenTree);
+          $newSvg.click(highlightTaxon);
+          $('text', $newSvg).each(applyHighlighting);
+          $(this).replaceWith($newSvg);
         })
       }
     }
