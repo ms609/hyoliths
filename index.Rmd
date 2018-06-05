@@ -61,7 +61,7 @@ cont[cont[, '-'] == 1, ] <- 1
 attr(fitch_data, 'contrast') <- cont
 my_chars <- ReadCharacters(filename)
 my_states <- attr(my_chars, 'state.labels')
-my_chars <- my_chars[-1, ]
+# my_chars <- my_chars[-1, ] # Remove Namacalathus
 neomorphic <- vapply(my_states, function(x) !x[[1]] %in% c("", "''"), logical(1))
 setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 
