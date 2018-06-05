@@ -104,7 +104,7 @@ iw.exist <- iw.trees[vapply(iw.trees, length, 0) > 0]
 
 allTrees <- ew.trees
 for (i in seq_along(iw.exist)) {
-  allTrees <- c(allTrees, iw.trees[[i]])
+  allTrees <- c(allTrees, iw.exist[[i]])
 }
 
 powersOf2 <- 2^(seq_along(allTrees[[1]]$tip.label)- 1)
