@@ -310,7 +310,7 @@ Italicize <- function (string) {
                                       'Ischnochiton', 'Kraussina',
                                       'Lochkothele', 'Loxosoma',
                                       'Magelona', 'Mopalia',
-                                      'Neocrania', 'Notosaria',
+                                      'Nereis', 'Neocrania', 'Notosaria',
                                       'Oikozetetes',
                                       'Paracraniops', 'Paramicrocornus',
                                       'Phascolion', 'Phoronopsis', 'Scolelepis',
@@ -332,7 +332,7 @@ library('Inapp')
 if (knitr::is_html_output()) {
   trees <- unique(allTrees)
 } else {
-  trees <- iw.trees[[ceiling(length(iw.trees)/2L)]][2] # Single [] to keep as a list of 1 tree.
+  trees <- iw.exist[[ceiling(length(iw.exist)/2L)]][2] # Single [] to keep as a list of 1 tree.
 }
 tree <- trees[[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
