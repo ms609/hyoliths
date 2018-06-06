@@ -327,7 +327,9 @@ for (i in seq_len(n_char)) {
   stateLabels <- my_states[[i]]
   my_chars_i <- my_chars[, i]
   
-  if (exists('localInstance') || knitr::is_html_output()) {
+  if (my_chars_i[1] == '?' && length(unique(my_chars_i)) == 1) {
+    cat("<p>All taxa are ambiguous for this character</p>")
+  } else if (exists('localInstance') || knitr::is_html_output()) {
     for (treeNo in eachTree) {
       tree <- rootedTrees[[treeNo]]
       nodeXi <- nodeX[[treeNo]]
