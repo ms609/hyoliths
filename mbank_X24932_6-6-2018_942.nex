@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-6 08.48.41 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-6 09.42.44 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=47;
@@ -1648,7 +1648,7 @@ BEGIN NOTES;
 	TEXT TAXON=4 CHARACTER=21 TEXT='Grows directly onto the substrate.';
 	TEXT TAXON=10 CHARACTER=21 TEXT='Absent; there is no clear basis to homologise the larval attachment structure of certain sipunculans with a pedicle';
 	TEXT TAXON=39 CHARACTER=27 TEXT='A coleomic canal is inferred based on the ease with which the pedicle is deformed (Holmer et al. 2018E), but its presence is not known for certain so is coded ambiguous.';
-	TEXT TAXON=31 CHARACTER=28 TEXT='"Pronounced concentric annular discs disposed at intervals of 0.6–1.0 mm"';
+	TEXT TAXON=31 CHARACTER=28 TEXT='"Pronounced concentric annular discs disposed at intervals of 0.6--1.0 mm" -- @Zhang2007Rhynchonelliformeanbrachiopods';
 	TEXT TAXON=17 CHARACTER=28 TEXT='"The pedicle surface is ornamented with pronounced annulated rings, disposed at intervals of about 0.2 mm"';
 	TEXT TAXON=34 CHARACTER=28 TEXT='"The preserved pedicle has condensed annulations" -- Zhang et al. 2011T';
 	TEXT TAXON=33 CHARACTER=28 TEXT='Regularly annotated (see fig. 14.9 in Hou et al. 2017)';
@@ -1731,7 +1731,7 @@ BEGIN NOTES;
 	TEXT TAXON=29 CHARACTER=128 TEXT='The tubules within the centre of the bundles of hyolith shells (Kouchinsky 2000) are c. 10 um wide, making them an order of magnitude larger than the canals that characterize lingulid valves, and a similar scale to punctae.  This said, they have only been reported in a putative allathecid, so the presence of equivalent structures in hyolithids has never been demonstrated.';
 	TEXT TAXON=38 CHARACTER=128 TEXT='"Vertical shell penetrating structures, such as punctae, pseudopunctae, extropunctae and canals, are common in many groups of brachiopods and are distinguished based on their geometry and size (Williams 1997). Punctae are 10-20 um wide and represent multicellular extensions of the outer epithelium (Owen and Williams 1969). [...] None of these three types of vertical shell structure, all of which are confined to calcitic-shelled brachiopods, compares with the much smaller canals (< 1 um in diameter) of M. nuda. The only type of vertical structure that fits the size and nature of the canals of the Mural obolellids are the canals of linguliform brachiopods, which range in width from 180 to 740 nm and are occupied by proteinaceous strands in extant taxa (Williams et al. 1992, 1994; Williams 1997)." -- Balthasar 2008';
 	TEXT TAXON=30 CHARACTER=128 TEXT='''Identical'' to those in Mickwitzia -- see Williams et al. 2007';
-	TEXT TAXON=6 CHARACTER=128 TEXT='Endopunctae are relatively large canals, diameter vary greatly from 5-20 µm.';
+	TEXT TAXON=6 CHARACTER=128 TEXT='Endopunctae are relatively large canals, diameter vary greatly from 5-20 um.';
 	TEXT TAXON=24 CHARACTER=128 TEXT='"impunctate"';
 	TEXT TAXON=37 CHARACTER=128 TEXT='Coded as present to reflect that the chambers contained setae; following Carlson in Williams et al. 2007, the punctae may or may not be homologous as punctae, but are likely homologous as shell perforations; both these perforations and those of Micrina were associated with setae, even if their equivalence bay be with juvenile vs adult setal structures in modern brachiopods (Balthasar 2004, p. 397).';
 	TEXT TAXON=44 CHARACTER=128 TEXT='The ''canals'' through the shell have a diameter of c. 20 um (Williams et al. 2004, text-fig. 2a), falling within the definition of punctae used herein.';
@@ -2690,7 +2690,7 @@ BEGIN NOTES;
 	TEXT TAXON=7 CHARACTER=170 TEXT='Four flask-shaped cells [@Altenburger2010]';
 	TEXT TAXON=6 CHARACTER=170 TEXT='Eight in Terebratalia [@Luter2016]';
 	TEXT TAXON=3 CHARACTER=170 TEXT='Six to eight apical cells; eight peripheral cells [@Wanninger2007], indicating a probable equivalence to polyplacophorans [@Haszprunar2008]';
-	TEXT TAXON=4 CHARACTER=170 TEXT='Concentration of 30–40 serotonergic perikarya [in Fredericella; @Gruhl2010F]';
+	TEXT TAXON=4 CHARACTER=170 TEXT='Concentration of 30--40 serotonergic perikarya [in Fredericella; @Gruhl2010F]';
 	TEXT TAXON=10 CHARACTER=170 TEXT='Cluster of around eight cells, though not quite countable [@Wanninger2005]';
 	TEXT TAXON=12 CHARACTER=170 TEXT='Eight in Ischnochiton and Mopalia [@Wanninger2007]';
 	TEXT TAXON=9 CHARACTER=203 TEXT='Outer layer seemingly fibrous [@BereiterHahn1984]';
