@@ -15,7 +15,7 @@ before_script:
   - chmod +x ./_deploy.sh
 
 script:
-  - travis_wait ./_build.sh
+  - travis_wait 40 ./_build.sh
   - travis_wait ./_deploy.sh
 
 addons:
