@@ -309,7 +309,7 @@ Italicize <- function (string) {
                                       'Hadrotreta', 'Harmothoe', 'Hydroides', 
                                       'Ischnochiton', 'Kraussina',
                                       'Lochkothele', 'Loxosoma', 'Loxosomatoides',
-                                      'Magelona', 'Mopalia',
+                                      'Magelona', 'Membranipora', 'Mopalia',
                                       'Nereis', 'Neocrania', 'Notosaria',
                                       'Oikozetetes',
                                       'Paracraniops', 'Paramicrocornus',
