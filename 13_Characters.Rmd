@@ -17,8 +17,8 @@ We emphasize that different trees will give different reconstructions.  The char
 ```{R load-the-characters, echo=FALSE, message=FALSE}
 if (!require('Inapp')) devtools::install_github('TGuillerme/Inapp')
 library('Inapp')
-if (knitr::is_html_output()) {
 source('printFunctions.R')
+if (exists('localInstance') || knitr::is_html_output()) {
   trees <- unique(allTrees)
 } else {
   trees <- iw.exist[[ceiling(length(iw.exist)/2L)]][2] # Single [] to keep as a list of 1 tree.
@@ -53,7 +53,7 @@ ci_text <- vapply(trees, function (tree) {
 ```
 ```{R SVG-setup, echo=FALSE, results="asis"}
 fileNamer <- 'Brachiopod_phylogeny_files/figure-html/tree%s-char%s.svg'
-if (knitr::is_html_output()) {
+if (exists('localInstance') || knitr::is_html_output()) {
   CheckDirExists <- function (x) if (!dir.exists(x)) dir.create(x)
   CheckDirExists('_book')
   CheckDirExists('_book/Brachiopod_phylogeny_files')
@@ -327,7 +327,7 @@ for (i in seq_len(n_char)) {
   stateLabels <- my_states[[i]]
   my_chars_i <- my_chars[, i]
   
-  if (knitr::is_html_output()) {
+  if (exists('localInstance') || knitr::is_html_output()) {
     for (treeNo in eachTree) {
       tree <- rootedTrees[[treeNo]]
       nodeXi <- nodeX[[treeNo]]
@@ -405,7 +405,7 @@ for (i in seq_len(n_char)) {
   
   }
   cat(paste0("  \n\n > **Character ", i, ": ", Italicize(char_names[i]), "**  \n>\n"))
-  if (knitr::is_html_output()) {
+  if (exists('localInstance') || knitr::is_html_output()) {
     lineHeight <- 24L
     legendY <- round(lineHeight * seq_along(legendLabels), 1)
     cat(paste0('>  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
@@ -431,7 +431,7 @@ for (i in seq_len(n_char)) {
   if (my_states[[i]][[1]] != "''") PrintNaughtyInapplicables(my_chars[, i])
   cat("  \n") # Clear line, ready for next block
 }
-if (knitr::is_html_output()) {
+if (exists('localInstance') || knitr::is_html_output()) {
   cat(paste0('<div class="switcher">',
     '<span class="selectTree">Tree number:</span>',
     '<input class="switcherNumber" type="number" min="1" max="',
