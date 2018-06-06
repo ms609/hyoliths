@@ -1,5 +1,3 @@
-Sys.setlocale('LC_ALL','English_United Kingdom.1252');
-
 NexusTime <- function (filename, format='double') {
   FILE <- file(filename)
   open(FILE)

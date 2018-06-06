@@ -31,6 +31,7 @@ For completeness, we also document the results of [standard Fitch parsimony](#fi
 Supplementary [figures](#figures) and [tables](#table) appear after the text.
 
 ```{r setup-index, include=FALSE, message=FALSE}
+Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 set.seed(0)
 knitr::opts_chunk$set(echo = TRUE)
 library('ape'); library('phangorn'); library('TreeSearch');
