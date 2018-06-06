@@ -32,26 +32,15 @@ Supplementary [figures](#figures) and [tables](#table) appear after the text.
 
 ```{r setup-index, include=FALSE, message=FALSE}
 set.seed(0)
-#Sys.setlocale('LC_ALL','C')
-Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 knitr::opts_chunk$set(echo = TRUE)
-devtools::install_github('ms609/TreeSearch')
 library('ape'); library('phangorn'); library('TreeSearch');
+source('helperFunctions.R')
+source('plotFunctions.R')
+
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
-NexusTime <- function (filename, format='double') {
-  FILE <- file(filename)
-  open(FILE)
-  comment <- readLines(FILE, n=3)[3]
-  close(FILE)
-  comment <- sub("\\-(\\d) ", "-0\\1 ", comment) # Morphobank do odd things with times!
-  if (format == 'double') {
-    as.double(sub('.*(\\d{4})\\-(\\d{2})\\-(\\d{2})\\s(\\d{2})\\.(\\d{2}\\.\\d{2}).*', "\\1\\2\\3\\4\\5", comment, perl=TRUE))
-  } else {
-    sub('.*(\\d{4}\\-\\d{2}\\-\\d{2}\\s\\d{2})\\.(\\d{2})\\.(\\d{2}).*', "\\1:\\2:\\3", comment, perl=TRUE)
-  }
-}
 filename <- files[which.max(vapply(files, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(filename)
+
 # my_data contains an inapplicable state that we should convert to ambiguous for 
 # standard fitch, for CI etc.
 iw_data <- PrepareDataIW(my_data)
@@ -59,11 +48,12 @@ fitch_data <- my_data
 cont <- attr(fitch_data, 'contrast')
 cont[cont[, '-'] == 1, ] <- 1
 attr(fitch_data, 'contrast') <- cont
+
 my_chars <- ReadCharacters(filename)
 my_states <- attr(my_chars, 'state.labels')
 # my_chars <- my_chars[-1, ] # Remove Namacalathus
+
 neomorphic <- vapply(my_states, function(x) !x[[1]] %in% c("", "''"), logical(1))
-setPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 
 kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
@@ -79,324 +69,12 @@ RootTree <- function (tree, outgroupTips) {
   Renumber(root(tree, Descendants(tree, lca)[[1]], resolve.root = TRUE))
 }
 
-#pal <- TreeSearch::brewer[[11]]
-pal <- c("#F07894", "#E18758", "#C49800", "#99A700", "#55B23A", "#00B97B", "#00BAAE", "#00B3D7", "#52A2EF", "#AF8BF2", "#DE77DD") # <- colorspace::rainbow_hcl(11, 80, 65, 0, 308)
-
-taxonColour <- c(
-  Namacalathus                    = pal[1],
-  Flustra                         = pal[1],
-  Loxosomella                     = pal[1],
-  Serpula                         = pal[11],
-  Sipunculus                      = pal[11],
-  Dentalium                       = pal[11],
-  Tonicella                       = pal[11],
-  Halkieria                       = 'grey',
-  Halkieria_evangelista           = 'grey',
-  Wiwaxia_corrugata               = pal[11],
-  Wiwaxia                         = pal[11],
-  Cotyledion_tylodes              = 'grey',
-  Cotyledion                      = pal[1],
-  Novocrania                      = pal[4],
-  Craniops                        = pal[4],
-  Ussunia                         = pal[4],
-  Gasconsia                       = pal[4],
-  Heliomedusa_orienta             = pal[3],
-  Heliomedusa                     = pal[3],
-  Micrina                         = pal[3],
-  Mickwitzia_muralensis           = pal[3],
-  Mickwitzia                      = pal[3],
-  Micromitra                      = pal[8],
-  Askepasma_toddense              = pal[8],
-  Askepasma                       = pal[8],
-  Pelagodiscus_atlanticus         = pal[6],
-  Pelagodiscus                    = pal[6],
-  Mummpikia_nuda                  = pal[5],
-  Mummpikia                       = pal[5],
-  Lingula                         = pal[5],
-  Eoobolus                        = pal[5],
-  Botsfordia                      = pal[5],
-  Siphonobolus_priscus            = pal[5],
-  Siphonobolus                    = pal[5],
-  Clupeafumosus_socialis          = pal[5],
-  Clupeafumosus                   = pal[5],
-  Lingulellotreta_malongensis     = pal[5],
-  Lingulellotreta                 = pal[5],
-  Acanthotretella_spinosa         = pal[5],
-  Acanthotretella                 = pal[5],
-  Lingulosacculus                 = 'grey',
-  Phoronis                        = pal[2],
-  Dailyatia                       = pal[2],
-  Eccentrotheca                   = pal[2],
-  Yuganotheca_elegans             = 'grey',
-  Yuganotheca                     = 'grey',
-  Longtancunella_chengjiangensis  = 'grey',
-  Longtancunella                  = 'grey',
-  Paterimitra                     = pal[1],
-  Pedunculotheca_diania           = 'black',
-  Pedunculotheca                  = 'black',
-  Haplophrentis_carinatus         = 'black',
-  Haplophrentis                   = 'black',
-  Tomteluva_perturbata            = 'grey',
-  Tomteluva                       = 'grey',
-  Salanygolina                    = pal[9],
-  Coolinia_pecten                 = pal[9],
-  Coolinia                        = pal[9],
-  Antigonambonites_planus         = pal[9],
-  Antigonambonites                = pal[9],
-  Kutorgina_chengjiangensis       = pal[10],
-  Kutorgina                       = pal[10],
-  Nisusia_sulcata                 = pal[10],
-  Nisusia                         = pal[10],
-  Alisina                         = pal[10],
-  Glyptoria                       = pal[10],
-  Orthis                          = pal[10],
-  Terebratulina                   = pal[10])
-
-
-WriteNumber <- function (n) {
-  if (n == 0) {
-    'zero' 
-  } else if (0 < n && n < 10) {
-    c('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine')[n]
-  } else {
-    n
-  }
-}
-UnitEdges <- function (tree) {
-  tree$edge.length <- rep(1, dim(tree$edge)[1])
-  # Return: 
-  tree
-}
-ColPlot <- function (tree) {
-  setPar()
-  plot(tree, tip.color = taxonColour[tree$tip.label], lwd=2)
-}
-# continuousScale <- rev(colorspace::heat_hcl(101, h=c(300, 75), c.=c(35, 95), l=c(15, 90), power=c(0.8, 1.2))) # Viridis prefered 
-divergingScale <- rev(colorspace::diverge_hcl(101, h=c(260, 0), c=100, l=c(50, 90), power=1.0))
-NodeColour <- function (support) {
-  ifelse(is.na(support), 'red', divergingScale[(support * 100) + 1L])
-}
-
-ColMissing <- function (omit) MarkMissing(omit, text.font=3, cex=0.8,
-                                          text.col=taxonColour[omit])
 ```
 ```{R Morphobank bibliography, echo=FALSE, message=FALSE}
+source('bibFunctions.R')
 mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
 mbRecent <- mbBib[which.max(file.mtime(mbBib))]
 refs <- trimws(enc2utf8(as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))))
-FirstWord <- function (string) gsub("^(\\w+).*$", "\\1", trimws(string), perl=TRUE)
-FirstWords <- function (string) gsub("^\\W*(\\w+?)\\b\\W*(\\w+)?.*", "\\1\\2", trimws(string), perl=TRUE)
-FormatAuthors <- function (string) {
-  authors <- trimws(strsplit(string, ';')[[1]])
-  names.pattern <- "(\\w+,)\\s(.*)"
-  surnames <-  gsub(names.pattern, "\\1 ", authors)
-  forenames <- gsub(names.pattern, "\\2", authors)
-  forenames <- gsub("(\\w)\\w+\\.?", "\\1.", forenames)
-  forenames <- gsub("\\.(\\w)", ". \\1", forenames)
-  
-  # Return:
-  paste0(surnames, forenames, collapse=' and ')
-}
-RefKey <- function (ref) paste0(FirstWord(ref['Author']),
-                                trimws(ref['Year']),
-                                FirstWords(ref['Title']))
-cached_works <- R.cache::addMemoization(rcrossref::cr_works)
-cached_dois <- R.cache::addMemoization(function(doi)
-  if (doi == '') NULL else rcrossref::cr_works(dois=doi))
-                 
-RefExpand <- function (ref) {
-
-  # Manual overrides based on title cannot assume DOI present, so go first.
-  title <- ref['Title']
-  ref['Secondary.Title'] <- 
-    if (grepl("interpreting evolutionary relationships within early Rhynchonelliformea",
-              title, fixed=TRUE) || 
-        grepl("Dalarna, Sweden", title, fixed=TRUE)) {
-      "Fossils and Strata"
-    } else if (grepl("Lower Cambrian brachiopods from the rift valley",
-              title, ignore.case=TRUE) || 
-              grepl("an early articulate brachiopod", title, fixed=TRUE)) {
-      "Journal of Paleontology"
-    } else if (grepl("Ultrastructure of spermatids and spermatozoa in",
-              title, fixed=TRUE)) {
-      "Journal of Submicroscopic Cytology"
-    } else if (grepl("palaeoecology of the trimerellid brachiopod", title, fixed=TRUE) ||
-               grepl("shell structure in the classification of the orthotetidine",
-                     title, fixed=TRUE) ||
-               title == "The diversity and phylogeny of the paterinate brachiopods") {
-      "Palaeontology"
-    } else if (grepl("The early Cambrian tommotiid genus",
-              title, fixed=TRUE)) {
-      "Memoirs of the Association of Australasian Palaeontologists"
-    } else if (grepl("Early Cambrian (Botomian)", title, fixed=TRUE)) {
-      "Acta Palaeontologica Polonica"
-    } else if (grepl("in the Lower Ordovician sequence of Bohemia",
-                     title, fixed=TRUE)) {
-      "Sbornik geolgickych ved, Paleontologie"
-    } else if (grepl("musculature and vascular systems of two species of Cambrian Paterinide",
-                     title, fixed=TRUE)) {
-      "Bureau of Mineral Resources Journal of Australian Geology and Geophysics"
-    } else if (title == "The Cambrian radiation of brachiopods") {
-      ref['Secondary.Author'] <- "Lipps, J. H.; Signor, Philip W."
-      ref['Publisher'] <- "Pergamon"
-      "Origin and Early Evolution of Metazoa"
-    } else if (title == "Phoronida") {
-      ref['Publisher'] <- "Wiley-Blackwell"
-      ref['Secondary.Author'] <- "Harrison, F. W.; Woollacott, R. M."
-      "Microscopic Anatomy of Invertebrates, 13: Lophophorates, Entoprocta, and Cycliophora"
-    }  else ref['Secondary.Title']
-  
-  # Publisher:
-  ref['Publisher'] <- if (grepl('Fish Evolution and Systematics', title, fixed=TRUE)) {
-     "Cambridge University Press"
-  } else ref['Publisher']
-    
-  
-  CleanTitle <- function (title) { 
-    title <-gsub('</?i>|[.,;:\\-]', '', title, perl=TRUE)
-    # Return:
-    if (title=="") NULL else trimws(title)
-  }
-  RefAttribute <- function (name, pref='', suff='') {
-    if (is.na(ref[name])) NULL else paste0(pref, ref[name], suff)
-  }
-  
-  cr_details <- cached_dois(ref['DOI'])
-  if (is.null(cr_details) || is.null(cr_details$data)) {
-    flq <- c(query.bibliographic = paste(
-                  RefAttribute('Author'),
-                  RefAttribute('Year', '(', ')'), 
-                  CleanTitle(ref['Title']),
-                  RefAttribute('Journal', '', ','),
-                  RefAttribute('Volume', ':'),
-                  RefAttribute('Pages'))
-    )
-    
-    cr_details <- 
-      cached_works(query=CleanTitle(ref['Title']), flq=flq, limit=2,
-               select='container-title,DOI,title,issue,volume,score')
-    if (cr_details$meta[, 'total_results'] > 0) {
-      topResult <- cr_details$data[1, ]
-      ref['score'] <- as.numeric(topResult$score)  ## TODO delete
-      if (cr_details$meta[, 'total_results'] == 1 &&
-          as.numeric(topResult$score) < 60) {
-        return(ref)
-      }
-      relativeScore <- as.numeric(topResult$score) / 
-          as.numeric(cr_details$data[2, 'score'])
-      ref['relScore'] <- round(relativeScore, 3)
-      if (relativeScore < 1.3) {
-        return (ref)
-      }
-    } else {
-      # No results found.
-      return(ref)
-    }
-  } else {
-    topResult <- cr_details$data
-  }
-  
-  AddIfBlank <- function (ref, cr_attr_name, attr) {
-    if (
-      (is.na(ref[attr]) || ref[attr] == '') &&
-        cr_attr_name %in% names(topResult)
-      ) {
-      ref[attr] <- gsub("(\\w,)(\\w)", "\\1 \\2", 
-                        gsub("\\.$", "", 
-                             as.character(topResult[, cr_attr_name]), perl=TRUE),
-                        perl=TRUE)
-    }
-    # Return: 
-    ref
-  }
-  ref <- AddIfBlank(ref, 'container.title', 'Secondary.Title')
-  ref <- AddIfBlank(ref, 'doi', 'DOI')
-  ref <- AddIfBlank(ref, 'issue', 'Issue')
-  ref <- AddIfBlank(ref, 'title', 'Title')
-  ref <- AddIfBlank(ref, 'volume', 'Volume')
-  
-  # Manual overrides
-  if (ref['Title'] == "Invertebrate zoology: a functional evolutionary approach") {
-    ref['Publisher'] <- "Thompson Learning"
-    ref['DOI'] <- ref['volume'] <- ref['Secondary.Title'] <- '' # False positive
-  }
-  if (!is.null(ref['DOI']) && ref['DOI'] != "") {
-    doi <- ref['DOI']
-    ref['Secondary.Title'] <- 
-    if (grepl('10.1002/9781118896372', doi, fixed=TRUE)) {
-      ref['Publisher'] <- "Blackwell"
-      "The Cambrian Fossils of Chengjiang, China: The Flowering of Early Animal Life"
-    } else if (grepl('10.17161/dt.v0i0', doi, fixed=TRUE)) {
-      ref['Publisher'] <- "Geological Society of America & Paleontological Institute"
-      "Treatise on Invertebrate Paleontology, Part H, Brachiopoda (Revised)"
-    } else if (grepl('10.1201/9780203210437', doi, fixed=TRUE)) {
-      ref['Secondary.Author'] <- "Brunton, H.; Cocks, R. M.; Long, S. L."
-      ref['Publisher'] <- 'Taylor & Francis'
-      "Brachiopods, Past and Present"
-    } else if (grepl("setae and 3D MicroCT", title, ignore.case=TRUE)) {
-      ref['DOI'] <- ''
-      ref['Publisher'] <- "The Palaeontological Association"
-      "Palaeontological Association Annual Meeting"
-    } else ref['Secondary.Title']
-  }
-  # Return: 
-  ref
-}
-
-BibEntry <- function (ref) {
-  BibLine <- function (bibKey, key, text=ref[key]) {
-    if (is.na(ref[key]) || ref[key] == "") {
-      "" 
-    } else {
-      ret <- paste0("  ", bibKey, " = {",
-                    if (bibKey == 'journal') "{" else "",
-             gsub(" & ", " \\& ", 
-                  gsub("\u2013", "--",  # en dash
-                  gsub("\u2014", "---",  # em dash
-                  gsub("ä", '{\\"a}', 
-                  gsub("é", "{\\'e}", 
-                  gsub("ö", '{\\"o}', 
-                         trimws(text),
-                  fixed=TRUE),
-                  fixed=TRUE),
-                  fixed=TRUE),
-                  fixed=TRUE),
-                  fixed=TRUE),
-                  fixed=TRUE),
-             if (bibKey == 'journal') "}" else "",
-             "},\n")
-      ret
-    }
-  }
-  refType <- tolower(ref['Reference.Type'])
-  refType <- if (refType %in% c('generic', 'journal', 'journal article')) 'article' else
-    # if (refType == 'book section') 'inbook' else  # incollection would be nicer but throws errors?
-    if (refType == 'book section') 'incollection' else
-    if (refType == 'conference proceedings') 'incollection' else refType
-  
-  ref <- RefExpand(ref)
-  paste0("@", refType, '{', 
-         RefKey(ref), ",\n",
-         BibLine('author', 'Author', FormatAuthors(ref['Author'])),
-         BibLine('doi', 'DOI'),
-         BibLine('editor', 'Secondary.Author', FormatAuthors(ref['Secondary.Author'])),
-         BibLine(if (refType == 'article') 'journal' else
-                 if (refType == 'inbook') 'title' else
-                 'booktitle', 'Secondary.Title'),
-         #"  score = {", ref['score'], '; ', ref['relScore'], "},\n",
-         BibLine(if (refType == 'inbook') 'chapter' else 'title', 'Title',
-                 paste0('{', gsub("<i>", "\\\\textit{", 
-                                  gsub("</i>", "}", ref["Title"],
-                                       perl=TRUE, ignore.case = TRUE),
-                                  perl=TRUE, ignore.case=TRUE), '}')),
-         BibLine('number', 'Number'),
-         BibLine('pages', 'Pages', gsub("\\-+", "--", ref["Pages"], perl=TRUE)),
-         BibLine('publisher', 'Publisher'),
-         BibLine('volume', "Volume"),
-         BibLine('year', 'Year'),
-         "}\n"
-         )
-}
 
 #bibFile <- file("MorphoBank.bib", encoding='UTF-8')
 #writeLines(apply(refs, 1, BibEntry), bibFile)
