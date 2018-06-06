@@ -7,6 +7,9 @@ author: "Martin R. Smith"
 
 This section briefly places key features of our results in the context of previous phylogenetic hypotheses.
 
+Outgroup
+: We advise caution in the interpretation of outgroup relationships.  Outgroups include single representatives of diverse and ancient phyla, and are thus prone to long branch error 
+
 Brachiopod crown and stem group
 : Crown- and stem-group terminology has great value in clarifying the early evolution of major lineages [@Budd2000;@Carlson2009].  The crown group of a lineage is defined as the last common ancestor of all living members of a group, and all its descendants; the stem group as all taxa more closely related to the crown group than to any other extant taxon.  In our analyses, the brachiopod crown group corresponds to the last common ancestor of _Terebratulina_ and _Lingula_; the brachiopod stem group comprises anything between this node and the branching point of _Phoronis_.
 
