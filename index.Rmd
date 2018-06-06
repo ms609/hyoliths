@@ -36,7 +36,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library('ape'); library('phangorn'); library('TreeSearch');
 source('helperFunctions.R')
 source('plotFunctions.R')
-
+```
+```{R setup-more, include=FALSE, message=FALSE}
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(vapply(files, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(filename)
