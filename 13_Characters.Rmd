@@ -216,9 +216,12 @@ $(document).ready(function() {
   $my.trees.data('tree', originalSwitcher.val());
   $('text', $my.trees).each(applyHighlighting)
   
-  $('.book-body').scroll(onScroll);
-  $('.book-body').resize(onScroll);
-
+  $(".book-body").scroll(onScroll);
+  $(".book-body").resize(onScroll);
+  
+  $(".body-inner").resize(onScroll);
+  $(".body-inner").scroll(onScroll);
+  
   originalSwitcher.remove();
   return false;
 });
