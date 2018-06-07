@@ -274,7 +274,7 @@ PrintStateNotes <- function (notes) {
   }
 }
 
-taxa_not_to_print <- '' # which(taxa_names %in% 'Namacalathus')
+taxa_not_to_print <- which(taxa_names %in% ignored_taxa)
 prev_char_parts <- "NONE"
 prev_nesting <- 0
 

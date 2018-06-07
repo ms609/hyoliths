@@ -25,7 +25,7 @@ The results can most readily be replicated using the [R markdown files](https://
 ```{r treesearch-load-morphoBank, echo=TRUE, eval=FALSE}
 # Load data from locally downloaded copy of MorphoBank matrix
 my_data <- ReadAsPhyDat(filename)
-# my_data$Namacalathus <- NULL # Exclude Namacalathus
+my_data[ignored_taxa] <- NULL
 iw_data <- PrepareDataIW(my_data)
 ```
 
