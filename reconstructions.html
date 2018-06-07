@@ -565,9 +565,13 @@ $(document).ready(function() {
   $my.trees.data('tree', originalSwitcher.val());
   $('text', $my.trees).each(applyHighlighting)
   
-  $('.book-body').scroll(onScroll);
-  $('.book-body').resize(onScroll);
-
+  $(".book-body").scroll(onScroll);
+  $(".book-body").resize(onScroll);
+  
+  $(".body-inner").resize(onScroll);
+  $(".body-inner").scroll(onScroll);
+  // page-wrapper and page-inner are the other things that might trigger events?
+  
   originalSwitcher.remove();
   return false;
 });
