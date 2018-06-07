@@ -10,6 +10,7 @@ Suggests:
   Inapp,
   knitr,
   phangorn,
+  phytools,
   R.cache,
   rcrossref,
   stringi,

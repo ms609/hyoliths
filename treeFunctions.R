@@ -17,3 +17,5 @@ GetSplits <- function (trees, tipIndex) {
            SplitNumber, character(2), tr, tipIndex)
   }, character(2 * (nTip - 1L))))
 }
+
+as.multiPhylo <- phytools::as.multiPhylo

@@ -84,8 +84,11 @@ write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
 
 ```{R treesearch-load-trees, echo=FALSE}
 # Read results from files
+source('treeFunctions.R')
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
-ew.trees <- unique(read.nexus(file=ew.best[which.max(file.mtime(ew.best))]))
+ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
+ew.trees <- if (class(ew.trees) == 'multiPhylo') unique(ew.trees) else ew.trees
+ew.trees <- as.multiPhylo(ew.trees)
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch', 
                       pattern=paste0('hy_iw_k',
@@ -97,7 +100,7 @@ iw.trees <- lapply(kValues, function (k) {
     list()
   } else {
     loadedTrees <- read.nexus(iw.best[which.max(file.mtime(iw.best))])
-    if (class(loadedTrees) == 'multiPhylo') unique(loadedTrees) else loadedTrees
+    if (class(loadedTrees) == 'multiPhylo') unique(loadedTrees) else as.multiPhylo(loadedTrees)
   }
 })
 iw.exist <- iw.trees[vapply(iw.trees, length, 0) > 0]
@@ -108,7 +111,6 @@ for (i in seq_along(iw.exist)) {
 }
 
 powersOf2 <- 2^(seq_along(allTrees[[1]]$tip.label)- 1) # Needed for GetSplits etc
-source('treeFunctions.R')
 
 tipIndex <- sort(allTrees[[1]]$tip.label)
 allSplits <- GetSplits(allTrees, tipIndex)
