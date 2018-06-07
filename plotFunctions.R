@@ -6,6 +6,7 @@ pal <- c("#F07894", "#E18758", "#C49800", "#99A700", "#55B23A", "#00B97B", "#00B
 taxonColour <- c(
   Namacalathus                    = pal[1],
   Flustra                         = pal[1],
+  Amathia                         = pal[1],
   Loxosomella                     = pal[1],
   Serpula                         = pal[11],
   Sipunculus                      = pal[11],
