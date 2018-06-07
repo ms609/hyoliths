@@ -221,6 +221,7 @@ $(document).ready(function() {
   
   $(".body-inner").resize(onScroll);
   $(".body-inner").scroll(onScroll);
+  // page-wrapper and page-inner are the other things that might trigger events?
   
   originalSwitcher.remove();
   return false;
