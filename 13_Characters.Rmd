@@ -328,7 +328,7 @@ for (i in seq_len(n_char)) {
   my_chars_i <- my_chars[, i]
   
   if (my_chars_i[1] == '?' && length(unique(my_chars_i)) == 1) {
-    cat("<p>All taxa are ambiguous for this character</p>")
+    cat("<p>All taxa are coded as ambiguous for this character.</p>")
   } else if (exists('localInstance') || knitr::is_html_output()) {
     for (treeNo in eachTree) {
       tree <- rootedTrees[[treeNo]]
