@@ -141,12 +141,12 @@ ReadNotes <- function (filepath) {
 
   if (length(notesStart) == 0) {
     return(list("NOTES block not found in Nexus file."))
-  } else if (length(taxaStart) == 0) {
-    return(list("TAXA block not found in Nexus file."))
+  } else if (length(taxlabels) == 0) {
+    return(list("TAXLABELS not found in Nexus file."))
   } else if (length(notesStart) > 1) {
     return(list("Multiple NOTES blocks found in Nexus file."))
-  } else if (length(taxaStart) > 1) {
-    return(list("Multiple TAXA blocks found in Nexus file."))
+  } else if (length(taxlabels) > 1) {
+    return(list("Multiple TAXLABELS found in Nexus file."))
   } else {
     taxaEnd <- semicolons[semicolons > taxlabels][1] - 1L
     taxaLines <- lines[(taxlabels + 1):taxaEnd]
