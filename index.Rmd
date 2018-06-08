@@ -43,7 +43,7 @@ files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(vapply(files, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(filename)
 ignored_taxa <- c('Conotheca', 'Decoritheca', 'Maxilites', 'Pauxillites',
-                  'Probactrotheca')
+                  'Probactrotheca') # Also manually update tnt.run with with taxcode-
 my_data[ignored_taxa] <- NULL
 
 # my_data contains an inapplicable state that we should convert to ambiguous for 
