@@ -63,6 +63,9 @@ text.stepsLabel {
 
 tspan.score, text.flag {
   font-weight: bold;
+}
+
+tspan.score {
   fill: #34caaf;
 }
 
