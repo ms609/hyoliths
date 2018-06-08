@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-8 09.24.13 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-8 11.00.27 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=53;
@@ -64,7 +64,7 @@ ENDBLOCK;
 
 
 BEGIN CHARACTERS;
-	DIMENSIONS NCHAR=222;
+	DIMENSIONS NCHAR=224;
 	FORMAT DATATYPE=STANDARD MISSING=? GAP=- SYMBOLS="0123456";
 
 	CHARLABELS
@@ -197,99 +197,101 @@ BEGIN CHARACTERS;
 		 [127] 'Sclerites: Composition: Periostracum: Flexibility'
 		 [128] 'Sclerites: Composition: Microstructure: Layers'
 		 [129] 'Sclerites: Composition: Microstructure: Crystal format'
-		 [130] 'Sclerites: Composition: Microstructure: Punctae'
-		 [131] 'Sclerites: Composition: Microstructure: Stratiform laminae'
-		 [132] 'Sclerites: Composition: Microstructure: Canals'
-		 [133] 'Sclerites: Composition: Microstructure: Pseudopunctae'
-		 [134] 'Sclerites: Composition: Microstructure: External polygonal ornament'
-		 [135] 'Sclerites: Periodically shed and replaced'
-		 [136] 'Gametes: Egg size'
-		 [137] 'Gametes: Gonocoel'
-		 [138] 'Gametes: Ovary wall saccular'
-		 [139] 'Gametes: Testis wall saccular'
-		 [140] 'Gametes: Asexual reproduction'
-		 [141] 'Gametes: Fertilization'
-		 [142] 'Gametes: Sexes'
-		 [143] 'Gametes: Egg: Protective membrane'
-		 [144] 'Gametes: Site of maturation'
-		 [145] 'Gametes: Spermatozoa: Nucleus: Shape'
-		 [146] 'Gametes: Spermatozoa: Anterior nuclear fossa'
-		 [147] 'Gametes: Spermatozoa: Acrosome: Shape'
-		 [148] 'Gametes: Spermatozoa: Acrosome: Differentiated internally'
-		 [149] 'Gametes: Spermatozoa: Acrosome: Sub-acrosomal space'
-		 [150] 'Gametes: Spermatozoa: Mid-piece'
-		 [151] 'Gametes: Spermatozoa: Centrioles: Orientation'
-		 [152] 'Gametes: Spermatozoa: Centrioles: Fusion'
-		 [153] 'Gametes: Spermatozoa: Satellite fibre complex'
-		 [154] 'Gametes: Spermatozoa: Mitochondria: Shape'
-		 [155] 'Gametes: Spermatozoa: Mitochondria: Cristae: Configuration'
-		 [156] 'Gametes: Spermatozoa: Mitochondria: Midpiece'
-		 [157] 'Embryo: Cleavage: Equal'
-		 [158] 'Embryo: Cleavage: Cross pattern'
-		 [159] 'Embryo: Cleavage: Polar lobe formation'
-		 [160] 'Embryo: Cleavage: Spiral'
-		 [161] 'Embryo: Micromere size'
-		 [162] 'Embryo: Origin of mesoderm'
-		 [163] 'Larva: Metatroch'
-		 [164] 'Larva: Telotroch'
-		 [165] 'Larva: Feeding'
-		 [166] 'Larva: Cilia: Ciliated food groove'
-		 [167] 'Larva: Cilia: Ciliary bands: Downstream'
-		 [168] 'Larva: Cilia: Ciliary bands: Upstream'
-		 [169] 'Larva: Cilia: Adoral ciliary band'
-		 [170] 'Larva: Nerve ring underlying ciliated larval swimming organ'
-		 [171] 'Larva: Apical organ: Muscles extending to the hyposphere'
-		 [172] 'Larva: Apical organ: Serotonergic cells'
-		 [173] 'Larva: Apical organ: Develops into adult brain'
-		 [174] 'Larva: Brain persists into adulthood'
-		 [175] 'Larva: Serotonin-like immunoreactivity in apical organ'
-		 [176] 'Larva: Origin of body cavity'
-		 [177] 'Larva: Formation of coelomoducts'
-		 [178] 'Larva: Foot: Pedal gland'
-		 [179] 'Larva: Coelom: Paired'
-		 [180] 'Larva: Coelom: Paried: Includes pericardium'
-		 [181] 'Larva: Foot'
-		 [182] 'Ciliary ultrastructure: Accessory centriole'
-		 [183] 'Ciliary ultrastructure: Aggregation of granules below basal plate'
-		 [184] 'Ciliary ultrastructure: Basal foot: Radiating tubular fibres'
-		 [185] 'Ciliary ultrastructure: Basal plate'
-		 [186] 'Ciliary ultrastructure: Brushborder of microvilli'
-		 [187] 'Ciliary ultrastructure: Centriolar triplet derivative in basal body'
-		 [188] 'Ciliary ultrastructure: Ciliary necklace with connecting strands'
-		 [189] 'Ciliary ultrastructure: Compound cilia: Presence'
-		 [190] 'Ciliary ultrastructure: Compound cilia: Origin'
-		 [191] 'Ciliary ultrastructure: Glycocalyx ultrastructure'
-		 [192] 'Ciliary ultrastructure: Microvilli on epidermal surface: Branched'
-		 [193] 'Ciliary ultrastructure: Vertical ciliary rootlet: Length'
-		 [194] 'Ciliary ultrastructure: Vertical ciliary rootlet: Shape'
-		 [195] 'Ciliary ultrastructure: Secondary ciliary rootlet: Presence'
-		 [196] 'Ciliary ultrastructure: Secondary ciliary rootlet: Length'
-		 [197] 'Ciliary ultrastructure: Secondary ciliary rootlet: Shape'
-		 [198] 'Nephridia: Podocytes'
-		 [199] 'Nephridia: Rhogocytes'
-		 [200] 'Nephridia: Serve as excretory organs'
-		 [201] 'Nephridia: Protonephridia'
-		 [202] 'Nephridia: Metanephridia'
-		 [203] 'Cuticle: Layers'
-		 [204] 'Cuticle: Composition'
-		 [205] 'Cuticle: Fibrous layer with thick fibrils'
-		 [206] 'Cuticle: Homogeneous layer'
-		 [207] 'Cuticle: Resilience'
-		 [208] 'Cuticle: Microvilli'
-		 [209] 'Muscles: Cytology'
-		 [210] 'Muscles: Histology'
-		 [211] 'Glands: Pedal gland'
-		 [212] 'Glands: Paired pharyngeal diverticulae'
-		 [213] 'Body organization: Circulatory system'
-		 [214] 'Nervous system: Orthogonal'
-		 [215] 'Nervous system: Glial system'
-		 [216] 'Nervous system: Buccal nerve ring'
-		 [217] 'Nervous system: Anterior nerve loop'
-		 [218] 'Nervous system: Formation of ganglia'
-		 [219] 'Nervous system: Cerebral ganglia: Presence'
-		 [220] 'Nervous system: Cerebral gangila: Fused'
-		 [221] 'Nervous system: Nerve cords'
-		 [222] 'Nervous system: Ventral longitudinal nerves'
+		 [130] 'Sclerites: Structure: Punctae'
+		 [131] 'Sclerites: Structure: Stratiform laminae'
+		 [132] 'Sclerites: Structure: Stratiform lamellae expressed at surface'
+		 [133] 'Sclerites: Structure: Stratiform laminae with polygonal ornament'
+		 [134] 'Sclerites: Structure: Canals'
+		 [135] 'Sclerites: Structure: Pseudopunctae'
+		 [136] 'Sclerites: Structure: External polygonal ornament'
+		 [137] 'Sclerites: Periodically shed and replaced'
+		 [138] 'Gametes: Egg size'
+		 [139] 'Gametes: Gonocoel'
+		 [140] 'Gametes: Ovary wall saccular'
+		 [141] 'Gametes: Testis wall saccular'
+		 [142] 'Gametes: Asexual reproduction'
+		 [143] 'Gametes: Fertilization'
+		 [144] 'Gametes: Sexes'
+		 [145] 'Gametes: Egg: Protective membrane'
+		 [146] 'Gametes: Site of maturation'
+		 [147] 'Gametes: Spermatozoa: Nucleus: Shape'
+		 [148] 'Gametes: Spermatozoa: Anterior nuclear fossa'
+		 [149] 'Gametes: Spermatozoa: Acrosome: Shape'
+		 [150] 'Gametes: Spermatozoa: Acrosome: Differentiated internally'
+		 [151] 'Gametes: Spermatozoa: Acrosome: Sub-acrosomal space'
+		 [152] 'Gametes: Spermatozoa: Mid-piece'
+		 [153] 'Gametes: Spermatozoa: Centrioles: Orientation'
+		 [154] 'Gametes: Spermatozoa: Centrioles: Fusion'
+		 [155] 'Gametes: Spermatozoa: Satellite fibre complex'
+		 [156] 'Gametes: Spermatozoa: Mitochondria: Shape'
+		 [157] 'Gametes: Spermatozoa: Mitochondria: Cristae: Configuration'
+		 [158] 'Gametes: Spermatozoa: Mitochondria: Midpiece'
+		 [159] 'Embryo: Cleavage: Equal'
+		 [160] 'Embryo: Cleavage: Cross pattern'
+		 [161] 'Embryo: Cleavage: Polar lobe formation'
+		 [162] 'Embryo: Cleavage: Spiral'
+		 [163] 'Embryo: Micromere size'
+		 [164] 'Embryo: Origin of mesoderm'
+		 [165] 'Larva: Metatroch'
+		 [166] 'Larva: Telotroch'
+		 [167] 'Larva: Feeding'
+		 [168] 'Larva: Cilia: Ciliated food groove'
+		 [169] 'Larva: Cilia: Ciliary bands: Downstream'
+		 [170] 'Larva: Cilia: Ciliary bands: Upstream'
+		 [171] 'Larva: Cilia: Adoral ciliary band'
+		 [172] 'Larva: Nerve ring underlying ciliated larval swimming organ'
+		 [173] 'Larva: Apical organ: Muscles extending to the hyposphere'
+		 [174] 'Larva: Apical organ: Serotonergic cells'
+		 [175] 'Larva: Apical organ: Develops into adult brain'
+		 [176] 'Larva: Brain persists into adulthood'
+		 [177] 'Larva: Serotonin-like immunoreactivity in apical organ'
+		 [178] 'Larva: Origin of body cavity'
+		 [179] 'Larva: Formation of coelomoducts'
+		 [180] 'Larva: Foot: Pedal gland'
+		 [181] 'Larva: Coelom: Paired'
+		 [182] 'Larva: Coelom: Paried: Includes pericardium'
+		 [183] 'Larva: Foot'
+		 [184] 'Ciliary ultrastructure: Accessory centriole'
+		 [185] 'Ciliary ultrastructure: Aggregation of granules below basal plate'
+		 [186] 'Ciliary ultrastructure: Basal foot: Radiating tubular fibres'
+		 [187] 'Ciliary ultrastructure: Basal plate'
+		 [188] 'Ciliary ultrastructure: Brushborder of microvilli'
+		 [189] 'Ciliary ultrastructure: Centriolar triplet derivative in basal body'
+		 [190] 'Ciliary ultrastructure: Ciliary necklace with connecting strands'
+		 [191] 'Ciliary ultrastructure: Compound cilia: Presence'
+		 [192] 'Ciliary ultrastructure: Compound cilia: Origin'
+		 [193] 'Ciliary ultrastructure: Glycocalyx ultrastructure'
+		 [194] 'Ciliary ultrastructure: Microvilli on epidermal surface: Branched'
+		 [195] 'Ciliary ultrastructure: Vertical ciliary rootlet: Length'
+		 [196] 'Ciliary ultrastructure: Vertical ciliary rootlet: Shape'
+		 [197] 'Ciliary ultrastructure: Secondary ciliary rootlet: Presence'
+		 [198] 'Ciliary ultrastructure: Secondary ciliary rootlet: Length'
+		 [199] 'Ciliary ultrastructure: Secondary ciliary rootlet: Shape'
+		 [200] 'Nephridia: Podocytes'
+		 [201] 'Nephridia: Rhogocytes'
+		 [202] 'Nephridia: Serve as excretory organs'
+		 [203] 'Nephridia: Protonephridia'
+		 [204] 'Nephridia: Metanephridia'
+		 [205] 'Cuticle: Layers'
+		 [206] 'Cuticle: Composition'
+		 [207] 'Cuticle: Fibrous layer with thick fibrils'
+		 [208] 'Cuticle: Homogeneous layer'
+		 [209] 'Cuticle: Resilience'
+		 [210] 'Cuticle: Microvilli'
+		 [211] 'Muscles: Cytology'
+		 [212] 'Muscles: Histology'
+		 [213] 'Glands: Pedal gland'
+		 [214] 'Glands: Paired pharyngeal diverticulae'
+		 [215] 'Body organization: Circulatory system'
+		 [216] 'Nervous system: Orthogonal'
+		 [217] 'Nervous system: Glial system'
+		 [218] 'Nervous system: Buccal nerve ring'
+		 [219] 'Nervous system: Anterior nerve loop'
+		 [220] 'Nervous system: Formation of ganglia'
+		 [221] 'Nervous system: Cerebral ganglia: Presence'
+		 [222] 'Nervous system: Cerebral gangila: Fused'
+		 [223] 'Nervous system: Nerve cords'
+		 [224] 'Nervous system: Ventral longitudinal nerves'
 	;
 
 	STATELABELS
@@ -900,7 +902,7 @@ BEGIN CHARACTERS;
 		'[Transformational character]'
 		'Laminated'
 		'Fibrous bundles'
-		'Polygonal columns'
+		'Crystals of varying shapes and dimensions'
 		'Nacreous / crossed lamellar'
 		,
 		130
@@ -912,10 +914,12 @@ BEGIN CHARACTERS;
 		'Present'
 		,
 		132
-		'Absent'
-		'Present'
+		'[Transformational character]'
+		'Lamellae not expressed at surface'
+		'Lamellae correspond to external shell ornament'
 		,
 		133
+		'[Transformational character]'
 		'Absent'
 		'Present'
 		,
@@ -928,149 +932,149 @@ BEGIN CHARACTERS;
 		'Present'
 		,
 		136
+		'Absent'
+		'Present'
+		,
+		137
+		'Absent'
+		'Present'
+		,
+		138
 		'[Transformational character]'
 		'Small: < 100 um, little yolk'
 		'Large: > 110 um, much yolk'
 		,
-		137
+		139
 		'Absent'
 		'Retroperineal gonads'
 		,
-		138
-		'Plain'
-		'Saccular'
-		,
-		139
-		'Plain'
-		'Saccular'
-		,
 		140
+		'Plain'
+		'Saccular'
+		,
+		141
+		'Plain'
+		'Saccular'
+		,
+		142
 		'Never exhibited'
 		'Frequently exhibited'
 		,
-		141
+		143
 		'[Transformational character]'
 		'External'
 		'Internal'
 		,
-		142
+		144
 		'[Transformational character]'
 		'Gonochoristic'
 		'Hermaphroditic'
 		,
-		143
+		145
 		'Absent'
 		'Present'
 		,
-		144
+		146
 		'Body cavity'
 		'Mantle canals'
 		'Ovicell'
 		,
-		145
+		147
 		'Equant: length comparable to width'
 		'Elongate: length exaggerated relative to width'
 		,
-		146
+		148
 		'Absent'
 		'Present'
 		,
-		147
+		149
 		'[Transformational character]'
 		'Pear-shaped'
 		'Needle-shaped'
 		'Disc-shaped'
 		'Conical'
 		,
-		148
+		150
 		'No internal differentiation'
 		'Acrosome differentiated internally'
 		,
-		149
+		151
 		'Absent'
 		'Present'
 		,
-		150
+		152
 		'Multiple mitochondria'
 		'Single ring-shaped mitochondrion'
 		,
-		151
+		153
 		'Orthogonal'
 		'Parallel'
 		,
-		152
+		154
 		'Discrete'
 		'Fused'
 		,
-		153
+		155
 		'Annulus not associated with satellite fibres'
 		'Annulus associated with satellite fibres'
 		,
-		154
+		156
 		'[Transformational character]'
 		'Spherical to subspherical'
 		'Rods'
 		'Elongate, sac-like'
 		,
-		155
+		157
 		'Unmodified'
 		'Arranged in parallel plates'
 		,
-		156
+		158
 		'[Transformational character]'
 		'Extremely short'
 		'Long'
 		'Forms continuous sheath'
 		,
-		157
+		159
 		'[Transformational character]'
 		'Unequal'
 		'Equal'
 		,
-		158
+		160
 		'Absent'
 		'Cross, whether "molluscan" or "annelid"'
 		,
-		159
-		'[Transformational character]'
-		'Absent'
-		'Present'
-		,
-		160
-		'[Transformational character]'
-		'Absent'
-		'Present'
-		,
 		161
+		'[Transformational character]'
+		'Absent'
+		'Present'
+		,
+		162
+		'[Transformational character]'
+		'Absent'
+		'Present'
+		,
+		163
 		'[Transformational character]'
 		'Similar to macomeres'
 		'Small relative to macromeres'
 		,
-		162
+		164
 		'[Transformational character]'
 		' 4d cell, from the blastopore ridge, or as ectomesoderm'
 		'Archenteron'
 		,
-		163
-		'Absent'
-		'Present'
-		,
-		164
-		'Absent'
-		'Present'
-		,
 		165
-		'[Transformational character]'
-		'Lecithotrophic (or otherwise non-feeding)'
-		'Planktotrophic (or otherwise feeding)'
+		'Absent'
+		'Present'
 		,
 		166
 		'Absent'
 		'Present'
 		,
 		167
-		'Absent'
-		'Present'
+		'[Transformational character]'
+		'Lecithotrophic (or otherwise non-feeding)'
+		'Planktotrophic (or otherwise feeding)'
 		,
 		168
 		'Absent'
@@ -1089,56 +1093,56 @@ BEGIN CHARACTERS;
 		'Present'
 		,
 		172
+		'Absent'
+		'Present'
+		,
+		173
+		'Absent'
+		'Present'
+		,
+		174
 		'[Transformational character]'
 		'Two flask-shaped cells'
 		'Four flask-shaped cells'
 		'Cluster of c. eight flask-shaped cells'
 		'Aggregation of multiple cells of multiple types'
 		,
-		173
+		175
 		'Brain has other origin'
 		'Adult brain derived from larval apical organ / apical pole'
 		'[Transformational character]'
 		,
-		174
+		176
 		'[Transformational character]'
 		'Brain lost'
 		'Brain retained to adulthood'
 		,
-		175
+		177
 		'[Transformational character]'
 		'Two lateral cells in the apical ganglion and the lateral serotonergic projection to the prototroch;'
 		'Many serotonergic cells in the apical ganglion and a caudal serotonergic projection to the ciliary band'
 		,
-		176
+		178
 		'[Transformational character]'
 		'Mesenchyme'
 		'Coelom'
 		,
-		177
+		179
 		'[Transformational character]'
 		'Outgrowth'
 		'Ingrowth'
 		,
-		178
+		180
 		'Absent'
 		'Present'
-		,
-		179
-		'Absent'
-		'Paired coelom originating from two teloblasts derived from 4d'
-		,
-		180
-		'Paired coelom absent, or does not include pericardium'
-		'Paired coelom includes pericardium'
 		,
 		181
 		'Absent'
-		'Present'
+		'Paired coelom originating from two teloblasts derived from 4d'
 		,
 		182
-		'Absent'
-		'Present'
+		'Paired coelom absent, or does not include pericardium'
+		'Paired coelom includes pericardium'
 		,
 		183
 		'Absent'
@@ -1149,9 +1153,8 @@ BEGIN CHARACTERS;
 		'Present'
 		,
 		185
-		'[Transformational character]'
-		'Thin'
-		'Blurry'
+		'Absent'
+		'Present'
 		,
 		186
 		'Absent'
@@ -1159,147 +1162,146 @@ BEGIN CHARACTERS;
 		,
 		187
 		'[Transformational character]'
-		'9 + 2 pattern'
-		'9 + 3 pattern'
+		'Thin'
+		'Blurry'
 		,
 		188
 		'Absent'
 		'Present'
 		,
 		189
+		'[Transformational character]'
+		'9 + 2 pattern'
+		'9 + 3 pattern'
+		,
+		190
 		'Absent'
 		'Present'
 		,
-		190
+		191
+		'Absent'
+		'Present'
+		,
+		192
 		'[Transformational character]'
 		'Several monociliate cells'
 		'On multiciliated cell'
 		,
-		191
+		193
 		'[Transformational character]'
 		'Homogeneous'
 		'Layered'
 		,
-		192
+		194
 		'Unbranched'
 		'Branched'
 		,
-		193
+		195
 		'[Transformational character]'
 		'Short'
 		'Long'
-		,
-		194
-		'[Transformational character]'
-		'Conical'
-		'Flat'
-		,
-		195
-		'Absent'
-		'Present'
 		,
 		196
 		'[Transformational character]'
+		'Conical'
+		'Flat'
+		,
+		197
+		'Absent'
+		'Present'
+		,
+		198
+		'[Transformational character]'
 		'Short'
 		'Long'
 		,
-		197
+		199
 		'[Transformational character]'
 		'Conical'
 		'Flat'
 		,
-		198
-		'Absent'
-		'Present'
-		,
-		199
-		'Absent'
-		'Present'
-		,
 		200
-		'No'
-		'Yes'
+		'Absent'
+		'Present'
 		,
 		201
 		'Absent'
 		'Present'
 		,
 		202
+		'No'
+		'Yes'
+		,
+		203
 		'Absent'
 		'Present'
 		,
-		203
+		204
+		'Absent'
+		'Present'
+		,
+		205
 		'Simple (i.e. glycocalyx)'
 		'Distinct epicuticle and endocuticle'
 		,
-		204
+		206
 		'[Transformational character]'
 		'Chitinous'
 		'Collagen'
 		,
-		205
-		'Absent'
-		'Present'
-		,
-		206
-		'Absent'
-		'Present'
-		,
 		207
+		'Absent'
+		'Present'
+		,
+		208
+		'Absent'
+		'Present'
+		,
+		209
 		'Labile'
 		'Robust'
 		'[Transformational character]'
 		,
-		208
+		210
 		'Absent'
 		'Microvilli present in the cuticle'
 		,
-		209
+		211
 		'[Transformational character]'
 		'Smooth'
 		'Obliquely striated'
 		'Smooth on abfrontal face; striated on frontal face'
 		,
-		210
+		212
 		'Fibre-type'
 		'Epithelially organized'
 		'[Transformational character]'
 		,
-		211
-		'Absent'
-		'Present'
-		,
-		212
-		'Absent'
-		'Present'
-		,
 		213
+		'Absent'
+		'Present'
+		,
+		214
+		'Absent'
+		'Present'
+		,
+		215
 		'[Transformational character]'
 		'Epithelially lined'
 		'Poorly defined, involving sinuses and lacunae'
 		'Closed circulatory system'
 		,
-		214
+		216
 		'Not orthogonal'
 		'Orthogonal'
-		,
-		215
-		'Absent'
-		'Present'
-		,
-		216
-		'Absent'
-		'Present'
 		,
 		217
 		'Absent'
 		'Present'
 		,
 		218
-		'[Transformational character]'
-		'From cerebral region'
-		'In situ'
-		'Invagination of epithelium'
+		'Absent'
+		'Present'
 		,
 		219
 		'Absent'
@@ -1307,74 +1309,84 @@ BEGIN CHARACTERS;
 		,
 		220
 		'[Transformational character]'
+		'From cerebral region'
+		'In situ'
+		'Invagination of epithelium'
+		,
+		221
+		'Absent'
+		'Present'
+		,
+		222
+		'[Transformational character]'
 		'Pair of distinct ganglia'
 		'Single ganglion, or fused ganglia'
 		,
-		221
+		223
 		'[Transformational character]'
 		'Ventral nerve cords only'
 		'Tetraneury: one pair of ventral and one pair of lateral nerve cords'
 		,
-		222
+		224
 		'Separate'
 		'Paired or secondarily fused'
 		
 	;
 
 	MATRIX
-	'Namacalathus'		                            ?????????0--?-0--000???0--00---00-00-?????????????????????????00-00-0-0000-0-0--000----0000--00000?---0-00-0------00-00--003?0-31001000????1??????????????????????????????????????????????????????????????????????????????????
-	'Conotheca'		                               1311100-??????????0?1??0--00---0??????????????????????????02?31120010-000111???????????????????10??011120020------00-001-004?0?220??00????????????????????????????????????????????????????????????????????????????????????????
-	'Decoritheca'		                             1311100-??????????0?1??0--00---0??????????????????????????????1120010-000111???????????????????10???11120020------00-0022004?0?220??000???????????????????????????????????????????????????????????????????????????????????????
-	'Maxilites'		                               1???100-??????????0?1??0--00---0??????????????????????????????1110010-000111???????????????????10??111120120------00-001-104?0?220??000???????????????????????????????????????????????????????????????????????????????????????
-	'Pauxillites'		                             1311100-??????????0?1??0--00---0??????????????????????????????1110010-000111???????????????????10??111120120------00-001-004?0?220??000???????????????????????????????????????????????????????????????????????????????????????
-	'Probactrotheca'		                          1???100-??????????0?1??0--00---0??????????????????????????????1120010-000111???????????????????10??011120020------00-001-004?0?220??000???????????????????????????????????????????????????????????????????????????????????????
-	'Haplophrentis carinatus'		                 1321100-?0----0--0001?00--00---??????1?1?0??????12?1??????021211{1,2}0(0,1)10-000111?01?????0111100--01101??11120120------00-0022004?0?220?1000???????????????????????????????????????????????????????????????????????????????????????
-	'Pedunculotheca diania'		                   11{1,2}1100-???????????????11201122???????????????????????????02??1120010-000111????????0011{0,1}00--01101?011120020------01?(1,0)022004?0?220??000???????????????????????????????????????????????????????????????????????????????????????
-	'Cotyledion tylodes'		                      ?????????0----0--00{0,1}??0{1,0}--00---?0-00-1?1?0??????2?000???0?022-10100-0-0000-0-0--000----0000--00000?---0-00-0------00-002100(3,4,2)?0{1,2}??????0????????????????????????????????????????????????????????????????????????????????????????
-	'Loxosomella'		                             0----00-00----0--0010200--00---00-00-121000?10012200000100032-00-00-0-0000-0-0--000----0000--00000?---0-0--0------00-00--00--0---00000010001220?114011?0021221122110211011130211-100100010101211220--000101110012(0,1)102101111221
-	'Flustra'		                                 0----00-00----0--0001200--00---00-00-1210001201?2200000100021400-00-0-0000-0-0--000----0000--00000?---0-0--0------00-00--00--0---00000020001220211400011020210111100100011140212?000000011100-10211210000002010020001100031110
-	'Amathia'		                                 0----00-0111210420001200--00---00-00-1?10001201?2200000100021400-00-0-0000-0-0--000----0000--00000?---0-0--0------00-00--00--0---00000020001220211400011?20????11??01000111402?2?000000011100-1021121??????201002???1100031210
-	'Novocrania'		                              0----11310----0--0001200--00---0111{0,1}11210112???2211101010001-31120020-000111103101121-11000--00010?0310-0010------00-002100320?211?0000210001101012110000103201112002001000201221000010010?011102212100?0102??0030001010020-10
-	'Pelagodiscus atlanticus'		                 112121131112211211001?0111001211121121?11112???211100?010002231120010-000111-031100-1-10000--00000?0310-001131----00-011-002101210?100011????1?0?111000?0???20111???????????01???0000?00??????????12?0??010(1,2)01?030001110020-10
-	'Lingula'		                                 1111210-111221121200120111102211121021?111122102210101010002121120010-0001111021100-1-31010--00010?023120010------00-001-00210?211?0000110001100011110000?03201112002001000401221000010010?011102212100?010(1,2)010030001010020-10
-	'Terebratulina'		                           0----1121112211211001?0111111110111111220102210221010?010012-4112001120111(2,1)1213200111-21100--00100?0221210112-212-00-001-00320?2210000021????1?1?030011?0???2011121020?????301???000010010?0?1102111?00?010(1,2)00?030001110020-10
-	'Phoronis'		                                0----00-00----0--0001200--00---00-00-132000121022200010100021300-00-0-0000-0-0--000----0000--00000?0--0-0--0------00-00--00-11---0000001000122000020100002?220121210210101040122?000010011100-10211111011102100110001010021210
-	'Sipunculus'		                              0----00-012--2?-20101100--00---00-00-11100011002220100010002-?00-00-0-0000-0-0--000----0000--00000?0--0-0--0------00-00--00--0---00000021110111?013110?10111212221101000111312-22?10101120211221111211010112101021001110121211
-	'Serpula'		                                 0----00-1112111310101200--00---00-00-112000?1002220000010001--00-00-0-0000-0-0--000----0000--00000?0--0-0--0------00-00--00--0---00000011110111?0030101?0101212221111010111?12112?10110121101210211111011112101121003110121211
-	'Tonicella'		                               0----00-0111110110111110--00---00-00-0--000--00---0011101103--112001110000-0-0--000-1-311012100000?0(1,2)1120-112-223-00-001-004?0?4400000021000111?104100?11301201221001010111312111111101120211211111121110011011010112111111221
-	'Dentalium'		                               0----00-00----0--0011110--00---00-00-121000?10031-0011101103--10200-0-0000-0-0--000----0000--00000?---0-0--0------00-001-00--0---00000021000110?10401001110110222101101011021211?111101121211221111111110011010010112011121121
-	'Wiwaxia corrugata'		                       ?????00-?1111??310111?10--00---00-00-0--000--00---001???{0,1}101--00-00-0-0000-0-0--000----0000--00000?---0-0--0------00-00--00-?0---000000????0??????????????????????????????????????????????????????????????????????????????????
-	'Halkieria evangelista'		                   ??????????????????0????0--00---00-00-?????????????????????????1111110-0000-0-0??00??--20000--00000??22121-10------00-0021004?0{1,2}120?0001???????????????????????????????????????????????????????????????????????????????????????
-	'Dailyatia'		                               0----00-???????????????????????00-00-?????????????????????????10111-0-0000-0-0--000----0000--00000?---0-0--0------00-0021002?0?1100001????????????????????????????????????????????????????????????????????????????????????????
-	'Acanthotretella spinosa'		                 1????????1?????1???????11110122?1311?1??????????21????????021?1120010-000111{1,2}???1???1-21010--000?0?0121210213-----00-0?1-01{1,2,3,4}?0?--10?00????????????????????????????????????????????????????????????????????????????????????????
-	'Alisina'		                                 0----????1?????2???????12(2,1)0?2120131111??????????21????????????112002120111112?3200111-211011110000?0221210112-22{1,2}10110021003?0???0?000????????????????????????????????????????????????????????????????????????????????????????
-	'Askepasma toddense'		                      1123?112?1?????????????1???????011111?????????????????????????1120020-0001{2,1}12?21?0{0,1}?1-21100--10000?0121210112-1---00-0022002?013(3,1)010000???????????????????????????????????????????????????????????????????????????????????????
-	'Micromitra'		                              1124?112?1?????2???????1?10????014111?????????????????????????1120020-00011110??0?{1,0}?--21100--{0,1}0000?0121210112-221200-0121102?013(1,3)01000????????????????????????????????????????????????????????????????????????????????????????
-	'Antigonambonites planus'		                 11212112?1?????????????11200222???????????????????????????????11200211111111{1,2}02?0???1-211012210110?0221210{2,1}12-22121121121103?0{2,1}410?010????????????????????????????????????????????????????????????????????????????????????????
-	'Botsfordia'		                              1122?111???????????????????????113112?????????????????????????1120010-0001111021?00-1-21010--00010?0121100112-1---00-011-002?012101000????????????????????????????????????????????????????????????????????????????????????????
-	'Clupeafumosus socialis'		                  11222112?1?????????????????????01111??????????????????????????1120010-0001111021100-1-(3,1)1110--00010?01{1,2}12102132----00{2,1}011-002?0?210?100????????????????????????????????????????????????????????????????????????????????????????
-	'Coolinia pecten'		                         11212112?1?????????????1???0??????????????????????????????????11200211111111{2,1}02?00121-311012210100?0221210112-2212111101-103?0?210?010????????????????????????????????????????????????????????????????????????????????????????
-	'Craniops'		                                11211??????????????????0--00---0??????????????????????????????1120010-0001111031?1??1-10000--00000?0210-0010------00-1021003?0?210?000????????????????????????????????????????????????????????????????????????????????????????
-	'Eccentrotheca'		                           ?????00-???????????????????????00-00-?????????????????????????10100-0-0000-0-0--000----0000--00000?0--0-0--0------00-0021002?0?1(3,1)0?000????????????????????????????????????????????????????????????????????????????????????????
-	'Eoobolus'		                                11222112???????????????1???????113112??????????????1??????????1120010-0001111021?00-1-21110--00010?0{3,2}21100112-211100-011-00(2,3)?012101000????????????????????????????????????????????????????????????????????????????????????????
-	'Gasconsia'		                               ???????????????????????0--00---0??????????????????????????????1120020-(0,1)10111{1,2}01100121-20000--00000?0(1,2)21210112-221100-0121104?0?2(1,2)0?000????????????????????????????????????????????????????????????????????????????????????????
-	'Glyptoria'		                               0----??????????????????11??????011111?????????????????????????11200211000121112100131-211012110000?0221210112-1---00-001-103?022200000????????????????????????????????????????????????????????????????????????????????????????
-	'Heliomedusa orienta'		                     1????????1?????1???????0--00---?111111?1?1??????12?1??????????1120010-000111{2,1}?1?????1-10000--00010?012120010------00-(1,0)02200{2,1}?0???1??00????????????????????????????????????????????????????????????????????????????????????????
-	'Kutorgina chengjiangensis'		               0----????1?????2???????122001220????????????????21????????01-311200{1,2}13000111102100121-211012200000?0121210{2,1}1??221?11?001-103?022200000????????????????????????????????????????????????????????????????????????????????????????
-	'Lingulosacculus'		                         1?????????????????????01????????131121??????????21?1??????02121120010-000111{2,1}???1?0-1-2???0--000?0?0121??02132----0??0?1-00{1,4}?0?--00?00????????????????????????????????????????????????????????????????????????????????????????
-	'Lingulellotreta malongensis'		             11112{0,1}{0,1}??1?????2??????01111012211311?1?1?0??????21?1??????02121120010-0001111???100-1-21010--00010?01211002131----00-011-002?0???0??00????????????????????????????????????????????????????????????????????????????????????????
-	'Longtancunella chengjiangensis'		          ?????????1?????2??????012100212?11?1?1??????????11????????0212112002???00111{2,1}???????1-2????--?0000?0{2,1}212101????????11101-00??0???0??00????????????????????????????????????????????????????????????????????????????????????????
-	'Micrina'		                                 11212111?1?????1??????????????????????????????????????????????112001110000-1{2,1}???????1-21000--00000?0121200212-211200-002(2,1)002?0?211?100????????????????????????????????????????????????????????????????????????????????????????
-	'Mickwitzia muralensis'		                   122?2112?1?????1???????1??????????????????????????????????????1120010-000110-0--?00-1-10000--00000?0111200(1,2)1(2,3)3221200-0022102?0?211?100????????????????????????????????????????????????????????????????????????????????????????
-	'Mummpikia nuda'		                          ???????????????????????1???0?2?1??????????????????????????????1120010-000111????????1-2??????00000?0221110111-1---00-011-003?0?110?100????????????????????????????????????????????????????????????????????????????????????????
-	'Nisusia sulcata'		                         0----??????????????????1110022(2,3)011????????????????????????0???11200213000111102100121-211012100000?0121210(2,1)12-2112111001-113?0?220?000????????????????????????????????????????????????????????????????????????????????????????
-	'Orthis'		                                  0----??????????????????11??????014111?????????????????????????11200211111111-13?00111-210012110110?0221210112-1---00-001-103?0?220?000????????????????????????????????????????????????????????????????????????????????????????
-	'Paterimitra'		                             1223100-???????-???????1??????????????????????????????????????1110110-0000-?????????1-11100--00000?0121200212-211200-0021002?0?2(3,1)0?000????????????????????????????????????????????????????????????????????????????????????????
-	'Salanygolina'		                            12212112?1?????????????1???????0??????????????????????????????1120020-000111{2,1}?2100??1-2110122(1,0)0000?0121200{2,1}11-2112111102200{2,3}?0{2,1}230?000????????????????????????????????????????????????????????????????????????????????????????
-	'Siphonobolus priscus'		                    11211112?1?????1???????1???????01311??????????????????????????1120010-0001111???????1-21{0,1}(0,1)0--00010?01(1,2)12{1,0}01132----00-11(2,1)-11210{2,1}211?000?1??????????????????????????????????????????????????????????????????????????????????????
-	'Tomteluva perturbata'		                    0----??????????????????1??????????????????????????????????????1120010-000121{2,1}???????1-210012200100?0111200111-2222111{0,1}01-103?0???0?000????????????????????????????????????????????????????????????????????????????????????????
-	'Ussunia'		                                 ???????????????????????0--00---0?????????????????????0????????1120010-000111{1,2}?1??11?1-20000--00000?0220-0010------00-001-004?0{2,1}??????00???????????????????????????????????????????????????????????????????????????????????????
-	'Yuganotheca elegans'		                     ?????????1?????2??????011210222?111011?1?0??????11?1??????021?11200??????11?????????1-?????--000?0?0{1,2}1?2001????????1?101-001?1?--????0????????????????????????????????????????????????????????????????????????????????????????
+	'Namacalathus'		                            ?????????0--?-0--000???0--00---00-00-?????????????????????????00-00-0-0000-0-0--000----0000--00000?---0-00-0------00-00--003?0-3100??1000????1??????????????????????????????????????????????????????????????????????????????????
+	'Conotheca'		                               1311100-??????????0?1??0--00---0??????????????????????????02?31120010-000111???????????????????10??011120020------00-001-004?0?220????00????????????????????????????????????????????????????????????????????????????????????????
+	'Decoritheca'		                             1311100-??????????0?1??0--00---0??????????????????????????????1120010-000111???????????????????10???11120020------00-0022004?0?220????000???????????????????????????????????????????????????????????????????????????????????????
+	'Maxilites'		                               1???100-??????????0?1??0--00---0??????????????????????????????1110010-000111???????????????????10??111120120------00-001-104?0?220????000???????????????????????????????????????????????????????????????????????????????????????
+	'Pauxillites'		                             1311100-??????????0?1??0--00---0??????????????????????????????1110010-000111???????????????????10??111120120------00-001-004?0?220????000???????????????????????????????????????????????????????????????????????????????????????
+	'Probactrotheca'		                          1???100-??????????0?1??0--00---0??????????????????????????????1120010-000111???????????????????10??011120020------00-001-004?0?220????000???????????????????????????????????????????????????????????????????????????????????????
+	'Haplophrentis carinatus'		                 1321100-?0----0--0001?00--00---??????1?1?0??????12?1??????021211{1,2}0(0,1)10-000111?01?????0111100--01101??11120120------00-0022004?0?220???1000???????????????????????????????????????????????????????????????????????????????????????
+	'Pedunculotheca diania'		                   11{1,2}1100-???????????????11201122???????????????????????????02??1120010-000111????????0011{0,1}00--01101?011120020------01?(1,0)022004?0?220????000???????????????????????????????????????????????????????????????????????????????????????
+	'Cotyledion tylodes'		                      ?????????0----0--00{0,1}??0{1,0}--00---?0-00-1?1?0??????2?000???0?022-10100-0-0000-0-0--000----0000--00000?---0-00-0------00-002100(3,4,2)?0{1,2}????????0????????????????????????????????????????????????????????????????????????????????????????
+	'Loxosomella'		                             0----00-00----0--0010200--00---00-00-121000?10012200000100032-00-00-0-0000-0-0--000----0000--00000?---0-0--0------00-00--00--0---00?-000010001220?114011?0021221122110211011130211-100100010101211220--000101110012(0,1)102101111221
+	'Flustra'		                                 0----00-00----0--0001200--00---00-00-1210001201?2200000100021400-00-0-0000-0-0--000----0000--00000?---0-0--0------00-00--00--0---00?-000020001220211400011020210111100100011140212?000000011100-10211210000002010020001100031110
+	'Amathia'		                                 0----00-0111210420001200--00---00-00-1?10001201?2200000100021400-00-0-0000-0-0--000----0000--00000?---0-0--0------00-00--00--0---00?-000020001220211400011?20????11??01000111402?2?000000011100-1021121??????201002???1100031210
+	'Novocrania'		                              0----11310----0--0001200--00---0111{0,1}11210112???2211101010001-31120020-000111103101121-11000--00010?0310-0010------00-002100320?211???0000210001101012110000103201112002001000201221000010010?011102212100?0102??0030001010020-10
+	'Pelagodiscus atlanticus'		                 112121131112211211001?0111001211121121?11112???211100?010002231120010-000111-031100-1-10000--00000?0310-001131----00-011-002101210???100011????1?0?111000?0???20111???????????01???0000?00??????????12?0??010(1,2)01?030001110020-10
+	'Lingula'		                                 1111210-111221121200120111102211121021?111122102210101010002121120010-0001111021100-1-31010--00010?023120010------00-001-00210?2111?(2,1)0000110001100011110000?03201112002001000401221000010010?011102212100?010(1,2)010030001010020-10
+	'Terebratulina'		                           0----1121112211211001?0111111110111111220102210221010?010012-4112001120111(2,1)1213200111-21100--00100?0221210112-212-00-001-00320?2210?-000021????1?1?030011?0???2011121020?????301???000010010?0?1102111?00?010(1,2)00?030001110020-10
+	'Phoronis'		                                0----00-00----0--0001200--00---00-00-132000121022200010100021300-00-0-0000-0-0--000----0000--00000?0--0-0--0------00-00--00-11---00?-00001000122000020100002?220121210210101040122?000010011100-10211111011102100110001010021210
+	'Sipunculus'		                              0----00-012--2?-20101100--00---00-00-11100011002220100010002-?00-00-0-0000-0-0--000----0000--00000?0--0-0--0------00-00--00--0---00?-000021110111?013110?10111212221101000111312-22?10101120211221111211010112101021001110121211
+	'Serpula'		                                 0----00-1112111310101200--00---00-00-112000?1002220000010001--00-00-0-0000-0-0--000----0000--00000?0--0-0--0------00-00--00--0---00?-000011110111?0030101?0101212221111010111?12112?10110121101210211111011112101121003110121211
+	'Tonicella'		                               0----00-0111110110111110--00---00-00-0--000--00---0011101103--112001110000-0-0--000-1-311012100000?0(1,2)1120-112-223-00-001-004?0?4400?-000021000111?104100?11301201221001010111312111111101120211211111121110011011010112111111221
+	'Dentalium'		                               0----00-00----0--0011110--00---00-00-121000?10031-0011101103--10200-0-0000-0-0--000----0000--00000?---0-0--0------00-001-00--0---00?-000021000110?10401001110110222101101011021211?111101121211221111111110011010010112011121121
+	'Wiwaxia corrugata'		                       ?????00-?1111??310111?10--00---00-00-0--000--00---001???{0,1}101--00-00-0-0000-0-0--000----0000--00000?---0-0--0------00-00--00-?0---00?-0000????0??????????????????????????????????????????????????????????????????????????????????
+	'Halkieria evangelista'		                   ??????????????????0????0--00---00-00-?????????????????????????1111110-0000-0-0??00??--20000--00000??22121-10------00-0021004?0{1,2}120???0001???????????????????????????????????????????????????????????????????????????????????????
+	'Dailyatia'		                               0----00-???????????????????????00-00-?????????????????????????10111-0-0000-0-0--000----0000--00000?---0-0--0------00-0021002?0?110121001????????????????????????????????????????????????????????????????????????????????????????
+	'Acanthotretella spinosa'		                 1????????1?????1???????11110122?1311?1??????????21????????021?1120010-000111{1,2}???1???1-21010--000?0?0121210213-----00-0?1-01{1,2,3,4}?0?--1??-?00????????????????????????????????????????????????????????????????????????????????????????
+	'Alisina'		                                 0----????1?????2???????12(2,1)0?2120131111??????????21????????????112002120111112?3200111-211011110000?0221210112-22{1,2}10110021003?0???0???000????????????????????????????????????????????????????????????????????????????????????????
+	'Askepasma toddense'		                      1123?112?1?????????????1???????011111?????????????????????????1120020-0001{2,1}12?21?0{0,1}?1-21100--10000?0121210112-1---00-0022002?013?01220000???????????????????????????????????????????????????????????????????????????????????????
+	'Micromitra'		                              1124?112?1?????2???????1?10????014111?????????????????????????1120020-00011110??0?{1,0}?--21100--{0,1}0000?0121210112-221200-0121102?013?0111000????????????????????????????????????????????????????????????????????????????????????????
+	'Antigonambonites planus'		                 11212112?1?????????????11200222???????????????????????????????11200211111111{1,2}02?0???1-211012210110?0221210{2,1}12-22121121121103?0{2,1}410???010????????????????????????????????????????????????????????????????????????????????????????
+	'Botsfordia'		                              1122?111???????????????????????113112?????????????????????????1120010-0001111021?00-1-21010--00010?0121100112-1---00-011-002?012101?1000????????????????????????????????????????????????????????????????????????????????????????
+	'Clupeafumosus socialis'		                  11222112?1?????????????????????01111??????????????????????????1120010-0001111021100-1-(3,1)1110--00010?01{1,2}12102132----00{2,1}011-002?0?210???100????????????????????????????????????????????????????????????????????????????????????????
+	'Coolinia pecten'		                         11212112?1?????????????1???0??????????????????????????????????11200211111111{2,1}02?00121-311012210100?0221210112-2212111101-103?0?210???010????????????????????????????????????????????????????????????????????????????????????????
+	'Craniops'		                                11211??????????????????0--00---0??????????????????????????????1120010-0001111031?1??1-10000--00000?0210-0010------00-1021003?0?210???000????????????????????????????????????????????????????????????????????????????????????????
+	'Eccentrotheca'		                           ?????00-???????????????????????00-00-?????????????????????????10100-0-0000-0-0--000----0000--00000?0--0-0--0------00-0021002?0?1?0122000????????????????????????????????????????????????????????????????????????????????????????
+	'Eoobolus'		                                11222112???????????????1???????113112??????????????1??????????1120010-0001111021?00-1-21110--00010?0{3,2}21100112-211100-011-00(2,3)?012101?1000????????????????????????????????????????????????????????????????????????????????????????
+	'Gasconsia'		                               ???????????????????????0--00---0??????????????????????????????1120020-(0,1)10111{1,2}01100121-20000--00000?0(1,2)21210112-221100-0121104?0?2(1,2)0???000????????????????????????????????????????????????????????????????????????????????????????
+	'Glyptoria'		                               0----??????????????????11??????011111?????????????????????????11200211000121112100131-211012110000?0221210112-1---00-001-103?022200?-000????????????????????????????????????????????????????????????????????????????????????????
+	'Heliomedusa orienta'		                     1????????1?????1???????0--00---?111111?1?1??????12?1??????????1120010-000111{2,1}?1?????1-10000--00010?012120010------00-(1,0)02200{2,1}?0???1????00????????????????????????????????????????????????????????????????????????????????????????
+	'Kutorgina chengjiangensis'		               0----????1?????2???????122001220????????????????21????????01-311200{1,2}13000111102100121-211012200000?0121210{2,1}1??221?11?001-103?022200?-000????????????????????????????????????????????????????????????????????????????????????????
+	'Lingulosacculus'		                         1?????????????????????01????????131121??????????21?1??????02121120010-000111{2,1}???1?0-1-2???0--000?0?0121??02132----0??0?1-00{1,4}?0?--0??-?00????????????????????????????????????????????????????????????????????????????????????????
+	'Lingulellotreta malongensis'		             11112{0,1}{0,1}??1?????2??????01111012211311?1?1?0??????21?1??????02121120010-0001111???100-1-21010--00010?01211002131----00-011-002?0???0????00????????????????????????????????????????????????????????????????????????????????????????
+	'Longtancunella chengjiangensis'		          ?????????1?????2??????012100212?11?1?1??????????11????????0212112002???00111{2,1}???????1-2????--?0000?0{2,1}212101????????11101-00??0???0????00????????????????????????????????????????????????????????????????????????????????????????
+	'Micrina'		                                 11212111?1?????1??????????????????????????????????????????????112001110000-1{2,1}???????1-21000--00000?0121200212-211200-002(2,1)002?0?2?11?2100????????????????????????????????????????????????????????????????????????????????????????
+	'Mickwitzia muralensis'		                   122?2112?1?????1???????1??????????????????????????????????????1120010-000110-0--?00-1-10000--00000?0111200(1,2)1(2,3)3221200-0022102?0?2?11?1100????????????????????????????????????????????????????????????????????????????????????????
+	'Mummpikia nuda'		                          ???????????????????????1???0?2?1??????????????????????????????1120010-000111????????1-2??????00000?0221110111-1---00-011-003?0?1100?-100????????????????????????????????????????????????????????????????????????????????????????
+	'Nisusia sulcata'		                         0----??????????????????1110022(2,3)011????????????????????????0???11200213000111102100121-211012100000?0121210(2,1)12-2112111001-113?0?220???000????????????????????????????????????????????????????????????????????????????????????????
+	'Orthis'		                                  0----??????????????????11??????014111?????????????????????????11200211111111-13?00111-210012110110?0221210112-1---00-001-103?0?220???000????????????????????????????????????????????????????????????????????????????????????????
+	'Paterimitra'		                             1223100-???????-???????1??????????????????????????????????????1110110-0000-?????????1-11100--00000?0121200212-211200-0021002?0?2?0122000????????????????????????????????????????????????????????????????????????????????????????
+	'Salanygolina'		                            12212112?1?????????????1???????0??????????????????????????????1120020-000111{2,1}?2100??1-2110122(1,0)0000?0121200{2,1}11-2112111102200{2,3}?0{2,1}2301?2000????????????????????????????????????????????????????????????????????????????????????????
+	'Siphonobolus priscus'		                    11211112?1?????1???????1???????01311??????????????????????????1120010-0001111???????1-21{0,1}(0,1)0--00010?01(1,2)12{1,0}01132----00-11(2,1)-11210{2,1}211???000?1??????????????????????????????????????????????????????????????????????????????????????
+	'Tomteluva perturbata'		                    0----??????????????????1??????????????????????????????????????1120010-000121{2,1}???????1-210012200100?0111200111-2222111{0,1}01-103?0???0???000????????????????????????????????????????????????????????????????????????????????????????
+	'Ussunia'		                                 ???????????????????????0--00---0?????????????????????0????????1120010-000111{1,2}?1??11?1-20000--00000?0220-0010------00-001-004?0{2,1}????????00???????????????????????????????????????????????????????????????????????????????????????
+	'Yuganotheca elegans'		                     ?????????1?????2??????011210222?111011?1?0??????11?1??????021?11200??????11?????????1-?????--000?0?0{1,2}1?2001????????1?101-001?1?--??????0????????????????????????????????????????????????????????????????????????????????????????
 	;
 ENDBLOCK;
 
@@ -1519,95 +1531,97 @@ BEGIN NOTES;
 	TEXT CHARACTER=128 TEXT='Hyolith conchs comprise two mineralized layers of fibrous bundles.  Bundles are measure 5-15 um across; their constituent fibres are each 0.1-1.0 um wide.  In the inner layer, the fibres are transverse; in the outer layer, the bundles are inclined towards the umbo, becoming longitudinal on the outermost margin.^n^nObolellids comprise a single laminated mineralogical layer (Balthasar 2008).  Shell-penetrating canals are not considered as contributing to the mineralogical microstructure and are coded separately.^n^nCoded as non-additive as there is no clear necessity to pass through the brachiopod-like construction: the three layers could arise by the addition of a void to a single pre-existing layer, for example.^n^nInapplicable in taxa with a non-mineralized shell.';
 	TEXT CHARACTER=129 TEXT='Hyolith conchs comprise two mineralized layers of fibrous bundles.  Bundles measure 5--15 &mu;m across; their constituent fibres are each 0.1-1.0 um wide.  In the inner layer, the fibres are transverse; in the outer layer, the bundles are inclined towards the umbo, becoming longitudinal on the outermost margin.^n^nObolellids comprise a single laminated mineralogical layer (Balthasar 2008).  Shell-penetrating canals are not considered as contributing to the mineralogical microstructure and are coded separately.^n^nThe pervasive (not just superficial) polygonal structures in Paterimitra are distinct, and characterize Askepasma, Salanygolina, Eccentrotheca and Paterimitra (Larsson et al. 2014)^n^nWilliams et al. (2000) identify cross-bladed laminae as diagnostic of Strophomenata, with the exception of some older groups that contain fibres or laminar laths.';
 	TEXT CHARACTER=130 TEXT='Punctae are 10-20 um wide canals created by multicellular extensions of the outer epithelium.  They penetrate the full depth of the shell.^n^nBalthasar (2008) writes:^n^n"Vertical shell penetrating structures, such as punctae, pseudopunctae, extropunctae and canals, are common in many groups of brachiopods and are distinguished based on their geometry and size (Williams 1997). Punctae are 10-20 um wide and represent multicellular extensions of the outer epithelium (Owen and Williams 1969). Pseudopunctae and extropunctae are similar in diameter but, instead of canals, are vertical stacks of conical deflections of individual shell layers (Williams and Brunton 1993). None of these three types of vertical shell structure, all of which are confined to calcitic-shelled brachiopods, compares with the much smaller canals (&lt; 1 um in diameter) of M. nuda. The only type of vertical structure that fits the size and nature of the canals of the Mural obolellids are the canals of linguliform brachiopods, which range in width from 180 to 740 nm and are occupied by proteinaceous strands in extant taxa (Williams et al. 1992; Williams et al. 1994; Williams et al. 1997). In contrast to obolellid canals, however, linguliform canals are not known to penetrate the entire shell but terminate in organic-rich layers (Williams 1997). Based on these considerations it would, therefore, be misleading to call obolellid shells punctate (they are as much "punctate" as acrotretids or other linguliforms); rather their shell structure should be called canaliculate (Williams 1997)."';
-	TEXT CHARACTER=131 TEXT='Paterinids and their relatives exhibit a stratified layering in their inner shell [character 37 in @Williams1998Thediversity; see discussion in @Williams2000LinguliformeaCraniiformea, p. 149]';
-	TEXT CHARACTER=132 TEXT='A caniculate microstructure occurs in lingulids; canals are narrower (&lt; 1 um) than punctae, may branch, and do not fully penetrate the shell, terminating just within the boundaries of a microstructural layer. See Williams 1997, p303ff, and Balthasar 2008, p273, for discussion.^n^nTubules described in hyoliths by Kouchinsky (2000) measure around 10 um in diameter, making them an order of magnitude wider than lingulid canals.  ^n^nThis said, Balthasar (2008) considers the tubules within the columnar shell microstructure of Mickwitzia cf. occidens (1-3 um wide, Skovsted & Holmer 2003), acrotretides (1 um wide, see Holmer 1989, Zhang et al. 2016) and lingulellotretids (100 nm wide, Cusack et al 1999) as equivalent to lingulid canals.^n^nMicrina exhibits both punctae and canals (Harper et al. 2017), challenging Carlson''s contention (in Williams et al. 2007) that the structures are potentially homologous as shell perforations.';
-	TEXT CHARACTER=133 TEXT='Pseudopunctae are not punctae, but deflections of shell laminae.  They characterise Strophomenata in particular.';
-	TEXT CHARACTER=134 TEXT='Regular polygonal compartments, around 10 um in diameter, characterise Paterimitra.  Walls between compartments have the cross-section of an anvil. An external polygonal structure (possible imprints of epithelial tissue) occurs in Dailyatia, but it is a surface pattern, which is different from the polygonal prisms in the body wall of other paterinid-like groups.';
-	TEXT CHARACTER=135 TEXT='Certain taxa periodically slough and replace some of their individual sclerites during growth';
-	TEXT CHARACTER=136 TEXT='Following Carlson (1995), character 7.  This character is only possible to code in extant taxa.  It is not considered independent of Carlson''s character 11, number of gametes released per spawning, as it is possible to produce more small eggs than large eggs -- thus this latter character is not reproduced in the present study.  The same goes for Carlson''s character 12, gamete dispersal mode; brooders will tend to brood large eggs.';
-	TEXT CHARACTER=137 TEXT='Character 27 in @Haszprunar1996';
-	TEXT CHARACTER=138 TEXT='After character 31 in @Haszprunar1996.';
-	TEXT CHARACTER=139 TEXT='After character 31 in @Haszprunar1996.';
-	TEXT CHARACTER=140 TEXT='After character 30 in @Haszprunar1996.';
-	TEXT CHARACTER=141 TEXT='After character 62 in @Haszprunar2000.';
-	TEXT CHARACTER=142 TEXT='After characters 1.61 and 2.54 in @SPS1996';
-	TEXT CHARACTER=143 TEXT='After character 4.69 in @SPS1996';
-	TEXT CHARACTER=144 TEXT='After Carlson (1995), character 9. Only possible to code in extant taxa.  Mantle canals is considered the derived state, as it represents a migration from the body cavity, where gametes are produced.';
-	TEXT CHARACTER=145 TEXT='After character 41 in @Ponder1997';
-	TEXT CHARACTER=146 TEXT='Following @Smith2012, after character 160 in @Giribet2002. A fossa (latin: ditch) is a dent or impression.';
-	TEXT CHARACTER=148 TEXT='Hodgson & Reunov 1994 describe the Discinisca acrosome as having "an electron-lucent centre and an electron-dense outer region", and state that this trait is characteristic of inarticulate brachiopods.';
-	TEXT CHARACTER=150 TEXT='Following Hodgson & Reunov (1994)';
-	TEXT CHARACTER=151 TEXT='Following Hodgson & Reunov 1994.';
-	TEXT CHARACTER=152 TEXT='Following @Smith2012; see @BucklandNicks2008';
-	TEXT CHARACTER=153 TEXT='Following @Smith2012, after character 48 in @Ponder1997.';
-	TEXT CHARACTER=154 TEXT='After character 5 in @BucklandNicks2008; see also character 43 in @Ponder1997.';
-	TEXT CHARACTER=155 TEXT='After character 44 in @Ponder1997.  Cristae are internal compartments formed by inner mitochondrial membranes.';
-	TEXT CHARACTER=156 TEXT='After @Smith2012; see also character 43 in @Ponder1997; character 164 in @Giribet2002';
-	TEXT CHARACTER=157 TEXT='Following character 170 in @Giribet2002';
-	TEXT CHARACTER=158 TEXT='The "molluscan cross" and "annelid cross" cannot be systematically discriminated from one another, so are treated as a single state.  ^nSee characters 127 & 128 in @Rouse1999; 1.49 in @SPS1996;^ncharacter 34 in @Haszprunar1996; 35 in @Haszprunar2000; 172 in @Giribet2002.';
-	TEXT CHARACTER=159 TEXT='Following character 171 in @Giribet2002';
-	TEXT CHARACTER=160 TEXT='See characters 32-33 in @Haszprunar1996; character 1.48 in @SPS1996; character 29 in @Glenner2004.';
-	TEXT CHARACTER=161 TEXT='Following @Hejnol2010.  Blastomeres may undergo significant size differentiation, generating macromeres and micromeres of prominently different sizes.';
-	TEXT CHARACTER=162 TEXT='After characters 32 in @Grobe2007 and 36-37 in @Glenner2004';
-	TEXT CHARACTER=163 TEXT='See characters 129 and 131 in @Rouse1999; 40 in @Haszprunar1996.^nA prototroch is the defining character of a trochophore larva; a metatroch is a secondary ciliary ring [@Rouse1999].^n';
-	TEXT CHARACTER=164 TEXT='A posterior ciliary band. Character 136 in @Rouse1999.';
-	TEXT CHARACTER=165 TEXT='Character 140 in @Rouse1999. See also @Collin1997; character 2.66 in @SPS1996; 153 in @Giribet2002.';
-	TEXT CHARACTER=166 TEXT='Character 132 in @Rouse1999';
-	TEXT CHARACTER=167 TEXT='Downstream-collecting ciliary bands of compound cilia on multiciliated cells. See character 32 in @Glenner2004.';
-	TEXT CHARACTER=168 TEXT='Upstream-collecting ciliary bands with single cilia on monociliated cells. See character 32 in @Glenner2004.';
-	TEXT CHARACTER=169 TEXT='Characters 1.50, 2.66 and 4.68 in @SPS1996; 2 in @Vinther2008.  See also characters 39 in @Haszprunar1996 and 153 in @Giribet2002.';
-	TEXT CHARACTER=170 TEXT='Following @Wanninger2009';
-	TEXT CHARACTER=171 TEXT='Character 8 in @Vinther2008';
-	TEXT CHARACTER=172 TEXT='Character 8 in @Haszprunar2008.';
-	TEXT CHARACTER=173 TEXT='Character 79 in @Glenner2004';
-	TEXT CHARACTER=174 TEXT='After character 3 in @Richter2010';
-	TEXT CHARACTER=175 TEXT='(SLI) See @Haszprunar2000; @Richter2010^nAbsent (or faint) in Phascolion only, so this character only details the location in taxa in which SLR is readily evident.';
-	TEXT CHARACTER=176 TEXT='Character 1.43 in@SPS1996';
-	TEXT CHARACTER=177 TEXT='Character 26 in @Haszprunar2000';
-	TEXT CHARACTER=178 TEXT='A pedal gland is considered evidence for homology between the molluscan and entoproct foot [@Haszprunar2008].';
-	TEXT CHARACTER=179 TEXT='Character 2.02 in @Scheltema1993';
-	TEXT CHARACTER=180 TEXT='Character 1.03 in @Scheltema1993';
-	TEXT CHARACTER=181 TEXT='Foot or neurotroch present in larval stage, whether or not it is also present in mature individuals. Following @Wingstrand1985.';
-	TEXT CHARACTER=182 TEXT='After @Lundin2009';
-	TEXT CHARACTER=183 TEXT='After @Lundin2009^n';
-	TEXT CHARACTER=184 TEXT='After @Lundin2009. Fibres radiate from the distal end of the basal foot of the cilia in certain taxa.^n';
-	TEXT CHARACTER=185 TEXT='After @Lundin2009.  Also termed "dense plate".^n';
-	TEXT CHARACTER=186 TEXT='After @Lundin2009; coded following @Smith2012';
-	TEXT CHARACTER=187 TEXT='After @Lundin2009^n';
-	TEXT CHARACTER=188 TEXT='After @Lundin2009.^nThe ciliary necklace is defined by @Gilula1972 as "Well-defined rows or strands of membrane particles that encircle the ciliary shaft".  It occurs immediately below the basal plate, and comprises three beaded circles of on the circumference of the cilia membrane.';
-	TEXT CHARACTER=189 TEXT='After @Lundin2009. Compound cilia are motile structures composed of 10--100 regular cilia used in locomotion or feeding^n';
-	TEXT CHARACTER=190 TEXT='Character 14 in @Glenner2004.  Compound cilia can be produced by the aggregation of cilia from multiple monociliate cells, or from a single cell bearing multiple cilia [@Nielsen1987].';
-	TEXT CHARACTER=191 TEXT='After @Lundin2009^n';
-	TEXT CHARACTER=192 TEXT='After @Lundin2009^n';
-	TEXT CHARACTER=193 TEXT='After @Lundin2009.  The vertical ciliary rootlet is also termed the posterior rootlet.';
-	TEXT CHARACTER=194 TEXT='After @Lundin2009.  The vertical ciliary rootlet is also termed the posterior rootlet.^n';
-	TEXT CHARACTER=195 TEXT='After @Lundin2009.  The secondary ciliary rootlet is also termed the anterior ciliary rootlet.^n';
-	TEXT CHARACTER=196 TEXT='After @Lundin2009.  The secondary ciliary rootlet is also termed the anterior ciliary rootlet.^n^n';
-	TEXT CHARACTER=197 TEXT='After @Lundin2009.  The secondary ciliary rootlet is also termed the anterior ciliary rootlet.';
-	TEXT CHARACTER=198 TEXT='See characters 21 and 28 in @Haszprunar2000; 1.12 in @Scheltema1993';
-	TEXT CHARACTER=199 TEXT='Pore cells.  Character 20 in @Haszprunar2000.';
-	TEXT CHARACTER=200 TEXT='See character 4.46 in @SPS1996.';
-	TEXT CHARACTER=201 TEXT='Also termed cyrtocytes.  Character 21 in @Grobe2007; 1.47 in @SPS1996; 138 in @Rouse1999; 20 in @Haszprunar1996; 90 in @Glenner2004';
-	TEXT CHARACTER=202 TEXT='See characters 35 in @Rouse1999; 28 in @Haszprunar2000; 93 in @Glenner2004; 1.47 in @SPS1996; 21 in @Grobe2007; 138 in @Rouse1999; 20 in @Haszprunar1996.';
-	TEXT CHARACTER=203 TEXT='Character 1 in @Haszprunar1996';
-	TEXT CHARACTER=204 TEXT='Character 2 in @Haszprunar2008';
-	TEXT CHARACTER=205 TEXT='After @Borisanova2015';
-	TEXT CHARACTER=206 TEXT='After @Borisanova2015';
-	TEXT CHARACTER=207 TEXT='Character 1 in @Haszprunar2000.';
+	TEXT CHARACTER=131 TEXT='Paterinids, tommotiids and linguliform brachiopods exhibit a "rhythmic succession [...] characterised by alternating thin [1--5 um] heavily mineralised compact laminae and thicker less strongly mineralised laminae" -- @Topper2013Theoldest.   See character 37 in @Williams1998Thediversity, and discussion in @Williams2000LinguliformeaCraniiformea (p. 149); @Balthasar2009Homologousskeletal';
+	TEXT CHARACTER=132 TEXT='In tommotiids, the shell simply comprises a stack of stratiform lamellae, each corresponding to a circumferential rib at the shell surface.  This is particularly apparent in Dailyatia [@Skovsted2015Theearly] and Paterimitra [@Larsson2014iPaterimitra].';
+	TEXT CHARACTER=133 TEXT='See character 37 in @Williams1998Thediversity.  ^n"A distinct primary layer [...] is characterized by a polygonal ornament that is mineralized from the polygon walls inward, while the rest of the shell and/or sclerite is secreted by basal accretion" -- @Balthasar2009Homologousskeletal.  Distinguished from epithelial cell moulds in lingulids, which do not form an integral part of the shell structure [@Balthasar2009Homologousskeletal].^nTreated as transformational as ancestral condition is ambiguous.';
+	TEXT CHARACTER=134 TEXT='A caniculate microstructure occurs in lingulids; canals are narrower (&lt; 1 um) than punctae, may branch, and do not fully penetrate the shell, terminating just within the boundaries of a microstructural layer. See Williams 1997, p303ff, and Balthasar 2008, p273, for discussion.^n^nTubules described in hyoliths by Kouchinsky (2000) measure around 10 um in diameter, making them an order of magnitude wider than lingulid canals.  ^n^nThis said, Balthasar (2008) considers the tubules within the columnar shell microstructure of Mickwitzia cf. occidens (1-3 um wide, Skovsted & Holmer 2003), acrotretides (1 um wide, see Holmer 1989, Zhang et al. 2016) and lingulellotretids (100 nm wide, Cusack et al 1999) as equivalent to lingulid canals.^n^nMicrina exhibits both punctae and canals (Harper et al. 2017), challenging Carlson''s contention (in Williams et al. 2007) that the structures are potentially homologous as shell perforations.';
+	TEXT CHARACTER=135 TEXT='Pseudopunctae are not punctae, but deflections of shell laminae.  They characterise Strophomenata in particular.';
+	TEXT CHARACTER=136 TEXT='Regular polygonal compartments, around 10 um in diameter, characterise Paterimitra.  Walls between compartments have the cross-section of an anvil. An external polygonal structure (possible imprints of epithelial tissue) occurs in Dailyatia, but it is a surface pattern, which is different from the polygonal prisms in the body wall of other paterinid-like groups.';
+	TEXT CHARACTER=137 TEXT='Certain taxa periodically slough and replace some of their individual sclerites during growth';
+	TEXT CHARACTER=138 TEXT='Following Carlson (1995), character 7.  This character is only possible to code in extant taxa.  It is not considered independent of Carlson''s character 11, number of gametes released per spawning, as it is possible to produce more small eggs than large eggs -- thus this latter character is not reproduced in the present study.  The same goes for Carlson''s character 12, gamete dispersal mode; brooders will tend to brood large eggs.';
+	TEXT CHARACTER=139 TEXT='Character 27 in @Haszprunar1996';
+	TEXT CHARACTER=140 TEXT='After character 31 in @Haszprunar1996.';
+	TEXT CHARACTER=141 TEXT='After character 31 in @Haszprunar1996.';
+	TEXT CHARACTER=142 TEXT='After character 30 in @Haszprunar1996.';
+	TEXT CHARACTER=143 TEXT='After character 62 in @Haszprunar2000.';
+	TEXT CHARACTER=144 TEXT='After characters 1.61 and 2.54 in @SPS1996';
+	TEXT CHARACTER=145 TEXT='After character 4.69 in @SPS1996';
+	TEXT CHARACTER=146 TEXT='After Carlson (1995), character 9. Only possible to code in extant taxa.  Mantle canals is considered the derived state, as it represents a migration from the body cavity, where gametes are produced.';
+	TEXT CHARACTER=147 TEXT='After character 41 in @Ponder1997';
+	TEXT CHARACTER=148 TEXT='Following @Smith2012, after character 160 in @Giribet2002. A fossa (latin: ditch) is a dent or impression.';
+	TEXT CHARACTER=150 TEXT='Hodgson & Reunov 1994 describe the Discinisca acrosome as having "an electron-lucent centre and an electron-dense outer region", and state that this trait is characteristic of inarticulate brachiopods.';
+	TEXT CHARACTER=152 TEXT='Following Hodgson & Reunov (1994)';
+	TEXT CHARACTER=153 TEXT='Following Hodgson & Reunov 1994.';
+	TEXT CHARACTER=154 TEXT='Following @Smith2012; see @BucklandNicks2008';
+	TEXT CHARACTER=155 TEXT='Following @Smith2012, after character 48 in @Ponder1997.';
+	TEXT CHARACTER=156 TEXT='After character 5 in @BucklandNicks2008; see also character 43 in @Ponder1997.';
+	TEXT CHARACTER=157 TEXT='After character 44 in @Ponder1997.  Cristae are internal compartments formed by inner mitochondrial membranes.';
+	TEXT CHARACTER=158 TEXT='After @Smith2012; see also character 43 in @Ponder1997; character 164 in @Giribet2002';
+	TEXT CHARACTER=159 TEXT='Following character 170 in @Giribet2002';
+	TEXT CHARACTER=160 TEXT='The "molluscan cross" and "annelid cross" cannot be systematically discriminated from one another, so are treated as a single state.  ^nSee characters 127 & 128 in @Rouse1999; 1.49 in @SPS1996;^ncharacter 34 in @Haszprunar1996; 35 in @Haszprunar2000; 172 in @Giribet2002.';
+	TEXT CHARACTER=161 TEXT='Following character 171 in @Giribet2002';
+	TEXT CHARACTER=162 TEXT='See characters 32-33 in @Haszprunar1996; character 1.48 in @SPS1996; character 29 in @Glenner2004.';
+	TEXT CHARACTER=163 TEXT='Following @Hejnol2010.  Blastomeres may undergo significant size differentiation, generating macromeres and micromeres of prominently different sizes.';
+	TEXT CHARACTER=164 TEXT='After characters 32 in @Grobe2007 and 36-37 in @Glenner2004';
+	TEXT CHARACTER=165 TEXT='See characters 129 and 131 in @Rouse1999; 40 in @Haszprunar1996.^nA prototroch is the defining character of a trochophore larva; a metatroch is a secondary ciliary ring [@Rouse1999].^n';
+	TEXT CHARACTER=166 TEXT='A posterior ciliary band. Character 136 in @Rouse1999.';
+	TEXT CHARACTER=167 TEXT='Character 140 in @Rouse1999. See also @Collin1997; character 2.66 in @SPS1996; 153 in @Giribet2002.';
+	TEXT CHARACTER=168 TEXT='Character 132 in @Rouse1999';
+	TEXT CHARACTER=169 TEXT='Downstream-collecting ciliary bands of compound cilia on multiciliated cells. See character 32 in @Glenner2004.';
+	TEXT CHARACTER=170 TEXT='Upstream-collecting ciliary bands with single cilia on monociliated cells. See character 32 in @Glenner2004.';
+	TEXT CHARACTER=171 TEXT='Characters 1.50, 2.66 and 4.68 in @SPS1996; 2 in @Vinther2008.  See also characters 39 in @Haszprunar1996 and 153 in @Giribet2002.';
+	TEXT CHARACTER=172 TEXT='Following @Wanninger2009';
+	TEXT CHARACTER=173 TEXT='Character 8 in @Vinther2008';
+	TEXT CHARACTER=174 TEXT='Character 8 in @Haszprunar2008.';
+	TEXT CHARACTER=175 TEXT='Character 79 in @Glenner2004';
+	TEXT CHARACTER=176 TEXT='After character 3 in @Richter2010';
+	TEXT CHARACTER=177 TEXT='(SLI) See @Haszprunar2000; @Richter2010^nAbsent (or faint) in Phascolion only, so this character only details the location in taxa in which SLR is readily evident.';
+	TEXT CHARACTER=178 TEXT='Character 1.43 in@SPS1996';
+	TEXT CHARACTER=179 TEXT='Character 26 in @Haszprunar2000';
+	TEXT CHARACTER=180 TEXT='A pedal gland is considered evidence for homology between the molluscan and entoproct foot [@Haszprunar2008].';
+	TEXT CHARACTER=181 TEXT='Character 2.02 in @Scheltema1993';
+	TEXT CHARACTER=182 TEXT='Character 1.03 in @Scheltema1993';
+	TEXT CHARACTER=183 TEXT='Foot or neurotroch present in larval stage, whether or not it is also present in mature individuals. Following @Wingstrand1985.';
+	TEXT CHARACTER=184 TEXT='After @Lundin2009';
+	TEXT CHARACTER=185 TEXT='After @Lundin2009^n';
+	TEXT CHARACTER=186 TEXT='After @Lundin2009. Fibres radiate from the distal end of the basal foot of the cilia in certain taxa.^n';
+	TEXT CHARACTER=187 TEXT='After @Lundin2009.  Also termed "dense plate".^n';
+	TEXT CHARACTER=188 TEXT='After @Lundin2009; coded following @Smith2012';
+	TEXT CHARACTER=189 TEXT='After @Lundin2009^n';
+	TEXT CHARACTER=190 TEXT='After @Lundin2009.^nThe ciliary necklace is defined by @Gilula1972 as "Well-defined rows or strands of membrane particles that encircle the ciliary shaft".  It occurs immediately below the basal plate, and comprises three beaded circles of on the circumference of the cilia membrane.';
+	TEXT CHARACTER=191 TEXT='After @Lundin2009. Compound cilia are motile structures composed of 10--100 regular cilia used in locomotion or feeding^n';
+	TEXT CHARACTER=192 TEXT='Character 14 in @Glenner2004.  Compound cilia can be produced by the aggregation of cilia from multiple monociliate cells, or from a single cell bearing multiple cilia [@Nielsen1987].';
+	TEXT CHARACTER=193 TEXT='After @Lundin2009^n';
+	TEXT CHARACTER=194 TEXT='After @Lundin2009^n';
+	TEXT CHARACTER=195 TEXT='After @Lundin2009.  The vertical ciliary rootlet is also termed the posterior rootlet.';
+	TEXT CHARACTER=196 TEXT='After @Lundin2009.  The vertical ciliary rootlet is also termed the posterior rootlet.^n';
+	TEXT CHARACTER=197 TEXT='After @Lundin2009.  The secondary ciliary rootlet is also termed the anterior ciliary rootlet.^n';
+	TEXT CHARACTER=198 TEXT='After @Lundin2009.  The secondary ciliary rootlet is also termed the anterior ciliary rootlet.^n^n';
+	TEXT CHARACTER=199 TEXT='After @Lundin2009.  The secondary ciliary rootlet is also termed the anterior ciliary rootlet.';
+	TEXT CHARACTER=200 TEXT='See characters 21 and 28 in @Haszprunar2000; 1.12 in @Scheltema1993';
+	TEXT CHARACTER=201 TEXT='Pore cells.  Character 20 in @Haszprunar2000.';
+	TEXT CHARACTER=202 TEXT='See character 4.46 in @SPS1996.';
+	TEXT CHARACTER=203 TEXT='Also termed cyrtocytes.  Character 21 in @Grobe2007; 1.47 in @SPS1996; 138 in @Rouse1999; 20 in @Haszprunar1996; 90 in @Glenner2004';
+	TEXT CHARACTER=204 TEXT='See characters 35 in @Rouse1999; 28 in @Haszprunar2000; 93 in @Glenner2004; 1.47 in @SPS1996; 21 in @Grobe2007; 138 in @Rouse1999; 20 in @Haszprunar1996.';
+	TEXT CHARACTER=205 TEXT='Character 1 in @Haszprunar1996';
+	TEXT CHARACTER=206 TEXT='Character 2 in @Haszprunar2008';
+	TEXT CHARACTER=207 TEXT='After @Borisanova2015';
 	TEXT CHARACTER=208 TEXT='After @Borisanova2015';
-	TEXT CHARACTER=209 TEXT='Character 19 in @Haszprunar1996; see also character 13 in @Haszprunar2000';
-	TEXT CHARACTER=210 TEXT='See character 18 in @Haszprunar1996';
-	TEXT CHARACTER=211 TEXT='Characters 1.13, 1.40 & 2.08 in @Scheltema1993; 114 in @Giribet2002; 1.53 in @SPS1996; 9 in @Haszprunar1996';
-	TEXT CHARACTER=213 TEXT='After character 23 in @Haszprunar1996; 24 in @Haszprunar2000; 41 in @Rouse1999; 16 in @Scheltema1993; 16 in @Vinther2008; 5 in @Haszprunar2008';
-	TEXT CHARACTER=214 TEXT='Character 14 in @Haszprunar1996. Paired longitudinal nerve cords regularly interconnected by transversal commissures to form a rectangular pattern.';
-	TEXT CHARACTER=215 TEXT='Character 16 in @Haszprunar1996.  The Gliointerstitial system interconnects the nervous and muscle systems.';
-	TEXT CHARACTER=216 TEXT='Character 7b in @Haszprunar2008';
-	TEXT CHARACTER=217 TEXT='Character 7c in @Haszprunar2008.  A pre-oral nerve loop is present in molluscs, Loxosomella and certain annelids [@Wanninger2007].';
-	TEXT CHARACTER=218 TEXT='Character 1.22 in @SPS1996';
-	TEXT CHARACTER=219 TEXT='After character 13 in @Haszprunar1996.';
-	TEXT CHARACTER=220 TEXT='After character 13 in @Haszprunar1996.';
-	TEXT CHARACTER=221 TEXT='  See character 7 in @Haszprunar2008.';
-	TEXT CHARACTER=222 TEXT='Character 80 in @Glenner2004; see also character 6 in @Vinther2008.';
+	TEXT CHARACTER=209 TEXT='Character 1 in @Haszprunar2000.';
+	TEXT CHARACTER=210 TEXT='After @Borisanova2015';
+	TEXT CHARACTER=211 TEXT='Character 19 in @Haszprunar1996; see also character 13 in @Haszprunar2000';
+	TEXT CHARACTER=212 TEXT='See character 18 in @Haszprunar1996';
+	TEXT CHARACTER=213 TEXT='Characters 1.13, 1.40 & 2.08 in @Scheltema1993; 114 in @Giribet2002; 1.53 in @SPS1996; 9 in @Haszprunar1996';
+	TEXT CHARACTER=215 TEXT='After character 23 in @Haszprunar1996; 24 in @Haszprunar2000; 41 in @Rouse1999; 16 in @Scheltema1993; 16 in @Vinther2008; 5 in @Haszprunar2008';
+	TEXT CHARACTER=216 TEXT='Character 14 in @Haszprunar1996. Paired longitudinal nerve cords regularly interconnected by transversal commissures to form a rectangular pattern.';
+	TEXT CHARACTER=217 TEXT='Character 16 in @Haszprunar1996.  The Gliointerstitial system interconnects the nervous and muscle systems.';
+	TEXT CHARACTER=218 TEXT='Character 7b in @Haszprunar2008';
+	TEXT CHARACTER=219 TEXT='Character 7c in @Haszprunar2008.  A pre-oral nerve loop is present in molluscs, Loxosomella and certain annelids [@Wanninger2007].';
+	TEXT CHARACTER=220 TEXT='Character 1.22 in @SPS1996';
+	TEXT CHARACTER=221 TEXT='After character 13 in @Haszprunar1996.';
+	TEXT CHARACTER=222 TEXT='After character 13 in @Haszprunar1996.';
+	TEXT CHARACTER=223 TEXT='  See character 7 in @Haszprunar2008.';
+	TEXT CHARACTER=224 TEXT='Character 80 in @Glenner2004; see also character 6 in @Vinther2008.';
 
 	[Attribute comments]
 	TEXT TAXON=1 CHARACTER=63 TEXT='The mineralized endoskeleton of Namacalathus is not interpreted as a sclerite.';
@@ -1772,16 +1786,16 @@ BEGIN NOTES;
 	TEXT TAXON=33 CHARACTER=130 TEXT='"impunctate"';
 	TEXT TAXON=44 CHARACTER=130 TEXT='Coded as present to reflect that the chambers contained setae; following Carlson in Williams et al. 2007, the punctae may or may not be homologous as punctae, but are likely homologous as shell perforations; both these perforations and those of Micrina were associated with setae, even if their equivalence bay be with juvenile vs adult setal structures in modern brachiopods (Balthasar 2004, p. 397).';
 	TEXT TAXON=50 CHARACTER=130 TEXT='The ''canals'' through the shell have a diameter of c. 20 um (Williams et al. 2004, text-fig. 2a), falling within the definition of punctae used herein.';
-	TEXT TAXON=43 CHARACTER=132 TEXT='Acrotretid laminae bear characteristic columns (e.g. Zhang et al. 2016); a similar fabric has been reported, and assumed homologous, in Micrina (Butler et al. 2012).^n^nA similar columnar shell microstructure also occurs in the closely related Mickwitzia (Balthasar 2008).';
-	TEXT TAXON=1 CHARACTER=132 TEXT='Canal-like structures have been reported in Namacalathus (Zhuravlev et al. 2015), and interpreted as evidence for a Lophophorate affinity.  Though the structures are not necessarily directly equivalent, the hypothesis of homology is followed here.';
-	TEXT TAXON=7 CHARACTER=132 TEXT='Zhang et al. (2018) have reported um-scale canals, replicated in phosphate, within the shell of the hyolithid Paramicrocornus; as shell microstructure is not preserved in Haplophrentis, this latter taxon is taken as a model.';
-	TEXT TAXON=42 CHARACTER=132 TEXT='Preservational resolution not sufficient to evaluate';
-	TEXT TAXON=31 CHARACTER=132 TEXT='Acrotretid laminae bear characteristic columns (e.g. Zhang et al. 2016).^n^nBalthasar (2008) considers these columns as homologous with tubules within the columnar shell microstructure Mummpikia, Mickwitzia and lingulellotretids';
-	TEXT TAXON=44 CHARACTER=132 TEXT='Coded as present to reflect similarity of columnar microstructure remarked on by, among others, Balthasar (2008); Williams et al. (2007); Skovsted & Holmer (2003)';
-	TEXT TAXON=50 CHARACTER=132 TEXT='The ''canals'' through the shell have a diameter of c. 20 um (Williams et al. 2004, text-fig. 2a), falling within the definition of punctae (rather than canals) used herein.';
-	TEXT TAXON=30 CHARACTER=132 TEXT='Not evident in section presented by Skovsted & Holmer (2003).';
-	TEXT TAXON=23 CHARACTER=132 TEXT='The chambers in halkieriid sclerites do not correspond in morphology or dimension to the brachiopod-like canals documented by this character.';
-	TEXT TAXON=20 CHARACTER=132 TEXT='Aesthete canals do not fall within the definition of this character.';
+	TEXT TAXON=43 CHARACTER=134 TEXT='Acrotretid laminae bear characteristic columns (e.g. Zhang et al. 2016); a similar fabric has been reported, and assumed homologous, in Micrina (Butler et al. 2012).^n^nA similar columnar shell microstructure also occurs in the closely related Mickwitzia (Balthasar 2008).';
+	TEXT TAXON=1 CHARACTER=134 TEXT='Canal-like structures have been reported in Namacalathus (Zhuravlev et al. 2015), and interpreted as evidence for a Lophophorate affinity.  Though the structures are not necessarily directly equivalent, the hypothesis of homology is followed here.';
+	TEXT TAXON=7 CHARACTER=134 TEXT='Zhang et al. (2018) have reported um-scale canals, replicated in phosphate, within the shell of the hyolithid Paramicrocornus; as shell microstructure is not preserved in Haplophrentis, this latter taxon is taken as a model.';
+	TEXT TAXON=42 CHARACTER=134 TEXT='Preservational resolution not sufficient to evaluate';
+	TEXT TAXON=31 CHARACTER=134 TEXT='Acrotretid laminae bear characteristic columns (e.g. Zhang et al. 2016).^n^nBalthasar (2008) considers these columns as homologous with tubules within the columnar shell microstructure Mummpikia, Mickwitzia and lingulellotretids';
+	TEXT TAXON=44 CHARACTER=134 TEXT='Coded as present to reflect similarity of columnar microstructure remarked on by, among others, Balthasar (2008); Williams et al. (2007); Skovsted & Holmer (2003)';
+	TEXT TAXON=50 CHARACTER=134 TEXT='The ''canals'' through the shell have a diameter of c. 20 um (Williams et al. 2004, text-fig. 2a), falling within the definition of punctae (rather than canals) used herein.';
+	TEXT TAXON=30 CHARACTER=134 TEXT='Not evident in section presented by Skovsted & Holmer (2003).';
+	TEXT TAXON=23 CHARACTER=134 TEXT='The chambers in halkieriid sclerites do not correspond in morphology or dimension to the brachiopod-like canals documented by this character.';
+	TEXT TAXON=20 CHARACTER=134 TEXT='Aesthete canals do not fall within the definition of this character.';
 	TEXT TAXON=48 CHARACTER=111 TEXT='Covered by subaical flange, in part.  ';
 	TEXT TAXON=32 CHARACTER=111 TEXT='A convex pseudodeltidium completely covers the delthyrium in Coolinia.^n';
 	TEXT TAXON=27 CHARACTER=111 TEXT='Open (Topper et al. 2013T)';
@@ -1856,10 +1870,11 @@ BEGIN NOTES;
 	TEXT TAXON=52 CHARACTER=69 TEXT='"articulatory structures poorly developed" -- Williams et al. 2000, p. 192';
 	TEXT TAXON=44 CHARACTER=69 TEXT='Not reported by or evident in Balthasar (2004)';
 	TEXT TAXON=20 CHARACTER=69 TEXT='The sutural laminae correspond in function and position to brachiopod apophyses [@Connors2012], and so are coded as potentially homologous.';
-	TEXT TAXON=31 CHARACTER=134 TEXT='The polygonal ornament reported in acrotretids by Zhang et al. (2016) is on the internal surface of the shell.';
+	TEXT TAXON=31 CHARACTER=136 TEXT='The polygonal ornament reported in acrotretids by Zhang et al. (2016) is on the internal surface of the shell.';
 	TEXT TAXON=8 CHARACTER=129 TEXT='Assumed to be fibrous by analogy with the allothecomorph orthothecid described by Kouchinsky (2000).';
 	TEXT TAXON=1 CHARACTER=129 TEXT='The inner and outer layer are foliated.  The columnar inflections lack canals, and as such we do not consider them to bear any obvious homology with the hollow pillars of tommotiids and certain brachiopods, their superficial similarity to strophomenid pseudopunctae notwithstanding.';
 	TEXT TAXON=7 CHARACTER=129 TEXT='Inferred from other hyolithids (e.g. Moore & Porter 2018).';
+	TEXT TAXON=49 CHARACTER=129 TEXT='"Apatitic crystals of varying shapes and dimensions" -- @Holmer2009Theenigmatic';
 	TEXT TAXON=29 CHARACTER=129 TEXT='Shell structure of this taxon is laminated, rather than fibrous as previously considered.';
 	TEXT TAXON=33 CHARACTER=129 TEXT='"with calcitic or possibly aragonitic inarticulated shells with laminar (tabular) secondary layers" (Williams et al. 2000)';
 	TEXT TAXON=50 CHARACTER=129 TEXT='Prominent laminations; see Williams et al. (2004)';
@@ -2057,10 +2072,10 @@ BEGIN NOTES;
 	TEXT TAXON=50 CHARACTER=89 TEXT='The short interarea appears planar (see for example Popov et a. 2009 fig. 6A), but its short length makes it difficult to establish whether slight curvature is present.';
 	TEXT TAXON=30 CHARACTER=89 TEXT='"Curved pseudointerarea" -- Skovsted et al. 2017';
 	TEXT TAXON=20 CHARACTER=89 TEXT='Essentially planar, though open in aspect [following Chiton in @Schwabe2010]';
-	TEXT TAXON=46 CHARACTER=133 TEXT='Scored absent in data matrix of Benedetto (2009).';
-	TEXT TAXON=29 CHARACTER=133 TEXT='Scored absent in data matrix of Benedetto (2009).';
-	TEXT TAXON=47 CHARACTER=133 TEXT='Scored absent (in Eoorthis) in data matrix of Benedetto (2009).';
-	TEXT TAXON=37 CHARACTER=133 TEXT='Scored absent in data matrix of Benedetto (2009).';
+	TEXT TAXON=46 CHARACTER=135 TEXT='Scored absent in data matrix of Benedetto (2009).';
+	TEXT TAXON=29 CHARACTER=135 TEXT='Scored absent in data matrix of Benedetto (2009).';
+	TEXT TAXON=47 CHARACTER=135 TEXT='Scored absent (in Eoorthis) in data matrix of Benedetto (2009).';
+	TEXT TAXON=37 CHARACTER=135 TEXT='Scored absent in data matrix of Benedetto (2009).';
 	TEXT TAXON=32 CHARACTER=107 TEXT='See fig. 485 in Williams et al. 2000';
 	TEXT TAXON=39 CHARACTER=107 TEXT='This taxon (see Williams et al. 2000, fig. 129; Popov 1992, fig. 1) comes close to expressing the deeply conical ventral valve that this character is intended to reflect, though this is not always so pronounced (e.g. Williams et al. 2000, fig. 125).  It is therefore coded as ambiguous.';
 	TEXT TAXON=49 CHARACTER=107 TEXT='Whereas Williams et al. (2000, p. 156) describe the ventral pseudointerarea as high, the shell lacks the deeply conical aspect that this character is intended to capture; we thus code the taxon as ambiguous.';
@@ -2361,26 +2376,26 @@ BEGIN NOTES;
 	TEXT TAXON=35 CHARACTER=81 TEXT='Not remarked upon by Balthasar (2009T).';
 	TEXT TAXON=50 CHARACTER=81 TEXT='Ventral musculature poorly constrained (Williams et al. 2000; Popov et al. 2009)';
 	TEXT TAXON=30 CHARACTER=81 TEXT='Implicitly taken as present in Popov (1992), though not marked in diagrams -- suggesting not strongly developed.';
-	TEXT TAXON=17 CHARACTER=136 TEXT='Phoronis has planktotrophic larvae. indicating a small egg size (Ruppert et al. 2004).  Carlson (1995) codes phoronids as polymorphic, as some members of the phylum have eggs of each size.';
-	TEXT TAXON=15 CHARACTER=136 TEXT='Following coding for class in Carlson (1995) appendix 1, character 7.';
-	TEXT TAXON=14 CHARACTER=136 TEXT='Following coding for class in Carlson (1995) appendix 1, character 7.';
-	TEXT TAXON=13 CHARACTER=136 TEXT='Following coding for class in Carlson (1995) appendix 1, character 7.';
-	TEXT TAXON=16 CHARACTER=136 TEXT='Following coding for class in Carlson (1995) appendix 1, character 7.';
-	TEXT TAXON=50 CHARACTER=136 TEXT='"the ventral brephic valve [was] 50 um across, [which] is close to the known lower limit of the brachiopod egg size" -- Popov et al. 2009';
-	TEXT TAXON=10 CHARACTER=136 TEXT='Tiny [@Nielsen1966]';
-	TEXT TAXON=11 CHARACTER=136 TEXT='"Mature eggs commonly measure about 200 um in diameter" -- @Franzen1977';
-	TEXT TAXON=18 CHARACTER=136 TEXT='c. 200 um in diameter [@Rice1988]';
-	TEXT TAXON=20 CHARACTER=136 TEXT='@BucklandNicks1988';
-	TEXT TAXON=21 CHARACTER=136 TEXT='Egg size can vary from 60-200 um in scaphopods, but in Dentalium the eggs are large [@DufresneDube1983].';
-	TEXT TAXON=19 CHARACTER=136 TEXT='c. 50 um in Hydroides [@Miles2007]';
-	TEXT TAXON=12 CHARACTER=136 TEXT='"Mature eggs commonly measure about 200 um in diameter" [@Franzen1977]; the larva is a similar size [@Reed1982]';
-	TEXT TAXON=17 CHARACTER=144 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 9.';
-	TEXT TAXON=15 CHARACTER=144 TEXT='Following Hodgson & Reunov (1994).';
-	TEXT TAXON=14 CHARACTER=144 TEXT='Following Hodgson & Reunov (1994).';
-	TEXT TAXON=13 CHARACTER=144 TEXT='Following Hodgson & Reunov (1994).';
-	TEXT TAXON=16 CHARACTER=144 TEXT='Following Hodgson & Reunov (1994).';
-	TEXT TAXON=11 CHARACTER=144 TEXT='Ovicell [@Franzen1977]';
-	TEXT TAXON=12 CHARACTER=144 TEXT='Ovicell [@Franzen1977]';
+	TEXT TAXON=17 CHARACTER=138 TEXT='Phoronis has planktotrophic larvae. indicating a small egg size (Ruppert et al. 2004).  Carlson (1995) codes phoronids as polymorphic, as some members of the phylum have eggs of each size.';
+	TEXT TAXON=15 CHARACTER=138 TEXT='Following coding for class in Carlson (1995) appendix 1, character 7.';
+	TEXT TAXON=14 CHARACTER=138 TEXT='Following coding for class in Carlson (1995) appendix 1, character 7.';
+	TEXT TAXON=13 CHARACTER=138 TEXT='Following coding for class in Carlson (1995) appendix 1, character 7.';
+	TEXT TAXON=16 CHARACTER=138 TEXT='Following coding for class in Carlson (1995) appendix 1, character 7.';
+	TEXT TAXON=50 CHARACTER=138 TEXT='"the ventral brephic valve [was] 50 um across, [which] is close to the known lower limit of the brachiopod egg size" -- Popov et al. 2009';
+	TEXT TAXON=10 CHARACTER=138 TEXT='Tiny [@Nielsen1966]';
+	TEXT TAXON=11 CHARACTER=138 TEXT='"Mature eggs commonly measure about 200 um in diameter" -- @Franzen1977';
+	TEXT TAXON=18 CHARACTER=138 TEXT='c. 200 um in diameter [@Rice1988]';
+	TEXT TAXON=20 CHARACTER=138 TEXT='@BucklandNicks1988';
+	TEXT TAXON=21 CHARACTER=138 TEXT='Egg size can vary from 60-200 um in scaphopods, but in Dentalium the eggs are large [@DufresneDube1983].';
+	TEXT TAXON=19 CHARACTER=138 TEXT='c. 50 um in Hydroides [@Miles2007]';
+	TEXT TAXON=12 CHARACTER=138 TEXT='"Mature eggs commonly measure about 200 um in diameter" [@Franzen1977]; the larva is a similar size [@Reed1982]';
+	TEXT TAXON=17 CHARACTER=146 TEXT='Following coding for class in Carlson (1995) Appendix 1, character 9.';
+	TEXT TAXON=15 CHARACTER=146 TEXT='Following Hodgson & Reunov (1994).';
+	TEXT TAXON=14 CHARACTER=146 TEXT='Following Hodgson & Reunov (1994).';
+	TEXT TAXON=13 CHARACTER=146 TEXT='Following Hodgson & Reunov (1994).';
+	TEXT TAXON=16 CHARACTER=146 TEXT='Following Hodgson & Reunov (1994).';
+	TEXT TAXON=11 CHARACTER=146 TEXT='Ovicell [@Franzen1977]';
+	TEXT TAXON=12 CHARACTER=146 TEXT='Ovicell [@Franzen1977]';
 	TEXT TAXON=40 CHARACTER=40 TEXT='Preservation inadequate.';
 	TEXT TAXON=17 CHARACTER=40 TEXT='Following coding for higher group in Carlson 1995, appendix 1, character 36.';
 	TEXT TAXON=39 CHARACTER=40 TEXT='Tentacles "cannot be confidently demonstrated in the available specimens." -- Zhang et al. 2007R';
@@ -2543,230 +2558,230 @@ BEGIN NOTES;
 	TEXT TAXON=20 CHARACTER=65 TEXT='The intermediate shell plates arise by subdivision of the posterior shell field  [@Wanninger2002C], and are thus treated as equivalent to the posterior valve rather than as distinct elements.^nThe girdle elements are homologous with annelid chaetae / brachiopod setae [@Leise1982], rather than sclerites.';
 	TEXT TAXON=21 CHARACTER=65 TEXT='The scaphopod valve arises posterior of the prototroch and is thus homologous with the posterior valves of Chiton, assuming that molluscan shell fields are homologous features.';
 	TEXT TAXON=20 CHARACTER=64 TEXT='As larvae, polyplacophorans exhibit an anterior and a posterior shell field  [@Wanninger2002C]; subsequent subdivision of the posterior field gives rise to the posterior seven valves. Tonicella is thus tentatively coded as ''bivalved'' to reflect the potential (if perhaps unlikely) homology with the paired elements of brachiopods.';
-	TEXT TAXON=17 CHARACTER=148 TEXT='Acrosome-like structure; no internal division or surrounding membrane, with possibility that much of the acrosome is secondarily lost (Reunov & Klepal 2004).';
-	TEXT TAXON=15 CHARACTER=148 TEXT='Clear differentiation of marginal area (Fukumoto 2003)';
-	TEXT TAXON=14 CHARACTER=148 TEXT='Following Discinisca tenuis, described in Hodgson & Reunov (1994).';
-	TEXT TAXON=13 CHARACTER=148 TEXT='"Along the inner and outer margins there are periodically banded layers, and between them there is a less dense layer" -- Afzelius & Ferraguti, 1978';
-	TEXT TAXON=16 CHARACTER=148 TEXT='Following Hodgson & Reunov (1994).';
-	TEXT TAXON=10 CHARACTER=148 TEXT='Not evident in Loxosoma [@Franzen 2000]';
-	TEXT TAXON=11 CHARACTER=148 TEXT='No evidence of internal differentiation [in Tubulipora; @Franzen1984]';
-	TEXT TAXON=18 CHARACTER=148 TEXT='No differentiation within acrosomal vesicle [@Rice1993]';
-	TEXT TAXON=20 CHARACTER=148 TEXT='"One can distinguish two components in the acrosome, an apical and a basal granule" -- @BucklandNicks1988';
-	TEXT TAXON=21 CHARACTER=148 TEXT='Differentiated membrane only [@DufresneDube1983]';
-	TEXT TAXON=19 CHARACTER=148 TEXT='@Gherardi2011';
-	TEXT TAXON=12 CHARACTER=148 TEXT='No evidence of internal differentiation [in Tubulipora; @Franzen1984]';
-	TEXT TAXON=17 CHARACTER=150 TEXT='The mitochondria fuse in the middle stage of spermiogenesis to become a pair of mitochondria (Reunov & Klepal 2004).';
-	TEXT TAXON=15 CHARACTER=150 TEXT='Following Hodgson & Reunov (1994).';
+	TEXT TAXON=17 CHARACTER=150 TEXT='Acrosome-like structure; no internal division or surrounding membrane, with possibility that much of the acrosome is secondarily lost (Reunov & Klepal 2004).';
+	TEXT TAXON=15 CHARACTER=150 TEXT='Clear differentiation of marginal area (Fukumoto 2003)';
 	TEXT TAXON=14 CHARACTER=150 TEXT='Following Discinisca tenuis, described in Hodgson & Reunov (1994).';
-	TEXT TAXON=13 CHARACTER=150 TEXT='Four mitochondria (Afzelius & Ferraguti, 1978)';
+	TEXT TAXON=13 CHARACTER=150 TEXT='"Along the inner and outer margins there are periodically banded layers, and between them there is a less dense layer" -- Afzelius & Ferraguti, 1978';
 	TEXT TAXON=16 CHARACTER=150 TEXT='Following Hodgson & Reunov (1994).';
-	TEXT TAXON=10 CHARACTER=150 TEXT='"The midpiece consists of two long mitochondrial rods connected with each other by a thin mitochondrial lamella" [@Franzen2000, in Loxosoma]; these are essentially a single organelle surrounding a central rod of electron-dense material.  ';
-	TEXT TAXON=11 CHARACTER=150 TEXT='Two mitochondrial derivatives in Flustra [@Franzen1981;@Franzen1977]; four in Tubulipora [@Franzen1984]';
-	TEXT TAXON=18 CHARACTER=150 TEXT='Ring of five mitochondria around the central centriole [@Rice1993]';
-	TEXT TAXON=21 CHARACTER=150 TEXT='@DufresneDube1983';
-	TEXT TAXON=19 CHARACTER=150 TEXT='Five mitochondria in ring [@Gherardi2011]';
-	TEXT TAXON=12 CHARACTER=150 TEXT='Two mitochondrial derivatives in Flustra [@Franzen1981;@Franzen1977]; four in Tubulipora [@Franzen1984]';
-	TEXT TAXON=17 CHARACTER=151 TEXT='Only one centriole in spermatzoon (Reunov & Klepal 2004, p. 7), but centrioles are perpendicularly oriented in spermatogonia (ibid., p. 2)';
-	TEXT TAXON=15 CHARACTER=151 TEXT='Following Hodgson & Reunov (1994).';
-	TEXT TAXON=14 CHARACTER=151 TEXT='Following Discinisca tenuis, described in Hodgson & Reunov (1994).';
-	TEXT TAXON=13 CHARACTER=151 TEXT='Two orthogonal centrioles (Afzelius & Ferraguti 1978)';
-	TEXT TAXON=16 CHARACTER=151 TEXT='Following Hodgson & Reunov (1994).';
-	TEXT TAXON=11 CHARACTER=151 TEXT='[@Franzen1981]';
-	TEXT TAXON=21 CHARACTER=151 TEXT='@DufresneDube1983';
-	TEXT TAXON=19 CHARACTER=151 TEXT='The proximal centriole is parallel to the flagellum [@Gherardi2011].';
-	TEXT TAXON=12 CHARACTER=151 TEXT='[@Franzen1981]';
-	TEXT TAXON=17 CHARACTER=147 TEXT='Needle-shaped (Reunov & Klepal, 2004)';
-	TEXT TAXON=15 CHARACTER=147 TEXT='Pear-shaped (Fukumoto 2003)';
-	TEXT TAXON=14 CHARACTER=147 TEXT='Pear-shaped (Hodgson & Reunov, 1994)';
-	TEXT TAXON=13 CHARACTER=147 TEXT='Needle-shaped (Afzelius & Ferraguti, 1978)';
-	TEXT TAXON=16 CHARACTER=147 TEXT='Disc-shaped (in Kraussina) (Hodgson & Reunov, 1994)';
-	TEXT TAXON=10 CHARACTER=147 TEXT='Conical/cylindrical acrosome-like extension in Loxosoma [@Franzen 2000]';
-	TEXT TAXON=11 CHARACTER=147 TEXT='Conical [in Tubulipora; @Franzen1984]';
-	TEXT TAXON=18 CHARACTER=147 TEXT='A peaked disc in Phascolion [@Rice1993]';
-	TEXT TAXON=20 CHARACTER=147 TEXT='Elongate: cylindrical to conical [@BucklandNicks1988]';
-	TEXT TAXON=21 CHARACTER=147 TEXT='Low conical aspect [@DufresneDube1983]';
-	TEXT TAXON=19 CHARACTER=147 TEXT='@Gherardi2011';
-	TEXT TAXON=12 CHARACTER=147 TEXT='Conical [in Tubulipora; @Franzen1984]';
-	TEXT TAXON=17 CHARACTER=149 TEXT='The filament-like acrosome continues backwards as a tube-like structure (Franzen & Ahlfors, 1980, summarized in Jamieson 1991)';
-	TEXT TAXON=15 CHARACTER=149 TEXT='Filled with sub-acrosomal substance (Fukumoto 2003)';
-	TEXT TAXON=14 CHARACTER=149 TEXT='Subacrosomal material (in Discinisca) but no subacrosomal space (Hodgson & Reunov, 1994).';
-	TEXT TAXON=13 CHARACTER=149 TEXT='Prominent (Afzelius & Ferraguti, 1978)';
-	TEXT TAXON=16 CHARACTER=149 TEXT='No subacrosomal material, let alone a subacrosomal space (e.g. Hodgson & Reunov 1994)';
-	TEXT TAXON=10 CHARACTER=149 TEXT='Present in Loxosoma [@Franzen 2000]';
-	TEXT TAXON=11 CHARACTER=149 TEXT='No distinct space [in Tubulipora; @Franzen1984]';
-	TEXT TAXON=18 CHARACTER=149 TEXT='@Rice1993';
-	TEXT TAXON=20 CHARACTER=149 TEXT='Not evident [@BucklandNicks1988]';
-	TEXT TAXON=21 CHARACTER=149 TEXT='@DufresneDube1983';
+	TEXT TAXON=10 CHARACTER=150 TEXT='Not evident in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=11 CHARACTER=150 TEXT='No evidence of internal differentiation [in Tubulipora; @Franzen1984]';
+	TEXT TAXON=18 CHARACTER=150 TEXT='No differentiation within acrosomal vesicle [@Rice1993]';
+	TEXT TAXON=20 CHARACTER=150 TEXT='"One can distinguish two components in the acrosome, an apical and a basal granule" -- @BucklandNicks1988';
+	TEXT TAXON=21 CHARACTER=150 TEXT='Differentiated membrane only [@DufresneDube1983]';
+	TEXT TAXON=19 CHARACTER=150 TEXT='@Gherardi2011';
+	TEXT TAXON=12 CHARACTER=150 TEXT='No evidence of internal differentiation [in Tubulipora; @Franzen1984]';
+	TEXT TAXON=17 CHARACTER=152 TEXT='The mitochondria fuse in the middle stage of spermiogenesis to become a pair of mitochondria (Reunov & Klepal 2004).';
+	TEXT TAXON=15 CHARACTER=152 TEXT='Following Hodgson & Reunov (1994).';
+	TEXT TAXON=14 CHARACTER=152 TEXT='Following Discinisca tenuis, described in Hodgson & Reunov (1994).';
+	TEXT TAXON=13 CHARACTER=152 TEXT='Four mitochondria (Afzelius & Ferraguti, 1978)';
+	TEXT TAXON=16 CHARACTER=152 TEXT='Following Hodgson & Reunov (1994).';
+	TEXT TAXON=10 CHARACTER=152 TEXT='"The midpiece consists of two long mitochondrial rods connected with each other by a thin mitochondrial lamella" [@Franzen2000, in Loxosoma]; these are essentially a single organelle surrounding a central rod of electron-dense material.  ';
+	TEXT TAXON=11 CHARACTER=152 TEXT='Two mitochondrial derivatives in Flustra [@Franzen1981;@Franzen1977]; four in Tubulipora [@Franzen1984]';
+	TEXT TAXON=18 CHARACTER=152 TEXT='Ring of five mitochondria around the central centriole [@Rice1993]';
+	TEXT TAXON=21 CHARACTER=152 TEXT='@DufresneDube1983';
+	TEXT TAXON=19 CHARACTER=152 TEXT='Five mitochondria in ring [@Gherardi2011]';
+	TEXT TAXON=12 CHARACTER=152 TEXT='Two mitochondrial derivatives in Flustra [@Franzen1981;@Franzen1977]; four in Tubulipora [@Franzen1984]';
+	TEXT TAXON=17 CHARACTER=153 TEXT='Only one centriole in spermatzoon (Reunov & Klepal 2004, p. 7), but centrioles are perpendicularly oriented in spermatogonia (ibid., p. 2)';
+	TEXT TAXON=15 CHARACTER=153 TEXT='Following Hodgson & Reunov (1994).';
+	TEXT TAXON=14 CHARACTER=153 TEXT='Following Discinisca tenuis, described in Hodgson & Reunov (1994).';
+	TEXT TAXON=13 CHARACTER=153 TEXT='Two orthogonal centrioles (Afzelius & Ferraguti 1978)';
+	TEXT TAXON=16 CHARACTER=153 TEXT='Following Hodgson & Reunov (1994).';
+	TEXT TAXON=11 CHARACTER=153 TEXT='[@Franzen1981]';
+	TEXT TAXON=21 CHARACTER=153 TEXT='@DufresneDube1983';
+	TEXT TAXON=19 CHARACTER=153 TEXT='The proximal centriole is parallel to the flagellum [@Gherardi2011].';
+	TEXT TAXON=12 CHARACTER=153 TEXT='[@Franzen1981]';
+	TEXT TAXON=17 CHARACTER=149 TEXT='Needle-shaped (Reunov & Klepal, 2004)';
+	TEXT TAXON=15 CHARACTER=149 TEXT='Pear-shaped (Fukumoto 2003)';
+	TEXT TAXON=14 CHARACTER=149 TEXT='Pear-shaped (Hodgson & Reunov, 1994)';
+	TEXT TAXON=13 CHARACTER=149 TEXT='Needle-shaped (Afzelius & Ferraguti, 1978)';
+	TEXT TAXON=16 CHARACTER=149 TEXT='Disc-shaped (in Kraussina) (Hodgson & Reunov, 1994)';
+	TEXT TAXON=10 CHARACTER=149 TEXT='Conical/cylindrical acrosome-like extension in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=11 CHARACTER=149 TEXT='Conical [in Tubulipora; @Franzen1984]';
+	TEXT TAXON=18 CHARACTER=149 TEXT='A peaked disc in Phascolion [@Rice1993]';
+	TEXT TAXON=20 CHARACTER=149 TEXT='Elongate: cylindrical to conical [@BucklandNicks1988]';
+	TEXT TAXON=21 CHARACTER=149 TEXT='Low conical aspect [@DufresneDube1983]';
 	TEXT TAXON=19 CHARACTER=149 TEXT='@Gherardi2011';
-	TEXT TAXON=12 CHARACTER=149 TEXT='No distinct space [in Tubulipora; @Franzen1984]';
-	TEXT TAXON=17 CHARACTER=152 TEXT='Basal body in deep nuclear fossa';
-	TEXT TAXON=15 CHARACTER=152 TEXT='Basal body in deep nuclear fossa';
-	TEXT TAXON=13 CHARACTER=152 TEXT='Basal body in deep nuclear fossa';
-	TEXT TAXON=10 CHARACTER=152 TEXT='Basal body in deep nuclear fossa';
-	TEXT TAXON=11 CHARACTER=152 TEXT='Proximal centriole fused anterior to distal centriole';
-	TEXT TAXON=18 CHARACTER=152 TEXT='Proximal centriole fused anterior to distal centriole';
-	TEXT TAXON=20 CHARACTER=152 TEXT='Proximal centriole fused lateral to distal centriole and offset';
-	TEXT TAXON=21 CHARACTER=152 TEXT='Proximal centriole fused anterior to distal centriole [@DufresneDube1983]';
-	TEXT TAXON=12 CHARACTER=152 TEXT='Proximal centriole fused anterior to distal centriole';
-	TEXT TAXON=10 CHARACTER=155 TEXT='in Loxosoma [@Franzen2000]';
-	TEXT TAXON=11 CHARACTER=155 TEXT='"Typical cristae"; "Randomly oriented" -- @Franzen1984 (in Tubulipora)';
-	TEXT TAXON=12 CHARACTER=155 TEXT='"Typical cristae"; "Randomly oriented" -- @Franzen1984 (in Tubulipora)';
-	TEXT TAXON=10 CHARACTER=154 TEXT='Elongate rods in Loxosoma [@Franzen2000]';
-	TEXT TAXON=11 CHARACTER=154 TEXT='Rods [@Franzen1981]';
-	TEXT TAXON=20 CHARACTER=154 TEXT='See @BucklandNicks1988';
-	TEXT TAXON=12 CHARACTER=154 TEXT='Rods [@Franzen1981]';
-	TEXT TAXON=10 CHARACTER=156 TEXT='As long as the flagellum in Loxosoma [@Franzen2000]';
-	TEXT TAXON=11 CHARACTER=156 TEXT='Long [@Franzen1981]';
-	TEXT TAXON=18 CHARACTER=156 TEXT='Short ring of five mitochondria around the central centriole [@Rice1993]. ';
-	TEXT TAXON=19 CHARACTER=156 TEXT='Five mitochondria surround the base of the flagellum in short midpiece, comparable to that of Sipunculus and Dentalium [@Gherardi2011]';
-	TEXT TAXON=12 CHARACTER=156 TEXT='Long [@Franzen1981]';
-	TEXT TAXON=17 CHARACTER=146 TEXT='Nucleus "almost round" [@Reunov2004Ultrastructuralstudy]';
-	TEXT TAXON=14 CHARACTER=146 TEXT='Present in Discinisca tenuis (Hodgson & Reunov, 1994).';
-	TEXT TAXON=16 CHARACTER=146 TEXT='No anterior invagination [@Hodgson1994Ultrastructureof]';
-	TEXT TAXON=10 CHARACTER=146 TEXT='Present in Loxosoma [@Franzen 2000]';
-	TEXT TAXON=11 CHARACTER=146 TEXT='Present [in Tubulipora; @Franzen1984]';
-	TEXT TAXON=18 CHARACTER=146 TEXT='Prominent in Phascolion [@Rice1993]';
-	TEXT TAXON=20 CHARACTER=146 TEXT='@BucklandNicks1988';
-	TEXT TAXON=21 CHARACTER=146 TEXT='@DufresneDube1983';
-	TEXT TAXON=19 CHARACTER=146 TEXT='Absent: subacrosomal space does not impinge on nuclear envelope [@Gherardi2011]';
-	TEXT TAXON=12 CHARACTER=146 TEXT='Present [in Tubulipora; @Franzen1984]';
-	TEXT TAXON=10 CHARACTER=145 TEXT='Elongate in Loxosoma [@Franzen 2000]';
-	TEXT TAXON=11 CHARACTER=145 TEXT='Elongate [@Franzen1981]';
-	TEXT TAXON=20 CHARACTER=145 TEXT='Profoundly elongated nucleus [@BucklandNicks1988]';
-	TEXT TAXON=21 CHARACTER=145 TEXT='Elongate nucleus, 4-6 times longer than wide [@DufresneDube1983]';
-	TEXT TAXON=19 CHARACTER=145 TEXT='@Gherardi2011';
-	TEXT TAXON=12 CHARACTER=145 TEXT='Elongate [@Franzen1981]';
-	TEXT TAXON=17 CHARACTER=157 TEXT='"Cleavage is holoblastic and results in approximately equal sized, or adequal, blastomeres." -- @Pennerstorfer2012';
-	TEXT TAXON=15 CHARACTER=157 TEXT='Equal, in all brachiopods [@Williams1997Introduction]';
-	TEXT TAXON=14 CHARACTER=157 TEXT='Equal, in all brachiopods [@Williams1997Introduction]';
-	TEXT TAXON=13 CHARACTER=157 TEXT='Equal, in all brachiopods [@Williams1997Introduction]';
-	TEXT TAXON=16 CHARACTER=157 TEXT='Equal, in all brachiopods [@Williams1997Introduction]';
-	TEXT TAXON=17 CHARACTER=160 TEXT='"The observed cleavage displays several characters consistent with the pattern of spiral cleavage" [@Pennerstorfer2012]';
-	TEXT TAXON=11 CHARACTER=160 TEXT='"While entoprocts are spiral cleavers, ectoprocts show a radial cleavage pattern" -- @Fuchs2008';
-	TEXT TAXON=12 CHARACTER=160 TEXT='"While entoprocts are spiral cleavers, ectoprocts show a radial cleavage pattern" -- @Fuchs2008';
-	TEXT TAXON=17 CHARACTER=161 TEXT='Uniform size [@Pennerstorfer2012]';
-	TEXT TAXON=15 CHARACTER=161 TEXT='@Williams1997Introduction';
-	TEXT TAXON=16 CHARACTER=161 TEXT='@Williams1997Introduction';
-	TEXT TAXON=11 CHARACTER=161 TEXT='In Membranipora, "cleavage is slightly unequal resulting in little larger central^nblastomeres" [@Gruhl2010M]';
-	TEXT TAXON=18 CHARACTER=161 TEXT='Prominent differentiation in Phascolosoma [@Adrianov2011]';
-	TEXT TAXON=12 CHARACTER=161 TEXT='In Membranipora, "cleavage is slightly unequal resulting in little larger central^nblastomeres" [@Gruhl2010M]';
-	TEXT TAXON=16 CHARACTER=162 TEXT='@Williams1997Introduction';
+	TEXT TAXON=12 CHARACTER=149 TEXT='Conical [in Tubulipora; @Franzen1984]';
+	TEXT TAXON=17 CHARACTER=151 TEXT='The filament-like acrosome continues backwards as a tube-like structure (Franzen & Ahlfors, 1980, summarized in Jamieson 1991)';
+	TEXT TAXON=15 CHARACTER=151 TEXT='Filled with sub-acrosomal substance (Fukumoto 2003)';
+	TEXT TAXON=14 CHARACTER=151 TEXT='Subacrosomal material (in Discinisca) but no subacrosomal space (Hodgson & Reunov, 1994).';
+	TEXT TAXON=13 CHARACTER=151 TEXT='Prominent (Afzelius & Ferraguti, 1978)';
+	TEXT TAXON=16 CHARACTER=151 TEXT='No subacrosomal material, let alone a subacrosomal space (e.g. Hodgson & Reunov 1994)';
+	TEXT TAXON=10 CHARACTER=151 TEXT='Present in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=11 CHARACTER=151 TEXT='No distinct space [in Tubulipora; @Franzen1984]';
+	TEXT TAXON=18 CHARACTER=151 TEXT='@Rice1993';
+	TEXT TAXON=20 CHARACTER=151 TEXT='Not evident [@BucklandNicks1988]';
+	TEXT TAXON=21 CHARACTER=151 TEXT='@DufresneDube1983';
+	TEXT TAXON=19 CHARACTER=151 TEXT='@Gherardi2011';
+	TEXT TAXON=12 CHARACTER=151 TEXT='No distinct space [in Tubulipora; @Franzen1984]';
+	TEXT TAXON=17 CHARACTER=154 TEXT='Basal body in deep nuclear fossa';
+	TEXT TAXON=15 CHARACTER=154 TEXT='Basal body in deep nuclear fossa';
+	TEXT TAXON=13 CHARACTER=154 TEXT='Basal body in deep nuclear fossa';
+	TEXT TAXON=10 CHARACTER=154 TEXT='Basal body in deep nuclear fossa';
+	TEXT TAXON=11 CHARACTER=154 TEXT='Proximal centriole fused anterior to distal centriole';
+	TEXT TAXON=18 CHARACTER=154 TEXT='Proximal centriole fused anterior to distal centriole';
+	TEXT TAXON=20 CHARACTER=154 TEXT='Proximal centriole fused lateral to distal centriole and offset';
+	TEXT TAXON=21 CHARACTER=154 TEXT='Proximal centriole fused anterior to distal centriole [@DufresneDube1983]';
+	TEXT TAXON=12 CHARACTER=154 TEXT='Proximal centriole fused anterior to distal centriole';
+	TEXT TAXON=10 CHARACTER=157 TEXT='in Loxosoma [@Franzen2000]';
+	TEXT TAXON=11 CHARACTER=157 TEXT='"Typical cristae"; "Randomly oriented" -- @Franzen1984 (in Tubulipora)';
+	TEXT TAXON=12 CHARACTER=157 TEXT='"Typical cristae"; "Randomly oriented" -- @Franzen1984 (in Tubulipora)';
+	TEXT TAXON=10 CHARACTER=156 TEXT='Elongate rods in Loxosoma [@Franzen2000]';
+	TEXT TAXON=11 CHARACTER=156 TEXT='Rods [@Franzen1981]';
+	TEXT TAXON=20 CHARACTER=156 TEXT='See @BucklandNicks1988';
+	TEXT TAXON=12 CHARACTER=156 TEXT='Rods [@Franzen1981]';
+	TEXT TAXON=10 CHARACTER=158 TEXT='As long as the flagellum in Loxosoma [@Franzen2000]';
+	TEXT TAXON=11 CHARACTER=158 TEXT='Long [@Franzen1981]';
+	TEXT TAXON=18 CHARACTER=158 TEXT='Short ring of five mitochondria around the central centriole [@Rice1993]. ';
+	TEXT TAXON=19 CHARACTER=158 TEXT='Five mitochondria surround the base of the flagellum in short midpiece, comparable to that of Sipunculus and Dentalium [@Gherardi2011]';
+	TEXT TAXON=12 CHARACTER=158 TEXT='Long [@Franzen1981]';
+	TEXT TAXON=17 CHARACTER=148 TEXT='Nucleus "almost round" [@Reunov2004Ultrastructuralstudy]';
+	TEXT TAXON=14 CHARACTER=148 TEXT='Present in Discinisca tenuis (Hodgson & Reunov, 1994).';
+	TEXT TAXON=16 CHARACTER=148 TEXT='No anterior invagination [@Hodgson1994Ultrastructureof]';
+	TEXT TAXON=10 CHARACTER=148 TEXT='Present in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=11 CHARACTER=148 TEXT='Present [in Tubulipora; @Franzen1984]';
+	TEXT TAXON=18 CHARACTER=148 TEXT='Prominent in Phascolion [@Rice1993]';
+	TEXT TAXON=20 CHARACTER=148 TEXT='@BucklandNicks1988';
+	TEXT TAXON=21 CHARACTER=148 TEXT='@DufresneDube1983';
+	TEXT TAXON=19 CHARACTER=148 TEXT='Absent: subacrosomal space does not impinge on nuclear envelope [@Gherardi2011]';
+	TEXT TAXON=12 CHARACTER=148 TEXT='Present [in Tubulipora; @Franzen1984]';
+	TEXT TAXON=10 CHARACTER=147 TEXT='Elongate in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=11 CHARACTER=147 TEXT='Elongate [@Franzen1981]';
+	TEXT TAXON=20 CHARACTER=147 TEXT='Profoundly elongated nucleus [@BucklandNicks1988]';
+	TEXT TAXON=21 CHARACTER=147 TEXT='Elongate nucleus, 4-6 times longer than wide [@DufresneDube1983]';
+	TEXT TAXON=19 CHARACTER=147 TEXT='@Gherardi2011';
+	TEXT TAXON=12 CHARACTER=147 TEXT='Elongate [@Franzen1981]';
+	TEXT TAXON=17 CHARACTER=159 TEXT='"Cleavage is holoblastic and results in approximately equal sized, or adequal, blastomeres." -- @Pennerstorfer2012';
+	TEXT TAXON=15 CHARACTER=159 TEXT='Equal, in all brachiopods [@Williams1997Introduction]';
+	TEXT TAXON=14 CHARACTER=159 TEXT='Equal, in all brachiopods [@Williams1997Introduction]';
+	TEXT TAXON=13 CHARACTER=159 TEXT='Equal, in all brachiopods [@Williams1997Introduction]';
+	TEXT TAXON=16 CHARACTER=159 TEXT='Equal, in all brachiopods [@Williams1997Introduction]';
+	TEXT TAXON=17 CHARACTER=162 TEXT='"The observed cleavage displays several characters consistent with the pattern of spiral cleavage" [@Pennerstorfer2012]';
+	TEXT TAXON=11 CHARACTER=162 TEXT='"While entoprocts are spiral cleavers, ectoprocts show a radial cleavage pattern" -- @Fuchs2008';
+	TEXT TAXON=12 CHARACTER=162 TEXT='"While entoprocts are spiral cleavers, ectoprocts show a radial cleavage pattern" -- @Fuchs2008';
+	TEXT TAXON=17 CHARACTER=163 TEXT='Uniform size [@Pennerstorfer2012]';
+	TEXT TAXON=15 CHARACTER=163 TEXT='@Williams1997Introduction';
 	TEXT TAXON=16 CHARACTER=163 TEXT='@Williams1997Introduction';
-	TEXT TAXON=16 CHARACTER=166 TEXT='@Williams1997Introduction';
-	TEXT TAXON=11 CHARACTER=166 TEXT='Cyclostomes are covered in cilia but not arranged in food groove.';
-	TEXT TAXON=12 CHARACTER=166 TEXT='Coronal cilia do not form a food groove [@Reed1982]';
-	TEXT TAXON=18 CHARACTER=167 TEXT='"Taxa such as Sipuncula [...] have a metatroch and do not have downstream larval-feeding" -- @Rouse2000';
-	TEXT TAXON=19 CHARACTER=167 TEXT='"Groups such as Sabellariidae [...] have evolved downstream-feeding without the aid of a metatroch" -- [@Rouse2000]';
-	TEXT TAXON=11 CHARACTER=170 TEXT='Present, following schematic in @Gruhl2016';
-	TEXT TAXON=12 CHARACTER=170 TEXT='Nodular nerve ring underlies corona [@Reed1982]';
+	TEXT TAXON=11 CHARACTER=163 TEXT='In Membranipora, "cleavage is slightly unequal resulting in little larger central^nblastomeres" [@Gruhl2010M]';
+	TEXT TAXON=18 CHARACTER=163 TEXT='Prominent differentiation in Phascolosoma [@Adrianov2011]';
+	TEXT TAXON=12 CHARACTER=163 TEXT='In Membranipora, "cleavage is slightly unequal resulting in little larger central^nblastomeres" [@Gruhl2010M]';
+	TEXT TAXON=16 CHARACTER=164 TEXT='@Williams1997Introduction';
+	TEXT TAXON=16 CHARACTER=165 TEXT='@Williams1997Introduction';
+	TEXT TAXON=16 CHARACTER=168 TEXT='@Williams1997Introduction';
+	TEXT TAXON=11 CHARACTER=168 TEXT='Cyclostomes are covered in cilia but not arranged in food groove.';
+	TEXT TAXON=12 CHARACTER=168 TEXT='Coronal cilia do not form a food groove [@Reed1982]';
+	TEXT TAXON=18 CHARACTER=169 TEXT='"Taxa such as Sipuncula [...] have a metatroch and do not have downstream larval-feeding" -- @Rouse2000';
+	TEXT TAXON=19 CHARACTER=169 TEXT='"Groups such as Sabellariidae [...] have evolved downstream-feeding without the aid of a metatroch" -- [@Rouse2000]';
+	TEXT TAXON=11 CHARACTER=172 TEXT='Present, following schematic in @Gruhl2016';
+	TEXT TAXON=12 CHARACTER=172 TEXT='Nodular nerve ring underlies corona [@Reed1982]';
 	TEXT TAXON=16 CHARACTER=9 TEXT='@Williams1997Introduction';
 	TEXT TAXON=11 CHARACTER=9 TEXT='Absent [@Zimmer2013]';
 	TEXT TAXON=19 CHARACTER=9 TEXT='@Luter2000 contends that annelid larvae lack setae, but chaetae are present on day 16 of the larval development of Serpula [@Keay2007].';
 	TEXT TAXON=12 CHARACTER=9 TEXT='[@Reed1982]';
-	TEXT TAXON=16 CHARACTER=164 TEXT='@Williams1997Introduction';
-	TEXT TAXON=11 CHARACTER=164 TEXT='Absent [@Zimmer2013]';
-	TEXT TAXON=12 CHARACTER=164 TEXT='Absent; single ciliary field lacks telotroch equivalent [@Reed1982]';
-	TEXT TAXON=17 CHARACTER=171 TEXT='Not evident [@Santagata2004, fig. 2C]';
-	TEXT TAXON=11 CHARACTER=171 TEXT='Median muscles extending from apical organ [@Gruhl2008]';
-	TEXT TAXON=21 CHARACTER=171 TEXT='Apical organ has disappeared before musculature is set in place [@Wanninger2002M]';
-	TEXT TAXON=12 CHARACTER=171 TEXT='Median muscles extending from apical organ [@Gruhl2008]';
-	TEXT TAXON=11 CHARACTER=165 TEXT='Metamorphose almost immediately after release from gonozooid [@Zimmer2013]; most bryozoans are lecithotrophic [@Reed1982]';
-	TEXT TAXON=12 CHARACTER=165 TEXT='Lecithotrophic [@Reed1982]';
+	TEXT TAXON=16 CHARACTER=166 TEXT='@Williams1997Introduction';
+	TEXT TAXON=11 CHARACTER=166 TEXT='Absent [@Zimmer2013]';
+	TEXT TAXON=12 CHARACTER=166 TEXT='Absent; single ciliary field lacks telotroch equivalent [@Reed1982]';
+	TEXT TAXON=17 CHARACTER=173 TEXT='Not evident [@Santagata2004, fig. 2C]';
+	TEXT TAXON=11 CHARACTER=173 TEXT='Median muscles extending from apical organ [@Gruhl2008]';
+	TEXT TAXON=21 CHARACTER=173 TEXT='Apical organ has disappeared before musculature is set in place [@Wanninger2002M]';
+	TEXT TAXON=12 CHARACTER=173 TEXT='Median muscles extending from apical organ [@Gruhl2008]';
+	TEXT TAXON=11 CHARACTER=167 TEXT='Metamorphose almost immediately after release from gonozooid [@Zimmer2013]; most bryozoans are lecithotrophic [@Reed1982]';
+	TEXT TAXON=12 CHARACTER=167 TEXT='Lecithotrophic [@Reed1982]';
 	TEXT TAXON=1 CHARACTER=19 TEXT='Not evident';
 	TEXT TAXON=24 CHARACTER=19 TEXT='Unknown whether sclerites are serially repeated, or whether metameres were present in underlying soft anatomy';
 	TEXT TAXON=23 CHARACTER=19 TEXT='Elements of the Halkieria scleritome adhere to a quincunx arrangement, with different spacing of elements in each zone; there is no evidence of a metameric arrangement.';
-	TEXT TAXON=10 CHARACTER=177 TEXT='Coelomoducts absent [@Haszprunar2000]';
+	TEXT TAXON=10 CHARACTER=179 TEXT='Coelomoducts absent [@Haszprunar2000]';
 	TEXT TAXON=17 CHARACTER=22 TEXT='"large coelomic funnels serving as genital ducts" [@Goodrich1945]';
 	TEXT TAXON=10 CHARACTER=22 TEXT='Two coelomoducts pass outwards, meet, and open by a common pore [@Goodrich1945]';
 	TEXT TAXON=11 CHARACTER=22 TEXT='Multiple ciliated ducts leading to a common gonopore [@Goodrich1945]';
-	TEXT TAXON=11 CHARACTER=179 TEXT='Hypostegal coelom separated from principal (perigastric) body cavity in cheilostomata -- but this is not clearly equivalent to the paired coelom intended by this character.  The coelom of Fredericella is not paired [@Gruhl2010F].';
-	TEXT TAXON=12 CHARACTER=179 TEXT='No evidence of pairing [@Reed1982]';
-	TEXT TAXON=10 CHARACTER=181 TEXT='A foot is present in the creeping-type larva of Loxosomella murmanica, though absent in L. atkinsae and the many other entoprocts that have swimming-type larvae [@Fuchs2008]';
-	TEXT TAXON=18 CHARACTER=181 TEXT='@Wingstrand1985 considers the annelid neurotroch to be potentially homologous with the molluscan and entoproct foot';
-	TEXT TAXON=19 CHARACTER=181 TEXT='@Wingstrand1985 considers the annelid neurotroch to be potentially homologous with the molluscan and entoproct foot';
+	TEXT TAXON=11 CHARACTER=181 TEXT='Hypostegal coelom separated from principal (perigastric) body cavity in cheilostomata -- but this is not clearly equivalent to the paired coelom intended by this character.  The coelom of Fredericella is not paired [@Gruhl2010F].';
+	TEXT TAXON=12 CHARACTER=181 TEXT='No evidence of pairing [@Reed1982]';
+	TEXT TAXON=10 CHARACTER=183 TEXT='A foot is present in the creeping-type larva of Loxosomella murmanica, though absent in L. atkinsae and the many other entoprocts that have swimming-type larvae [@Fuchs2008]';
+	TEXT TAXON=18 CHARACTER=183 TEXT='@Wingstrand1985 considers the annelid neurotroch to be potentially homologous with the molluscan and entoproct foot';
+	TEXT TAXON=19 CHARACTER=183 TEXT='@Wingstrand1985 considers the annelid neurotroch to be potentially homologous with the molluscan and entoproct foot';
 	TEXT TAXON=9 CHARACTER=20 TEXT='The stalk may conceivably be homologous with the entoproct foot, but the evidence for homology is weak.';
 	TEXT TAXON=10 CHARACTER=20 TEXT='See @Haszprunar2008';
 	TEXT TAXON=18 CHARACTER=20 TEXT=' LISTED AS PRESENT IN @Smith2012: WHY? ';
 	TEXT TAXON=23 CHARACTER=20 TEXT='The ventral surface of Halkieria is unarmoured, but its soft anatomy is unknown.';
-	TEXT TAXON=16 CHARACTER=182 TEXT='Present [@Luter1995]';
-	TEXT TAXON=19 CHARACTER=182 TEXT='Present in certain annelids; not verified in Serpula';
-	TEXT TAXON=19 CHARACTER=183 TEXT='Following Harmothoe [@Holborow1969]';
-	TEXT TAXON=19 CHARACTER=184 TEXT='Basal foot in Magelona is connected to cytoplasmic microtubules [@Bartolomaeus1995].';
-	TEXT TAXON=12 CHARACTER=184 TEXT='@Reed1982';
-	TEXT TAXON=16 CHARACTER=185 TEXT='Thin to thick, but not blurry [@Luter1995]';
-	TEXT TAXON=19 CHARACTER=185 TEXT='Broad and ''blurry'' in Magelona [@Bartolomaeus1995]';
-	TEXT TAXON=12 CHARACTER=185 TEXT='@Reed1982';
-	TEXT TAXON=16 CHARACTER=186 TEXT='Absent [@Luter1995]';
-	TEXT TAXON=12 CHARACTER=186 TEXT='Present [@Reed1982]';
-	TEXT TAXON=19 CHARACTER=187 TEXT='Following Enchytraeus [@Reger1967], Magelona [@Bartolomaeus1995] and Harmothoe [@Holborow1969]';
+	TEXT TAXON=16 CHARACTER=184 TEXT='Present [@Luter1995]';
+	TEXT TAXON=19 CHARACTER=184 TEXT='Present in certain annelids; not verified in Serpula';
+	TEXT TAXON=19 CHARACTER=185 TEXT='Following Harmothoe [@Holborow1969]';
+	TEXT TAXON=19 CHARACTER=186 TEXT='Basal foot in Magelona is connected to cytoplasmic microtubules [@Bartolomaeus1995].';
+	TEXT TAXON=12 CHARACTER=186 TEXT='@Reed1982';
+	TEXT TAXON=16 CHARACTER=187 TEXT='Thin to thick, but not blurry [@Luter1995]';
+	TEXT TAXON=19 CHARACTER=187 TEXT='Broad and ''blurry'' in Magelona [@Bartolomaeus1995]';
 	TEXT TAXON=12 CHARACTER=187 TEXT='@Reed1982';
-	TEXT TAXON=16 CHARACTER=188 TEXT='[@Luter1995]';
-	TEXT TAXON=19 CHARACTER=188 TEXT='Not evident in Enchytraeus [@Reger1967], Magelona [@Bartolomaeus1995] or Harmothoe [@Holborow1969]';
-	TEXT TAXON=12 CHARACTER=188 TEXT='@Reed1982';
-	TEXT TAXON=19 CHARACTER=189 TEXT='@Nielsen1987';
+	TEXT TAXON=16 CHARACTER=188 TEXT='Absent [@Luter1995]';
+	TEXT TAXON=12 CHARACTER=188 TEXT='Present [@Reed1982]';
+	TEXT TAXON=19 CHARACTER=189 TEXT='Following Enchytraeus [@Reger1967], Magelona [@Bartolomaeus1995] and Harmothoe [@Holborow1969]';
 	TEXT TAXON=12 CHARACTER=189 TEXT='@Reed1982';
-	TEXT TAXON=16 CHARACTER=191 TEXT='Homogeneous [@Luter1995]';
+	TEXT TAXON=16 CHARACTER=190 TEXT='[@Luter1995]';
+	TEXT TAXON=19 CHARACTER=190 TEXT='Not evident in Enchytraeus [@Reger1967], Magelona [@Bartolomaeus1995] or Harmothoe [@Holborow1969]';
+	TEXT TAXON=12 CHARACTER=190 TEXT='@Reed1982';
+	TEXT TAXON=19 CHARACTER=191 TEXT='@Nielsen1987';
 	TEXT TAXON=12 CHARACTER=191 TEXT='@Reed1982';
-	TEXT TAXON=16 CHARACTER=192 TEXT='[@Luter1995]';
-	TEXT TAXON=12 CHARACTER=192 TEXT='@Reed1982';
-	TEXT TAXON=16 CHARACTER=193 TEXT='Long [@Luter1995]';
-	TEXT TAXON=10 CHARACTER=193 TEXT='Details of ciliary ultrastructure are illustrated in @Nielsen1976';
+	TEXT TAXON=16 CHARACTER=193 TEXT='Homogeneous [@Luter1995]';
 	TEXT TAXON=12 CHARACTER=193 TEXT='@Reed1982';
-	TEXT TAXON=16 CHARACTER=194 TEXT='Conical: tapering to a point [@Luter1995]';
-	TEXT TAXON=19 CHARACTER=194 TEXT='Conical in Enchytraeus [@Reger1967] and Magelona [@Bartolomaeus1995] ';
+	TEXT TAXON=16 CHARACTER=194 TEXT='[@Luter1995]';
 	TEXT TAXON=12 CHARACTER=194 TEXT='@Reed1982';
+	TEXT TAXON=16 CHARACTER=195 TEXT='Long [@Luter1995]';
+	TEXT TAXON=10 CHARACTER=195 TEXT='Details of ciliary ultrastructure are illustrated in @Nielsen1976';
 	TEXT TAXON=12 CHARACTER=195 TEXT='@Reed1982';
-	TEXT TAXON=16 CHARACTER=190 TEXT='"The coelothelial cells of the metacoel are monociliated"; "even some epithelial muscle cells are monociliated" -- @Luter1995';
-	TEXT TAXON=16 CHARACTER=196 TEXT='"Very small" -- @Luter1995';
-	TEXT TAXON=19 CHARACTER=196 TEXT='Short in Enchytraeus [@Reger1967], Magelona [@Bartolomaeus1995] and Harmothoe [@Holborow1969]';
+	TEXT TAXON=16 CHARACTER=196 TEXT='Conical: tapering to a point [@Luter1995]';
+	TEXT TAXON=19 CHARACTER=196 TEXT='Conical in Enchytraeus [@Reger1967] and Magelona [@Bartolomaeus1995] ';
 	TEXT TAXON=12 CHARACTER=196 TEXT='@Reed1982';
-	TEXT TAXON=16 CHARACTER=197 TEXT='Too small to evaluate';
-	TEXT TAXON=19 CHARACTER=197 TEXT='Conical in Magelona [@Bartolomaeus1995]';
 	TEXT TAXON=12 CHARACTER=197 TEXT='@Reed1982';
-	TEXT TAXON=17 CHARACTER=209 TEXT='"In P. australis [...] all the myofibrils belong to the smooth type" -- @Pardos1991';
-	TEXT TAXON=15 CHARACTER=209 TEXT='In brachiopods, myofibrils "are striated on the frontal face and smooth on the abfrontal face" [@Pardos1991]';
-	TEXT TAXON=14 CHARACTER=209 TEXT='In brachiopods, myofibrils "are striated on the frontal face and smooth on the abfrontal face" [@Pardos1991]';
-	TEXT TAXON=13 CHARACTER=209 TEXT='In brachiopods, myofibrils "are striated on the frontal face and smooth on the abfrontal face" [@Pardos1991]';
-	TEXT TAXON=16 CHARACTER=209 TEXT='In brachiopods, myofibrils "are striated on the frontal face and smooth on the abfrontal face" [@Pardos1991]';
-	TEXT TAXON=11 CHARACTER=209 TEXT='In Bryozoa, myofibrils are "all striated" [@Pardos1991]';
-	TEXT TAXON=12 CHARACTER=209 TEXT='In Bryozoa, myofibrils are "all striated" [@Pardos1991]';
-	TEXT TAXON=10 CHARACTER=213 TEXT='See @Haszprunar2008';
-	TEXT TAXON=11 CHARACTER=213 TEXT='As Brachiopods, sipunculans and relatives [@Ruppert1983]';
-	TEXT TAXON=18 CHARACTER=213 TEXT='Open circulatory system';
-	TEXT TAXON=20 CHARACTER=213 TEXT='See @Haszprunar2008';
-	TEXT TAXON=21 CHARACTER=213 TEXT='See @Haszprunar2008';
-	TEXT TAXON=12 CHARACTER=213 TEXT='As Brachiopods, sipunculans and relatives [@Ruppert1983]';
+	TEXT TAXON=16 CHARACTER=192 TEXT='"The coelothelial cells of the metacoel are monociliated"; "even some epithelial muscle cells are monociliated" -- @Luter1995';
+	TEXT TAXON=16 CHARACTER=198 TEXT='"Very small" -- @Luter1995';
+	TEXT TAXON=19 CHARACTER=198 TEXT='Short in Enchytraeus [@Reger1967], Magelona [@Bartolomaeus1995] and Harmothoe [@Holborow1969]';
+	TEXT TAXON=12 CHARACTER=198 TEXT='@Reed1982';
+	TEXT TAXON=16 CHARACTER=199 TEXT='Too small to evaluate';
+	TEXT TAXON=19 CHARACTER=199 TEXT='Conical in Magelona [@Bartolomaeus1995]';
+	TEXT TAXON=12 CHARACTER=199 TEXT='@Reed1982';
+	TEXT TAXON=17 CHARACTER=211 TEXT='"In P. australis [...] all the myofibrils belong to the smooth type" -- @Pardos1991';
+	TEXT TAXON=15 CHARACTER=211 TEXT='In brachiopods, myofibrils "are striated on the frontal face and smooth on the abfrontal face" [@Pardos1991]';
+	TEXT TAXON=14 CHARACTER=211 TEXT='In brachiopods, myofibrils "are striated on the frontal face and smooth on the abfrontal face" [@Pardos1991]';
+	TEXT TAXON=13 CHARACTER=211 TEXT='In brachiopods, myofibrils "are striated on the frontal face and smooth on the abfrontal face" [@Pardos1991]';
+	TEXT TAXON=16 CHARACTER=211 TEXT='In brachiopods, myofibrils "are striated on the frontal face and smooth on the abfrontal face" [@Pardos1991]';
+	TEXT TAXON=11 CHARACTER=211 TEXT='In Bryozoa, myofibrils are "all striated" [@Pardos1991]';
+	TEXT TAXON=12 CHARACTER=211 TEXT='In Bryozoa, myofibrils are "all striated" [@Pardos1991]';
+	TEXT TAXON=10 CHARACTER=215 TEXT='See @Haszprunar2008';
+	TEXT TAXON=11 CHARACTER=215 TEXT='As Brachiopods, sipunculans and relatives [@Ruppert1983]';
+	TEXT TAXON=18 CHARACTER=215 TEXT='Open circulatory system';
+	TEXT TAXON=20 CHARACTER=215 TEXT='See @Haszprunar2008';
+	TEXT TAXON=21 CHARACTER=215 TEXT='See @Haszprunar2008';
+	TEXT TAXON=12 CHARACTER=215 TEXT='As Brachiopods, sipunculans and relatives [@Ruppert1983]';
 	TEXT TAXON=17 CHARACTER=54 TEXT='Ciliated ridge in oesophagus [@Torrey1901]';
 	TEXT TAXON=21 CHARACTER=55 TEXT='Present, but secondarily reduced';
 	TEXT TAXON=22 CHARACTER=57 TEXT='Subdivided, presumably functionally, but with some ambiguity [@Smith2012M;Smith2014]';
 	TEXT TAXON=22 CHARACTER=58 TEXT='Annex to midgut interpreted as a gland [@Smith2012M]';
 	TEXT TAXON=22 CHARACTER=53 TEXT='@Smith2012M';
-	TEXT TAXON=17 CHARACTER=198 TEXT='Present [@Storch1978]';
-	TEXT TAXON=15 CHARACTER=198 TEXT='"In Brachiopoda, podocytes have never been observed" -- @Luter1995';
-	TEXT TAXON=14 CHARACTER=198 TEXT='"In Brachiopoda, podocytes have never been observed" -- @Luter1995';
-	TEXT TAXON=13 CHARACTER=198 TEXT='"In Brachiopoda, podocytes have never been observed" -- @Luter1995';
-	TEXT TAXON=16 CHARACTER=198 TEXT='"In Brachiopoda, podocytes have never been observed" -- @Luter1995';
-	TEXT TAXON=19 CHARACTER=198 TEXT='Present in serpulids [@Bartolomaeus2005]';
-	TEXT TAXON=15 CHARACTER=200 TEXT='"The excretory function of the metanephridia in Brachiopoda must be questioned" -- @Luter1995';
-	TEXT TAXON=14 CHARACTER=200 TEXT='"The excretory function of the metanephridia in Brachiopoda must be questioned" -- @Luter1995';
-	TEXT TAXON=13 CHARACTER=200 TEXT='"The excretory function of the metanephridia in Brachiopoda must be questioned" -- @Luter1995';
-	TEXT TAXON=16 CHARACTER=200 TEXT='"The excretory function of the metanephridia in Brachiopoda must be questioned" -- @Luter1995';
-	TEXT TAXON=1 CHARACTER=140 TEXT='Budding well documented [e.g. @Zhuravlev2015Ediacaranskeletal]';
-	TEXT TAXON=12 CHARACTER=141 TEXT='Brood pouches in abandoned lophophore';
-	TEXT TAXON=12 CHARACTER=142 TEXT='Hermaphroditic [@Reed1988]';
-	TEXT TAXON=17 CHARACTER=143 TEXT='Eggs "are surrounded by a delicate fertilization membrane" [@Pennerstorfer2012]';
-	TEXT TAXON=11 CHARACTER=143 TEXT='"Eggs have a loose consistency and are capable of changing form" [@Franzen1977]';
-	TEXT TAXON=12 CHARACTER=143 TEXT='"Eggs have a loose consistency and are capable of changing form" [@Franzen1977]';
-	TEXT TAXON=17 CHARACTER=215 TEXT='Glial cells are "abundant" [@Temereva2016Phoronida]';
-	TEXT TAXON=12 CHARACTER=214 TEXT='@Temereva2016Thenervous';
+	TEXT TAXON=17 CHARACTER=200 TEXT='Present [@Storch1978]';
+	TEXT TAXON=15 CHARACTER=200 TEXT='"In Brachiopoda, podocytes have never been observed" -- @Luter1995';
+	TEXT TAXON=14 CHARACTER=200 TEXT='"In Brachiopoda, podocytes have never been observed" -- @Luter1995';
+	TEXT TAXON=13 CHARACTER=200 TEXT='"In Brachiopoda, podocytes have never been observed" -- @Luter1995';
+	TEXT TAXON=16 CHARACTER=200 TEXT='"In Brachiopoda, podocytes have never been observed" -- @Luter1995';
+	TEXT TAXON=19 CHARACTER=200 TEXT='Present in serpulids [@Bartolomaeus2005]';
+	TEXT TAXON=15 CHARACTER=202 TEXT='"The excretory function of the metanephridia in Brachiopoda must be questioned" -- @Luter1995';
+	TEXT TAXON=14 CHARACTER=202 TEXT='"The excretory function of the metanephridia in Brachiopoda must be questioned" -- @Luter1995';
+	TEXT TAXON=13 CHARACTER=202 TEXT='"The excretory function of the metanephridia in Brachiopoda must be questioned" -- @Luter1995';
+	TEXT TAXON=16 CHARACTER=202 TEXT='"The excretory function of the metanephridia in Brachiopoda must be questioned" -- @Luter1995';
+	TEXT TAXON=1 CHARACTER=142 TEXT='Budding well documented [e.g. @Zhuravlev2015Ediacaranskeletal]';
+	TEXT TAXON=12 CHARACTER=143 TEXT='Brood pouches in abandoned lophophore';
+	TEXT TAXON=12 CHARACTER=144 TEXT='Hermaphroditic [@Reed1988]';
+	TEXT TAXON=17 CHARACTER=145 TEXT='Eggs "are surrounded by a delicate fertilization membrane" [@Pennerstorfer2012]';
+	TEXT TAXON=11 CHARACTER=145 TEXT='"Eggs have a loose consistency and are capable of changing form" [@Franzen1977]';
+	TEXT TAXON=12 CHARACTER=145 TEXT='"Eggs have a loose consistency and are capable of changing form" [@Franzen1977]';
+	TEXT TAXON=17 CHARACTER=217 TEXT='Glial cells are "abundant" [@Temereva2016Phoronida]';
 	TEXT TAXON=12 CHARACTER=216 TEXT='@Temereva2016Thenervous';
-	TEXT TAXON=15 CHARACTER=173 TEXT='"both the larval apical ganglion and the ventral ganglion must be retained as^nthe adult nervous system" [@HaySchmidt1992], but not necessarily as the brain';
-	TEXT TAXON=11 CHARACTER=218 TEXT='"The cerebral ganglion in all bryozoans is formed as an invagination of a portion^nof epithelium" -- @Temereva2016Thenervous';
-	TEXT TAXON=12 CHARACTER=218 TEXT='"The cerebral ganglion in all bryozoans is formed as an invagination of a portion^nof epithelium" -- @Temereva2016Thenervous';
-	TEXT TAXON=17 CHARACTER=219 TEXT='We treat the dorsal ganglion, which is formed by two ends of the tentacular nerve ring [@Temereva2016Phoronida], as cerebral.';
-	TEXT TAXON=12 CHARACTER=219 TEXT='@Temereva2016Thenervous';
-	TEXT TAXON=12 CHARACTER=220 TEXT='Fused [@Temereva2016Thenervous]';
-	TEXT TAXON=12 CHARACTER=222 TEXT='@Temereva2016Thenervous';
+	TEXT TAXON=12 CHARACTER=218 TEXT='@Temereva2016Thenervous';
+	TEXT TAXON=15 CHARACTER=175 TEXT='"both the larval apical ganglion and the ventral ganglion must be retained as^nthe adult nervous system" [@HaySchmidt1992], but not necessarily as the brain';
+	TEXT TAXON=11 CHARACTER=220 TEXT='"The cerebral ganglion in all bryozoans is formed as an invagination of a portion^nof epithelium" -- @Temereva2016Thenervous';
+	TEXT TAXON=12 CHARACTER=220 TEXT='"The cerebral ganglion in all bryozoans is formed as an invagination of a portion^nof epithelium" -- @Temereva2016Thenervous';
+	TEXT TAXON=17 CHARACTER=221 TEXT='We treat the dorsal ganglion, which is formed by two ends of the tentacular nerve ring [@Temereva2016Phoronida], as cerebral.';
+	TEXT TAXON=12 CHARACTER=221 TEXT='@Temereva2016Thenervous';
+	TEXT TAXON=12 CHARACTER=222 TEXT='Fused [@Temereva2016Thenervous]';
+	TEXT TAXON=12 CHARACTER=224 TEXT='@Temereva2016Thenervous';
 	TEXT TAXON=7 CHARACTER=38 TEXT='@Moysiuk2017Hyolithsare';
 	TEXT TAXON=9 CHARACTER=38 TEXT='The tentacular crown [@Zhang2013] is interpreted as a lophophore';
 	TEXT TAXON=21 CHARACTER=38 TEXT='The scaphopod captacula is conceivably equivalent to the tentacular apparatus of other lophotrochozoans.  It is developmentally pre-oral, and has tentatively been homologised with the pre-oral tentacles of Monoplacophora and Gastropoda [@Steiner1992], though their musculature and late development suggests instead that they may derive from the molluscan foot, as do the arms of cephalopods [@Wanninger2002M]';
@@ -2809,52 +2824,43 @@ BEGIN NOTES;
 	TEXT TAXON=21 CHARACTER=45 TEXT='The captacula each bear an individual nerve fibre emanating from the cerebral ganglia, which is also associated with the circumoesophageal nerve ring [@SumnerRooney2015], recalling the situation in annelids and sipunculans.';
 	TEXT TAXON=19 CHARACTER=45 TEXT='@Orrhage2005';
 	TEXT TAXON=12 CHARACTER=45 TEXT='Following @Temereva2017Innervationof';
-	TEXT TAXON=17 CHARACTER=204 TEXT='Collagen fibres in tentacle cuticle [@Bartolomaeus2001U]; chitin only present in tubes [@Jeuniaux1971]';
-	TEXT TAXON=15 CHARACTER=204 TEXT='The brachiopod pedicle has a chitinous cuticle  [@Williams1997Introduction;@MacKay1978], but the tentacles are associated with collagen [@Williams1997Introduction]; marked as polymorphic.';
-	TEXT TAXON=14 CHARACTER=204 TEXT='The brachiopod pedicle has a chitinous cuticle  [@Williams1997Introduction;@MacKay1978], but the tentacles are associated with collagen [@Williams1997Introduction]; marked as polymorphic.';
-	TEXT TAXON=13 CHARACTER=204 TEXT='No (chitinous) pedicle, so only collagenous cuticle present [@Williams1997Introduction]';
-	TEXT TAXON=16 CHARACTER=204 TEXT='The brachiopod pedicle has a chitinous cuticle  [@Williams1997Introduction;@MacKay1978], but the tentacles are associated with collagen [@Williams1997Introduction]; marked as polymorphic.';
-	TEXT TAXON=10 CHARACTER=204 TEXT='Absent [@Haszprunar2008]. Chitin is occasionally present in certain species, perhaps in regions where rigidity is necessary [@Borisanova2015].';
-	TEXT TAXON=11 CHARACTER=204 TEXT='Collagenous [@Schopf1967], though chitin is associated with the exoskeleton [@Hunt1972]';
-	TEXT TAXON=18 CHARACTER=204 TEXT='Collagenous [@Goffinet1978]';
-	TEXT TAXON=20 CHARACTER=204 TEXT='@Haszprunar2008';
-	TEXT TAXON=21 CHARACTER=204 TEXT='@Haszprunar2008';
-	TEXT TAXON=12 CHARACTER=204 TEXT='Collagenous [@Schopf1967], though chitin is associated with the exoskeleton [@Hunt1972]';
-	TEXT TAXON=12 CHARACTER=221 TEXT='@Temereva2016Thenervous';
-	TEXT TAXON=12 CHARACTER=217 TEXT='@Temereva2016Thenervous';
-	TEXT TAXON=17 CHARACTER=172 TEXT='Multiple shapes of cells present [@Santagata2002]; resembles the linguliform arrangement [@Altenburger2010]';
-	TEXT TAXON=15 CHARACTER=172 TEXT='Cluster of "numerous" serotonergic cells [@HaySchmidt1992;@Altenburger2010]; more than, but probably equivalent to, the flask-shaped cells of Terebratalia [@Luter2016]';
-	TEXT TAXON=13 CHARACTER=172 TEXT='Four flask-shaped cells [@Altenburger2010]';
-	TEXT TAXON=16 CHARACTER=172 TEXT='Eight in Terebratalia [@Luter2016]';
-	TEXT TAXON=10 CHARACTER=172 TEXT='Six to eight apical cells; eight peripheral cells [@Wanninger2007], indicating a probable equivalence to polyplacophorans [@Haszprunar2008]';
-	TEXT TAXON=11 CHARACTER=172 TEXT='Concentration of 30--40 serotonergic perikarya [in Fredericella; @Gruhl2010F]';
-	TEXT TAXON=18 CHARACTER=172 TEXT='Cluster of around eight cells, though not quite countable [@Wanninger2005]';
-	TEXT TAXON=20 CHARACTER=172 TEXT='Eight in Ischnochiton and Mopalia [@Wanninger2007]';
-	TEXT TAXON=12 CHARACTER=172 TEXT='Concentration of 30--40 serotonergic perikarya [in Fredericella; @Gruhl2010F]';
-	TEXT TAXON=17 CHARACTER=205 TEXT='Outer layer seemingly fibrous [@BereiterHahn1984]';
-	TEXT TAXON=15 CHARACTER=205 TEXT='Pedicle cuticle entirely homogeneous [@Williams1997Introduction]';
-	TEXT TAXON=14 CHARACTER=205 TEXT='Microvilli in otherwise homogeneous epidermis [@Williams1997Introduction]';
-	TEXT TAXON=16 CHARACTER=205 TEXT='Not evident in Notosaria [@BereiterHahn1984;@Williams1997Introduction]';
-	TEXT TAXON=10 CHARACTER=205 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=11 CHARACTER=205 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=18 CHARACTER=205 TEXT='Fibrous collagen only [@BereiterHahn1984]';
-	TEXT TAXON=20 CHARACTER=205 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=21 CHARACTER=205 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=19 CHARACTER=205 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=12 CHARACTER=205 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=17 CHARACTER=206 TEXT='Not evident [@BereiterHahn1984]';
-	TEXT TAXON=15 CHARACTER=206 TEXT='Pedicle cuticle entirely homogeneous [@Williams1997Introduction]';
-	TEXT TAXON=14 CHARACTER=206 TEXT='Microvilli in otherwise homogeneous epidermis [@Williams1997Introduction]';
-	TEXT TAXON=16 CHARACTER=206 TEXT='Cuticle is homogeneous in Notosaria [@BereiterHahn1984;@Williams1997Introduction]';
-	TEXT TAXON=10 CHARACTER=206 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=11 CHARACTER=206 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=18 CHARACTER=206 TEXT='Fibrous collagen only [@BereiterHahn1984]';
-	TEXT TAXON=20 CHARACTER=206 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=21 CHARACTER=206 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=19 CHARACTER=206 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=12 CHARACTER=206 TEXT='Following table 2 in @Borisanova2015.';
-	TEXT TAXON=17 CHARACTER=208 TEXT='Present on outer epithelium [@BereiterHahn1984]';
-	TEXT TAXON=14 CHARACTER=208 TEXT='Microvillios inner epithelium in Discina [@Williams1997Introduction]';
+	TEXT TAXON=17 CHARACTER=206 TEXT='Collagen fibres in tentacle cuticle [@Bartolomaeus2001U]; chitin only present in tubes [@Jeuniaux1971]';
+	TEXT TAXON=15 CHARACTER=206 TEXT='The brachiopod pedicle has a chitinous cuticle  [@Williams1997Introduction;@MacKay1978], but the tentacles are associated with collagen [@Williams1997Introduction]; marked as polymorphic.';
+	TEXT TAXON=14 CHARACTER=206 TEXT='The brachiopod pedicle has a chitinous cuticle  [@Williams1997Introduction;@MacKay1978], but the tentacles are associated with collagen [@Williams1997Introduction]; marked as polymorphic.';
+	TEXT TAXON=13 CHARACTER=206 TEXT='No (chitinous) pedicle, so only collagenous cuticle present [@Williams1997Introduction]';
+	TEXT TAXON=16 CHARACTER=206 TEXT='The brachiopod pedicle has a chitinous cuticle  [@Williams1997Introduction;@MacKay1978], but the tentacles are associated with collagen [@Williams1997Introduction]; marked as polymorphic.';
+	TEXT TAXON=10 CHARACTER=206 TEXT='Absent [@Haszprunar2008]. Chitin is occasionally present in certain species, perhaps in regions where rigidity is necessary [@Borisanova2015].';
+	TEXT TAXON=11 CHARACTER=206 TEXT='Collagenous [@Schopf1967], though chitin is associated with the exoskeleton [@Hunt1972]';
+	TEXT TAXON=18 CHARACTER=206 TEXT='Collagenous [@Goffinet1978]';
+	TEXT TAXON=20 CHARACTER=206 TEXT='@Haszprunar2008';
+	TEXT TAXON=21 CHARACTER=206 TEXT='@Haszprunar2008';
+	TEXT TAXON=12 CHARACTER=206 TEXT='Collagenous [@Schopf1967], though chitin is associated with the exoskeleton [@Hunt1972]';
+	TEXT TAXON=12 CHARACTER=223 TEXT='@Temereva2016Thenervous';
+	TEXT TAXON=12 CHARACTER=219 TEXT='@Temereva2016Thenervous';
+	TEXT TAXON=17 CHARACTER=174 TEXT='Multiple shapes of cells present [@Santagata2002]; resembles the linguliform arrangement [@Altenburger2010]';
+	TEXT TAXON=15 CHARACTER=174 TEXT='Cluster of "numerous" serotonergic cells [@HaySchmidt1992;@Altenburger2010]; more than, but probably equivalent to, the flask-shaped cells of Terebratalia [@Luter2016]';
+	TEXT TAXON=13 CHARACTER=174 TEXT='Four flask-shaped cells [@Altenburger2010]';
+	TEXT TAXON=16 CHARACTER=174 TEXT='Eight in Terebratalia [@Luter2016]';
+	TEXT TAXON=10 CHARACTER=174 TEXT='Six to eight apical cells; eight peripheral cells [@Wanninger2007], indicating a probable equivalence to polyplacophorans [@Haszprunar2008]';
+	TEXT TAXON=11 CHARACTER=174 TEXT='Concentration of 30--40 serotonergic perikarya [in Fredericella; @Gruhl2010F]';
+	TEXT TAXON=18 CHARACTER=174 TEXT='Cluster of around eight cells, though not quite countable [@Wanninger2005]';
+	TEXT TAXON=20 CHARACTER=174 TEXT='Eight in Ischnochiton and Mopalia [@Wanninger2007]';
+	TEXT TAXON=12 CHARACTER=174 TEXT='Concentration of 30--40 serotonergic perikarya [in Fredericella; @Gruhl2010F]';
+	TEXT TAXON=17 CHARACTER=207 TEXT='Outer layer seemingly fibrous [@BereiterHahn1984]';
+	TEXT TAXON=15 CHARACTER=207 TEXT='Pedicle cuticle entirely homogeneous [@Williams1997Introduction]';
+	TEXT TAXON=14 CHARACTER=207 TEXT='Microvilli in otherwise homogeneous epidermis [@Williams1997Introduction]';
+	TEXT TAXON=16 CHARACTER=207 TEXT='Not evident in Notosaria [@BereiterHahn1984;@Williams1997Introduction]';
+	TEXT TAXON=10 CHARACTER=207 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=11 CHARACTER=207 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=18 CHARACTER=207 TEXT='Fibrous collagen only [@BereiterHahn1984]';
+	TEXT TAXON=20 CHARACTER=207 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=21 CHARACTER=207 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=19 CHARACTER=207 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=12 CHARACTER=207 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=17 CHARACTER=208 TEXT='Not evident [@BereiterHahn1984]';
+	TEXT TAXON=15 CHARACTER=208 TEXT='Pedicle cuticle entirely homogeneous [@Williams1997Introduction]';
+	TEXT TAXON=14 CHARACTER=208 TEXT='Microvilli in otherwise homogeneous epidermis [@Williams1997Introduction]';
+	TEXT TAXON=16 CHARACTER=208 TEXT='Cuticle is homogeneous in Notosaria [@BereiterHahn1984;@Williams1997Introduction]';
 	TEXT TAXON=10 CHARACTER=208 TEXT='Following table 2 in @Borisanova2015.';
 	TEXT TAXON=11 CHARACTER=208 TEXT='Following table 2 in @Borisanova2015.';
 	TEXT TAXON=18 CHARACTER=208 TEXT='Fibrous collagen only [@BereiterHahn1984]';
@@ -2862,6 +2868,15 @@ BEGIN NOTES;
 	TEXT TAXON=21 CHARACTER=208 TEXT='Following table 2 in @Borisanova2015.';
 	TEXT TAXON=19 CHARACTER=208 TEXT='Following table 2 in @Borisanova2015.';
 	TEXT TAXON=12 CHARACTER=208 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=17 CHARACTER=210 TEXT='Present on outer epithelium [@BereiterHahn1984]';
+	TEXT TAXON=14 CHARACTER=210 TEXT='Microvillios inner epithelium in Discina [@Williams1997Introduction]';
+	TEXT TAXON=10 CHARACTER=210 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=11 CHARACTER=210 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=18 CHARACTER=210 TEXT='Fibrous collagen only [@BereiterHahn1984]';
+	TEXT TAXON=20 CHARACTER=210 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=21 CHARACTER=210 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=19 CHARACTER=210 TEXT='Following table 2 in @Borisanova2015.';
+	TEXT TAXON=12 CHARACTER=210 TEXT='Following table 2 in @Borisanova2015.';
 	TEXT TAXON=18 CHARACTER=11 TEXT='No evidence of microvillar secretion [e.g. @Schulze2005]';
 	TEXT TAXON=18 CHARACTER=14 TEXT='Enzymatic test for chitin proved negative [@Rice1993]';
 	TEXT TAXON=15 CHARACTER=12 TEXT='Widest in centre [@Luter2000]';
@@ -2880,7 +2895,7 @@ BEGIN NOTES;
 	TEXT TAXON=17 CHARACTER=21 TEXT='@Temereva2017Innervationof';
 	TEXT TAXON=10 CHARACTER=21 TEXT='"Adult entoprocts are acoelomate" -- @Fuchs2008';
 	TEXT TAXON=11 CHARACTER=21 TEXT='"Adult ectoprocts differentiate true coelomic cavities" -- @Fuchs2008';
-	TEXT TAXON=12 CHARACTER=178 TEXT='Ciliated clef corresponds to position of foot [@Reed1982], but dedicated foot not present.';
+	TEXT TAXON=12 CHARACTER=180 TEXT='Ciliated clef corresponds to position of foot [@Reed1982], but dedicated foot not present.';
 	TEXT TAXON=17 CHARACTER=48 TEXT='[@Pardos1991]';
 	TEXT TAXON=15 CHARACTER=48 TEXT='"Inner coelomic epithelium underlain by muscle fibers, or in the tentacles, myoepithelial cells." -- @Williams1997Introduction';
 	TEXT TAXON=14 CHARACTER=48 TEXT='"Inner coelomic epithelium underlain by muscle fibers, or in the tentacles, myoepithelial cells." -- @Williams1997Introduction';
@@ -2890,11 +2905,19 @@ BEGIN NOTES;
 	TEXT TAXON=18 CHARACTER=48 TEXT='Peripheral to main tentacle cavity [@Pilger1982]';
 	TEXT TAXON=21 CHARACTER=48 TEXT='Six to eight elongate muscle cells in core [@Shimek1988], surrounded by circular muscles [@Byrum1994]';
 	TEXT TAXON=19 CHARACTER=48 TEXT='Peripheral muscle fibres [@Hanson1949]';
+	TEXT TAXON=43 CHARACTER=131 TEXT='Micrina exhibits polygonal imprints on the internal surfaces of successive second-order laminae, suggesting the existence of a polygonal organization of these layers [@Balthasar2009Homologousskeletal]';
+	TEXT TAXON=48 CHARACTER=131 TEXT='Present [@Balthasar2009Homologousskeletal]';
+	TEXT TAXON=34 CHARACTER=131 TEXT='Present [@Balthasar2009Homologousskeletal]';
+	TEXT TAXON=51 CHARACTER=131 TEXT='No original structural details evident [@Streng2016Anew]';
+	TEXT TAXON=45 CHARACTER=131 TEXT='Absent [@Balthasar2008iMummpikia]';
 	TEXT TAXON=39 CHARACTER=131 TEXT='Lamination absent [following @Williams1998Thediversity, appendix 2]';
-	TEXT TAXON=49 CHARACTER=131 TEXT='Coded uncertain in @Williams1998Thediversity';
-	TEXT TAXON=27 CHARACTER=131 TEXT='Lamination present, with imprints of presumed mantle cells [following @Williams1998Thediversity, appendix 2]';
+	TEXT TAXON=49 CHARACTER=131 TEXT='Present [@Holmer2009Theenigmatic]';
+	TEXT TAXON=24 CHARACTER=131 TEXT='Each lamina corresponds to a ridge on the surface [@Skovsted2015]';
+	TEXT TAXON=15 CHARACTER=131 TEXT='Lingulid laminae are thicker than those of tommotiids or paterinids, but construed as homologous [@Balthasar2009Homologousskeletal]';
+	TEXT TAXON=27 CHARACTER=131 TEXT='Lamination present [@Balthasar2009Homologousskeletal], with imprints of presumed mantle cells [following @Williams1998Thediversity, appendix 2]';
 	TEXT TAXON=28 CHARACTER=131 TEXT='Lamination present, with no imprints of presumed mantle cells [following @Williams1998Thediversity, appendix 2]';
 	TEXT TAXON=37 CHARACTER=131 TEXT='Lamination absent [following @Williams1998Thediversity, appendix 2]';
+	TEXT TAXON=44 CHARACTER=131 TEXT='Alternation of layers [@Balthasar2004Shellstructure]';
 	TEXT TAXON=35 CHARACTER=131 TEXT='Lamination present, with no imprints of presumed mantle cells [following @Williams1998Thediversity, appendix 2]';
 	TEXT TAXON=30 CHARACTER=131 TEXT='Lamination present, with no imprints of presumed mantle cells [following @Williams1998Thediversity, appendix 2]';
 	TEXT TAXON=15 CHARACTER=18 TEXT='@Luter2000';
@@ -2908,7 +2931,21 @@ BEGIN NOTES;
 	TEXT TAXON=20 CHARACTER=13 TEXT='Round [@Fischer1980]';
 	TEXT TAXON=19 CHARACTER=13 TEXT='Annelid setae are prominently round, with gaps between each microvillar chamber [@Orrhage1971]';
 	TEXT TAXON=12 CHARACTER=13 TEXT='Polygonal [@Gordon1975]';
+	TEXT TAXON=43 CHARACTER=133 TEXT='Micrina exhibits polygonal imprints on the internal surfaces of successive second-order laminae, suggesting the existence of a polygonal organization of these layers [@Balthasar2009Homologousskeletal]';
+	TEXT TAXON=48 CHARACTER=133 TEXT='Present [@Balthasar2009Homologousskeletal]';
+	TEXT TAXON=34 CHARACTER=133 TEXT='Present [@Balthasar2009Homologousskeletal]';
+	TEXT TAXON=49 CHARACTER=133 TEXT='Prominently present [@Holmer2009Theenigmatic]';
+	TEXT TAXON=24 CHARACTER=133 TEXT='Polygonal structures on external surface of sclerites only [@Skovsted2015Theearly]; not reported from other camenellans [@Balthasar2009Homologousskeletal]';
+	TEXT TAXON=15 CHARACTER=133 TEXT='Absent in Lingula, though potentially equivalent, if superficial [@Balthasar2009Homologousskeletal], features adorn Lingulella [@Curry1983]';
+	TEXT TAXON=27 CHARACTER=133 TEXT='Present [@Balthasar2009Homologousskeletal]';
+	TEXT TAXON=28 CHARACTER=133 TEXT='Lamination present, with no imprints of presumed mantle cells [following @Williams1998Thediversity, appendix 2]';
+	TEXT TAXON=31 CHARACTER=133 TEXT='Epithelial cell moulds present on inner shell layer in acrotretids [@Zhang2016Epithelialcell]';
+	TEXT TAXON=35 CHARACTER=133 TEXT='Lamination present, with no imprints of presumed mantle cells [following @Williams1998Thediversity, appendix 2]';
+	TEXT TAXON=30 CHARACTER=133 TEXT='Lamination present, with no imprints of presumed mantle cells [following @Williams1998Thediversity, appendix 2]';
+	TEXT TAXON=48 CHARACTER=132 TEXT='Particularly apparent [@Larsson2014iPaterimitra].';
+	TEXT TAXON=24 CHARACTER=132 TEXT='Particularly apparent [@Skovsted2015Theearly]';
+	TEXT TAXON=27 CHARACTER=132 TEXT='@Topper2013Theoldest';
 ENDBLOCK;
 BEGIN ASSUMPTIONS;
-TYPESET * UNTITLED = unord: 1 - 222;
+TYPESET * UNTITLED = unord: 1 - 224;
 ENDBLOCK;

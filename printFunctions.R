@@ -8,7 +8,7 @@ Italicize <- function (string) {
                                       'Equisetum', 'Eoorthis', 'Fredericella',
                                       'Galeolaria', 'Glottidia', 'Gryphus',
                                       'Hadrotreta', 'Harmothoe', 'Hydroides',
-                                      'Ischnochiton', 'Kraussina',
+                                      'Ischnochiton', 'Kraussina', 'Lingulella',
                                       'Lochkothele', 'Loxosoma', 'Loxosomatoides',
                                       'Magelona', 'Membranipora', 'Mopalia',
                                       'Nereis', 'Neocrania', 'Notosaria',
