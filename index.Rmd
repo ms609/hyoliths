@@ -43,7 +43,7 @@ files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 filename <- files[which.max(vapply(files, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(filename)
 ignored_taxa <- c('Conotheca', 'Decoritheca', 'Maxilites', 'Pauxillites',
-                  'Probactrotheca', 'Namacalathus')
+                  'Probactrotheca')
 my_data[ignored_taxa] <- NULL
 
 # my_data contains an inapplicable state that we should convert to ambiguous for 
@@ -86,5 +86,6 @@ refs <- trimws(enc2utf8(as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, sk
 #close(bibFile)
 refKeys <- apply(refs, 1, RefKey)
 ```
+
 
 

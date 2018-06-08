@@ -1,0 +1,109 @@
+#NEXUS
+[R-package APE, Fri Jun 08 08:18:21 2018]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 48;
+	TAXLABELS
+		Namacalathus
+		Haplophrentis_carinatus
+		Pedunculotheca_diania
+		Cotyledion_tylodes
+		Loxosomella
+		Flustra
+		Amathia
+		Pelagodiscus_atlanticus
+		Terebratulina
+		Lingula
+		Phoronis
+		Sipunculus
+		Serpula
+		Tonicella
+		Dentalium
+		Wiwaxia_corrugata
+		Halkieria_evangelista
+		Dailyatia
+		Acanthotretella_spinosa
+		Alisina
+		Askepasma_toddense
+		Antigonambonites_planus
+		Botsfordia
+		Clupeafumosus_socialis
+		Coolinia_pecten
+		Novocrania
+		Craniops
+		Gasconsia
+		Ussunia
+		Eccentrotheca
+		Eoobolus
+		Glyptoria
+		Heliomedusa_orienta
+		Kutorgina_chengjiangensis
+		Lingulosacculus
+		Lingulellotreta_malongensis
+		Longtancunella_chengjiangensis
+		Micrina
+		Micromitra
+		Mickwitzia_muralensis
+		Mummpikia_nuda
+		Nisusia_sulcata
+		Orthis
+		Paterimitra
+		Salanygolina
+		Siphonobolus_priscus
+		Tomteluva_perturbata
+		Yuganotheca_elegans
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Namacalathus,
+		2	Haplophrentis_carinatus,
+		3	Pedunculotheca_diania,
+		4	Cotyledion_tylodes,
+		5	Loxosomella,
+		6	Flustra,
+		7	Amathia,
+		8	Pelagodiscus_atlanticus,
+		9	Terebratulina,
+		10	Lingula,
+		11	Phoronis,
+		12	Sipunculus,
+		13	Serpula,
+		14	Tonicella,
+		15	Dentalium,
+		16	Wiwaxia_corrugata,
+		17	Halkieria_evangelista,
+		18	Dailyatia,
+		19	Acanthotretella_spinosa,
+		20	Alisina,
+		21	Askepasma_toddense,
+		22	Antigonambonites_planus,
+		23	Botsfordia,
+		24	Clupeafumosus_socialis,
+		25	Coolinia_pecten,
+		26	Novocrania,
+		27	Craniops,
+		28	Gasconsia,
+		29	Ussunia,
+		30	Eccentrotheca,
+		31	Eoobolus,
+		32	Glyptoria,
+		33	Heliomedusa_orienta,
+		34	Kutorgina_chengjiangensis,
+		35	Lingulosacculus,
+		36	Lingulellotreta_malongensis,
+		37	Longtancunella_chengjiangensis,
+		38	Micrina,
+		39	Micromitra,
+		40	Mickwitzia_muralensis,
+		41	Mummpikia_nuda,
+		42	Nisusia_sulcata,
+		43	Orthis,
+		44	Paterimitra,
+		45	Salanygolina,
+		46	Siphonobolus_priscus,
+		47	Tomteluva_perturbata,
+		48	Yuganotheca_elegans
+	;
+	TREE * UNTITLED = [&R] (6,(7,((5,((13,12),(16,(14,15)))),((30,(18,(17,(44,((48,(2,3)),((((28,(29,(27,26))),((8,((35,(24,(19,46))),(36,10))),(31,(23,41)))),((((25,22),(34,(42,(32,(37,(20,(43,9))))))),(45,47)),(39,21))),(38,(33,40)))))))),(4,(1,11))))));
+END;
