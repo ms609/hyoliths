@@ -32,8 +32,8 @@ n_char <- ncol(my_chars)
 char_parts <- strsplit(char_names, ": ")
 char_nesting <- vapply(char_parts, length, 0L)
 char_notes <- ReadNotes(filename)
+
 taxa_names <- unique(c("Namacalathus", rownames(my_chars)))
-taxa_sort <- taxa_names
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
 
@@ -250,10 +250,8 @@ PrintStateNotes <- function (notes) {
   PrintThisNote <- function (note) {
     afflictedTaxa <- names(note)[note]
     master <- afflictedTaxa[1]
-    cat(paste0("<div class='state-note' id='",
-                     taxa_names[as.integer(master)], "-coding-", i,
-                     "'>",
-               paste(taxa_italic[as.integer(afflictedTaxa)], collapse=', '),
+    cat(paste0("<div class='state-note' id='", master, "-coding-", i, "'>",
+               paste(taxa_italic[taxa_names %in% afflictedTaxa], collapse=', '),
                       ": ", Italicize(notes[master]), "</div>  \n  \n"))
   }
   
@@ -265,7 +263,7 @@ PrintStateNotes <- function (notes) {
     names(onlyOne) <- names(notes)
     PrintThisNote(onlyOne)
   } else {
-    notes <- notes[order(taxa_sort[as.integer(names(notes))])]
+    notes <- notes[order(names(notes))]
     duplicates <- DuplicateOf(toupper(notes))
     apply(duplicates, 2, PrintThisNote)
   }
@@ -274,7 +272,6 @@ PrintStateNotes <- function (notes) {
   }
 }
 
-taxa_not_to_print <- which(taxa_names %in% ignored_taxa)
 prev_char_parts <- "NONE"
 prev_nesting <- 0
 
@@ -333,6 +330,8 @@ for (i in seq_len(n_char)) {
   
   if (my_chars_i[1] == '?' && length(unique(my_chars_i)) == 1) {
     cat("<p>All taxa are coded as ambiguous for this character.</p>")
+    legendLabels <- "?: Not scored"
+    legendCol <- "darkgrey"
   } else if (exists('localInstance') || knitr::is_html_output()) {
     for (treeNo in eachTree) {
       tree <- rootedTrees[[treeNo]]
@@ -431,7 +430,7 @@ for (i in seq_len(n_char)) {
   cat("  \n\n")
   char_notes_i <- char_notes[[i]]
   state_notes_i <- char_notes_i[[2]]
-  state_notes_i <- state_notes_i[!names(state_notes_i) %in% taxa_not_to_print]
+  state_notes_i <- state_notes_i[!names(state_notes_i) %in% ignored_taxa]
   if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
   if (length(state_notes_i) > 0) PrintStateNotes(state_notes_i)
   if (my_states[[i]][[1]] != "''") PrintNaughtyInapplicables(my_chars[, i])

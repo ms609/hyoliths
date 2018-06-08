@@ -127,17 +127,32 @@ MatrixData <- function (states_matrix, state.labels) {
 
 
 ReadNotes <- function (filepath) {
-  lines <- enc2utf8(readLines(filepath))
+  taxon.pattern <- "^\\s+[\"']?([^;]*?)[\"']?\\s*$"
   charNote.pattern <- "^\\s+TEXT\\s+CHARACTER=(\\d+)\\s+TEXT='(.*)';\\s*$"
   stateNote.pattern <- "^\\s+TEXT\\s+TAXON=(\\d+)\\s+CHARACTER=(\\d+)\\s+TEXT='(.*)';\\s*$"
+
+  lines <- enc2utf8(readLines(filepath))
   upperLines <- toupper(lines)
+
+  taxaStart <- which(upperLines == "BEGIN TAXA;")
   notesStart <- which(upperLines == "BEGIN NOTES;")
   endBlocks <- which(upperLines == "ENDBLOCK;")
+
   if (length(notesStart) == 0) {
     return(list("NOTES block not found in Nexus file."))
+  } else if (length(taxaStart) == 0) {
+    return(list("TAXA block not found in Nexus file."))
   } else if (length(notesStart) > 1) {
     return(list("Multiple NOTES blocks found in Nexus file."))
+  } else if (length(taxaStart) > 1) {
+    return(list("Multiple TAXA blocks found in Nexus file."))
   } else {
+    taxaEnd <- endBlocks[endBlocks > taxaStart][1] - 1L
+    taxaLines <- lines[(taxaStart + 1):taxaEnd]
+    taxon.matches <- grepl(taxon.pattern, taxaLines, perl=TRUE)
+    taxa <- gsub(taxon.pattern, "\\1", taxaLines[taxon.matches], perl=TRUE)
+    taxa <- gsub(' ', '_', taxa, fixed=TRUE)
+
     notesEnd <- endBlocks[endBlocks > notesStart][1] - 1L
     notesLines <- lines[(notesStart + 1):notesEnd]
     charNote.matches <- grepl(charNote.pattern, notesLines, perl=TRUE)
@@ -161,7 +176,7 @@ ReadNotes <- function (filepath) {
       ret <- list(
         charNotes[charNumbers == i],
         stateNotes[stateChar == i])
-      names(ret[[2]]) <- stateTaxon[stateChar == i]
+      names(ret[[2]]) <- taxa[as.integer(stateTaxon[stateChar == i])]
 
       # Return:
       ret
