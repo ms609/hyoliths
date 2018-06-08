@@ -385,7 +385,7 @@ for (i in seq_len(n_char)) {
                     ci_text[i, treeNo],
                    '</text><text x="', svgWidth - 4L,
                     '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
-                    '<tspan dy="16">An optimal tree under:</tspan>', 
+                    '<tspan dy="16" fill="#34caaf">An optimal tree under:</tspan>', 
                    paste0('<tspan x="', svgWidth - 2L,
                           '" style="font-style:italic" class="',
                           ifelse(analysisNames %in% treeNames[treeIndex==treeNo], 'this', 'notThis'),
