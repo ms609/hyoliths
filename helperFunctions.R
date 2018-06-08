@@ -134,9 +134,10 @@ ReadNotes <- function (filepath) {
   lines <- enc2utf8(readLines(filepath))
   upperLines <- toupper(lines)
 
-  taxaStart <- which(upperLines == "BEGIN TAXA;")
   notesStart <- which(upperLines == "BEGIN NOTES;")
   endBlocks <- which(upperLines == "ENDBLOCK;")
+  taxlabels <- which(trimws(upperLines) == "TAXLABELS")
+  semicolons <- which(trimws(upperLines) == ";")
 
   if (length(notesStart) == 0) {
     return(list("NOTES block not found in Nexus file."))
@@ -147,8 +148,8 @@ ReadNotes <- function (filepath) {
   } else if (length(taxaStart) > 1) {
     return(list("Multiple TAXA blocks found in Nexus file."))
   } else {
-    taxaEnd <- endBlocks[endBlocks > taxaStart][1] - 1L
-    taxaLines <- lines[(taxaStart + 1):taxaEnd]
+    taxaEnd <- semicolons[semicolons > taxlabels][1] - 1L
+    taxaLines <- lines[(taxlabels + 1):taxaEnd]
     taxon.matches <- grepl(taxon.pattern, taxaLines, perl=TRUE)
     taxa <- gsub(taxon.pattern, "\\1", taxaLines[taxon.matches], perl=TRUE)
     taxa <- gsub(' ', '_', taxa, fixed=TRUE)
