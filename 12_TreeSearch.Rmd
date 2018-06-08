@@ -134,8 +134,8 @@ nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
 (ref:ts-trim-cons) Consensus of all parsimony results, with taxa omitted to show underlying clade support.  
 
 ```{r treesearch-maj-consensus-pruned, fig.cap="(ref:ts-trim-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
-omit <- c("Micrina", 'Mickwitzia_muralensis',
-       'Heliomedusa_orienta')
+#omit <- c("Micrina", 'Mickwitzia_muralensis', 'Heliomedusa_orienta')
+omit <- c('Eccentrotheca')
 allPruned <- lapply(allTrees, drop.tip, omit)
 majCon <- RootTree(consensus(allPruned, p=0.5), rootingTips)
 conTipIndex <- sort(majCon$tip.label)
@@ -174,28 +174,19 @@ par(mfrow=c(2, 2), mar=rep(0.2, 4))
 ColPlot(RootTree(consensus(lapply(iw.exist, consensus)), rootingTips))
 text(-0.5, 1, pos=4, "Strict consensus of all k values", cex=0.8)
 
-# Plot results for each value of k
-PlotPanel <- function (i) {
-  if (i > length(iw.trees) || length(iw.trees[[i]]) == 0) {
-    cat("\n > Results not available for panel", i)
-  } else {
-    ColPlot(RootTree(consensus(iw.trees[[i]]), rootingTips))
-    text(1, 1, paste0('k = ', kValues[i]), pos=4)
-  }
-}
-PlotPanel(1)
-PlotPanel(2)
-PlotPanel(3)
+PlotPanel(iw.trees, 1)
+PlotPanel(iw.trees, 2)
+PlotPanel(iw.trees, 3)
 ```
 
 \clearpage 
 
 ```{R treesearch-iw-results-3, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:second-panels)", echo=FALSE}
 par(mfrow=c(2, 2), mar=rep(0.2, 4))
-PlotPanel(4)
-PlotPanel(5)
-PlotPanel(6)
-PlotPanel(7)
+PlotPanel(iw.trees, 4)
+PlotPanel(iw.trees, 5)
+PlotPanel(iw.trees, 6)
+PlotPanel(iw.trees, 7)
 ```
 
 \clearpage
@@ -204,12 +195,11 @@ PlotPanel(7)
 ColPlot(RootTree(consensus(ew.trees), rootingTips))
 ```
 
-<!--
+
 ```{R treesearch-equal-weights-pruned-consensus, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE}
-omit <- c('none')
+omit <- c("Micrina", 'Mickwitzia_muralensis', 'Heliomedusa_orienta')
 ColPlot(ConsensusWithout(ew.trees, omit))
 ColMissing(omit)
 ```
--->
 
 \clearpage

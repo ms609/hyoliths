@@ -41,12 +41,8 @@ We acknowledge the Willi Hennig Society for their sponsorship of the TNT softwar
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 filename <- tntFiles[1]
 tnTrees <- lapply(tntFiles, ReadTntTree, relativePath='.', keepEnd=1)
+tnTrees <- lapply(tnTrees, function (x) lapply(x, drop.tip, ignored_taxa))
 tnConsensi <- lapply(tnTrees, consensus)
-
-plotPanel <- function (i) {
-  ColPlot(tnConsensi[[i]])
-  text(1, 0.5, paste('k =', kValues[i]), pos=4, cex=0.6)
-}
 ```
 
 (ref:tnt-iw-results) Strict consensus of all trees recovered by TNT using Fitch parsimony with implied weighting
@@ -58,17 +54,17 @@ par(mfrow=c(2, 2))
 ColPlot(consensus(tnConsensi)) 
 text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
 
-plotPanel(1)
-plotPanel(2)
-plotPanel(3)
+PlotPanel(tnConsensi, 1)
+PlotPanel(tnConsensi, 2)
+PlotPanel(tnConsensi, 3)
 ```
 
 ```{R tnt-iw-7-24, fig.width=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results), (ref:second-panels)", echo=FALSE}
 par(mfrow=c(2, 2))
-plotPanel(4)
-plotPanel(5)
-plotPanel(6)
-plotPanel(7)
+PlotPanel(tnConsensi, 4)
+PlotPanel(tnConsensi, 5)
+PlotPanel(tnConsensi, 6)
+PlotPanel(tnConsensi, 7)
 ```
 
 <!--### Consensus of all IW trees, without wildcards

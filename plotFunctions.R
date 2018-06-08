@@ -1,5 +1,3 @@
-
-
 #pal <- TreeSearch::brewer[[11]]
 pal <- c("#F07894", "#E18758", "#C49800", "#99A700", "#55B23A", "#00B97B", "#00BAAE", "#00B3D7", "#52A2EF", "#AF8BF2", "#DE77DD") # <- colorspace::rainbow_hcl(11, 80, 65, 0, 308)
 
@@ -108,4 +106,14 @@ SetPar <- function() par(mar=rep(0.2, 4), cex=0.8)
 ColPlot <- function (tree) {
   SetPar()
   plot(tree, tip.color = taxonColour[tree$tip.label], lwd=2)
+}
+
+# Plot results for each value of k
+PlotPanel <- function (treeList, i) {
+  if (i > length(treeList) || length(treeList[[i]]) == 0) {
+    cat("\n > Results not available for panel", i)
+  } else {
+    ColPlot(RootTree(consensus(treeList[[i]]), rootingTips))
+    text(1, 1, paste0('k = ', kValues[i]), pos=4)
+  }
 }
