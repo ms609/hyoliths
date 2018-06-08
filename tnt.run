@@ -9,8 +9,13 @@ xmult:rat10 drift10 hits 15 level 4 chklevel 5;
 
 /* outgroup Dailyatia; */
 /* taxcode -Namacalathus; */
+taxcode -Conotheca;
+taxcode -Decoritheca;
+taxcode -Maxilites;
+taxcode -Pauxillites;
+taxcode -Probactrotheca;
 
-outgroup Namacalathus;
+outgroup Flustra;
 
 keep 0; hold 10000;
 piwe-    ;xmult;tsav *TNT/ew.tre;sav;tsav/;        keep 0; hold 10000;
