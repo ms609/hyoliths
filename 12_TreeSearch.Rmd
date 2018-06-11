@@ -71,7 +71,7 @@ for (k in kValues) {
 
 ```{r treesearch-equal-weights-analysis, echo=TRUE, eval=FALSE}
 ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
-                   ratchHits = 25, searchHits=55, # ratchHits = 10 not enough
+                   ratchHits = 20, searchHits=55, # ratchHits = 10 not enough
                    swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
 ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=250, searchHits = 55,
                                  swappers=list(RootedTBRSwap, RootedNNISwap),
