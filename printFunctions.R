@@ -15,10 +15,11 @@ Italicize <- function (string) {
                                       'Nereis', 'Neocrania', 'Notosaria',
                                       'Neoancistrocrania', 'Oikozetetes',
                                       'Paracraniops', 'Paramicrocornus',
-                                      'Phascolion', 'Phoronopsis', 'Scolelepis',
+                                      'Phascolion', 'Phoronopsis', 'Recilites',
+                                      'Scolelepis',
                                       'Terebratalia', 'Themiste', 'Tubulipora',
 
-                                      'atkinsae', 'comleyensis', 'decaius',
+                                      'atkinsae', 'comleyensis', 'cyrene', 'decaius',
                                       'minuta', 'murmanica',
                                       'schucherti', 'tenuis', 'worsleyi',
 
