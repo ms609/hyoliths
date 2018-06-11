@@ -52,7 +52,7 @@ tnConsensi <- lapply(tnTrees, consensus)
 
 ```{R tnt-iw-consensus, fig.wid=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results) (ref:first-panels) (ref:tnt-iw-explanation)", echo=FALSE}
 par(mfrow=c(2, 2))
-ColPlot(consensus(tnConsensi)) 
+ColPlot(RootTree(consensus(tnConsensi), rootingTips))
 text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
 
 PlotPanel(tnConsensi, 1)
