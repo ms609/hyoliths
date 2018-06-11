@@ -64,7 +64,7 @@ kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
 outgroup <- 'Namacalathus'
 outgroup <- 'Flustra'
-rootingTips <- c('Tonicella', 'Serpula')
+rootingTips <- c('Tonicella', 'Serpula', 'Loxosomella')
 
 # One day this function will appear in TreeSearch.
 RootTree <- function (tree, outgroupTips) {
