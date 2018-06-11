@@ -155,8 +155,10 @@ ColMissing(omit)
 (ref:ts-iw-cons) Strict consensus of implied weights analyses at all values of _k_. Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
 
 ```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE}
-ColPlot(ConsensusWithout(lapply(iw.exist, consensus), omit))
-ColMissing(omit)
+if (length(iw.exist) > 0) {
+  ColPlot(ConsensusWithout(lapply(iw.exist, consensus), omit))
+  ColMissing(omit)
+}
 ```
 
 (ref:ts-iw-indiv) Consensus trees of implied weights analyses
@@ -171,8 +173,10 @@ ColMissing(omit)
 # Plot consensus results
 par(mfrow=c(2, 2), mar=rep(0.2, 4))
 
-ColPlot(RootTree(consensus(lapply(iw.exist, consensus)), rootingTips))
-text(-0.5, 1, pos=4, "Strict consensus of all k values", cex=0.8)
+if (length(iw.exist) > 0) {
+  ColPlot(RootTree(consensus(lapply(iw.exist, consensus)), rootingTips))
+  text(-0.5, 1, pos=4, "Strict consensus of all k values", cex=0.8)
+}
 
 PlotPanel(iw.trees, 1)
 PlotPanel(iw.trees, 2)
@@ -203,3 +207,4 @@ ColMissing(omit)
 ```
 
 \clearpage
+
