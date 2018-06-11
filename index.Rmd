@@ -66,11 +66,12 @@ outgroup <- 'Namacalathus'
 outgroup <- 'Flustra'
 rootingTips <- c('Tonicella', 'Serpula', 'Loxosomella')
 
-# One day this function will appear in TreeSearch.
+# Copied from latest GitHub version of TreeSearch
 RootTree <- function (tree, outgroupTips) {
   tipNos <- which(tree$tip.label %in% outgroupTips)
   ancestry <- unlist(Ancestors(tree, tipNos))
-  lca <- max(ancestry[duplicated(ancestry)])
+  ancestryTable <- table(ancestry)
+  lca <- max(as.integer(names(ancestryTable[ancestryTable == length(outgroupTips)])))
   Renumber(root(tree, Descendants(tree, lca)[[1]], resolve.root = TRUE))
 }
 
