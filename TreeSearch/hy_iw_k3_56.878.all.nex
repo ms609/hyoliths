@@ -1,0 +1,122 @@
+#NEXUS
+[R-package APE, Sat Jun 09 01:47:06 2018]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 48;
+	TAXLABELS
+		Namacalathus
+		Haplophrentis_carinatus
+		Pedunculotheca_diania
+		Cotyledion_tylodes
+		Loxosomella
+		Flustra
+		Amathia
+		Novocrania
+		Pelagodiscus_atlanticus
+		Lingula
+		Terebratulina
+		Phoronis
+		Sipunculus
+		Serpula
+		Tonicella
+		Dentalium
+		Wiwaxia_corrugata
+		Halkieria_evangelista
+		Dailyatia
+		Acanthotretella_spinosa
+		Alisina
+		Askepasma_toddense
+		Micromitra
+		Antigonambonites_planus
+		Botsfordia
+		Clupeafumosus_socialis
+		Coolinia_pecten
+		Craniops
+		Eccentrotheca
+		Eoobolus
+		Gasconsia
+		Glyptoria
+		Heliomedusa_orienta
+		Kutorgina_chengjiangensis
+		Lingulosacculus
+		Lingulellotreta_malongensis
+		Longtancunella_chengjiangensis
+		Micrina
+		Mickwitzia_muralensis
+		Mummpikia_nuda
+		Nisusia_sulcata
+		Orthis
+		Paterimitra
+		Salanygolina
+		Siphonobolus_priscus
+		Tomteluva_perturbata
+		Ussunia
+		Yuganotheca_elegans
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Namacalathus,
+		2	Haplophrentis_carinatus,
+		3	Pedunculotheca_diania,
+		4	Cotyledion_tylodes,
+		5	Loxosomella,
+		6	Flustra,
+		7	Amathia,
+		8	Novocrania,
+		9	Pelagodiscus_atlanticus,
+		10	Lingula,
+		11	Terebratulina,
+		12	Phoronis,
+		13	Sipunculus,
+		14	Serpula,
+		15	Tonicella,
+		16	Dentalium,
+		17	Wiwaxia_corrugata,
+		18	Halkieria_evangelista,
+		19	Dailyatia,
+		20	Acanthotretella_spinosa,
+		21	Alisina,
+		22	Askepasma_toddense,
+		23	Micromitra,
+		24	Antigonambonites_planus,
+		25	Botsfordia,
+		26	Clupeafumosus_socialis,
+		27	Coolinia_pecten,
+		28	Craniops,
+		29	Eccentrotheca,
+		30	Eoobolus,
+		31	Gasconsia,
+		32	Glyptoria,
+		33	Heliomedusa_orienta,
+		34	Kutorgina_chengjiangensis,
+		35	Lingulosacculus,
+		36	Lingulellotreta_malongensis,
+		37	Longtancunella_chengjiangensis,
+		38	Micrina,
+		39	Mickwitzia_muralensis,
+		40	Mummpikia_nuda,
+		41	Nisusia_sulcata,
+		42	Orthis,
+		43	Paterimitra,
+		44	Salanygolina,
+		45	Siphonobolus_priscus,
+		46	Tomteluva_perturbata,
+		47	Ussunia,
+		48	Yuganotheca_elegans
+	;
+	TREE * UNTITLED = [&R] (6,(7,((29,((4,(1,12)),((43,(18,19)),(39,((33,22),(38,((((3,2),(31,(47,(28,8)))),((44,(46,48)),((24,27),(34,(41,(32,(37,(21,(11,42))))))))),(23,(9,((10,36),(((35,26),(25,(30,40))),(45,20)))))))))))),(5,((15,(16,17)),(14,13))))));
+	TREE * UNTITLED = [&R] (6,(7,(((29,(4,(12,1))),((43,(19,18)),(39,((22,33),(38,((23,(9,((((35,26),(25,(40,30))),(20,45)),(36,10)))),(((2,3),(31,(47,(8,28)))),(((27,24),(34,(41,(32,(37,(21,(42,11))))))),(44,(48,46)))))))))),(5,((15,(17,16)),(13,14))))));
+	TREE * UNTITLED = [&R] (6,(7,((29,((4,(1,12)),((43,(19,18)),(39,((22,33),(38,((((2,3),(31,(47,(8,28)))),(((27,24),(34,(41,(32,(37,(21,(42,11))))))),(44,(48,46)))),(23,(9,((36,10),(((26,35),(25,(40,30))),(20,45)))))))))))),(5,((15,(16,17)),(13,14))))));
+	TREE * UNTITLED = [&R] (6,(7,(((4,(29,(12,1))),((43,(19,18)),(39,((22,33),(38,((23,(9,((36,10),(((26,35),(25,(30,40))),(20,45))))),(((2,3),(31,(47,(8,28)))),((44,(48,46)),((27,24),(34,(41,(32,(37,(21,(42,11))))))))))))))),(5,((15,(17,16)),(13,14))))));
+	TREE * UNTITLED = [&R] (6,(7,(((29,(4,(1,12))),((43,(18,19)),(39,((33,22),(38,((((3,2),(31,(47,(28,8)))),((44,(46,48)),((24,27),(34,(41,(32,(37,(21,(42,11))))))))),(23,(9,((10,36),(((26,35),(25,(30,40))),(45,20))))))))))),(5,((15,(16,17)),(14,13))))));
+	TREE * UNTITLED = [&R] (6,(7,((29,((4,(12,1)),((43,(18,19)),(39,((33,22),(38,((((3,2),(31,(47,(28,8)))),(((24,27),(34,(41,(32,(37,(21,(11,42))))))),(44,(46,48)))),(23,(9,((((26,35),(25,(30,40))),(45,20)),(10,36))))))))))),(5,((15,(16,17)),(14,13))))));
+	TREE * UNTITLED = [&R] (6,(7,((29,((4,(12,1)),((43,(19,18)),(39,((22,33),(38,((((2,3),(31,(47,(8,28)))),((44,(48,46)),((27,24),(34,(41,(32,(37,(21,(11,42))))))))),(23,(9,((36,10),(((26,35),(25,(40,30))),(20,45)))))))))))),(5,((15,(17,16)),(13,14))))));
+	TREE * UNTITLED = [&R] (6,(7,((((29,4),(12,1)),((43,(19,18)),(39,((22,33),(38,((((2,3),(31,(47,(8,28)))),((44,(48,46)),((27,24),(34,(41,(32,(37,(21,(42,11))))))))),(23,(9,((36,10),(((26,35),(25,(40,30))),(20,45))))))))))),(5,((15,(17,16)),(13,14))))));
+	TREE * UNTITLED = [&R] (6,(7,(((4,(29,(12,1))),((43,(19,18)),(39,((22,33),(38,((((2,3),(31,(47,(8,28)))),((44,(48,46)),((27,24),(34,(41,(32,(37,(21,(42,11))))))))),(23,(9,((36,10),(((26,35),(25,(40,30))),(20,45))))))))))),(5,((15,(17,16)),(13,14))))));
+	TREE * UNTITLED = [&R] (6,(7,(((4,(29,(12,1))),((43,(19,18)),(39,((22,33),(38,((((31,(47,(8,28))),(2,3)),((44,(48,46)),((27,24),(34,(41,(32,(37,(21,(42,11))))))))),(23,(9,((36,10),(((26,35),(25,(40,30))),(20,45))))))))))),(5,((14,13),(15,(16,17)))))));
+	TREE * UNTITLED = [&R] (6,(7,((((29,4),(1,12)),((43,(18,19)),(39,((33,22),(38,((((3,2),(31,(47,(28,8)))),((44,(46,48)),((34,(41,(32,(37,(21,(11,42)))))),(24,27)))),(23,(9,((10,36),(((35,26),(25,(30,40))),(45,20))))))))))),(5,((15,(16,17)),(14,13))))));
+	TREE * UNTITLED = [&R] (6,(7,((((4,29),(12,1)),((43,(19,18)),(39,((38,((((2,3),(31,(47,(8,28)))),((44,(48,46)),((27,24),(34,(41,(32,(37,(21,(42,11))))))))),(23,(9,((((26,35),(25,(30,40))),(20,45)),(10,36)))))),(22,33))))),(5,((15,(17,16)),(13,14))))));
+	TREE * UNTITLED = [&R] (6,(7,(((4,(29,(12,1))),((43,(19,18)),(39,((22,33),(38,((((2,3),(31,(47,(8,28)))),(((27,24),(34,(41,(32,(37,(21,(42,11))))))),(44,(48,46)))),(23,(9,((((35,26),(25,(40,30))),(20,45)),(10,36)))))))))),(5,((15,(17,16)),(13,14))))));
+	TREE * UNTITLED = [&R] (6,(7,(((29,(4,(1,12))),((43,(18,19)),(39,((33,22),(38,((((3,2),(31,(47,(28,8)))),((44,(46,48)),((24,27),(34,(41,(32,(37,(21,(11,42))))))))),(23,(9,((10,36),(((35,26),(25,(30,40))),(45,20))))))))))),(5,((15,(17,16)),(14,13))))));
+END;
