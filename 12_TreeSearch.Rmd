@@ -202,7 +202,7 @@ ColPlot(RootTree(consensus(ew.trees), rootingTips))
 
 ```{R treesearch-equal-weights-pruned-consensus, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE}
 omit <- c("Micrina", 'Mickwitzia_muralensis', 'Heliomedusa_orienta')
-ColPlot(ConsensusWithout(ew.trees, omit))
+ColPlot(RootTree(ConsensusWithout(ew.trees, omit), rootingTips))
 ColMissing(omit)
 ```
 
