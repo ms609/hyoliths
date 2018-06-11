@@ -12,7 +12,7 @@ Italicize <- function (string) {
                                       'Lochkothele', 'Loxosoma', 'Loxosomatoides',
                                       'Magelona', 'Membranipora', 'Mopalia',
                                       'Nereis', 'Neocrania', 'Notosaria',
-                                      'Oikozetetes',
+                                      'Neoancistrocrania', 'Oikozetetes',
                                       'Paracraniops', 'Paramicrocornus',
                                       'Phascolion', 'Phoronopsis', 'Scolelepis',
                                       'Terebratalia', 'Themiste', 'Tubulipora',
