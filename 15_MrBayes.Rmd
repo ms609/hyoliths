@@ -11,7 +11,7 @@ date: "`r Sys.Date()`"
 files <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
 Mgen <- 5
 ```
-```{R mrbayes-load-trees, echo=FALSE, eval=FALSE}
+```{R mrbayes-load-trees, echo=FALSE}
 bayesTrees <- lapply(files, read.nexus)
 nTrees <- length(bayesTrees[[1]])
 postBurnin <- lapply(bayesTrees, function (x) x[ceiling(nTrees * 0.1):nTrees])
@@ -60,7 +60,7 @@ A posterior tree topology was derived from the combined posterior sample of all 
 
 ## Parameter estimates
 
-```{R mrbayes-parameter-summary, echo=FALSE, asis=TRUE, eval=FALSE}
+```{R mrbayes-parameter-summary, echo=FALSE, asis=TRUE}
 pstat <- read.table('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]
 pstat[, 2:5] <- signif(pstat[, 2:5], 3)
 pstat[, 6] <- signif(pstat[, 6], 5)
@@ -69,7 +69,7 @@ knitr::kable(pstat)
 
 ## Results
 
-```{R mrbayes-full-consensus, fig.width=6, fig.height=4.5, fig.cap="Results of Bayesian analysis, posterior probability > 50%, all taxa", echo=FALSE, eval=FALSE}
+```{R mrbayes-full-consensus, fig.width=6, fig.height=4.5, fig.cap="Results of Bayesian analysis, posterior probability > 50%, all taxa", echo=FALSE}
 omit <- c("none")
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
@@ -81,14 +81,15 @@ ColPlot(UnitEdges(root(consensus(thinned, p=0.5), outgroup, resolve.root=TRUE)))
 #ColMissing(omit)
 ```
 
-```{R mrbayes-pruned-consensus, fig.width=7.1, fig.height=4.2, fig.cap="Results of Bayesian analysis, posterior probability > 50%, wildcard taxa pruned", echo=FALSE, eval=FALSE}
-omit <- c(
-  'Lingulosacculus', 'Mummpikia_nuda', 'Lingulellotreta_malongensis', 
-  'Clupeafumosus_socialis', #'Siphonobolus_priscus',
-  'Micrina', 'Heliomedusa_orienta', 'Mickwitzia_muralensis',
-  'Tomteluva_perturbata', 'Yuganotheca_elegans',
-  'Nisusia_sulcata', 'Kutorgina_chengjiangensis'
-  )
+```{R mrbayes-pruned-consensus, fig.width=7.1, fig.height=4.2, fig.cap="Results of Bayesian analysis, posterior probability > 50%, wildcard taxa pruned", echo=FALSE}
+#omit <- c(
+#  'Lingulosacculus', 'Mummpikia_nuda', 'Lingulellotreta_malongensis', 
+#  'Clupeafumosus_socialis', #'Siphonobolus_priscus',
+#  'Micrina', 'Heliomedusa_orienta', 'Mickwitzia_muralensis',
+#  'Tomteluva_perturbata', 'Yuganotheca_elegans',
+#  'Nisusia_sulcata', 'Kutorgina_chengjiangensis'
+#  )
+omit <- c('Paterimitra', 'Micrina', 'Ussunia')
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[2]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
