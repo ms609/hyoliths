@@ -25,7 +25,7 @@
 <meta name="author" content="Haijing Sun, Martin R. Smith, Han Zeng, Fangchen Zhao, Guoxiang Li and Maoyan Zhu">
 
 
-<meta name="date" content="2018-06-11">
+<meta name="date" content="2018-06-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -255,7 +255,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-differentiated-1"><i class="fa fa-check"></i>[101] Posterior surface: Differentiated</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-margin-growth-direction"><i class="fa fa-check"></i>[102] Posterior margin growth direction</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-planar"><i class="fa fa-check"></i>[103] Posterior surface: Planar</a></li>
-<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#apertural-ligular-extension-of-conical-shell"><i class="fa fa-check"></i>[104] apertural ligular extension of conical shell</a></li>
+<li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#ligula"><i class="fa fa-check"></i>[104] Ligula</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-extent"><i class="fa fa-check"></i>[105] Posterior surface: Extent</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium"><i class="fa fa-check"></i>[106] Posterior surface: Delthyrium</a></li>
 <li class="chapter" data-level="" data-path="reconstructions.html"><a href="reconstructions.html#posterior-surface-delthyrium-shape"><i class="fa fa-check"></i>[107] Posterior surface: Delthyrium: Shape</a></li>
@@ -460,7 +460,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </blockquote>
 <p>Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model <span class="citation">(Rannala, Zhu, &amp; Yang, <a href="#ref-Rannala2012">2012</a>)</span>, but requires a prior mean tree length within about two orders of magnitude of the true value <span class="citation">(C. Zhang, Rannala, &amp; Yang, <a href="#ref-Zhang2012">2012</a>)</span>. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with <span class="math inline">\(\alpha_T = 1\)</span>, <span class="math inline">\(\beta_T = 1/(\)</span><em>equal weights tree length</em><span class="math inline">\(/\)</span><em>number of characters</em><span class="math inline">\()\)</span>, <span class="math inline">\(\alpha = c = 1\)</span>:</p>
 <blockquote>
-<p>prset brlenspr = unconstrained: gammadir(1, 0.36, 1, 1);</p>
+<p>prset brlenspr = unconstrained: gammadir(1, 0.35, 1, 1);</p>
 </blockquote>
 <p>Neomorphic and transformational characters <span class="citation">(<em>sensu</em> Sereno, <a href="#ref-Sereno2007">2007</a>)</span> were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:</p>
 <blockquote>
