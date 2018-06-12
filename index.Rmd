@@ -44,7 +44,8 @@ filename <- files[which.max(vapply(files, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(filename)
 #ignored_taxa <- c('Conotheca', 'Decoritheca', 'Maxilites', 'Pauxillites',
 #                  'Probactrotheca') # Also manually update tnt.run with with taxcode-
-ignored_taxa <- character(0)
+ignored_taxa <- c('Decoritheca')
+#ignored_taxa <- character(0)
 my_data[ignored_taxa] <- NULL
 
 # my_data contains an inapplicable state that we should convert to ambiguous for 
