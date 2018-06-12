@@ -46,6 +46,14 @@ tnTrees <- lapply(tnTrees, function (x) lapply(x, drop.tip, ignored_taxa))
 tnConsensi <- lapply(tnTrees, consensus)
 ```
 
+```{R tnt-iw-overview, echo=FALSE}
+omit <- c("Micrina", "Micromitra",
+          "Longtancunella_chengjiangensis", "Yuganotheca_elegans",
+          "Salanygolina", "Askepasma_toddense", "Tomteluva_perturbata")
+ColPlot(RootTree(ConsensusWithout(tnConsensi, omit), rootingTips))
+ColMissing(omit)
+```
+
 (ref:tnt-iw-results) Strict consensus of all trees recovered by TNT using Fitch parsimony with implied weighting
 
 (ref:tnt-iw-explanation) The consensus of all implied weights runs is not very well resolved, largely due to a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa.
