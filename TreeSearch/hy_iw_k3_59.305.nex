@@ -1,0 +1,121 @@
+#NEXUS
+[R-package APE, Tue Jun 12 02:56:24 2018]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 54;
+	TAXLABELS
+		Namacalathus
+		Conotheca
+		Decoritheca
+		Haplophrentis_carinatus
+		Maxilites
+		Paramicrocornus
+		Pauxillites
+		Pedunculotheca_diania
+		Probactrotheca
+		Cotyledion_tylodes
+		Loxosomella
+		Flustra
+		Amathia
+		Novocrania
+		Pelagodiscus_atlanticus
+		Lingula
+		Terebratulina
+		Phoronis
+		Sipunculus
+		Serpula
+		Tonicella
+		Dentalium
+		Wiwaxia_corrugata
+		Halkieria_evangelista
+		Dailyatia
+		Acanthotretella_spinosa
+		Alisina
+		Askepasma_toddense
+		Micromitra
+		Antigonambonites_planus
+		Botsfordia
+		Clupeafumosus_socialis
+		Coolinia_pecten
+		Craniops
+		Eccentrotheca
+		Eoobolus
+		Gasconsia
+		Glyptoria
+		Heliomedusa_orienta
+		Kutorgina_chengjiangensis
+		Lingulosacculus
+		Lingulellotreta_malongensis
+		Longtancunella_chengjiangensis
+		Micrina
+		Mickwitzia_muralensis
+		Mummpikia_nuda
+		Nisusia_sulcata
+		Orthis
+		Paterimitra
+		Salanygolina
+		Siphonobolus_priscus
+		Tomteluva_perturbata
+		Ussunia
+		Yuganotheca_elegans
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Namacalathus,
+		2	Conotheca,
+		3	Decoritheca,
+		4	Haplophrentis_carinatus,
+		5	Maxilites,
+		6	Paramicrocornus,
+		7	Pauxillites,
+		8	Pedunculotheca_diania,
+		9	Probactrotheca,
+		10	Cotyledion_tylodes,
+		11	Loxosomella,
+		12	Flustra,
+		13	Amathia,
+		14	Novocrania,
+		15	Pelagodiscus_atlanticus,
+		16	Lingula,
+		17	Terebratulina,
+		18	Phoronis,
+		19	Sipunculus,
+		20	Serpula,
+		21	Tonicella,
+		22	Dentalium,
+		23	Wiwaxia_corrugata,
+		24	Halkieria_evangelista,
+		25	Dailyatia,
+		26	Acanthotretella_spinosa,
+		27	Alisina,
+		28	Askepasma_toddense,
+		29	Micromitra,
+		30	Antigonambonites_planus,
+		31	Botsfordia,
+		32	Clupeafumosus_socialis,
+		33	Coolinia_pecten,
+		34	Craniops,
+		35	Eccentrotheca,
+		36	Eoobolus,
+		37	Gasconsia,
+		38	Glyptoria,
+		39	Heliomedusa_orienta,
+		40	Kutorgina_chengjiangensis,
+		41	Lingulosacculus,
+		42	Lingulellotreta_malongensis,
+		43	Longtancunella_chengjiangensis,
+		44	Micrina,
+		45	Mickwitzia_muralensis,
+		46	Mummpikia_nuda,
+		47	Nisusia_sulcata,
+		48	Orthis,
+		49	Paterimitra,
+		50	Salanygolina,
+		51	Siphonobolus_priscus,
+		52	Tomteluva_perturbata,
+		53	Ussunia,
+		54	Yuganotheca_elegans
+	;
+	TREE * UNTITLED = [&R] (12,(13,(((((2,(4,(6,(5,7)))),(9,3)),((35,(10,(18,1))),(24,25))),(8,(49,((39,44),((28,(((40,(47,(38,(43,(27,(48,17)))))),(33,30)),(50,(54,52)))),((29,(37,(53,(14,34)))),((45,15),(((41,(32,(26,51))),(16,42)),(36,(31,46)))))))))),(11,((20,19),(21,(22,23)))))));
+END;
