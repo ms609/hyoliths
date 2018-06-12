@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-12 08.11.06 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-12 11.01.01 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=54;
@@ -1672,7 +1672,7 @@ BEGIN NOTES;
 	TEXT TAXON=39 CHARACTER=16 TEXT='Throughout the shell -- see Williams et al. 2007 -- causing the pustulose appearance remarked upon by Chen et al. 2007';
 	TEXT TAXON=42 CHARACTER=16 TEXT='At margin of shell [@Zhang2005]';
 	TEXT TAXON=21 CHARACTER=16 TEXT='Uniformly distributed around girdle (though not within shell) with no serial repetition [@Vinther2005;@Leise1988].';
-	TEXT TAXON=44 CHARACTER=24 TEXT='The prominent foramen between artificially articulated valves is taken to imply the presence of a pedicle [@Holmer2008Theearly]';
+	TEXT TAXON=44 CHARACTER=24 TEXT='The prominent foramen between artificially articulated valves is taken to imply the presence of a pedicle [@Holmer2008TheEarly]';
 	TEXT TAXON=49 CHARACTER=24 TEXT='"Paterimitra is interpreted to have attached to hard substrates via a pedicle that emerged through the small posterior opening" -- Skovsted et al. 2009';
 	TEXT TAXON=1 CHARACTER=24 TEXT='There is no obvious way to homologise the attachment structure with the ventral pedicle of brachiopods.';
 	TEXT TAXON=41 CHARACTER=24 TEXT='The absence of a pedicle is inferred from the absence of an internal pedicle tube, and the absence of a pedicle at the hinge.';
@@ -2138,7 +2138,7 @@ BEGIN NOTES;
 	TEXT TAXON=30 CHARACTER=133 TEXT='Scored absent in data matrix of Benedetto (2009).';
 	TEXT TAXON=48 CHARACTER=133 TEXT='Scored absent (in Eoorthis) in data matrix of Benedetto (2009).';
 	TEXT TAXON=38 CHARACTER=133 TEXT='Scored absent in data matrix of Benedetto (2009).';
-	TEXT TAXON=6 CHARACTER=133 TEXT='Coded following helen microstructure described in the similar material of Hyolithes [@MartiMus2007]';
+	TEXT TAXON=6 CHARACTER=133 TEXT='Coded following helen microstructure described in the similar material of ''Hyolithes'' [@MartiMus2007]';
 	TEXT TAXON=3 CHARACTER=133 TEXT='Taxon known only from moulds [@Valent2012]';
 	TEXT TAXON=7 CHARACTER=133 TEXT='Absent [@Zhang2018Ahyolithid]';
 	TEXT TAXON=33 CHARACTER=105 TEXT='See fig. 485 in Williams et al. 2000';
