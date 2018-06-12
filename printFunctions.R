@@ -10,6 +10,7 @@ Italicize <- function (string) {
                                       'Galeolaria', 'Glottidia', 'Gompholites',
                                       'Gryphus',
                                       'Hadrotreta', 'Harmothoe', 'Hydroides',
+                                      'Hyolithes',
                                       'Ischnochiton', 'Kraussina', 'Lingulella',
                                       'Lochkothele', 'Loxosoma', 'Loxosomatoides',
                                       'Magelona', 'Membranipora', 'Mopalia',
