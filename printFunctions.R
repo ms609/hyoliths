@@ -7,7 +7,8 @@ Italicize <- function (string) {
                                       'Disoma', 'Discinisca',
                                       'Eichwaldia', 'Electra', 'Enchytraeus',
                                       'Equisetum', 'Eoorthis', 'Fredericella',
-                                      'Galeolaria', 'Glottidia', 'Gryphus',
+                                      'Galeolaria', 'Glottidia', 'Gompholites',
+                                      'Gryphus',
                                       'Hadrotreta', 'Harmothoe', 'Hydroides',
                                       'Ischnochiton', 'Kraussina', 'Lingulella',
                                       'Lochkothele', 'Loxosoma', 'Loxosomatoides',
@@ -50,5 +51,8 @@ PrintNaughtyInapplicables <- function (states) {
   if (any(states == '-'))
     cat("  \n Oh dear! <mark>**You included the inapplicable token in a neomorphic character!**</mark>",
         "  \n That's really very naughty, as @Brazeau2018 will tell you.",
-        "  \n Unless you are very sure that you understand the consequences, you should re-code  \n\n - ", paste(names(states[states == '-']), collapse="  \n - "))
+        "  \n Unless you are very sure that you understand the consequences, ",
+        "you should mark the character as Transformational by setting State 0 to",
+        "`[Transformational character]`, or re-code: \n\n - ",
+        paste(names(states[states == '-']), collapse="  \n - "))
 }
