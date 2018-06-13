@@ -62,8 +62,23 @@ tnConsensi <- lapply(tnTrees, consensus)
 omit <- c("Micrina", "Micromitra",
           "Longtancunella_chengjiangensis",# "Yuganotheca_elegans",
           "Salanygolina", "Askepasma_toddense")#, "Tomteluva_perturbata")
-ColPlot(RootTree(ConsensusWithout(tnConsensi, omit), rootingTips))
+majCon <- RootTree(ConsensusWithout(tnConsensi, omit, p=0.5), rootingTips)
+ColPlot(majCon)
 ColMissing(omit)
+
+source('treeFunctions.R')
+tnFlattened <- list()
+for (i in seq_along(tnTrees)) {
+  tnFlattened <- c(tnFlattened, tnTrees[[i]])
+}
+tnFlattened <- lapply(tnFlattened, drop.tip, omit)
+tipIndex <- sort(tnFlattened[[1]]$tip.label)
+tnSplits <- GetSplits(tnFlattened, tipIndex)
+
+supporters <- SplitSupport(majCon, tnSplits, tipIndex)
+nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
+           col=NodeColour(round(supporters / length(tnFlattened), 2)),
+           adj=0, pos=2, frame='none', cex=0.75)
 ```
 
 (ref:tnt-iw-results) Strict consensus of all trees recovered by TNT using Fitch parsimony with implied weighting
@@ -113,9 +128,9 @@ TNTText2Tree <- function (treeText) {
   read.tree(text = gsub(", )", ")", treeText, fixed = TRUE))
 }
 
-tntEw <- list.files('TNT/', pattern='ew\\.tre', full=TRUE)
+tntEw <- list.files('./TNT/', pattern='ew\\.tre', full=TRUE)
 tntEwTrees <- ReadTntTree(tntEw, relativePath='.')
-jackFile <- file('TNT/ew.sym')
+jackFile <- file('./TNT/ew.sym')
 on.exit(close(jackFile))
 jackLines <- readLines(jackFile)
 jackTree <- TNTText2Tree(jackLines[3])
@@ -128,7 +143,11 @@ jackScores <- trimws(gsub("ttag \\+\\d+ (.*); *", "\\1", jackLines[length(jackLi
 jackFreq <- gsub("^(\\d+)/.*", "\\1", jackScores)
 jackGC   <- gsub("^\\d+/(\\[?\\d+\\]?)$", "\\1", jackScores)
 ColPlot(jackTree)
-nodelabels(paste0(c('', jackFreq[order(jackNodeOrder)]), "\n"), frame='n', cex=0.7, pos=2)
+nodeScores <- as.integer(jackFreq[order(jackNodeOrder)])
+nodelabels(paste0(c('', nodeScores), "\n"),
+           col=c('black', NodeColour(nodeScores / 200L + 0.5)),
+           adj=0, pos=2, frame='none', cex=0.75)
+
 #omit <- c("Micrina", "Mickwitzia_muralensis")
 #ColPlot(RootTree(ConsensusWithout(tntEwTrees, omit), rootingTips))
 #ColMissing(omit)
