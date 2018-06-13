@@ -61,6 +61,8 @@ taxonColour <- c(
   Pauxillites                     = '#444444',
   Bactrotheca                     = '#777777',
   Conotheca                       = '#777777',
+  Cupitheca_holocyclata           = '#777777',
+  Cupitheca                       = '#777777',
   Tomteluva_perturbata            = 'grey',
   Tomteluva                       = 'grey',
   Salanygolina                    = pal[9],
