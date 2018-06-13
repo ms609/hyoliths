@@ -154,7 +154,7 @@ ColMissing(omit)
 
 (ref:ts-iw-cons) Strict consensus of implied weights analyses at all values of _k_. Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
 
-```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE}
+```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE, eval=FALSE}
 if (length(iw.exist) > 0) {
   ColPlot(ConsensusWithout(lapply(iw.exist, consensus), omit))
   ColMissing(omit)
