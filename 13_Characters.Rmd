@@ -407,7 +407,7 @@ for (i in seq_len(n_char)) {
       naughtyNodes <- if (length(dudSteps) > 0) {
         paste0('<circle cx="', nodeXi[dudSteps], '" cy="', nodeYi[dudSteps],
                '"/><text x="', nodeXi[dudSteps] - textY, '" y="', nodeYi[dudSteps] + textY,
-               '" class="dud-step">Erroneous Fitch step</text>')
+               '" class="dud-step">Nonsensical Fitch step</text>')
       } else { '' }
                   
       svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
