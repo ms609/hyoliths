@@ -380,8 +380,8 @@ for (i in seq_len(n_char)) {
         fitchNote1 <- fitchNote2 <- ''
       } else {
         fitchNote1 <- paste0(' (<tspan class="score fitch">', fitch_states$score,
-                             '</tspan> with Fitch)')),
-        fitchNote2 <- ' (not counted by Fitch)',
+                             '</tspan> with Fitch)')
+        fitchNote2 <- ' (not counted by Fitch)'
       }
       ciCaption <- paste0('<text x="', svgWidth - 4L,
                    '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
