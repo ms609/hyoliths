@@ -1,6 +1,6 @@
 #NEXUS
 
-[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-13 08.11.33 ]
+[ File output by Morphobank v3.0 (http://www.morphobank.org); 2018-06-13 08.31.43 ]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX=55;
@@ -1351,12 +1351,12 @@ BEGIN CHARACTERS;
 	'Namacalathus'		                            ?????????0----0--0?00???0--00---00-00-?????????????????????????00-00-0----0-0000-0--000--0000--000000---0-00-0------00-00--003?0-3111110000????1??????????????????????????????????????????????????????????????????????????????????
 	'Decoritheca'		                             1411(1,2)00-0???????????????0--00---0??????????????????????????????1120011?1??0-0001????????11?00--00?1???11?21020------00-0022104?0?????????00???????????????????????????????????????????????????????????????????????????????????????
 	'Cupitheca holocyclata'		                   1121100-0?????????????-?0--00---00-00-?????????????????????????1120011111-0-00??????????11000--001?00-110-00-0------0130022004?0?22---10000????0??????????????????????????????????????????????????????????????????????????????????
-	'Bactrotheca'		                             1321100-0???????????????0-------0??????????????????????????????1120011111-0-000?????????11(0,1)00--000100-110-0020------0???01-004?0?????????00???????????????????????????????????????????????????????????????????????????????????????
+	'Bactrotheca'		                             1321100-0???????????????0--00---0??????????????????????????????1120011?11-0-000?????????11(0,1)00--000100-110-0020------0???01-004?0?????????00???????????????????????????????????????????????????????????????????????????????????????
 	'Conotheca'		                               1321100-0???????????????0--00---0????????????????????????0?02?11120011111-0-0001????????11(0,1)00--000100-110-0020------00-001-004?0?????????00???????????????????????????????????????????????????????????????????????????????????????
 	'Haplophrentis carinatus'		                 1321100-00----0--00001?00--00---??????1?1?0??????12?10???0?0212111011111220-0001?0(1,2)?????11100--001101111121120------00-0022004?0?????????00????0??????????????????????????????????????????????????????????????????????????????????
 	'Maxilites'		                               ????????????????????????0--00---0??????????????????????????????111011111230-0001?02?????11100--001111111120120------00-001-104?0?1111100000???????????????????????????????????????????????????????????????????????????????????????
 	'Paramicrocornus'		                         ????????????????????????0--00---00-00-?????????????????????????1120011?1220-000?????????11000--001101111121120------00-001-004?0?22---10000???????????????????????????????????????????????????????????????????????????????????????
-	'Pauxillites'		                             1411(1,2)00-0???????????????0--00---0??????????????????????????????111011111220-000?????????11100--001111211121120------00-001-004?0?????????00???????????????????????????????????????????????????????????????????????????????????????
+	'Pauxillites'		                             1411(1,2)00-0????????????????--00---0??????????????????????????????111011111220-000?????????11?00--001111211121120------00-001-004?0?????????00???????????????????????????????????????????????????????????????????????????????????????
 	'Pedunculotheca diania'		                   11{1,2}1100-0???????????????11201222???????????????????????????02??1120011211-0-0001????????11{0,1}00--00110??11(1,0)21020------01?(1,0)022004?0?????????00???????????????????????????????????????????????????????????????????????????????????????
 	'Cotyledion tylodes'		                      ?????????0----0--000{0,1}??0{1,0}--00---?0-00-1?1?0??????2?000???0?022-10100-0----0-0000-0--000--0000--000000---0-00-0------00-002100(3,4,2)?0{1,2}????????0????????????????????????????????????????????????????????????????????????????????????????
 	'Loxosomella'		                             0----00-00----0--00010200--00---00-00-121000?10012200000100032-00-00-0----0-0000-0--000--0000--000000---0-00-0------00-00--00--0------0000010001220?114011?0021221122110211011130211-100100010101211220--000101110012(0,1)102101111221
@@ -1516,7 +1516,7 @@ BEGIN NOTES;
 	TEXT CHARACTER=95 TEXT='A notothyrium may be open or covered by a chilidium or two chilidial plates.^nNo included taxa exhibit more than one chilidial plate.^nTransformational as it is not self-evident whether the ancestral taxon had an open or closed notothyrium.';
 	TEXT CHARACTER=96 TEXT='After Bassett et al. (2001) character 12.^nThe presence or absence of a notothyrial platform, which often serves as an attachment point for the diductors in a similar fashion to the cardinal processes, is independent of the presence of a notothyrium.';
 	TEXT CHARACTER=97 TEXT='The dorsal valve of many taxa is exhibits a septum or process (or myophragm) along the medial line.  See character 25 in Benedetto (2009).';
-	TEXT CHARACTER=98 TEXT='The hyolithid operculum is divided into a cardinal and conical shield [@Zhang2018Ahyolithid]. See Marti Mus (2005) for a diagram.^n^nWith no obvious sites for muscle attachment, the shields are unlikely to be homologous to the notothyrial platform.  ';
+	TEXT CHARACTER=98 TEXT='The hyolithid operculum is divided into a cardinal and conical shield [@Zhang2018Ahyolithid], separated by furrows corresponding to the position of the helens. See @Marek1976 (fig. 2) or @MartiMus2005 (fig. 1) for schematic.^n^nWith no obvious sites for muscle attachment, the shields are unlikely to be homologous to the notothyrial platform.  ';
 	TEXT CHARACTER=99 TEXT='After Bassett et al. (2001) character 13.  See @MartiMus2005 for an illustration.^nCardinal processes are unlikely to be homologous with the notothyrial platform, even if their function is similar.';
 	TEXT CHARACTER=100 TEXT='Radially arranged teeth, separated by furrows, adorn the cardinal margin of the operculum of certain hyolithids [@Marek1963].  The absence of corresponding tooth sockets indicates that they do not serve to articulate the valves; @Marek1967 does not consider the teeth to be homologous with brachiopod cardinal teeth.';
 	TEXT CHARACTER=101 TEXT='Prominent symmetrical ridges on the inner surface of the hyolith operculum';
@@ -1526,7 +1526,7 @@ BEGIN NOTES;
 	TEXT CHARACTER=105 TEXT='In shells that grow by mixoperipheral growth, the triangular area subtended between each apex and the posterior ends of the lateral margins is termed the cardinal area.  In shells with holoperipheral growth, a flattened surface on the posterior margin of the valve is termed a pseudointerarea (paraphrasing Williams et al. 1997).^n^nIn order for this character to be independent of a shell''s growth direction, we do not distinguish between a "cardinal area", "interarea" or "pseudointerarea".^n';
 	TEXT CHARACTER=106 TEXT='Balthasar (2008) notes an inward-growing posterior margin of the pseudointerarea as potentially linking Mummpikia with the linguliform brachiopods.^n^nCoded as inapplicable in taxa without a differentiated posterior margin: the posterior margin can only grow inwards if it is differentiated from the anterior margin; else the entire shell would grow in on itself.';
 	TEXT CHARACTER=107 TEXT='It is possible for a cardinal area or pseudointerarea to be distinct from the anterior part of the shell, yet to remain curved in lateral profile.^n^nTaking an undifferentiated posterior margin as primitive, the primitive condition is curved -- flattening of the posterior margin represents an additional modification that can only occur once the posterior margin is differentiated.^n^nA flat and triangular interarea links Mummpikia with the Obolellidae (Balthasar 2008) -- but all included taxa have triangular interareas, so this is not listed as a separate character.^n';
-	TEXT CHARACTER=108 TEXT='The aperture of many hyolithid hyoliths is characterised by a ligula, a tongue-like protruding shelf on the functionally ventral surface of conical shell (Marti Mus and Bergstrom, 2005).  This can be recognized by an acute angle in the lateral profile of the commissure [see second figure on p. 91 of @Marek1966].  No brachiopods display an equivalent feature.';
+	TEXT CHARACTER=108 TEXT='The aperture of many hyolithid hyoliths is characterised by a ligula, a tongue-like protruding shelf on the functionally ventral surface of conical shell [@MartiMus2005].  This can be recognized by an acute angle in the lateral profile of the commissure [see second figure on p. 91 of @Marek1966].  No brachiopods display an equivalent feature.';
 	TEXT CHARACTER=109 TEXT='Distinguishes taxa whose ventral valve is essentially flat from those that are essentially conical';
 	TEXT CHARACTER=110 TEXT='A delthyrium is an opening in an interarea or pseudointerarea that accommodates the pedicle, and may be filled with plates.^n^nThe homology of the pedicle in the pseudointerarea of obolellids and botsfordiids with the umbonal pedicle foramen of acrotretids was proposed by Popov (1992), and seemingly corroborated by observations of Ushatinskaya & Korovnikov (2016R), who note that the propareas of the Botsfordia ventral valve sometimes merge to form an elongate teardrop-shaped pedicle foramen.^n';
 	TEXT CHARACTER=111 TEXT='A parallel-sided delthyrium links Mummpikia with the Obolellidae (Balthasar 2008).^n^nFollowing Popov (1992), the larval delthyrium of acrotretids and allied taxa is understood to be sealed in adults by outgrowths of the posterolateral margins of the shell. The resultant round or teardrop-shaped foramen corresponds the delthyrium.^n';
@@ -1720,7 +1720,7 @@ BEGIN NOTES;
 	TEXT TAXON=13 CHARACTER=25 TEXT='Grows directly onto the substrate.';
 	TEXT TAXON=20 CHARACTER=25 TEXT='Absent; there is no clear basis to homologise the larval attachment structure of certain sipunculans with a pedicle';
 	TEXT TAXON=2 CHARACTER=25 TEXT='No indication of pedicle in juvenile specimens [@Dzik1980Ontogenyof], though apex poorly known from adults [@Malinky1987]';
-	TEXT TAXON=9 CHARACTER=25 TEXT='[Reference needed: Specimens in Valent 2015 do not unambiguously show apical termination]';
+	TEXT TAXON=9 CHARACTER=25 TEXT='Uncertain: specimens in Valent 2015 do not unambiguously show apical termination';
 	TEXT TAXON=4 CHARACTER=25 TEXT='In Bactrotheca [@Dzik1980Ontogenyof], the apical end is ventrally recurved, consistent with (but not conclusively demonstrating) an attachment to the substrate.The apex of Bactrotheca deleta is pointed (Novak, 1891).';
 	TEXT TAXON=3 CHARACTER=25 TEXT='Not possible to reconcile with decollation.';
 	TEXT TAXON=48 CHARACTER=31 TEXT='A coleomic canal is inferred based on the ease with which the pedicle is deformed (Holmer et al. 2018E), but its presence is not known for certain so is coded ambiguous.';
@@ -2175,7 +2175,7 @@ BEGIN NOTES;
 	TEXT TAXON=22 CHARACTER=91 TEXT='Essentially planar, though open in aspect [following Chiton in @Schwabe2010]';
 	TEXT TAXON=5 CHARACTER=91 TEXT='Difficult to establish from material figured in @Devaere2014 due to low elevation of operculum.';
 	TEXT TAXON=7 CHARACTER=91 TEXT='Approximately planar [@Marek1972]';
-	TEXT TAXON=9 CHARACTER=91 TEXT='[Reference needed; not clear from @Marek1966]';
+	TEXT TAXON=9 CHARACTER=91 TEXT='Not clear from published material';
 	TEXT TAXON=4 CHARACTER=91 TEXT='The short aspect of the cardinal interarea [@Valent2012] makes it difficult to evaluate whether it is planar or curved.';
 	TEXT TAXON=8 CHARACTER=91 TEXT='@Zhang2018Ahyolithid';
 	TEXT TAXON=3 CHARACTER=91 TEXT='Curved [@Sun2018]';
@@ -2210,7 +2210,7 @@ BEGIN NOTES;
 	TEXT TAXON=5 CHARACTER=107 TEXT='Strongly curved in some species [@Wrona2003]';
 	TEXT TAXON=2 CHARACTER=107 TEXT='Linear [@Malinky1987]';
 	TEXT TAXON=7 CHARACTER=107 TEXT='Gently sinuous [@MartiMus2005]';
-	TEXT TAXON=9 CHARACTER=107 TEXT='Reconstructed as linear by @Malinky1987, following @Marek1976.';
+	TEXT TAXON=9 CHARACTER=107 TEXT='Reconstructed as linear by @Marek1976.';
 	TEXT TAXON=8 CHARACTER=107 TEXT='Posterior (functionally dorsal) surface is linear in adults (though slightly curving in juveniles) [@Zhang2018Ahyolithid]';
 	TEXT TAXON=45 CHARACTER=76 TEXT='The simple knob-like teeth of Micrina show no evidence of resprobtion or the hook-like shape that characterises Cyrtomatodont teeth.';
 	TEXT TAXON=41 CHARACTER=76 TEXT='"Articulation characterized by two triangular plates formed by dorsal interarea, bearing oblique ridges on the inner sides" -- Williams et al 2000, p. 211';
@@ -2408,7 +2408,7 @@ BEGIN NOTES;
 	TEXT TAXON=5 CHARACTER=122 TEXT='Both valves covered with concentric growth lines [@Devaere2014], but no further ornament [@Wrona2003]';
 	TEXT TAXON=2 CHARACTER=122 TEXT='Conical shell covered with concentric lines [@Malinky1987].';
 	TEXT TAXON=7 CHARACTER=122 TEXT='Surfaces of both valves covered with concentric growth lines [@Marek1972;@MartiMus2005]';
-	TEXT TAXON=9 CHARACTER=122 TEXT='Ventral side of ventral valve and whole dorsal valve covered with faint growth lines (Valent and Corbacho, 2015).';
+	TEXT TAXON=9 CHARACTER=122 TEXT='Ventral side of ventral valve and whole dorsal valve covered with faint growth lines [@Valent2015].';
 	TEXT TAXON=4 CHARACTER=122 TEXT='Both valves with fine growth lines only [@Valent2012].';
 	TEXT TAXON=3 CHARACTER=122 TEXT='Broad symmetric ridges in some specimens [@Vendrasco2017]';
 	TEXT TAXON=45 CHARACTER=123 TEXT='No obvious asymmetry, even if not obviously symmetric either (Holmer et al. 2008).  Coded as ambiguous.';
@@ -2690,7 +2690,7 @@ BEGIN NOTES;
 	TEXT TAXON=23 CHARACTER=66 TEXT='The scaphopod valve arises posterior of the prototroch and is thus homologous with the posterior valves of Chiton, assuming that molluscan shell fields are homologous features.';
 	TEXT TAXON=5 CHARACTER=66 TEXT='[Reference needed: not found, but does this necessarily mean that they were absent?]';
 	TEXT TAXON=2 CHARACTER=66 TEXT='[Reference needed]';
-	TEXT TAXON=9 CHARACTER=66 TEXT='Not found by @Valent2015 or @Marek1966, but reconstructed as present by @Malinky1987, based on @Marek1976.';
+	TEXT TAXON=9 CHARACTER=66 TEXT='Not found by @Valent2015 or @Marek1966, but reconstructed as present by @Marek1976.';
 	TEXT TAXON=8 CHARACTER=66 TEXT='Helens absent, with no possible insertion point [@Zhang2018Ahyolithid]';
 	TEXT TAXON=3 CHARACTER=66 TEXT='Helens never observed and considered absent [@Skovsted2016]';
 	TEXT TAXON=22 CHARACTER=65 TEXT='As larvae, polyplacophorans exhibit an anterior and a posterior shell field  [@Wanninger2002C]; subsequent subdivision of the posterior field gives rise to the posterior seven valves. Tonicella is thus tentatively coded as ''bivalved'' to reflect the potential (if perhaps unlikely) homology with the paired elements of brachiopods.';
@@ -2699,7 +2699,7 @@ BEGIN NOTES;
 	TEXT TAXON=16 CHARACTER=152 TEXT='Following Discinisca tenuis, described in Hodgson & Reunov (1994).';
 	TEXT TAXON=15 CHARACTER=152 TEXT='"Along the inner and outer margins there are periodically banded layers, and between them there is a less dense layer" -- Afzelius & Ferraguti, 1978';
 	TEXT TAXON=18 CHARACTER=152 TEXT='Following Hodgson & Reunov (1994).';
-	TEXT TAXON=12 CHARACTER=152 TEXT='Not evident in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=12 CHARACTER=152 TEXT='Not evident in Loxosoma [@Franzen2000]';
 	TEXT TAXON=13 CHARACTER=152 TEXT='No evidence of internal differentiation [in Tubulipora; @Franzen1984]';
 	TEXT TAXON=20 CHARACTER=152 TEXT='No differentiation within acrosomal vesicle [@Rice1993]';
 	TEXT TAXON=22 CHARACTER=152 TEXT='"One can distinguish two components in the acrosome, an apical and a basal granule" -- @BucklandNicks1988';
@@ -2731,7 +2731,7 @@ BEGIN NOTES;
 	TEXT TAXON=16 CHARACTER=151 TEXT='Pear-shaped (Hodgson & Reunov, 1994)';
 	TEXT TAXON=15 CHARACTER=151 TEXT='Needle-shaped (Afzelius & Ferraguti, 1978)';
 	TEXT TAXON=18 CHARACTER=151 TEXT='Disc-shaped (in Kraussina) (Hodgson & Reunov, 1994)';
-	TEXT TAXON=12 CHARACTER=151 TEXT='Conical/cylindrical acrosome-like extension in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=12 CHARACTER=151 TEXT='Conical/cylindrical acrosome-like extension in Loxosoma [@Franzen2000]';
 	TEXT TAXON=13 CHARACTER=151 TEXT='Conical [in Tubulipora; @Franzen1984]';
 	TEXT TAXON=20 CHARACTER=151 TEXT='A peaked disc in Phascolion [@Rice1993]';
 	TEXT TAXON=22 CHARACTER=151 TEXT='Elongate: cylindrical to conical [@BucklandNicks1988]';
@@ -2743,7 +2743,7 @@ BEGIN NOTES;
 	TEXT TAXON=16 CHARACTER=153 TEXT='Subacrosomal material (in Discinisca) but no subacrosomal space (Hodgson & Reunov, 1994).';
 	TEXT TAXON=15 CHARACTER=153 TEXT='Prominent (Afzelius & Ferraguti, 1978)';
 	TEXT TAXON=18 CHARACTER=153 TEXT='No subacrosomal material, let alone a subacrosomal space (e.g. Hodgson & Reunov 1994)';
-	TEXT TAXON=12 CHARACTER=153 TEXT='Present in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=12 CHARACTER=153 TEXT='Present in Loxosoma [@Franzen2000]';
 	TEXT TAXON=13 CHARACTER=153 TEXT='No distinct space [in Tubulipora; @Franzen1984]';
 	TEXT TAXON=20 CHARACTER=153 TEXT='@Rice1993';
 	TEXT TAXON=22 CHARACTER=153 TEXT='Not evident [@BucklandNicks1988]';
@@ -2784,14 +2784,14 @@ BEGIN NOTES;
 	TEXT TAXON=19 CHARACTER=150 TEXT='Nucleus "almost round" [@Reunov2004Ultrastructuralstudy]';
 	TEXT TAXON=16 CHARACTER=150 TEXT='Present in Discinisca tenuis (Hodgson & Reunov, 1994).';
 	TEXT TAXON=18 CHARACTER=150 TEXT='No anterior invagination [@Hodgson1994Ultrastructureof]';
-	TEXT TAXON=12 CHARACTER=150 TEXT='Present in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=12 CHARACTER=150 TEXT='Present in Loxosoma [@Franzen2000]';
 	TEXT TAXON=13 CHARACTER=150 TEXT='Present [in Tubulipora; @Franzen1984]';
 	TEXT TAXON=20 CHARACTER=150 TEXT='Prominent in Phascolion [@Rice1993]';
 	TEXT TAXON=22 CHARACTER=150 TEXT='@BucklandNicks1988';
 	TEXT TAXON=23 CHARACTER=150 TEXT='@DufresneDube1983';
 	TEXT TAXON=21 CHARACTER=150 TEXT='Absent: subacrosomal space does not impinge on nuclear envelope [@Gherardi2011]';
 	TEXT TAXON=14 CHARACTER=150 TEXT='Present [in Tubulipora; @Franzen1984]';
-	TEXT TAXON=12 CHARACTER=149 TEXT='Elongate in Loxosoma [@Franzen 2000]';
+	TEXT TAXON=12 CHARACTER=149 TEXT='Elongate in Loxosoma [@Franzen2000]';
 	TEXT TAXON=13 CHARACTER=149 TEXT='Elongate [@Franzen1981]';
 	TEXT TAXON=22 CHARACTER=149 TEXT='Profoundly elongated nucleus [@BucklandNicks1988]';
 	TEXT TAXON=23 CHARACTER=149 TEXT='Elongate nucleus, 4-6 times longer than wide [@DufresneDube1983]';
@@ -3142,8 +3142,8 @@ BEGIN NOTES;
 	TEXT TAXON=7 CHARACTER=133 TEXT='Coded following helen microstructure described in the similar material of ''Hyolithes'' [@MartiMus2007]';
 	TEXT TAXON=5 CHARACTER=71 TEXT='Precise alignment, though unusual for orthothecids, is indicated by moulds of Antarctic material [@Wrona2003].  Phosphatized material [@Malinky2004] offers no contradiction.';
 	TEXT TAXON=7 CHARACTER=71 TEXT='@MartiMus2005';
-	TEXT TAXON=9 CHARACTER=71 TEXT='Following depiction in @Malinky1987';
-	TEXT TAXON=4 CHARACTER=71 TEXT='Probactrotheca is reconstructed as having an exactly fitting operculum [@Valent2012]';
+	TEXT TAXON=9 CHARACTER=71 TEXT='Following depiction in @Marek1976';
+	TEXT TAXON=4 CHARACTER=71 TEXT='Operculum interpreted as sitting inside conical shell [@Marek1976]';
 	TEXT TAXON=8 CHARACTER=71 TEXT='Articulated specimens unknown';
 	TEXT TAXON=3 CHARACTER=71 TEXT='"The width range of opercula matches that of the apertures" [@Sun2018]';
 	TEXT TAXON=45 CHARACTER=73 TEXT='Mitral valve aperture essentially round [@Holmer2008TheEarly]';
