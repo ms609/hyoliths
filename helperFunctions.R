@@ -13,10 +13,12 @@ NexusTime <- function (filename, format='double') {
 
 NewickTree <- function(tree) gsub('_', ' ', write.tree(tree), fixed=TRUE)
 
-MatrixData <- function (states_matrix, state.labels) {
+MatrixData <- function (states_matrix, fitch_states, state.labels) {
   tree <- states_matrix$tree
   regions <- states_matrix$regions
   changes <- states_matrix$changes
+  steps <- fitch_states$changes
+  dud_steps <- steps[!steps %in% changes]
   n_tip <- states_matrix$n_tip
   plot.convert.state <- function(character, missing = FALSE) {
     plot.convert.inappli <- function(X) {
@@ -122,7 +124,8 @@ MatrixData <- function (states_matrix, state.labels) {
         legend = state_labels[observed],
         legend_col = edge_palette[observed],
         tips_labels = tips_labels,
-        tips_colours = as.character(state_colours[tips_colours]))
+        tips_colours = as.character(state_colours[tips_colours]),
+        dud_steps = dud_steps)
 }
 
 

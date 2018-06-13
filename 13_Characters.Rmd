@@ -340,7 +340,8 @@ for (i in seq_len(n_char)) {
       nodeXi <- nodeX[[treeNo]]
       nodeYi <- nodeY[[treeNo]]
       states_matrix <- apply.reconstruction(tree, my_chars_i)
-      matrix_data <- MatrixData(states_matrix, state.labels=stateLabels)
+      fitch_states <- apply.reconstruction(tree, my_chars_i, method='Fitch', inapplicable=1)
+      matrix_data <- MatrixData(states_matrix, fitch_states, state.labels=stateLabels)
       legendLabels <- matrix_data$legend
       legendCol <- matrix_data$legend_col
       edgeCol <- matrix_data$edge_col
@@ -375,14 +376,22 @@ for (i in seq_len(n_char)) {
                       '" class="node" fill="', NodeColour(nodeSupport), 
                       '">', nodeSupport, '</text>', collapse='')
       nRegions <- length(states_matrix$regions)
+      if (states_matrix$score == fitch_states$score) {
+        fitchNote1 <- fitchNote2 <- ''
+      } else {
+        fitchNote1 <- paste0(' (<tspan class="score fitch">', fitch_states$score,
+                             '</tspan> with Fitch)')),
+        fitchNote2 <- ' (not counted by Fitch)',
+      }
       ciCaption <- paste0('<text x="', svgWidth - 4L,
                    '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
                     'Character adds <tspan class="score">', states_matrix$score,
-                   '</tspan> to tree score</text><text x="', svgWidth - 4L,
-                   '" y="', (yStep * 2) + textY, '" text-anchor="end" class="stepsLabel">',
+                   '</tspan> to tree score', fitchNote1, '</text><text x="',
+                   svgWidth - 4L, '" y="', (yStep * 2) + textY, 
+                   '" text-anchor="end" class="stepsLabel">',
                    '<tspan class="score">', nRegions,
                    '</tspan> additional region', ifelse(nRegions == 1, '', 's'), 
-                   '</text><text x="', svgWidth - 4L,
+                   fitchNote2, '</text><text x="', svgWidth - 4L,
                    '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
                     ci_text[i, treeNo],
                    '</text><text x="', svgWidth - 4L,
@@ -390,15 +399,20 @@ for (i in seq_len(n_char)) {
                     '<tspan dy="16" fill="#34caaf">An optimal tree under:</tspan>', 
                    paste0('<tspan x="', svgWidth - 2L,
                           '" style="font-style:italic" class="',
-                          ifelse(analysisNames %in% treeNames[treeIndex==treeNo], 'this', 'notThis'),
+                          ifelse(analysisNames %in% treeNames[treeIndex==treeNo],
+                                 'this', 'notThis'),
                           'An" dy="1.2em">', analysisNames, '</tspan>', collapse=''),
                     '</text>')
-        
-                   
-      
+      dudSteps <- matrix_data$dud_steps
+      naughtyNodes <- if (length(dudSteps) > 0) {
+        paste0('<circle cx="', nodeXi[dudSteps], '" cy="', nodeYi[dudSteps],
+               '"/><text x="', nodeXi[dudSteps] - textY, '" y="', nodeYi[dudSteps] + textY,
+               '" class="dud-step">Erroneous Fitch step</text>')
+      } else { '' }
+                  
       svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
                     svgWidth, '" height="', svgHeight, '" class="tree" data-char="', i, '">',
-                    ciCaption, tips, edges, nodes,
+                    ciCaption, tips, edges, nodes, naughtyNodes,
                     '</svg>')
       write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
     }
