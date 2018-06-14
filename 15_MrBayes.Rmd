@@ -87,7 +87,7 @@ mbSplits <- GetSplits(sample(thinned, sampleSize), tipIndex)
 ColPlot(UnitEdges(mbCon))
 supporters <- SplitSupport(mbCon, mbSplits, tipIndex)
 nodelabels(paste0("\n\n", signif(supporters / sampleSize * 100L, 3)),
-           col=NodeColour(round(supporters / sampleSize * 100L, 2)),
+           col=NodeColour(round(supporters / sampleSize, 2)),
            adj=0, pos=2, frame='none', cex=0.75)
 #ColMissing(omit)
 ```
@@ -106,7 +106,18 @@ thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
              lapply(postBurnin[[4]], drop.tip, omit))
 class(thinned) <- 'multiPhylo'
-rootedConsensus <- root(consensus(thinned, p=0.5), outgroup, resolve.root = TRUE)
+rootedConsensus <- RootTree(consensus(thinned, p=0.5), rootingTips)
+
+
+mbCon <- RootTree(consensus(thinned, p=0.5), rootingTips)
+tipIndex <- sort(thinned[[1]]$tip.label)
+sampleSize <- 5000L
+mbSplits <- GetSplits(sample(thinned, sampleSize), tipIndex)
+
 ColPlot(UnitEdges(rootedConsensus))
+supporters <- SplitSupport(rootedConsensus, mbSplits, tipIndex)
+nodelabels(paste0("\n\n", signif(supporters / sampleSize * 100L, 3)),
+           col=NodeColour(round(supporters / sampleSize, 2)),
+           adj=0, pos=2, frame='none', cex=0.75)
 ColMissing(omit)
 ```
