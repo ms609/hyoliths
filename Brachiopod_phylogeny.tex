@@ -261,7 +261,7 @@ the main manuscript.{]}
 
 A static version of the NEXUS file used to generate this supplementary
 information can be downloaded directly from
-\url{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-14-2018_456.nex}
+\url{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-14-2018_555.nex}
 .
 
 \hypertarget{treesearch}{\chapter{Parsimony analysis}\label{treesearch}}
@@ -376,12 +376,14 @@ The position of the root does not affect tree score, so we keep it fixed
 
 
 
+
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-maj-consensus-1.pdf}
-\caption{\label{fig:treesearch-maj-consensus}Consensus of all parsimony results.
-Node labels denote the proportion of trees obtained
-under all analytical conditions that support the clade.}
+\caption{\label{fig:treesearch-maj-consensus}Consensus of all parsimony trees, under equal and
+implied weights.
+Node labels denote the frequency of each clade in
+most parsimonious trees under all analytical conditions.}
 \end{figure}
 
 
@@ -390,15 +392,23 @@ under all analytical conditions that support the clade.}
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-maj-consensus-pruned-1.pdf}
-\caption{\label{fig:treesearch-maj-consensus-pruned}Consensus of all parsimony results, with taxa omitted
-to show underlying clade support.
-Node labels denote the proportion of trees obtained
-under all analytical conditions that support the clade.}
+\caption{\label{fig:treesearch-maj-consensus-pruned}Consensus of same trees, with taxa pruned before
+constructing consensus to give context to clade support.
+Node labels denote the frequency of each clade in
+most parsimonious trees under all analytical conditions.}
 \end{figure}
 
 
 
 
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-consensus-1.pdf}
+\caption{\label{fig:treesearch-iw-consensus}Strict consensus of implied weights analyses at all
+values of \emph{k}. Wildcard taxa have been excluded from the consensus
+tree shown above to improve resolution.}
+\end{figure}
 
 
 
@@ -438,13 +448,6 @@ at \emph{k} = 7, 10.5, 16 and 24.}
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-equal-weights-results-1.pdf}
 \caption{\label{fig:treesearch-equal-weights-results}Strict consensus of
 most parsimonious trees under equally weighted parsimony}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-equal-weights-pruned-consensus-1.pdf}
-\caption{\label{fig:treesearch-equal-weights-pruned-consensus}Strict
-consensus of equal weights results, taxa excluded}
 \end{figure}
 
 \clearpage
@@ -3667,13 +3670,18 @@ e.g.~Eccentrothca.
 shell \citep{Marek1976}.
 
 \hypertarget{Conotheca-coding-71}{}
-\emph{Conotheca}: Precise alignment, though unusual for orthothecids, is
-indicated by moulds of Antarctic material \citep{Wrona2003}.
-Phosphatized material \citep{Malinky2004} offers no contradiction.
+\emph{Conotheca}: ``The diameter of orthothecid opercula is generally
+slightly smaller than the diameter of the conch aperture. This
+observation is confirmed {[}in \emph{Conotheca}{]} and further supported
+by the recurrent presence of opercula preserved withdrawn inside the
+conch'' -- \citet{Devaere2014}.
 
 \hypertarget{Cupitheca_holocyclata-coding-71}{}
 \emph{Cupitheca holocyclata}: ``The width range of opercula matches that
-of the apertures'' \citep{Sun2018}.
+of the apertures'' \citep{Sun2018}, but it is not possible to determine
+whether this is an exact match or whether the operculum may have been
+slightly smaller, and hence retractable, as anticipated for
+orthothecids.
 
 \hypertarget{Maxilites-coding-71}{}
 \emph{Maxilites}: \citet{MartiMus2005}.
@@ -3754,11 +3762,10 @@ Lateral margins subparallel, cf. \emph{Askepasma}
 
 \hypertarget{Bactrotheca-coding-73}{}
 \emph{Bactrotheca}: Operculum essentially round, though becoming
-flattened on functionally ventral surface \citep{Dzik1980}.
+flattened on functionally ventral surface \citep{Dzik1980Ontogenyof}.
 
 \hypertarget{Botsfordia-coding-73}{}
-\emph{Botsfordia}: Diverging lateral margins
-\citep{Li2004EarlyCambrian}.
+\emph{Botsfordia}: Diverging lateral margins \citep{Li2004}.
 
 \hypertarget{Clupeafumosus_socialis-coding-73}{}
 \emph{Clupeafumosus socialis}: Round \citep{Topper2013Reappraisalof}.
@@ -10526,7 +10533,9 @@ mcmcp ngen=5000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
 
 A posterior tree topology was derived from the combined posterior sample
 of all runs. Convergence was indicated by PSRF = 1.00 and an estimated
-sample size of \textgreater{} 200 for each parameter.
+sample size of \textgreater{} 200 for each parameter. Nodes are labelled
+with posterior probabilities; recall that caution must be applied when
+interpreting these values \citep{Yang2018}.
 
 \section{Parameter estimates}\label{parameter-estimates}
 
@@ -10546,8 +10555,7 @@ m\{1\} & 0.467 & 0.00276 & 1960 & 3370 & 0.99995\\
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/mrbayes-full-consensus-1.pdf}
 \caption{\label{fig:mrbayes-full-consensus}Results of Bayesian analysis,
-posterior probability \textgreater{} 50\%, all taxa; notes labelled with
-posterior probabilities}
+posterior probability \textgreater{} 50\%, all taxa}
 \end{figure}
 
 \begin{figure}
