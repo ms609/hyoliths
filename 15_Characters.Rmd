@@ -15,9 +15,6 @@ Each tip is labelled according to its coding in the matrix.  These states have b
 We emphasize that different trees will give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.
 
 ```{R load-the-characters, echo=FALSE, message=FALSE}
-if (!require('Inapp')) devtools::install_github('TGuillerme/Inapp')
-library('Inapp')
-source('printFunctions.R')
 if (exists('localInstance') || knitr::is_html_output()) {
   trees <- unique(allTrees)
 } else if (length(iw.exist) > 1L) {
@@ -277,7 +274,11 @@ PrintStateNotes <- function (notes) {
 prev_char_parts <- "NONE"
 prev_nesting <- 0
 
-subheadings <- c("Adult setae: Composition")
+subheadings <- c("Adult setae: Composition", "Digestive tract: Anus: Presence",
+                 paste("Sclerites:",
+                       c("Bivalved", "Dorsal valve", "Ventral valve",
+                         "Ornament", "Composition", "Structure")),
+                 "Gametes: Spermatozoa", paste("Larva:", c("Cilia",)))
 
 #for (i in 14:17) {
 for (i in seq_len(n_char)) {
