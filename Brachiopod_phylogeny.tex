@@ -127,7 +127,7 @@ Maoyan Zhu}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-06-13}
+    \date{2018-06-14}
 
 \usepackage{doi} % Adds hyperlinks to dois
 \setcitestyle{round}
@@ -204,7 +204,7 @@ Characters are coded following the recommendations of
   \citep[sensu][]{Vogt2017} as absence, rather than inapplicability.
 \end{itemize}
 
-The complete dataset comprises 12204 character codings, of which 1136
+The complete dataset comprises 12204 character codings, of which 1134
 are inapplicable and 4983 were neither ambiguous nor inapplicable. The
 amount and quality of data that \emph{is} coded is more instructive than
 a measure of how many cells are ambiguous \citep{Wiens1998, Wiens2003}.
@@ -219,7 +219,7 @@ token for each taxon is:
 \hline
 \_Cupitheca holocyclata\_ & 63   \&nbsp; & \_Serpula\_ & 171   \&nbsp; & \_Glyptoria\_ & 73   \&nbsp;\\
 \hline
-\_Bactrotheca\_ & 51   \&nbsp; & \_Tonicella\_ & 189   \&nbsp; & \_Heliomedusa orienta\_ & 67   \&nbsp;\\
+\_Bactrotheca\_ & 53   \&nbsp; & \_Tonicella\_ & 189   \&nbsp; & \_Heliomedusa orienta\_ & 67   \&nbsp;\\
 \hline
 \_Conotheca\_ & 60   \&nbsp; & \_Dentalium\_ & 170   \&nbsp; & \_Kutorgina chengjiangensis\_ & 84   \&nbsp;\\
 \hline
@@ -229,7 +229,7 @@ token for each taxon is:
 \hline
 \_Paramicrocornus\_ & 57   \&nbsp; & \_Dailyatia\_ & 55   \&nbsp; & \_Longtancunella chengjiangensis\_ & 61   \&nbsp;\\
 \hline
-\_Pauxillites\_ & 58   \&nbsp; & \_Acanthotretella spinosa\_ & 70   \&nbsp; & \_Micrina\_ & 71   \&nbsp;\\
+\_Pauxillites\_ & 56   \&nbsp; & \_Acanthotretella spinosa\_ & 70   \&nbsp; & \_Micrina\_ & 71   \&nbsp;\\
 \hline
 \_Pedunculotheca diania\_ & 63   \&nbsp; & \_Alisina\_ & 84   \&nbsp; & \_Mickwitzia muralensis\_ & 72   \&nbsp;\\
 \hline
@@ -261,13 +261,13 @@ the main manuscript.{]}
 
 A static version of the NEXUS file used to generate this supplementary
 information can be downloaded directly from
-\url{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-13-2018_811.nex}
+\url{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-14-2018_456.nex}
 .
 
 \hypertarget{treesearch}{\chapter{Parsimony analysis}\label{treesearch}}
 
 The phylogenetic dataset contains a considerable proportion of
-inapplicable codings (1136/12204 = 9.3\% of tokens), which are known to
+inapplicable codings (1134/12204 = 9.3\% of tokens), which are known to
 introduce error and bias to phylogenetic reconstruction when the Fitch
 algorithm is employed \citep{Maddison1993, Brazeau2018}. As such, we
 employed a new tree-scoring algorithm that correctly handles
@@ -359,9 +359,9 @@ The position of the root does not affect tree score, so we keep it fixed
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{ew.tree <-}\StringTok{ }\KeywordTok{Ratchet}\NormalTok{(start.tree, my_data, }\DataTypeTok{verbosity=}\NormalTok{0L,}
-                   \DataTypeTok{ratchHits =} \DecValTok{20}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{, }\CommentTok{# ratchHits = 10 not enough}
+                   \DataTypeTok{ratchHits =} \DecValTok{60}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{, }\CommentTok{# ratchHits = 20 not enough}
                    \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))}
-\NormalTok{ew.consensus <-}\StringTok{ }\KeywordTok{RatchetConsensus}\NormalTok{(ew.tree, my_data, }\DataTypeTok{nSearch=}\DecValTok{250}\NormalTok{, }\DataTypeTok{searchHits =} \DecValTok{55}\NormalTok{,}
+\NormalTok{ew.consensus <-}\StringTok{ }\KeywordTok{RatchetConsensus}\NormalTok{(ew.tree, my_data, }\DataTypeTok{nSearch=}\DecValTok{250}\NormalTok{, }\DataTypeTok{searchHits =} \DecValTok{85}\NormalTok{,}
                                  \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedNNISwap),}
                                  \DataTypeTok{verbosity=}\NormalTok{0L)}
 \KeywordTok{write.nexus}\NormalTok{(ew.consensus, }\DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\DataTypeTok{collapse=}\StringTok{''}\NormalTok{, }\StringTok{"TreeSearch/hy_ew_"}\NormalTok{,}
@@ -409,42 +409,27 @@ under all analytical conditions that support the clade.}
 
 \clearpage 
 
-\begin{verbatim}
-## 
-##  > Results not available for panel 1
-\end{verbatim}
-
-\begin{verbatim}
-## 
-##  > Results not available for panel 2
-\end{verbatim}
-
-\begin{verbatim}
-## 
-##  > Results not available for panel 3
-\end{verbatim}
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-all-iw-results-1.pdf}
+\caption{\label{fig:treesearch-all-iw-results}Consensus trees of implied weights analyses
+at all values of \emph{k}, and at the individual
+values \emph{k} = 2, 3 and 4.5.}
+\end{figure}
 
 \clearpage 
 
 \begin{verbatim}
 ## 
-##  > Results not available for panel 4
-\end{verbatim}
-
-\begin{verbatim}
-## 
-##  > Results not available for panel 5
-\end{verbatim}
-
-\begin{verbatim}
-## 
-##  > Results not available for panel 6
-\end{verbatim}
-
-\begin{verbatim}
-## 
 ##  > Results not available for panel 7
 \end{verbatim}
+
+\begin{figure}
+\centering
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-results-3-1.pdf}
+\caption{\label{fig:treesearch-iw-results-3}Consensus trees of implied weights analyses
+at \emph{k} = 7, 10.5, 16 and 24.}
+\end{figure}
 
 \clearpage
 
@@ -1638,8 +1623,8 @@ to hard substrates via a pedicle that emerged through the small
 posterior opening'' -- \citet{Skovsted2009Thescleritome}.
 
 \hypertarget{Pauxillites-coding-25}{}
-\emph{Pauxillites}: {[}Reference needed: Specimens in Valent 2015 do not
-unambiguously show apical termination{]}.
+\emph{Pauxillites}: Uncertain: specimens in Valent 2015 do not
+unambiguously show apical termination.
 
 \hypertarget{Phoronis-coding-25}{}
 \emph{Phoronis}: The tube-bearing stalk of phoronids arises as an
@@ -1727,19 +1712,6 @@ the sediment to improve anchorage.
 \citeyearpar{Holmer2006Aspinose} interpret the presence of a bulb as
 tentative; we score it as ambiguous.
 
-Oh dear! \textbf{You included the inapplicable token in a neomorphic
-character!}\\
-That's really very naughty, as \citet{Brazeau2018} will tell you.\\
-Unless you are very sure that you understand the consequences, you
-should mark the character as Transformational by setting State 0 to
-\texttt{{[}Transformational\ character{]}}, or re-code:
-
-\begin{itemize}
-\tightlist
-\item
-  Bactrotheca
-\end{itemize}
-
 \subsection*{{[}29{]} Distal rootlets}\label{distal-rootlets}
 \addcontentsline{toc}{subsection}{{[}29{]} Distal rootlets}
 
@@ -1755,19 +1727,6 @@ Neomorphic character.
 
 Observed in \emph{Pedunculotheca} and \emph{Bethia}
 \citep{Sutton2005Silurianbrachiopods}.
-
-Oh dear! \textbf{You included the inapplicable token in a neomorphic
-character!}\\
-That's really very naughty, as \citet{Brazeau2018} will tell you.\\
-Unless you are very sure that you understand the consequences, you
-should mark the character as Transformational by setting State 0 to
-\texttt{{[}Transformational\ character{]}}, or re-code:
-
-\begin{itemize}
-\tightlist
-\item
-  Bactrotheca
-\end{itemize}
 
 \subsection*{{[}30{]} Tapering}\label{tapering}
 \addcontentsline{toc}{subsection}{{[}30{]} Tapering}
@@ -3518,8 +3477,7 @@ that molluscan shell fields are homologous features.
 
 \hypertarget{Pauxillites-coding-66}{}
 \emph{Pauxillites}: Not found by \citet{Valent2015} or
-\citet{Marek1966}, but reconstructed as present by \citet{Malinky1987},
-based on \citet{Marek1976}.
+\citet{Marek1966}, but reconstructed as present by \citet{Marek1976}.
 
 \hypertarget{Tonicella-coding-66}{}
 \emph{Tonicella}: The intermediate shell plates arise by subdivision of
@@ -3705,8 +3663,8 @@ only to two prominent valves, not to additional sclerites of
 e.g.~Eccentrothca.
 
 \hypertarget{Bactrotheca-coding-71}{}
-\emph{Bactrotheca}: Probactrotheca is reconstructed as having an exactly
-fitting operculum \citep{Valent2012}.
+\emph{Bactrotheca}: Operculum interpreted as sitting inside conical
+shell \citep{Marek1976}.
 
 \hypertarget{Conotheca-coding-71}{}
 \emph{Conotheca}: Precise alignment, though unusual for orthothecids, is
@@ -3724,7 +3682,7 @@ of the apertures'' \citep{Sun2018}.
 \emph{Paramicrocornus}: Articulated specimens unknown.
 
 \hypertarget{Pauxillites-coding-71}{}
-\emph{Pauxillites}: Following depiction in \citet{Malinky1987}.
+\emph{Pauxillites}: Following depiction in \citet{Marek1976}.
 
 \subsection*{{[}72{]} Commissure: Sulcate}\label{commissure-sulcate}
 \addcontentsline{toc}{subsection}{{[}72{]} Commissure: Sulcate}
@@ -5141,8 +5099,7 @@ surface cannot be flat if it is not differentiated.
 \emph{Paramicrocornus}: \citet{Zhang2018Ahyolithid}.
 
 \hypertarget{Pauxillites-coding-91}{}
-\emph{Pauxillites}: \citep[Reference needed; not clear
-from][]{Marek1966}.
+\emph{Pauxillites}: Not clear from published material.
 
 \hypertarget{Pedunculotheca_diania-coding-91}{}
 \emph{Pedunculotheca diania}: Difficult to evaluate based on present
@@ -5471,7 +5428,9 @@ Neomorphic character.
 \end{quote}
 
 The hyolithid operculum is divided into a cardinal and conical shield
-\citep{Zhang2018Ahyolithid}. See Marti Mus (2005) for a diagram.
+\citep{Zhang2018Ahyolithid}, separated by furrows corresponding to the
+position of the helens. See \citet{Marek1976} (fig. 2) or
+\citet{MartiMus2005} (fig. 1) for schematic.
 
 With no obvious sites for muscle attachment, the shields are unlikely to
 be homologous to the notothyrial platform.
@@ -6002,8 +5961,7 @@ linear in adults (though slightly curving in juveniles)
 \citep{Zhang2018Ahyolithid}.
 
 \hypertarget{Pauxillites-coding-107}{}
-\emph{Pauxillites}: Reconstructed as linear by \citet{Malinky1987},
-following \citet{Marek1976}.
+\emph{Pauxillites}: Reconstructed as linear by \citet{Marek1976}.
 
 \hypertarget{Pedunculotheca_diania-coding-107}{}
 \emph{Pedunculotheca diania}: Essentially linear.
@@ -6030,10 +5988,9 @@ Neomorphic character.
 
 The aperture of many hyolithid hyoliths is characterised by a ligula, a
 tongue-like protruding shelf on the functionally ventral surface of
-conical shell (Marti Mus and Bergstrom, 2005). This can be recognized by
-an acute angle in the lateral profile of the commissure \citep[see
-second figure on p.~91 of][]{Marek1966}. No brachiopods display an
-equivalent feature.
+conical shell \citep{MartiMus2005}. This can be recognized by an acute
+angle in the lateral profile of the commissure \citep[see second figure
+on p.~91 of][]{Marek1966}. No brachiopods display an equivalent feature.
 
 \hypertarget{Paramicrocornus-coding-108}{}
 \emph{Paramicrocornus}: ``Very short'' semicircular ligula
@@ -6952,7 +6909,7 @@ lines \citep{Marek1972, MartiMus2005}.
 
 \hypertarget{Pauxillites-coding-122}{}
 \emph{Pauxillites}: Ventral side of ventral valve and whole dorsal valve
-covered with faint growth lines (Valent and Corbacho, 2015).
+covered with faint growth lines \citep{Valent2015}.
 
 \hypertarget{Pedunculotheca_diania-coding-122}{}
 \emph{Pedunculotheca diania}: A series of regularly spaced concentric
@@ -8331,7 +8288,7 @@ After character 41 in \citet{Ponder1997}.
 \citep{DufresneDube1983}.
 
 \hypertarget{Loxosomella-coding-149}{}
-\emph{Loxosomella}: Elongate in \emph{Loxosoma} {[}@Franzen 2000{]}.
+\emph{Loxosomella}: Elongate in \emph{Loxosoma} \citep{Franzen2000}.
 
 \hypertarget{Serpula-coding-149}{}
 \emph{Serpula}: \citet{Gherardi2011}.
@@ -8365,7 +8322,7 @@ A fossa (latin: ditch) is a dent or impression.
 \emph{Dentalium}: \citet{DufresneDube1983}.
 
 \hypertarget{Loxosomella-coding-150}{}
-\emph{Loxosomella}: Present in \emph{Loxosoma} {[}@Franzen 2000{]}.
+\emph{Loxosomella}: Present in \emph{Loxosoma} \citep{Franzen2000}.
 
 \hypertarget{Pelagodiscus_atlanticus-coding-150}{}
 \emph{Pelagodiscus atlanticus}: Present in \emph{Discinisca}
@@ -8416,7 +8373,7 @@ Transformational character.
 
 \hypertarget{Loxosomella-coding-151}{}
 \emph{Loxosomella}: Conical/cylindrical acrosome-like extension in
-\emph{Loxosoma} {[}@Franzen 2000{]}.
+\emph{Loxosoma} \citep{Franzen2000}.
 
 \hypertarget{Novocrania-coding-151}{}
 \emph{Novocrania}: Needle-shaped \citep{Afzelius1978Finestructure}.
@@ -8475,7 +8432,7 @@ inarticulate brachiopods.
 \citep{Fukumoto2003Theacrosome}.
 
 \hypertarget{Loxosomella-coding-152}{}
-\emph{Loxosomella}: Not evident in \emph{Loxosoma} {[}@Franzen 2000{]}.
+\emph{Loxosomella}: Not evident in \emph{Loxosoma} \citep{Franzen2000}.
 
 \hypertarget{Novocrania-coding-152}{}
 \emph{Novocrania}: ``Along the inner and outer margins there are
@@ -8535,7 +8492,7 @@ Neomorphic character.
 \citep{Fukumoto2003Theacrosome}.
 
 \hypertarget{Loxosomella-coding-153}{}
-\emph{Loxosomella}: Present in \emph{Loxosoma} {[}@Franzen 2000{]}.
+\emph{Loxosomella}: Present in \emph{Loxosoma} \citep{Franzen2000}.
 
 \hypertarget{Novocrania-coding-153}{}
 \emph{Novocrania}: Prominent \citep{Afzelius1978Finestructure}.
@@ -10382,8 +10339,26 @@ Searches were conducted under equal weights and results saved to file:
 piwe-; xmult; {/* Conduct search with equal weighting */}
 
 tsav *TNT/ew.tre;sav;tsav/; {/* Save results to file */}
+\end{quote}
 
-keep 0; hold 10000; {/* Clear trees from memory */}
+Node support was estimated by calculating the proportion of jackknife
+replicates in which each group occurred, using 5000 symmetric resampling
+iterations, following the recommendations of \citet{Kopuchian2010} and
+\citet{Simmons2011}.
+
+\begin{quote}
+var: nt; {/* Define a variable to track tree address */}
+
+nelsen *; {/* Generate strict consensus tree */}
+
+set nt ntrees; ttag=; {/* Prepare for resampling */}
+
+resample=sym 5000 frequency from `nt'; {/* Symmetric resampling,
+counting frequencies */}
+
+log TNT/ew.sym; ttag/; log/; {/* Write results to log */}
+
+keep 0; ttag-; hold 10000; {/* Clear memory */}
 \end{quote}
 
 Further searches were conducted under extended implied weighting
@@ -10397,11 +10372,15 @@ piwe=2; xmult; {/* Conduct analysis at k = 2 */}
 
 tsav *TNT/xpiwe2.tre; sav; tsav/; {/* Save results to file */}
 
-keep 0; hold 10000; {/* Clear trees from memory */}
+nelsen *; set nt ntrees; ttag=; {/* Prepare for resampling */}
 
-piwe=3; xmult; {/* Conduct analysis at k = 3 */}
+resample=frequency from `nt'; {/* Symmetric resampling */}
 
-tsav *TNT/xpiwe3.tre; sav ;tsav/; {/* Save results to file */}
+log TNT/ew.sym; ttag/; log/; {/* Write results to log */}
+
+keep 0; ttag-; hold 10000; {/* Clear memory */}
+
+{/* Repeat this block for each value of k \&\#42/}
 \end{quote}
 
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT
@@ -10449,6 +10428,7 @@ using Fitch parsimony with implied weighting, at \emph{k} = 7, 10.5, 16 and 24.}
 
 
 
+
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/tnt-ew-consensus-1.pdf}
@@ -10459,7 +10439,8 @@ or rhynchonelliform lineages; as such, the inclusion of these taxa in
 the consensus tree reduces resolution. These taxa were still included in
 the analysis used to generate this tree, but were removed from each MPT
 before the consensus was calculated in order that the relationships that
-are present in each tree might be more easily observed.}
+are present in each tree might be more easily observed. Node labels
+denote jackknife frequencies.}
 \end{figure}
 
 \hypertarget{bayesian}{\chapter{Bayesian analysis}\label{bayesian}}
@@ -10553,9 +10534,9 @@ sample size of \textgreater{} 200 for each parameter.
 \hline
 Parameter & Mean & Variance & minESS & avgESS & PSRF\\
 \hline
-TL\{all\} & 7.380 & 0.54000 & 3160 & 5380 & 0.99996\\
+TL\{all\} & 9.880 & 0.49400 & 5610 & 6070 & 1.00000\\
 \hline
-m\{1\} & 0.609 & 0.00984 & 733 & 2790 & 1.00000\\
+m\{1\} & 0.467 & 0.00276 & 1960 & 3370 & 0.99995\\
 \hline
 \end{tabular}
 
@@ -10565,7 +10546,8 @@ m\{1\} & 0.609 & 0.00984 & 733 & 2790 & 1.00000\\
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/mrbayes-full-consensus-1.pdf}
 \caption{\label{fig:mrbayes-full-consensus}Results of Bayesian analysis,
-posterior probability \textgreater{} 50\%, all taxa}
+posterior probability \textgreater{} 50\%, all taxa; notes labelled with
+posterior probabilities}
 \end{figure}
 
 \begin{figure}
