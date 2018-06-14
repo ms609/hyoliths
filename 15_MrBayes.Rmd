@@ -79,16 +79,16 @@ thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
 class(thinned) <- 'multiPhylo'
 mbCon <- RootTree(consensus(thinned, p=0.5), rootingTips)
 tipIndex <- sort(thinned[[1]]$tip.label)
-sampleSize <- 5000L
+sampleSize <- 10000L # Not all trees, but ought to be enough for our purposes
 mbSplits <- GetSplits(sample(thinned, sampleSize), tipIndex)
 #ColPlot(UnitEdges(root(mbCon, outgroup, resolve.root=TRUE)))
 
 
 ColPlot(UnitEdges(mbCon))
 supporters <- SplitSupport(mbCon, mbSplits, tipIndex)
-nodelabels(paste0("\n\n", signif(supporters / sampleSize * 100L, 3)),
-           col=NodeColour(round(supporters / sampleSize, 2)),
-           adj=0, pos=2, frame='none', cex=0.75)
+nodeSupport <- c('', signif(supporters[-1] / sampleSize * 100L, 3))
+nodelabels(paste0("\n\n", nodeSupport), adj=0, pos=2, frame='none', cex=0.75,
+           col=NodeColour(round(supporters / sampleSize, 2)))
 #ColMissing(omit)
 ```
 
@@ -100,7 +100,7 @@ nodelabels(paste0("\n\n", signif(supporters / sampleSize * 100L, 3)),
 #  'Tomteluva_perturbata', 'Yuganotheca_elegans',
 #  'Nisusia_sulcata', 'Kutorgina_chengjiangensis'
 #  )
-omit <- c('Paterimitra', 'Micrina', 'Ussunia')
+omit <- c('Paterimitra', 'Micrina', 'Ussunia', 'Heliomedusa_orienta', 'Mickwitzia_muralensis', 'Gasconsia')
 thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
              lapply(postBurnin[[2]], drop.tip, omit),
              lapply(postBurnin[[3]], drop.tip, omit),
@@ -116,7 +116,8 @@ mbSplits <- GetSplits(sample(thinned, sampleSize), tipIndex)
 
 ColPlot(UnitEdges(rootedConsensus))
 supporters <- SplitSupport(rootedConsensus, mbSplits, tipIndex)
-nodelabels(paste0("\n\n", signif(supporters / sampleSize * 100L, 3)),
+nodeSupport <- c('', signif(supporters[-1] / sampleSize * 100L, 3))
+nodelabels(paste0("\n\n", nodeSupport),
            col=NodeColour(round(supporters / sampleSize, 2)),
            adj=0, pos=2, frame='none', cex=0.75)
 ColMissing(omit)

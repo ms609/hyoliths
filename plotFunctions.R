@@ -84,8 +84,9 @@ ColMissing <- function (omit) {
   MarkMissing(omit, text.font=3, cex=0.8, text.col=taxonColour[omit])
 }
 
+#' @param support A vector of doubles in the range 0-1
 NodeColour <- function (support) {
-  ifelse(is.na(support), 'red', divergingScale[(support * 100) + 1L])
+  ifelse(is.na(support) | support < 0 | support > 1 | support == '', 'red', divergingScale[(support * 100) + 1L])
 }
 
 # continuousScale <- rev(colorspace::heat_hcl(101, h=c(300, 75), c.=c(35, 95), l=c(15, 90), power=c(0.8, 1.2))) # Viridis prefered
