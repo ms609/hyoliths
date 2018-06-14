@@ -277,24 +277,27 @@ PrintStateNotes <- function (notes) {
 prev_char_parts <- "NONE"
 prev_nesting <- 0
 
+subheadings <- c("Adult setae: Composition")
+
 #for (i in 14:17) {
 for (i in seq_len(n_char)) {
-  
+
   this_char_parts <- char_parts[[i]]
   next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
   this_nesting <- char_nesting[i]
   next_nesting    <- if (i == n_char) 0 else char_nesting[i + 1L]
-  
+
   if ( # Reasons to print a heading
-    (this_char_parts[1] != prev_char_parts[1]) ||
-    ( this_nesting > 1L && prev_nesting > 2L &&
-      this_char_parts[2] != prev_char_parts[2]) ||
-    ( this_nesting > 1L && prev_nesting > 1L && next_nesting > 2L &&
-      this_char_parts[2] == next_char_parts[2] &&
-      this_char_parts[2] != prev_char_parts[2])
+    (char_names[i] %in% subheadings ||
+      this_char_parts[1] != prev_char_parts[1]) #||
+    #( this_nesting > 1L && prev_nesting > 2L &&
+    #  this_char_parts[2] != prev_char_parts[2]) ||
+    #( this_nesting > 1L && prev_nesting > 1L && next_nesting > 2L &&
+    #  this_char_parts[2] == next_char_parts[2] &&
+    #  this_char_parts[2] != prev_char_parts[2])
   ) {
     if ( # Reasons to print a Solo character
-      (this_char_parts[1] != next_char_parts[1] && 
+      (this_char_parts[1] != next_char_parts[1] &&
        this_char_parts[1] != prev_char_parts[1]) ||
       (this_nesting == 2L && next_nesting > 1L &&
        prev_char_parts[1] == this_char_parts[1] &&
@@ -303,24 +306,24 @@ for (i in seq_len(n_char)) {
             next_char_parts[1] == this_char_parts[1]) ||
       prev_nesting > 2L && (
         next_nesting < 2L
-        || (this_nesting > 1L && next_nesting > 2L && 
+        || (this_nesting > 1L && next_nesting > 2L &&
             (this_char_parts[2] != next_char_parts[2]))
       )
-    ) {
-      PrintSoloCharacter()
-    }
-    else if ( # Reasons to print a top-level heading
-      this_nesting == 1 ||
-      (next_nesting > 1 && (this_char_parts[2] != next_char_parts[2]))
-    ) {
-      PrintDivision(1)
-      PrintCharacter()
-    } else {
-      PrintDivision(2)
-      PrintCharacter()
-    }
-  } else { # Just print the character
-    PrintCharacter()
+     ) {
+     PrintSoloCharacter()
+   }
+   else if ( # Reasons to print a top-level heading
+     this_nesting == 1 ||
+     (next_nesting > 1 && (this_char_parts[2] != next_char_parts[2]))
+   ) {
+     PrintDivision(1)
+     PrintCharacter()
+   } else {
+     PrintDivision(2)
+     PrintCharacter()
+   }
+ } else { # Just print the character
+   PrintCharacter()
   }
   prev_char_parts <- this_char_parts
   prev_nesting <- char_nesting[i]
