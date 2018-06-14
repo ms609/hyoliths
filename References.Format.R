@@ -15,9 +15,10 @@ remove <- substr(trimmedLines, 1, 9) %in% c('abstract ', 'keywords ') |
 refLines <- refLines[!remove]
 
 authLines <- substr(trimws(refLines), 1, 7) == 'author '
-refLines[authLines] <- gsub(",(\\s+\\w)[\\w\\.]*(?: ?(\\w)[\\w\\.]*)?(?: ?(\\w)[\\w\\.]*)?(?: ?(\\w)[\\w\\.]*)?( and|\\s*\\})", ",\\1. \\2. \\3. \\4. \\5", refLines[authLines], perl=TRUE)
+refLines[authLines] <- gsub(",(\\s+\\w)[\\w]*\\.?(?: ?(\\-?\\w)[\\w\\.]*)?(?: ?(\\-?\\w)[\\w\\.]*)?(?: ?(\\-?\\w)[\\w\\.]*)?( and|\\s*\\})", ",\\1. \\2. \\3. \\4. \\5", refLines[authLines], perl=TRUE)
 refLines[authLines] <- gsub("\\.[\\s\\.]+", ". ", refLines[authLines], perl=TRUE)
 refLines[authLines] <- gsub(". }", ".}", refLines[authLines], fixed=TRUE)
+refLines[authLines] <- gsub(". -", ".-", refLines[authLines], fixed=TRUE)
 
 firstChar <- substr(refLines, 1, 1)
 keyLines <- firstChar == '@'
