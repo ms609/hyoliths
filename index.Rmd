@@ -24,9 +24,9 @@ This document comtains supplementary material to @Sun2018Hyolithswith.  `r if (k
 
 It opens with a detailed discussion of [analyses](#treesearch) of the [morphological dataset](#dataset) constructed to accompany @Sun2018Hyolithswith, and their results.
 
-The results presented in the main paper employ the algorithm described by @Brazeau2018 for correct handling of inapplicable data in a parsimony setting.  This document depicts how each character is most parsimoniously [reconstructed](#reconstructions) on an optimal tree.
+We document the results of tree searches using [Fitch parsimony](#fitch) and a [Bayesian method](#bayesian), with the caveat that both approaches are subject to errors resulting from logically incoherent treatment of inapplicable data [@Maddison1993].
 
-For completeness, we also document the results of [standard Fitch parsimony](#fitch) analysis, and the results of [Bayesian analysis](#bayesian), neither of which treat inapplicable data in a logically consistent fashion.
+To meet this criticism, we also present the results of tree searches with the algorithm described by @Brazeau2018, which correctly handles inapplicable data in a parsimony setting. Finally, we document how each character is most parsimoniously [reconstructed](#reconstructions) on optimal trees.
 
 Supplementary [figures](#figures) and [tables](#table) appear after the text.
 
