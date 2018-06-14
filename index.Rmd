@@ -68,6 +68,8 @@ neomorphic <- vapply(my_states, function(x) !x[[1]] %in% c("", "''"), logical(1)
 
 kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
 
+powersOf2 <- 2^(seq_along(my_data) - 1) # Needed for GetSplits etc
+
 outgroup <- 'Namacalathus'
 outgroup <- 'Loxosomella'
 rootingTips <- c('Tonicella', 'Serpula', 'Loxosomella')

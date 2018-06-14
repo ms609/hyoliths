@@ -109,8 +109,6 @@ for (i in seq_along(iw.exist)) {
   allTrees <- c(allTrees, iw.exist[[i]])
 }
 
-powersOf2 <- 2^(seq_along(allTrees[[1]]$tip.label)- 1) # Needed for GetSplits etc
-
 tipIndex <- sort(allTrees[[1]]$tip.label)
 allSplits <- GetSplits(allTrees, tipIndex)
 ```
