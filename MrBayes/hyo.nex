@@ -80,8 +80,8 @@ BEGIN MRBAYES;
   outgroup Loxosomella;
   
   mcmcp samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
-  mcmcp ngen=5000000 append=yes;
   mcmcp ngen=500000 append=no;
+  mcmcp ngen=5000000 append=yes;
   
   mcmc printfreq=10000 checkfreq=50000;
   sumt burninf=0.1;
