@@ -14,6 +14,11 @@ Mgen <- 5
 ```{R mrbayes-load-trees, echo=FALSE}
 bayesTrees <- lapply(files, read.nexus)
 nTrees <- length(bayesTrees[[1]])
+
+ew.files <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
+ew.abest <- read.nexus(file=ew.files[which.max(file.mtime(ew.files))])
+ew.abest <- if (class(ew.abest) == 'multiPhylo') ew.abest[[1]] else ew.abest
+
 postBurnin <- lapply(bayesTrees, function (x) x[ceiling(nTrees * 0.1):nTrees])
 ```
 
@@ -23,7 +28,7 @@ Bayesian search was conducted in MrBayes v3.2.6 [@Ronquist2012] using the Mk mod
 
 Branch length was drawn from a dirichlet prior distribution, which is less informative than an exponential model [@Rannala2012], but requires a prior mean tree length within about two orders of magnitude of the true value [@Zhang2012]. To satisfy this latter criterion, we specified the prior mean tree length to be equal to the length of the most parsimonious tree under equal weights, using a Dirichlet prior with $\alpha_T = 1$, $\beta_T = 1/($_equal weights tree length_$/$_number of characters_$)$, $\alpha = c = 1$:
 
-> prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.trees[[1]], my_data), 2)`, 1, 1);
+> prset brlenspr = unconstrained: gammadir(1, `r signif(attr(my_data, 'nr')/Fitch(ew.abest, my_data), 2)`, 1, 1);
 
 Neomorphic and transformational characters [_sensu_ @Sereno2007] were allocated to two separate partitions whose proportion of invariant characters and gamma shape parameters were allowed to vary independently:
 
@@ -79,7 +84,7 @@ thinned <- c(lapply(postBurnin[[1]], drop.tip, omit),
 class(thinned) <- 'multiPhylo'
 mbCon <- RootTree(consensus(thinned, p=0.5), rootingTips)
 tipIndex <- sort(thinned[[1]]$tip.label)
-sampleSize <- 10000L # Not all trees, but ought to be enough for our purposes
+sampleSize <- min(length(thinned), 10000L) # Not all trees, but ought to be enough for our purposes
 mbSplits <- GetSplits(sample(thinned, sampleSize), tipIndex)
 #ColPlot(UnitEdges(root(mbCon, outgroup, resolve.root=TRUE)))
 
