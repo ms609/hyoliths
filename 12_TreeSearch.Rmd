@@ -116,9 +116,9 @@ tipIndex <- sort(allTrees[[1]]$tip.label)
 allSplits <- GetSplits(allTrees, tipIndex)
 ```
 
-(ref:ts-all-cons) Consensus of all parsimony results.  
+(ref:ts-all-cons) Consensus of all parsimony trees, under equal and implied weights.  
 
-(ref:node-support) Node labels denote the proportion of trees obtained under all analytical conditions that support the clade.  
+(ref:node-support) Node labels denote the frequency of each clade in most parsimonious trees under all analytical conditions.  
 
 ```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
 majCon <- RootTree(consensus(allTrees, p=0.5), rootingTips)
@@ -131,11 +131,11 @@ nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
 
 ```
 
-(ref:ts-trim-cons) Consensus of all parsimony results, with taxa omitted to show underlying clade support.  
+(ref:ts-trim-cons) Consensus of same trees, with taxa pruned before constructing consensus to give context to clade support.  
 
 ```{r treesearch-maj-consensus-pruned, fig.cap="(ref:ts-trim-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
 #omit <- c("Micrina", 'Mickwitzia_muralensis', 'Heliomedusa_orienta')
-omit <- c('Eccentrotheca')
+omit <- c("Cotyledion_tylodes", "Namacalathus", "Phoronis")
 allPruned <- lapply(allTrees, drop.tip, omit)
 majCon <- RootTree(consensus(allPruned, p=0.5), rootingTips)
 conTipIndex <- sort(majCon$tip.label)
@@ -154,8 +154,9 @@ ColMissing(omit)
 
 (ref:ts-iw-cons) Strict consensus of implied weights analyses at all values of _k_. Wildcard taxa have been excluded from the consensus tree shown above to improve resolution.
 
-```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE, eval=FALSE}
+```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE}
 if (length(iw.exist) > 0) {
+  omit <- unique(c(omit, "Gasconsia", "Mickwitzia_muralensis", "Micromitra"))
   ColPlot(ConsensusWithout(lapply(iw.exist, consensus), omit))
   ColMissing(omit)
 }
