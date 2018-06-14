@@ -130,9 +130,7 @@ TNTText2Tree <- function (treeText) {
 
 tntEw <- list.files('./TNT/', pattern='ew\\.tre', full=TRUE)
 tntEwTrees <- ReadTntTree(tntEw, relativePath='.')
-jackFile <- file('./TNT/ew.sym')
-on.exit(close(jackFile))
-jackLines <- readLines(jackFile)
+jackLines <- readLines('./TNT/ew.sym')
 jackTree <- TNTText2Tree(jackLines[3])
 jackTipOrder <- order(as.integer(jackTree$tip.label) + 1L)
 jackNodeOrder <- unique(unlist(Ancestors(jackTree, jackTipOrder)))[-1]
