@@ -156,7 +156,8 @@ ColMissing(omit)
 
 ```{r treesearch-iw-consensus, fig.cap="(ref:ts-iw-cons)", fig.width=6, fig.height=5, echo=FALSE}
 if (length(iw.exist) > 0) {
-  omit <- unique(c(omit, "Gasconsia", "Mickwitzia_muralensis", "Micromitra"))
+  omit <- unique(c(omit, "Mickwitzia_muralensis", "Micromitra",
+                   "Heliomedusa_orienta", "Micrina", "Yuganotheca_elegans"))
   ColPlot(ConsensusWithout(lapply(iw.exist, consensus), omit))
   ColMissing(omit)
 }
@@ -201,7 +202,7 @@ ColPlot(RootTree(consensus(ew.trees), rootingTips))
 ```
 
 
-```{R treesearch-equal-weights-pruned-consensus, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE}
+```{R treesearch-equal-weights-pruned-consensus, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE, eval=FALSE}
 omit <- c("Cotyledion_tylodes", "Micrina")
 ColPlot(RootTree(ConsensusWithout(ew.trees, omit), rootingTips))
 ColMissing(omit)
