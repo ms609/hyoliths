@@ -84,7 +84,6 @@ write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
 
 ```{R treesearch-load-trees, echo=FALSE}
 # Read results from files
-source('treeFunctions.R')
 ew.best <- list.files('TreeSearch', pattern='hy_ew_\\d*\\.nex', full.names=TRUE)
 ew.trees <- read.nexus(file=ew.best[which.max(file.mtime(ew.best))])
 ew.trees <- if (class(ew.trees) == 'multiPhylo') unique(ew.trees) else ew.trees

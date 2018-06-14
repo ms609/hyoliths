@@ -35,8 +35,12 @@ Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 set.seed(0)
 knitr::opts_chunk$set(echo = TRUE)
 library('ape'); library('phangorn'); library('TreeSearch');
+if (!require('Inapp')) devtools::install_github('TGuillerme/Inapp')
+library('Inapp')
 source('helperFunctions.R')
 source('plotFunctions.R')
+source('printFunctions.R')
+source('treeFunctions.R')
 ```
 ```{R setup-more, include=FALSE, message=FALSE}
 files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
