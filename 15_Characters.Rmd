@@ -277,7 +277,7 @@ PrintStateNotes <- function (notes) {
 prev_char_parts <- "NONE"
 prev_nesting <- 0
 
-#for (i in 1:4) {
+#for (i in 14:17) {
 for (i in seq_len(n_char)) {
   
   this_char_parts <- char_parts[[i]]
