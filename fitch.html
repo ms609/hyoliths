@@ -25,7 +25,7 @@
 <meta name="author" content="Haijing Sun, Martin R. Smith, Han Zeng, Fangchen Zhao, Guoxiang Li and Maoyan Zhu">
 
 
-<meta name="date" content="2018-06-13">
+<meta name="date" content="2018-06-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -462,14 +462,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <blockquote>
 <p>piwe-; xmult; <span class="comment">/* Conduct search with equal weighting */</span></p>
 <p>tsav *TNT/ew.tre;sav;tsav/; <span class="comment">/* Save results to file */</span></p>
-<p>keep 0; hold 10000; <span class="comment">/* Clear trees from memory */</span></p>
+</blockquote>
+<p>Node support was estimated by calculating the proportion of jackknife replicates in which each group occurred, using 5000 symmetric resampling iterations, following the recommendations of <span class="citation">Kopuchian &amp; Ramírez (<a href="#ref-Kopuchian2010">2010</a>)</span>].</p>
+<blockquote>
+<p>var: nt; <span class="comment">/* Define a variable for later use */</span></p>
+<p>nelsen *; set nt ntrees; <span class="comment">/* Generate strict consensus tree and mark for resampling */</span></p>
+<p>ttag=; resample=sym 5000 frequency from ‘nt’; <span class="comment">/* Symmetric resampling; save group frequency */</span></p>
+<p>log TNT/ew.sym; ttag &amp;TNT/piwe2.svg; ttag/; log/; <span class="comment">/* Write results to file */</span></p>
+<p>keep 0; ttag-; hold 10000; <span class="comment">/* Clear trees and resampling values from memory */</span></p>
 </blockquote>
 <p>Further searches were conducted under extended implied weighting <span class="citation">(Goloboff, <a href="#ref-Goloboff1997">1997</a>, <a href="#ref-Goloboff2014">2014</a>)</span>, under the concavity constants 2, 3, 4.5, 7, 10.5, 16 and 24:</p>
 <blockquote>
 <p>xpiwe=; <span class="comment">/* Enable extended implied weighting */</span></p>
 <p>piwe=2; xmult; <span class="comment">/* Conduct analysis at k = 2 */</span></p>
 <p>tsav *TNT/xpiwe2.tre; sav; tsav/; <span class="comment">/* Save results to file */</span></p>
-<p>keep 0; hold 10000; <span class="comment">/* Clear trees from memory */</span></p>
+<p>keep 0; ttag-; hold 10000; <span class="comment">/* Clear memory */</span></p>
 <p>piwe=3; xmult; <span class="comment">/* Conduct analysis at k = 3 */</span></p>
 <p>tsav *TNT/xpiwe3.tre; sav ;tsav/; <span class="comment">/* Save results to file */</span></p>
 </blockquote>
@@ -504,9 +511,9 @@ Even with the anomalous results at $k = 4.5$, the essential relationships betwee
 
 
 <div class="figure"><span id="fig:tnt-ew-consensus"></span>
-<img src="Brachiopod_phylogeny_files/figure-html/tnt-ew-consensus-1.png" alt="Consensus of all trees obtained using equally weighted Fitch parsimony in TNT. Mickwitzia and Micrina may equally parsimoniously be reconstructed in the basal region of the linguliform or rhynchonelliform lineages; as such, the inclusion of these taxa in the consensus tree reduces resolution. These taxa were still included in the analysis used to generate this tree, but were removed from each MPT before the consensus was calculated in order that the relationships that are present in each tree might be more easily observed." width="672" />
+<img src="Brachiopod_phylogeny_files/figure-html/tnt-ew-consensus-1.png" alt="Consensus of all trees obtained using equally weighted Fitch parsimony in TNT. Mickwitzia and Micrina may equally parsimoniously be reconstructed in the basal region of the linguliform or rhynchonelliform lineages; as such, the inclusion of these taxa in the consensus tree reduces resolution. These taxa were still included in the analysis used to generate this tree, but were removed from each MPT before the consensus was calculated in order that the relationships that are present in each tree might be more easily observed. Node labels denote jackknife frequencies." width="672" />
 <p class="caption">
-Figure 4.3: Consensus of all trees obtained using equally weighted Fitch parsimony in TNT. <em>Mickwitzia</em> and <em>Micrina</em> may equally parsimoniously be reconstructed in the basal region of the linguliform or rhynchonelliform lineages; as such, the inclusion of these taxa in the consensus tree reduces resolution. These taxa were still included in the analysis used to generate this tree, but were removed from each MPT before the consensus was calculated in order that the relationships that are present in each tree might be more easily observed.
+Figure 4.3: Consensus of all trees obtained using equally weighted Fitch parsimony in TNT. <em>Mickwitzia</em> and <em>Micrina</em> may equally parsimoniously be reconstructed in the basal region of the linguliform or rhynchonelliform lineages; as such, the inclusion of these taxa in the consensus tree reduces resolution. These taxa were still included in the analysis used to generate this tree, but were removed from each MPT before the consensus was calculated in order that the relationships that are present in each tree might be more easily observed. Node labels denote jackknife frequencies.
 </p>
 </div>
 
@@ -522,6 +529,9 @@ Figure 4.3: Consensus of all trees obtained using equally weighted Fitch parsimo
 </div>
 <div id="ref-Nixon1999">
 <p>Nixon, K. C. (1999). The Parsimony Ratchet, a new method for rapid parsimony analysis. <em>Cladistics</em>, <em>15</em>(4), 407–414. doi:<a href="https://doi.org/10.1111/j.1096-0031.1999.tb00277.x">10.1111/j.1096-0031.1999.tb00277.x</a></p>
+</div>
+<div id="ref-Kopuchian2010">
+<p>Kopuchian, C., &amp; Ramírez, M. J. (2010). Behaviour of resampling methods under different weighting schemes, measures and variable resampling strengths. <em>Cladistics</em>, <em>26</em>(1), 86–97. doi:<a href="https://doi.org/10.1111/j.1096-0031.2009.00269.x">10.1111/j.1096-0031.2009.00269.x</a></p>
 </div>
 <div id="ref-Goloboff1997">
 <p>Goloboff, P. A. (1997). Self-weighted optimization: tree searches and character state reconstructions under implied transformation costs. <em>Cladistics</em>, <em>13</em>(3), 225–245. doi:<a href="https://doi.org/10.1111/j.1096-0031.1997.tb00317.x">10.1111/j.1096-0031.1997.tb00317.x</a></p>

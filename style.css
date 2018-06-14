@@ -61,7 +61,7 @@ text.stepsLabel {
   fill: #aab;
 }
 
-tspan.score, text.flag {
+svg tspan.score, svg tspan.fitch, svg text.flag, svg text.dud-step  {
   font-weight: bold;
 }
 
@@ -69,7 +69,28 @@ tspan.score {
   fill: #34caaf;
 }
 
-text.highlightTaxon {
+tspan.fitch {
+  fill: #ca3456;
+}
+
+circle {
+  stroke: #ca3456;
+  stroke-width: 2;
+  r: 10;
+  fill: none;
+}
+
+svg text.dud-step {
+  display: none;
+  fill: #ca3456;
+  opacity: 0;
+}
+
+svg text.dud-step:hover {
+  opacity: 1;
+}
+
+svg text.highlightTaxon {
   font-weight: bold;
 }
 
