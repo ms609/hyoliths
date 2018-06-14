@@ -17,17 +17,19 @@ Searches were conducted under equal weights and results saved to file:
 > tsav &#42;TNT/ew.tre;sav;tsav/; <span class="comment">/&#42; Save results to file &#42;/</span>
 >
 
-Node support was estimated by calculating the proportion of jackknife replicates in which each group occurred, using 5000 symmetric resampling iterations, following the recommendations of @Kopuchian2010].
+Node support was estimated by calculating the proportion of jackknife replicates in which each group occurred, using 5000 symmetric resampling iterations, following the recommendations of @Kopuchian2010 and @Simmons2011.
 
-> var: nt; <span class="comment">/&#42; Define a variable for later use &#42;/</span>
+> var: nt; <span class="comment">/&#42; Define a variable to track tree address &#42;/</span>
 >
-> nelsen *; set nt ntrees; <span class="comment">/&#42; Generate strict consensus tree and mark for resampling &#42;/</span>
+> nelsen *; <span class="comment">/&#42; Generate strict consensus tree &#42;/</span>
 >
-> ttag=; resample=sym 5000 frequency from 'nt'; <span class="comment">/&#42; Symmetric resampling; save group frequency &#42;/</span>
+> set nt ntrees; ttag=; <span class="comment">/&#42; Prepare for resampling &#42;/</span>
 >
-> log TNT/ew.sym; ttag &TNT/piwe2.svg; ttag/; log/; <span class="comment">/&#42; Write results to file &#42;/</span>
+> resample=sym 5000 frequency from 'nt'; <span class="comment">/&#42; Symmetric resampling, counting frequencies &#42;/</span>
 >
-> keep 0; ttag-; hold 10000; <span class="comment">/&#42; Clear trees and resampling values from memory &#42;/</span>
+> log TNT/ew.sym; ttag/; log/; <span class="comment">/&#42; Write results to log &#42;/</span>
+>
+> keep 0; ttag-; hold 10000; <span class="comment">/&#42; Clear memory &#42;/</span>
 
 Further searches were conducted under extended implied weighting [@Goloboff1997;@Goloboff2014], under the concavity constants `r paste(kValues[-length(kValues)], collapse=', ')` and `r kValues[length(kValues)]`:
 
@@ -36,17 +38,19 @@ Further searches were conducted under extended implied weighting [@Goloboff1997;
 > piwe=2; xmult; <span class="comment">/&#42; Conduct analysis at k = 2 &#42;/</span>
 >
 > tsav &#42;TNT/xpiwe2.tre; sav; tsav/; <span class="comment">/&#42; Save results to file &#42;/</span>
+>
+> nelsen *; set nt ntrees; ttag=; <span class="comment">/&#42; Prepare for resampling &#42;/</span>
+>
+> resample=frequency from 'nt'; <span class="comment">/&#42; Symmetric resampling &#42;/</span>
+>
+> log TNT/ew.sym; ttag/; log/; <span class="comment">/&#42; Write results to log &#42;/</span>
 > 
 > keep 0; ttag-; hold 10000; <span class="comment">/&#42; Clear memory &#42;/</span>
 >
-> piwe=3; xmult; <span class="comment">/&#42; Conduct analysis at k = 3 &#42;/</span>
->
-> tsav &#42;TNT/xpiwe3.tre; sav ;tsav/; <span class="comment">/&#42; Save results to file &#42;/</span>
-
+> <span class="comment">/&#42; Repeat this block for each value of k &#42/</span>
 
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
 
-<!-- "Jackknife resampling should be used rather than bootstrap resampling" -- @Simmons2011-->
 ## Results
 
 ```{R tnt-results-init, echo=FALSE}
