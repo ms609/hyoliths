@@ -21,7 +21,7 @@ source('printFunctions.R')
 if (exists('localInstance') || knitr::is_html_output()) {
   trees <- unique(allTrees)
 } else if (length(iw.exist) > 1L) {
-  trees <- iw.exist[[ceiling(length(iw.exist)/2L)]][2] # Single [] to keep as a list of 1 tree.
+  trees <- iw.exist[[ceiling(length(iw.exist)/2L)]][1] # Single [] to keep as a list of 1 tree.
 } else {
   trees <- allTrees[1]
 }
