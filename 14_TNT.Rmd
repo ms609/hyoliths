@@ -120,7 +120,7 @@ ColMissing(omit)
 -->
 \newpage
 
-(ref:tnt-ew-cons) Consensus of all trees obtained using equally weighted Fitch parsimony in TNT.  _Mickwitzia_ and _Micrina_ may equally parsimoniously be reconstructed in the basal region of the linguliform or rhynchonelliform lineages; as such, the inclusion of these taxa in the consensus tree reduces resolution.  These taxa were still included in the analysis used to generate this tree, but were removed from each MPT before the consensus was calculated in order that the relationships that are present in each tree might be more easily observed.  Node labels denote jackknife frequencies.
+(ref:tnt-ew-cons) Consensus of all trees obtained using equally weighted Fitch parsimony in TNT.  Nodes labelled with jackknife frequencies.
 
 ```{R tnt-ew-consensus, echo=FALSE, fig.cap="(ref:tnt-ew-cons)"}
 # This function will be included in a future release of TreeSearch.
