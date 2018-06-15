@@ -188,10 +188,12 @@ if (knitr::is_html_output()) {
                  '" class="taxonLabel">', 
                  gsub('_', ' ', majTips[terminal], fixed=TRUE), '</text>',
                  collapse='')
-  nodes <- paste0('<text x="', (nodeXi[internal][-1] + 2L), 
-                  '" y="', nodeYi[internal][-1] + textY,
-                  '" class="node" fill="', NodeColour(nodeSupport[-1]),
-                  '">', nodeSupport[-1], '</text>', collapse='')
+  nodes <- paste0('<text x="', (conX[internal] + 2L), 
+                  '" y="', conY[internal] + textY,
+                  '" id="nr', internal, '" class="node"><tspan class="b44">',
+                  majLabels['changes', ], '</tspan><br /><tspan class="b42">',
+                  majLabels['regions'], '</tspan><br /><tspan class="b41">', 
+                  majLabels['fitches'], '</tspan></text>', collapse='')
   conCaption <- paste0('<text x="', svgWidth - 4L,
                '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
                 '<tspan class="score b41">Red</tspan>: Logically invalid Fitch steps<br />Rokey-dokey',
