@@ -1,19 +1,12 @@
 macro=;
 
 /* To use extended implied weighting, data must be read with implied weights on */
-/* Type piwe=2 into the command line before opening the dataset. */
-/* Then type tnt into the TNT command line to run this script. */
+/* Type piwe= into the command line before opening the dataset. */
+/* Then if this file is in the same directory as your data file, */
+/* type tnt into the TNT command line to run this script. */
 
 xmult:rat10 drift10 hits 15 level 4 chklevel 5;
 /* 15 hits gives a quick but less comprehensive run */
-
-/* outgroup Dailyatia; */
-/* taxcode -Namacalathus; */
-/* taxcode -Conotheca;      */
-taxcode -Decoritheca;
-/* taxcode -Maxilites;      */
-/* taxcode -Pauxillites;    */
-/* taxcode -Probactrotheca; */
 
 outgroup Flustra;
 var: nt;

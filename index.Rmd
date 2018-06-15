@@ -61,10 +61,9 @@ tntLink <- gsub(".*(mbank_.*\\.tnt).*",
 nexusFiles <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 nexusFile <- nexusFiles[which.max(vapply(nexusFiles, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(nexusFile)
-#ignored_taxa <- c('Conotheca', 'Decoritheca', 'Maxilites', 'Pauxillites',
-#                  'Probactrotheca') # Also manually update tnt.run with with taxcode-
-ignored_taxa <- c('Decoritheca')
-#ignored_taxa <- character(0)
+#ignored_taxa <- c('Conotheca', 'Maxilites', 'Pauxillites',
+#                  'Probactrotheca') # Also manually update tnt.run using `taxcode-`
+ignored_taxa <- character(0)
 my_data[ignored_taxa] <- NULL
 
 # my_data contains an inapplicable state that we should convert to ambiguous for 
