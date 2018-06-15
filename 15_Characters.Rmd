@@ -181,25 +181,30 @@ if (knitr::is_html_output()) {
   
   edges <- paste0('<path d="', paste0('M', conX[parent], ',', conY[parent],
                                       'V', conY[child], 'H', conX[child], 
-                                      collapse=''), '"></path>')
+                                      collapse=''), '" stroke="black"></path>')
   tips <- paste0('<text x="', (conX[terminal] + 0L), 
                  '" y="', conY[terminal] + textY,
                  '" fill="', taxonColour[majTips[terminal]],
                  '" class="taxonLabel">', 
                  gsub('_', ' ', majTips[terminal], fixed=TRUE), '</text>',
                  collapse='')
-  nodes <- paste0('<text x="', (conX[internal] + 2L), 
-                  '" y="', conY[internal] + textY,
-                  '" id="nr', internal, '" class="node"><tspan class="b44">',
-                  majLabels['changes', ], '</tspan><tspan class="b42" x="0" dy="1.2em">',
-                  majLabels['regions', ], '</tspan><tspan class="b41" x="0" dy="1.2em">', 
-                  majLabels['fitches', ], '</tspan></text>', collapse='')
-  conCaption <- paste0('<text x="', svgWidth - 4L,
-               '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
-                '<tspan class="score b41">Red</tspan>: Logically invalid Fitch steps',
-               '</text><text x="', svgWidth - 4L, '" y="', (yStep * 2) + textY, 
-               '" text-anchor="end" class="stepsLabel">',
-               '<tspan class="score">Blue</tspan>: additional region</text>')
+  nodes <- paste0('<g transform="translate(', conX[internal] + 2L, 
+                  ' ', conY[internal], ')" class="node-g" data-node="', internal, 
+                  '"><text x="0" y="0" class="node"><tspan class="b42" dy="-1.2em">',
+                  majLabels['regions', ], '</tspan><tspan class="b44" x="0" dy="1.2em">',
+                  majLabels['changes', ], '</tspan><tspan class="b41" x="0" dy="1.2em">', 
+                  majLabels['fitches', ], '</tspan></text></g>', collapse='')
+  conCaption <- paste0('<g transform="translate(', svgWidth - 4L, ' ', yStep + textY, 
+                       ')"><text x="0" y="0" text-anchor="end" class="stepsLabel">',
+                       '<tspan x="0" dy="1.2em">',
+                       '<tspan class="score b44">Blue</tspan>: ',
+                       'Character transformation</tspan>', 
+                       '<tspan x="0" dy="1.2em"><tspan class="score b42">Orange</tspan>:',
+                       'Additional regions</tspan>', 
+                       '<tspan x="0" dy="1.2em"><tspan class="score b41">Red</tspan>:',
+                       'Logically invalid Fitch steps</tspan>',
+                       '<tspan x="0" dy="1.2em">Click node for details</tspan>',
+                       '</text></g>')
   svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
                 svgWidth, '" height="', svgHeight, '" class="tree" data-char="', i, '">',
                 conCaption, tips, edges, nodes, '</svg>')
