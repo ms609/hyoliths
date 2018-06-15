@@ -108,7 +108,7 @@ div.tfm::before {
   content: "Transformations:";
 }
 div.rgn::before {
-  content: "Additional regions:";
+  content: "Applicable regions:";
 }
 div.ftch::before {
   content: "Logically invalid Fitch transformations:";

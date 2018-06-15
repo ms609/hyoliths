@@ -115,17 +115,25 @@ omit <- c("Micrina", "Micromitra",
 majCon <- RootTree(ConsensusWithout(tnConsensi, omit, p=0.5), rootingTips)
 
 bifurcating <- multi2di(majCon) # Nodes inserted at random
+bEdge <- bifurcating$edge
+bParent <- bEdge[, 1]
+bChild <- bEdge[, 2]
 majTips <- majCon$tip.label
 bifTips <- bifurcating$tip.label
 majChars <- my_chars[majTips, ]
 recons <- apply(majChars, 2, function (char) {
   inapp <- apply.reconstruction(bifurcating, char)
+  isApp <- vapply(inapp$Up2, function (x) !-1 %in% x, logical(1))
+  enterApp <- isApp[bChild] & !isApp[bParent]
+  
   fitch <- apply.reconstruction(bifurcating, char, method='Fitch', inapplicable=1)
   # Return:
   list('changes' = inapp$changes,
-       'regions' = inapp$regions,
+       'regions' = bParent[enterApp],
+       'regioncounted' = inapp$regions,
        'fitches' = fitch$changes[!fitch$changes %in% inapp$changes])
 })
+reconLength <- length(recons[[1]])
 
 conTip <- length(majTips)
 majSplits <- vapply(Descendants(majCon, conTip + 1:Nnode(majCon), type='tips'),
@@ -147,12 +155,12 @@ whichNode <- whichNode + conTip
 if (knitr::is_html_output()) {
   
   majLabels <- vapply(conTip + 1:Nnode(majCon), function (node) {
-    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(3))
+    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(reconLength))
     whichWhere <- apply(where, 1, which)
     ret <- unlist(lapply(whichWhere, length))
     # Return: 
     ifelse(ret == 0, '', as.character(ret))
-  }, character(3))
+  }, character(reconLength))
 
   ### Calculate node coordinates for majCon
   
@@ -200,7 +208,7 @@ if (knitr::is_html_output()) {
                        '<tspan class="score b44">Blue</tspan>: ',
                        'Character transformations</tspan>', 
                        '<tspan x="0" dy="1.2em"><tspan class="score b42">Orange</tspan>: ',
-                       'Additional regions</tspan>', 
+                       'Applicable regions</tspan>', 
                        '<tspan x="0" dy="1.2em"><tspan class="score b41">Red</tspan>: ',
                        'Logically invalid Fitch steps</tspan>',
                        '</text></g>')
@@ -211,7 +219,7 @@ if (knitr::is_html_output()) {
   
   ## Generate detail-divs
   majCaptions <- vapply(conTip + 1:Nnode(majCon), function (node) {
-    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(3))
+    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(reconLength))
     apply(where, 1, function (changes) {
       if (any(changes)) {
         paste0('<span class=change><span class=charNo>', which(changes), 
@@ -219,7 +227,7 @@ if (knitr::is_html_output()) {
                '</span>', collapse='') 
       } else ''
     })
-  }, character(3))
+  }, character(reconLength))
   ncol <- colSums(majCaptions != '')
   cat('<div id=nodeDetails>Click a node for details of changes</div>',
       paste0('<div id=nodeDetail', internal, ' class=nddtl><div class=nddtlhdr>',
@@ -237,13 +245,13 @@ if (knitr::is_html_output()) {
 } else {
   ColPlot(majCon)
   majLabels <- vapply(conTip + 1:Nnode(majCon), function (node) {
-  where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(3))
+  where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(reconLength))
   whichWhere <- apply(where, 1, which)
   # Return: 
-  if (length(whichWhere) == 0) character(3) else {
+  if (length(whichWhere) == 0) character(reconLength) else {
     unlist(lapply(whichWhere, paste, collapse=', '))
   }
-  }, character(3))
+  }, character(reconLength))
   LabelNodes(majLabels['changes', ], 4, 0)
   LabelNodes(majLabels['regions', ], 2, 1)
   LabelNodes(majLabels['fitches', ], 1, 2)
