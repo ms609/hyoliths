@@ -116,7 +116,6 @@ rootedConsensus <- RootTree(consensus(thinned, p=0.5), rootingTips)
 
 mbCon <- RootTree(consensus(thinned, p=0.5), rootingTips)
 tipIndex <- sort(thinned[[1]]$tip.label)
-sampleSize <- 5000L
 mbSplits <- GetSplits(sample(thinned, sampleSize), tipIndex)
 
 ColPlot(UnitEdges(rootedConsensus))
