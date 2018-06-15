@@ -7,7 +7,7 @@ date: "`r Sys.Date()`"
 <!--\SItext-->
 # Phylogenetic dataset {#dataset}
 
-Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` lophotrochozoan taxa, coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).  The matrix can be viewed interactively at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)); <mark>[This link will become live on publication of the paper. Referees are directed to the pre-publication link to the dataset provided in the main manuscript.]</mark> a static version can be downloaded directly from 
+Analysis was performed on a new matrix of `r length(names(my_data))` lophotrochozoan taxa, coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).  The matrix can be viewed interactively at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)); <mark>[This link will become live on publication of the paper. Referees are directed to the pre-publication link to the dataset provided in the main manuscript.]</mark> a static version can be downloaded directly from 
 - https://raw.githubusercontent.com/ms609/hyoliths/master/`r gsub('^\\./', '', nexusFile)` (Nexus format)
 - `r tntLink` (TNT format)
 
@@ -27,6 +27,7 @@ The complete dataset comprises `r length(my_chars)` character codings, of which 
 
 ```{r Coded per taxon, echo=FALSE, asis=TRUE}
 coded <- apply(my_chars, 1, function (x) sum(!(x %in% c('?', '-'))))
+coded <- coded[order(names(coded))]
 columns <- 3
 roundLength <- ceiling(length(coded) / columns) * columns
 padding <- rep('', roundLength - length(coded))
