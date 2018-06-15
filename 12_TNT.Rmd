@@ -54,8 +54,6 @@ We acknowledge the Willi Hennig Society for their sponsorship of the TNT softwar
 ## Results
 
 ```{R tnt-results-init, echo=FALSE}
-tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
-tntFile <- tntFiles[1]
 tnTrees <- lapply(tntFiles, ReadTntTree, relativePath='.', keepEnd=1)
 tnTrees <- lapply(tnTrees, as.multiPhylo)
 tnTrees <- lapply(tnTrees, function (x) lapply(x, drop.tip, ignored_taxa))

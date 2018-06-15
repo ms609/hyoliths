@@ -7,7 +7,12 @@ date: "`r Sys.Date()`"
 <!--\SItext-->
 # Phylogenetic dataset {#dataset}
 
-Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` lophotrochozoan taxa, coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).  Taxa were chosen to include previously proposed affinities for hyoliths (sipunculans, molluscs).  As a brachiozoan affinity is indicated, additional brachiozoan taxa were incorporated in order to resolve the position of hyoliths within this group.
+Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` lophotrochozoan taxa, coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).  The matrix can be viewed interactively at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)); <mark>[This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.]</mark> a static version can be downloaded directly from 
+- https://raw.githubusercontent.com/ms609/hyoliths/master/`r gsub('^\\./', '', nexusFile)` (Nexus format)
+- https://raw.githubusercontent.com/ms609/hyoliths/master/`r tntDataFile` (TNT format)
+
+
+Taxa were chosen to include previously proposed affinities for hyoliths (sipunculans, molluscs).  As a brachiozoan affinity is indicated, additional brachiozoan taxa were incorporated in order to resolve the position of hyoliths within this group.
 
 Characters are coded following the recommendations of @Brazeau2018:
 
@@ -34,8 +39,4 @@ codeMat[, seq_len(columns) * 2] <- c(paste0(coded, "   "), padding)
 
 knitr::kable(codeMat, col.names=rep('', columns * 2))
 ```
-
-The matrix can be viewed interactively and downloaded at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)). <mark>[This link will become live on publication of the paper. Referees should follow the pre-publication link to the dataset that has been provided in the main manuscript.]</mark>
-
-A static version of the NEXUS file used to generate this supplementary information can be downloaded directly from https://raw.githubusercontent.com/ms609/hyoliths/master/`r gsub('^\\./', '', nexusFile)` .
 
