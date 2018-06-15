@@ -114,7 +114,7 @@ bifurcating <- multi2di(majCon) # Nodes inserted at random
 majTips <- majCon$tip.label
 bifTips <- bifurcating$tip.label
 majChars <- my_chars[majTips, ]
-recons <- apply(maj_chars, 2, function (char) {
+recons <- apply(majChars, 2, function (char) {
   inapp <- apply.reconstruction(bifurcating, char)
   fitch <- apply.reconstruction(bifurcating, char, method='Fitch', inapplicable=1)
   # Return:
