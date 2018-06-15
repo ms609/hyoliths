@@ -105,6 +105,54 @@ if (exists('localInstance') || knitr::is_html_output()) {
   }
 }
 ```
+```{R all-changes, echo=FALSE, fig.height=6, fig.width=8}
+# majCon was defined in TNT
+bifurcating <- multi2di(majCon) # Nodes inserted at random
+majTips <- majCon$tip.label
+bifTips <- bifurcating$tip.label
+majChars <- my_chars[majTips, ]
+recons <- apply(maj_chars, 2, function (char) {
+  inapp <- apply.reconstruction(bifurcating, char)
+  fitch <- apply.reconstruction(bifurcating, char, method='Fitch', inapplicable=1)
+  # Return:
+  list('changes' = inapp$changes,
+       'regions' = inapp$regions,
+       'fitches' = fitch$changes[!fitch$changes %in% inapp$changes])
+})
+
+nTip <- length(majTips)
+majSplits <- vapply(Descendants(majCon, nTip + 1:Nnode(majCon), type='tips'),
+           function (tips) majTips %in% majTips[tips], logical(nTip))
+bifSplits <- vapply(Descendants(bifurcating, nTip + seq_len(nTip - 1L), type='tips'),
+           function (tips) bifTips %in% bifTips[tips], logical(nTip))
+majNos <- apply(majSplits, 2, function (x) sum(powersOf2[x]))
+bifNos <- apply(bifSplits, 2, function (x) sum(powersOf2[x]))
+whichNode <- integer(length(bifNos))
+bifReal <- bifNos %in% majNos
+whichNode[bifReal] <- vapply(bifNos[bifReal], function (x) which(majNos == x), integer(1))
+whichNode[!bifReal] <- apply(bifSplits[, !bifReal, drop=FALSE], 2, function (bifSplit) {
+  extras <- colSums(majSplits[!bifSplit, ])
+  parentSplits <- apply(majSplits[bifSplit, ], 2, all)
+  which(parentSplits & extras == min(extras[parentSplits]))
+})
+whichNode <- whichNode + nTip
+ColPlot(majCon)
+majLabels <- vapply(nTip + 1:Nnode(majCon), function (node) {
+  where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nTip], logical(1)), logical(3))
+  whichWhere <- apply(where, 1, which)
+  # Return: 
+  if (length(whichWhere) == 0) character(3) else {
+    unlist(lapply(whichWhere, paste, collapse=', '))
+  }
+}, character(3))
+LabelNodes <- function (x, col=1, line=1) {
+  nodelabels(paste(rep("\n", 2 - line), x, rep("\n", line)),
+             frame='none', pos=2, cex=0.8, col=brewer[[4]][col])
+}
+LabelNodes(majLabels['changes', ], 4, 0)
+LabelNodes(majLabels['regions', ], 2, 1)
+LabelNodes(majLabels['fitches', ], 1, 2)
+```
 <script>
 var latestKnownScrollY = 0,
   latestKnownY = 0,
@@ -225,7 +273,7 @@ $(document).ready(function() {
   return false;
 });
 </script>
-```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
+```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis", eval=FALSE}
 ## These function definitions must be in the same block as when they are called.
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
 PrintDivision <- function (parts) cat(Header(2L, paste(
