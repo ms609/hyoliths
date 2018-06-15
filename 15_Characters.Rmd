@@ -109,7 +109,11 @@ if (exists('localInstance') || knitr::is_html_output()) {
 (ref:all-changes) All character changes mapped onto a single consensus tree.  Logically coherent changes are marked in <span class="color: `r brewer[[4]][4]`;">blue</span>; logically impossible changes (which are nevertheless reconstructed by the Fitch algorithm) are marked in <span class="color: `r brewer[[4]][1]`;">red</span>.  <span class="color: `r brewer[[4]][2]`;">Orange</span> denotes nodes at which homoplasy due to additional regions is mapped.[...]
 
 ```{R all-changes, echo=FALSE, fig.height=6, fig.width=8, fig.cap="(ref:all-changes)"}
-# majCon was defined in TNT
+omit <- c("Micrina", "Micromitra",
+          "Longtancunella_chengjiangensis",# "Yuganotheca_elegans",
+          "Salanygolina", "Askepasma_toddense")#, "Tomteluva_perturbata")
+majCon <- RootTree(ConsensusWithout(tnConsensi, omit, p=0.5), rootingTips)
+
 bifurcating <- multi2di(majCon) # Nodes inserted at random
 majTips <- majCon$tip.label
 bifTips <- bifurcating$tip.label
