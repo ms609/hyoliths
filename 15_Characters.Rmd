@@ -172,7 +172,7 @@ if (knitr::is_html_output()) {
                      len=max(nAncestors) + 1L), 1)
   conX <- conXStep[nAncestors + 1L]
   conY <- double(length(nAncestors))
-  conY[child[child <= conTip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=conTip)
+  conY[child[child <= conTip]] <- seq(treeYMargins[1] + 30, svgHeight-treeYMargins[2], len=conTip)
   
   for (nodeI in rev(internal)) {
     conY[nodeI] <- mean(conY[Children(majCon, nodeI)])
@@ -181,7 +181,7 @@ if (knitr::is_html_output()) {
   
   edges <- paste0('<path d="', paste0('M', conX[parent], ',', conY[parent],
                                       'V', conY[child], 'H', conX[child], 
-                                      collapse=''), '" stroke="black"></path>')
+                                      collapse=''), '" stroke="#888"></path>')
   tips <- paste0('<text x="', (conX[terminal] + 0L), 
                  '" y="', conY[terminal] + textY,
                  '" fill="', taxonColour[majTips[terminal]],
@@ -190,25 +190,39 @@ if (knitr::is_html_output()) {
                  collapse='')
   nodes <- paste0('<g transform="translate(', conX[internal] + 2L, 
                   ' ', conY[internal], ')" class="node-g" data-node="', internal, 
-                  '"><text x="0" y="0" class="node"><tspan class="b42" dy="-1.2em">',
+                  '"><text x="0" y="-1.2em" class="node"><tspan class="b42">',
                   majLabels['regions', ], '</tspan><tspan class="b44" x="0" dy="1.2em">',
                   majLabels['changes', ], '</tspan><tspan class="b41" x="0" dy="1.2em">', 
                   majLabels['fitches', ], '</tspan></text></g>', collapse='')
-  conCaption <- paste0('<g transform="translate(', svgWidth - 4L, ' ', yStep + textY, 
-                       ')"><text x="0" y="0" text-anchor="end" class="stepsLabel">',
+  conCaption <- paste0('<g transform="translate(', svgWidth - 4L, ' 0)">',
+                       '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                        '<tspan x="0" dy="1.2em">',
                        '<tspan class="score b44">Blue</tspan>: ',
-                       'Character transformation</tspan>', 
-                       '<tspan x="0" dy="1.2em"><tspan class="score b42">Orange</tspan>:',
+                       'Character transformations</tspan>', 
+                       '<tspan x="0" dy="1.2em"><tspan class="score b42">Orange</tspan>: ',
                        'Additional regions</tspan>', 
-                       '<tspan x="0" dy="1.2em"><tspan class="score b41">Red</tspan>:',
+                       '<tspan x="0" dy="1.2em"><tspan class="score b41">Red</tspan>: ',
                        'Logically invalid Fitch steps</tspan>',
-                       '<tspan x="0" dy="1.2em">Click node for details</tspan>',
                        '</text></g>')
   svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
-                svgWidth, '" height="', svgHeight, '" class="tree" data-char="', i, '">',
+                svgWidth, '" height="', svgHeight, '" id="conTree">',
                 conCaption, tips, edges, nodes, '</svg>')
   cat(svgSource)
+  
+  ## Generate detail-divs
+  majCaptions <- vapply(conTip + 1:Nnode(majCon), function (node) {
+    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(3))
+    apply(where, 1, function (changes) {
+      paste0('<span class=change><span class=charNo>', which(changes), '</span>: ',
+             names(changes[changes]), '</span>', collapse='')
+    })
+  }, character(3))
+  cat('<div id=nodeDetails>Click a node for details of changes</div>',
+      paste0('<div id=nodeDetail', internal, ' class=nddtl><span class=nddtlhdr>',
+         'Steps incurred at node ', internal, '</span><div class=tfm>',
+         majCaptions['changes', internal - conTip], '</div><div class=rgn>',
+         majCaptions['regions', internal - conTip], '</div><div class=ftch>',
+         majCaptions['fitches', internal - conTip], '</div></div>', collapse=''))
 } else {
   ColPlot(majCon)
   majLabels <- vapply(conTip + 1:Nnode(majCon), function (node) {
@@ -225,6 +239,25 @@ if (knitr::is_html_output()) {
 }
 ```
 <script>
+// Enable consensus tree interactions:
+function showNodeNotes (e) {
+  var target = e.target; // Which node triggered the click
+  if (target.nodeName === 'tspan')
+    $target = $(target);
+    gp = $target.parent().parent();
+    if (gp[0].nodeName === 'g' && gp.hasClass('node-g')) {
+      nodeNumber = gp.data('node');
+      $("#conTree g").removeClass("bold");
+      gp.addClass("bold");
+      document.getElementById('nodeDetails').style='display: none';
+      $('div .nddtl').css('display', 'none');
+      document.getElementById('nodeDetail' + nodeNumber).style='display: block';
+  }
+  return false;
+}
+$("#conTree").click(showNodeNotes)
+
+// Prepare for character-by-character interactions
 var latestKnownScrollY = 0,
   latestKnownY = 0,
 	ticking = false;

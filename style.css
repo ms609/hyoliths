@@ -49,11 +49,13 @@ path.inapplicable {
   font-size: 9.5pt;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal svg.tree text {
+.book .book-body .page-wrapper .page-inner section.normal svg.tree text,
+#conTree text {
   font-size: 10pt;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal svg.tree text.node {
+.book .book-body .page-wrapper .page-inner section.normal svg.tree text.node,
+ #conTree text.node {
   font-size: 8pt;
 }
 
@@ -98,10 +100,13 @@ tspan.thisAn {
   fill: #34caaf;
 }
 
-tspan.b41, text.b41 { fill: #d7191c; }
-tspan.b42, text.b42 { fill: #fdae61; }
-tspan.b43, text.b43 { fill: #abd9e9; }
-tspan.b44, text.b44 { fill: #2c7bb6; }
+tspan.b41, text.b41 { fill:  #d7191c; }
+div.ftch span.charNo {color: #d7191c; }
+tspan.b42, text.b42 { fill:  #fdae61; }
+div.rgn span.charNo { color: #fdae61; }
+tspan.b43, text.b43 { fill:  #abd9e9; }
+tspan.b44, text.b44 { fill:  #2c7bb6; }
+div.tfm span.charNo { color: #2c7bb6; }
 
 .legendLabels {
   fill: #858585; /* To match blockquote style */
@@ -127,3 +132,14 @@ input.switcherNumber {
   font-style: italic;
 }
 
+span.change {
+  display: list-item;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+div.nddtl {
+  display: none;
+}
