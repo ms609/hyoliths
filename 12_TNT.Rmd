@@ -47,7 +47,7 @@ Further searches were conducted under extended implied weighting [@Goloboff1997;
 > 
 > keep 0; ttag-; hold 10000; <span class="comment">/&#42; Clear memory &#42;/</span>
 >
-> <span class="comment">/&#42; Repeat this block for each value of k &#42/</span>
+> <span class="comment">/&#42; Repeat this block for each value of k &#42;/</span>
 
 To replicate the results:
 
