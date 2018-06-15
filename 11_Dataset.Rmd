@@ -7,9 +7,7 @@ date: "`r Sys.Date()`"
 <!--\SItext-->
 # Phylogenetic dataset {#dataset}
 
-Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` early brachiozoan taxa, including hyoliths, tommotiids and mickwitziids, which were coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).
-
-_Namacalathus_ was incorporated as a `r length(names(my_data))`^th^ taxon, but preliminary results did not uphold the homology of its potentially brachiozoan-like features.  As such, we excluded it from our analysis due to its morphological distance from ingroup taxa, a likely source of long branch error.  _Dailyatia_ was instead selected as an outgroup as camenellans have been interpreted as the earliest diverging members of the Brachiozoa [@Skovsted2015Theearly;@Zhao2017].
+Analysis was performed on a new matrix of `r length(names(my_data)) - 1L` lophotrochozoan taxa, including hyoliths, tommotiids and mickwitziids, which were coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).
 
 Characters are coded following the recommendations of @Brazeau2018:
 
