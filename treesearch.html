@@ -456,7 +456,7 @@ start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<spa
 <p>The position of the root does not affect tree score, so we keep it fixed (using <code>RootedXXXSwap</code> functions) to avoid unnecessary swaps.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (k <span class="cf">in</span> kValues) {
   iw.tree &lt;-<span class="st"> </span><span class="kw">IWRatchet</span>(start.tree, iw_data, <span class="dt">concavity=</span>k,
-                       <span class="dt">ratchHits =</span> <span class="dv">60</span>, <span class="dt">searchHits=</span><span class="dv">55</span>,
+                       <span class="dt">ratchHits =</span> <span class="dv">6</span>, <span class="dt">ratchIter=</span><span class="dv">4000</span>, <span class="dt">searchHits=</span><span class="dv">56</span>,
                        <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
                        <span class="dt">verbosity=</span>0L)
   score &lt;-<span class="st"> </span><span class="kw">IWScore</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k)
@@ -478,7 +478,7 @@ start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<spa
 <div id="equal-weights-analysis" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Equal weights analysis</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ew.tree &lt;-<span class="st"> </span><span class="kw">Ratchet</span>(start.tree, my_data, <span class="dt">verbosity=</span>0L,
-                   <span class="dt">ratchHits =</span> <span class="dv">60</span>, <span class="dt">searchHits=</span><span class="dv">55</span>, <span class="co"># ratchHits = 20 not enough</span>
+                   <span class="dt">ratchHits =</span> <span class="dv">60</span>, <span class="dt">ratchIter=</span><span class="dv">4000</span>, <span class="dt">searchHits=</span><span class="dv">55</span>, <span class="co"># ratchHits = 20 not enough</span>
                    <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
 ew.consensus &lt;-<span class="st"> </span><span class="kw">RatchetConsensus</span>(ew.tree, my_data, <span class="dt">nSearch=</span><span class="dv">250</span>, <span class="dt">searchHits =</span> <span class="dv">85</span>,
                                  <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedNNISwap),
