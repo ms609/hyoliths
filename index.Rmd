@@ -22,11 +22,8 @@ description: "Results of phylogenetic analysis"
 
 This document comtains supplementary material to @Sun2018Hyolithswith.  `r if (knitr::is_latex_output()) 'It is best viewed in HTML format at \\href{https://ms609.github.io/hyoliths/}{ms609.github.io/hyoliths}.'`
 
-It opens with a detailed discussion of [analyses](#treesearch) of the [morphological dataset](#dataset) constructed to accompany @Sun2018Hyolithswith, and their results.
-
-We document the results of tree searches using [Fitch parsimony](#fitch) and a [Bayesian method](#bayesian), with the caveat that both approaches are subject to errors resulting from logically incoherent treatment of inapplicable data [@Maddison1993].
-
-To meet this criticism, we also present the results of tree searches with the algorithm described by @Brazeau2018, which correctly handles inapplicable data in a parsimony setting. Finally, we document how each character is most parsimoniously [reconstructed](#reconstructions) on `r if(knitr::is_html_output()) "optimal trees" else "an optimal tree"`.
+It describes the [morphological dataset](#dataset) and the results of tree searches using [Fitch parsimony](#fitch) and a [Bayesian method](#bayesian): approaches that are subject to errors resulting from logically incoherent treatment of inapplicable data [@Maddison1993].
+We also present the  [results](#treesearch) of tree searches with the algorithm described by @Brazeau2018, which correctly handles inapplicable data in a parsimony setting. Finally, we document how each character is most parsimoniously [reconstructed](#reconstructions) on `r if(knitr::is_html_output()) "optimal trees" else "an optimal tree"`.
 
 Supplementary [figures](#figures) and [tables](#table) appear after the text.
 
