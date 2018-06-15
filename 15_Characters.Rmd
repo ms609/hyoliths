@@ -228,7 +228,7 @@ if (knitr::is_html_output()) {
       } else ''
     })
   }, character(reconLength))
-  ncol <- colSums(majCaptions != '')
+  ncol <- colSums(majCaptions[c('regions', 'changes', 'fitches'), ] != '')
   cat('<div id=nodeDetails>Click a node for details of changes</div>',
       paste0('<div id=nodeDetail', internal, ' class=nddtl><div class=nddtlhdr>',
          'Steps incurred at node ', internal, ':</div>',
