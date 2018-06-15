@@ -413,7 +413,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="fitch" class="section level1">
 <h1><span class="header-section-number">2</span> Fitch parsimony</h1>
-<p>Parsimony search was conducted in TNT v1.5 <span class="citation">(Goloboff &amp; Catalano, <a href="#ref-Goloboff2016">2016</a>)</span> using ratchet and tree drifting heuristics <span class="citation">(Goloboff, <a href="#ref-Goloboff1999">1999</a>; Nixon, <a href="#ref-Nixon1999">1999</a>)</span>, repeating the search until the optimal score had been hit by 1500 independent searches:</p>
+<p>Parsimony search under the Fitch algorithm was conducted in TNT v1.5 <span class="citation">(Goloboff &amp; Catalano, <a href="#ref-Goloboff2016">2016</a>)</span> using Ratchet and tree drifting heuristics <span class="citation">(Goloboff, <a href="#ref-Goloboff1999">1999</a>; Nixon, <a href="#ref-Nixon1999">1999</a>)</span>, repeating the search until the optimal score had been hit by 1500 independent searches:</p>
 <blockquote>
 <p>xmult:rat10 drift10 hits 1500 level 4 chklevel 5;</p>
 </blockquote>
@@ -442,7 +442,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>keep 0; ttag-; hold 10000; <span class="comment">/* Clear memory */</span></p>
 <p><span class="comment">/* Repeat this block for each value of k &amp;#42/</span></p>
 </blockquote>
-<p>We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.</p>
+<p>To replicate the results:</p>
+<ul>
+<li>Download </li>
+<li>Save  to the same directory, with the filename <code>tnt.run</code>.</li>
+<li>Open TNT, type <code>piwe=</code> before you load the downloaded dataset (to enable extended implied weighting), then type <code>tnt</code> into the command box to run the script.</li>
+<li>We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.</li>
+</ul>
 <div id="results" class="section level2">
 <h2><span class="header-section-number">2.1</span> Results</h2>
 <p><img src="Brachiopod_phylogeny_files/figure-html/tnt-iw-overview-1.png" width="672" /></p>
