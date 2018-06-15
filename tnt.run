@@ -20,7 +20,7 @@ piwe=4.5 ;xmult;tsav *TNT/xpiwe4.5.tre;sav; tsav/;nelsen *;set nt ntrees;ttag=;r
 piwe=7   ;xmult;tsav *TNT/xpiwe7.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe7.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=10.5;xmult;tsav *TNT/xpiwe10.5.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe10.5.sym;ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=16  ;xmult;tsav *TNT/xpiwe16.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe16.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=24  ;xmult;tsav *TNT/xpiwe2.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe24.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=24  ;xmult;tsav *TNT/xpiwe24.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe24.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
 
 /* 1000 hits gives a slow but incredibly comprehensive set of results */
 xmult:hits 1000;
@@ -33,6 +33,6 @@ piwe=4.5 ;xmult;tsav *TNT/xpiwe4.5.tre;sav; tsav/;nelsen *;set nt ntrees;ttag=;r
 piwe=7   ;xmult;tsav *TNT/xpiwe7.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe7.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=10.5;xmult;tsav *TNT/xpiwe10.5.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe10.5.sym;ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=16  ;xmult;tsav *TNT/xpiwe16.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe16.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=24  ;xmult;tsav *TNT/xpiwe2.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe24.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=24  ;xmult;tsav *TNT/xpiwe24.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe24.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
 
 macro -;
