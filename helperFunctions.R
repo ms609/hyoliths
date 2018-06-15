@@ -11,6 +11,14 @@ NexusTime <- function (filename, format='double') {
   }
 }
 
+GitLink <- function (text, pre='', alt=NULL) {
+  paste0(if(!knitr::is_html_output()) pre else '',
+         " \\href{", rawGit, text, "}{",
+         if (knitr::is_html_output() || is.null(alt)) {
+           paste0(gsub("https://", "", rawGit, fixed=TRUE), text)
+         } else alt, "}")
+}
+
 NewickTree <- function(tree) gsub('_', ' ', write.tree(tree), fixed=TRUE)
 
 MatrixData <- function (states_matrix, fitch_states, state.labels) {

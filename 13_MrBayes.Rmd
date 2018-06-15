@@ -63,6 +63,8 @@ Four MrBayes runs were executed, each sampling eight chains for `r Mgen`&nbsp;00
 
 A posterior tree topology was derived from the combined posterior sample of all runs. Convergence was indicated by PSRF = 1.00 and an estimated sample size of > 200 for each parameter.  Nodes are labelled with posterior probabilities; recall that caution must be applied when interpreting these values [@Yang2018].
 
+The Nexus file used to generate these results in MrBayes can be `r GitLink("MrBayes/hyo.nex", "downloaded from", "downloaded here")`, and run from \href{http://mrbayes.sourceforge.net/download.php}{MrBayes} by typing `exe path/to/download`.
+
 ## Parameter estimates
 
 ```{R mrbayes-parameter-summary, echo=FALSE, asis=TRUE}

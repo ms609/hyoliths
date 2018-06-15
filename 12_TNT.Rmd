@@ -52,7 +52,7 @@ Further searches were conducted under extended implied weighting [@Goloboff1997;
 To replicate the results:
 
 - Download `r if(knitr::is_html_output()) paste0("\\href{", tntLink, "}{the data in TNT format}") else paste0("the data in TNT format: \\href{", tntLink, "}{", gsub("https?://", "", tntLink), "}")`
-- Save \href{https://raw.githubusercontent.com/ms609/hyoliths/master/tnt.run}{the script above} to the same directory, with the filename `tnt.run`.
+- Save \href{`r rawGit`tnt.run}{the script above} to the same directory, with the filename `tnt.run`.
 - Open TNT, type `piwe=` before you load the downloaded dataset (to enable extended implied weighting), then type `tnt` into the command box to run the script.
 - 
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.
