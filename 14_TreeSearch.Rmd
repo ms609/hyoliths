@@ -175,7 +175,7 @@ if (length(iw.exist) > 0) {
 }
 ```
 
-(ref:ts-iw-indiv) Consensus trees of implied weights analyses
+(ref:ts-iw-indiv) Strict consensus trees of implied weights analyses
 
 (ref:first-panels) at all values of _k_, and at the individual values _k_ = `r kValues[1]`, `r kValues[2]` and `r kValues[3]`.
 
