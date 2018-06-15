@@ -156,13 +156,572 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Alongside its definition, each character has been mapped onto a tree. Any of the optimal trees can be selected by modifying the tree number listed above each diagram. Each tip is labelled according to its coding in the matrix. These states have been used to reconstruct the condition of each internal node, using the parsimony method of <span class="citation">Brazeau et al. (<a href="#ref-Brazeau2018">2018</a>)</span> as implemented in the <em>Inapp</em> <em>R</em> package.</p>
 <p>We emphasize that different trees will give different reconstructions. The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.</p>
 
-<div class="figure"><span id="fig:all-changes"></span>
-<img src="Brachiopod_phylogeny_files/figure-html/all-changes-1.png" alt="All character changes mapped onto a single consensus tree. Logically coherent changes are marked in blue; logically impossible changes (which are nevertheless reconstructed by the Fitch algorithm) are marked in red. Orange denotes nodes at which homoplasy due to additional regions is mapped.[…]" width="768" />
-<p class="caption">
-Figure 5.1: All character changes mapped onto a single consensus tree. Logically coherent changes are marked in <span class="color: #2c7bb6;">blue</span>; logically impossible changes (which are nevertheless reconstructed by the Fitch algorithm) are marked in <span class="color: #d7191c;">red</span>. <span class="color: #fdae61;">Orange</span> denotes nodes at which homoplasy due to additional regions is mapped.[…]
-</p>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="682" height="682" id="conTree">
+<g transform="translate(678 0)"><text x="0" y="0" text-anchor="end" class="stepsLabel"><tspan x="0" dy="1.2em"><tspan class="score b44">Blue</tspan>: Character transformations</tspan><tspan x="0" dy="1.2em"><tspan class="score b42">Orange</tspan>: Additional regions</tspan><tspan x="0" dy="1.2em"><tspan class="score b41">Red</tspan>: Logically invalid Fitch steps</tspan></text></g><text x="132.2" y="650.5" fill="#DE77DD" class="taxonLabel">Sipunculus</text><text x="132.2" y="663.7" fill="#DE77DD" class="taxonLabel">Serpula</text><text x="227.6" y="597.4" fill="#DE77DD" class="taxonLabel">Tonicella</text><text x="227.6" y="610.6" fill="#F07894" class="taxonLabel">Paterimitra</text><text x="195.8" y="623.9" fill="#DE77DD" class="taxonLabel">Wiwaxia corrugata</text><text x="164" y="637.2" fill="#DE77DD" class="taxonLabel">Dentalium</text><text x="195.8" y="544.3" fill="grey" class="taxonLabel">Halkieria evangelista</text><text x="195.8" y="557.6" fill="#E18758" class="taxonLabel">Dailyatia</text><text x="164" y="570.8" fill="grey" class="taxonLabel">Cotyledion tylodes</text><text x="164" y="584.1" fill="#E18758" class="taxonLabel">Eccentrotheca</text><text x="68.6" y="677" fill="#F07894" class="taxonLabel">Loxosomella</text><text x="259.4" y="464.7" fill="#777777" class="taxonLabel">Cupitheca holocyclata</text><text x="259.4" y="477.9" fill="black" class="taxonLabel">Pedunculotheca diania</text><text x="323" y="411.6" fill="#444444" class="taxonLabel">Maxilites</text><text x="323" y="424.9" fill="#444444" class="taxonLabel">Pauxillites</text><text x="291.2" y="438.1" fill="#444444" class="taxonLabel">Haplophrentis carinatus</text><text x="259.4" y="451.4" fill="#444444" class="taxonLabel">Paramicrocornus</text><text x="195.8" y="491.2" fill="#777777" class="taxonLabel">Bactrotheca</text><text x="195.8" y="504.5" fill="#777777" class="taxonLabel">Conotheca</text><text x="386.6" y="332" fill="#AF8BF2" class="taxonLabel">Alisina</text><text x="386.6" y="345.2" fill="#AF8BF2" class="taxonLabel">Terebratulina</text><text x="354.8" y="358.5" fill="#AF8BF2" class="taxonLabel">Orthis</text><text x="323" y="371.8" fill="#AF8BF2" class="taxonLabel">Glyptoria</text><text x="354.8" y="305.4" fill="#AF8BF2" class="taxonLabel">Kutorgina chengjiangensis</text><text x="354.8" y="318.7" fill="#AF8BF2" class="taxonLabel">Nisusia sulcata</text><text x="386.6" y="278.9" fill="#52A2EF" class="taxonLabel">Antigonambonites planus</text><text x="386.6" y="292.1" fill="#52A2EF" class="taxonLabel">Coolinia pecten</text><text x="386.6" y="252.3" fill="grey" class="taxonLabel">Tomteluva perturbata</text><text x="386.6" y="265.6" fill="grey" class="taxonLabel">Yuganotheca elegans</text><text x="386.6" y="199.2" fill="#99A700" class="taxonLabel">Novocrania</text><text x="386.6" y="212.5" fill="#99A700" class="taxonLabel">Craniops</text><text x="354.8" y="225.8" fill="#99A700" class="taxonLabel">Ussunia</text><text x="323" y="239.1" fill="#99A700" class="taxonLabel">Gasconsia</text><text x="482" y="119.6" fill="#55B23A" class="taxonLabel">Botsfordia</text><text x="482" y="132.9" fill="#55B23A" class="taxonLabel">Mummpikia nuda</text><text x="450.2" y="146.2" fill="#55B23A" class="taxonLabel">Eoobolus</text><text x="418.4" y="159.4" fill="#55B23A" class="taxonLabel">Lingulellotreta malongensis</text><text x="450.2" y="66.5" fill="#55B23A" class="taxonLabel">Acanthotretella spinosa</text><text x="450.2" y="79.8" fill="#55B23A" class="taxonLabel">Siphonobolus priscus</text><text x="418.4" y="93.1" fill="#55B23A" class="taxonLabel">Clupeafumosus socialis</text><text x="418.4" y="106.4" fill="grey" class="taxonLabel">Lingulosacculus</text><text x="354.8" y="172.7" fill="#55B23A" class="taxonLabel">Lingula</text><text x="323" y="186" fill="#00B97B" class="taxonLabel">Pelagodiscus atlanticus</text><text x="227.6" y="385" fill="#C49800" class="taxonLabel">Mickwitzia muralensis</text><text x="195.8" y="398.3" fill="#C49800" class="taxonLabel">Heliomedusa orienta</text><text x="132.2" y="517.8" fill="#F07894" class="taxonLabel">Namacalathus</text><text x="100.4" y="531" fill="#E18758" class="taxonLabel">Phoronis</text><text x="100.4" y="40" fill="#F07894" class="taxonLabel">Amathia</text><text x="100.4" y="53.3" fill="#F07894" class="taxonLabel">Flustra</text><path d="M5,459.8V270.6H36.8M36.8,270.6V43.6H68.6M68.6,43.6V37H100.4M68.6,43.6V50.3H100.4M36.8,270.6V497.5H68.6M68.6,497.5V467H100.4M100.4,467V419.3H132.2M132.2,419.3V357.8H164M164,357.8V320.2H195.8M195.8,320.2V258.4H227.6M227.6,258.4V193.7H259.4M259.4,193.7V163H291.2M291.2,163V143H323M323,143V116.3H354.8M354.8,116.3V87.9H386.6M386.6,87.9V70.2H418.4M418.4,70.2V63.5H450.2M418.4,70.2V76.8H450.2M386.6,87.9V90.1H418.4M386.6,87.9V103.4H418.4M354.8,116.3V144.8H386.6M386.6,144.8V133.2H418.4M418.4,133.2V123.3H450.2M450.2,123.3V116.6H482M450.2,123.3V129.9H482M418.4,133.2V143.2H450.2M386.6,144.8V156.4H418.4M323,143V169.7H354.8M291.2,163V183H323M259.4,193.7V224.5H291.2M291.2,224.5V212.8H323M323,212.8V202.9H354.8M354.8,202.9V196.2H386.6M354.8,202.9V209.5H386.6M323,212.8V222.8H354.8M291.2,224.5V236.1H323M227.6,258.4V323.2H259.4M259.4,323.2V289.1H291.2M291.2,289.1V269.2H323M323,269.2V256H354.8M354.8,256V249.3H386.6M354.8,256V262.6H386.6M323,269.2V282.5H354.8M354.8,282.5V275.9H386.6M354.8,282.5V289.1H386.6M291.2,289.1V309.1H323M323,309.1V302.4H354.8M323,309.1V315.7H354.8M259.4,323.2V357.2H291.2M291.2,357.2V345.5H323M323,345.5V335.6H354.8M354.8,335.6V329H386.6M354.8,335.6V342.2H386.6M323,345.5V355.5H354.8M291.2,357.2V368.8H323M195.8,320.2V382H227.6M164,357.8V395.3H195.8M132.2,419.3V480.7H164M164,480.7V452.5H195.8M195.8,452.5V436.8H227.6M227.6,436.8V425.2H259.4M259.4,425.2V415.2H291.2M291.2,415.2V408.6H323M291.2,415.2V421.9H323M259.4,425.2V435.1H291.2M227.6,436.8V448.4H259.4M195.8,452.5V468.3H227.6M227.6,468.3V461.7H259.4M227.6,468.3V474.9H259.4M164,480.7V488.2H195.8M164,480.7V501.5H195.8M100.4,467V514.8H132.2M68.6,497.5V528H100.4M5,459.8V649H36.8M36.8,649V624.1H68.6M68.6,624.1V594.1H100.4M100.4,594.1V565.6H132.2M132.2,565.6V547.9H164M164,547.9V541.3H195.8M164,547.9V554.6H195.8M132.2,565.6V567.8H164M132.2,565.6V581.1H164M100.4,594.1V622.6H132.2M132.2,622.6V611H164M164,611V601H195.8M195.8,601V594.4H227.6M195.8,601V607.6H227.6M164,611V620.9H195.8M132.2,622.6V634.2H164M68.6,624.1V654.1H100.4M100.4,654.1V647.5H132.2M100.4,654.1V660.7H132.2M36.8,649V674H68.6" stroke="#888"></path><g transform="translate(7 459.8)" class="node-g" data-node="50"><text x="0" y="-1.2em" class="node"><tspan class="b42">39</tspan><tspan class="b44" x="0" dy="1.2em">24</tspan><tspan class="b41" x="0" dy="1.2em">7</tspan></text></g><g transform="translate(38.8 270.6)" class="node-g" data-node="51"><text x="0" y="-1.2em" class="node"><tspan class="b42">6</tspan><tspan class="b44" x="0" dy="1.2em">28</tspan><tspan class="b41" x="0" dy="1.2em">3</tspan></text></g><g transform="translate(70.6 43.6)" class="node-g" data-node="52"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">2</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(70.6 497.5)" class="node-g" data-node="53"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">27</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(102.4 467)" class="node-g" data-node="54"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">7</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(134.2 419.3)" class="node-g" data-node="55"><text x="0" y="-1.2em" class="node"><tspan class="b42">8</tspan><tspan class="b44" x="0" dy="1.2em">22</tspan><tspan class="b41" x="0" dy="1.2em">2</tspan></text></g><g transform="translate(166 357.8)" class="node-g" data-node="56"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">7</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(197.8 320.2)" class="node-g" data-node="57"><text x="0" y="-1.2em" class="node"><tspan class="b42">4</tspan><tspan class="b44" x="0" dy="1.2em">11</tspan><tspan class="b41" x="0" dy="1.2em">2</tspan></text></g><g transform="translate(229.6 258.4)" class="node-g" data-node="58"><text x="0" y="-1.2em" class="node"><tspan class="b42">12</tspan><tspan class="b44" x="0" dy="1.2em">31</tspan><tspan class="b41" x="0" dy="1.2em">1</tspan></text></g><g transform="translate(261.4 193.7)" class="node-g" data-node="59"><text x="0" y="-1.2em" class="node"><tspan class="b42">4</tspan><tspan class="b44" x="0" dy="1.2em">20</tspan><tspan class="b41" x="0" dy="1.2em">1</tspan></text></g><g transform="translate(293.2 163)" class="node-g" data-node="60"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">21</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(325 143)" class="node-g" data-node="61"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">15</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(356.8 116.3)" class="node-g" data-node="62"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">6</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(388.6 87.9)" class="node-g" data-node="63"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">11</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(420.4 70.2)" class="node-g" data-node="64"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">3</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(388.6 144.8)" class="node-g" data-node="65"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">5</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(420.4 133.2)" class="node-g" data-node="66"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">3</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(452.2 123.3)" class="node-g" data-node="67"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">7</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(293.2 224.5)" class="node-g" data-node="68"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">8</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(325 212.8)" class="node-g" data-node="69"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">5</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(356.8 202.9)" class="node-g" data-node="70"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">7</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(261.4 323.2)" class="node-g" data-node="71"><text x="0" y="-1.2em" class="node"><tspan class="b42">5</tspan><tspan class="b44" x="0" dy="1.2em">15</tspan><tspan class="b41" x="0" dy="1.2em">2</tspan></text></g><g transform="translate(293.2 289.1)" class="node-g" data-node="72"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">7</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(325 269.2)" class="node-g" data-node="73"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">16</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(356.8 256)" class="node-g" data-node="74"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">6</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(356.8 282.5)" class="node-g" data-node="75"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">6</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(325 309.1)" class="node-g" data-node="76"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">5</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(293.2 357.2)" class="node-g" data-node="77"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">10</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(325 345.5)" class="node-g" data-node="78"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">8</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(356.8 335.6)" class="node-g" data-node="79"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">14</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(166 480.7)" class="node-g" data-node="80"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">3</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(197.8 452.5)" class="node-g" data-node="81"><text x="0" y="-1.2em" class="node"><tspan class="b42">1</tspan><tspan class="b44" x="0" dy="1.2em">8</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(229.6 436.8)" class="node-g" data-node="82"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">6</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(261.4 425.2)" class="node-g" data-node="83"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">4</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(293.2 415.2)" class="node-g" data-node="84"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">4</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(229.6 468.3)" class="node-g" data-node="85"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">3</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(38.8 649)" class="node-g" data-node="86"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">36</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(70.6 624.1)" class="node-g" data-node="87"><text x="0" y="-1.2em" class="node"><tspan class="b42">6</tspan><tspan class="b44" x="0" dy="1.2em">33</tspan><tspan class="b41" x="0" dy="1.2em">1</tspan></text></g><g transform="translate(102.4 594.1)" class="node-g" data-node="88"><text x="0" y="-1.2em" class="node"><tspan class="b42">17</tspan><tspan class="b44" x="0" dy="1.2em">8</tspan><tspan class="b41" x="0" dy="1.2em">5</tspan></text></g><g transform="translate(134.2 565.6)" class="node-g" data-node="89"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">3</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(166 547.9)" class="node-g" data-node="90"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">6</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(134.2 622.6)" class="node-g" data-node="91"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">19</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(166 611)" class="node-g" data-node="92"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">8</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(197.8 601)" class="node-g" data-node="93"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">15</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g><g transform="translate(102.4 654.1)" class="node-g" data-node="94"><text x="0" y="-1.2em" class="node"><tspan class="b42"></tspan><tspan class="b44" x="0" dy="1.2em">27</tspan><tspan class="b41" x="0" dy="1.2em"></tspan></text></g>
+</svg>
+<div id="nodeDetails">
+Click a node for details of changes
+</div>
+<div id="nodeDetail50" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 50</span>
+<div class="tfm">
+<span class="change"><span class="charNo">21</span>: ‘Body organization: Foot’</span><span class="change"><span class="charNo">25</span>: ‘Body organization: Circulatory system’</span><span class="change"><span class="charNo">47</span>: ‘Perioral tentacular apparatus: Innervation’</span><span class="change"><span class="charNo">63</span>: ‘Digestive tract: Anus: Migration: Within ring of tentacles’</span><span class="change"><span class="charNo">162</span>: ‘Embryo: Micromere size’</span><span class="change"><span class="charNo">164</span>: ‘Embryo: Cleavage: Cross pattern’</span><span class="change"><span class="charNo">166</span>: ‘Embryo: Cleavage: Spiral’</span><span class="change"><span class="charNo">169</span>: ‘Larva: Apical organ: Serotonergic cells’</span><span class="change"><span class="charNo">172</span>: ‘Larva: Origin of body cavity’</span><span class="change"><span class="charNo">174</span>: ‘Larva: Foot’</span><span class="change"><span class="charNo">175</span>: ‘Larva: Foot: Pedal gland’</span><span class="change"><span class="charNo">182</span>: ‘Larva: Cilia: Ciliary bands: Downstream’</span><span class="change"><span class="charNo">190</span>: ‘Ciliary ultrastructure: Brushborder of microvilli’</span><span class="change"><span class="charNo">193</span>: ‘Ciliary ultrastructure: Compound cilia: Presence’</span><span class="change"><span class="charNo">194</span>: ‘Ciliary ultrastructure: Compound cilia: Origin’</span><span class="change"><span class="charNo">196</span>: ‘Ciliary ultrastructure: Microvilli on epidermal surface: Branched’</span><span class="change"><span class="charNo">207</span>: ‘Cuticle: Layers’</span><span class="change"><span class="charNo">208</span>: ‘Cuticle: Composition’</span><span class="change"><span class="charNo">209</span>: ‘Cuticle: Fibrous layer with thick fibrils’</span><span class="change"><span class="charNo">215</span>: ‘Glands: Pedal gland’</span><span class="change"><span class="charNo">219</span>: ‘Nervous system: Buccal nerve ring’</span><span class="change"><span class="charNo">220</span>: ‘Nervous system: Anterior nerve loop’</span><span class="change"><span class="charNo">224</span>: ‘Nervous system: Nerve cords’</span><span class="change"><span class="charNo">225</span>: ‘Nervous system: Ventral longitudinal nerves’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">2</span>: ‘Brephic shell: Morphology’</span><span class="change"><span class="charNo">3</span>: ‘Brephic shell: Embryonic shell extended in larvae’</span><span class="change"><span class="charNo">4</span>: ‘Brephic shell: Surface ornament’</span><span class="change"><span class="charNo">5</span>: ‘Brephic shell: Larval attachment structure’</span><span class="change"><span class="charNo">11</span>: ‘Adult setae: Secretion’</span><span class="change"><span class="charNo">12</span>: ‘Adult setae: Secretion: Microvillar diameter’</span><span class="change"><span class="charNo">13</span>: ‘Adult setae: Secretion: Microvillar canal aspect’</span><span class="change"><span class="charNo">14</span>: ‘Adult setae: Composition’</span><span class="change"><span class="charNo">16</span>: ‘Adult setae: Distribution’</span><span class="change"><span class="charNo">17</span>: ‘Adult setae: Constitution’</span><span class="change"><span class="charNo">28</span>: ‘Pedicle: Biomineralization’</span><span class="change"><span class="charNo">67</span>: ‘Sclerites: Accessory sclerites: Reduced’</span><span class="change"><span class="charNo">70</span>: ‘Sclerites: Bivalved: Hinge line shape’</span><span class="change"><span class="charNo">72</span>: ‘Sclerites: Bivalved: Commissure: Exact correspondence of valve margins’</span><span class="change"><span class="charNo">73</span>: ‘Sclerites: Bivalved: Commissure: Sulcate’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span><span class="change"><span class="charNo">77</span>: ‘Sclerites: Bivalved: Apophyses: Morphology’</span><span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">95</span>: ‘Sclerites: Dorsal valve: Posterior surface: Notothyrium: Shape’</span><span class="change"><span class="charNo">96</span>: ‘Sclerites: Dorsal valve: Posterior surface: Notothyrium: Chilidial plates’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">105</span>: ‘Sclerites: Ventral valve: Growth direction’</span><span class="change"><span class="charNo">107</span>: ‘Sclerites: Ventral valve: Posterior margin growth direction’</span><span class="change"><span class="charNo">110</span>: ‘Sclerites: Ventral valve: Posterior surface: Extent’</span><span class="change"><span class="charNo">112</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Shape’</span><span class="change"><span class="charNo">114</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover’</span><span class="change"><span class="charNo">115</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent’</span><span class="change"><span class="charNo">116</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Identity’</span><span class="change"><span class="charNo">117</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Shape’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span><span class="change"><span class="charNo">124</span>: ‘Sclerites: Ornament: Concentric ornament: Symmetry’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">130</span>: ‘Sclerites: Composition: Periostracum: Flexibility’</span><span class="change"><span class="charNo">131</span>: ‘Sclerites: Composition: Microstructure: Number of distinct layers’</span><span class="change"><span class="charNo">132</span>: ‘Sclerites: Composition: Microstructure: Format’</span><span class="change"><span class="charNo">133</span>: ‘Sclerites: Structure: Stratiform lamellae expressed at surface’</span><span class="change"><span class="charNo">134</span>: ‘Sclerites: Structure: Stratiform laminae separated’</span><span class="change"><span class="charNo">135</span>: ‘Sclerites: Structure: Stratiform laminae with polygonal ornament’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo">4</span>: ‘Brephic shell: Surface ornament’</span><span class="change"><span class="charNo">13</span>: ‘Adult setae: Secretion: Microvillar canal aspect’</span><span class="change"><span class="charNo">16</span>: ‘Adult setae: Distribution’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">124</span>: ‘Sclerites: Ornament: Concentric ornament: Symmetry’</span><span class="change"><span class="charNo">133</span>: ‘Sclerites: Structure: Stratiform lamellae expressed at surface’</span><span class="change"><span class="charNo">135</span>: ‘Sclerites: Structure: Stratiform laminae with polygonal ornament’</span>
+</div>
+</div>
+<div id="nodeDetail51" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 51</span>
+<div class="tfm">
+<span class="change"><span class="charNo">48</span>: ‘Perioral tentacular apparatus: Inner nerve ring’</span><span class="change"><span class="charNo">49</span>: ‘Perioral tentacular apparatus: Outer nerve ring’</span><span class="change"><span class="charNo">56</span>: ‘Digestive tract: Oesophageal folds’</span><span class="change"><span class="charNo">64</span>: ‘Digestive tract: Anus: Migration: Position’</span><span class="change"><span class="charNo">149</span>: ‘Gametes: Site of maturation’</span><span class="change"><span class="charNo">150</span>: ‘Gametes: Spermatozoa: Nucleus: Shape’</span><span class="change"><span class="charNo">151</span>: ‘Gametes: Spermatozoa: Anterior nuclear fossa’</span><span class="change"><span class="charNo">152</span>: ‘Gametes: Spermatozoa: Acrosome: Shape’</span><span class="change"><span class="charNo">154</span>: ‘Gametes: Spermatozoa: Acrosome: Sub-acrosomal space’</span><span class="change"><span class="charNo">156</span>: ‘Gametes: Spermatozoa: Centrioles: Orientation’</span><span class="change"><span class="charNo">157</span>: ‘Gametes: Spermatozoa: Centrioles: Fusion’</span><span class="change"><span class="charNo">163</span>: ‘Embryo: Cleavage: Equal’</span><span class="change"><span class="charNo">167</span>: ‘Embryo: Origin of mesoderm’</span><span class="change"><span class="charNo">168</span>: ‘Larva: Apical organ: Muscles extending to the hyposphere’</span><span class="change"><span class="charNo">171</span>: ‘Larva: Brain persists into adulthood’</span><span class="change"><span class="charNo">178</span>: ‘Larva: Feeding’</span><span class="change"><span class="charNo">179</span>: ‘Larva: Cilia: Metatroch’</span><span class="change"><span class="charNo">183</span>: ‘Larva: Cilia: Ciliary bands: Upstream’</span><span class="change"><span class="charNo">184</span>: ‘Larva: Cilia: Adoral ciliary band’</span><span class="change"><span class="charNo">186</span>: ‘Ciliary ultrastructure: Accessory centriole’</span><span class="change"><span class="charNo">200</span>: ‘Ciliary ultrastructure: Secondary ciliary rootlet: Length’</span><span class="change"><span class="charNo">204</span>: ‘Nephridia: Serve as excretory organs’</span><span class="change"><span class="charNo">206</span>: ‘Nephridia: Metanephridia’</span><span class="change"><span class="charNo">210</span>: ‘Cuticle: Homogeneous layer’</span><span class="change"><span class="charNo">213</span>: ‘Muscles: Cytology’</span><span class="change"><span class="charNo">217</span>: ‘Nervous system: Orthogonal’</span><span class="change"><span class="charNo">218</span>: ‘Nervous system: Glial system’</span><span class="change"><span class="charNo">221</span>: ‘Nervous system: Formation of ganglia’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">11</span>: ‘Adult setae: Secretion’</span><span class="change"><span class="charNo">12</span>: ‘Adult setae: Secretion: Microvillar diameter’</span><span class="change"><span class="charNo">13</span>: ‘Adult setae: Secretion: Microvillar canal aspect’</span><span class="change"><span class="charNo">14</span>: ‘Adult setae: Composition’</span><span class="change"><span class="charNo">16</span>: ‘Adult setae: Distribution’</span><span class="change"><span class="charNo">17</span>: ‘Adult setae: Constitution’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo">12</span>: ‘Adult setae: Secretion: Microvillar diameter’</span><span class="change"><span class="charNo">16</span>: ‘Adult setae: Distribution’</span><span class="change"><span class="charNo">17</span>: ‘Adult setae: Constitution’</span>
+</div>
+</div>
+<div id="nodeDetail52" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 52</span>
+<div class="tfm">
+<span class="change"><span class="charNo">10</span>: ‘Adult setae’</span><span class="change"><span class="charNo">223</span>: ‘Nervous system: Cerebral gangila: Fused’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail53" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 53</span>
+<div class="tfm">
+<span class="change"><span class="charNo">1</span>: ‘Brephic shell: Embryonic shell’</span><span class="change"><span class="charNo">41</span>: ‘Perioral tentacular apparatus: Origin’</span><span class="change"><span class="charNo">42</span>: ‘Perioral tentacular apparatus: Tentacle disposition’</span><span class="change"><span class="charNo">46</span>: ‘Perioral tentacular apparatus: Site of tentacle addition’</span><span class="change"><span class="charNo">51</span>: ‘Perioral tentacular apparatus: Forms closed loop’</span><span class="change"><span class="charNo">54</span>: ‘Digestive tract: Prominent pharynx’</span><span class="change"><span class="charNo">128</span>: ‘Sclerites: Composition: Cuticle or organic matrix’</span><span class="change"><span class="charNo">129</span>: ‘Sclerites: Composition: Incorporation of sedimentary particles’</span><span class="change"><span class="charNo">136</span>: ‘Sclerites: Structure: Canals’</span><span class="change"><span class="charNo">141</span>: ‘Gametes: Egg size’</span><span class="change"><span class="charNo">142</span>: ‘Gametes: Gonocoel’</span><span class="change"><span class="charNo">146</span>: ‘Gametes: Fertilization’</span><span class="change"><span class="charNo">147</span>: ‘Gametes: Sexes’</span><span class="change"><span class="charNo">149</span>: ‘Gametes: Site of maturation’</span><span class="change"><span class="charNo">159</span>: ‘Gametes: Spermatozoa: Mitochondria: Shape’</span><span class="change"><span class="charNo">161</span>: ‘Gametes: Spermatozoa: Mitochondria: Midpiece’</span><span class="change"><span class="charNo">166</span>: ‘Embryo: Cleavage: Spiral’</span><span class="change"><span class="charNo">181</span>: ‘Larva: Cilia: Ciliated food groove’</span><span class="change"><span class="charNo">185</span>: ‘Larva: Cilia: Nerve ring underlying ciliated larval swimming organ’</span><span class="change"><span class="charNo">190</span>: ‘Ciliary ultrastructure: Brushborder of microvilli’</span><span class="change"><span class="charNo">193</span>: ‘Ciliary ultrastructure: Compound cilia: Presence’</span><span class="change"><span class="charNo">202</span>: ‘Nephridia: Podocytes’</span><span class="change"><span class="charNo">205</span>: ‘Nephridia: Protonephridia’</span><span class="change"><span class="charNo">209</span>: ‘Cuticle: Fibrous layer with thick fibrils’</span><span class="change"><span class="charNo">212</span>: ‘Cuticle: Microvilli’</span><span class="change"><span class="charNo">213</span>: ‘Muscles: Cytology’</span><span class="change"><span class="charNo">222</span>: ‘Nervous system: Cerebral ganglia: Presence’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail54" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 54</span>
+<div class="tfm">
+<span class="change"><span class="charNo">65</span>: ‘Sclerites: Present in adult’</span><span class="change"><span class="charNo">66</span>: ‘Sclerites: Bivalved’</span><span class="change"><span class="charNo">71</span>: ‘Sclerites: Bivalved: Enclosing filtration chamber’</span><span class="change"><span class="charNo">81</span>: ‘Sclerites: Bivalved: Muscle scars: Ventral’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">131</span>: ‘Sclerites: Composition: Microstructure: Number of distinct layers’</span><span class="change"><span class="charNo">145</span>: ‘Gametes: Asexual reproduction’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail55" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 55</span>
+<div class="tfm">
+<span class="change"><span class="charNo">2</span>: ‘Brephic shell: Morphology’</span><span class="change"><span class="charNo">5</span>: ‘Brephic shell: Larval attachment structure’</span><span class="change"><span class="charNo">6</span>: ‘Brephic shell: Setulose’</span><span class="change"><span class="charNo">7</span>: ‘Brephic shell: Setal sacs’</span><span class="change"><span class="charNo">9</span>: ‘Larval chaetae: Paired bundles’</span><span class="change"><span class="charNo">10</span>: ‘Adult setae’</span><span class="change"><span class="charNo">15</span>: ‘Adult setae: Enamel’</span><span class="change"><span class="charNo">35</span>: ‘Mantle canals: Presence’</span><span class="change"><span class="charNo">37</span>: ‘Mantle canals: vascula lateralia’</span><span class="change"><span class="charNo">38</span>: ‘Mantle canals: vascula media’</span><span class="change"><span class="charNo">44</span>: ‘Perioral tentacular apparatus: Tentacle rows per side in post-trocholophe stage’</span><span class="change"><span class="charNo">64</span>: ‘Digestive tract: Anus: Migration: Position’</span><span class="change"><span class="charNo">72</span>: ‘Sclerites: Bivalved: Commissure: Exact correspondence of valve margins’</span><span class="change"><span class="charNo">91</span>: ‘Sclerites: Dorsal valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">100</span>: ‘Sclerites: Dorsal valve: Cardinal processes’</span><span class="change"><span class="charNo">105</span>: ‘Sclerites: Ventral valve: Growth direction’</span><span class="change"><span class="charNo">106</span>: ‘Sclerites: Ventral valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">110</span>: ‘Sclerites: Ventral valve: Posterior surface: Extent’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">132</span>: ‘Sclerites: Composition: Microstructure: Format’</span><span class="change"><span class="charNo">137</span>: ‘Sclerites: Structure: Punctae’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">27</span>: ‘Pedicle: Constitution’</span><span class="change"><span class="charNo">28</span>: ‘Pedicle: Biomineralization’</span><span class="change"><span class="charNo">31</span>: ‘Pedicle: Tapering’</span><span class="change"><span class="charNo">32</span>: ‘Pedicle: Coelomic region’</span><span class="change"><span class="charNo">33</span>: ‘Pedicle: Surface ornament’</span><span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span><span class="change"><span class="charNo">120</span>: ‘Sclerites: Ventral valve: Umbonal perforation: Shape’</span><span class="change"><span class="charNo">124</span>: ‘Sclerites: Ornament: Concentric ornament: Symmetry’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo">28</span>: ‘Pedicle: Biomineralization’</span><span class="change"><span class="charNo">120</span>: ‘Sclerites: Ventral valve: Umbonal perforation: Shape’</span>
+</div>
+</div>
+<div id="nodeDetail56" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 56</span>
+<div class="tfm">
+<span class="change"><span class="charNo">26</span>: ‘Pedicle’</span><span class="change"><span class="charNo">51</span>: ‘Perioral tentacular apparatus: Forms closed loop’</span><span class="change"><span class="charNo">52</span>: ‘Perioral tentacular apparatus: Coiling direction’</span><span class="change"><span class="charNo">84</span>: ‘Sclerites: Bivalved: Muscle scars: Dorsal adductors’</span><span class="change"><span class="charNo">98</span>: ‘Sclerites: Dorsal valve: Medial septum’</span><span class="change"><span class="charNo">111</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium’</span><span class="change"><span class="charNo">125</span>: ‘Sclerites: Ornament: Radial ornament’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail57" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 57</span>
+<div class="tfm">
+<span class="change"><span class="charNo">2</span>: ‘Brephic shell: Morphology’</span><span class="change"><span class="charNo">16</span>: ‘Adult setae: Distribution’</span><span class="change"><span class="charNo">81</span>: ‘Sclerites: Bivalved: Muscle scars: Ventral’</span><span class="change"><span class="charNo">88</span>: ‘Sclerites: Bivalved: Muscle scars: Dorsal diductor’</span><span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">105</span>: ‘Sclerites: Ventral valve: Growth direction’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span><span class="change"><span class="charNo">124</span>: ‘Sclerites: Ornament: Concentric ornament: Symmetry’</span><span class="change"><span class="charNo">136</span>: ‘Sclerites: Structure: Canals’</span><span class="change"><span class="charNo">137</span>: ‘Sclerites: Structure: Punctae’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">113</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Shape: Aspect of rounded opening’</span><span class="change"><span class="charNo">115</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent’</span><span class="change"><span class="charNo">116</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Identity’</span><span class="change"><span class="charNo">117</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Shape’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo">113</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Shape: Aspect of rounded opening’</span><span class="change"><span class="charNo">117</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Shape’</span>
+</div>
+</div>
+<div id="nodeDetail58" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 58</span>
+<div class="tfm">
+<span class="change"><span class="charNo">1</span>: ‘Brephic shell: Embryonic shell’</span><span class="change"><span class="charNo">8</span>: ‘Brephic shell: Setal sacs: Number’</span><span class="change"><span class="charNo">18</span>: ‘Adult setae: Projecting knobs’</span><span class="change"><span class="charNo">31</span>: ‘Pedicle: Tapering’</span><span class="change"><span class="charNo">33</span>: ‘Pedicle: Surface ornament’</span><span class="change"><span class="charNo">45</span>: ‘Perioral tentacular apparatus: Median tentacle in early development’</span><span class="change"><span class="charNo">53</span>: ‘Perioral tentacular apparatus: Adjustor muscle’</span><span class="change"><span class="charNo">70</span>: ‘Sclerites: Bivalved: Hinge line shape’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">76</span>: ‘Sclerites: Bivalved: Apophyses’</span><span class="change"><span class="charNo">91</span>: ‘Sclerites: Dorsal valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">92</span>: ‘Sclerites: Dorsal valve: Differentiated posterior surface: Morphology’</span><span class="change"><span class="charNo">94</span>: ‘Sclerites: Dorsal valve: Posterior surface: Notothyrium’</span><span class="change"><span class="charNo">108</span>: ‘Sclerites: Ventral valve: Posterior surface: Planar’</span><span class="change"><span class="charNo">122</span>: ‘Sclerites: Ventral valve: Median septum’</span><span class="change"><span class="charNo">125</span>: ‘Sclerites: Ornament: Radial ornament’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">130</span>: ‘Sclerites: Composition: Periostracum: Flexibility’</span><span class="change"><span class="charNo">132</span>: ‘Sclerites: Composition: Microstructure: Format’</span><span class="change"><span class="charNo">151</span>: ‘Gametes: Spermatozoa: Anterior nuclear fossa’</span><span class="change"><span class="charNo">152</span>: ‘Gametes: Spermatozoa: Acrosome: Shape’</span><span class="change"><span class="charNo">153</span>: ‘Gametes: Spermatozoa: Acrosome: Differentiated internally’</span><span class="change"><span class="charNo">154</span>: ‘Gametes: Spermatozoa: Acrosome: Sub-acrosomal space’</span><span class="change"><span class="charNo">155</span>: ‘Gametes: Spermatozoa: Mid-piece’</span><span class="change"><span class="charNo">156</span>: ‘Gametes: Spermatozoa: Centrioles: Orientation’</span><span class="change"><span class="charNo">169</span>: ‘Larva: Apical organ: Serotonergic cells’</span><span class="change"><span class="charNo">179</span>: ‘Larva: Cilia: Metatroch’</span><span class="change"><span class="charNo">198</span>: ‘Ciliary ultrastructure: Vertical ciliary rootlet: Shape’</span><span class="change"><span class="charNo">200</span>: ‘Ciliary ultrastructure: Secondary ciliary rootlet: Length’</span><span class="change"><span class="charNo">210</span>: ‘Cuticle: Homogeneous layer’</span><span class="change"><span class="charNo">217</span>: ‘Nervous system: Orthogonal’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">2</span>: ‘Brephic shell: Morphology’</span><span class="change"><span class="charNo">3</span>: ‘Brephic shell: Embryonic shell extended in larvae’</span><span class="change"><span class="charNo">4</span>: ‘Brephic shell: Surface ornament’</span><span class="change"><span class="charNo">5</span>: ‘Brephic shell: Larval attachment structure’</span><span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span><span class="change"><span class="charNo">115</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent’</span><span class="change"><span class="charNo">116</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Identity’</span><span class="change"><span class="charNo">117</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Shape’</span><span class="change"><span class="charNo">120</span>: ‘Sclerites: Ventral valve: Umbonal perforation: Shape’</span><span class="change"><span class="charNo">124</span>: ‘Sclerites: Ornament: Concentric ornament: Symmetry’</span><span class="change"><span class="charNo">133</span>: ‘Sclerites: Structure: Stratiform lamellae expressed at surface’</span><span class="change"><span class="charNo">134</span>: ‘Sclerites: Structure: Stratiform laminae separated’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span>
+</div>
+</div>
+<div id="nodeDetail59" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 59</span>
+<div class="tfm">
+<span class="change"><span class="charNo">5</span>: ‘Brephic shell: Larval attachment structure’</span><span class="change"><span class="charNo">10</span>: ‘Adult setae’</span><span class="change"><span class="charNo">15</span>: ‘Adult setae: Enamel’</span><span class="change"><span class="charNo">26</span>: ‘Pedicle’</span><span class="change"><span class="charNo">34</span>: ‘Pedicle: Nerve impression’</span><span class="change"><span class="charNo">36</span>: ‘Mantle canals: Morphology’</span><span class="change"><span class="charNo">39</span>: ‘Mantle canals: vascula terminalia’</span><span class="change"><span class="charNo">43</span>: ‘Perioral tentacular apparatus: Tentacle rows per side in trocholophe stage’</span><span class="change"><span class="charNo">62</span>: ‘Digestive tract: Anus: Location’</span><span class="change"><span class="charNo">84</span>: ‘Sclerites: Bivalved: Muscle scars: Dorsal adductors’</span><span class="change"><span class="charNo">86</span>: ‘Sclerites: Bivalved: Muscle scars: Dermal muscles’</span><span class="change"><span class="charNo">88</span>: ‘Sclerites: Bivalved: Muscle scars: Dorsal diductor’</span><span class="change"><span class="charNo">112</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Shape’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">128</span>: ‘Sclerites: Composition: Cuticle or organic matrix’</span><span class="change"><span class="charNo">141</span>: ‘Gametes: Egg size’</span><span class="change"><span class="charNo">149</span>: ‘Gametes: Site of maturation’</span><span class="change"><span class="charNo">152</span>: ‘Gametes: Spermatozoa: Acrosome: Shape’</span><span class="change"><span class="charNo">169</span>: ‘Larva: Apical organ: Serotonergic cells’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">114</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover’</span><span class="change"><span class="charNo">115</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent’</span><span class="change"><span class="charNo">116</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Identity’</span><span class="change"><span class="charNo">117</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Shape’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo">115</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent’</span>
+</div>
+</div>
+<div id="nodeDetail60" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 60</span>
+<div class="tfm">
+<span class="change"><span class="charNo">8</span>: ‘Brephic shell: Setal sacs: Number’</span><span class="change"><span class="charNo">18</span>: ‘Adult setae: Projecting knobs’</span><span class="change"><span class="charNo">19</span>: ‘Adult setae: Circling coronae’</span><span class="change"><span class="charNo">29</span>: ‘Pedicle: Bulb’</span><span class="change"><span class="charNo">51</span>: ‘Perioral tentacular apparatus: Forms closed loop’</span><span class="change"><span class="charNo">53</span>: ‘Perioral tentacular apparatus: Adjustor muscle’</span><span class="change"><span class="charNo">54</span>: ‘Digestive tract: Prominent pharynx’</span><span class="change"><span class="charNo">63</span>: ‘Digestive tract: Anus: Migration: Within ring of tentacles’</span><span class="change"><span class="charNo">64</span>: ‘Digestive tract: Anus: Migration: Position’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">84</span>: ‘Sclerites: Bivalved: Muscle scars: Dorsal adductors’</span><span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">91</span>: ‘Sclerites: Dorsal valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">93</span>: ‘Sclerites: Dorsal valve: Posterior surface: Medial groove’</span><span class="change"><span class="charNo">98</span>: ‘Sclerites: Dorsal valve: Medial septum’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">105</span>: ‘Sclerites: Ventral valve: Growth direction’</span><span class="change"><span class="charNo">106</span>: ‘Sclerites: Ventral valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">136</span>: ‘Sclerites: Structure: Canals’</span><span class="change"><span class="charNo">154</span>: ‘Gametes: Spermatozoa: Acrosome: Sub-acrosomal space’</span><span class="change"><span class="charNo">217</span>: ‘Nervous system: Orthogonal’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail61" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 61</span>
+<div class="tfm">
+<span class="change"><span class="charNo">3</span>: ‘Brephic shell: Embryonic shell extended in larvae’</span><span class="change"><span class="charNo">7</span>: ‘Brephic shell: Setal sacs’</span><span class="change"><span class="charNo">31</span>: ‘Pedicle: Tapering’</span><span class="change"><span class="charNo">33</span>: ‘Pedicle: Surface ornament’</span><span class="change"><span class="charNo">36</span>: ‘Mantle canals: Morphology’</span><span class="change"><span class="charNo">38</span>: ‘Mantle canals: vascula media’</span><span class="change"><span class="charNo">44</span>: ‘Perioral tentacular apparatus: Tentacle rows per side in post-trocholophe stage’</span><span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span><span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">105</span>: ‘Sclerites: Ventral valve: Growth direction’</span><span class="change"><span class="charNo">110</span>: ‘Sclerites: Ventral valve: Posterior surface: Extent’</span><span class="change"><span class="charNo">111</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium’</span><span class="change"><span class="charNo">122</span>: ‘Sclerites: Ventral valve: Median septum’</span><span class="change"><span class="charNo">137</span>: ‘Sclerites: Structure: Punctae’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail62" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 62</span>
+<div class="tfm">
+<span class="change"><span class="charNo">16</span>: ‘Adult setae: Distribution’</span><span class="change"><span class="charNo">34</span>: ‘Pedicle: Nerve impression’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">107</span>: ‘Sclerites: Ventral valve: Posterior margin growth direction’</span><span class="change"><span class="charNo">108</span>: ‘Sclerites: Ventral valve: Posterior surface: Planar’</span><span class="change"><span class="charNo">113</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Shape: Aspect of rounded opening’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail63" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 63</span>
+<div class="tfm">
+<span class="change"><span class="charNo">4</span>: ‘Brephic shell: Surface ornament’</span><span class="change"><span class="charNo">5</span>: ‘Brephic shell: Larval attachment structure’</span><span class="change"><span class="charNo">36</span>: ‘Mantle canals: Morphology’</span><span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">92</span>: ‘Sclerites: Dorsal valve: Differentiated posterior surface: Morphology’</span><span class="change"><span class="charNo">126</span>: ‘Sclerites: Ornament: Shell-penetrating spines’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">134</span>: ‘Sclerites: Structure: Stratiform laminae separated’</span><span class="change"><span class="charNo">135</span>: ‘Sclerites: Structure: Stratiform laminae with polygonal ornament’</span><span class="change"><span class="charNo">136</span>: ‘Sclerites: Structure: Canals’</span><span class="change"><span class="charNo">137</span>: ‘Sclerites: Structure: Punctae’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail64" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 64</span>
+<div class="tfm">
+<span class="change"><span class="charNo">110</span>: ‘Sclerites: Ventral valve: Posterior surface: Extent’</span><span class="change"><span class="charNo">121</span>: ‘Sclerites: Ventral valve: Colleplax, cicatrix or pedicle sheath’</span><span class="change"><span class="charNo">125</span>: ‘Sclerites: Ornament: Radial ornament’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail65" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 65</span>
+<div class="tfm">
+<span class="change"><span class="charNo">3</span>: ‘Brephic shell: Embryonic shell extended in larvae’</span><span class="change"><span class="charNo">4</span>: ‘Brephic shell: Surface ornament’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">110</span>: ‘Sclerites: Ventral valve: Posterior surface: Extent’</span><span class="change"><span class="charNo">112</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Shape’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail66" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 66</span>
+<div class="tfm">
+<span class="change"><span class="charNo">8</span>: ‘Brephic shell: Setal sacs: Number’</span><span class="change"><span class="charNo">92</span>: ‘Sclerites: Dorsal valve: Differentiated posterior surface: Morphology’</span><span class="change"><span class="charNo">114</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail67" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 67</span>
+<div class="tfm">
+<span class="change"><span class="charNo">98</span>: ‘Sclerites: Dorsal valve: Medial septum’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">108</span>: ‘Sclerites: Ventral valve: Posterior surface: Planar’</span><span class="change"><span class="charNo">112</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Shape’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">131</span>: ‘Sclerites: Composition: Microstructure: Number of distinct layers’</span><span class="change"><span class="charNo">136</span>: ‘Sclerites: Structure: Canals’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail68" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 68</span>
+<div class="tfm">
+<span class="change"><span class="charNo">70</span>: ‘Sclerites: Bivalved: Hinge line shape’</span><span class="change"><span class="charNo">79</span>: ‘Sclerites: Bivalved: Sockets’</span><span class="change"><span class="charNo">87</span>: ‘Sclerites: Bivalved: Muscle scars: Unpaired median (levator ani)’</span><span class="change"><span class="charNo">106</span>: ‘Sclerites: Ventral valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">108</span>: ‘Sclerites: Ventral valve: Posterior surface: Planar’</span><span class="change"><span class="charNo">111</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium’</span><span class="change"><span class="charNo">122</span>: ‘Sclerites: Ventral valve: Median septum’</span><span class="change"><span class="charNo">125</span>: ‘Sclerites: Ornament: Radial ornament’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail69" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 69</span>
+<div class="tfm">
+<span class="change"><span class="charNo">84</span>: ‘Sclerites: Bivalved: Muscle scars: Dorsal adductors’</span><span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">105</span>: ‘Sclerites: Ventral valve: Growth direction’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail70" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 70</span>
+<div class="tfm">
+<span class="change"><span class="charNo">1</span>: ‘Brephic shell: Embryonic shell’</span><span class="change"><span class="charNo">70</span>: ‘Sclerites: Bivalved: Hinge line shape’</span><span class="change"><span class="charNo">91</span>: ‘Sclerites: Dorsal valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">98</span>: ‘Sclerites: Dorsal valve: Medial septum’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">121</span>: ‘Sclerites: Ventral valve: Colleplax, cicatrix or pedicle sheath’</span><span class="change"><span class="charNo">137</span>: ‘Sclerites: Structure: Punctae’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail71" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 71</span>
+<div class="tfm">
+<span class="change"><span class="charNo">30</span>: ‘Pedicle: Distal rootlets’</span><span class="change"><span class="charNo">32</span>: ‘Pedicle: Coelomic region’</span><span class="change"><span class="charNo">38</span>: ‘Mantle canals: vascula media’</span><span class="change"><span class="charNo">42</span>: ‘Perioral tentacular apparatus: Tentacle disposition’</span><span class="change"><span class="charNo">44</span>: ‘Perioral tentacular apparatus: Tentacle rows per side in post-trocholophe stage’</span><span class="change"><span class="charNo">61</span>: ‘Digestive tract: Anus: Presence’</span><span class="change"><span class="charNo">64</span>: ‘Digestive tract: Anus: Migration: Position’</span><span class="change"><span class="charNo">83</span>: ‘Sclerites: Bivalved: Muscle scars: Adjustor’</span><span class="change"><span class="charNo">89</span>: ‘Sclerites: Bivalved: Muscle scars: Dorsal diductor: Position’</span><span class="change"><span class="charNo">96</span>: ‘Sclerites: Dorsal valve: Posterior surface: Notothyrium: Chilidial plates’</span><span class="change"><span class="charNo">97</span>: ‘Sclerites: Dorsal valve: Notothyrial platform’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">114</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover’</span><span class="change"><span class="charNo">118</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Hinge furrows’</span><span class="change"><span class="charNo">119</span>: ‘Sclerites: Ventral valve: Umbonal perforation’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">115</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent’</span><span class="change"><span class="charNo">116</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Identity’</span><span class="change"><span class="charNo">117</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Shape’</span><span class="change"><span class="charNo">120</span>: ‘Sclerites: Ventral valve: Umbonal perforation: Shape’</span><span class="change"><span class="charNo">124</span>: ‘Sclerites: Ornament: Concentric ornament: Symmetry’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo">116</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Identity’</span><span class="change"><span class="charNo">117</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Pseudodeltidium: Shape’</span>
+</div>
+</div>
+<div id="nodeDetail72" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 72</span>
+<div class="tfm">
+<span class="change"><span class="charNo">28</span>: ‘Pedicle: Biomineralization’</span><span class="change"><span class="charNo">51</span>: ‘Perioral tentacular apparatus: Forms closed loop’</span><span class="change"><span class="charNo">62</span>: ‘Digestive tract: Anus: Location’</span><span class="change"><span class="charNo">77</span>: ‘Sclerites: Bivalved: Apophyses: Morphology’</span><span class="change"><span class="charNo">100</span>: ‘Sclerites: Dorsal valve: Cardinal processes’</span><span class="change"><span class="charNo">121</span>: ‘Sclerites: Ventral valve: Colleplax, cicatrix or pedicle sheath’</span><span class="change"><span class="charNo">132</span>: ‘Sclerites: Composition: Microstructure: Format’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail73" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 73</span>
+<div class="tfm">
+<span class="change"><span class="charNo">1</span>: ‘Brephic shell: Embryonic shell’</span><span class="change"><span class="charNo">29</span>: ‘Pedicle: Bulb’</span><span class="change"><span class="charNo">70</span>: ‘Sclerites: Bivalved: Hinge line shape’</span><span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span><span class="change"><span class="charNo">76</span>: ‘Sclerites: Bivalved: Apophyses’</span><span class="change"><span class="charNo">78</span>: ‘Sclerites: Bivalved: Apophyses: Dental plates’</span><span class="change"><span class="charNo">79</span>: ‘Sclerites: Bivalved: Sockets’</span><span class="change"><span class="charNo">80</span>: ‘Sclerites: Bivalved: Socket ridges’</span><span class="change"><span class="charNo">92</span>: ‘Sclerites: Dorsal valve: Differentiated posterior surface: Morphology’</span><span class="change"><span class="charNo">97</span>: ‘Sclerites: Dorsal valve: Notothyrial platform’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">105</span>: ‘Sclerites: Ventral valve: Growth direction’</span><span class="change"><span class="charNo">108</span>: ‘Sclerites: Ventral valve: Posterior surface: Planar’</span><span class="change"><span class="charNo">112</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Shape’</span><span class="change"><span class="charNo">116</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Identity’</span><span class="change"><span class="charNo">138</span>: ‘Sclerites: Structure: Pseudopunctae’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail74" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 74</span>
+<div class="tfm">
+<span class="change"><span class="charNo">73</span>: ‘Sclerites: Bivalved: Commissure: Sulcate’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">100</span>: ‘Sclerites: Dorsal valve: Cardinal processes’</span><span class="change"><span class="charNo">125</span>: ‘Sclerites: Ornament: Radial ornament’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">129</span>: ‘Sclerites: Composition: Incorporation of sedimentary particles’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail75" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 75</span>
+<div class="tfm">
+<span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">98</span>: ‘Sclerites: Dorsal valve: Medial septum’</span><span class="change"><span class="charNo">120</span>: ‘Sclerites: Ventral valve: Umbonal perforation: Shape’</span><span class="change"><span class="charNo">122</span>: ‘Sclerites: Ventral valve: Median septum’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span><span class="change"><span class="charNo">131</span>: ‘Sclerites: Composition: Microstructure: Number of distinct layers’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail76" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 76</span>
+<div class="tfm">
+<span class="change"><span class="charNo">27</span>: ‘Pedicle: Constitution’</span><span class="change"><span class="charNo">31</span>: ‘Pedicle: Tapering’</span><span class="change"><span class="charNo">96</span>: ‘Sclerites: Dorsal valve: Posterior surface: Notothyrium: Chilidial plates’</span><span class="change"><span class="charNo">115</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent’</span><span class="change"><span class="charNo">126</span>: ‘Sclerites: Ornament: Shell-penetrating spines’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail77" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 77</span>
+<div class="tfm">
+<span class="change"><span class="charNo">73</span>: ‘Sclerites: Bivalved: Commissure: Sulcate’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span><span class="change"><span class="charNo">79</span>: ‘Sclerites: Bivalved: Sockets’</span><span class="change"><span class="charNo">80</span>: ‘Sclerites: Bivalved: Socket ridges’</span><span class="change"><span class="charNo">82</span>: ‘Sclerites: Bivalved: Muscle scars: Ventral: Position’</span><span class="change"><span class="charNo">84</span>: ‘Sclerites: Bivalved: Muscle scars: Dorsal adductors’</span><span class="change"><span class="charNo">85</span>: ‘Sclerites: Bivalved: Muscle scars: Adductors: Position’</span><span class="change"><span class="charNo">89</span>: ‘Sclerites: Bivalved: Muscle scars: Dorsal diductor: Position’</span><span class="change"><span class="charNo">100</span>: ‘Sclerites: Dorsal valve: Cardinal processes’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail78" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 78</span>
+<div class="tfm">
+<span class="change"><span class="charNo">36</span>: ‘Mantle canals: Morphology’</span><span class="change"><span class="charNo">77</span>: ‘Sclerites: Bivalved: Apophyses: Morphology’</span><span class="change"><span class="charNo">78</span>: ‘Sclerites: Bivalved: Apophyses: Dental plates’</span><span class="change"><span class="charNo">92</span>: ‘Sclerites: Dorsal valve: Differentiated posterior surface: Morphology’</span><span class="change"><span class="charNo">95</span>: ‘Sclerites: Dorsal valve: Posterior surface: Notothyrium: Shape’</span><span class="change"><span class="charNo">98</span>: ‘Sclerites: Dorsal valve: Medial septum’</span><span class="change"><span class="charNo">114</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover’</span><span class="change"><span class="charNo">125</span>: ‘Sclerites: Ornament: Radial ornament’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail79" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 79</span>
+<div class="tfm">
+<span class="change"><span class="charNo">27</span>: ‘Pedicle: Constitution’</span><span class="change"><span class="charNo">29</span>: ‘Pedicle: Bulb’</span><span class="change"><span class="charNo">31</span>: ‘Pedicle: Tapering’</span><span class="change"><span class="charNo">33</span>: ‘Pedicle: Surface ornament’</span><span class="change"><span class="charNo">36</span>: ‘Mantle canals: Morphology’</span><span class="change"><span class="charNo">70</span>: ‘Sclerites: Bivalved: Hinge line shape’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">94</span>: ‘Sclerites: Dorsal valve: Posterior surface: Notothyrium’</span><span class="change"><span class="charNo">97</span>: ‘Sclerites: Dorsal valve: Notothyrial platform’</span><span class="change"><span class="charNo">100</span>: ‘Sclerites: Dorsal valve: Cardinal processes’</span><span class="change"><span class="charNo">115</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent’</span><span class="change"><span class="charNo">119</span>: ‘Sclerites: Ventral valve: Umbonal perforation’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span><span class="change"><span class="charNo">137</span>: ‘Sclerites: Structure: Punctae’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail80" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 80</span>
+<div class="tfm">
+<span class="change"><span class="charNo">64</span>: ‘Digestive tract: Anus: Migration: Position’</span><span class="change"><span class="charNo">99</span>: ‘Sclerites: Dorsal valve: Cardinal shield’</span><span class="change"><span class="charNo">108</span>: ‘Sclerites: Ventral valve: Posterior surface: Planar’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail81" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 81</span>
+<div class="tfm">
+<span class="change"><span class="charNo">2</span>: ‘Brephic shell: Morphology’</span><span class="change"><span class="charNo">72</span>: ‘Sclerites: Bivalved: Commissure: Exact correspondence of valve margins’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">102</span>: ‘Sclerites: Dorsal valve: Clavicles’</span><span class="change"><span class="charNo">106</span>: ‘Sclerites: Ventral valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">109</span>: ‘Sclerites: Ventral valve: Ligula’</span><span class="change"><span class="charNo">119</span>: ‘Sclerites: Ventral valve: Umbonal perforation’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">124</span>: ‘Sclerites: Ornament: Concentric ornament: Symmetry’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail82" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 82</span>
+<div class="tfm">
+<span class="change"><span class="charNo">67</span>: ‘Sclerites: Accessory sclerites: Reduced’</span><span class="change"><span class="charNo">69</span>: ‘Sclerites: Accessory sclerites: Symmetry’</span><span class="change"><span class="charNo">92</span>: ‘Sclerites: Dorsal valve: Differentiated posterior surface: Morphology’</span><span class="change"><span class="charNo">131</span>: ‘Sclerites: Composition: Microstructure: Number of distinct layers’</span><span class="change"><span class="charNo">132</span>: ‘Sclerites: Composition: Microstructure: Format’</span><span class="change"><span class="charNo">136</span>: ‘Sclerites: Structure: Canals’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail83" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 83</span>
+<div class="tfm">
+<span class="change"><span class="charNo">2</span>: ‘Brephic shell: Morphology’</span><span class="change"><span class="charNo">3</span>: ‘Brephic shell: Embryonic shell extended in larvae’</span><span class="change"><span class="charNo">101</span>: ‘Sclerites: Dorsal valve: Cardinal teeth’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail84" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 84</span>
+<div class="tfm">
+<span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span><span class="change"><span class="charNo">103</span>: ‘Sclerites: Dorsal valve: Clavicles: Type of clavicles’</span><span class="change"><span class="charNo">108</span>: ‘Sclerites: Ventral valve: Posterior surface: Planar’</span><span class="change"><span class="charNo">125</span>: ‘Sclerites: Ornament: Radial ornament’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail85" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 85</span>
+<div class="tfm">
+<span class="change"><span class="charNo">26</span>: ‘Pedicle’</span><span class="change"><span class="charNo">30</span>: ‘Pedicle: Distal rootlets’</span><span class="change"><span class="charNo">108</span>: ‘Sclerites: Ventral valve: Posterior surface: Planar’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail86" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 86</span>
+<div class="tfm">
+<span class="change"><span class="charNo">22</span>: ‘Body organization: Coelom’</span><span class="change"><span class="charNo">23</span>: ‘Body organization: Coelomoducts: Number’</span><span class="change"><span class="charNo">50</span>: ‘Perioral tentacular apparatus: Musculature’</span><span class="change"><span class="charNo">62</span>: ‘Digestive tract: Anus: Location’</span><span class="change"><span class="charNo">141</span>: ‘Gametes: Egg size’</span><span class="change"><span class="charNo">142</span>: ‘Gametes: Gonocoel’</span><span class="change"><span class="charNo">145</span>: ‘Gametes: Asexual reproduction’</span><span class="change"><span class="charNo">146</span>: ‘Gametes: Fertilization’</span><span class="change"><span class="charNo">147</span>: ‘Gametes: Sexes’</span><span class="change"><span class="charNo">148</span>: ‘Gametes: Egg: Protective membrane’</span><span class="change"><span class="charNo">151</span>: ‘Gametes: Spermatozoa: Anterior nuclear fossa’</span><span class="change"><span class="charNo">155</span>: ‘Gametes: Spermatozoa: Mid-piece’</span><span class="change"><span class="charNo">157</span>: ‘Gametes: Spermatozoa: Centrioles: Fusion’</span><span class="change"><span class="charNo">159</span>: ‘Gametes: Spermatozoa: Mitochondria: Shape’</span><span class="change"><span class="charNo">160</span>: ‘Gametes: Spermatozoa: Mitochondria: Cristae: Configuration’</span><span class="change"><span class="charNo">161</span>: ‘Gametes: Spermatozoa: Mitochondria: Midpiece’</span><span class="change"><span class="charNo">165</span>: ‘Embryo: Cleavage: Polar lobe formation’</span><span class="change"><span class="charNo">170</span>: ‘Larva: Apical organ: Develops into adult brain’</span><span class="change"><span class="charNo">176</span>: ‘Larva: Coelom: Paired’</span><span class="change"><span class="charNo">178</span>: ‘Larva: Feeding’</span><span class="change"><span class="charNo">181</span>: ‘Larva: Cilia: Ciliated food groove’</span><span class="change"><span class="charNo">187</span>: ‘Ciliary ultrastructure: Aggregation of granules below basal plate’</span><span class="change"><span class="charNo">188</span>: ‘Ciliary ultrastructure: Basal foot: Radiating tubular fibres’</span><span class="change"><span class="charNo">189</span>: ‘Ciliary ultrastructure: Basal plate’</span><span class="change"><span class="charNo">191</span>: ‘Ciliary ultrastructure: Centriolar triplet derivative in basal body’</span><span class="change"><span class="charNo">192</span>: ‘Ciliary ultrastructure: Ciliary necklace with connecting strands’</span><span class="change"><span class="charNo">197</span>: ‘Ciliary ultrastructure: Vertical ciliary rootlet: Length’</span><span class="change"><span class="charNo">198</span>: ‘Ciliary ultrastructure: Vertical ciliary rootlet: Shape’</span><span class="change"><span class="charNo">199</span>: ‘Ciliary ultrastructure: Secondary ciliary rootlet: Presence’</span><span class="change"><span class="charNo">202</span>: ‘Nephridia: Podocytes’</span><span class="change"><span class="charNo">204</span>: ‘Nephridia: Serve as excretory organs’</span><span class="change"><span class="charNo">205</span>: ‘Nephridia: Protonephridia’</span><span class="change"><span class="charNo">211</span>: ‘Cuticle: Resilience’</span><span class="change"><span class="charNo">212</span>: ‘Cuticle: Microvilli’</span><span class="change"><span class="charNo">218</span>: ‘Nervous system: Glial system’</span><span class="change"><span class="charNo">221</span>: ‘Nervous system: Formation of ganglia’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail87" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 87</span>
+<div class="tfm">
+<span class="change"><span class="charNo">10</span>: ‘Adult setae’</span><span class="change"><span class="charNo">15</span>: ‘Adult setae: Enamel’</span><span class="change"><span class="charNo">20</span>: ‘Body organization: Serial repetition’</span><span class="change"><span class="charNo">21</span>: ‘Body organization: Foot’</span><span class="change"><span class="charNo">25</span>: ‘Body organization: Circulatory system’</span><span class="change"><span class="charNo">41</span>: ‘Perioral tentacular apparatus: Origin’</span><span class="change"><span class="charNo">50</span>: ‘Perioral tentacular apparatus: Musculature’</span><span class="change"><span class="charNo">56</span>: ‘Digestive tract: Oesophageal folds’</span><span class="change"><span class="charNo">57</span>: ‘Digestive tract: Oral sphincter’</span><span class="change"><span class="charNo">58</span>: ‘Digestive tract: Foregut: Locomotory cilia’</span><span class="change"><span class="charNo">60</span>: ‘Digestive tract: Midgut: Glands’</span><span class="change"><span class="charNo">65</span>: ‘Sclerites: Present in adult’</span><span class="change"><span class="charNo">143</span>: ‘Gametes: Ovary wall saccular’</span><span class="change"><span class="charNo">144</span>: ‘Gametes: Testis wall saccular’</span><span class="change"><span class="charNo">150</span>: ‘Gametes: Spermatozoa: Nucleus: Shape’</span><span class="change"><span class="charNo">152</span>: ‘Gametes: Spermatozoa: Acrosome: Shape’</span><span class="change"><span class="charNo">156</span>: ‘Gametes: Spermatozoa: Centrioles: Orientation’</span><span class="change"><span class="charNo">158</span>: ‘Gametes: Spermatozoa: Satellite fibre complex’</span><span class="change"><span class="charNo">164</span>: ‘Embryo: Cleavage: Cross pattern’</span><span class="change"><span class="charNo">173</span>: ‘Larva: Formation of coelomoducts’</span><span class="change"><span class="charNo">177</span>: ‘Larva: Coelom: Paried: Includes pericardium’</span><span class="change"><span class="charNo">179</span>: ‘Larva: Cilia: Metatroch’</span><span class="change"><span class="charNo">203</span>: ‘Nephridia: Rhogocytes’</span><span class="change"><span class="charNo">206</span>: ‘Nephridia: Metanephridia’</span><span class="change"><span class="charNo">208</span>: ‘Cuticle: Composition’</span><span class="change"><span class="charNo">209</span>: ‘Cuticle: Fibrous layer with thick fibrils’</span><span class="change"><span class="charNo">210</span>: ‘Cuticle: Homogeneous layer’</span><span class="change"><span class="charNo">213</span>: ‘Muscles: Cytology’</span><span class="change"><span class="charNo">214</span>: ‘Muscles: Histology’</span><span class="change"><span class="charNo">215</span>: ‘Glands: Pedal gland’</span><span class="change"><span class="charNo">216</span>: ‘Glands: Paired pharyngeal diverticulae’</span><span class="change"><span class="charNo">219</span>: ‘Nervous system: Buccal nerve ring’</span><span class="change"><span class="charNo">224</span>: ‘Nervous system: Nerve cords’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">11</span>: ‘Adult setae: Secretion’</span><span class="change"><span class="charNo">12</span>: ‘Adult setae: Secretion: Microvillar diameter’</span><span class="change"><span class="charNo">13</span>: ‘Adult setae: Secretion: Microvillar canal aspect’</span><span class="change"><span class="charNo">14</span>: ‘Adult setae: Composition’</span><span class="change"><span class="charNo">16</span>: ‘Adult setae: Distribution’</span><span class="change"><span class="charNo">17</span>: ‘Adult setae: Constitution’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo">12</span>: ‘Adult setae: Secretion: Microvillar diameter’</span>
+</div>
+</div>
+<div id="nodeDetail88" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 88</span>
+<div class="tfm">
+<span class="change"><span class="charNo">24</span>: ‘Body organization: Gills’</span><span class="change"><span class="charNo">51</span>: ‘Perioral tentacular apparatus: Forms closed loop’</span><span class="change"><span class="charNo">55</span>: ‘Digestive tract: Radula’</span><span class="change"><span class="charNo">59</span>: ‘Digestive tract: Midgut: Subdivisions’</span><span class="change"><span class="charNo">62</span>: ‘Digestive tract: Anus: Location’</span><span class="change"><span class="charNo">67</span>: ‘Sclerites: Accessory sclerites: Reduced’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span><span class="change"><span class="charNo">140</span>: ‘Sclerites: Periodically shed and replaced’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo">70</span>: ‘Sclerites: Bivalved: Hinge line shape’</span><span class="change"><span class="charNo">72</span>: ‘Sclerites: Bivalved: Commissure: Exact correspondence of valve margins’</span><span class="change"><span class="charNo">73</span>: ‘Sclerites: Bivalved: Commissure: Sulcate’</span><span class="change"><span class="charNo">74</span>: ‘Sclerites: Bivalved: Commissure: Circular’</span><span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span><span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">105</span>: ‘Sclerites: Ventral valve: Growth direction’</span><span class="change"><span class="charNo">107</span>: ‘Sclerites: Ventral valve: Posterior margin growth direction’</span><span class="change"><span class="charNo">110</span>: ‘Sclerites: Ventral valve: Posterior surface: Extent’</span><span class="change"><span class="charNo">124</span>: ‘Sclerites: Ornament: Concentric ornament: Symmetry’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">131</span>: ‘Sclerites: Composition: Microstructure: Number of distinct layers’</span><span class="change"><span class="charNo">132</span>: ‘Sclerites: Composition: Microstructure: Format’</span><span class="change"><span class="charNo">133</span>: ‘Sclerites: Structure: Stratiform lamellae expressed at surface’</span><span class="change"><span class="charNo">134</span>: ‘Sclerites: Structure: Stratiform laminae separated’</span><span class="change"><span class="charNo">135</span>: ‘Sclerites: Structure: Stratiform laminae with polygonal ornament’</span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo">75</span>: ‘Sclerites: Bivalved: Commissure: Lateral margins’</span><span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">104</span>: ‘Sclerites: Ventral valve: Relative size’</span><span class="change"><span class="charNo">131</span>: ‘Sclerites: Composition: Microstructure: Number of distinct layers’</span><span class="change"><span class="charNo">134</span>: ‘Sclerites: Structure: Stratiform laminae separated’</span>
+</div>
+</div>
+<div id="nodeDetail89" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 89</span>
+<div class="tfm">
+<span class="change"><span class="charNo">68</span>: ‘Sclerites: Accessory sclerites: Arrangement’</span><span class="change"><span class="charNo">69</span>: ‘Sclerites: Accessory sclerites: Symmetry’</span><span class="change"><span class="charNo">135</span>: ‘Sclerites: Structure: Stratiform laminae with polygonal ornament’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail90" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 90</span>
+<div class="tfm">
+<span class="change"><span class="charNo">66</span>: ‘Sclerites: Bivalved’</span><span class="change"><span class="charNo">106</span>: ‘Sclerites: Ventral valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">108</span>: ‘Sclerites: Ventral valve: Posterior surface: Planar’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">132</span>: ‘Sclerites: Composition: Microstructure: Format’</span><span class="change"><span class="charNo">139</span>: ‘Sclerites: Structure: External polygonal ornament’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail91" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 91</span>
+<div class="tfm">
+<span class="change"><span class="charNo">10</span>: ‘Adult setae’</span><span class="change"><span class="charNo">20</span>: ‘Body organization: Serial repetition’</span><span class="change"><span class="charNo">40</span>: ‘Perioral tentacular apparatus: Presence’</span><span class="change"><span class="charNo">148</span>: ‘Gametes: Egg: Protective membrane’</span><span class="change"><span class="charNo">153</span>: ‘Gametes: Spermatozoa: Acrosome: Differentiated internally’</span><span class="change"><span class="charNo">154</span>: ‘Gametes: Spermatozoa: Acrosome: Sub-acrosomal space’</span><span class="change"><span class="charNo">159</span>: ‘Gametes: Spermatozoa: Mitochondria: Shape’</span><span class="change"><span class="charNo">163</span>: ‘Embryo: Cleavage: Equal’</span><span class="change"><span class="charNo">165</span>: ‘Embryo: Cleavage: Polar lobe formation’</span><span class="change"><span class="charNo">168</span>: ‘Larva: Apical organ: Muscles extending to the hyposphere’</span><span class="change"><span class="charNo">169</span>: ‘Larva: Apical organ: Serotonergic cells’</span><span class="change"><span class="charNo">180</span>: ‘Larva: Cilia: Telotroch’</span><span class="change"><span class="charNo">190</span>: ‘Ciliary ultrastructure: Brushborder of microvilli’</span><span class="change"><span class="charNo">195</span>: ‘Ciliary ultrastructure: Glycocalyx ultrastructure’</span><span class="change"><span class="charNo">201</span>: ‘Ciliary ultrastructure: Secondary ciliary rootlet: Shape’</span><span class="change"><span class="charNo">211</span>: ‘Cuticle: Resilience’</span><span class="change"><span class="charNo">217</span>: ‘Nervous system: Orthogonal’</span><span class="change"><span class="charNo">221</span>: ‘Nervous system: Formation of ganglia’</span><span class="change"><span class="charNo">223</span>: ‘Nervous system: Cerebral gangila: Fused’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail92" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 92</span>
+<div class="tfm">
+<span class="change"><span class="charNo">16</span>: ‘Adult setae: Distribution’</span><span class="change"><span class="charNo">62</span>: ‘Digestive tract: Anus: Location’</span><span class="change"><span class="charNo">65</span>: ‘Sclerites: Present in adult’</span><span class="change"><span class="charNo">66</span>: ‘Sclerites: Bivalved’</span><span class="change"><span class="charNo">91</span>: ‘Sclerites: Dorsal valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">92</span>: ‘Sclerites: Dorsal valve: Differentiated posterior surface: Morphology’</span><span class="change"><span class="charNo">106</span>: ‘Sclerites: Ventral valve: Posterior surface: Differentiated’</span><span class="change"><span class="charNo">111</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail93" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 93</span>
+<div class="tfm">
+<span class="change"><span class="charNo">1</span>: ‘Brephic shell: Embryonic shell’</span><span class="change"><span class="charNo">26</span>: ‘Pedicle’</span><span class="change"><span class="charNo">67</span>: ‘Sclerites: Accessory sclerites: Reduced’</span><span class="change"><span class="charNo">69</span>: ‘Sclerites: Accessory sclerites: Symmetry’</span><span class="change"><span class="charNo">76</span>: ‘Sclerites: Bivalved: Apophyses’</span><span class="change"><span class="charNo">90</span>: ‘Sclerites: Dorsal valve: Growth direction’</span><span class="change"><span class="charNo">94</span>: ‘Sclerites: Dorsal valve: Posterior surface: Notothyrium’</span><span class="change"><span class="charNo">105</span>: ‘Sclerites: Ventral valve: Growth direction’</span><span class="change"><span class="charNo">110</span>: ‘Sclerites: Ventral valve: Posterior surface: Extent’</span><span class="change"><span class="charNo">115</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Extent’</span><span class="change"><span class="charNo">116</span>: ‘Sclerites: Ventral valve: Posterior surface: Delthyrium: Cover: Identity’</span><span class="change"><span class="charNo">123</span>: ‘Sclerites: Ornament: Concentric ornament’</span><span class="change"><span class="charNo">127</span>: ‘Sclerites: Composition: Mineralogy’</span><span class="change"><span class="charNo">131</span>: ‘Sclerites: Composition: Microstructure: Number of distinct layers’</span><span class="change"><span class="charNo">132</span>: ‘Sclerites: Composition: Microstructure: Format’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+</div>
+<div id="nodeDetail94" class="nddtl">
+<span class="nddtlhdr">Steps incurred at node 94</span>
+<div class="tfm">
+<span class="change"><span class="charNo">9</span>: ‘Larval chaetae: Paired bundles’</span><span class="change"><span class="charNo">11</span>: ‘Adult setae: Secretion’</span><span class="change"><span class="charNo">14</span>: ‘Adult setae: Composition’</span><span class="change"><span class="charNo">17</span>: ‘Adult setae: Constitution’</span><span class="change"><span class="charNo">23</span>: ‘Body organization: Coelomoducts: Number’</span><span class="change"><span class="charNo">25</span>: ‘Body organization: Circulatory system’</span><span class="change"><span class="charNo">42</span>: ‘Perioral tentacular apparatus: Tentacle disposition’</span><span class="change"><span class="charNo">54</span>: ‘Digestive tract: Prominent pharynx’</span><span class="change"><span class="charNo">62</span>: ‘Digestive tract: Anus: Location’</span><span class="change"><span class="charNo">141</span>: ‘Gametes: Egg size’</span><span class="change"><span class="charNo">151</span>: ‘Gametes: Spermatozoa: Anterior nuclear fossa’</span><span class="change"><span class="charNo">153</span>: ‘Gametes: Spermatozoa: Acrosome: Differentiated internally’</span><span class="change"><span class="charNo">160</span>: ‘Gametes: Spermatozoa: Mitochondria: Cristae: Configuration’</span><span class="change"><span class="charNo">172</span>: ‘Larva: Origin of body cavity’</span><span class="change"><span class="charNo">180</span>: ‘Larva: Cilia: Telotroch’</span><span class="change"><span class="charNo">182</span>: ‘Larva: Cilia: Ciliary bands: Downstream’</span><span class="change"><span class="charNo">186</span>: ‘Ciliary ultrastructure: Accessory centriole’</span><span class="change"><span class="charNo">187</span>: ‘Ciliary ultrastructure: Aggregation of granules below basal plate’</span><span class="change"><span class="charNo">190</span>: ‘Ciliary ultrastructure: Brushborder of microvilli’</span><span class="change"><span class="charNo">191</span>: ‘Ciliary ultrastructure: Centriolar triplet derivative in basal body’</span><span class="change"><span class="charNo">192</span>: ‘Ciliary ultrastructure: Ciliary necklace with connecting strands’</span><span class="change"><span class="charNo">195</span>: ‘Ciliary ultrastructure: Glycocalyx ultrastructure’</span><span class="change"><span class="charNo">196</span>: ‘Ciliary ultrastructure: Microvilli on epidermal surface: Branched’</span><span class="change"><span class="charNo">197</span>: ‘Ciliary ultrastructure: Vertical ciliary rootlet: Length’</span><span class="change"><span class="charNo">200</span>: ‘Ciliary ultrastructure: Secondary ciliary rootlet: Length’</span><span class="change"><span class="charNo">205</span>: ‘Nephridia: Protonephridia’</span><span class="change"><span class="charNo">212</span>: ‘Cuticle: Microvilli’</span>
+</div>
+<div class="rgn">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
+<div class="ftch">
+<span class="change"><span class="charNo"></span>: </span>
+</div>
 </div>
 <script>
+// Enable consensus tree interactions:
+function showNodeNotes (e) {
+  var target = e.target; // Which node triggered the click
+  if (target.nodeName === 'tspan')
+    $target = $(target);
+    gp = $target.parent().parent();
+    if (gp[0].nodeName === 'g' && gp.hasClass('node-g')) {
+      nodeNumber = gp.data('node');
+      $("#conTree g").removeClass("bold");
+      gp.addClass("bold");
+      document.getElementById('nodeDetails').style='display: none';
+      $('div .nddtl').css('display', 'none');
+      document.getElementById('nodeDetail' + nodeNumber).style='display: block';
+  }
+  return false;
+}
+$("#conTree").click(showNodeNotes)
+
+// Prepare for character-by-character interactions
 var latestKnownScrollY = 0,
   latestKnownY = 0,
     ticking = false;
