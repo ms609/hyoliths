@@ -278,7 +278,8 @@ subheadings <- c("Adult setae: Composition", "Digestive tract: Anus: Presence",
                  paste("Sclerites:",
                        c("Bivalved", "Dorsal valve", "Ventral valve",
                          "Ornament", "Composition", "Structure")),
-                 "Gametes: Spermatozoa", paste("Larva:", c("Cilia",)))
+                 "Gametes: Spermatozoa", paste("Larva:", c("Cilia", 
+                    "Apical organ: Muscles extending to the hyposphere")))
 
 #for (i in 14:17) {
 for (i in seq_len(n_char)) {
