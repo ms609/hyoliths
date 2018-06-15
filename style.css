@@ -100,13 +100,48 @@ tspan.thisAn {
   fill: #34caaf;
 }
 
+span.charNo {font-weight: bold;}
+span.charNo::after {
+  content: ": ";
+}
+div.tfm::before {
+  content: "Transformations:";
+}
+div.rgn::before {
+  content: "Additional regions:";
+}
+div.ftch::before {
+  content: "Logically invalid Fitch transformations:";
+}
+div.tfm::before , div.ftch::before, div.rgn::before {
+  font-style: italic;
+  text-align: center;
+}
+div.tfm, div.rgn, div.ftch {
+  float: left;
+}
+div.cl3 { width: 33%; }
+div.cl2 { width: 49%; }
+div.cl1 { width: 100%; }
 tspan.b41, text.b41 { fill:  #d7191c; }
-div.ftch span.charNo {color: #d7191c; }
 tspan.b42, text.b42 { fill:  #fdae61; }
-div.rgn span.charNo { color: #fdae61; }
 tspan.b43, text.b43 { fill:  #abd9e9; }
 tspan.b44, text.b44 { fill:  #2c7bb6; }
-div.tfm span.charNo { color: #2c7bb6; }
+div.ftch span.charNo, div.ftch::before  {color: #d7191c; }
+div.rgn span.charNo, div.rgn::before  { color: #fdae61; }
+div.tfm span.charNo, div.tfm::before { color: #2c7bb6; }
+.book .book-body .page-wrapper .page-inner section.normal div.nddtl {
+  font-size: smaller;
+}
+span.change {
+  display: block;
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+.nddtlhdr, #nodeDetails {
+  font-weight: bold;
+}
 
 .legendLabels {
   fill: #858585; /* To match blockquote style */
@@ -130,10 +165,6 @@ input.switcherNumber {
 
 .book .book-body .page-wrapper .page-inner section.normal .selectTree {
   font-style: italic;
-}
-
-span.change {
-  display: list-item;
 }
 
 .bold {
