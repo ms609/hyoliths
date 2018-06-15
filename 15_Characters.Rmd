@@ -206,7 +206,7 @@ if (knitr::is_html_output()) {
                        '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                        '<tspan x="0" dy="1.2em">',
                        '<tspan class="score b44">Blue</tspan>: ',
-                       'Character transformations</tspan>', 
+                       'Logically valid character transformations</tspan>', 
                        '<tspan x="0" dy="1.2em"><tspan class="score b42">Orange</tspan>: ',
                        'Applicable regions</tspan>', 
                        '<tspan x="0" dy="1.2em"><tspan class="score b41">Red</tspan>: ',

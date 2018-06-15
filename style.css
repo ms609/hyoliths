@@ -105,7 +105,7 @@ span.charNo::after {
   content: ": ";
 }
 div.tfm::before {
-  content: "Transformations:";
+  content: "Valid transformations:";
 }
 div.rgn::before {
   content: "Applicable regions:";
