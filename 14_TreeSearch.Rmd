@@ -46,7 +46,7 @@ The position of the root does not affect tree score, so we keep it fixed (using 
 ```{r treesearch-implied-weights-analysis, echo=TRUE, eval=FALSE}
 for (k in kValues) {
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
-                       ratchHits = 6, ratchIter=4000, searchHits=56,
+                       ratchHits = 10, ratchIter=4000, searchHits=56,
                        swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
                        verbosity=0L)
   score <- IWScore(iw.tree, iw_data, concavity=k)
@@ -70,7 +70,7 @@ for (k in kValues) {
 
 ```{r treesearch-equal-weights-analysis, echo=TRUE, eval=FALSE}
 ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
-                   ratchHits = 60, ratchIter=4000, searchHits=55, # ratchHits = 20 not enough
+                   ratchHits = 10, ratchIter=4000, searchHits=55, # ratchHits = 20 not enough
                    swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
 ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=250, searchHits = 85,
                                  swappers=list(RootedTBRSwap, RootedNNISwap),
@@ -99,7 +99,7 @@ for (k in kValues) {
   
   cat("\n\n * Did not find global optimum for k = ", k, "; continuing search.")
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
-                       ratchHits = 6, ratchIter=4000, searchHits=56,
+                       ratchHits = 10, ratchIter=4000, searchHits=56,
                        swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
                        verbosity=0L)
   score <- IWScore(iw.tree, iw_data, concavity=k)
