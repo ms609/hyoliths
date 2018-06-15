@@ -139,22 +139,34 @@ whichNode[!bifReal] <- apply(bifSplits[, !bifReal, drop=FALSE], 2, function (bif
   which(parentSplits & extras == min(extras[parentSplits]))
 })
 whichNode <- whichNode + nTip
-ColPlot(majCon)
-majLabels <- vapply(nTip + 1:Nnode(majCon), function (node) {
-  where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nTip], logical(1)), logical(3))
-  whichWhere <- apply(where, 1, which)
-  # Return: 
-  if (length(whichWhere) == 0) character(3) else {
-    unlist(lapply(whichWhere, paste, collapse=', '))
-  }
-}, character(3))
-LabelNodes <- function (x, col=1, line=1) {
-  nodelabels(paste(rep("\n", 2 - line), x, rep("\n", line)),
-             frame='none', pos=2, cex=0.8, col=brewer[[4]][col])
+
+if (knitr::is_html_output()) {
+    ColPlot(majCon)
+  majLabels <- vapply(nTip + 1:Nnode(majCon), function (node) {
+    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nTip], logical(1)), logical(3))
+    whichWhere <- apply(where, 1, which)
+    ret <- unlist(lapply(whichWhere, length))
+    # Return: 
+    ifelse(ret == 0, '', as.character(ret))
+  }, character(3))
+
+  LabelNodes(majLabels['changes', ], 4, 0)
+  LabelNodes(majLabels['regions', ], 2, 1)
+  LabelNodes(majLabels['fitches', ], 1, 2)
+} else {
+  ColPlot(majCon)
+  majLabels <- vapply(nTip + 1:Nnode(majCon), function (node) {
+    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nTip], logical(1)), logical(3))
+    whichWhere <- apply(where, 1, which)
+    # Return: 
+    if (length(whichWhere) == 0) character(3) else {
+      unlist(lapply(whichWhere, paste, collapse=', '))
+    }
+  }, character(3))
+  LabelNodes(majLabels['changes', ], 4, 0)
+  LabelNodes(majLabels['regions', ], 2, 1)
+  LabelNodes(majLabels['fitches', ], 1, 2)
 }
-LabelNodes(majLabels['changes', ], 4, 0)
-LabelNodes(majLabels['regions', ], 2, 1)
-LabelNodes(majLabels['fitches', ], 1, 2)
 ```
 <script>
 var latestKnownScrollY = 0,

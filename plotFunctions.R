@@ -125,3 +125,8 @@ PlotPanel <- function (treeList, i) {
     text(1, 1, paste0('k = ', kValues[i]), pos=4)
   }
 }
+
+LabelNodes <- function (x, col=1, line=1) {
+  nodelabels(paste(rep("\n\n", 2 - line), x, rep("\n\n", line)),
+             frame='none', pos=2, cex=0.8, col=brewer[[4]][col])
+}
