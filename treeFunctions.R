@@ -12,6 +12,7 @@ SplitSupport <- function(tr, splitOccurrences, tipIndex) {
 
 GetSplits <- function (trees, tipIndex) {
   nTip <- length(tipIndex)
+  if (class(trees) == 'phylo') trees <- list(trees)
   table(vapply(trees, function (tr) {
     vapply(Descendants(tr, nTip + seq_len(nTip - 1L), type='tips'),
            SplitNumber, character(2), tr, tipIndex)
