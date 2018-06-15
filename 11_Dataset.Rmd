@@ -28,9 +28,9 @@ padding <- rep('', roundLength - length(coded))
 colStart <- ceiling(seq(1, roundLength + 1, len=columns + 1))[-(columns+1)]
 colEnd <- c(colStart[-1] - 1, length(coded))
 codeMat <- matrix('', ncol=columns * 2, nrow=colEnd[1])
-codeMat[, seq_len(columns)* 2 - 1] <-
+codeMat[, seq_len(columns) * 2 - 1] <-
   c(paste0('_', gsub('_', ' ', names(coded), fixed=TRUE), '_'), padding)
-codeMat[, seq_len(columns)* 2] <- c(paste0(coded, "   &nbsp;"), padding)
+codeMat[, seq_len(columns) * 2] <- c(paste0(coded, "   "), padding)
 
 knitr::kable(codeMat, col.names=rep('', columns * 2))
 ```
