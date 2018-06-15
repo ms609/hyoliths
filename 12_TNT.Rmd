@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 
 # Fitch parsimony {#fitch}
 
-Parsimony search was conducted in TNT v1.5 [@Goloboff2016] using ratchet and tree drifting heuristics [@Goloboff1999;@Nixon1999], repeating the search until the optimal score had been hit by 1500 independent searches:
+Parsimony search under the Fitch algorithm was conducted in TNT v1.5 [@Goloboff2016] using Ratchet and tree drifting heuristics [@Goloboff1999;@Nixon1999], repeating the search until the optimal score had been hit by 1500 independent searches:
 
 > xmult:rat10 drift10 hits 1500 level 4 chklevel 5;
 
@@ -25,7 +25,7 @@ Node support was estimated by calculating the proportion of jackknife replicates
 >
 > set nt ntrees; ttag=; <span class="comment">/&#42; Prepare for resampling &#42;/</span>
 >
-> resample=sym 5000 frequency from 'nt'; <span class="comment">/&#42; Symmetric resampling, counting frequencies &#42;/</span>
+> resample=sym 5000 frequency from &#39;nt&#39;; <span class="comment">/&#42; Symmetric resampling, counting frequencies &#42;/</span>
 >
 > log TNT/ew.sym; ttag/; log/; <span class="comment">/&#42; Write results to log &#42;/</span>
 >
@@ -41,7 +41,7 @@ Further searches were conducted under extended implied weighting [@Goloboff1997;
 >
 > nelsen *; set nt ntrees; ttag=; <span class="comment">/&#42; Prepare for resampling &#42;/</span>
 >
-> resample=frequency from 'nt'; <span class="comment">/&#42; Symmetric resampling &#42;/</span>
+> resample=frequency from &#39;nt&#39;; <span class="comment">/&#42; Symmetric resampling &#42;/</span>
 >
 > log TNT/ew.sym; ttag/; log/; <span class="comment">/&#42; Write results to log &#42;/</span>
 > 
