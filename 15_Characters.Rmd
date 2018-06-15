@@ -123,11 +123,11 @@ recons <- apply(majChars, 2, function (char) {
        'fitches' = fitch$changes[!fitch$changes %in% inapp$changes])
 })
 
-nTip <- length(majTips)
-majSplits <- vapply(Descendants(majCon, nTip + 1:Nnode(majCon), type='tips'),
-           function (tips) majTips %in% majTips[tips], logical(nTip))
-bifSplits <- vapply(Descendants(bifurcating, nTip + seq_len(nTip - 1L), type='tips'),
-           function (tips) bifTips %in% bifTips[tips], logical(nTip))
+conTip <- length(majTips)
+majSplits <- vapply(Descendants(majCon, conTip + 1:Nnode(majCon), type='tips'),
+           function (tips) majTips %in% majTips[tips], logical(conTip))
+bifSplits <- vapply(Descendants(bifurcating, conTip + seq_len(conTip - 1L), type='tips'),
+           function (tips) bifTips %in% bifTips[tips], logical(conTip))
 majNos <- apply(majSplits, 2, function (x) sum(powersOf2[x]))
 bifNos <- apply(bifSplits, 2, function (x) sum(powersOf2[x]))
 whichNode <- integer(length(bifNos))
@@ -138,30 +138,75 @@ whichNode[!bifReal] <- apply(bifSplits[, !bifReal, drop=FALSE], 2, function (bif
   parentSplits <- apply(majSplits[bifSplit, ], 2, all)
   which(parentSplits & extras == min(extras[parentSplits]))
 })
-whichNode <- whichNode + nTip
+whichNode <- whichNode + conTip
 
 if (knitr::is_html_output()) {
-    ColPlot(majCon)
-  majLabels <- vapply(nTip + 1:Nnode(majCon), function (node) {
-    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nTip], logical(1)), logical(3))
+  
+  majLabels <- vapply(conTip + 1:Nnode(majCon), function (node) {
+    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(3))
     whichWhere <- apply(where, 1, which)
     ret <- unlist(lapply(whichWhere, length))
     # Return: 
     ifelse(ret == 0, '', as.character(ret))
   }, character(3))
 
-  LabelNodes(majLabels['changes', ], 4, 0)
-  LabelNodes(majLabels['regions', ], 2, 1)
-  LabelNodes(majLabels['fitches', ], 1, 2)
+  ### Calculate node coordinates for majCon
+  
+  internal <- conTip + 1:Nnode(majCon)
+  terminal <- seq_len(conTip)
+  conLabel <- character(conTip)
+  conEdge <- dim(majCon$edge)[1]
+  eachConEdge <- seq_len(conEdge)
+  parent <- majCon$edge[, 1]
+  child  <- majCon$edge[, 2]
+  
+  conYStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / conTip, 1)
+  
+  ancestors <- Ancestors(majCon, type='all')
+  nAncestors <- vapply(ancestors, length, 1)
+  conXStep <- round(seq(treeXMargins[1], to=svgWidth-treeXMargins[2],
+                     len=max(nAncestors) + 1L), 1)
+  conX <- conXStep[nAncestors + 1L]
+  conY <- double(length(nAncestors))
+  conY[child[child <= conTip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=conTip)
+  
+  for (nodeI in rev(internal)) {
+    conY[nodeI] <- mean(conY[Children(majCon, nodeI)])
+  }
+  conY <- round(conY, 1)
+  
+  edges <- paste0('<path d="', paste0('M', conX[parent], ',', conY[parent],
+                                      'V', conY[child], 'H', conX[child], 
+                                      collapse=''), '"></path>')
+  tips <- paste0('<text x="', (conX[terminal] + 0L), 
+                 '" y="', conY[terminal] + textY,
+                 '" fill="', taxonColour[majTips[terminal]],
+                 '" class="taxonLabel">', 
+                 gsub('_', ' ', majTips[terminal], fixed=TRUE), '</text>',
+                 collapse='')
+  nodes <- paste0('<text x="', (nodeXi[internal][-1] + 2L), 
+                  '" y="', nodeYi[internal][-1] + textY,
+                  '" class="node" fill="', NodeColour(nodeSupport[-1]),
+                  '">', nodeSupport[-1], '</text>', collapse='')
+  conCaption <- paste0('<text x="', svgWidth - 4L,
+               '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
+                '<tspan class="score b41">Red</tspan>: Logically invalid Fitch steps<br />Rokey-dokey',
+               '</text><text x="', svgWidth - 4L, '" y="', (yStep * 2) + textY, 
+               '" text-anchor="end" class="stepsLabel">',
+               '<tspan class="score">Blue</tspan>: additional region</text>')
+  svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
+                svgWidth, '" height="', svgHeight, '" class="tree" data-char="', i, '">',
+                conCaption, tips, edges, nodes, '</svg>')
+  cat(svgSource)
 } else {
   ColPlot(majCon)
-  majLabels <- vapply(nTip + 1:Nnode(majCon), function (node) {
-    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nTip], logical(1)), logical(3))
-    whichWhere <- apply(where, 1, which)
-    # Return: 
-    if (length(whichWhere) == 0) character(3) else {
-      unlist(lapply(whichWhere, paste, collapse=', '))
-    }
+  majLabels <- vapply(conTip + 1:Nnode(majCon), function (node) {
+  where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(3))
+  whichWhere <- apply(where, 1, which)
+  # Return: 
+  if (length(whichWhere) == 0) character(3) else {
+    unlist(lapply(whichWhere, paste, collapse=', '))
+  }
   }, character(3))
   LabelNodes(majLabels['changes', ], 4, 0)
   LabelNodes(majLabels['regions', ], 2, 1)
