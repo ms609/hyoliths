@@ -37,15 +37,16 @@ knitr::opts_chunk$set(echo = TRUE)
 library('ape'); library('phangorn'); library('TreeSearch');
 if (!require('Inapp')) devtools::install_github('TGuillerme/Inapp')
 library('Inapp')
+source('bibFunctions.R')
 source('helperFunctions.R')
 source('plotFunctions.R')
 source('printFunctions.R')
 source('treeFunctions.R')
 ```
 ```{R setup-more, include=FALSE, message=FALSE}
-files <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
-filename <- files[which.max(vapply(files, NexusTime, double(1)))]
-my_data <- ReadAsPhyDat(filename)
+nexusFiles <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
+nexusFile <- nexusFiles[which.max(vapply(nexusFiles, NexusTime, double(1)))]
+my_data <- ReadAsPhyDat(nexusFile)
 #ignored_taxa <- c('Conotheca', 'Decoritheca', 'Maxilites', 'Pauxillites',
 #                  'Probactrotheca') # Also manually update tnt.run with with taxcode-
 ignored_taxa <- c('Decoritheca')
@@ -60,7 +61,8 @@ cont <- attr(fitch_data, 'contrast')
 cont[cont[, '-'] == 1, ] <- 1
 attr(fitch_data, 'contrast') <- cont
 
-my_chars <- ReadCharacters(filename)
+my_chars <- ReadCharacters(nexusFile)
+char_notes <- ReadNotes(nexusFile)
 my_states <- attr(my_chars, 'state.labels')
 my_chars <- my_chars[!(rownames(my_chars) %in% ignored_taxa), ]
 
@@ -91,7 +93,6 @@ RootTree <- function (tree, outgroupTips) {
 
 ```
 ```{R Morphobank bibliography, echo=FALSE, message=FALSE}
-source('bibFunctions.R')
 mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
 mbRecent <- mbBib[which.max(file.mtime(mbBib))]
 refs <- trimws(enc2utf8(as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, skip=1, row.names=NULL))))
