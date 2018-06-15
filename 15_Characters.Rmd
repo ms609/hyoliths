@@ -170,7 +170,7 @@ function onScreen(e, viewTop, viewHeight) {
 function highlightTaxon (e) {
   var target = e.target; // Which node triggered the click
   $target = $(target);
-  if (target.nodeName === 'text') {
+  if (target.nodeName === 'text' && $target.hasClass('taxonLabel')) {
     taxonText = $(target).text();
     $withSameText = $('#reconstructions svg text:contains("' + taxonText + '")')
     if (localStorage.getItem(taxonText)) {
