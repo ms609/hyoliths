@@ -57,8 +57,7 @@ for (k in kValues) {
 
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, concavity=k,
                   swappers=list(RootedTBRSwap, RootedNNISwap),
-                  searchHits=55,
-                  nSearch=150, verbosity=0L)
+                  searchHits=55, searchIter=4000, nSearch=250, verbosity=0L)
   write.nexus(iw.consensus, 
               file=paste0("TreeSearch/hy_iw_k", k, "_", 
                           signif(IWScore(iw.tree, iw_data, concavity=k), 5),
@@ -110,8 +109,7 @@ for (k in kValues) {
 
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, concavity=k,
                   swappers=list(RootedTBRSwap, RootedNNISwap),
-                  searchHits=55,
-                  nSearch=150, verbosity=0L)
+                  searchHits=55, nSearch=250, searchIter=4000, verbosity=0L)
   write.nexus(iw.consensus,
               file=paste0("TreeSearch/hy_iw_k", k, "_", 
                           signif(IWScore(iw.tree, iw_data, concavity=k), 5),
