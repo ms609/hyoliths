@@ -273,11 +273,16 @@ PrintStateNotes <- function (notes) {
 prev_char_parts <- "NONE"
 prev_nesting <- 0
 
-subheadings <- c("Adult setae: Composition", "Digestive tract: Anus: Presence",
+subheadings <- c("Digestive tract: Anus: Presence",
+                 "Gametes: Spermatozoa: Nucleus: Shape",
+                 "Gametes: Egg: Size",
                  paste("Sclerites:",
-                       c("Bivalved", "Dorsal valve", "Ventral valve",
-                         "Ornament", "Composition", "Structure")),
-                 "Gametes: Spermatozoa", paste("Larva:", c("Cilia", 
+                       c("Bivalved", "Dorsal valve: Growth direction",
+                         "Ventral valve: Growth direction",
+                         "Ornament: Concentric ornament",
+                         "Composition: Mineralogy",
+                         "Structure: Stratiform lamellae expressed at surface")),
+                 paste("Larva:", c("Cilia: Metatroch", 
                     "Apical organ: Muscles extending to the hyposphere")))
 
 #for (i in 14:17) {
@@ -304,12 +309,12 @@ for (i in seq_len(n_char)) {
        prev_char_parts[1] == this_char_parts[1] &&
        next_char_parts[1] == this_char_parts[1]) ||
       (this_nesting == 1L && next_nesting > 1L &&
-            next_char_parts[1] == this_char_parts[1]) ||
-      prev_nesting > 2L && (
-        next_nesting < 2L
-        || (this_nesting > 1L && next_nesting > 2L &&
-            (this_char_parts[2] != next_char_parts[2]))
-      )
+            next_char_parts[1] == this_char_parts[1]) #||
+      #prev_nesting > 2L && (
+        #next_nesting < 2L
+        #|| (this_nesting > 1L && next_nesting > 2L &&
+            #(this_char_parts[2] != next_char_parts[2]))
+      #)
      ) {
      PrintSoloCharacter()
    }
