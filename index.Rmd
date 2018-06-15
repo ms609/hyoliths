@@ -55,7 +55,9 @@ refKeys <- apply(refs, 1, RefKey) # Needed before ReadNotes
 ```
 ```{R setup-more, include=FALSE, message=FALSE}
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
-tntDataFile <- gsub(".*(mbank_.*\\.tnt).*", "\\1", readLines(tntFiles[1], n=1))
+tntLink <- gsub(".*(mbank_.*\\.tnt).*",
+                "https://raw.githubusercontent.com/ms609/hyoliths/master/\\1",
+                readLines(tntFiles[1], n=1))
 nexusFiles <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
 nexusFile <- nexusFiles[which.max(vapply(nexusFiles, NexusTime, double(1)))]
 my_data <- ReadAsPhyDat(nexusFile)
