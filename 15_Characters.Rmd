@@ -15,6 +15,7 @@ Each tip is labelled according to its coding in the matrix.  These states have b
 We emphasize that different trees will give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.
 
 ```{R load-the-characters, echo=FALSE, message=FALSE}
+source('loadTrees.R')
 if (exists('localInstance') || knitr::is_html_output()) {
   trees <- unique(allTrees)
 } else if (length(iw.exist) > 1L) {
@@ -396,7 +397,7 @@ $(document).ready(function() {
   return false;
 });
 </script>
-```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
+```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis", eval=TRUE}
 ## These function definitions must be in the same block as when they are called.
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
 PrintDivision <- function (parts) cat(Header(2L, paste(

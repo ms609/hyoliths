@@ -100,7 +100,7 @@ for (k in kValues) {
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
                        ratchHits = 20, ratchIter=4000, searchHits=56,
                        swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
-                       verbosity=0L)
+                       verbosity=1L)
   score <- IWScore(iw.tree, iw_data, concavity=k)
   # Write a single best tree
   write.nexus(iw.tree,
@@ -109,7 +109,7 @@ for (k in kValues) {
 
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, concavity=k,
                   swappers=list(RootedTBRSwap, RootedNNISwap),
-                  searchHits=55, nSearch=250, searchIter=4000, verbosity=0L)
+                  searchHits=55, nSearch=250, searchIter=4000, verbosity=1L)
   write.nexus(iw.consensus,
               file=paste0("TreeSearch/hy_iw_k", k, "_", 
                           signif(IWScore(iw.tree, iw_data, concavity=k), 5),
