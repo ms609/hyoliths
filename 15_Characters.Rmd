@@ -80,7 +80,7 @@ if (exists('localInstance') || knitr::is_html_output()) {
   tipLabel <- matrix('', n_tree, n_tip)
   n_edge <- dim(tree$edge)[1]
   eachEdge <- seq_len(n_edge)
-  parent <- child <- matrix(0, n_tree, n_edge)
+  parents <- children <- matrix(0, n_tree, n_edge)
   xStep <- nodeX <- nodeY <- vector('list', n_tree)
   yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
   textY <- 3L
@@ -89,8 +89,8 @@ if (exists('localInstance') || knitr::is_html_output()) {
     tree <- rootedTrees[[i]]
     tipLabel[i, ] <- tree$tip.label
     treeEdge <- tree$edge
-    parent[i, ] <- treeEdge[, 1]
-    child[i, ] <- treeEdge[, 2]
+    parents[i, ] <- treeEdge[, 1]
+    children[i, ] <- treeEdge[, 2]
     ancestors <- Ancestors(tree, type='all')
     nAncestors <- vapply(ancestors, length, 1)
     xStep[[i]] <- round(seq(treeXMargins[1], to=svgWidth-treeXMargins[2],
@@ -170,8 +170,8 @@ if (knitr::is_html_output()) {
   conLabel <- character(conTip)
   conEdge <- dim(majCon$edge)[1]
   eachConEdge <- seq_len(conEdge)
-  parent <- majCon$edge[, 1]
-  child  <- majCon$edge[, 2]
+  majParent <- majCon$edge[, 1]
+  majChild  <- majCon$edge[, 2]
   
   conYStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / conTip, 1)
   
@@ -188,8 +188,8 @@ if (knitr::is_html_output()) {
   }
   conY <- round(conY, 1)
   
-  edges <- paste0('<path d="', paste0('M', conX[parent], ',', conY[parent],
-                                      'V', conY[child], 'H', conX[child], 
+  edges <- paste0('<path d="', paste0('M', conX[parent], ',', conY[majParent],
+                                      'V', conY[child], 'H', conX[majChild], 
                                       collapse=''), '" stroke="#888"></path>')
   tips <- paste0('<text x="', (conX[terminal] + 0L), 
                  '" y="', conY[terminal] + textY,
@@ -534,10 +534,10 @@ for (i in seq_len(n_char)) {
       edges <- paste0(vapply(unique(edgeCol), function(colour) {
         theseEdges <- edgeCol == colour
         paste0('<path d="', paste0(
-               'M', nodeXi[parent[treeNo, theseEdges]],
-               ',', nodeYi[parent[treeNo, theseEdges]],
-               'V', nodeYi[child[treeNo, theseEdges]],
-               'H', nodeXi[child[treeNo, theseEdges]],
+               'M', nodeXi[parents[treeNo, theseEdges]],
+               ',', nodeYi[parents[treeNo, theseEdges]],
+               'V', nodeYi[children[treeNo, theseEdges]],
+               'H', nodeXi[children[treeNo, theseEdges]],
                collapse=''),
                '" stroke="', colour, LineStyle(colour), '"></path>')
       }, character(1)), collapse='')
