@@ -97,7 +97,7 @@ if (exists('localInstance') || knitr::is_html_output()) {
                        len=max(nAncestors) + 1L), 1)
     nodeX[[i]] <- xStep[[i]][nAncestors + 1L]
     nodeYi <- double(length(nAncestors))
-    nodeYi[child[i, child[i, ] <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
+    nodeYi[children[i, children[i, ] <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
 
     for (nodeI in rev(internal)) {
       nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
@@ -181,15 +181,15 @@ if (knitr::is_html_output()) {
                      len=max(nAncestors) + 1L), 1)
   conX <- conXStep[nAncestors + 1L]
   conY <- double(length(nAncestors))
-  conY[child[child <= conTip]] <- seq(treeYMargins[1] + 30, svgHeight-treeYMargins[2], len=conTip)
+  conY[majChild[majChild <= conTip]] <- seq(treeYMargins[1] + 30, svgHeight-treeYMargins[2], len=conTip)
   
   for (nodeI in rev(internal)) {
     conY[nodeI] <- mean(conY[Children(majCon, nodeI)])
   }
   conY <- round(conY, 1)
   
-  edges <- paste0('<path d="', paste0('M', conX[parent], ',', conY[majParent],
-                                      'V', conY[child], 'H', conX[majChild], 
+  edges <- paste0('<path d="', paste0('M', conX[majParent], ',', conY[majParent],
+                                      'V', conY[majChild], 'H', conX[majChild], 
                                       collapse=''), '" stroke="#888"></path>')
   tips <- paste0('<text x="', (conX[terminal] + 0L), 
                  '" y="', conY[terminal] + textY,
