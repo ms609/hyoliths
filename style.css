@@ -48,6 +48,10 @@ path.inapplicable {
   font-style: italic;
   font-size: 9.5pt;
 }
+.book .book-body .page-wrapper .page-inner section.normal tspan.tipsHeader {
+  font-style: normal;
+  font-weight: bold;
+}
 
 .book .book-body .page-wrapper .page-inner section.normal svg.tree text,
 #conTree text {

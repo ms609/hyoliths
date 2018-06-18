@@ -197,6 +197,14 @@ if (knitr::is_html_output()) {
                  '" class="taxonLabel">', 
                  gsub('_', ' ', majTips[terminal], fixed=TRUE), '</text>',
                  collapse='')
+  omittedTips <- paste0('<g transform="translate(', svgWidth - 4L, ' ', 
+                        svgHeight, ')"><text x="0" y="0" class="taxonLabel" ',
+                        'text-anchor="end">', 
+                        paste0('<tspan x="0" dy="-1.2em" fill="', 
+                               taxonColour[omit], '">', omit, 
+                               '</tspan>', collapse=''),
+                        '<tspan x="0" dy="-1.2em" class="tipsHeader">',
+                        'Pruned taxa:</tspan></text></g>')
   nodes <- paste0('<g transform="translate(', conX[internal] + 2L, 
                   ' ', conY[internal], ')" class="node-g" data-node="', internal, 
                   '"><text x="0" y="-1.2em" class="node"><tspan class="b42">',
@@ -215,7 +223,7 @@ if (knitr::is_html_output()) {
                        '</text></g>')
   svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
                 svgWidth, '" height="', svgHeight, '" id="conTree">',
-                conCaption, tips, edges, nodes, '</svg>')
+                conCaption, tips, edges, omittedTips, nodes, '</svg>')
   cat(svgSource)
   
   ## Generate detail-divs
@@ -398,7 +406,7 @@ $(document).ready(function() {
   return false;
 });
 </script>
-```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis", eval=TRUE}
+```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis", eval=FALSE}
 ## These function definitions must be in the same block as when they are called.
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
 PrintDivision <- function (parts) cat(Header(2L, paste(
