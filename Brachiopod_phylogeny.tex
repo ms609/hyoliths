@@ -127,10 +127,11 @@ Maoyan Zhu}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-06-15}
+    \date{2018-06-18}
 
 \usepackage{doi} % Adds hyperlinks to dois
 \setcitestyle{round}
+\usepackage{hyperref}
 \usepackage[nottoc]{tocbibind} % list references in TOC
 \raggedbottom % already in pnas-new
 \usepackage[section]{placeins}
@@ -147,20 +148,14 @@ Maoyan Zhu}
 
 This document comtains supplementary material to
 \citet{Sun2018Hyolithswith}. It is best viewed in HTML format at
-\href{https://ms609.github.io/hyoliths/}{ms609.github.io/hyoliths}.
+(ms609.github.io/hyoliths){[}\url{https://ms609.github.io/hyoliths/}{]}.
 
-It opens with a detailed discussion of
-\protect\hyperlink{treesearch}{analyses} of the
-\protect\hyperlink{dataset}{morphological dataset} constructed to
-accompany \citet{Sun2018Hyolithswith}, and their results.
-
-We document the results of tree searches using
-\protect\hyperlink{fitch}{Fitch parsimony} and a
-\protect\hyperlink{bayesian}{Bayesian method}, with the caveat that both
-approaches are subject to errors resulting from logically incoherent
-treatment of inapplicable data \citep{Maddison1993}.
-
-To meet this criticism, we also present the results of tree searches
+It describes the \protect\hyperlink{dataset}{morphological dataset} and
+the results of tree searches using \protect\hyperlink{fitch}{Fitch
+parsimony} and a \protect\hyperlink{bayesian}{Bayesian method}:
+approaches that are subject to errors resulting from logically
+incoherent treatment of inapplicable data \citep{Maddison1993}. We also
+present the \protect\hyperlink{treesearch}{results} of tree searches
 with the algorithm described by \citet{Brazeau2018}, which correctly
 handles inapplicable data in a parsimony setting. Finally, we document
 how each character is most parsimoniously
@@ -171,23 +166,28 @@ Supplementary \protect\hyperlink{figures}{figures} and
 
 \hypertarget{dataset}{\chapter{Phylogenetic dataset}\label{dataset}}
 
-Analysis was performed on a new matrix of 53 lophotrochozoan taxa, coded
+Analysis was performed on a new matrix of 54 lophotrochozoan taxa, coded
 for 225 morphological characters (129 neomorphic, 96 transformational).
 The matrix can be viewed interactively at Morphobank
-(\href{https://morphobank.org/permalink/?P2800}{project 2800}); {[}This
-link will become live on publication of the paper. Referees should
-follow the pre-publication link to the dataset that has been provided in
-the main manuscript.{]} a static version can be downloaded directly from
--
-\url{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-15-2018_429.nex}
-(Nexus format) -
-\url{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-14-2018_555.tnt}
-(TNT format)
+(\href{https://morphobank.org/permalink/?P2800}{project 2800}) {[}This
+link will become live on publication of the paper. Referees are directed
+to the pre-publication link to the dataset provided in the main
+manuscript.{]}; a static version can be downloaded directly :
 
-Taxa were chosen to include previously proposed affinities for hyoliths
-(sipunculans, molluscs). As a brachiozoan affinity is indicated,
-additional brachiozoan taxa were incorporated in order to resolve the
-position of hyoliths within this group.
+\begin{itemize}
+\item
+  \href{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-15-2018_519.nex}{raw.githubusercontent.com/ms609/hyoliths/master/mbank\_X24932\_6-15-2018\_519.nex}
+  (Nexus format)
+\item
+  \href{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-15-2018_519.tnt}{raw.githubusercontent.com/ms609/hyoliths/master/mbank\_X24932\_6-15-2018\_519.tnt}
+  (TNT format).
+\end{itemize}
+
+Taxa include sipunculans and molluscs, which have previously been
+interpreted as having affinities with hyoliths. Other lophotrochozoan
+groups help to constrain the outgroup topology, and a diversity of
+brachiozoans helps to resolve the position of hyoliths within this
+group.
 
 Characters are coded following the recommendations of
 \citet{Brazeau2018}:
@@ -223,50 +223,50 @@ taxon is:
 \hline
  &  &  &  &  & \\
 \hline
-\_Namacalathus\_ & 59 & \_Sipunculus\_ & 168 & \_Gasconsia\_ & 70\\
+\_Acanthotretella spinosa\_ & 70 & \_Gasconsia\_ & 70 & \_Novocrania\_ & 186\\
 \hline
-\_Cupitheca holocyclata\_ & 63 & \_Serpula\_ & 170 & \_Glyptoria\_ & 73\\
+\_Alisina\_ & 84 & \_Glyptoria\_ & 73 & \_Orthis\_ & 70\\
 \hline
-\_Bactrotheca\_ & 53 & \_Tonicella\_ & 188 & \_Heliomedusa orienta\_ & 67\\
+\_Amathia\_ & 157 & \_Halkieria evangelista\_ & 65 & \_Paramicrocornus\_ & 57\\
 \hline
-\_Conotheca\_ & 60 & \_Dentalium\_ & 169 & \_Kutorgina chengjiangensis\_ & 84\\
+\_Antigonambonites planus\_ & 85 & \_Haplophrentis carinatus\_ & 82 & \_Paterimitra\_ & 67\\
 \hline
-\_Haplophrentis carinatus\_ & 82 & \_Wiwaxia corrugata\_ & 75 & \_Lingulosacculus\_ & 60\\
+\_Askepasma toddense\_ & 78 & \_Heliomedusa orienta\_ & 67 & \_Pauxillites\_ & 56\\
 \hline
-\_Maxilites\_ & 61 & \_Halkieria evangelista\_ & 65 & \_Lingulellotreta malongensis\_ & 87\\
+\_Bactrotheca\_ & 53 & \_Kutorgina chengjiangensis\_ & 84 & \_Pedunculotheca diania\_ & 63\\
 \hline
-\_Paramicrocornus\_ & 57 & \_Dailyatia\_ & 55 & \_Longtancunella chengjiangensis\_ & 61\\
+\_Botsfordia\_ & 75 & \_Lingula\_ & 205 & \_Pelagodiscus atlanticus\_ & 166\\
 \hline
-\_Pauxillites\_ & 56 & \_Acanthotretella spinosa\_ & 70 & \_Micrina\_ & 71\\
+\_Clupeafumosus socialis\_ & 76 & \_Lingulellotreta malongensis\_ & 87 & \_Phoronis\_ & 169\\
 \hline
-\_Pedunculotheca diania\_ & 63 & \_Alisina\_ & 84 & \_Mickwitzia muralensis\_ & 72\\
+\_Conotheca\_ & 60 & \_Lingulosacculus\_ & 60 & \_Salanygolina\_ & 79\\
 \hline
-\_Cotyledion tylodes\_ & 65 & \_Askepasma toddense\_ & 78 & \_Mummpikia nuda\_ & 55\\
+\_Coolinia pecten\_ & 80 & \_Longtancunella chengjiangensis\_ & 61 & \_Serpula\_ & 170\\
 \hline
-\_Loxosomella\_ & 164 & \_Micromitra\_ & 81 & \_Nisusia sulcata\_ & 80\\
+\_Cotyledion tylodes\_ & 65 & \_Loxosomella\_ & 164 & \_Siphonobolus priscus\_ & 74\\
 \hline
-\_Flustra\_ & 168 & \_Antigonambonites planus\_ & 85 & \_Orthis\_ & 70\\
+\_Craniops\_ & 66 & \_Maxilites\_ & 61 & \_Sipunculus\_ & 168\\
 \hline
-\_Amathia\_ & 157 & \_Botsfordia\_ & 75 & \_Paterimitra\_ & 67\\
+\_Cupitheca holocyclata\_ & 63 & \_Mickwitzia muralensis\_ & 72 & \_Terebratulina\_ & 184\\
 \hline
-\_Novocrania\_ & 186 & \_Clupeafumosus socialis\_ & 76 & \_Salanygolina\_ & 79\\
+\_Dailyatia\_ & 55 & \_Micrina\_ & 71 & \_Tomteluva perturbata\_ & 58\\
 \hline
-\_Pelagodiscus atlanticus\_ & 166 & \_Coolinia pecten\_ & 80 & \_Siphonobolus priscus\_ & 74\\
+\_Dentalium\_ & 169 & \_Micromitra\_ & 81 & \_Tonicella\_ & 188\\
 \hline
-\_Lingula\_ & 205 & \_Craniops\_ & 66 & \_Tomteluva perturbata\_ & 58\\
+\_Eccentrotheca\_ & 54 & \_Mummpikia nuda\_ & 55 & \_Ussunia\_ & 53\\
 \hline
-\_Terebratulina\_ & 184 & \_Eccentrotheca\_ & 54 & \_Ussunia\_ & 53\\
+\_Eoobolus\_ & 81 & \_Namacalathus\_ & 59 & \_Wiwaxia corrugata\_ & 75\\
 \hline
-\_Phoronis\_ & 169 & \_Eoobolus\_ & 81 & \_Yuganotheca elegans\_ & 56\\
+\_Flustra\_ & 168 & \_Nisusia sulcata\_ & 80 & \_Yuganotheca elegans\_ & 56\\
 \hline
 \end{tabular}
 
 \hypertarget{fitch}{\chapter{Fitch parsimony}\label{fitch}}
 
-Parsimony search was conducted in TNT v1.5 \citep{Goloboff2016} using
-ratchet and tree drifting heuristics \citep{Goloboff1999, Nixon1999},
-repeating the search until the optimal score had been hit by 1500
-independent searches:
+Parsimony search with the \citet{Fitch1971} algorithm was conducted in
+TNT v1.5 \citep{Goloboff2016} using Ratchet and tree drifting heuristics
+\citep{Goloboff1999, Nixon1999}, repeating the search until the optimal
+score had been hit by 1500 independent searches:
 
 \begin{quote}
 xmult:rat10 drift10 hits 1500 level 4 chklevel 5;
@@ -319,11 +319,32 @@ log TNT/ew.sym; ttag/; log/; {/* Write results to log */}
 
 keep 0; ttag-; hold 10000; {/* Clear memory */}
 
-{/* Repeat this block for each value of k \&\#42/}
+{/* Repeat this block for each value of k */}
 \end{quote}
 
-We acknowledge the Willi Hennig Society for their sponsorship of the TNT
-software.
+Results can be replciated by:
+
+\begin{itemize}
+\item
+  \begin{description}
+  \tightlist
+  \item[Downloading
+  \href{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-15-2018_519.tnt}{the
+  data in TNT format}]
+  (raw.githubusercontent.com/ms609/hyoliths/master/mbank\_X24932\_6-15-2018\_519.tnt){[}\url{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-15-2018_519.tnt}{]}
+  \end{description}
+\item
+  Save (the script
+  above){[}\url{https://raw.githubusercontent.com/ms609/hyoliths/master/tnt.run}{]}
+  to the same directory, with the filename \texttt{tnt.run}.
+\item
+  Open TNT, type \texttt{piwe=} before you load the downloaded dataset
+  (to enable extended implied weighting), then type \texttt{tnt} into
+  the command box to run the script.
+\item
+  We acknowledge the Willi Hennig Society for their sponsorship of the
+  TNT software.
+\end{itemize}
 
 \section{Results}\label{results}
 
@@ -388,7 +409,7 @@ most parsimonious tree under equal weights, using a Dirichlet prior with
 length}\(/\)\emph{number of characters}\()\), \(\alpha = c = 1\):
 
 \begin{quote}
-prset brlenspr = unconstrained: gammadir(1, 0.34, 1, 1);
+prset brlenspr = unconstrained: gammadir(1, 0.35, 1, 1);
 \end{quote}
 
 Neomorphic and transformational characters
@@ -454,15 +475,21 @@ sample size of \textgreater{} 200 for each parameter. Nodes are labelled
 with posterior probabilities; recall that caution must be applied when
 interpreting these values \citep{Yang2018}.
 
+The Nexus file used to generate these results in MrBayes can be
+\href{https://raw.githubusercontent.com/ms609/hyoliths/master/MrBayes/hyo.nex}{downloaded
+here}, and run from
+(MrBayes){[}\url{http://mrbayes.sourceforge.net/download.php}{]} by
+typing \texttt{exe\ path/to/download}.
+
 \section{Parameter estimates}\label{parameter-estimates}
 
 \begin{tabular}{l|r|r|r|r|r}
 \hline
 Parameter & Mean & Variance & minESS & avgESS & PSRF\\
 \hline
-TL\{all\} & 10.000 & 0.51100 & 399 & 479 & 1.0000\\
+TL\{all\} & 9.980 & 0.50100 & 5440 & 5970 & 0.99999\\
 \hline
-m\{1\} & 0.454 & 0.00252 & 191 & 295 & 1.0006\\
+m\{1\} & 0.462 & 0.00265 & 3100 & 3720 & 0.99999\\
 \hline
 \end{tabular}
 
@@ -494,11 +521,6 @@ inapplicable data \citep{Brazeau2018}, implemented in the
 R package \emph{TreeSearch} v0.1.2 \citep{Smith2018TreeSearch} to
 conduct phylogenetic tree search with this algorithm.
 
-As this is a new method, we also employed the traditional, Fitch
-algorithm, even though this approach is known to generate erroneous
-trees. The results of this analysis can be viewed in
-\protect\hyperlink{fitch}{a later section}.
-
 \section{Search parameters}\label{search-parameters}
 
 Heuristic searches were conducted using the parsimony ratchet
@@ -515,7 +537,11 @@ of precision \citep{Smith2017}.
 The R commands used to conduct the analysis are reproduced below. The
 results can most readily be replicated using the
 \href{https://github.com/ms609/hyoliths/}{R markdown files} (.Rmd) used
-to generate these pages.
+to generate these pages: in Rstudio, run
+\href{https://raw.githubusercontent.com/ms609/hyoliths/master/index.Rmd}{index.Rmd},
+then run each block in
+\href{https://raw.githubusercontent.com/ms609/hyoliths/master/14_TreeSearch.Rmd}{TreeSearch.Rmd}.
+The complete analysis will take several hours.
 
 \subsection{Initialize and load data}\label{initialize-and-load-data}
 
@@ -551,7 +577,7 @@ The position of the root does not affect tree score, so we keep it fixed
 \begin{Highlighting}[]
 \ControlFlowTok{for}\NormalTok{ (k }\ControlFlowTok{in}\NormalTok{ kValues) \{}
 \NormalTok{  iw.tree <-}\StringTok{ }\KeywordTok{IWRatchet}\NormalTok{(start.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k,}
-                       \DataTypeTok{ratchHits =} \DecValTok{60}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{,}
+                       \DataTypeTok{ratchHits =} \DecValTok{20}\NormalTok{, }\DataTypeTok{ratchIter=}\DecValTok{4000}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{56}\NormalTok{,}
                        \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),}
                        \DataTypeTok{verbosity=}\NormalTok{0L)}
 \NormalTok{  score <-}\StringTok{ }\KeywordTok{IWScore}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k)}
@@ -562,8 +588,7 @@ The position of the root does not affect tree score, so we keep it fixed
 
 \NormalTok{  iw.consensus <-}\StringTok{ }\KeywordTok{IWRatchetConsensus}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k,}
                   \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedNNISwap),}
-                  \DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{,}
-                  \DataTypeTok{nSearch=}\DecValTok{150}\NormalTok{, }\DataTypeTok{verbosity=}\NormalTok{0L)}
+                  \DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{, }\DataTypeTok{searchIter=}\DecValTok{4000}\NormalTok{, }\DataTypeTok{nSearch=}\DecValTok{250}\NormalTok{, }\DataTypeTok{verbosity=}\NormalTok{0L)}
   \KeywordTok{write.nexus}\NormalTok{(iw.consensus, }
               \DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_iw_k"}\NormalTok{, k, }\StringTok{"_"}\NormalTok{, }
                           \KeywordTok{signif}\NormalTok{(}\KeywordTok{IWScore}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k), }\DecValTok{5}\NormalTok{),}
@@ -577,7 +602,7 @@ The position of the root does not affect tree score, so we keep it fixed
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{ew.tree <-}\StringTok{ }\KeywordTok{Ratchet}\NormalTok{(start.tree, my_data, }\DataTypeTok{verbosity=}\NormalTok{0L,}
-                   \DataTypeTok{ratchHits =} \DecValTok{60}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{, }\CommentTok{# ratchHits = 20 not enough}
+                   \DataTypeTok{ratchHits =} \DecValTok{20}\NormalTok{, }\DataTypeTok{ratchIter=}\DecValTok{4000}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{, }\CommentTok{# ratchHits = 20 not enough}
                    \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))}
 \NormalTok{ew.consensus <-}\StringTok{ }\KeywordTok{RatchetConsensus}\NormalTok{(ew.tree, my_data, }\DataTypeTok{nSearch=}\DecValTok{250}\NormalTok{, }\DataTypeTok{searchHits =} \DecValTok{85}\NormalTok{,}
                                  \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedNNISwap),}
@@ -640,7 +665,7 @@ tree shown above to improve resolution.}
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-all-iw-results-1.pdf}
-\caption{\label{fig:treesearch-all-iw-results}Consensus trees of implied weights analyses
+\caption{\label{fig:treesearch-all-iw-results}Strict consensus trees of implied weights analyses
 at all values of \emph{k}, and at the individual
 values \emph{k} = 2, 3 and 4.5.}
 \end{figure}
@@ -650,7 +675,7 @@ values \emph{k} = 2, 3 and 4.5.}
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/treesearch-iw-results-3-1.pdf}
-\caption{\label{fig:treesearch-iw-results-3}Consensus trees of implied weights analyses
+\caption{\label{fig:treesearch-iw-results-3}Strict consensus trees of implied weights analyses
 at \emph{k} = 7, 10.5, 16 and 24.}
 \end{figure}
 
@@ -681,7 +706,7 @@ Alongside its definition, each character has been mapped onto a tree.
 Here, we have arbitrarily selected one most parsimonious tree obtained
 under implied weighting, \(k = 4.5\). Other trees can be viewed in the
 HTML version of this document at
-\href{https://ms609.github.io/hyoliths/reconstructions.html}{ms609.github.io/hyoliths}.
+(ms609.github.io/hyoliths){[}\url{https://ms609.github.io/hyoliths/reconstructions.html}{]}.
 Each tip is labelled according to its coding in the matrix. These states
 have been used to reconstruct the condition of each internal node, using
 the parsimony method of \citet{Brazeau2018} as implemented in the
@@ -692,6 +717,14 @@ The character mappings are not intended to definitively establish how
 each character evolved, but to help the reader quickly establish how
 each character has been coded, and to visualize at a glance how each
 character fits onto a given tree.
+
+
+
+
+
+
+
+\includegraphics{Brachiopod_phylogeny_files/figure-latex/all-changes-1.pdf}
 
 \section{Brephic shell}\label{brephic-shell}
 
@@ -1412,8 +1445,8 @@ each microvillar chamber \citep{Orrhage1971}.
 microvillar canals in \emph{Wiwaxia} sclerites \citep{Smith2014} argues
 against a close-packed arrangement.
 
-\section{Adult setae: Composition
-{[}14{]}}\label{adult-setae-composition-14}
+\subsection*{{[}14{]} Composition}\label{composition}
+\addcontentsline{toc}{subsection}{{[}14{]} Composition}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-14.pdf}
 
@@ -5049,6 +5082,8 @@ After Bassett \emph{et al}.
 \emph{Siphonobolus priscus}: Ventral musculature poorly constrained
 \citep{Williams2000LinguliformeaCraniiformea, Popov2009Earlyontogeny}.
 
+\section{Sclerites: Dorsal valve}\label{sclerites-dorsal-valve}
+
 \subsection*{{[}90{]} Growth direction}\label{growth-direction}
 \addcontentsline{toc}{subsection}{{[}90{]} Growth direction}
 
@@ -5900,6 +5935,8 @@ ventral valve,.
 \hypertarget{Ussunia-coding-104}{}
 \emph{Ussunia}: Subequally biconvex
 \citep[p.~192]{Williams2000LinguliformeaCraniiformea}.
+
+\section{Sclerites: Ventral valve}\label{sclerites-ventral-valve}
 
 \subsection*{{[}105{]} Growth direction}\label{growth-direction-1}
 \addcontentsline{toc}{subsection}{{[}105{]} Growth direction}
@@ -7066,6 +7103,8 @@ also in \emph{Pelagodiscus}.
 \emph{Ussunia}: Following char. 42 in table 15 in
 \citet{Williams2000LinguliformeaCraniiformea}.
 
+\section{Sclerites: Ornament}\label{sclerites-ornament}
+
 \subsection*{{[}123{]} Concentric ornament}\label{concentric-ornament}
 \addcontentsline{toc}{subsection}{{[}123{]} Concentric ornament}
 
@@ -7313,6 +7352,8 @@ Mineralized or partly mineralized spines are observed in
 \emph{Tonicella}: Aesthete canals penetrate the main valves of certain
 chitons, but are not equivalent to the shell-penetrating spines of
 brachiopods.
+
+\section{Sclerites: Composition}\label{sclerites-composition}
 
 \subsection*{{[}127{]} Mineralogy}\label{mineralogy}
 \addcontentsline{toc}{subsection}{{[}127{]} Mineralogy}
@@ -7763,6 +7804,8 @@ preserved in canal walls \citep{Williams2004Chemicostructure}.
 \hypertarget{Tomteluva_perturbata-coding-132}{}
 \emph{Tomteluva perturbata}: No original structural details evident
 \citep{Streng2016Anew}.
+
+\section{Sclerites: Structure}\label{sclerites-structure}
 
 \subsection*{{[}133{]} Stratiform lamellae expressed at
 surface}\label{stratiform-lamellae-expressed-at-surface}
@@ -8493,6 +8536,8 @@ character 9. Only possible to code in extant taxa.
 \citeyearpar{Carlson1995Phylogeneticrelationships} Appendix 1, character
 9.
 
+\section{Gametes: Spermatozoa}\label{gametes-spermatozoa}
+
 \subsection*{{[}150{]} Nucleus: Shape}\label{nucleus-shape}
 \addcontentsline{toc}{subsection}{{[}150{]} Nucleus: Shape}
 
@@ -8979,8 +9024,10 @@ short midpiece, comparable to that of \emph{Sipunculus} and
 \emph{Sipunculus}: Short ring of five mitochondria around the central
 centriole \citep{Rice1993}.
 
-\section{Embryo: Micromere size
-{[}162{]}}\label{embryo-micromere-size-162}
+\section{Embryo}\label{embryo}
+
+\subsection*{{[}162{]} Micromere size}\label{micromere-size}
+\addcontentsline{toc}{subsection}{{[}162{]} Micromere size}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-161.pdf}
 
@@ -9381,6 +9428,8 @@ Character 140 in \citet{Rouse1999}. See also character 2.66 in
 \emph{Flustra}: Metamorphose almost immediately after release from
 gonozooid \citep{Zimmer2013}; most bryozoans are lecithotrophic
 \citep{Reed1982}.
+
+\section{Larva: Cilia}\label{larva-cilia}
 
 \subsection*{{[}179{]} Metatroch}\label{metatroch}
 \addcontentsline{toc}{subsection}{{[}179{]} Metatroch}
@@ -10050,7 +10099,7 @@ Neomorphic character.
 
 Character 1 in \citet{Haszprunar1996}.
 
-\subsection*{{[}208{]} Composition}\label{composition}
+\subsection*{{[}208{]} Composition}\label{composition-1}
 \addcontentsline{toc}{subsection}{{[}208{]} Composition}
 
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/character-mapping-207.pdf}
