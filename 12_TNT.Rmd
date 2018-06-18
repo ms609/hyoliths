@@ -86,7 +86,7 @@ tnSplits <- GetSplits(tnFlattened, tipIndex)
 
 supporters <- SplitSupport(majCon, tnSplits, tipIndex)
 nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
-           col=NodeColour(round(supporters / length(tnFlattened), 2)),
+           col=NodeColour(round(supporters / length(tnFlattened), 2), show1=FALSE),
            adj=0, pos=2, frame='none', cex=0.75)
 ```
 
@@ -152,7 +152,7 @@ jackGC   <- gsub("^\\d+/(\\[?\\d+\\]?)$", "\\1", jackScores)
 ColPlot(jackTree)
 nodeScores <- as.integer(jackFreq[order(jackNodeOrder)])
 nodelabels(paste0(c('', nodeScores), "\n"),
-           col=c('black', NodeColour(nodeScores / 200L + 0.5)),
+           col=c('black', NodeColour(nodeScores / 200L + 0.5, show1=FALSE)),
            adj=0, pos=2, frame='none', cex=0.75)
 
 #omit <- c("Micrina", "Mickwitzia_muralensis")
