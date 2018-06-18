@@ -66,3 +66,6 @@ GitLink <- function (gitSuffix, alt=NULL) {
          rawGit, gitSuffix, ")")
 }
 
+morphoBankRefereeAccess <- "<mark>[This dataset will become publically available on
+publication of the paper. Referees  should [log in to MorphoBank](https://morphobank.org/index.php/LoginReg/form)
+using the E-mail address and password stated in the paper.]</mark>"
