@@ -52,8 +52,8 @@ Further searches were conducted under extended implied weighting [@Goloboff1997;
 Results can be replciated by:
 
 - Downloading `r paste0("[the data in TNT format](", tntLink, ")")`
-`r if(!knitr::is_html_output()) paste0(": (", gsub("https?://", "", tntLink), ")[", tntLink, "]")`
-- Save (the script above)[`r rawGit`tnt.run] to the same directory, with the filename `tnt.run`.
+`r if(!knitr::is_html_output()) paste0(": [", gsub("https?://", "", tntLink), "](", tntLink, ")")`
+- Save [the script above](`r rawGit`tnt.run) to the same directory, with the filename `tnt.run`.
 - Open TNT, type `piwe=` before you load the downloaded dataset (to enable extended implied weighting), then type `tnt` into the command box to run the script.
 - 
 We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.

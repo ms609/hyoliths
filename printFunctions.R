@@ -58,17 +58,11 @@ PrintNaughtyInapplicables <- function (states) {
         paste(names(states[states == '-']), collapse="  \n - "))
 }
 
-GitLink <- function (gitSuffix, pre='', alt=NULL) {
-  if (TRUE || knitr::is_html_output()) {
-    paste0(" [",
-           if (is.null(alt)) {
-             paste0(gsub("https://", "", rawGit, fixed=TRUE), gitSuffix) }
-           else alt, "](",
-           rawGit, gitSuffix, ")")
-  } else if (FALSE) {
-    paste0(pre, " \\href{", rawGit, gitSuffix, "}{",
-             gsub("https://", "", rawGit, fixed=TRUE), gitSuffix,
-           '}')
-  }
+GitLink <- function (gitSuffix, alt=NULL) {
+  paste0(" [",
+         if (!knitr::is_html_output() || is.null(alt)) {
+           paste0(gsub("https://", "", rawGit, fixed=TRUE), gitSuffix)
+         } else alt, "](",
+         rawGit, gitSuffix, ")")
 }
 
