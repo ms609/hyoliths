@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Supplementary Information for: Hyoliths with pedicles constrain the origin of the brachiopod body plan</title>
   <meta name="description" content="Results of phylogenetic analysis">
-  <meta name="generator" content="bookdown 0.7.12 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
 
   <meta property="og:title" content="Supplementary Information for: Hyoliths with pedicles constrain the origin of the brachiopod body plan" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Haijing Sun, Martin R. Smith, Han Zeng, Fangchen Zhao, Guoxiang Li and Maoyan Zhu">
 
 
-<meta name="date" content="2018-06-15">
+<meta name="date" content="2018-06-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -118,7 +118,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.1" data-path="bayesian.html"><a href="bayesian.html#parameter-estimates"><i class="fa fa-check"></i><b>3.1</b> Parameter estimates</a></li>
 <li class="chapter" data-level="3.2" data-path="bayesian.html"><a href="bayesian.html#results-1"><i class="fa fa-check"></i><b>3.2</b> Results</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>4</b> Parsimony analysis</a><ul>
+<li class="chapter" data-level="4" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>4</b> Corrected parsimony</a><ul>
 <li class="chapter" data-level="4.1" data-path="treesearch.html"><a href="treesearch.html#search-parameters"><i class="fa fa-check"></i><b>4.1</b> Search parameters</a></li>
 <li class="chapter" data-level="4.2" data-path="treesearch.html"><a href="treesearch.html#analysis"><i class="fa fa-check"></i><b>4.2</b> Analysis</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="treesearch.html"><a href="treesearch.html#initialize-and-load-data"><i class="fa fa-check"></i><b>4.2.1</b> Initialize and load data</a></li>
@@ -151,7 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="treesearch" class="section level1">
-<h1><span class="header-section-number">4</span> Parsimony analysis</h1>
+<h1><span class="header-section-number">4</span> Corrected parsimony</h1>
 <p>The phylogenetic dataset contains a considerable proportion of inapplicable codings (1133/12150 = 9.3% of tokens), which are known to introduce error and bias to phylogenetic reconstruction when the Fitch algorithm is employed <span class="citation">(Brazeau et al., <a href="#ref-Brazeau2018">2018</a>; Maddison, <a href="#ref-Maddison1993">1993</a>)</span>. As such, we employed a new tree-scoring algorithm that correctly handles inapplicable data <span class="citation">(Brazeau et al., <a href="#ref-Brazeau2018">2018</a>)</span>, implemented in the <em>MorphyLib</em> C library <span class="citation">(Brazeau, Smith, &amp; Guillerme, <a href="#ref-Brazeau2017Morphylib">2017</a>)</span>. We employed the R package <em>TreeSearch</em> v0.1.2 <span class="citation">(Smith, <a href="#ref-Smith2018TreeSearch">2018</a>)</span> to conduct phylogenetic tree search with this algorithm.</p>
 <div id="search-parameters" class="section level2">
 <h2><span class="header-section-number">4.1</span> Search parameters</h2>
@@ -159,7 +159,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="analysis" class="section level2">
 <h2><span class="header-section-number">4.2</span> Analysis</h2>
-<p>The R commands used to conduct the analysis are reproduced below. The results can most readily be replicated using the <a href="https://github.com/ms609/hyoliths/">R markdown files</a> (.Rmd) used to generate these pages: in Rstudio, run , then run each block in . The complete analysis will take several hours.</p>
+<p>The R commands used to conduct the analysis are reproduced below. The results can most readily be replicated using the <a href="https://github.com/ms609/hyoliths/">R markdown files</a> (.Rmd) used to generate these pages: in Rstudio, run <a href="https://raw.githubusercontent.com/ms609/hyoliths/master/index.Rmd">index.Rmd</a>, then run each block in <a href="https://raw.githubusercontent.com/ms609/hyoliths/master/14_TreeSearch.Rmd">TreeSearch.Rmd</a>. The complete analysis will take several hours.</p>
 <div id="initialize-and-load-data" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Initialize and load data</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load data from locally downloaded copy of MorphoBank matrix</span>
@@ -180,7 +180,7 @@ start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<spa
 <p>The position of the root does not affect tree score, so we keep it fixed (using <code>RootedXXXSwap</code> functions) to avoid unnecessary swaps.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (k <span class="cf">in</span> kValues) {
   iw.tree &lt;-<span class="st"> </span><span class="kw">IWRatchet</span>(start.tree, iw_data, <span class="dt">concavity=</span>k,
-                       <span class="dt">ratchHits =</span> <span class="dv">10</span>, <span class="dt">ratchIter=</span><span class="dv">4000</span>, <span class="dt">searchHits=</span><span class="dv">56</span>,
+                       <span class="dt">ratchHits =</span> <span class="dv">20</span>, <span class="dt">ratchIter=</span><span class="dv">4000</span>, <span class="dt">searchHits=</span><span class="dv">56</span>,
                        <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
                        <span class="dt">verbosity=</span>0L)
   score &lt;-<span class="st"> </span><span class="kw">IWScore</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k)
@@ -191,8 +191,7 @@ start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<spa
 
   iw.consensus &lt;-<span class="st"> </span><span class="kw">IWRatchetConsensus</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k,
                   <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedNNISwap),
-                  <span class="dt">searchHits=</span><span class="dv">55</span>,
-                  <span class="dt">nSearch=</span><span class="dv">150</span>, <span class="dt">verbosity=</span>0L)
+                  <span class="dt">searchHits=</span><span class="dv">55</span>, <span class="dt">searchIter=</span><span class="dv">4000</span>, <span class="dt">nSearch=</span><span class="dv">250</span>, <span class="dt">verbosity=</span>0L)
   <span class="kw">write.nexus</span>(iw.consensus, 
               <span class="dt">file=</span><span class="kw">paste0</span>(<span class="st">&quot;TreeSearch/hy_iw_k&quot;</span>, k, <span class="st">&quot;_&quot;</span>, 
                           <span class="kw">signif</span>(<span class="kw">IWScore</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k), <span class="dv">5</span>),
@@ -202,7 +201,7 @@ start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<spa
 <div id="equal-weights-analysis" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Equal weights analysis</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ew.tree &lt;-<span class="st"> </span><span class="kw">Ratchet</span>(start.tree, my_data, <span class="dt">verbosity=</span>0L,
-                   <span class="dt">ratchHits =</span> <span class="dv">10</span>, <span class="dt">ratchIter=</span><span class="dv">4000</span>, <span class="dt">searchHits=</span><span class="dv">55</span>, <span class="co"># ratchHits = 20 not enough</span>
+                   <span class="dt">ratchHits =</span> <span class="dv">20</span>, <span class="dt">ratchIter=</span><span class="dv">4000</span>, <span class="dt">searchHits=</span><span class="dv">55</span>, <span class="co"># ratchHits = 20 not enough</span>
                    <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
 ew.consensus &lt;-<span class="st"> </span><span class="kw">RatchetConsensus</span>(ew.tree, my_data, <span class="dt">nSearch=</span><span class="dv">250</span>, <span class="dt">searchHits =</span> <span class="dv">85</span>,
                                  <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedNNISwap),
@@ -246,8 +245,6 @@ Figure 4.4: Strict consensus trees of implied weights analyses at all values of 
 </p>
 </div>
 
-<pre><code>## 
-##  &gt; Results not available for panel 7</code></pre>
 <div class="figure"><span id="fig:treesearch-iw-results-3"></span>
 <img src="Brachiopod_phylogeny_files/figure-html/treesearch-iw-results-3-1.png" alt="Strict consensus trees of implied weights analyses at k = 7, 10.5, 16 and 24." width="681.6" />
 <p class="caption">

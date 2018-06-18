@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Supplementary Information for: Hyoliths with pedicles constrain the origin of the brachiopod body plan</title>
   <meta name="description" content="Results of phylogenetic analysis">
-  <meta name="generator" content="bookdown 0.7.12 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
 
   <meta property="og:title" content="Supplementary Information for: Hyoliths with pedicles constrain the origin of the brachiopod body plan" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Haijing Sun, Martin R. Smith, Han Zeng, Fangchen Zhao, Guoxiang Li and Maoyan Zhu">
 
 
-<meta name="date" content="2018-06-15">
+<meta name="date" content="2018-06-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -118,7 +118,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.1" data-path="bayesian.html"><a href="bayesian.html#parameter-estimates"><i class="fa fa-check"></i><b>3.1</b> Parameter estimates</a></li>
 <li class="chapter" data-level="3.2" data-path="bayesian.html"><a href="bayesian.html#results-1"><i class="fa fa-check"></i><b>3.2</b> Results</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>4</b> Parsimony analysis</a><ul>
+<li class="chapter" data-level="4" data-path="treesearch.html"><a href="treesearch.html"><i class="fa fa-check"></i><b>4</b> Corrected parsimony</a><ul>
 <li class="chapter" data-level="4.1" data-path="treesearch.html"><a href="treesearch.html#search-parameters"><i class="fa fa-check"></i><b>4.1</b> Search parameters</a></li>
 <li class="chapter" data-level="4.2" data-path="treesearch.html"><a href="treesearch.html#analysis"><i class="fa fa-check"></i><b>4.2</b> Analysis</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="treesearch.html"><a href="treesearch.html#initialize-and-load-data"><i class="fa fa-check"></i><b>4.2.1</b> Initialize and load data</a></li>
@@ -152,7 +152,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="fitch" class="section level1">
 <h1><span class="header-section-number">2</span> Fitch parsimony</h1>
-<p>Parsimony search under the Fitch algorithm was conducted in TNT v1.5 <span class="citation">(Goloboff &amp; Catalano, <a href="#ref-Goloboff2016">2016</a>)</span> using Ratchet and tree drifting heuristics <span class="citation">(Goloboff, <a href="#ref-Goloboff1999">1999</a>; Nixon, <a href="#ref-Nixon1999">1999</a>)</span>, repeating the search until the optimal score had been hit by 1500 independent searches:</p>
+<p>Parsimony search with the <span class="citation">Fitch (<a href="#ref-Fitch1971">1971</a>)</span> algorithm was conducted in TNT v1.5 <span class="citation">(Goloboff &amp; Catalano, <a href="#ref-Goloboff2016">2016</a>)</span> using Ratchet and tree drifting heuristics <span class="citation">(Goloboff, <a href="#ref-Goloboff1999">1999</a>; Nixon, <a href="#ref-Nixon1999">1999</a>)</span>, repeating the search until the optimal score had been hit by 1500 independent searches:</p>
 <blockquote>
 <p>xmult:rat10 drift10 hits 1500 level 4 chklevel 5;</p>
 </blockquote>
@@ -181,12 +181,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>keep 0; ttag-; hold 10000; <span class="comment">/* Clear memory */</span></p>
 <p><span class="comment">/* Repeat this block for each value of k */</span></p>
 </blockquote>
-<p>To replicate the results:</p>
+<p>Results can be replciated by:</p>
 <ul>
-<li>Download </li>
-<li>Save  to the same directory, with the filename <code>tnt.run</code>.</li>
+<li><p>Downloading <a href="https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-15-2018_519.tnt">the data in TNT format</a></p></li>
+<li>Save <a href="https://raw.githubusercontent.com/ms609/hyoliths/master/tnt.run">the script above</a> to the same directory, with the filename <code>tnt.run</code>.</li>
 <li>Open TNT, type <code>piwe=</code> before you load the downloaded dataset (to enable extended implied weighting), then type <code>tnt</code> into the command box to run the script.</li>
-<li>We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.</li>
+<li><p>We acknowledge the Willi Hennig Society for their sponsorship of the TNT software.</p></li>
 </ul>
 <div id="results" class="section level2">
 <h2><span class="header-section-number">2.1</span> Results</h2>
@@ -227,6 +227,9 @@ Figure 2.3: Consensus of all trees obtained using equally weighted Fitch parsimo
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-Fitch1971">
+<p>Fitch, W. M. (1971). Toward defining the course of evolution: minimum change for a specific tree topology. <em>Systematic Biology</em>, <em>20</em>(4), 406–416. doi:<a href="https://doi.org/10.1093/sysbio/20.4.406">10.1093/sysbio/20.4.406</a></p>
+</div>
 <div id="ref-Goloboff2016">
 <p>Goloboff, P. A., &amp; Catalano, S. A. (2016). TNT version 1.5, including a full implementation of phylogenetic morphometrics. <em>Cladistics</em>, <em>32</em>(3), 221–238. doi:<a href="https://doi.org/10.1111/cla.12160">10.1111/cla.12160</a></p>
 </div>
