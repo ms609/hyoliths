@@ -8,12 +8,11 @@ date: "`r Sys.Date()`"
 # Phylogenetic dataset {#dataset}
 
 Analysis was performed on a new matrix of `r length(names(my_data))` lophotrochozoan taxa, coded for `r sum(attr(my_data, 'weight'))` morphological characters (`r sum(neomorphic)` neomorphic, `r sum(!neomorphic)` transformational).
-The matrix can be viewed interactively at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800));
-<mark>[This link will become live on publication of the paper. Referees are directed to the pre-publication link to the dataset provided in the main manuscript.]</mark>
+The matrix can be viewed interactively at Morphobank ([project 2800](https://morphobank.org/permalink/?P2800)) <mark>[This link will become live on publication of the paper. Referees are directed to the pre-publication link to the dataset provided in the main manuscript.]</mark>;
 a static version can be downloaded directly `r if (knitr::is_html_output()) paste0("in ", GitLink(gsub('^\\./', '', nexusFile, '', 'Nexus')), " or ", GitLink(tntFile, '', 'TNT'), " format") else paste0(": \n\n - ", GitLink(gsub('^\\./', '', nexusFile)), " (Nexus format)\n\n - ", GitLink(tntFile), " (TNT format)")`.
 
 
-Taxa were chosen to include previously proposed affinities for hyoliths (sipunculans, molluscs).  As a brachiozoan affinity is indicated, additional brachiozoan taxa were incorporated in order to resolve the position of hyoliths within this group.
+Taxa include sipunculans and molluscs, which have previously been interpreted as having affinities with hyoliths.   Other lophotrochozoan groups help to constrain the outgroup topology, and a diversity of brachiozoans helps to resolve the position of hyoliths within this group.
 
 Characters are coded following the recommendations of @Brazeau2018:
 
