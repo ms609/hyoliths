@@ -80,8 +80,8 @@ taxonColour <- c(
   Terebratulina                   = pal[10])
 
 
-ColMissing <- function (omit) {
-  MarkMissing(omit, text.font=3, cex=0.8, text.col=taxonColour[omit])
+ColMissing <- function (omit, position='bottomleft') {
+  MarkMissing(omit, position, text.font=3, cex=0.8, text.col=taxonColour[omit])
 }
 
 #' @param support A vector of doubles in the range 0-1
