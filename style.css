@@ -51,6 +51,7 @@ path.inapplicable {
 .book .book-body .page-wrapper .page-inner section.normal tspan.tipsHeader {
   font-style: normal;
   font-weight: bold;
+  color: #858585;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal svg.tree text,
