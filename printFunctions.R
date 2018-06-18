@@ -59,13 +59,13 @@ PrintNaughtyInapplicables <- function (states) {
 }
 
 GitLink <- function (gitSuffix, pre='', alt=NULL) {
-  if (knitr::is_html_output()) {
+  if (TRUE || knitr::is_html_output()) {
     paste0(" [",
            if (is.null(alt)) {
              paste0(gsub("https://", "", rawGit, fixed=TRUE), gitSuffix) }
            else alt, "](",
            rawGit, gitSuffix, ")")
-  } else {
+  } else if (FALSE) {
     paste0(pre, " \\href{", rawGit, gitSuffix, "}{",
              gsub("https://", "", rawGit, fixed=TRUE), gitSuffix,
            '}')
