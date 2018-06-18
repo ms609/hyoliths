@@ -57,3 +57,18 @@ PrintNaughtyInapplicables <- function (states) {
         "`[Transformational character]`, or re-code: \n\n - ",
         paste(names(states[states == '-']), collapse="  \n - "))
 }
+
+GitLink <- function (gitSuffix, pre='', alt=NULL) {
+  if (knitr::is_html_output()) {
+    paste0(" [",
+           if (is.null(alt)) {
+             paste0(gsub("https://", "", rawGit, fixed=TRUE), gitSuffix) }
+           else alt, "](",
+           rawGit, gitSuffix, ")")
+  } else {
+    paste0(pre, " \\href{", rawGit, gitSuffix, "}{",
+             gsub("https://", "", rawGit, fixed=TRUE), gitSuffix,
+           '}')
+  }
+}
+
