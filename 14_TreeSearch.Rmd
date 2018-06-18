@@ -16,8 +16,8 @@ Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under
 
 The R commands used to conduct the analysis are reproduced below.
 The results can most readily be replicated using the [R markdown files](https://github.com/ms609/hyoliths/) (.Rmd) used to generate these pages:
-in Rstudio, run `r GitLink("index.Rmd", "", "index.Rmd")`, then run each block in 
-`r GitLink("14_TreeSearch.Rmd", "", "TreeSearch.Rmd")`.  The complete analysis will take several hours.
+in Rstudio, run `r GitLink("index.Rmd", "index.Rmd")`, then run each block in 
+`r GitLink("14_TreeSearch.Rmd", "TreeSearch.Rmd")`.  The complete analysis will take several hours.
 
 ### Initialize and load data
 
