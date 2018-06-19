@@ -68,7 +68,7 @@ tnConsensi <- lapply(tnTrees, consensus)
 
 (ref:tnt-maj-cons) Majority-rule consensus of all trees that are optimal under implied weights.
 
-(ref:tnt-node-freq) Each node is labelled with its frequency in the set of all optimal trees under all examined values of $k$, where less than 100%.
+(ref:tnt-node-freq) Node labels denote, where less than 100%, the frequency of each node in the set of all optimal trees.
 
 (ref:tnt-jacks) Nodes labelled with jackknife frequencies (%).
 
