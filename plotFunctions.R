@@ -81,7 +81,8 @@ taxonColour <- c(
 
 
 ColMissing <- function (omit, position='bottomleft') {
-  MarkMissing(omit, position, text.font=3, cex=0.8, text.col=taxonColour[omit])
+  if (length(omit) > 0)
+    MarkMissing(omit, position, text.font=3, cex=0.8, text.col=taxonColour[omit])
 }
 
 #' @param support A vector of doubles in the range 0-1
