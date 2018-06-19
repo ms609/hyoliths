@@ -121,10 +121,9 @@ bifurcating <- multi2di(majCon) # Nodes inserted at random
 bEdge <- bifurcating$edge
 bParent <- bEdge[, 1]
 bChild <- bEdge[, 2]
-majTips <- majCon$tip.label
+conTips <- majCon$tip.label
 bifTips <- bifurcating$tip.label
-majChars <- my_chars[majTips, ]
-recons <- apply(majChars, 2, function (char) {
+recons <- apply(my_chars[conTips, ], 2, function (char) {
   inapp <- apply.reconstruction(bifurcating, char)
   isApp <- vapply(inapp$Up2, function (x) !-1 %in% x, logical(1))
   enterApp <- isApp[bChild] & !isApp[bParent]
@@ -138,27 +137,27 @@ recons <- apply(majChars, 2, function (char) {
 })
 reconLength <- length(recons[[1]])
 
-conTip <- length(majTips)
-majSplits <- vapply(Descendants(majCon, conTip + 1:Nnode(majCon), type='tips'),
-           function (tips) majTips %in% majTips[tips], logical(conTip))
-bifSplits <- vapply(Descendants(bifurcating, conTip + seq_len(conTip - 1L), type='tips'),
-           function (tips) bifTips %in% bifTips[tips], logical(conTip))
-majNos <- apply(majSplits, 2, function (x) sum(powersOf2[x]))
+nConTip <- length(conTips)
+conSplits <- vapply(Descendants(majCon, nConTip + 1:Nnode(majCon), type='tips'),
+           function (tips) conTips %in% conTips[tips], logical(nConTip))
+bifSplits <- vapply(Descendants(bifurcating, nConTip + seq_len(nConTip - 1L), type='tips'),
+           function (tips) bifTips %in% bifTips[tips], logical(nConTip))
+majNos <- apply(conSplits, 2, function (x) sum(powersOf2[x]))
 bifNos <- apply(bifSplits, 2, function (x) sum(powersOf2[x]))
 whichNode <- integer(length(bifNos))
 bifReal <- bifNos %in% majNos
 whichNode[bifReal] <- vapply(bifNos[bifReal], function (x) which(majNos == x), integer(1))
 whichNode[!bifReal] <- apply(bifSplits[, !bifReal, drop=FALSE], 2, function (bifSplit) {
-  extras <- colSums(majSplits[!bifSplit, ])
-  parentSplits <- apply(majSplits[bifSplit, ], 2, all)
+  extras <- colSums(conSplits[!bifSplit, ])
+  parentSplits <- apply(conSplits[bifSplit, ], 2, all)
   which(parentSplits & extras == min(extras[parentSplits]))
 })
-whichNode <- whichNode + conTip
+whichNode <- whichNode + nConTip
 
 if (knitr::is_html_output()) {
   
-  majLabels <- vapply(conTip + 1:Nnode(majCon), function (node) {
-    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(reconLength))
+  majLabels <- vapply(nConTip + 1:Nnode(majCon), function (node) {
+    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nConTip], logical(1)), logical(reconLength))
     whichWhere <- apply(where, 1, which)
     ret <- unlist(lapply(whichWhere, length))
     # Return: 
@@ -167,15 +166,15 @@ if (knitr::is_html_output()) {
 
   ### Calculate node coordinates for majCon
   
-  conInternal <- conTip + 1:Nnode(majCon)
-  conTerminal <- seq_len(conTip)
-  conLabel <- character(conTip)
+  conInternal <- nConTip + 1:Nnode(majCon)
+  conTerminal <- seq_len(nConTip)
+  conLabel <- character(nConTip)
   conEdge <- dim(majCon$edge)[1]
   eachConEdge <- seq_len(conEdge)
   majParent <- majCon$edge[, 1]
   conChild  <- majCon$edge[, 2]
   
-  conYStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / conTip, 1)
+  conYStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / nConTip, 1)
   
   ancestors <- Ancestors(majCon, type='all')
   nAncestors <- vapply(ancestors, length, 1)
@@ -183,7 +182,7 @@ if (knitr::is_html_output()) {
                      len=max(nAncestors) + 1L), 1)
   conX <- conXStep[nAncestors + 1L]
   conY <- double(length(nAncestors))
-  conY[conChild[conChild <= conTip]] <- seq(treeYMargins[1] + 30, svgHeight-treeYMargins[2], len=conTip)
+  conY[conChild[conChild <= nConTip]] <- seq(treeYMargins[1] + 30, svgHeight-treeYMargins[2], len=nConTip)
   
   for (nodeI in rev(conInternal)) {
     conY[nodeI] <- mean(conY[Children(majCon, nodeI)])
@@ -195,9 +194,9 @@ if (knitr::is_html_output()) {
                                       collapse=''), '" stroke="#888"></path>')
   tips <- paste0('<text x="', (conX[conTerminal] + 0L), 
                  '" y="', conY[conTerminal] + textY,
-                 '" fill="', taxonColour[majTips[conTerminal]],
+                 '" fill="', taxonColour[conTips[conTerminal]],
                  '" class="taxonLabel">', 
-                 gsub('_', ' ', majTips[conTerminal], fixed=TRUE), '</text>',
+                 gsub('_', ' ', conTips[conTerminal], fixed=TRUE), '</text>',
                  collapse='')
   omittedTips <- if (length(omit) > 0) {
     paste0('<g transform="translate(', svgWidth - 4L, ' ', svgHeight, 
@@ -229,8 +228,8 @@ if (knitr::is_html_output()) {
   cat(svgSource)
   
   ## Generate detail-divs
-  majCaptions <- vapply(conTip + 1:Nnode(majCon), function (node) {
-    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(reconLength))
+  majCaptions <- vapply(nConTip + 1:Nnode(majCon), function (node) {
+    where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nConTip], logical(1)), logical(reconLength))
     apply(where, 1, function (changes) {
       if (any(changes)) {
         paste0('<span class=change><span class=charNo>', which(changes), 
@@ -245,19 +244,19 @@ if (knitr::is_html_output()) {
          'Steps incurred at node ', conInternal, ':</div>',
          ifelse(majCaptions['changes', ] == '', '', 
                 paste0('<div class="tfm cl', ncol, '">', 
-                       majCaptions['changes', conInternal - conTip], '</div>')), 
+                       majCaptions['changes', conInternal - nConTip], '</div>')), 
          ifelse(majCaptions['regions', ] == '', '',
                 paste0('<div class="rgn cl', ncol, '">',
-                       majCaptions['regions', conInternal - conTip], '</div>')),
+                       majCaptions['regions', conInternal - nConTip], '</div>')),
          ifelse(majCaptions['fitches', ] == '', '',
                 paste0('<div class="ftch cl', ncol, '">',
-                       majCaptions['fitches', conInternal - conTip], '</div>')), 
+                       majCaptions['fitches', conInternal - nConTip], '</div>')), 
          '</div><div style="clear: both"></div>', collapse=''))
 } else {
   ColPlot(majCon)
   ColMissing(omit)
-  majLabels <- vapply(conTip + 1:Nnode(majCon), function (node) {
-  where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - conTip], logical(1)), logical(reconLength))
+  majLabels <- vapply(nConTip + 1:Nnode(majCon), function (node) {
+  where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nConTip], logical(1)), logical(reconLength))
   whichWhere <- apply(where, 1, which)
   # Return: 
   if (length(whichWhere) == 0) character(reconLength) else {
@@ -468,8 +467,8 @@ subheadings <- c("Digestive tract: Anus: Presence",
                  paste("Larva:", c("Cilia: Metatroch", 
                     "Apical organ: Muscles extending to the hyposphere")))
 
-#for (i in 14:17) {
-for (i in seq_len(n_char)) {
+for (i in 14:17) {
+#for (i in seq_len(n_char)) {
 
   this_char_parts <- char_parts[[i]]
   next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
