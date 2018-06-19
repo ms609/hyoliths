@@ -167,8 +167,8 @@ if (knitr::is_html_output()) {
 
   ### Calculate node coordinates for majCon
   
-  internal <- conTip + 1:Nnode(majCon)
-  terminal <- seq_len(conTip)
+  conInternal <- conTip + 1:Nnode(majCon)
+  conTerminal <- seq_len(conTip)
   conLabel <- character(conTip)
   conEdge <- dim(majCon$edge)[1]
   eachConEdge <- seq_len(conEdge)
@@ -185,7 +185,7 @@ if (knitr::is_html_output()) {
   conY <- double(length(nAncestors))
   conY[majChild[majChild <= conTip]] <- seq(treeYMargins[1] + 30, svgHeight-treeYMargins[2], len=conTip)
   
-  for (nodeI in rev(internal)) {
+  for (nodeI in rev(conInternal)) {
     conY[nodeI] <- mean(conY[Children(majCon, nodeI)])
   }
   conY <- round(conY, 1)
@@ -193,11 +193,11 @@ if (knitr::is_html_output()) {
   edges <- paste0('<path d="', paste0('M', conX[majParent], ',', conY[majParent],
                                       'V', conY[majChild], 'H', conX[majChild], 
                                       collapse=''), '" stroke="#888"></path>')
-  tips <- paste0('<text x="', (conX[terminal] + 0L), 
-                 '" y="', conY[terminal] + textY,
-                 '" fill="', taxonColour[majTips[terminal]],
+  tips <- paste0('<text x="', (conX[conTerminal] + 0L), 
+                 '" y="', conY[conTerminal] + textY,
+                 '" fill="', taxonColour[majTips[conTerminal]],
                  '" class="taxonLabel">', 
-                 gsub('_', ' ', majTips[terminal], fixed=TRUE), '</text>',
+                 gsub('_', ' ', majTips[conTerminal], fixed=TRUE), '</text>',
                  collapse='')
   omittedTips <- if (length(omit) > 0) {
     paste0('<g transform="translate(', svgWidth - 4L, ' ', svgHeight, 
@@ -207,8 +207,8 @@ if (knitr::is_html_output()) {
            '<tspan x="0" dy="-1.2em" class="tipsHeader">Pruned taxa:</tspan>',
            '</text></g>')
     } else ''
-  nodes <- paste0('<g transform="translate(', conX[internal] + 2L, 
-                  ' ', conY[internal], ')" class="node-g" data-node="', internal, 
+  nodes <- paste0('<g transform="translate(', conX[conInternal] + 2L, 
+                  ' ', conY[conInternal], ')" class="node-g" data-node="', conInternal, 
                   '"><text x="0" y="-1.2em" class="node"><tspan class="b42">',
                   majLabels['regions', ], '</tspan><tspan class="b44" x="0" dy="1.2em">',
                   majLabels['changes', ], '</tspan><tspan class="b41" x="0" dy="1.2em">', 
@@ -241,17 +241,17 @@ if (knitr::is_html_output()) {
   }, character(reconLength))
   ncol <- colSums(majCaptions[c('regions', 'changes', 'fitches'), ] != '')
   cat('<div id=nodeDetails>Click on the numbers by a node for details</div>',
-      paste0('<div id=nodeDetail', internal, ' class=nddtl><div class=nddtlhdr>',
-         'Steps incurred at node ', internal, ':</div>',
+      paste0('<div id=nodeDetail', conInternal, ' class=nddtl><div class=nddtlhdr>',
+         'Steps incurred at node ', conInternal, ':</div>',
          ifelse(majCaptions['changes', ] == '', '', 
                 paste0('<div class="tfm cl', ncol, '">', 
-                       majCaptions['changes', internal - conTip], '</div>')), 
+                       majCaptions['changes', conInternal - conTip], '</div>')), 
          ifelse(majCaptions['regions', ] == '', '',
                 paste0('<div class="rgn cl', ncol, '">',
-                       majCaptions['regions', internal - conTip], '</div>')),
+                       majCaptions['regions', conInternal - conTip], '</div>')),
          ifelse(majCaptions['fitches', ] == '', '',
                 paste0('<div class="ftch cl', ncol, '">',
-                       majCaptions['fitches', internal - conTip], '</div>')), 
+                       majCaptions['fitches', conInternal - conTip], '</div>')), 
          '</div><div style="clear: both"></div>', collapse=''))
 } else {
   ColPlot(majCon)
