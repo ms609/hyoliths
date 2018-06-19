@@ -18,9 +18,11 @@ majCon <- RootTree(consensus(allTrees, p=0.5), rootingTips)
 supporters <- SplitSupport(majCon, allSplits, tipIndex)
 tnSupporters <- SplitSupport(majCon, tntSplits, tipIndex) / length(allTnt)
 conLabel1 <- signif(100 * supporters / length(allTrees), 2)
-conLabel2 <- ifelse(is.na(tnSupporters), '-', signif(100 * tnSupporters, 2))
-conLabelColour1 <- NodeColour(round(conLabel1 / 100, 2), FALSE)
-conLabelColour2 <- NodeColour(round(tnSupporters, 2), FALSE)
+conLabel2 <- ifelse(is.na(tnSupporters), '0', signif(100 * tnSupporters, 2))
+conLabelColour1 <- NodeColour(round(conLabel1 / 100, 2), TRUE)
+conLabelColour2 <- NodeColour(round(tnSupporters, 2), TRUE)
+conLabel1[conLabel1 == 100] <- '.'
+conLabel2[conLabel2 == 100] <- '.'
 
 nConTip <- length(conTips)
 
@@ -68,8 +70,9 @@ tips <- paste0('<text x="', (conX[conTerminal] + 0L),
                gsub('_', ' ', conTips[conTerminal], fixed=TRUE), '</text>',
                collapse='')
 nodes <- paste0('<text x="', conX[conInternal] + 2L, '" y="', conY[conInternal] + 4L,
-                '" fill="', conLabelColours ,'" class="nodeLabel">',
-                conLabels, '</text>', collapse='')
+                '" class="nodeLabel"><tspan  fill="', conLabelColour1 ,'">',
+                conLabel1, '</tspan>/<tspan  fill="', conLabelColour2 ,'">',
+                conLabel2, '</tspan></text>', collapse='')
 tipLegend <- paste0('<g transform="translate(', svgWidth, ' ', figHeight, ')">',
                     '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                     paste0('<tspan x="0" dy="-1.2em" fill="', groupCol, '">',
