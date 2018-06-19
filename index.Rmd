@@ -27,12 +27,6 @@ We also present the  [results](#treesearch) of tree searches with the algorithm 
 
 Supplementary [figures](#figures) and [tables](#table) appear after the text.
 
-(ref:first-panels) at _k_ = `r kValues[1]` and `r kValues[2]`.
-
-(ref:second-panels) at _k_ = `r kValues[3]` and `r kValues[4]`.
-
-(ref:third-panels) at _k_ = `r kValues[5]` and `r kValues[6]`.
-
 ```{r setup-index, include=FALSE, message=FALSE}
 Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 set.seed(0)
@@ -115,5 +109,9 @@ RootTree <- function (tree, outgroupTips) {
 
 ```
 
+(ref:first-panels) at _k_ = `r kValues[1]` and `r kValues[2]`.
 
+(ref:second-panels) at _k_ = `r kValues[3]` and `r kValues[4]`.
+
+(ref:third-panels) at _k_ = `r kValues[5]` and `r kValues[6]`.
 
