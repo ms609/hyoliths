@@ -160,6 +160,7 @@ if (knitr::is_html_output()) {
     where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nConTip], logical(1)), logical(reconLength))
     whichWhere <- apply(where, 1, which)
     ret <- unlist(lapply(whichWhere, length))
+    if (is.null(ret)) return(character(reconLength))
     # Return: 
     ifelse(ret == 0, '', as.character(ret))
   }, character(reconLength))
