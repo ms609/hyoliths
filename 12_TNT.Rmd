@@ -64,7 +64,6 @@ tnTrees <- lapply(tntFiles, ReadTntTree, relativePath='.', keepEnd=1)
 tnTrees <- lapply(tnTrees, as.multiPhylo)
 tnTrees <- lapply(tnTrees, function (x) lapply(x, drop.tip, ignored_taxa))
 tnConsensi <- lapply(tnTrees, consensus)
-tn3Consensi <- lapply(tnTrees[-1], consensus)
 ```
 
 (ref:tnt-maj-cons) Majority-rule consensus of all trees that are optimal under implied weights.
@@ -77,9 +76,11 @@ tn3Consensi <- lapply(tnTrees[-1], consensus)
 omit <- c("Micrina", "Micromitra",
           "Longtancunella_chengjiangensis",# "Yuganotheca_elegans",
           "Salanygolina", "Askepasma_toddense")#, "Tomteluva_perturbata")
-majCon <- RootTree(ConsensusWithout(tnConsensi, omit, p=0.5), rootingTips)
+#majCon <- RootTree(ConsensusWithout(tnConsensi, omit, p=0.5), rootingTips)
+omit <- character(0)
+majCon <- RootTree(consensus(tnConsensi, p=0.5), rootingTips)
 ColPlot(majCon)
-ColMissing(omit)
+#ColMissing(omit)
 
 source('treeFunctions.R')
 tnFlattened <- list()
@@ -91,7 +92,7 @@ tipIndex <- sort(tnFlattened[[1]]$tip.label)
 tnSplits <- GetSplits(tnFlattened, tipIndex)
 
 supporters <- SplitSupport(majCon, tnSplits, tipIndex)
-nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
+nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 2)),
            col=NodeColour(round(supporters / length(tnFlattened), 2), show1=FALSE),
            adj=0, pos=2, frame='none', cex=0.75)
 ```
