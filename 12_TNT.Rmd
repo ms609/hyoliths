@@ -35,15 +35,15 @@ Further searches were conducted under extended implied weighting [@Goloboff1997;
 
 > xpiwe=; <span class="comment">/&#42; Enable extended implied weighting &#42;/</span>
 >
-> piwe=2; xmult; <span class="comment">/&#42; Conduct analysis at k = 2 &#42;/</span>
+> piwe=3; xmult; <span class="comment">/&#42; Conduct analysis at k = 3 &#42;/</span>
 >
-> tsav &#42;TNT/xpiwe2.tre; sav; tsav/; <span class="comment">/&#42; Save results to file &#42;/</span>
+> tsav &#42;TNT/xpiwe3.tre; sav; tsav/; <span class="comment">/&#42; Save results to file &#42;/</span>
 >
 > nelsen *; set nt ntrees; ttag=; <span class="comment">/&#42; Prepare for resampling &#42;/</span>
 >
 > resample=frequency from &#39;nt&#39;; <span class="comment">/&#42; Symmetric resampling &#42;/</span>
 >
-> log TNT/ew.sym; ttag/; log/; <span class="comment">/&#42; Write results to log &#42;/</span>
+> log TNT/xpiwe3.sym; ttag/; log/; <span class="comment">/&#42; Write results to log &#42;/</span>
 > 
 > keep 0; ttag-; hold 10000; <span class="comment">/&#42; Clear memory &#42;/</span>
 >
@@ -68,7 +68,7 @@ tnConsensi <- lapply(tnTrees, consensus)
 tn3Consensi <- lapply(tnTrees[-1], consensus)
 ```
 
-(ref:tnt-maj-cons) Majority-rule consensus of all trees that are optimal under $2 \leq k \leq 24$.
+(ref:tnt-maj-cons) Majority-rule consensus of all trees that are optimal under $3 \leq k \leq 24$.
 
 (ref:tnt-node-freq) Each node is labelled with its frequency in the set of all optimal trees under all examined values of $k$, where less than 100%.
 
@@ -97,45 +97,25 @@ nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
            adj=0, pos=2, frame='none', cex=0.75)
 ```
 
-(ref:tnt-no2-cons) Majority-rule consensus of all trees that are optimal under $3 \leq k \leq 24$.
-
-```{R tnt-iw-nok2, echo=FALSE, fig.cap="(ref:tnt-no2-cons) (ref:tnt-node-freq)"}
-majCon <- RootTree(consensus(tn3Consensi, p=0.5), rootingTips)
-ColPlot(majCon)
-
-tnFlattened <- list()
-for (i in seq_along(tnTrees)[-1]) {
-  tnFlattened <- c(tnFlattened, tnTrees[[i]])
-}
-tipIndex <- sort(tnFlattened[[1]]$tip.label)
-tnSplits <- GetSplits(tnFlattened, tipIndex)
-
-supporters <- SplitSupport(majCon, tnSplits, tipIndex)
-nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
-           col=NodeColour(round(supporters / length(tnFlattened), 2), show1=FALSE),
-           adj=0, pos=2, frame='none', cex=0.75)
-```
-
 (ref:tnt-iw-results) Strict consensus of all trees recovered by TNT using Fitch parsimony with implied weighting
 
 (ref:tnt-iw-explanation) The strict consensus of all implied weights runs is not very well resolved, largely due to an unusual optimal tree at $k = 2$, which obscures a consistent set of relationships between the remaining taxa.
 
 ```{R tnt-iw-consensus, fig.wid=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results) (ref:first-panels) (ref:tnt-jacks) (ref:tnt-iw-explanation)", echo=FALSE}
-par(mfrow=c(2, 2))
-ColPlot(RootTree(consensus(tnConsensi), rootingTips))
-text(1, 0.5, 'Consensus of all k values', pos=4, cex=0.6)
-
-PlotPanel(tnConsensi, 1, './TNT/xpiwe2.sym')
-PlotPanel(tnConsensi, 2, './TNT/xpiwe3.sym')
-PlotPanel(tnConsensi, 3, './TNT/xpiwe4.5.sym')
+par(mfrow=c(1, 2))
+PlotPanel(tnConsensi, 1, './TNT/xpiwe3.sym')
+PlotPanel(tnConsensi, 2, './TNT/xpiwe4.5.sym')
 ```
 
 ```{R tnt-iw-7-24, fig.width=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results), (ref:second-panels)", echo=FALSE}
-par(mfrow=c(2, 2))
-PlotPanel(tnConsensi, 4)
-PlotPanel(tnConsensi, 5)
-PlotPanel(tnConsensi, 6)
-PlotPanel(tnConsensi, 7)
+par(mfrow=c(1, 2))
+PlotPanel(tnConsensi, 3, './TNT/xpiwe7.sym')
+PlotPanel(tnConsensi, 4, './TNT/xpiwe10.5.sym')
+```
+```{R tnt-iw-7-24, fig.width=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results), (ref:third-panels)", echo=FALSE}
+par(mfrow=c(1, 2))
+PlotPanel(tnConsensi, 5, './TNT/xpiwe16.sym')
+PlotPanel(tnConsensi, 6, './TNT/xpiwe24.sym')
 ```
 
 <!--### Consensus of all IW trees, without wildcards

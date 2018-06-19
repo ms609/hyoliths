@@ -15,7 +15,6 @@ piwe-    ;log tnt.rapid.log;xmult;cscores;log/;tsav *TNT/ew.tre;sav;tsav/;nelsen
 /* nelsen /L for consensus w/o taxon L */
 /*xpiwe=;*/
 
-piwe=2   ;log+ tnt.rapid.log;xmult;cscores;log/;tsav *TNT/xpiwe2.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe2.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=3   ;log+ tnt.rapid.log;xmult;cscores;log/;tsav *TNT/xpiwe3.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe3.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=4   ;log+ tnt.rapid.log;xmult;cscores;log/;tsav *TNT/xpiwe4.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe4.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=4.5 ;log+ tnt.rapid.log;xmult;cscores;log/;tsav *TNT/xpiwe4.5.tre;sav; tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe4.5.sym; ttag/;log/; keep 0; ttag-; hold 10000;
@@ -30,7 +29,6 @@ xmult:hits 1000;
 
 piwe-    ;log tnt.log;xmult;cscores;log/;tsav *TNT/ew.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=sym replications 5000 frequency from 'nt';log TNT/ew.sym;ttag/;ttag/;log/; keep 0; ttag-; hold 10000;
 /*xpiwe=;*/
-piwe=2   ;log+ tnt.log;xmult;cscores;log/;tsav *TNT/xpiwe2.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe2.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=3   ;log+ tnt.log;xmult;cscores;log/;tsav *TNT/xpiwe3.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe3.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=4.5 ;log+ tnt.log;xmult;cscores;log/;tsav *TNT/xpiwe4.5.tre;sav; tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe4.5.sym; ttag/;log/; keep 0; ttag-; hold 10000;
 piwe=7   ;log+ tnt.log;xmult;cscores;log/;tsav *TNT/xpiwe7.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe7.sym;   ttag/;log/; keep 0; ttag-; hold 10000;

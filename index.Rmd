@@ -27,6 +27,12 @@ We also present the  [results](#treesearch) of tree searches with the algorithm 
 
 Supplementary [figures](#figures) and [tables](#table) appear after the text.
 
+(ref:first-panels) at _k_ = `r kValues[1]` and `r kValues[2]`.
+
+(ref:second-panels) at _k_ = `r kValues[3]` and `r kValues[4]`.
+
+(ref:third-panels) at _k_ = `r kValues[5]` and `r kValues[6]`.
+
 ```{r setup-index, include=FALSE, message=FALSE}
 Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 set.seed(0)
@@ -84,7 +90,7 @@ my_chars <- my_chars[!(rownames(my_chars) %in% ignored_taxa), ]
 
 neomorphic <- vapply(my_states, function(x) !x[[1]] %in% c("", "''"), logical(1))
 
-kValues <- c(2, 3, 4.5, 7, 10.5, 16, 24)
+kValues <- c(3, 4.5, 7, 10.5, 16, 24)
 
 powersOf2 <- 2^(seq_along(my_data) - 1) # Needed for GetSplits etc
 
