@@ -137,7 +137,7 @@ majCon <- RootTree(consensus(allTrees, p=0.5), rootingTips)
 supporters <- SplitSupport(majCon, allSplits, tipIndex)
 
 ColPlot(majCon)
-nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
+nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 2)),
            col=NodeColour(round(supporters / length(allTrees), 2)),
            adj=0, pos=2, frame='none', cex=0.75)
 
