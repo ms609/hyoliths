@@ -130,7 +130,7 @@ allSplits <- GetSplits(allTrees, tipIndex)
 
 (ref:node-support) Node labels denote the frequency of each clade in most parsimonious trees under all analytical conditions.  
 
-```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
+```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5.1 echo=FALSE}
 majCon <- RootTree(consensus(allTrees, p=0.5), rootingTips)
 supporters <- SplitSupport(majCon, allSplits, tipIndex)
 
@@ -143,7 +143,7 @@ nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 3)),
 
 (ref:ts-trim-cons) Consensus of same trees, with taxa pruned before constructing consensus to give context to clade support.  
 
-```{r treesearch-maj-consensus-pruned, fig.cap="(ref:ts-trim-cons) (ref:node-support)", fig.width=6, fig.height=5, echo=FALSE}
+```{r treesearch-maj-consensus-pruned, fig.cap="(ref:ts-trim-cons) (ref:node-support)", fig.width=6, fig.height=5.1, echo=FALSE}
 #omit <- c("Micrina", 'Mickwitzia_muralensis', 'Heliomedusa_orienta')
 omit <- c("Cotyledion_tylodes", "Namacalathus", "Phoronis")
 allPruned <- lapply(allTrees, drop.tip, omit)
@@ -166,7 +166,7 @@ ColMissing(omit)
 
 \clearpage 
 
-```{r treesearch-iw-indiv-1, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:first-panels)", echo=FALSE}
+```{r treesearch-iw-indiv-1, fig.width=7.1, fig.height=5.1, fig.cap="(ref:ts-iw-indiv) (ref:first-panels)", echo=FALSE}
 # Plot consensus results
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(iw.trees, 1)
@@ -175,7 +175,7 @@ PlotPanel(iw.trees, 2)
 
 \clearpage 
 
-```{R treesearch-iw-indiv-2, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:second-panels)", echo=FALSE}
+```{R treesearch-iw-indiv-2, fig.width=7.1, fig.height=5.1, fig.cap="(ref:ts-iw-indiv) (ref:second-panels)", echo=FALSE}
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(iw.trees, 3)
 PlotPanel(iw.trees, 4)
@@ -183,7 +183,7 @@ PlotPanel(iw.trees, 4)
 
 \clearpage 
 
-```{R treesearch-iw-indiv-3, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:third-panels)", echo=FALSE}
+```{R treesearch-iw-indiv-3, fig.width=7.1, fig.height=5.1, fig.cap="(ref:ts-iw-indiv) (ref:third-panels)", echo=FALSE}
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(iw.trees, 5)
 PlotPanel(iw.trees, 6)
@@ -191,12 +191,12 @@ PlotPanel(iw.trees, 6)
 
 \clearpage
 
-```{r treesearch-equal-weights-results, fig.cap="Strict consensus of most parsimonious trees under equally weighted parsimony", echo=FALSE}
+```{r treesearch-equal-weights-results, fig.cap="Strict consensus of most parsimonious trees under equally weighted parsimony", fig.width=6, fig.height=5.1, echo=FALSE}
 ColPlot(RootTree(consensus(ew.trees), rootingTips))
 ```
 
 
-```{R treesearch-equal-weights-pruned-consensus, fig.cap="Strict consensus of equal weights results, taxa excluded", echo=FALSE, eval=FALSE}
+```{R treesearch-equal-weights-pruned-consensus, fig.cap="Strict consensus of equal weights results, taxa excluded", fig.width=6, fig.height=5.1, echo=FALSE, eval=FALSE}
 omit <- c("Cotyledion_tylodes", "Micrina")
 ColPlot(RootTree(ConsensusWithout(ew.trees, omit), rootingTips))
 ColMissing(omit)
