@@ -16,7 +16,8 @@ iw.trees <- lapply(kValues, function (k) {
     if (class(loadedTrees) == 'multiPhylo') unique(loadedTrees) else as.multiPhylo(loadedTrees)
   }
 })
-iw.exist <- iw.trees[vapply(iw.trees, length, 0) > 0]
+iw.treesLoaded <- vapply(iw.trees, length, 0) > 0
+iw.exist <- iw.trees[iw.treesLoaded]
 
 allTrees <- ew.trees
 for (i in seq_along(iw.exist)) {

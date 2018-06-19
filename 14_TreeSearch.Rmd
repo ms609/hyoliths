@@ -80,12 +80,13 @@ write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
 
 ```{R treesearch-deeper-iw, echo=FALSE, eval=FALSE}
 # Deeper search with IW, as default parameters have not always hit the globally best trees
-source('loadTrees.R')
 for (k in kValues) {
+  source('loadTrees.R')
   
   k.scores <- unlist(lapply(iw.exist, function (x) IWScore(x[[1]], iw_data, k)))
   ew.scores <- vapply(ew.trees, IWScore, double(1), iw_data, k)
-  this.k <- kValues == k
+  this.k <- kValues[iw.treesLoaded] == k
+  if (!any(this.k)) next
   my.score <- k.scores[this.k]
   ew.best <- min(ew.scores)
   if (ew.best < min(k.scores)) {
@@ -96,6 +97,7 @@ for (k in kValues) {
     next
   }
   
+  attr(start.tree, 'score') <- NULL
   cat("\n\n * Did not find global optimum for k = ", k, "; continuing search.\n   ")
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
                        ratchHits = 30, ratchIter=4000, searchHits=56,
