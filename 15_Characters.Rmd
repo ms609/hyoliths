@@ -468,8 +468,8 @@ subheadings <- c("Digestive tract: Anus: Presence",
                  paste("Larva:", c("Cilia: Metatroch", 
                     "Apical organ: Muscles extending to the hyposphere")))
 
-for (i in 14:17) {
-#for (i in seq_len(n_char)) {
+#for (i in 14:17) {
+for (i in seq_len(n_char)) {
 
   this_char_parts <- char_parts[[i]]
   next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]

@@ -96,7 +96,7 @@ for (k in kValues) {
     next
   }
   
-  cat("\n\n * Did not find global optimum for k = ", k, "; continuing search.")
+  cat("\n\n * Did not find global optimum for k = ", k, "; continuing search.\n   ")
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
                        ratchHits = 30, ratchIter=4000, searchHits=56,
                        swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
