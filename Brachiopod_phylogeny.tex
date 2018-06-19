@@ -158,7 +158,7 @@ incoherent treatment of inapplicable data \citep{Maddison1993}. We also
 present the \protect\hyperlink{treesearch}{results} of tree searches
 with the algorithm described by \citet{Brazeau2018}, which correctly
 handles inapplicable data in a parsimony setting. Finally, we document
-how each character is most parsimoniously
+how each character is parsimoniously
 \protect\hyperlink{reconstructions}{reconstructed} on an optimal tree.
 
 Supplementary \protect\hyperlink{figures}{figures} and
@@ -203,23 +203,23 @@ Characters are coded following the recommendations of
   of the dataset.
 \item
   We have distinguished between neomorphic and transformational
-  characters \citep[sensu][]{Sereno2007} by reserving the token
+  characters \citep[\emph{sensu}][]{Sereno2007} by reserving the token
   \texttt{0} to refer to the absence of a neomorphic
   (i.e.~presence/absence) character. The states of transformational
   characters (i.e.~characters that describe a property of a feature) are
   represented by the tokens \texttt{1}, \texttt{2}, \texttt{3}, \ldots{}
 \item
   We code the absence of neomorphic ontologically dependent characters
-  \citep[sensu][]{Vogt2017} as absence, rather than inapplicability.
+  \citep[\emph{sensu}][]{Vogt2017} as absence, rather than
+  inapplicability.
 \end{itemize}
 
-The complete dataset comprises 12150 character codings, of which 1133
-are inapplicable and 4975 were positive statements (i.e.~neither
-ambiguous nor inapplicable). This latter value, the amount and quality
-of data that \emph{is} coded, is more instructive than the number of
-cells that are ambiguous \citep{Wiens1998, Wiens2003}. Of the 225
-characters, the number that were coded with an applicable token for each
-taxon is:
+The complete dataset comprises 4975 character codings, plus 1133
+inapplicable codings. (The amount and quality of data that \emph{is}
+coded is more instructive than the number of cells that are ambiguous
+\citep{Wiens1998, Wiens2003}, which, for completeness, is 6042). Of the
+225 characters, the number that were coded with an applicable token for
+each taxon is:
 
 \begin{tabular}{l|l|l|l|l|l}
 \hline
@@ -324,7 +324,7 @@ keep 0; ttag-; hold 10000; {/* Clear memory */}
 {/* Repeat this block for each value of k */}
 \end{quote}
 
-Results can be replciated by:
+Results can be replicated by:
 
 \begin{itemize}
 \item
@@ -333,21 +333,21 @@ Results can be replciated by:
   \item[Downloading
   \href{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-15-2018_519.tnt}{the
   data in TNT format}]
-  \href{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-15-2018_519.tnt}{raw.githubusercontent.com/ms609/hyoliths/master/mbank\_X24932\_6-15-2018\_519.tnt}
+  \href{https://raw.githubusercontent.com/ms609/hyoliths/master/mbank_X24932_6-15-2018_519.tnt}{raw.githubusercontent.com/ms609/hyoliths/master/mbank\_X24932\_6-15-2018\_519.tnt}.
   \end{description}
 \item
-  Save
+  Saving
   \href{https://raw.githubusercontent.com/ms609/hyoliths/master/tnt.run}{the
   script above} to the same directory, with the filename
   \texttt{tnt.run}.
 \item
-  Open TNT, type \texttt{piwe=} before you load the downloaded dataset
-  (to enable extended implied weighting), then type \texttt{tnt} into
-  the command box to run the script.
-\item
-  We acknowledge the Willi Hennig Society for their sponsorship of the
-  TNT software.
+  Opening TNT, typing \texttt{piwe=} before you load the downloaded
+  dataset (to enable extended implied weighting), then typing
+  \texttt{tnt} into the command box to run the script.
 \end{itemize}
+
+We acknowledge the Willi Hennig Society for their sponsorship of the TNT
+software.
 
 \section{Results}\label{results}
 
