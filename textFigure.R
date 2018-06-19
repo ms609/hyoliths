@@ -14,13 +14,36 @@ if (!exists('tntSplits')) {
   tntSplits <- GetSplits(allTnt, tipIndex)
 }
 
+if (!exists('bayesSplits')) {
+  mbFiles <- list.files('MrBayes', pattern='^hyo\\..*\\.t$', full.names=TRUE)
+  bayesTrees <- lapply(mbFiles, read.nexus)
+  nBayesTrees <- length(bayesTrees[[1]])
+  postBurnin <- lapply(bayesTrees, function (x) x[ceiling(nTrees * 0.1):nBayesTrees])
+  bayesThinned <- c(postBurnin[[1]], postBurnin[[2]], postBurnin[[3]], postBurnin[[4]])
+  class(bayesThinned) <- 'multiPhylo'
+  sampleSize <- min(length(bayesThinned), 10000L) # Not all trees, but ought to be enough for our purposes
+  bayesSplits <- GetSplits(sample(bayesThinned, sampleSize), tipIndex)
+}
+
+#ColPlot(UnitEdges(root(mbCon, outgroup, resolve.root=TRUE)))
+
+
+ColPlot(UnitEdges(mbCon))
+supporters <- SplitSupport(mbCon, mbSplits, tipIndex)
+nodeSupport <- c('', signif(supporters[-1] / sampleSize * 100L, 3))
+nodelabels(paste0("\n\n", nodeSupport), adj=0, pos=2, frame='none', cex=0.75,
+           col=NodeColour(round(supporters / sampleSize, 2)))
+#ColMissing(omit)
+
 majCon <- RootTree(consensus(allTrees, p=0.5), rootingTips)
 supporters <- SplitSupport(majCon, allSplits, tipIndex)
 tnSupporters <- SplitSupport(majCon, tntSplits, tipIndex) / length(allTnt)
+bayesSupporters <- SplitSupport(majCon, bayesSplits, tipIndex) / sampleSize
 conLabel1 <- signif(100 * supporters / length(allTrees), 2)
-conLabel2 <- ifelse(is.na(tnSupporters), '0', signif(100 * tnSupporters, 2))
+#conLabel2 <- ifelse(is.na(tnSupporters), '0', signif(100 * tnSupporters, 2))
+conLabel2 <- ifelse(is.na(bayesSupporters), '0', round(100 * bayesSupporters))
 conLabelColour1 <- NodeColour(round(conLabel1 / 100, 2), TRUE)
-conLabelColour2 <- NodeColour(round(tnSupporters, 2), TRUE)
+conLabelColour2 <- NodeColour(round(bayesSupporters, 2), TRUE)
 conLabel1[conLabel1 == 100] <- '.'
 conLabel2[conLabel2 == 100] <- '.'
 
@@ -69,10 +92,10 @@ tips <- paste0('<text x="', (conX[conTerminal] + 0L),
                '">',
                gsub('_', ' ', conTips[conTerminal], fixed=TRUE), '</text>',
                collapse='')
-nodes <- paste0('<text x="', conX[conInternal] + 2L, '" y="', conY[conInternal] + 4L,
-                '" class="nodeLabel"><tspan  fill="', conLabelColour1 ,'">',
-                conLabel1, '</tspan>/<tspan  fill="', conLabelColour2 ,'">',
-                conLabel2, '</tspan></text>', collapse='')
+nodes <- paste0('<text x="', conX[conInternal][-1] + 2L, '" y="', conY[conInternal][-1] + 4L,
+                '" class="nodeLabel"><tspan  fill="', conLabelColour1[-1] ,'">',
+                conLabel1[-1], '</tspan>/<tspan  fill="', conLabelColour2[-1] ,'">',
+                conLabel2[-1], '</tspan></text>', collapse='')
 tipLegend <- paste0('<g transform="translate(', svgWidth, ' ', figHeight, ')">',
                     '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                     paste0('<tspan x="0" dy="-1.2em" fill="', groupCol, '">',
