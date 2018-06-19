@@ -98,7 +98,6 @@ nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
 ```{R tnt-iw-nok2, echo=FALSE, fig.cap="(ref:tnt-no2-cons)"}
 majCon <- RootTree(consensus(tn3Consensi, p=0.5), rootingTips)
 ColPlot(majCon)
-ColMissing(omit)
 
 tnFlattened <- list()
 for (i in seq_along(tnTrees)[-1]) {
