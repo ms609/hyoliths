@@ -146,6 +146,8 @@ span.change {
 
 .nddtlhdr, #nodeDetails {
   font-weight: bold;
+  font-style: italic;
+  color: #34caaf;
 }
 
 .legendLabels {

@@ -9,7 +9,7 @@ date: "`r Sys.Date()`"
 This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)). `r morphoBankRefereeAccess`
 
 Alongside its definition, each character has been mapped onto a tree.
- `r if (knitr::is_html_output()) 'Any of the optimal trees can be selected by modifying the tree number listed above each diagram.' else 'Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting, $k = 4.5$. Other trees can be viewed in the HTML version of this document at [ms609.github.io/hyoliths](https://ms609.github.io/hyoliths/reconstructions.html).'`
+ `r if (knitr::is_html_output()) 'Any of the optimal trees can be selected by modifying the tree number listed above each diagram.' else 'Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting. Other trees can be viewed in the HTML version of this document at [ms609.github.io/hyoliths](https://ms609.github.io/hyoliths/reconstructions.html).'`
 Each tip is labelled according to its coding in the matrix.  These states have been used to reconstruct the condition of each internal node, using the parsimony method of @Brazeau2018 as implemented in the _R_ package _Inapp_.
 
 We emphasize that different trees will give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.
@@ -113,7 +113,9 @@ if (exists('localInstance') || knitr::is_html_output()) {
 omit <- c("Micrina", "Micromitra",
           "Longtancunella_chengjiangensis",# "Yuganotheca_elegans",
           "Salanygolina", "Askepasma_toddense")#, "Tomteluva_perturbata")
-majCon <- RootTree(ConsensusWithout(tnConsensi, omit, p=0.5), rootingTips)
+omit <- character(0)
+#majCon <- RootTree(ConsensusWithout(tnConsensi, omit, p=0.5), rootingTips)
+majCon <- RootTree(consensus(tnConsensi, p=0.5), rootingTips)
 
 bifurcating <- multi2di(majCon) # Nodes inserted at random
 bEdge <- bifurcating$edge
@@ -238,7 +240,7 @@ if (knitr::is_html_output()) {
     })
   }, character(reconLength))
   ncol <- colSums(majCaptions[c('regions', 'changes', 'fitches'), ] != '')
-  cat('<div id=nodeDetails>Click a node for details of changes</div>',
+  cat('<div id=nodeDetails>Click on the numbers by a node for details</div>',
       paste0('<div id=nodeDetail', internal, ' class=nddtl><div class=nddtlhdr>',
          'Steps incurred at node ', internal, ':</div>',
          ifelse(majCaptions['changes', ] == '', '', 

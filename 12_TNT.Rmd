@@ -101,18 +101,18 @@ nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
 
 (ref:tnt-iw-explanation) The strict consensus of all implied weights runs is not very well resolved, largely due to an unusual optimal tree at $k = 2$, which obscures a consistent set of relationships between the remaining taxa.
 
-```{R tnt-iw-consensus, fig.wid=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results) (ref:first-panels) (ref:tnt-jacks) (ref:tnt-iw-explanation)", echo=FALSE}
+```{R tnt-iw-indiv-1, fig.wid=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results) (ref:first-panels) (ref:tnt-jacks) (ref:tnt-iw-explanation)", echo=FALSE}
 par(mfrow=c(1, 2))
 PlotPanel(tnConsensi, 1, './TNT/xpiwe3.sym')
 PlotPanel(tnConsensi, 2, './TNT/xpiwe4.5.sym')
 ```
 
-```{R tnt-iw-7-24, fig.width=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results), (ref:second-panels)", echo=FALSE}
+```{R tnt-iw-indiv-2, fig.width=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results), (ref:second-panels)", echo=FALSE}
 par(mfrow=c(1, 2))
 PlotPanel(tnConsensi, 3, './TNT/xpiwe7.sym')
 PlotPanel(tnConsensi, 4, './TNT/xpiwe10.5.sym')
 ```
-```{R tnt-iw-7-24, fig.width=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results), (ref:third-panels)", echo=FALSE}
+```{R tnt-iw-indiv-3, fig.width=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results), (ref:third-panels)", echo=FALSE}
 par(mfrow=c(1, 2))
 PlotPanel(tnConsensi, 5, './TNT/xpiwe16.sym')
 PlotPanel(tnConsensi, 6, './TNT/xpiwe24.sym')

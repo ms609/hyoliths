@@ -166,7 +166,7 @@ ColMissing(omit)
 
 \clearpage 
 
-```{r treesearch-all-iw-results, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:first-panels)", echo=FALSE}
+```{r treesearch-iw-indiv-1, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:first-panels)", echo=FALSE}
 # Plot consensus results
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(iw.trees, 1)
@@ -175,7 +175,7 @@ PlotPanel(iw.trees, 2)
 
 \clearpage 
 
-```{R treesearch-iw-results-3, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:second-panels)", echo=FALSE}
+```{R treesearch-iw-indiv-2, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:second-panels)", echo=FALSE}
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(iw.trees, 3)
 PlotPanel(iw.trees, 4)
@@ -183,7 +183,7 @@ PlotPanel(iw.trees, 4)
 
 \clearpage 
 
-```{R treesearch-iw-results-3, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:third-panels)", echo=FALSE}
+```{R treesearch-iw-indiv-3, fig.width=7.1, fig.height=8, fig.cap="(ref:ts-iw-indiv) (ref:third-panels)", echo=FALSE}
 par(mfrow=c(1, 2), mar=rep(0.2, 4))
 PlotPanel(iw.trees, 5)
 PlotPanel(iw.trees, 6)
