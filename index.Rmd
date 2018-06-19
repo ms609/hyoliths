@@ -73,6 +73,7 @@ colnames(cont)[colnames(cont) == '-'] <- '?'
 attr(fitch_data, 'contrast') <- cont
 attr(fitch_data, 'allLevels')[attr(fitch_data, 'allLevels') == '-'] <- '?'
 attr(fitch_data, 'levels')[attr(fitch_data, 'levels') == '-'] <- '?'
+fitch_data <- PrepareDataIW(fitch_data)
 
 my_chars <- ReadCharacters(nexusFile)
 char_notes <- ReadNotes(nexusFile)
