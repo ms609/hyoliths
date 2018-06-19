@@ -10,7 +10,7 @@ The phylogenetic dataset contains a considerable proportion of inapplicable codi
 
 ## Search parameters
 
-Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997].  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) 2, 3, 4.5, 7, 10.5, 16 and 24, an approach that has been shown to produce higher accuracy (i.e. more nodes and quartets resolved correctly) than equal weights at any given level of precision [@Smith2017].
+Heuristic searches were conducted using the parsimony ratchet [@Nixon1999] under equal and implied weights [@Goloboff1997].  The consensus tree presented in the main manuscript represents a strict consensus of all trees that are most parsimonious under one or more of the concavity constants (_k_) `r paste(kValues[-length(kValues)], collapse=', ')` and `r kValues[length(kValues)]`, an approach that has been shown to produce higher accuracy (i.e. more nodes and quartets resolved correctly) than equal weights at any given level of precision [@Smith2017].
 
 ## Analysis 
 
