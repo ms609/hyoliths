@@ -69,7 +69,7 @@ for (k in kValues) {
 
 ```{r treesearch-equal-weights-analysis, echo=TRUE, eval=FALSE}
 ew.tree <- Ratchet(start.tree, my_data, verbosity=0L,
-                   ratchHits = 20, ratchIter=4000, searchHits=55, # ratchHits = 20 not enough
+                   ratchHits = 20, ratchIter=4000, searchHits=55,
                    swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))
 ew.consensus <- RatchetConsensus(ew.tree, my_data, nSearch=250, searchHits = 85,
                                  swappers=list(RootedTBRSwap, RootedNNISwap),
@@ -79,7 +79,9 @@ write.nexus(ew.consensus, file=paste0(collapse='', "TreeSearch/hy_ew_",
 ```
 
 ```{R treesearch-deeper-iw, echo=FALSE, eval=FALSE}
-# Deeper search with IW, as default parameters have not always hit the globally best trees
+# This block provides a crude check that each run has found an optimum;
+# if not it continues searching, and you may consider increasing the 
+# ratchHits, ratchIter or searchHits parameters above.
 for (k in kValues) {
   source('loadTrees.R')
   
@@ -94,11 +96,12 @@ for (k in kValues) {
   } else if (k.scores[this.k] > min(k.scores)) {
     start.tree <- iw.trees[[which.min(k.scores)]][[1]]
   } else {
+    cat("\n\n * The best tree at k =", k, "is better than any other optimal tree.")
     next
   }
   
   attr(start.tree, 'score') <- NULL
-  cat("\n\n * Did not find global optimum for k = ", k, "; continuing search.\n   ")
+  cat("\n\n * Did not find global optimum for k =", k, "; continuing search.\n   ")
   iw.tree <- IWRatchet(start.tree, iw_data, concavity=k,
                        ratchHits = 30, ratchIter=4000, searchHits=56,
                        swappers=list(RootedTBRSwap, RootedSPRSwap, RootedNNISwap),
