@@ -8,7 +8,7 @@ date: "`r Sys.Date()`"
 
 Parsimony search with the @Fitch1971 algorithm was conducted in TNT v1.5 [@Goloboff2016] using Ratchet and tree drifting heuristics [@Goloboff1999;@Nixon1999], repeating the search until the optimal score had been hit by 1500 independent searches:
 
-> xmult:rat10 drift10 hits 1500 level 4 chklevel 5;
+> xmult:rat25 drift25 hits 1500 level 4 chklevel 5;
 
 Searches were conducted under equal weights and results saved to file:
 

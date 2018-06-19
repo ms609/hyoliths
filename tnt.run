@@ -5,7 +5,7 @@ macro=;
 /* Then if this file is in the same directory as your data file, */
 /* type tnt into the TNT command line to run this script. */
 
-xmult:rat10 drift10 hits 15 level 4 chklevel 5;
+xmult:rat25 drift25 hits 15 level 4 chklevel 5;
 /* 15 hits gives a quick but less comprehensive run */
 
 outgroup Flustra;
