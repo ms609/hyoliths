@@ -596,7 +596,7 @@ for (i in 14:17) {
                           'An" dy="1.2em">', analysisNames, '</tspan>', collapse=''),
                     '</text>')
       dudSteps <- matrix_data$dud_steps
-      naughtyNodes <- if (length(dudSteps) > 0) {
+      naughtyNodes <- if (FALSE && length(dudSteps) > 0) {
         paste0('<circle cx="', nodeXi[dudSteps], '" cy="', nodeYi[dudSteps],
                '"/><text x="', nodeXi[dudSteps] - textY, '" y="', nodeYi[dudSteps] + textY,
                '" class="dud-step">Nonsensical Fitch step</text>', collapse='')
