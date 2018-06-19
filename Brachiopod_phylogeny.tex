@@ -363,14 +363,12 @@ software.
 
 
 
-
 \begin{figure}
 \centering
 \includegraphics{Brachiopod_phylogeny_files/figure-latex/tnt-iw-overview-1.pdf}
 \caption{\label{fig:tnt-iw-overview}Majority-rule consensus of all trees that are optimal
-under implied weights. Each node is labelled with its frequency in the set
-of all optimal trees under all examined values of \(k\), where less than
-100\%.}
+under implied weights. Node labels denote, where less than 100\%, the
+frequency of each node in the set of all optimal trees.}
 \end{figure}
 
 
@@ -494,7 +492,7 @@ The position of the root does not affect tree score, so we keep it fixed
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{ew.tree <-}\StringTok{ }\KeywordTok{Ratchet}\NormalTok{(start.tree, my_data, }\DataTypeTok{verbosity=}\NormalTok{0L,}
-                   \DataTypeTok{ratchHits =} \DecValTok{20}\NormalTok{, }\DataTypeTok{ratchIter=}\DecValTok{4000}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{, }\CommentTok{# ratchHits = 20 not enough}
+                   \DataTypeTok{ratchHits =} \DecValTok{20}\NormalTok{, }\DataTypeTok{ratchIter=}\DecValTok{4000}\NormalTok{, }\DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{,}
                    \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedSPRSwap, RootedNNISwap))}
 \NormalTok{ew.consensus <-}\StringTok{ }\KeywordTok{RatchetConsensus}\NormalTok{(ew.tree, my_data, }\DataTypeTok{nSearch=}\DecValTok{250}\NormalTok{, }\DataTypeTok{searchHits =} \DecValTok{85}\NormalTok{,}
                                  \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedNNISwap),}
