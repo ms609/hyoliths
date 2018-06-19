@@ -118,12 +118,19 @@ ColPlot <- function (tree) {
 }
 
 # Plot results for each value of k
-PlotPanel <- function (treeList, i) {
+PlotPanel <- function (treeList, i, jackFile = NULL) {
   if (i > length(treeList) || length(treeList[[i]]) == 0) {
     cat("\n > Results not available for panel", i)
   } else {
     ColPlot(RootTree(consensus(treeList[[i]]), rootingTips))
     text(1, 1, paste0('k = ', kValues[i]), pos=4)
+    if (!is.null(jackName)) {
+      jacks <- GetJacks(jackFile)
+      nodeScores <- as.integer(jacks$freq)
+      nodelabels(paste0(c('', nodeScores), "\n"),
+                 col=c('black', NodeColour(nodeScores / 200L + 0.5, show1=FALSE)),
+                 adj=0, pos=2, frame='none', cex=0.75)
+    }
   }
 }
 
