@@ -65,9 +65,10 @@ tnTrees <- lapply(tntFiles, ReadTntTree, relativePath='.', keepEnd=1)
 tnTrees <- lapply(tnTrees, as.multiPhylo)
 tnTrees <- lapply(tnTrees, function (x) lapply(x, drop.tip, ignored_taxa))
 tnConsensi <- lapply(tnTrees, consensus)
+tn3Consensi <- lapply(tnTrees[-1], consensus)
 ```
 
-```{R tnt-iw-overview, echo=FALSE}
+```{R tnt-iw-overview, echo=FALSE, fig.cap="(ref:tnt-maj-cons)"}
 omit <- c("Micrina", "Micromitra",
           "Longtancunella_chengjiangensis",# "Yuganotheca_elegans",
           "Salanygolina", "Askepasma_toddense")#, "Tomteluva_perturbata")
@@ -90,9 +91,30 @@ nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
            adj=0, pos=2, frame='none', cex=0.75)
 ```
 
+(ref:tnt-no2-cons) Majority-rule consensus of all trees that are optimal under $3 \leq k \leq 24$.
+
+```{R tnt-iw-overview, echo=FALSE, fig.cap="(ref:tnt-maj-cons)"}
+majCon <- RootTree(consensus(tn3Consensi, p=0.5), rootingTips)
+ColPlot(majCon)
+ColMissing(omit)
+
+tnFlattened <- list()
+for (i in seq_along(tnTrees)[-1]) {
+  tnFlattened <- c(tnFlattened, tnTrees[[i]])
+}
+tnFlattened <- lapply(tnFlattened, drop.tip, omit)
+tipIndex <- sort(tnFlattened[[1]]$tip.label)
+tnSplits <- GetSplits(tnFlattened, tipIndex)
+
+supporters <- SplitSupport(majCon, tnSplits, tipIndex)
+nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
+           col=NodeColour(round(supporters / length(tnFlattened), 2), show1=FALSE),
+           adj=0, pos=2, frame='none', cex=0.75)
+```
+
 (ref:tnt-iw-results) Strict consensus of all trees recovered by TNT using Fitch parsimony with implied weighting
 
-(ref:tnt-iw-explanation) The consensus of all implied weights runs is not very well resolved, largely due to a few wildcard taxa, particularly at $k = 4.5$, which obscures a consistent set of relationships between the remaining taxa.
+(ref:tnt-iw-explanation) The strict consensus of all implied weights runs is not very well resolved, largely due to an unusual optimal tree at $k = 2$, which obscures a consistent set of relationships between the remaining taxa.
 
 ```{R tnt-iw-consensus, fig.wid=7.1, fig.height=8, fig.cap="(ref:tnt-iw-results) (ref:first-panels) (ref:tnt-iw-explanation)", echo=FALSE}
 par(mfrow=c(2, 2))
