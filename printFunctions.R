@@ -22,7 +22,7 @@ Italicize <- function (string) {
                                       'Terebratalia', 'Themiste', 'Tubulipora',
 
                                       'atkinsae', 'comleyensis', 'cyrene', 'decaius',
-                                      'minuta', 'murmanica',
+                                      'deleta', 'minuta', 'murmanica',
                                       'schucherti', 'tenuis', 'worsleyi',
 
                                       'vascula', 'genitalia','lateralia',
