@@ -130,7 +130,7 @@ allSplits <- GetSplits(allTrees, tipIndex)
 
 (ref:node-support) Node labels denote the frequency of each clade in most parsimonious trees under all analytical conditions.  
 
-```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5.1 echo=FALSE}
+```{r treesearch-maj-consensus, fig.cap="(ref:ts-all-cons) (ref:node-support)", fig.width=6, fig.height=5.1, echo=FALSE}
 majCon <- RootTree(consensus(allTrees, p=0.5), rootingTips)
 supporters <- SplitSupport(majCon, allSplits, tipIndex)
 
