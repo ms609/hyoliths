@@ -142,11 +142,11 @@ conSplits <- vapply(Descendants(majCon, nConTip + 1:Nnode(majCon), type='tips'),
            function (tips) conTips %in% conTips[tips], logical(nConTip))
 bifSplits <- vapply(Descendants(bifurcating, nConTip + seq_len(nConTip - 1L), type='tips'),
            function (tips) bifTips %in% bifTips[tips], logical(nConTip))
-majNos <- apply(conSplits, 2, function (x) sum(powersOf2[x]))
+conSplitNos <- apply(conSplits, 2, function (x) sum(powersOf2[x]))
 bifNos <- apply(bifSplits, 2, function (x) sum(powersOf2[x]))
 whichNode <- integer(length(bifNos))
-bifReal <- bifNos %in% majNos
-whichNode[bifReal] <- vapply(bifNos[bifReal], function (x) which(majNos == x), integer(1))
+bifReal <- bifNos %in% conSplitNos
+whichNode[bifReal] <- vapply(bifNos[bifReal], function (x) which(conSplitNos == x), integer(1))
 whichNode[!bifReal] <- apply(bifSplits[, !bifReal, drop=FALSE], 2, function (bifSplit) {
   extras <- colSums(conSplits[!bifSplit, ])
   parentSplits <- apply(conSplits[bifSplit, ], 2, all)
@@ -156,7 +156,7 @@ whichNode <- whichNode + nConTip
 
 if (knitr::is_html_output()) {
   
-  majLabels <- vapply(nConTip + 1:Nnode(majCon), function (node) {
+  conLabels <- vapply(nConTip + 1:Nnode(majCon), function (node) {
     where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nConTip], logical(1)), logical(reconLength))
     whichWhere <- apply(where, 1, which)
     ret <- unlist(lapply(whichWhere, length))
@@ -171,7 +171,7 @@ if (knitr::is_html_output()) {
   conLabel <- character(nConTip)
   conEdge <- dim(majCon$edge)[1]
   eachConEdge <- seq_len(conEdge)
-  majParent <- majCon$edge[, 1]
+  conParent <- majCon$edge[, 1]
   conChild  <- majCon$edge[, 2]
   
   conYStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / nConTip, 1)
@@ -189,7 +189,7 @@ if (knitr::is_html_output()) {
   }
   conY <- round(conY, 1)
   
-  edges <- paste0('<path d="', paste0('M', conX[majParent], ',', conY[majParent],
+  edges <- paste0('<path d="', paste0('M', conX[conParent], ',', conY[conParent],
                                       'V', conY[conChild], 'H', conX[conChild], 
                                       collapse=''), '" stroke="#888"></path>')
   tips <- paste0('<text x="', (conX[conTerminal] + 0L), 
@@ -209,9 +209,9 @@ if (knitr::is_html_output()) {
   nodes <- paste0('<g transform="translate(', conX[conInternal] + 2L, 
                   ' ', conY[conInternal], ')" class="node-g" data-node="', conInternal, 
                   '"><text x="0" y="-1.2em" class="node"><tspan class="b42">',
-                  majLabels['regions', ], '</tspan><tspan class="b44" x="0" dy="1.2em">',
-                  majLabels['changes', ], '</tspan><tspan class="b41" x="0" dy="1.2em">', 
-                  majLabels['fitches', ], '</tspan></text></g>', collapse='')
+                  conLabels['regions', ], '</tspan><tspan class="b44" x="0" dy="1.2em">',
+                  conLabels['changes', ], '</tspan><tspan class="b41" x="0" dy="1.2em">', 
+                  conLabels['fitches', ], '</tspan></text></g>', collapse='')
   conCaption <- paste0('<g transform="translate(', svgWidth - 4L, ' 0)">',
                        '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                        '<tspan x="0" dy="1.2em">',
@@ -255,7 +255,7 @@ if (knitr::is_html_output()) {
 } else {
   ColPlot(majCon)
   ColMissing(omit)
-  majLabels <- vapply(nConTip + 1:Nnode(majCon), function (node) {
+  conLabels <- vapply(nConTip + 1:Nnode(majCon), function (node) {
   where <- vapply(recons, function (char) vapply(char, function (x) node %in% whichNode[x - nConTip], logical(1)), logical(reconLength))
   whichWhere <- apply(where, 1, which)
   # Return: 
@@ -263,9 +263,9 @@ if (knitr::is_html_output()) {
     unlist(lapply(whichWhere, paste, collapse=', '))
   }
   }, character(reconLength))
-  LabelNodes(majLabels['changes', ], 4, 0)
-  LabelNodes(majLabels['regions', ], 2, 1)
-  LabelNodes(majLabels['fitches', ], 1, 2)
+  LabelNodes(conLabels['changes', ], 4, 0)
+  LabelNodes(conLabels['regions', ], 2, 1)
+  LabelNodes(conLabels['fitches', ], 1, 2)
 }
 ```
 <script>
