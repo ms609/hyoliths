@@ -134,18 +134,8 @@ ColMissing(omit)
 (ref:tnt-ew-cons) Consensus of all trees obtained using equally weighted Fitch parsimony in TNT.  
 
 ```{R tnt-ew-consensus, echo=FALSE, fig.cap="(ref:tnt-ew-cons) (ref:tnt-jacks)"}
-# This function will be included in a future release of TreeSearch.
-TNTText2Tree <- function (treeText) {
-  treeText <- gsub("(\\d+)", "\\1,", treeText, perl = TRUE)
-  treeText <- gsub(")(", "),(", treeText, fixed = TRUE)
-  treeText <- gsub("*", ";", treeText, fixed = TRUE)
-  # Return:
-  read.tree(text = gsub(", )", ")", treeText, fixed = TRUE))
-}
-
 jacks <- GetJacks('./TNT/ew.sym')
-
-ColPlot(jackTree)
+ColPlot(jacks$tree)
 nodeScores <- as.integer(jacks$freq)
 nodelabels(paste0(c('', nodeScores), "\n"),
            col=c('black', NodeColour(nodeScores / 200L + 0.5, show1=FALSE)),

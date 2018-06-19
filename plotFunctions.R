@@ -124,7 +124,7 @@ PlotPanel <- function (treeList, i, jackFile = NULL) {
   } else {
     ColPlot(RootTree(consensus(treeList[[i]]), rootingTips))
     text(1, 1, paste0('k = ', kValues[i]), pos=4)
-    if (!is.null(jackName)) {
+    if (!is.null(jackFile)) {
       jacks <- GetJacks(jackFile)
       nodeScores <- as.integer(jacks$freq)
       nodelabels(paste0(c('', nodeScores), "\n"),

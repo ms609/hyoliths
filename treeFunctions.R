@@ -21,6 +21,15 @@ GetSplits <- function (trees, tipIndex) {
 
 as.multiPhylo <- phytools::as.multiPhylo
 
+# This function will be included in a future release of TreeSearch.
+TNTText2Tree <- function (treeText) {
+  treeText <- gsub("(\\d+)", "\\1,", treeText, perl = TRUE)
+  treeText <- gsub(")(", "),(", treeText, fixed = TRUE)
+  treeText <- gsub("*", ";", treeText, fixed = TRUE)
+  # Return:
+  read.tree(text = gsub(", )", ")", treeText, fixed = TRUE))
+}
+
 GetJacks <- function (jackFile) {
   jackLines <- readLines(jackFile)
   jackTree <- TNTText2Tree(jackLines[3])
@@ -36,6 +45,6 @@ GetJacks <- function (jackFile) {
   jackScores <- trimws(gsub("ttag \\+\\d+ (.*); *", "\\1",
                             jackLines[length(jackLines) - (nTntNode - 2L):0]))[order(jackNodeOrder)]
   return (list(freq=gsub("^(\\d+)/.*", "\\1", jackScores),
-              gc=gsub("^\\d+/(\\[?\\d+\\]?)$", "\\1", jackScores)))
-
+              gc=gsub("^\\d+/(\\[?\\d+\\]?)$", "\\1", jackScores),
+              tree=jackTree))
 }
