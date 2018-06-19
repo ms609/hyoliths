@@ -68,6 +68,8 @@ tnConsensi <- lapply(tnTrees, consensus)
 tn3Consensi <- lapply(tnTrees[-1], consensus)
 ```
 
+(ref:tnt-maj-cons) Majority-rule consensus of all trees that are optimal under $2 \leq k \leq 24$.
+
 ```{R tnt-iw-overview, echo=FALSE, fig.cap="(ref:tnt-maj-cons)"}
 omit <- c("Micrina", "Micromitra",
           "Longtancunella_chengjiangensis",# "Yuganotheca_elegans",
