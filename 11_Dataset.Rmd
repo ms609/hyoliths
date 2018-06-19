@@ -18,12 +18,12 @@ Characters are coded following the recommendations of @Brazeau2018:
 
 - We have employed reductive coding, using a distinct state to mark character inapplicability. Character specifications follow the structural syntax of @Sereno2007 in order to highlight ontological dependence between characters and emphasize the structure of the dataset.
 
-- We have distinguished between neomorphic and transformational characters [sensu @Sereno2007] by reserving the token `0` to refer to the absence of a neomorphic (i.e. presence/absence) character.  The states of transformational characters (i.e. characters that describe a property of a feature) are represented by the tokens `1`, `2`, `3`, ...
+- We have distinguished between neomorphic and transformational characters [_sensu_ @Sereno2007] by reserving the token `0` to refer to the absence of a neomorphic (i.e. presence/absence) character.  The states of transformational characters (i.e. characters that describe a property of a feature) are represented by the tokens `1`, `2`, `3`, ...
 
-- We code the absence of neomorphic ontologically dependent characters [sensu @Vogt2017] as absence, rather than inapplicability.
+- We code the absence of neomorphic ontologically dependent characters [_sensu_ @Vogt2017] as absence, rather than inapplicability.
 
 
-The complete dataset comprises `r length(my_chars)` character codings, of which `r sum(my_chars == '-')` are inapplicable and `r sum(!my_chars %in% c('-', '?'))` were positive statements (i.e. neither ambiguous nor inapplicable).  This latter value, the amount and quality of data that _is_ coded, is more instructive than the number of cells that are ambiguous [@Wiens1998;@Wiens2003]. Of the `r ncol(my_chars)` characters, the number that were coded with an applicable token for each taxon is:
+The complete dataset comprises `r sum(!my_chars %in% c('-', '?'))` character codings, plus `r sum(my_chars == '-')` inapplicable codings.  (The amount and quality of data that _is_ coded is more instructive than the number of cells that are ambiguous [@Wiens1998;@Wiens2003], which, for completeness, is `r sum(my_chars == '?')`). Of the `r ncol(my_chars)` characters, the number that were coded with an applicable token for each taxon is:
 
 ```{r Coded per taxon, echo=FALSE, asis=TRUE}
 coded <- apply(my_chars, 1, function (x) sum(!(x %in% c('?', '-'))))
