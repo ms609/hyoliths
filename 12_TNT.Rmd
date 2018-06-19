@@ -95,7 +95,7 @@ nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 3)),
 
 (ref:tnt-no2-cons) Majority-rule consensus of all trees that are optimal under $3 \leq k \leq 24$.
 
-```{R tnt-iw-nok2, echo=FALSE, fig.cap="(ref:tnt-maj-cons)"}
+```{R tnt-iw-nok2, echo=FALSE, fig.cap="(ref:tnt-no2-cons)"}
 majCon <- RootTree(consensus(tn3Consensi, p=0.5), rootingTips)
 ColPlot(majCon)
 ColMissing(omit)
@@ -104,7 +104,6 @@ tnFlattened <- list()
 for (i in seq_along(tnTrees)[-1]) {
   tnFlattened <- c(tnFlattened, tnTrees[[i]])
 }
-tnFlattened <- lapply(tnFlattened, drop.tip, omit)
 tipIndex <- sort(tnFlattened[[1]]$tip.label)
 tnSplits <- GetSplits(tnFlattened, tipIndex)
 
