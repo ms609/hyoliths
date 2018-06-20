@@ -12,7 +12,7 @@ iw.trees <- lapply(kValues, function (k) {
   if (length(iw.best) == 0) {
     list()
   } else {
-    loadedTrees <- read.nexus(iw.best[which.max(file.mtime(iw.best))])
+    loadedTrees <- read.nexus(iw.best[which.max(order(vapply(iw.best, ApeTime, character(1))))]) # TODO: SHould use dates from file write times
     if (class(loadedTrees) == 'multiPhylo') unique(loadedTrees) else as.multiPhylo(loadedTrees)
   }
 })
