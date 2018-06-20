@@ -481,7 +481,7 @@ The position of the root does not affect tree score, so we keep it fixed
                   \DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{, }\DataTypeTok{searchIter=}\DecValTok{4000}\NormalTok{, }\DataTypeTok{nSearch=}\DecValTok{250}\NormalTok{, }\DataTypeTok{verbosity=}\NormalTok{0L)}
   \KeywordTok{write.nexus}\NormalTok{(iw.consensus, }
               \DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_iw_k"}\NormalTok{, k, }\StringTok{"_"}\NormalTok{, }
-                          \KeywordTok{signif}\NormalTok{(}\KeywordTok{IWScore}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k), }\DecValTok{5}\NormalTok{),}
+                          \KeywordTok{signif}\NormalTok{(}\KeywordTok{IWScore}\NormalTok{(iw.consensus[[}\DecValTok{1}\NormalTok{]], iw_data, }\DataTypeTok{concavity=}\NormalTok{k), }\DecValTok{5}\NormalTok{),}
                           \StringTok{".all.nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
 \NormalTok{\}}
 \end{Highlighting}
