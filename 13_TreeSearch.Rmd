@@ -60,7 +60,7 @@ for (k in kValues) {
                   searchHits=55, searchIter=4000, nSearch=250, verbosity=0L)
   write.nexus(iw.consensus, 
               file=paste0("TreeSearch/hy_iw_k", k, "_", 
-                          signif(IWScore(iw.tree, iw_data, concavity=k), 5),
+                          signif(IWScore(iw.consensus[[1]], iw_data, concavity=k), 5),
                           ".all.nex", collapse=''))
 }
 ```
@@ -117,7 +117,7 @@ for (k in kValues) {
                   searchHits=55, nSearch=250, searchIter=4000, verbosity=1L)
   write.nexus(iw.consensus,
               file=paste0("TreeSearch/hy_iw_k", k, "_", 
-                          signif(IWScore(iw.tree, iw_data, concavity=k), 5),
+                          signif(IWScore(iw.consensus[[1]], iw_data, concavity=k), 5),
                           ".all.nex", collapse=''))
 }
 ```
