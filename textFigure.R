@@ -101,32 +101,31 @@ tipLegend <- paste0('<g transform="translate(', svgWidth, ' ', figHeight, ')">',
 halfEdge <- ((conXStep[2] - conXStep[1]) / 2)
 onEdge <- conXStep + halfEdge
 onNode <- conY + 4L
-overEdge <- conY - (lineHeight / 2)
-underEdge <- conY + (lineHeight / 2) + 3L
-onLine <- lineHeight * seq_len(nConTip) + 4L
+overEdge <-  round(conY - (lineHeight / 2), 2)
+underEdge <- round(conY + (lineHeight / 2), 2)
+onLine <- round(lineHeight * seq_len(nConTip) + 4L, 2)
 legendKey <- conXStep[2] + halfEdge - 3
-notes <- c(list(c(conXStep[11] + 5L, lineHeight * 16.5, '<tspan>Crown group</tspan><tspan dx="-6.2em" dy="1.2em">Brachiopoda</tspan>'),
+notes <- c(list(c(conXStep[11] + 42L, lineHeight * 16.5, '<tspan>Crown group</tspan><tspan dx="-6.2em" dy="1.2em">Brachiopoda</tspan>'),
                 c(onEdge[6 ], overEdge[66], "Pe+"),
                 c(onEdge[9 ], overEdge[98], "Pe-"), # Hyolith loss
                 c(onEdge[12], overEdge[80], "Pe-"), # Crani. loss
-                c(onEdge[9 ], overEdge[41], "U"), # Yugano.
-                c(onEdge[9 ], overEdge[10], "U"), # PEd
-                c(onEdge[12], overEdge[84], "U"), # Salany+
+                c(onEdge[9 ], overEdge[41], "Um"), # Yugano.
+                c(onEdge[9 ], overEdge[10], "Um"), # PEd
+                c(onEdge[12], overEdge[84], "Um"), # Salany+
                 c(onEdge[17], overEdge[89], "Co"), # Top 4 rhunchs
                 c(onEdge[15], overEdge[75], "D"),  # Discinids & pals
                 c(onEdge[11], overEdge[83], "St"), # Pater + Rhync
-                c(onEdge[11], overEdge[83], "St"), # Pater + Rhync
-                c(onEdge[3 ], overEdge[48], "Cn"), # Namacal
-                c(onEdge[11], underEdge[ 9], "Cn"), # PAramicro
-                c(onEdge[11], underEdge[ 5], "Cn"), # Cupi
-                c(onEdge[10], overEdge[95], "Pn,Cn"), # Micrina gp
-                c(onEdge[16], underEdge[79], "Cn"), # Disc
-                c(onEdge[18], overEdge[36], "Cn"), # Disc
-                c(onEdge[13], underEdge[40], "Pn"), # Lingula
-                c(onEdge[20], overEdge[20], "Pn"), # Terebrata
-                c(onEdge[15], overEdge[27], "Pn"), # Novocrania
-                c(onEdge[18], overEdge[78], "Pn"), # Siph/Acanth
-              c(0,0,0))
+                c(onEdge[3 ], overEdge[48], "c"), # Namacal
+                c(onEdge[11], underEdge[ 9], "c"), # PAramicro
+                c(onEdge[11], underEdge[ 5], "c"), # Cupi
+                c(onEdge[10], overEdge[95], "c,p"), # Micrina gp
+                c(onEdge[16], underEdge[79], "c"), # Disc
+                c(onEdge[18], overEdge[36], "c"), # Disc
+                c(onEdge[13], underEdge[40], "p"), # Lingula
+                c(onEdge[20], overEdge[20], "p"), # Terebrata
+                c(onEdge[15], overEdge[27], "p"), # Novocrania
+                c(onEdge[18], overEdge[78], "p") # Siph/Acanth
+              )
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 1, x))
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 24, x))
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 47, x))
@@ -136,22 +135,23 @@ notes <- c(list(c(conXStep[11] + 5L, lineHeight * 16.5, '<tspan>Crown group</tsp
 )
 key <- c(' ' = "Carbonate mineralogy",
          Pe = "Pedicle",
-         U = "Migration of pedicle to valve umbo",
+         Um = "Migration of pedicle to valve umbo",
          Co = "Coelom lost in pedicle",
          D = "Delthyrium surrounds pedicle",
          St = "Strophic hinge; planar cardinal area",
-         Cn = "Canaliculate structure",
-         Pn = "Punctae",
-         x = 'x')
+         c = "Canaliculate structure",
+         p = "Punctae"
+         )
 
-noteLegend <- paste0('<g id="legend" transform="translate(12 ',
-                     lineHeight * 3 + 4L, ')"><text x="0" y="0">',
-                     sprintf('<tspan x="0" dy="%s" class="bold">%s</tspan>', lineHeight * (seq_along(key) - 1L) * 2L, names(key)),
-                     sprintf('<tspan x="2em">%s</tspan>', key),
+noteLegend <- paste0('<g id="legend" transform="translate(', onEdge[1], ' ',
+                     round(lineHeight * 3 + 4L, 2), ')"><text x="0" y="0">',
+                     paste0(
+                       sprintf('<tspan x="0" dy="%s" class="annot">%s</tspan>', round(lineHeight * 2L, 2), names(key)),
+                       sprintf('<tspan x="2em">%s</tspan>', key), collapse=''),
                      '</text></g>', collapse = '')
 
 annotations <- paste0(vapply(notes, function (note)
-  sprintf('\n\n<text x="%s" y="%s" class="annotation">%s</text>\n\n', note[1], note[2], note[3]),
+  sprintf('\n\n<text x="%s" y="%s" class="annot">%s</text>\n\n', note[1], note[2], note[3]),
   character(1)), collapse='')
 
 circles <- paste0(sprintf('<circle cx="%s" cy="%s"></circle>',
@@ -164,10 +164,10 @@ svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width
                     '<![CDATA[text.taxonLabel{font-style:italic}',
                     'text.nodeLabel{font-size:8pt}',
                     'svg {font-family: "Arial", sans-serif;font-size:9pt}',
-                    '.bold,.annotation{font-weight:bold}',
+                    '.bold,.annot{font-weight:bold}',
                     '.hidden{display:none}',
-                    '.annotation{fill:#444;text-anchor:middle}',
+                    '.annot{text-anchor:middle;opacity:0.55}',
                     'circle{r:5px;fill:#f2e259;stroke:black;stroke-width:2px;}',
                     ']]></style></defs>',
-                    tipLegend, noteLegend, tips, edges, annotations, circles, nodes, '</svg>')
+                    tipLegend, noteLegend, tips, edges, circles, nodes, annotations, '</svg>')
 write(svgSource, file="textFigure-raw.svg")
