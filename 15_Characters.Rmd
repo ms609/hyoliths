@@ -12,7 +12,7 @@ Alongside its definition, each character has been mapped onto a tree.
  `r if (knitr::is_html_output()) 'Any of the optimal trees can be selected by modifying the tree number listed above each diagram.' else 'Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting. Other trees can be viewed in the HTML version of this document at [ms609.github.io/hyoliths](https://ms609.github.io/hyoliths/reconstructions.html).'`
 Each tip is labelled according to its coding in the matrix.  These states have been used to reconstruct the condition of each internal node, using the parsimony method of @Brazeau2018 as implemented in the _R_ package _Inapp_.
 
-We emphasize that different trees give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.
+We emphasize that different trees give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.  `r if(knitr::is_html_output()) cat('<a href="javascript:toggleSVG();">Click here</a> to <span id="showOrHide">hide</span> the character reconstructions below.')`
 
 ```{R load-the-characters, echo=FALSE, message=FALSE}
 source('loadTrees.R')
@@ -287,6 +287,20 @@ function showNodeNotes (e) {
   return false;
 }
 $("#conTree").click(showNodeNotes)
+
+
+// Hide SVGs if not desired
+function toggleSVG() {
+  if (document.getElementById('showOrHide').innerHTML == 'hide') {
+    $('svg.tree').css('display', 'none');
+    $('div.switcher').css('display', 'none');
+    document.getElementById('showOrHide').innerHTML = 'show'
+  } else {
+    $('svg.tree').css('display', 'block');
+    $('div.switcher').css('display', 'block');
+    document.getElementById('showOrHide').innerHTML = 'hide'
+  }
+}
 
 // Prepare for character-by-character interactions
 var latestKnownScrollY = 0,
