@@ -1109,6 +1109,20 @@ function showNodeNotes (e) {
 }
 $("#conTree").click(showNodeNotes)
 
+
+// Hide SVGs if not desired
+function toggleSVG() {
+  if (document.getElementById('showOrHide').innerHTML == 'hide') {
+    $('svg.tree').css('display', 'none');
+    $('div.switcher').css('display', 'none');
+    document.getElementById('showOrHide').innerHTML = 'show'
+  } else {
+    $('svg.tree').css('display', 'block');
+    $('div.switcher').css('display', 'block');
+    document.getElementById('showOrHide').innerHTML = 'hide'
+  }
+}
+
 // Prepare for character-by-character interactions
 var latestKnownScrollY = 0,
   latestKnownY = 0,
