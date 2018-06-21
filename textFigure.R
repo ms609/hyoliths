@@ -1,5 +1,6 @@
 figHeight <- 525
 
+rootingTips <- c('Tonicella', 'Serpula', 'Loxosomella')
 if (!exists('allTrees')) source('loadTrees.R')
 tipIndex <- sort(allTrees[[1]]$tip.label)
 if (!exists('allSplits')) allSplits <- GetSplits(allTrees, tipIndex)
@@ -25,15 +26,8 @@ if (!exists('bayesSplits')) {
   bayesSplits <- GetSplits(sample(bayesThinned, sampleSize), tipIndex)
 }
 
-#ColPlot(UnitEdges(root(mbCon, outgroup, resolve.root=TRUE)))
-
-
-ColPlot(UnitEdges(mbCon))
 supporters <- SplitSupport(mbCon, mbSplits, tipIndex)
 nodeSupport <- c('', signif(supporters[-1] / sampleSize * 100L, 3))
-nodelabels(paste0("\n\n", nodeSupport), adj=0, pos=2, frame='none', cex=0.75,
-           col=NodeColour(round(supporters / sampleSize, 2)))
-#ColMissing(omit)
 
 majCon <- RootTree(consensus(allTrees, p=0.5), rootingTips)
 supporters <- SplitSupport(majCon, allSplits, tipIndex)
@@ -47,6 +41,7 @@ conLabelColour2 <- NodeColour(round(bayesSupporters, 2), TRUE)
 conLabel1[conLabel1 == 100] <- '.'
 conLabel2[conLabel2 == 100] <- '.'
 
+conTips <- majCon$tip.label
 nConTip <- length(conTips)
 
 conInternal <- nConTip + 1:Nnode(majCon)
@@ -102,12 +97,22 @@ tipLegend <- paste0('<g transform="translate(', svgWidth, ' ', figHeight, ')">',
                            names(groupCol), '</tspan>', collapse=''),
                     '<tspan x="0" dy="-1.2em" class="bold">Key to colours:</tspan>',
                     '</text></g>')
+notes <- c(list(c(conXStep[11] + 5L, lineHeight * 16.5, '<tspan>Crown group</tspan><tspan dx="-6.2em" dy="1.2em">Brachiopoda</tspan>'),
+              c(0,0,0)),
+lapply(2:21, function (x) c(conXStep[x], lineHeight * 1, x)),
+lapply(1:60, function (x) c(10, lineHeight * x, x))
+)
+annotations <- paste0(vapply(notes, function (note)
+  sprintf('\n\n<text x="%s" y="%s" class="annotation">%s</text>\n\n', note[1], note[2], note[3]),
+  character(1)), collapse='')
+
 svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="',
                     svgWidth, '" height="', figHeight, '"><defs><style type="text/css">',
                     '<![CDATA[text.taxonLabel{font-style:italic}',
                     'text.nodeLabel{font-size:8pt}',
                     'svg {font-family: "Arial", sans-serif;font-size:9pt}',
-                    '.bold{font-weight:bold}',
+                    '.bold,.annotation{font-weight:bold}',
+                    '.annotation{fill:#444}',
                     ']]></style></defs>',
-                    tipLegend, tips, edges,  nodes, '</svg>')
+                    annotations, tipLegend, tips, edges, nodes, '</svg>')
 write(svgSource, file="textFigure-raw.svg")
