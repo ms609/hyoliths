@@ -26,7 +26,7 @@ Abbreviations: BE = backscatter electron image, O = Oxygen, Si = Silicon, Al = A
 
 
 \clearpage
-`r rollOver <- 3;`
+`r rollOver <- 3`
 
 ```{R brach-diversity, echo=FALSE, fig.width=7, cache=TRUE}
 # Definitions
@@ -68,7 +68,9 @@ yMax <- 200
 par(cex=0.8)
 
 plot(99, 0, ylim=c(0, yMax), xlim=c(-540, -400), 
-     xlab='Million years ago', ylab='Genera')
+     xlab='Million years ago', ylab='Genera', xaxt='n')
+ticks <- seq(540, 400, length.out = 8)
+axis(1, at = -ticks, labels=ticks)
 bottom <- yMax * 0.6; gap <- yMax * 0.08
 text(-542, bottom + (4 * gap), lab='Rhynchonelliformea', col=cbPalette[5], pos=4)
 text(-542, bottom + (3 * gap), lab='Linguliformea',     col=cbPalette[3], pos=4)
