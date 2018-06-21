@@ -105,27 +105,31 @@ overEdge <-  round(conY - (lineHeight / 2), 2)
 underEdge <- round(conY + (lineHeight / 2), 2)
 onLine <- round(lineHeight * seq_len(nConTip) + 4L, 2)
 legendKey <- conXStep[2] + halfEdge - 3
-notes <- c(list(c(conXStep[11] + 42L, lineHeight * 16.5, '<tspan>Crown group</tspan><tspan dx="-6.2em" dy="1.2em">Brachiopoda</tspan>'),
-                c(onEdge[6 ], overEdge[66], "Pe+"),
-                c(onEdge[9 ], overEdge[98], "Pe-"), # Hyolith loss
-                c(onEdge[12], overEdge[80], "Pe-"), # Crani. loss
-                c(onEdge[9 ], overEdge[41], "Um"), # Yugano.
-                c(onEdge[9 ], overEdge[10], "Um"), # PEd
-                c(onEdge[12], overEdge[84], "Um"), # Salany+
-                c(onEdge[17], overEdge[89], "Co"), # Top 4 rhunchs
-                c(onEdge[15], overEdge[75], "D"),  # Discinids & pals
-                c(onEdge[11], overEdge[83], "St"), # Pater + Rhync
-                c(onEdge[3 ], overEdge[48], "c"), # Namacal
-                c(onEdge[11], underEdge[ 9], "c"), # PAramicro
-                c(onEdge[11], underEdge[ 5], "c"), # Cupi
-                c(onEdge[10], overEdge[95], "c,p"), # Micrina gp
-                c(onEdge[16], underEdge[79], "c"), # Disc
-                c(onEdge[18], overEdge[36], "c"), # Disc
-                c(onEdge[13], underEdge[40], "p"), # Lingula
-                c(onEdge[20], overEdge[20], "p"), # Terebrata
-                c(onEdge[15], overEdge[27], "p"), # Novocrania
-                c(onEdge[18], overEdge[78], "p") # Siph/Acanth
-              )
+notes <- c(list(c(onEdge[6 ], overEdge[66], "Pe+")
+                , c(onEdge[9 ], overEdge[98], "Pe-") # Hyolith loss
+                , c(onEdge[12], overEdge[80], "Pe-") # Crani. loss
+                , c(onEdge[9 ], overEdge[41], "Um") # Yugano.
+                , c(onEdge[9 ], overEdge[10], "Um") # PEd
+                , c(onEdge[12], overEdge[84], "Um") # Salany+
+                , c(onEdge[17], overEdge[89], "Co") # Top 4 rhunchs
+                , c(onEdge[15], overEdge[75], "D")  # Discinids & pals
+                , c(onEdge[11], overEdge[83], "St") # Pater + Rhync
+                , c(onEdge[10], overEdge[70], "*") # Crown
+                , c(onEdge[9 ], overEdge[69], "L") # Main Brachs
+                , c(onEdge[8 ], overEdge[68], "A") # Yugano + Brachs
+                #, c(onEdge[3 ], overEdge[48], "c") # Namacal
+                #, c(onEdge[11], underEdge[ 9], "c") # PAramicro
+                #, c(onEdge[11], underEdge[ 5], "c") # Cupi
+                #, c(onEdge[10], overEdge[95], "c,p") # Micrina gp
+                #, c(onEdge[16], underEdge[79], "c") # Disc
+                #, c(onEdge[18], overEdge[36], "c") # Disc
+                #, c(onEdge[13], underEdge[40], "p") # Lingula
+                #, c(onEdge[20], overEdge[20], "p") # Terebrata
+                #, c(onEdge[15], overEdge[27], "p") # Novocrania
+                #, c(onEdge[18], overEdge[78], "p") # Siph/Acanth
+                #, c(conXStep[11] + 42L, lineHeight * 16.5,
+                # '<tspan>Crown group</tspan><tspan dx="-6.2em" dy="1.2em">Brachiopoda</tspan>')
+           )
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 1, x))
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 24, x))
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 47, x))
@@ -133,20 +137,24 @@ notes <- c(list(c(conXStep[11] + 42L, lineHeight * 16.5, '<tspan>Crown group</ts
 #, lapply(1:60, function (x) c(svgWidth-20, lineHeight * x, x))
 #, lapply(1:60, function (x) c(svgWidth/2, lineHeight * x, x))
 )
-key <- c(' ' = "Carbonate mineralogy",
-         Pe = "Pedicle",
-         Um = "Migration of pedicle to valve umbo",
-         Co = "Coelom lost in pedicle",
-         D = "Delthyrium surrounds pedicle",
-         St = "Strophic hinge; planar cardinal area",
-         c = "Canaliculate structure",
-         p = "Punctae"
+key <- c(' ' = "Carbonate mineralogy"
+         , Pe = "Pedicle"
+         , Um = "Migration of pedicle to valve umbo"
+         , Co = "Coelom lost in pedicle"
+         , D = "Delthyrium surrounds pedicle"
+         , St = "Strophic hinge; planar cardinal area"
+         , A = "Anterior-coiling lophophore"
+         , L = "Low ventral interarea; attached"
+         , '  ' = 'setulose larvae'
+         #, c = "Canaliculate structure"
+         #, p = "Punctae"
+         , '*' = "Brachiopod crown group"
          )
 
 noteLegend <- paste0('<g id="legend" transform="translate(', onEdge[1], ' ',
-                     round(lineHeight * 3 + 4L, 2), ')"><text x="0" y="0">',
+                     round(lineHeight * 3, 2), ')"><text x="0" y="0">',
                      paste0(
-                       sprintf('<tspan x="0" dy="%s" class="annot">%s</tspan>', round(lineHeight * 2L, 2), names(key)),
+                       sprintf('<tspan x="0" dy="%s" class="annot">%s</tspan>', round(lineHeight * 1.5, 2), names(key)),
                        sprintf('<tspan x="2em">%s</tspan>', key), collapse=''),
                      '</text></g>', collapse = '')
 
@@ -156,7 +164,7 @@ annotations <- paste0(vapply(notes, function (note)
 
 circles <- paste0(sprintf('<circle cx="%s" cy="%s"></circle>',
                           onEdge[c(1, 6, 8, 12, 13, 17)],
-                          c(lineHeight * 3L, conY[c(43, 97, 80, 85, 31)])),
+                          c(lineHeight * 3L - 4L, conY[c(43, 97, 80, 85, 31)])),
                   collapse='')
 
 svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="',
