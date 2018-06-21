@@ -306,7 +306,6 @@ function toggleDetails() {
   $('#stateNotes' + index).slideToggle();
   if ($this.html() == "[Hide details]") {
     // Leave tree, or it's too bouncy.
-    $('div.switcher').eq(index).show();
     $this.html("[Show details]");
   } else {
     $('svg.tree').eq(index).slideDown();
