@@ -1110,16 +1110,29 @@ function showNodeNotes (e) {
 $("#conTree").click(showNodeNotes)
 
 
-// Hide SVGs if not desired
+// Hide details if not desired
 function toggleSVG() {
+  $('svg.tree').toggle();
+  $('div.switcher').toggle();
   if (document.getElementById('showOrHide').innerHTML == 'hide') {
-    $('svg.tree').css('display', 'none');
-    $('div.switcher').css('display', 'none');
     document.getElementById('showOrHide').innerHTML = 'show'
   } else {
-    $('svg.tree').css('display', 'block');
-    $('div.switcher').css('display', 'block');
     document.getElementById('showOrHide').innerHTML = 'hide'
+  }
+}
+
+function toggleDetails() {
+  $this = $(this);
+  index = $this.data('index');
+  $('#stateNotes' + index).slideToggle();
+  if ($this.html() == "[Hide details]") {
+    $('svg.tree').eq(index).slideUp();
+    $('div.switcher').eq(index).show();
+    $this.html("[Show details]");
+  } else {
+    $('svg.tree').eq(index).slideDown();
+    $('div.switcher').eq(index).slideDown();
+    $this.html("[Hide details]");
   }
 }
 
@@ -1217,6 +1230,21 @@ $(document).ready(function() {
   window.$my = {
     trees : $("svg.tree")
   };
+  // Produce detail toggler for each character
+  var originalToggler = $("div.toggleDetails");
+  $stateNotes = $('div.state-notes');
+  $stateNotes.each(function(index) {
+      var $theseNotes = $(this);
+      $theseNotes.attr('id', 'stateNotes' + index);
+      var togglerClone = originalToggler
+            .clone()
+            .data('index', index)
+            .click(toggleDetails)
+            .insertBefore($theseNotes);
+    }
+  );
+  $stateNotes.hide();
+  originalToggler.remove();
 
   // Produce switcher box by each SVG plot
   var originalSwitcher = $("div.switcher");
@@ -7994,6 +8022,9 @@ of epithelium” – <span class="citation">Temereva &amp; Kosevich (<a href="#r
 </div>
 <div class="switcher">
 <span class="selectTree">Tree number:</span><input class="switcherNumber" type="number" min="1" max="92"  oninput="switchTree(this)" value="92"></input>
+</div>
+<div class="toggleDetails">
+[Show details]
 </div>
 
 </div>
