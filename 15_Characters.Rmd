@@ -12,7 +12,7 @@ Alongside its definition, each character has been mapped onto a tree.
  `r if (knitr::is_html_output()) 'Any of the optimal trees can be selected by modifying the tree number listed above each diagram.' else 'Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting. Other trees can be viewed in the HTML version of this document at [ms609.github.io/hyoliths](https://ms609.github.io/hyoliths/reconstructions.html).'`
 Each tip is labelled according to its coding in the matrix.  These states have been used to reconstruct the condition of each internal node, using the parsimony method of @Brazeau2018 as implemented in the _R_ package _Inapp_.
 
-We emphasize that different trees give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.  `r if(knitr::is_html_output()) cat('<a href="javascript:toggleSVG();">Click here</a> to <span id="showOrHide">hide</span> the character reconstructions below.')`
+We emphasize that different trees give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.  `r if(knitr::is_html_output()) '<a href="javascript:toggleSVG();">Click here</a> to <span id="showOrHide">hide</span> the character reconstructions below.'`
 
 ```{R load-the-characters, echo=FALSE, message=FALSE}
 source('loadTrees.R')
@@ -305,7 +305,7 @@ function toggleDetails() {
   index = $this.data('index');
   $('#stateNotes' + index).slideToggle();
   if ($this.html() == "[Hide details]") {
-    $('svg.tree').eq(index).slideUp();
+    // Leave tree, or it's too bouncy.
     $('div.switcher').eq(index).show();
     $this.html("[Show details]");
   } else {
