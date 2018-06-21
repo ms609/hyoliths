@@ -30,6 +30,15 @@
   color: #1e6cbb;
 }
 
+.book .book-body .page-wrapper .page-inner section.normal .toggleDetails {
+    float: right;
+    position: relative;
+    right: 1em;
+    display: flow-root;
+    font-size: smaller;
+    top: -1.5em;
+}
+
 svg {
   clear: both;
 }
@@ -40,7 +49,7 @@ path {
   stroke-width: 2.5;
 }
 
-path.inapplicable {
+.inapplicable {
   stroke-dasharray: 6;
 }
 
@@ -64,19 +73,19 @@ path.inapplicable {
   font-size: 8pt;
 }
 
-text.stepsLabel {
+.stepsLabel {
   fill: #aab;
 }
 
-svg tspan.score, svg tspan.fitch, svg text.flag, svg text.dud-step  {
+svg tspan.score, svg tspan.fitch, svg .flag, svg .dud-step  {
   font-weight: bold;
 }
 
-tspan.score {
+.score {
   fill: #34caaf;
 }
 
-tspan.fitch {
+.fitch {
   fill: #ca3456;
 }
 
@@ -87,21 +96,21 @@ circle {
   fill: none;
 }
 
-svg text.dud-step {
+svg .dud-step {
   display: none;
   fill: #ca3456;
   opacity: 0;
 }
 
-svg text.dud-step:hover {
+svg .dud-step:hover {
   opacity: 1;
 }
 
-svg text.highlightTaxon {
+svg .highlightTaxon {
   font-weight: bold;
 }
 
-tspan.thisAn {
+.thisAn {
   fill: #34caaf;
 }
 

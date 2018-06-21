@@ -289,16 +289,24 @@ function showNodeNotes (e) {
 $("#conTree").click(showNodeNotes)
 
 
-// Hide SVGs if not desired
+// Hide details if not desired
 function toggleSVG() {
+  $('svg.tree').toggle();
+  $('div.switcher').toggle();
   if (document.getElementById('showOrHide').innerHTML == 'hide') {
-    $('svg.tree').css('display', 'none');
-    $('div.switcher').css('display', 'none');
     document.getElementById('showOrHide').innerHTML = 'show'
   } else {
-    $('svg.tree').css('display', 'block');
-    $('div.switcher').css('display', 'block');
     document.getElementById('showOrHide').innerHTML = 'hide'
+  }
+}
+
+function toggleDetails() {
+  $('div.state-notes').toggle();
+  $togglers = $("div.toggleDetails");
+  if ($togglers.first().children().html() == "[Hide details]") {
+    $togglers.children().html("[Show details]")
+  } else {
+    $togglers.children().html("[Hide details]")
   }
 }
 
@@ -396,6 +404,14 @@ $(document).ready(function() {
   window.$my = {
     trees : $("svg.tree")
   };
+  // Produce detail toggler for each character
+  var originalToggler = $("div.toggleDetails");
+  $('div.state-notes').each(function() {
+      var theseNotes = $(this);
+      var togglerClone = originalToggler.clone().insertBefore(theseNotes);
+    }
+  );
+  originalToggler.remove();
 
   // Produce switcher box by each SVG plot
   var originalSwitcher = $("div.switcher");
@@ -665,6 +681,7 @@ if (exists('localInstance') || knitr::is_html_output()) {
     '<span class="selectTree">Tree number:</span>',
     '<input class="switcherNumber" type="number" min="1" max="',
     n_tree, '"  oninput="switchTree(this)" value="', n_tree, '"></input>',
-    '</div>'))
+    '</div><div class="toggleDetails"><a href="javascript:toggleDetails();">',
+    '[Hide details]</a></div>'))
 }
 ```
