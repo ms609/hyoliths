@@ -90,32 +90,43 @@ tips <- paste0('<text x="',  conX[conTerminal],
 nodes <- paste0('<text x="', conX[conInternal][-1] + 2L, '" y="', conY[conInternal][-1] + 4L,
                 '" class="nodeLabel"><tspan  fill="', conLabelColour1[-1] ,'">',
                 conLabel1[-1], '</tspan>/<tspan  fill="', conLabelColour2[-1] ,'">',
-                conLabel2[-1], '</tspan></text>', collapse='')
+                conLabel2[-1], '</tspan><tspan class="hidden"> [', conInternal[-1],
+                ']</tspan></text>', collapse='')
 tipLegend <- paste0('<g transform="translate(', svgWidth, ' ', figHeight, ')">',
                     '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                     paste0('<tspan x="0" dy="-1.2em" fill="', groupCol, '">',
                            names(groupCol), '</tspan>', collapse=''),
                     '<tspan x="0" dy="-1.2em" class="bold">Key to colours:</tspan>',
                     '</text></g>')
+halfEdge <- ((conXStep[2] - conXStep[1]) / 2)
+legendKey <- conXStep[2] + halfEdge - 3
 notes <- c(list(c(conXStep[11] + 5L, lineHeight * 16.5, '<tspan>Crown group</tspan><tspan dx="-6.2em" dy="1.2em">Brachiopoda</tspan>'),
-              c(0,0,0)),
-lapply(2:21, function (x) c(conXStep[x], lineHeight * 1, x)),
-lapply(2:21, function (x) c(conXStep[x], lineHeight * 24, x)),
-lapply(2:21, function (x) c(conXStep[x], lineHeight * 47, x)),
-lapply(1:60, function (x) c(10, lineHeight * x, x)),
-lapply(1:60, function (x) c(svgWidth-20, lineHeight * x, x)),
-lapply(1:60, function (x) c(svgWidth/2, lineHeight * x, x))
+                c(conXStep[3] + halfEdge, lineHeight * 11 + 4L, "A"),
+              c(0,0,0))
+#, lapply(2:21, function (x) c(conXStep[x], lineHeight * 1, x))
+#, lapply(2:21, function (x) c(conXStep[x], lineHeight * 24, x))
+#, lapply(2:21, function (x) c(conXStep[x], lineHeight * 47, x))
+#, lapply(1:60, function (x) c(10, lineHeight * x, x))
+#, lapply(1:60, function (x) c(svgWidth-20, lineHeight * x, x))
+#, lapply(1:60, function (x) c(svgWidth/2, lineHeight * x, x))
 )
+key <- c(' ' = "Carbonate mineralogy",
+         A = "Strophic hinge; planar cardinal area",
+         B = "Migration of pedicle to valve umbo")
+
+noteLegend <- paste0('<g id="legend" transform="translate(12 ',
+                     lineHeight * 3 + 4L, ')"><text x="0" y="0">',
+                     sprintf('<tspan x="0" dy="%s" class="bold">%s</tspan>', lineHeight * (seq_along(key) - 1L) * 2L, names(key)),
+                     sprintf('<tspan x="2em">%s</tspan>', key),
+                     '</text></g>', collapse = '')
+
 annotations <- paste0(vapply(notes, function (note)
   sprintf('\n\n<text x="%s" y="%s" class="annotation">%s</text>\n\n', note[1], note[2], note[3]),
   character(1)), collapse='')
 
-CircleX <- function (taxa) mean(conX[which(conTips %in% taxa)]) - 4L
-CircleY <- function (taxa) mean(conY[which(conTips %in% taxa)]) + 4L
-
 circles <- paste0(sprintf('<circle cx="%s" cy="%s"></circle>',
-                          conXStep[c(6)] + ((conXStep[2] - conXStep[1]) / 2),
-                          vapply(list('Halkieria_evangelista'), CircleY, double(1)) - 4L),
+                          conXStep[c(1, 6, 8, 12, 13, 17)] + halfEdge,
+                          c(lineHeight * 3L, conY[c(43, 97, 80, 85, 31)])),
                   collapse='')
 
 svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="',
@@ -124,8 +135,9 @@ svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width
                     'text.nodeLabel{font-size:8pt}',
                     'svg {font-family: "Arial", sans-serif;font-size:9pt}',
                     '.bold,.annotation{font-weight:bold}',
+                    '.hidden{display:none}',
                     '.annotation{fill:#444}',
                     'circle{r:5px;fill:#f2e259;stroke:black;stroke-width:2px;}',
                     ']]></style></defs>',
-                    tipLegend, tips, edges, nodes, annotations, circles, '</svg>')
+                    tipLegend, noteLegend, tips, edges, annotations, circles, nodes, '</svg>')
 write(svgSource, file="textFigure-raw.svg")
