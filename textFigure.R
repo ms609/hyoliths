@@ -80,8 +80,8 @@ conY <- round(conY, 1)
 edges <- paste0('<path d="', paste0('M', conX[conParent], ',', conY[conParent],
                                     'V', conY[conChild], 'H', conX[conChild],
                                     collapse=''), '" stroke="#888" fill="none"></path>')
-tips <- paste0('<text x="', (conX[conTerminal] + 0L),
-               '" y="', conY[conTerminal] + 4L,
+tips <- paste0('<text x="',  conX[conTerminal],
+               '" y="', 4L + conY[conTerminal],
                '" fill="', taxonColour[conTips[conTerminal]],
                '" class="taxonLabel', ifelse(conTips == 'Pedunculotheca_diania', ' bold', ''),
                '">',
@@ -100,11 +100,23 @@ tipLegend <- paste0('<g transform="translate(', svgWidth, ' ', figHeight, ')">',
 notes <- c(list(c(conXStep[11] + 5L, lineHeight * 16.5, '<tspan>Crown group</tspan><tspan dx="-6.2em" dy="1.2em">Brachiopoda</tspan>'),
               c(0,0,0)),
 lapply(2:21, function (x) c(conXStep[x], lineHeight * 1, x)),
-lapply(1:60, function (x) c(10, lineHeight * x, x))
+lapply(2:21, function (x) c(conXStep[x], lineHeight * 24, x)),
+lapply(2:21, function (x) c(conXStep[x], lineHeight * 47, x)),
+lapply(1:60, function (x) c(10, lineHeight * x, x)),
+lapply(1:60, function (x) c(svgWidth-20, lineHeight * x, x)),
+lapply(1:60, function (x) c(svgWidth/2, lineHeight * x, x))
 )
 annotations <- paste0(vapply(notes, function (note)
   sprintf('\n\n<text x="%s" y="%s" class="annotation">%s</text>\n\n', note[1], note[2], note[3]),
   character(1)), collapse='')
+
+CircleX <- function (taxa) mean(conX[which(conTips %in% taxa)]) - 4L
+CircleY <- function (taxa) mean(conY[which(conTips %in% taxa)]) + 4L
+
+circles <- paste0(sprintf('<circle cx="%s" cy="%s"></circle>',
+                          conXStep[c(6)] + ((conXStep[2] - conXStep[1]) / 2),
+                          vapply(list('Halkieria_evangelista'), CircleY, double(1)) - 4L),
+                  collapse='')
 
 svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="',
                     svgWidth, '" height="', figHeight, '"><defs><style type="text/css">',
@@ -113,6 +125,7 @@ svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width
                     'svg {font-family: "Arial", sans-serif;font-size:9pt}',
                     '.bold,.annotation{font-weight:bold}',
                     '.annotation{fill:#444}',
+                    'circle{r:5px;fill:#f2e259;stroke:black;stroke-width:2px;}',
                     ']]></style></defs>',
-                    annotations, tipLegend, tips, edges, nodes, '</svg>')
+                    tipLegend, tips, edges, nodes, annotations, circles, '</svg>')
 write(svgSource, file="textFigure-raw.svg")
