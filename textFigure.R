@@ -84,14 +84,14 @@ tips <- paste0('<text x="',  conX[conTerminal],
                '" y="', 4L + conY[conTerminal],
                '" fill="', taxonColour[conTips[conTerminal]],
                '" class="taxonLabel', ifelse(conTips == 'Pedunculotheca_diania', ' bold', ''),
-               '">',
+               '"><tspan class="hidden">[', conTerminal, '] </tspan>',
                gsub('_', ' ', conTips[conTerminal], fixed=TRUE), '</text>',
                collapse='')
 nodes <- paste0('<text x="', conX[conInternal][-1] + 2L, '" y="', conY[conInternal][-1] + 4L,
-                '" class="nodeLabel"><tspan  fill="', conLabelColour1[-1] ,'">',
+                '" class="nodeLabel"><tspan class="hidden">[', conInternal[-1],
+                '] </tspan><tspan  fill="', conLabelColour1[-1] ,'">',
                 conLabel1[-1], '</tspan>/<tspan  fill="', conLabelColour2[-1] ,'">',
-                conLabel2[-1], '</tspan><tspan class="hidden"> [', conInternal[-1],
-                ']</tspan></text>', collapse='')
+                conLabel2[-1], '</tspan></text>', collapse='')
 tipLegend <- paste0('<g transform="translate(', svgWidth, ' ', figHeight, ')">',
                     '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                     paste0('<tspan x="0" dy="-1.2em" fill="', groupCol, '">',
@@ -99,9 +99,33 @@ tipLegend <- paste0('<g transform="translate(', svgWidth, ' ', figHeight, ')">',
                     '<tspan x="0" dy="-1.2em" class="bold">Key to colours:</tspan>',
                     '</text></g>')
 halfEdge <- ((conXStep[2] - conXStep[1]) / 2)
+onEdge <- conXStep + halfEdge
+onNode <- conY + 4L
+overEdge <- conY - (lineHeight / 2)
+underEdge <- conY + (lineHeight / 2) + 3L
+onLine <- lineHeight * seq_len(nConTip) + 4L
 legendKey <- conXStep[2] + halfEdge - 3
 notes <- c(list(c(conXStep[11] + 5L, lineHeight * 16.5, '<tspan>Crown group</tspan><tspan dx="-6.2em" dy="1.2em">Brachiopoda</tspan>'),
-                c(conXStep[3] + halfEdge, lineHeight * 11 + 4L, "A"),
+                c(onEdge[6 ], overEdge[66], "Pe+"),
+                c(onEdge[9 ], overEdge[98], "Pe-"), # Hyolith loss
+                c(onEdge[12], overEdge[80], "Pe-"), # Crani. loss
+                c(onEdge[9 ], overEdge[41], "U"), # Yugano.
+                c(onEdge[9 ], overEdge[10], "U"), # PEd
+                c(onEdge[12], overEdge[84], "U"), # Salany+
+                c(onEdge[17], overEdge[89], "Co"), # Top 4 rhunchs
+                c(onEdge[15], overEdge[75], "D"),  # Discinids & pals
+                c(onEdge[11], overEdge[83], "St"), # Pater + Rhync
+                c(onEdge[11], overEdge[83], "St"), # Pater + Rhync
+                c(onEdge[3 ], overEdge[48], "Cn"), # Namacal
+                c(onEdge[11], underEdge[ 9], "Cn"), # PAramicro
+                c(onEdge[11], underEdge[ 5], "Cn"), # Cupi
+                c(onEdge[10], overEdge[95], "Pn,Cn"), # Micrina gp
+                c(onEdge[16], underEdge[79], "Cn"), # Disc
+                c(onEdge[18], overEdge[36], "Cn"), # Disc
+                c(onEdge[13], underEdge[40], "Pn"), # Lingula
+                c(onEdge[20], overEdge[20], "Pn"), # Terebrata
+                c(onEdge[15], overEdge[27], "Pn"), # Novocrania
+                c(onEdge[18], overEdge[78], "Pn"), # Siph/Acanth
               c(0,0,0))
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 1, x))
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 24, x))
@@ -111,8 +135,14 @@ notes <- c(list(c(conXStep[11] + 5L, lineHeight * 16.5, '<tspan>Crown group</tsp
 #, lapply(1:60, function (x) c(svgWidth/2, lineHeight * x, x))
 )
 key <- c(' ' = "Carbonate mineralogy",
-         A = "Strophic hinge; planar cardinal area",
-         B = "Migration of pedicle to valve umbo")
+         Pe = "Pedicle",
+         U = "Migration of pedicle to valve umbo",
+         Co = "Coelom lost in pedicle",
+         D = "Delthyrium surrounds pedicle",
+         St = "Strophic hinge; planar cardinal area",
+         Cn = "Canaliculate structure",
+         Pn = "Punctae",
+         x = 'x')
 
 noteLegend <- paste0('<g id="legend" transform="translate(12 ',
                      lineHeight * 3 + 4L, ')"><text x="0" y="0">',
@@ -125,7 +155,7 @@ annotations <- paste0(vapply(notes, function (note)
   character(1)), collapse='')
 
 circles <- paste0(sprintf('<circle cx="%s" cy="%s"></circle>',
-                          conXStep[c(1, 6, 8, 12, 13, 17)] + halfEdge,
+                          onEdge[c(1, 6, 8, 12, 13, 17)],
                           c(lineHeight * 3L, conY[c(43, 97, 80, 85, 31)])),
                   collapse='')
 
@@ -136,7 +166,7 @@ svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width
                     'svg {font-family: "Arial", sans-serif;font-size:9pt}',
                     '.bold,.annotation{font-weight:bold}',
                     '.hidden{display:none}',
-                    '.annotation{fill:#444}',
+                    '.annotation{fill:#444;text-anchor:middle}',
                     'circle{r:5px;fill:#f2e259;stroke:black;stroke-width:2px;}',
                     ']]></style></defs>',
                     tipLegend, noteLegend, tips, edges, annotations, circles, nodes, '</svg>')
