@@ -409,7 +409,9 @@ $(document).ready(function() {
 });
 </script>
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
+################################################################################
 ## These function definitions must be in the same block as when they are called.
+################################################################################
 Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
 PrintDivision <- function (parts) cat(Header(2L, paste(
   Italicize(this_char_parts[1:parts]), collapse=': ')))
