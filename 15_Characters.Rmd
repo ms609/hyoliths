@@ -301,12 +301,17 @@ function toggleSVG() {
 }
 
 function toggleDetails() {
-  $('div.state-notes').toggle();
-  $togglers = $("div.toggleDetails");
-  if ($togglers.first().children().html() == "[Hide details]") {
-    $togglers.children().html("[Show details]")
+  $this = $(this);
+  index = $this.data('index');
+  $('#stateNotes' + index).slideToggle();
+  if ($this.html() == "[Hide details]") {
+    $('svg.tree').eq(index).slideUp();
+    $('div.switcher').eq(index).show();
+    $this.html("[Show details]");
   } else {
-    $togglers.children().html("[Hide details]")
+    $('svg.tree').eq(index).slideDown();
+    $('div.switcher').eq(index).slideDown();
+    $this.html("[Hide details]");
   }
 }
 
@@ -406,11 +411,18 @@ $(document).ready(function() {
   };
   // Produce detail toggler for each character
   var originalToggler = $("div.toggleDetails");
-  $('div.state-notes').each(function() {
-      var theseNotes = $(this);
-      var togglerClone = originalToggler.clone().insertBefore(theseNotes);
+  $stateNotes = $('div.state-notes');
+  $stateNotes.each(function(index) {
+      var $theseNotes = $(this);
+      $theseNotes.attr('id', 'stateNotes' + index);
+      var togglerClone = originalToggler
+            .clone()
+            .data('index', index)
+            .click(toggleDetails)
+            .insertBefore($theseNotes);
     }
   );
+  $stateNotes.hide();
   originalToggler.remove();
 
   // Produce switcher box by each SVG plot
@@ -681,7 +693,6 @@ if (exists('localInstance') || knitr::is_html_output()) {
     '<span class="selectTree">Tree number:</span>',
     '<input class="switcherNumber" type="number" min="1" max="',
     n_tree, '"  oninput="switchTree(this)" value="', n_tree, '"></input>',
-    '</div><div class="toggleDetails"><a href="javascript:toggleDetails();">',
-    '[Hide details]</a></div>'))
+    '</div><div class="toggleDetails">[Show details]</div>'))
 }
 ```
