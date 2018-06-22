@@ -104,7 +104,8 @@ if (exists('localInstance') || knitr::is_html_output()) {
       nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
     }
     nodeY[[i]] <- round(nodeYi, 1)
-    nodeSupport[i, ] <- round(SplitSupport(tree, allSplits, tipIndex)[-1] / length(allTrees), 2)
+    nodeSupport[i, ] <- round(SplitSupport(tree, allSplits, tipIndex)[-1]
+                              / length(allTrees), 2)
   }
 }
 ```
