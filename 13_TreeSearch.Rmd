@@ -58,7 +58,7 @@ for (k in kValues) {
   iw.consensus <- IWRatchetConsensus(iw.tree, iw_data, concavity=k,
                   swappers=list(RootedTBRSwap, RootedNNISwap),
                   searchHits=55, searchIter=4000, nSearch=250, verbosity=0L)
-  write.nexus(iw.consensus, 
+  write.nexus(iw.consensus,
               file=paste0("TreeSearch/hy_iw_k", k, "_", 
                           signif(IWScore(iw.consensus[[1]], iw_data, concavity=k), 5),
                           ".all.nex", collapse=''))
@@ -123,6 +123,8 @@ for (k in kValues) {
 ```
 
 ## Results
+
+Optimal trees can be downloaded in Nexus format from `r GitLink('TreeSearch', raw=FALSE)`.
 
 ```{R treesearch-load-trees, echo=FALSE}
 # Read results from files

@@ -66,6 +66,8 @@ tnTrees <- lapply(tnTrees, function (x) lapply(x, drop.tip, ignored_taxa))
 tnConsensi <- lapply(tnTrees, consensus)
 ```
 
+Optimal trees can be downloaded in TNT Newick format from `r GitLink('TNT', raw=FALSE)`.
+
 (ref:tnt-maj-cons) Majority-rule consensus of all trees that are optimal under implied weights.
 
 (ref:tnt-node-freq) Node labels denote, where less than 100%, the frequency of each node in the set of all optimal trees.

@@ -77,6 +77,8 @@ knitr::kable(pstat)
 
 ## Results
 
+The posterior tree distribution can be downloaded in Nexus format from `r GitLink('MrBayes', raw=FALSE)`.
+
 ```{R mrbayes-full-consensus, fig.width=6, fig.height=4.5, fig.cap="Results of Bayesian analysis, posterior probability > 50%, all taxa", echo=FALSE}
 omit <- c("none")
  # 'Novocrania', 'Craniops', 'Ussunia', 'Gasconsia',

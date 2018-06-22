@@ -58,12 +58,12 @@ PrintNaughtyInapplicables <- function (states) {
         paste(names(states[states == '-']), collapse="  \n - "))
 }
 
-GitLink <- function (gitSuffix, alt=NULL) {
+GitLink <- function (gitSuffix, alt=NULL, raw=TRUE) {
   paste0(" [",
          if (!knitr::is_html_output() || is.null(alt)) {
-           paste0(gsub("https://", "", rawGit, fixed=TRUE), gitSuffix)
+           paste0(gsub("https://", "", ifelse(raw, rawGit, gitHubUrl), fixed=TRUE), gitSuffix)
          } else alt, "](",
-         rawGit, gitSuffix, ")")
+         ifelse(raw, rawGit, gitHubUrl), gitSuffix, ")")
 }
 
 morphoBankRefereeAccess <- "<mark>[This dataset will be released on publication

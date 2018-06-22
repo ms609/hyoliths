@@ -52,6 +52,7 @@ refKeys <- apply(refs, 1, RefKey) # Needed before ReadNotes
 ```
 ```{R setup-more, include=FALSE, message=FALSE}
 rawGit <- "https://raw.githubusercontent.com/ms609/hyoliths/master/"
+gitHubUrl <- "https://github.com/ms609/hyoliths/tree/master/"
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 tntKs <- as.double(gsub(".*xpiwe([\\d\\.]+)\\..*", "\\1", tntFiles, perl=TRUE))
 tntFiles <- tntFiles[order(tntKs)]
