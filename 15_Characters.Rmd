@@ -1,7 +1,6 @@
 ---
 title: "Visualizing characters"
 author: "Martin R. Smith"
-date: "`r Sys.Date()`"
 ---
 
 # Character reconstructions {#reconstructions}
@@ -17,15 +16,15 @@ We emphasize that different trees give different reconstructions.  The character
 ```{R load-the-characters, echo=FALSE, message=FALSE}
 source('loadTrees.R')
 if (exists('localInstance') || knitr::is_html_output()) {
-  trees <- unique(allTrees)
+  uniqueTrees <- unique(allTrees)
 } else if (length(iw.exist) > 1L) {
-  trees <- iw.exist[[ceiling(length(iw.exist)/2L)]][1] # Single [] to keep as a list of 1 tree.
+  uniqueTrees <- iw.exist[[ceiling(length(iw.exist)/2L)]][1] # Single [] to keep as a list of 1 tree.
 } else {
-  trees <- allTrees[1]
+  uniqueTrees <- allTrees[1]
 }
-tree <- trees[[1]]
+tree <- uniqueTrees[[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
-rootedTrees <- lapply(trees, RootTree, outgroupTips=rootingTips)
+rootedTrees <- lapply(uniqueTrees, RootTree, outgroupTips=rootingTips)
 
 char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
 n_char <- ncol(my_chars)
@@ -37,7 +36,7 @@ taxa_plaintext <- gsub("_", " ", taxa_names, fixed=TRUE)
 taxa_italic <- paste0("_", taxa_plaintext, "_")
 
 index <- attr(my_data, 'index')
-ci_text <- vapply(trees, function (tree) {
+ci_text <- vapply(uniqueTrees, function (tree) {
   fitch_consistency_index <- CI(tree, fitch_data, sitewise=TRUE)
   fitch_steps <- fitch(tree, fitch_data, site='site')[index]
   min_steps <- fitch_consistency_index * fitch_steps
@@ -63,7 +62,7 @@ if (exists('localInstance') || knitr::is_html_output()) {
   nTrees <- sum(nTree)
   treeIndex <- vapply(allTrees,
                       function (tr1)
-                        which(vapply(trees, all.equal, logical(1), tr1, 
+                        which(vapply(uniqueTrees, all.equal, logical(1), tr1, 
                                      use.tip.label=TRUE, use.edge.length=FALSE)),
                       integer(1))
   
@@ -72,9 +71,9 @@ if (exists('localInstance') || knitr::is_html_output()) {
   treeXMargins <- c(5L, 200L)
   treeYMargins <- c(7L, 8L)
   
-  n_tree <- length(trees)
+  n_tree <- length(uniqueTrees)
   eachTree <- seq_len(n_tree)
-  n_tip <- length(trees[[1]]$tip.label)
+  n_tip <- length(uniqueTrees[[1]]$tip.label)
   n_node <- n_tip - 1L
   internal <- n_tip + seq_len(n_node)
   terminal <- seq_len(n_tip)
@@ -656,7 +655,7 @@ for (i in seq_len(n_char)) {
     }
     cat(svgSource)
   } else {
-    plot.states.matrix(apply.reconstruction(trees[[1]], my_chars_i),
+    plot.states.matrix(apply.reconstruction(uniqueTrees[[1]], my_chars_i),
                        passes=0, counts=1:2, show.labels=1,
                        col.states=TRUE, state.labels=stateLabels,
                        use.edge.length=TRUE, legend.pos='topright')
