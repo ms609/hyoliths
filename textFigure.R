@@ -163,8 +163,8 @@ annotations <- paste0(vapply(notes, function (note)
   character(1)), collapse='')
 
 circles <- paste0(sprintf('<circle cx="%s" cy="%s"></circle>',
-                          onEdge[c(1, 6, 8, 12, 13, 17)],
-                          c(lineHeight * 3L - 4L, conY[c(43, 97, 80, 85, 31)])),
+                          onEdge[c(1, 6, 8, 12, 13, 17, 4)],
+                          c(lineHeight * 3L - 4L, conY[c(43, 97, 80, 85, 32, 59)])),
                   collapse='')
 
 svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="',
