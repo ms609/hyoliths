@@ -58,6 +58,7 @@ if (exists('localInstance') || knitr::is_html_output()) {
   CheckDirExists('_book/Brachiopod_phylogeny_files/figure-html')
   nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
   analysisNames <- c('Equal weights', paste0(c('Implied weights, k = ', rep('IW, k = ', length(kValues) - 1L)), kValues))
+  analysisLabels <- c(analysisNames[-1], analysisNames[1])
   treeNames <- rep(analysisNames, nTree)
   nTrees <- sum(nTree)
   treeIndex <- vapply(allTrees,
@@ -637,9 +638,9 @@ for (i in seq_len(n_char)) {
                     '<tspan dy="16" fill="#34caaf">An optimal tree under:</tspan>', 
                    paste0('<tspan x="', svgWidth - 2L,
                           '" style="font-style:italic" class="',
-                          ifelse(analysisNames %in% treeNames[treeIndex==treeNo],
+                          ifelse(analysisLabels %in% treeNames[treeIndex==treeNo],
                                  'this', 'notThis'),
-                          'An" dy="1.2em">', analysisNames, '</tspan>', collapse=''),
+                          'An" dy="1.2em">', analysisLabels, '</tspan>', collapse=''),
                     '</text>')
       dudSteps <- matrix_data$dud_steps
       naughtyNodes <- if (FALSE && length(dudSteps) > 0) {
