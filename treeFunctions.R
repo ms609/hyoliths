@@ -22,7 +22,7 @@ FormatTree <- function(tree) {
   for (node in tree.ntip + rev(which(swaps))) {
     childEdges <- parent==node
     kids <- child[childEdges]
-    child[childEdges][2:1] <- kids
+    if (all(kids <= tree.ntip)) child[childEdges][2:1] <- kids
   }
   #tree2 <- tree
   #tree2$edge <- cbind(parent, child)
@@ -32,6 +32,7 @@ FormatTree <- function(tree) {
   #tree2
   tree$edge[, 1] <- parent
   tree$edge[, 2] <- child
+#  Renumber(tree)
   tree
 }
 
