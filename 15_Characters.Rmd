@@ -75,11 +75,13 @@ if (exists('localInstance') || knitr::is_html_output()) {
   n_tree <- length(trees)
   eachTree <- seq_len(n_tree)
   n_tip <- length(trees[[1]]$tip.label)
-  internal <- n_tip + seq_len(n_tip - 1)
+  n_node <- n_tip - 1L
+  internal <- n_tip + seq_len(n_node)
   terminal <- seq_len(n_tip)
   tipLabel <- matrix('', n_tree, n_tip)
   n_edge <- dim(tree$edge)[1]
   eachEdge <- seq_len(n_edge)
+  nodeSupport <- matrix(0, n_tree, n_node - 1L) # root = 100%
   parents <- children <- matrix(0, n_tree, n_edge)
   xStep <- nodeX <- nodeY <- vector('list', n_tree)
   yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
@@ -103,6 +105,7 @@ if (exists('localInstance') || knitr::is_html_output()) {
       nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
     }
     nodeY[[i]] <- round(nodeYi, 1)
+    nodeSupport[i, ] <- round(SplitSupport(tree, allSplits, tipIndex)[-1] / length(allTrees), 2)
   }
 }
 ```
@@ -574,6 +577,7 @@ for (i in seq_len(n_char)) {
       tree <- rootedTrees[[treeNo]]
       nodeXi <- nodeX[[treeNo]]
       nodeYi <- nodeY[[treeNo]]
+      nodeSupporti <- nodeSupport[treeNo, ]
       states_matrix <- apply.reconstruction(tree, my_chars_i)
       fitch_states <- apply.reconstruction(tree, my_chars_i, method='Fitch', inapplicable=1)
       matrix_data <- MatrixData(states_matrix, fitch_states, state.labels=stateLabels)
@@ -582,7 +586,6 @@ for (i in seq_len(n_char)) {
       edgeCol <- matrix_data$edge_col
       flagCol <- matrix_data$tips_colours
       tipFlag <- matrix_data$tips_labels
-      nodeSupport <- round(SplitSupport(tree, allSplits, tipIndex) / length(allTrees), 2)
       
       LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
       edges <- paste0(vapply(unique(edgeCol), function(colour) {
@@ -608,8 +611,8 @@ for (i in seq_len(n_char)) {
                      collapse='')
       nodes <- paste0('<text x="', (nodeXi[internal][-1] + 2L), 
                       '" y="', nodeYi[internal][-1] + textY,
-                      '" class="node" fill="', NodeColour(nodeSupport[-1]),
-                      '">', nodeSupport[-1], '</text>', collapse='')
+                      '" class="node" fill="', NodeColour(nodeSupporti),
+                      '">', nodeSupporti, '</text>', collapse='')
       nRegions <- length(states_matrix$regions)
       if (states_matrix$score == fitch_states$score) {
         fitchNote1 <- fitchNote2 <- ''
