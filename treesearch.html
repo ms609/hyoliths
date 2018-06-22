@@ -470,7 +470,7 @@ start.tree &lt;-<span class="st"> </span><span class="kw">TreeSearch</span>(<spa
   iw.consensus &lt;-<span class="st"> </span><span class="kw">IWRatchetConsensus</span>(iw.tree, iw_data, <span class="dt">concavity=</span>k,
                   <span class="dt">swappers=</span><span class="kw">list</span>(RootedTBRSwap, RootedNNISwap),
                   <span class="dt">searchHits=</span><span class="dv">55</span>, <span class="dt">searchIter=</span><span class="dv">4000</span>, <span class="dt">nSearch=</span><span class="dv">250</span>, <span class="dt">verbosity=</span>0L)
-  <span class="kw">write.nexus</span>(iw.consensus, 
+  <span class="kw">write.nexus</span>(iw.consensus,
               <span class="dt">file=</span><span class="kw">paste0</span>(<span class="st">&quot;TreeSearch/hy_iw_k&quot;</span>, k, <span class="st">&quot;_&quot;</span>, 
                           <span class="kw">signif</span>(<span class="kw">IWScore</span>(iw.consensus[[<span class="dv">1</span>]], iw_data, <span class="dt">concavity=</span>k), <span class="dv">5</span>),
                           <span class="st">&quot;.all.nex&quot;</span>, <span class="dt">collapse=</span><span class="st">&#39;&#39;</span>))
@@ -490,6 +490,7 @@ ew.consensus &lt;-<span class="st"> </span><span class="kw">RatchetConsensus</sp
 </div>
 <div id="results-1" class="section level2">
 <h2><span class="header-section-number">3.3</span> Results</h2>
+<p>Optimal trees can be downloaded in Nexus format from <a href="https://github.com/ms609/hyoliths/tree/master/TreeSearch">github.com/ms609/hyoliths/tree/master/TreeSearch</a>.</p>
 
 
 <div class="figure"><span id="fig:treesearch-maj-consensus"></span>

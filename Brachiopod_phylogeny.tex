@@ -355,6 +355,9 @@ software.
 
 \section{Results}\label{results}
 
+Optimal trees can be downloaded in TNT Newick format from
+\href{https://github.com/ms609/hyoliths/tree/master/TNT}{github.com/ms609/hyoliths/tree/master/TNT}.
+
 
 
 
@@ -479,7 +482,7 @@ The position of the root does not affect tree score, so we keep it fixed
 \NormalTok{  iw.consensus <-}\StringTok{ }\KeywordTok{IWRatchetConsensus}\NormalTok{(iw.tree, iw_data, }\DataTypeTok{concavity=}\NormalTok{k,}
                   \DataTypeTok{swappers=}\KeywordTok{list}\NormalTok{(RootedTBRSwap, RootedNNISwap),}
                   \DataTypeTok{searchHits=}\DecValTok{55}\NormalTok{, }\DataTypeTok{searchIter=}\DecValTok{4000}\NormalTok{, }\DataTypeTok{nSearch=}\DecValTok{250}\NormalTok{, }\DataTypeTok{verbosity=}\NormalTok{0L)}
-  \KeywordTok{write.nexus}\NormalTok{(iw.consensus, }
+  \KeywordTok{write.nexus}\NormalTok{(iw.consensus,}
               \DataTypeTok{file=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"TreeSearch/hy_iw_k"}\NormalTok{, k, }\StringTok{"_"}\NormalTok{, }
                           \KeywordTok{signif}\NormalTok{(}\KeywordTok{IWScore}\NormalTok{(iw.consensus[[}\DecValTok{1}\NormalTok{]], iw_data, }\DataTypeTok{concavity=}\NormalTok{k), }\DecValTok{5}\NormalTok{),}
                           \StringTok{".all.nex"}\NormalTok{, }\DataTypeTok{collapse=}\StringTok{''}\NormalTok{))}
@@ -503,6 +506,9 @@ The position of the root does not affect tree score, so we keep it fixed
 \end{Shaded}
 
 \section{Results}\label{results-1}
+
+Optimal trees can be downloaded in Nexus format from
+\href{https://github.com/ms609/hyoliths/tree/master/TreeSearch}{github.com/ms609/hyoliths/tree/master/TreeSearch}.
 
 
 
@@ -675,6 +681,9 @@ m\{1\} & 0.462 & 0.00265 & 3100 & 3720 & 0.99999\\
 \end{tabular}
 
 \section{Results}\label{results-2}
+
+The posterior tree distribution can be downloaded in Nexus format from
+\href{https://github.com/ms609/hyoliths/tree/master/MrBayes}{github.com/ms609/hyoliths/tree/master/MrBayes}.
 
 \begin{figure}
 \centering
