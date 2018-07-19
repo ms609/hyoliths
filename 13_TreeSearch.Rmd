@@ -1,7 +1,6 @@
 ---
 title: "TreeSearch results"
 author: "Martin R. Smith"
-date: "`r Sys.Date()`"
 ---
 
 # Corrected parsimony {#treesearch}
