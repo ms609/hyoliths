@@ -102,8 +102,8 @@ ColMissing <- function (omit, position='bottomleft') {
     MarkMissing(omit, position, text.font=3, cex=0.8, text.col=taxonColour[omit])
 }
 
-#' @param support A vector of doubles in the range 0-1
-NodeColour <- function (support, show1=TRUE) {
+# In TreeSearch 0.1.3
+NodeColour <- SupportColour <- function (support, show1=TRUE) {
   ifelse(is.na(support) | support < 0 | support > 1 | support == '', 'red',
          ifelse(support == 1 & !show1, "#ffffff00", divergingScale[(support * 100) + 1L]))
 }
@@ -146,7 +146,7 @@ PlotPanel <- function (treeList, i, jackFile = NULL) {
       jacks <- GetJacks(jackFile)
       nodeScores <- as.integer(jacks$freq)
       nodelabels(paste0(c('', nodeScores), "\n"),
-                 col=c('black', NodeColour(nodeScores / 200L + 0.5, show1=FALSE)),
+                 col=c('black', SupportColour(nodeScores / 200L + 0.5, show1=FALSE)),
                  adj=0, pos=2, frame='none', cex=0.75)
     }
   }
