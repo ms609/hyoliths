@@ -4,7 +4,7 @@ ew.trees <- if (class(ew.trees) == 'multiPhylo') unique(ew.trees) else ew.trees
 tipIndex <- sort(ew.trees[[1]]$tip.label)
 ew.trees <- as.multiPhylo(ew.trees)
 ew.trees <- lapply(ew.trees, RenumberTips, tipIndex)
-ew.trees <- lapply(ew.trees, FormatTree)
+ew.trees <- lapply(ew.trees, SortTree)
 class(ew.trees) <- 'multiPhylo'
 iw.trees <- lapply(kValues, function (k) {
   iw.best <- list.files('TreeSearch',
@@ -16,10 +16,10 @@ iw.trees <- lapply(kValues, function (k) {
   if (length(iw.best) == 0) {
     list()
   } else {
-    loadedTrees <- read.nexus(iw.best[which.max(order(vapply(iw.best, ApeTime, character(1))))]) # TODO: SHould use dates from file write times
+    loadedTrees <- read.nexus(iw.best[which.max(vapply(iw.best, ApeTime, double(1)))])
     ret <- lapply(if (class(loadedTrees) == 'multiPhylo') unique(loadedTrees) else as.multiPhylo(loadedTrees),
            RenumberTips, tipIndex)
-    ret <- lapply(ret, FormatTree)
+    ret <- lapply(ret, SortTree)
     class(ret) <- 'multiPhylo'
     ret
   }
