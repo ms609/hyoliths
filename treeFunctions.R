@@ -1,5 +1,5 @@
-# Sorts each node into a consistent order, so similar trees look similar.
-FormatTree <- function(tree) {
+# Included in TreeSearch v0.1.3.
+SortTree <- function(tree) {
   edge <- tree$edge
   parent <- edge[, 1]
   child <- edge[, 2]
@@ -60,7 +60,7 @@ GetSplits <- function (trees, tipIndex) {
 
 as.multiPhylo <- phytools::as.multiPhylo
 
-# This function will be included in a future release of TreeSearch.
+# This function will be included in TreeSearch 0.1.3.
 TNTText2Tree <- function (treeText) {
   treeText <- gsub("(\\d+)", "\\1,", treeText, perl = TRUE)
   treeText <- gsub(")(", "),(", treeText, fixed = TRUE)
