@@ -5,7 +5,7 @@ author: "Martin R. Smith"
 
 # Character reconstructions {#reconstructions}
 
-This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank ([project 2800](https://morphobank.org/permalink/?P2800)). `r morphoBankRefereeAccess`
+This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.  Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank `r MorphoLink(2800)`.
 
 Alongside its definition, each character has been mapped onto a tree.
  `r if (knitr::is_html_output()) 'Any of the optimal trees can be selected by modifying the tree number listed above each diagram.' else 'Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting. Other trees can be viewed in the HTML version of this document at [ms609.github.io/hyoliths](https://ms609.github.io/hyoliths/reconstructions.html).'`
