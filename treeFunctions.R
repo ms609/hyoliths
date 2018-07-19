@@ -25,23 +25,19 @@ SortTree <- function(tree) {
     # if (all(kids <= tree.ntip)) child[childEdges][2:1] <- kids
     child[childEdges][2:1] <- kids
   }
-  #tree2 <- tree
-  #tree2$edge <- cbind(parent, child)
-  #dev.new(); par(mfrow=c(2, 1), cex=0.75, mar=rep(0.2, 4))
-  #plot(tree); nodelabels(tree.ntip + rev(which(swaps)), node=tree.ntip + rev(which(swaps)), bg='green')
-  #plot(tree2); nodelabels(tree.ntip + rev(which(swaps)), node=tree.ntip + rev(which(swaps)), bg='green')
-  #tree2
   tree$edge[, 1] <- parent
   tree$edge[, 2] <- child
   attr(tree, 'order') <- NULL
   Cladewise(Renumber(tree))
 }
 
+# This function should be replaced by the equivalent in TreeSearch 0.1.3.
 SplitNumber <- function (tips, tr, tipIndex) {
   included <- tipIndex %in% tr$tip.label[tips]
   as.character(c(sum(powersOf2[included]), sum(powersOf2[!included])))
 }
 
+# This function should be replaced by the equivalent in TreeSearch 0.1.3.
 SplitSupport <- function(tr, splitOccurrences, tipIndex) {
   nTip <- length(tipIndex)
   splits <- Descendants(tr, nTip + seq_len(Nnode(tr)), type='tips')
@@ -49,6 +45,7 @@ SplitSupport <- function(tr, splitOccurrences, tipIndex) {
   splitOccurrences[splitNumbers]
 }
 
+# This function should be replaced by the equivalent in TreeSearch 0.1.3.
 GetSplits <- function (trees, tipIndex) {
   nTip <- length(tipIndex)
   if (class(trees) == 'phylo') trees <- list(trees)

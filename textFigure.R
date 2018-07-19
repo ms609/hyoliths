@@ -36,8 +36,8 @@ bayesSupporters <- SplitSupport(majCon, bayesSplits, tipIndex) / sampleSize
 conLabel1 <- signif(100 * supporters / length(allTrees), 2)
 #conLabel2 <- ifelse(is.na(tnSupporters), '0', signif(100 * tnSupporters, 2))
 conLabel2 <- ifelse(is.na(bayesSupporters), '0', round(100 * bayesSupporters))
-conLabelColour1 <- NodeColour(round(conLabel1 / 100, 2), TRUE)
-conLabelColour2 <- NodeColour(round(bayesSupporters, 2), TRUE)
+conLabelColour1 <- SupportColour(round(conLabel1 / 100, 2), TRUE)
+conLabelColour2 <- SupportColour(round(bayesSupporters, 2), TRUE)
 conLabel1[conLabel1 == 100] <- '.'
 conLabel2[conLabel2 == 100] <- '.'
 
