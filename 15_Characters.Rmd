@@ -613,7 +613,7 @@ for (i in seq_len(n_char)) {
                      collapse='')
       nodes <- paste0('<text x="', (nodeXi[internal][-1] + 2L), 
                       '" y="', nodeYi[internal][-1] + textY,
-                      '" class="node" fill="', NodeColour(nodeSupporti),
+                      '" class="node" fill="', SupportColour(nodeSupporti),
                       '">', nodeSupporti, '</text>', collapse='')
       nRegions <- length(states_matrix$regions)
       if (states_matrix$score == fitch_states$score) {

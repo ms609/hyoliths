@@ -98,7 +98,7 @@ ColPlot(UnitEdges(mbCon))
 supporters <- SplitSupport(mbCon, mbSplits, tipIndex)
 nodeSupport <- c('', signif(supporters[-1] / sampleSize * 100L, 3))
 nodelabels(paste0("\n\n", nodeSupport), adj=0, pos=2, frame='none', cex=0.75,
-           col=NodeColour(round(supporters / sampleSize, 2)))
+           col=SupportColour(round(supporters / sampleSize, 2)))
 #ColMissing(omit)
 ```
 
@@ -127,7 +127,7 @@ ColPlot(UnitEdges(rootedConsensus))
 supporters <- SplitSupport(rootedConsensus, mbSplits, tipIndex)
 nodeSupport <- c('', signif(supporters[-1] / sampleSize * 100L, 3))
 nodelabels(paste0("\n\n", nodeSupport),
-           col=NodeColour(round(supporters / sampleSize, 2)),
+           col=SupportColour(round(supporters / sampleSize, 2)),
            adj=0, pos=2, frame='none', cex=0.75)
 ColMissing(omit)
 ```

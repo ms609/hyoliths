@@ -126,7 +126,6 @@ for (k in kValues) {
 Optimal trees can be downloaded in Nexus format from `r GitLink('TreeSearch', raw=FALSE)`.
 
 ```{R treesearch-load-trees, echo=FALSE}
-# Read results from files
 source('loadTrees.R')
 tipIndex <- sort(allTrees[[1]]$tip.label)
 allSplits <- GetSplits(allTrees, tipIndex)
@@ -142,7 +141,7 @@ supporters <- SplitSupport(majCon, allSplits, tipIndex)
 
 ColPlot(majCon)
 nodelabels(paste0("\n\n", signif(supporters / length(allTrees), 2)),
-           col=NodeColour(round(supporters / length(allTrees), 2)),
+           col=SupportColour(round(supporters / length(allTrees), 2)),
            adj=0, pos=2, frame='none', cex=0.75)
 
 ```
@@ -162,7 +161,7 @@ supporters <- SplitSupport(majCon, conSplits, conTipIndex)
 ####
 ColPlot(majCon)
 nodelabels(paste0("\n", signif(supporters / length(allTrees), 2)),
-           col=NodeColour(round(supporters / length(allTrees), 2)),
+           col=SupportColour(round(supporters / length(allTrees), 2)),
            adj=0, pos=2, frame='none', cex=0.75)
 ColMissing(omit)
 
@@ -209,4 +208,3 @@ ColMissing(omit)
 ```
 
 \clearpage
-
