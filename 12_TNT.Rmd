@@ -90,12 +90,11 @@ for (i in seq_along(tnTrees)) {
   tnFlattened <- c(tnFlattened, tnTrees[[i]])
 }
 tnFlattened <- lapply(tnFlattened, drop.tip, omit)
-tipIndex <- sort(tnFlattened[[1]]$tip.label)
-tnSplits <- GetSplits(tnFlattened, tipIndex)
+tnSplits <- ForestSplits(tnFlattened)
 
-supporters <- SplitSupport(majCon, tnSplits, tipIndex)
+supporters <- SplitFrequency(majCon, tnSplits)
 nodelabels(paste0("\n\n", signif(supporters / length(tnFlattened), 2)),
-           col=NodeColour(round(supporters / length(tnFlattened), 2), show1=FALSE),
+           col=SupportColour(round(supporters / length(tnFlattened), 2), show1=FALSE),
            adj=0, pos=2, frame='none', cex=0.75)
 ```
 
@@ -139,7 +138,7 @@ jacks <- GetJacks('./TNT/ew.sym')
 ColPlot(jacks$tree)
 nodeScores <- as.integer(jacks$freq)
 nodelabels(paste0(c('', nodeScores), "\n"),
-           col=c('black', NodeColour(nodeScores / 200L + 0.5, show1=FALSE)),
+           col=c('black', SupportColour(nodeScores / 200L + 0.5, show1=FALSE)),
            adj=0, pos=2, frame='none', cex=0.75)
 
 #omit <- c("Micrina", "Mickwitzia_muralensis")
