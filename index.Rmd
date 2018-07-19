@@ -34,6 +34,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library('ape'); library('phangorn'); library('TreeSearch');
 if (!require('Inapp')) devtools::install_github('TGuillerme/Inapp')
 library('Inapp')
+if (!require('MorphoBank')) devtools::install_github('ms609/MorphoBank')
+library('MorphoBank')
+
 source('bibFunctions.R')
 source('helperFunctions.R')
 source('plotFunctions.R')
@@ -58,8 +61,7 @@ tntKs <- as.double(gsub(".*xpiwe([\\d\\.]+)\\..*", "\\1", tntFiles, perl=TRUE))
 tntFiles <- tntFiles[order(tntKs)]
 tntFile <- gsub(".*(mbank_.*\\.tnt).*", "\\1", readLines(tntFiles[1], n=1))
 tntLink <- paste0(rawGit, tntFile)
-nexusFiles <- list.files(pattern='mbank_.*\\.nex', full.names=TRUE)
-nexusFile <- nexusFiles[which.max(vapply(nexusFiles, NexusTime, double(1)))]
+nexusFile <- MostRecentNexus()
 my_data <- ReadAsPhyDat(nexusFile)
 #ignored_taxa <- c('Conotheca', 'Maxilites', 'Pauxillites',
 #                  'Probactrotheca') # Also manually update tnt.run using `taxcode-`
@@ -83,7 +85,7 @@ char_notes <- ReadNotes(nexusFile)
 my_states <- attr(my_chars, 'state.labels')
 my_chars <- my_chars[!(rownames(my_chars) %in% ignored_taxa), ]
 
-neomorphic <- vapply(my_states, function(x) !x[[1]] %in% c("", "''"), logical(1))
+neomorphic <- vapply(my_states, IsNeomorphic, logical(1))
 
 kValues <- c(3, 4.5, 7, 10.5, 16, 24)
 

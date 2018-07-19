@@ -313,8 +313,3 @@ MorphoBankDecode <- function (string) {
   # Return:
   ConvertReferences(string)
 }
-
-EndSentence <- function (string) {
-  ret <- gsub("\\s*\\.?\\s*\\.$", ".", paste0(string, '.'), perl=TRUE)
-  ret <- gsub("(\\.[\"'])\\.$", "\\1", ret, perl=TRUE)
-}
