@@ -600,7 +600,9 @@ for (i in seq_len(n_char)) {
   state_notes_i <- char_notes_i[[2]]
   state_notes_i <- state_notes_i[!names(state_notes_i) %in% ignored_taxa]
   if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
-  if (length(state_notes_i) > 0) PrintStateNotes(state_notes_i)
+  if (length(state_notes_i) > 0) {
+    PrintStateNotes(state_notes_i, taxa_names, taxa_italic, i, Italicize)
+  }
   if (my_states[[i]][[1]] != "''") PrintNaughtyInapplicables(my_chars[, i])
   cat("  \n") # Clear line, ready for next block
 }
