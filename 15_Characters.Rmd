@@ -291,11 +291,5 @@ for (i in seq_len(n_char)) {
   if (my_states[[i]][[1]] != "''") PrintNaughtyInapplicables(my_chars[, i])
   cat("  \n") # Clear line, ready for next block
 }
-if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
-  cat(paste0('<div class="switcher">',
-    '<span class="selectTree">Tree number:</span>',
-    '<input class="switcherNumber" type="number" min="1" max="',
-    n_tree, '"  oninput="switchTree(this)" value="', n_tree, '"></input>',
-    '</div><div class="toggleDetails">[Show details]</div>'))
-}
+PrintSwitcher(max=n_tree)
 ```
