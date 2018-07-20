@@ -51,63 +51,18 @@ ci_text <- vapply(uniqueTrees, function (tree) {
 ```
 ```{R SVG-setup, echo=FALSE, results="asis"}
 fileNamer <- 'Brachiopod_phylogeny_files/figure-html/tree%s-char%s.svg'
+nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
+analysisNames <- c('Equal weights', paste0(c('Implied weights, k = ', rep('IW, k = ', length(kValues) - 1L)), kValues))
+analysisLabels <- c(analysisNames[-1], analysisNames[1])
+treeNames <- rep(analysisNames, nTree)
 if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
   CheckDirExists <- function (x) if (!dir.exists(x)) dir.create(x)
   CheckDirExists('_book')
   CheckDirExists('_book/Brachiopod_phylogeny_files')
   CheckDirExists('_book/Brachiopod_phylogeny_files/figure-html')
-  nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
-  analysisNames <- c('Equal weights', paste0(c('Implied weights, k = ', rep('IW, k = ', length(kValues) - 1L)), kValues))
-  analysisLabels <- c(analysisNames[-1], analysisNames[1])
-  treeNames <- rep(analysisNames, nTree)
-  nTrees <- sum(nTree)
-  treeIndex <- vapply(allTrees,
-                      function (tr1)
-                        which(vapply(uniqueTrees, all.equal, logical(1), tr1, 
-                                     use.tip.label=TRUE, use.edge.length=FALSE)),
-                      integer(1))
-  
-  svgWidth <- 682
-  svgHeight <- 682
-  treeXMargins <- c(5L, 200L)
-  treeYMargins <- c(7L, 8L)
-  
-  n_tree <- length(uniqueTrees)
-  eachTree <- seq_len(n_tree)
-  n_tip <- length(uniqueTrees[[1]]$tip.label)
-  n_node <- n_tip - 1L
-  internal <- n_tip + seq_len(n_node)
-  terminal <- seq_len(n_tip)
-  tipLabel <- matrix('', n_tree, n_tip)
-  n_edge <- dim(tree$edge)[1]
-  eachEdge <- seq_len(n_edge)
-  nodeSupport <- matrix(0, n_tree, n_node - 1L) # root = 100%
-  parents <- children <- matrix(0, n_tree, n_edge)
-  xStep <- nodeX <- nodeY <- vector('list', n_tree)
-  yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
-  textY <- 3L
-  nAnalyses <- length(analysisNames)
-  for (i in eachTree) {
-    tree <- rootedTrees[[i]]
-    tipLabel[i, ] <- tree$tip.label
-    treeEdge <- tree$edge
-    parents[i, ] <- treeEdge[, 1]
-    children[i, ] <- treeEdge[, 2]
-    ancestors <- Ancestors(tree, type='all')
-    nAncestors <- vapply(ancestors, length, 1)
-    xStep[[i]] <- round(seq(treeXMargins[1], to=svgWidth-treeXMargins[2],
-                       len=max(nAncestors) + 1L), 1)
-    nodeX[[i]] <- xStep[[i]][nAncestors + 1L]
-    nodeYi <- double(length(nAncestors))
-    nodeYi[children[i, children[i, ] <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
-
-    for (nodeI in rev(internal)) {
-      nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
-    }
-    nodeY[[i]] <- round(nodeYi, 1)
-    nodeSupport[i, ] <- round(SplitSupport(tree, allSplits, tipIndex)[-1]
-                              / length(allTrees), 2)
-  }
+  svgCanvas <- SVGCanvas(allTrees, rootingTips, analysisNames, 
+                         width=682, height=682,
+                         xMargins=c(5L, 200L), yMargins=c(7L, 8L))
 }
 ```
 
