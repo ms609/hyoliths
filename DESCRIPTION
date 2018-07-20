@@ -7,7 +7,7 @@ Imports:
 Suggests:
   ape,
   geoscale,
-  Inapp,
+  Inapp (> 0.3.0),
   knitr,
   phangorn,
   phytools,
