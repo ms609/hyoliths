@@ -475,32 +475,6 @@ DuplicateOf <- function (x) {
   masters <- x[!duplicates]
   vapply(masters, function (d) x == d, logical(length(x)))
 }
-PrintStateNotes <- function (notes) {
-  PrintThisNote <- function (note) {
-    afflictedTaxa <- names(note)[note]
-    master <- afflictedTaxa[1]
-    cat(paste0("<div class='state-note' id='", master, "-coding-", i, "'>",
-               paste(taxa_italic[taxa_names %in% afflictedTaxa], collapse=', '),
-                      ": ", Italicize(notes[master]), "</div>  \n  \n"))
-  }
-  
-  if (length(notes) > 0) {
-    cat('  \n<div class="state-notes">')
-  }
-  if (length(notes) == 1) {
-    onlyOne <- TRUE
-    names(onlyOne) <- names(notes)
-    PrintThisNote(onlyOne)
-  } else {
-    notes <- notes[order(names(notes))]
-    duplicates <- DuplicateOf(toupper(notes))
-    apply(duplicates, 2, PrintThisNote)
-  }
-  if (length(notes) > 0) {
-    cat('</div>  \n  \n')
-  }
-}
-
 prev_char_parts <- "NONE"
 prev_nesting <- 0
 
