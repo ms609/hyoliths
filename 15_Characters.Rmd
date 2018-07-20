@@ -25,7 +25,6 @@ if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
 }
 tree <- uniqueTrees[[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
-rootedTrees <- lapply(uniqueTrees, RootTree, outgroupTips=rootingTips)
 
 char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
 n_char <- ncol(my_chars)
@@ -455,24 +454,7 @@ $(document).ready(function() {
 });
 </script>
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
-################################################################################
-## These function definitions must be in the same block as when they are called.
-################################################################################
-Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
-PrintDivision <- function (parts) cat(Header(2L, paste(
-  Italicize(this_char_parts[1:parts]), collapse=': ')))
-PrintCharacter <- function () {
-  cat(Header(3L, paste0("[", i, "] ", paste0(Italicize(
-    this_char_parts[if(char_nesting[i] < 4) char_nesting[i] else 3:char_nesting[i]]),
-    collapse=': '), " {-}")))
-}
-PrintSoloCharacter <- function () {
-  cat(Header(2L, paste0(paste(
-    Italicize(this_char_parts), collapse=': ')," [", i, "] ")))
-}
-
 prev_char_parts <- "NONE"
-prev_nesting <- 0
 
 subheadings <- c("Digestive tract: Anus: Presence",
                  "Gametes: Spermatozoa: Nucleus: Shape",
@@ -491,49 +473,9 @@ for (i in seq_len(n_char)) {
 
   this_char_parts <- char_parts[[i]]
   next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
-  this_nesting <- char_nesting[i]
-  next_nesting    <- if (i == n_char) 0 else char_nesting[i + 1L]
-
-  if ( # Reasons to print a heading
-    (char_names[i] %in% subheadings ||
-      this_char_parts[1] != prev_char_parts[1]) #||
-    #( this_nesting > 1L && prev_nesting > 2L &&
-    #  this_char_parts[2] != prev_char_parts[2]) ||
-    #( this_nesting > 1L && prev_nesting > 1L && next_nesting > 2L &&
-    #  this_char_parts[2] == next_char_parts[2] &&
-    #  this_char_parts[2] != prev_char_parts[2])
-  ) {
-    if ( # Reasons to print a Solo character
-      (this_char_parts[1] != next_char_parts[1] &&
-       this_char_parts[1] != prev_char_parts[1]) ||
-      (this_nesting == 2L && next_nesting > 1L &&
-       prev_char_parts[1] == this_char_parts[1] &&
-       next_char_parts[1] == this_char_parts[1]) ||
-      (this_nesting == 1L && next_nesting > 1L &&
-            next_char_parts[1] == this_char_parts[1]) #||
-      #prev_nesting > 2L && (
-        #next_nesting < 2L
-        #|| (this_nesting > 1L && next_nesting > 2L &&
-            #(this_char_parts[2] != next_char_parts[2]))
-      #)
-     ) {
-     PrintSoloCharacter()
-   }
-   else if ( # Reasons to print a top-level heading
-     this_nesting == 1 ||
-     (next_nesting > 1 && (this_char_parts[2] != next_char_parts[2]))
-   ) {
-     PrintDivision(1)
-     PrintCharacter()
-   } else {
-     PrintDivision(2)
-     PrintCharacter()
-   }
- } else { # Just print the character
-   PrintCharacter()
-  }
+  PrintCharacterHeading(char_names[i], i, prev_char_parts, this_char_parts, 
+                        next_char_parts, subheadings)
   prev_char_parts <- this_char_parts
-  prev_nesting <- char_nesting[i]
   
   par(mar=rep(0.2, 4), cex=0.7)
   
