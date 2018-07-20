@@ -488,84 +488,9 @@ for (i in seq_len(n_char)) {
     legendCol <- "darkgrey"
   } else if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
     for (treeNo in eachTree) {
-      tree <- rootedTrees[[treeNo]]
-      nodeXi <- nodeX[[treeNo]]
-      nodeYi <- nodeY[[treeNo]]
-      nodeSupporti <- nodeSupport[treeNo, ]
-      states_matrix <- apply.reconstruction(tree, my_chars_i)
-      fitch_states <- apply.reconstruction(tree, my_chars_i, method='Fitch', inapplicable=1)
-      matrix_data <- MatrixData(states_matrix, fitch_states, state.labels=stateLabels)
-      legendLabels <- matrix_data$legend
-      legendCol <- matrix_data$legend_col
-      edgeCol <- matrix_data$edge_col
-      flagCol <- matrix_data$tips_colours
-      tipFlag <- matrix_data$tips_labels
-      
-      LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
-      edges <- paste0(vapply(unique(edgeCol), function(colour) {
-        theseEdges <- edgeCol == colour
-        paste0('<path d="', paste0(
-               'M', nodeXi[parents[treeNo, theseEdges]],
-               ',', nodeYi[parents[treeNo, theseEdges]],
-               'V', nodeYi[children[treeNo, theseEdges]],
-               'H', nodeXi[children[treeNo, theseEdges]],
-               collapse=''),
-               '" stroke="', colour, LineStyle(colour), '"></path>')
-      }, character(1)), collapse='')
-      tips <- paste0('<text x="', (nodeXi[terminal] + 0L), 
-                     '" y="', nodeYi[terminal] + textY,
-                     '" fill="', flagCol[terminal],
-                     '" class="flag">[', tipFlag[terminal], ']</text>',
-                     '<text x="', (nodeXi[terminal] + 22L),
-                     '" y="', nodeYi[terminal] + textY,
-                     '" fill="', ifelse(flagCol == 'lightgrey', '#ccc', 
-                                        ifelse(flagCol == 'grey', '#999', '#000')),
-                     '" class="taxonLabel">', 
-                     gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>',
-                     collapse='')
-      nodes <- paste0('<text x="', (nodeXi[internal][-1] + 2L), 
-                      '" y="', nodeYi[internal][-1] + textY,
-                      '" class="node" fill="', SupportColour(nodeSupporti),
-                      '">', nodeSupporti, '</text>', collapse='')
-      nRegions <- length(states_matrix$regions)
-      if (states_matrix$score == fitch_states$score) {
-        fitchNote1 <- fitchNote2 <- ''
-      } else {
-        fitchNote1 <- paste0(' (<tspan class="score fitch">', fitch_states$score,
-                             '</tspan> with Fitch)')
-        fitchNote2 <- ' (not counted by Fitch)'
-      }
-      ciCaption <- paste0('<text x="', svgWidth - 4L,
-                   '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
-                    'Character adds <tspan class="score">', states_matrix$score,
-                   '</tspan> to tree score', fitchNote1, '</text><text x="',
-                   svgWidth - 4L, '" y="', (yStep * 2) + textY, 
-                   '" text-anchor="end" class="stepsLabel">',
-                   '<tspan class="score">', nRegions,
-                   '</tspan> additional region', ifelse(nRegions == 1, '', 's'), 
-                   fitchNote2, '</text><text x="', svgWidth - 4L,
-                   '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
-                    ci_text[i, treeNo],
-                   '</text><text x="', svgWidth - 4L,
-                    '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
-                    '<tspan dy="16" fill="#34caaf">An optimal tree under:</tspan>', 
-                   paste0('<tspan x="', svgWidth - 2L,
-                          '" style="font-style:italic" class="',
-                          ifelse(analysisLabels %in% treeNames[treeIndex==treeNo],
-                                 'this', 'notThis'),
-                          'An" dy="1.2em">', analysisLabels, '</tspan>', collapse=''),
-                    '</text>')
-      dudSteps <- matrix_data$dud_steps
-      naughtyNodes <- if (FALSE && length(dudSteps) > 0) {
-        paste0('<circle cx="', nodeXi[dudSteps], '" cy="', nodeYi[dudSteps],
-               '"/><text x="', nodeXi[dudSteps] - textY, '" y="', nodeYi[dudSteps] + textY,
-               '" class="dud-step">Nonsensical Fitch step</text>', collapse='')
-      } else { '' }
-                  
-      svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
-                    svgWidth, '" height="', svgHeight, '" class="tree" data-char="', i, '">',
-                    ciCaption, tips, edges, nodes, naughtyNodes,
-                    '</svg>')
+      svgSource <- SVGTree(tree=rootedTrees[[treeNo]], canvas=svgCanvas, 
+              char=my_char_i, stateLabels=stateLabels, treeNames=treeNames,
+              analysisLabels=analysisLabels)
       write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
     }
     cat(svgSource)
