@@ -432,31 +432,14 @@ for (i in seq_len(n_char)) {
                         next_char_parts, subheadings)
   prev_char_parts <- this_char_parts
   
-  par(mar=rep(0.2, 4), cex=0.7)
+  # Plot character reconstruction:
+  PlotCharacterMapping(char = my_chars[, i], stateLabels = my_states[[i]],
+                       singleTree <- uniqueTrees[[1]], legendText=ci_text[i, 1],
+                       canvas = svgCanvas, treeNames = treeNames,
+                       analysisLabels = analysisLabels, 
+                       svgFilename = paste0('_book/', sprintf(fileNamer, '%s', i)),
+                       SetPar = par(mar=rep(0.2, 4), cex=0.7))
   
-  stateLabels <- my_states[[i]]
-  my_chars_i <- my_chars[, i]
-  
-  if (my_chars_i[1] == '?' && length(unique(my_chars_i)) == 1) {
-    cat("<p>All taxa are coded as ambiguous for this character.</p>")
-    legendLabels <- "?: Not scored"
-    legendCol <- "darkgrey"
-  } else if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
-    for (treeNo in eachTree) {
-      svgSource <- SVGTree(tree=rootedTrees[[treeNo]], canvas=svgCanvas, 
-              char=my_char_i, stateLabels=stateLabels, treeNames=treeNames,
-              analysisLabels=analysisLabels)
-      write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
-    }
-    cat(svgSource)
-  } else {
-    plot.states.matrix(apply.reconstruction(uniqueTrees[[1]], my_chars_i),
-                       passes=0, counts=1:2, show.labels=1,
-                       col.states=TRUE, state.labels=stateLabels,
-                       use.edge.length=TRUE, legend.pos='topright')
-    legend('bottomleft',  bty='n', ci_text[i, 1])
-  
-  }
   cat(paste0("  \n\n > **Character ", i, ": ", Italicize(char_names[i]), "**  \n>\n"))
   if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
     lineHeight <- 24L
