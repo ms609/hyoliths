@@ -16,7 +16,7 @@ before_script:
 
 script:
   - travis_wait 40 ./_build.sh
-  - ./_deploy.sh
+  #- ./_deploy.sh
 
 addons:
   apt:
