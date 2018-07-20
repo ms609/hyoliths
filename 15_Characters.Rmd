@@ -16,7 +16,7 @@ We emphasize that different trees give different reconstructions.  The character
 
 ```{R load-the-characters, echo=FALSE, message=FALSE}
 source('loadTrees.R')
-if (exists('localInstance') || knitr::is_html_output()) {
+if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
   uniqueTrees <- unique(allTrees)
 } else if (length(iw.exist) > 1L) {
   uniqueTrees <- iw.exist[[ceiling(length(iw.exist)/2L)]][1] # Single [] to keep as a list of 1 tree.
@@ -52,7 +52,7 @@ ci_text <- vapply(uniqueTrees, function (tree) {
 ```
 ```{R SVG-setup, echo=FALSE, results="asis"}
 fileNamer <- 'Brachiopod_phylogeny_files/figure-html/tree%s-char%s.svg'
-if (exists('localInstance') || knitr::is_html_output()) {
+if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
   CheckDirExists <- function (x) if (!dir.exists(x)) dir.create(x)
   CheckDirExists('_book')
   CheckDirExists('_book/Brachiopod_phylogeny_files')
@@ -574,7 +574,7 @@ for (i in seq_len(n_char)) {
     cat("<p>All taxa are coded as ambiguous for this character.</p>")
     legendLabels <- "?: Not scored"
     legendCol <- "darkgrey"
-  } else if (exists('localInstance') || knitr::is_html_output()) {
+  } else if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
     for (treeNo in eachTree) {
       tree <- rootedTrees[[treeNo]]
       nodeXi <- nodeX[[treeNo]]
@@ -666,7 +666,7 @@ for (i in seq_len(n_char)) {
   
   }
   cat(paste0("  \n\n > **Character ", i, ": ", Italicize(char_names[i]), "**  \n>\n"))
-  if (exists('localInstance') || knitr::is_html_output()) {
+  if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
     lineHeight <- 24L
     legendY <- round(lineHeight * seq_along(legendLabels), 1)
     cat(paste0('>  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
@@ -692,7 +692,7 @@ for (i in seq_len(n_char)) {
   if (my_states[[i]][[1]] != "''") PrintNaughtyInapplicables(my_chars[, i])
   cat("  \n") # Clear line, ready for next block
 }
-if (exists('localInstance') || knitr::is_html_output()) {
+if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
   cat(paste0('<div class="switcher">',
     '<span class="selectTree">Tree number:</span>',
     '<input class="switcherNumber" type="number" min="1" max="',
