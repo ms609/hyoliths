@@ -425,7 +425,8 @@ subheadings <- c("Digestive tract: Anus: Presence",
 
 #for (i in 14:17) {
 for (i in seq_len(n_char)) {
-
+  
+  # Print character heading:
   this_char_parts <- char_parts[[i]]
   next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
   PrintCharacterHeading(char_names[i], i, prev_char_parts, this_char_parts, 
