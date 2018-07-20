@@ -470,11 +470,7 @@ PrintSoloCharacter <- function () {
   cat(Header(2L, paste0(paste(
     Italicize(this_char_parts), collapse=': ')," [", i, "] ")))
 }
-DuplicateOf <- function (x) {
-  duplicates <- duplicated(x)
-  masters <- x[!duplicates]
-  vapply(masters, function (d) x == d, logical(length(x)))
-}
+
 prev_char_parts <- "NONE"
 prev_nesting <- 0
 
