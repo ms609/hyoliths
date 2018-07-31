@@ -14,9 +14,9 @@ a static version can be downloaded directly `r if (knitr::is_html_output()) past
 
 Taxa include sipunculans and molluscs, which have previously been interpreted as having affinities with hyoliths.   Other lophotrochozoan groups help to constrain the outgroup topology, and a diversity of brachiozoans helps to resolve the position of hyoliths within this group.
 
-Characters are coded following the recommendations of @Brazeau2018:
+Characters are coded following the [recommendations](https://rawgit.com/TGuillerme/Inapp/master/inst/gitbook/_book/) of @Brazeau2018:
 
-- We have employed reductive coding, using a distinct state to mark character inapplicability. Character specifications follow the structural syntax of @Sereno2007 in order to highlight ontological dependence between characters and emphasize the structure of the dataset.
+- We have employed reductive coding [@Wilkinson1995], using a distinct state to mark character inapplicability. Character specifications follow the structural syntax of @Sereno2007 in order to highlight ontological dependence between characters and emphasize the structure of the dataset.
 
 - We have distinguished between neomorphic and transformational characters [_sensu_ @Sereno2007] by reserving the token `0` to refer to the absence of a neomorphic (i.e. presence/absence) character.  The states of transformational characters (i.e. characters that describe a property of a feature) are represented by the tokens `1`, `2`, `3`, ...
 
