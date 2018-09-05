@@ -262,27 +262,32 @@ for (i in seq_len(n_char)) {
                         next_char_parts, subheadings)
   prev_char_parts <- this_char_parts
   
-  legend_labels <- my_states[[i]]
-  
   # Plot character reconstruction:
-  PlotCharacterMapping(char = my_chars[, i], stateLabels = legend_labels,
+  PlotCharacterMapping(char = my_chars[, i], stateLabels = my_states[[i]],
                        singleTree <- uniqueTrees[[1]], legendText=ci_text[i, 1],
                        canvas = svgCanvas, treeNames = treeNames,
                        analysisLabels = analysisLabels, 
                        svgFilename = paste0('_book/', sprintf(fileNamer, '%s', i)),
                        SetPar = par(mar=rep(0.2, 4), cex=0.7))
   
+  # Plot character details:
   cat(paste0("  \n\n > **Character ", i, ": ", Italicize(char_names[i]), "**  \n>\n"))
   if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
     lineHeight <- 24L
+    
+    states_matrix <- apply.reconstruction(uniqueTrees[[1]], my_chars[, i])
+    matrix_data <- MatrixData(states_matrix, states_matrix, state.labels=my_states[[i]])
+    legend_labels <- matrix_data$legend
+    legend_col    <- matrix_data$legend_col
     legendY <- round(lineHeight * seq_along(legend_labels), 1)
     cat(paste0('>  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="',
                getOption('svgWidth'),
                '" height="', lineHeight * length(legend_labels) + lineHeight - 5L,
                # For T/N statement
                '" class="statesLegend">',
-        paste0('<path d="M0,', legendY - 15L, 'h22" stroke="', legendCol,
-                       LineStyle(legendCol), '"></path>', collapse=''),
+        paste0('<path d="M0,', legendY - 15L, 'h22" stroke="', legend_col,
+               ifelse(legendCol == 'lightgrey', '" class="inapplicable', ''),
+               '"></path>', collapse=''),
         '<text x="30" y="-10" class="legendLabels">', 
         paste0('<tspan x="30" dy="', lineHeight, '">', legend_labels, '</tspan>', collapse=''),
         '<tspan x=0 dy="', lineHeight, '">', 
