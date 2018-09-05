@@ -134,15 +134,19 @@ if (knitr::is_html_output()) {
   conParent <- majCon$edge[, 1]
   conChild  <- majCon$edge[, 2]
   
-  conYStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / nConTip, 1)
+  conYStep <- round((getOption('svgHeight') - treeYMargins[2] - treeYMargins[1]) / nConTip, 1)
   
   ancestors <- Ancestors(majCon, type='all')
   nAncestors <- vapply(ancestors, length, 1)
-  conXStep <- round(seq(treeXMargins[1], to=svgWidth-treeXMargins[2],
-                     len=max(nAncestors) + 1L), 1)
+  conXStep <- round(seq(treeXMargins[1], 
+                        to=getOption('svgWidth') - treeXMargins[2],
+                        len=max(nAncestors) + 1L), 1)
   conX <- conXStep[nAncestors + 1L]
   conY <- double(length(nAncestors))
-  conY[conChild[conChild <= nConTip]] <- seq(treeYMargins[1] + 30, svgHeight-treeYMargins[2], len=nConTip)
+  conY[conChild[conChild <= nConTip]] <-
+    seq(treeYMargins[1] + 30,
+        getOption('svgHeight') - treeYMargins[2],
+        len=nConTip)
   
   for (nodeI in rev(conInternal)) {
     conY[nodeI] <- mean(conY[Children(majCon, nodeI)])
@@ -159,7 +163,8 @@ if (knitr::is_html_output()) {
                  gsub('_', ' ', conTips[conTerminal], fixed=TRUE), '</text>',
                  collapse='')
   omittedTips <- if (length(omit) > 0) {
-    paste0('<g transform="translate(', svgWidth - 4L, ' ', svgHeight, 
+    paste0('<g transform="translate(', getOption('svgWidth') - 4L,
+           ' ', getOption('svgHeight'), 
            ')"><text x="0" y="0" class="taxonLabel" text-anchor="end">', 
            paste0('<tspan x="0" dy="-1.2em" fill="', taxonColour[omit], '">', 
                   omit, '</tspan>', collapse=''),
@@ -172,7 +177,7 @@ if (knitr::is_html_output()) {
                   conLabels['regions', ], '</tspan><tspan class="b44" x="0" dy="1.2em">',
                   conLabels['changes', ], '</tspan><tspan class="b41" x="0" dy="1.2em">', 
                   conLabels['fitches', ], '</tspan></text></g>', collapse='')
-  conCaption <- paste0('<g transform="translate(', svgWidth - 4L, ' 0)">',
+  conCaption <- paste0('<g transform="translate(', getOption('svgWidth') - 4L, ' 0)">',
                        '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                        '<tspan x="0" dy="1.2em">',
                        '<tspan class="score b44">Blue</tspan>: ',
@@ -183,7 +188,8 @@ if (knitr::is_html_output()) {
                        'Logically invalid Fitch steps</tspan>',
                        '</text></g>')
   svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
-                svgWidth, '" height="', svgHeight, '" id="conTree">',
+                getOption('svgWidth'), '" height="',
+                getOption('svgHeight'), '" id="conTree">',
                 conCaption, tips, edges, omittedTips, nodes, '</svg>')
   cat(svgSource)
   
@@ -266,9 +272,11 @@ for (i in seq_len(n_char)) {
   if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
     lineHeight <- 24L
     legendY <- round(lineHeight * seq_along(legendLabels), 1)
-    cat(paste0('>  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
-        '" height="', lineHeight * length(legendLabels) + lineHeight - 5L, # For T/N statement
-        '" class="statesLegend">',
+    cat(paste0('>  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="',
+               getOption('svgWidth'),
+               '" height="', lineHeight * length(legendLabels) + lineHeight - 5L,
+               # For T/N statement
+               '" class="statesLegend">',
         paste0('<path d="M0,', legendY - 15L, 'h22" stroke="', legendCol,
                        LineStyle(legendCol), '"></path>', collapse=''),
         '<text x="30" y="-10" class="legendLabels">', 
