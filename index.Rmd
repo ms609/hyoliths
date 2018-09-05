@@ -58,7 +58,6 @@ tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 tntKs <- as.double(gsub(".*xpiwe([\\d\\.]+)\\..*", "\\1", tntFiles, perl=TRUE))
 tntFiles <- tntFiles[order(tntKs)]
 tntFile <- gsub(".*(mbank_.*\\.tnt).*", "\\1", readLines(tntFiles[1], n=1))
-tntLink <- paste0(rawGit, tntFile)
 nexusFile <- MostRecentNexus()
 my_data <- ReadAsPhyDat(nexusFile)
 #ignored_taxa <- c('Conotheca', 'Maxilites', 'Pauxillites',
