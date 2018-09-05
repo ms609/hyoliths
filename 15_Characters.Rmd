@@ -6,17 +6,17 @@ author: "Martin R. Smith"
 # Character reconstructions {#reconstructions}
 
 This page provides definitions for each of the characters in our matrix, and justifies codings in particular taxa where relevant.
-Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank `r MorphoLink()`.
+Further citations for codings that are not discussed in the text can be viewed by browsing the [morphological dataset](#dataset) on MorphoBank (`r MorphoLink()`).
 
 Alongside its definition, each character has been mapped onto a tree.
- `r if (knitr::is_html_output()) 'Any of the optimal trees can be selected by modifying the tree number listed above each diagram.' else 'Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting. Other trees can be viewed in the HTML version of this document at [ms609.github.io/hyoliths](https://ms609.github.io/hyoliths/reconstructions.html).'`
+ `r if (knitr::is_html_output()) 'Any of the optimal trees can be selected by modifying the tree number listed above each diagram.' else paste0('Here, we have arbitrarily selected one most parsimonious tree obtained under implied weighting. Other trees can be viewed in the HTML version of this document at ', GitHubPages('reconstructions.html'), '.')`
 Each tip is labelled according to its coding in the matrix.  These states have been used to reconstruct the condition of each internal node, using the parsimony method of @Brazeau2018 as implemented in the _R_ package _Inapp_.
 
 We emphasize that different trees give different reconstructions.  The character mappings are not intended to definitively establish how each character evolved, but to help the reader quickly establish how each character has been coded, and to visualize at a glance how each character fits onto a given tree.  `r if(knitr::is_html_output()) '<a href="javascript:toggleSVG();">Click here</a> to <span id="showOrHide">hide</span> the character reconstructions below.'`
 
 ```{R load-the-characters, echo=FALSE, message=FALSE}
 source('loadTrees.R')
-if (exists('localInstance') || knitr::is_html_output()) {
+if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
   uniqueTrees <- unique(allTrees)
 } else if (length(iw.exist) > 1L) {
   uniqueTrees <- iw.exist[[ceiling(length(iw.exist)/2L)]][1] # Single [] to keep as a list of 1 tree.
@@ -25,7 +25,6 @@ if (exists('localInstance') || knitr::is_html_output()) {
 }
 tree <- uniqueTrees[[1]]
 tree$edge.length <- rep(1, nrow(tree$edge))
-rootedTrees <- lapply(uniqueTrees, RootTree, outgroupTips=rootingTips)
 
 char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
 n_char <- ncol(my_chars)
@@ -52,63 +51,20 @@ ci_text <- vapply(uniqueTrees, function (tree) {
 ```
 ```{R SVG-setup, echo=FALSE, results="asis"}
 fileNamer <- 'Brachiopod_phylogeny_files/figure-html/tree%s-char%s.svg'
-if (exists('localInstance') || knitr::is_html_output()) {
+treeXMargins <- c(5L, 200L)
+treeYMargins <- c(7L, 8L)
+nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
+analysisNames <- c('Equal weights', paste0(c('Implied weights, k = ', rep('IW, k = ', length(kValues) - 1L)), kValues))
+analysisLabels <- c(analysisNames[-1], analysisNames[1])
+treeNames <- rep(analysisNames, nTree)
+if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
   CheckDirExists <- function (x) if (!dir.exists(x)) dir.create(x)
   CheckDirExists('_book')
   CheckDirExists('_book/Brachiopod_phylogeny_files')
   CheckDirExists('_book/Brachiopod_phylogeny_files/figure-html')
-  nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
-  analysisNames <- c('Equal weights', paste0(c('Implied weights, k = ', rep('IW, k = ', length(kValues) - 1L)), kValues))
-  analysisLabels <- c(analysisNames[-1], analysisNames[1])
-  treeNames <- rep(analysisNames, nTree)
-  nTrees <- sum(nTree)
-  treeIndex <- vapply(allTrees,
-                      function (tr1)
-                        which(vapply(uniqueTrees, all.equal, logical(1), tr1, 
-                                     use.tip.label=TRUE, use.edge.length=FALSE)),
-                      integer(1))
-  
-  svgWidth <- 682
-  svgHeight <- 682
-  treeXMargins <- c(5L, 200L)
-  treeYMargins <- c(7L, 8L)
-  
-  n_tree <- length(uniqueTrees)
-  eachTree <- seq_len(n_tree)
-  n_tip <- length(uniqueTrees[[1]]$tip.label)
-  n_node <- n_tip - 1L
-  internal <- n_tip + seq_len(n_node)
-  terminal <- seq_len(n_tip)
-  tipLabel <- matrix('', n_tree, n_tip)
-  n_edge <- dim(tree$edge)[1]
-  eachEdge <- seq_len(n_edge)
-  nodeSupport <- matrix(0, n_tree, n_node - 1L) # root = 100%
-  parents <- children <- matrix(0, n_tree, n_edge)
-  xStep <- nodeX <- nodeY <- vector('list', n_tree)
-  yStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / n_tip, 1)
-  textY <- 3L
-  nAnalyses <- length(analysisNames)
-  for (i in eachTree) {
-    tree <- rootedTrees[[i]]
-    tipLabel[i, ] <- tree$tip.label
-    treeEdge <- tree$edge
-    parents[i, ] <- treeEdge[, 1]
-    children[i, ] <- treeEdge[, 2]
-    ancestors <- Ancestors(tree, type='all')
-    nAncestors <- vapply(ancestors, length, 1)
-    xStep[[i]] <- round(seq(treeXMargins[1], to=svgWidth-treeXMargins[2],
-                       len=max(nAncestors) + 1L), 1)
-    nodeX[[i]] <- xStep[[i]][nAncestors + 1L]
-    nodeYi <- double(length(nAncestors))
-    nodeYi[children[i, children[i, ] <= n_tip]] <- seq(treeYMargins[1], svgHeight-treeYMargins[2], len=n_tip)
-
-    for (nodeI in rev(internal)) {
-      nodeYi[nodeI] <- mean(nodeYi[Children(tree, nodeI)])
-    }
-    nodeY[[i]] <- round(nodeYi, 1)
-    nodeSupport[i, ] <- round(SplitSupport(tree, allSplits, tipIndex)[-1]
-                              / length(allTrees), 2)
-  }
+  svgCanvas <- SVGCanvas(allTrees, rootingTips, analysisNames, 
+                         width=682, height=682,
+                         xMargins=treeXMargins, yMargins=treeYMargins)
 }
 ```
 
@@ -180,15 +136,19 @@ if (knitr::is_html_output()) {
   conParent <- majCon$edge[, 1]
   conChild  <- majCon$edge[, 2]
   
-  conYStep <- round((svgHeight - treeYMargins[2] - treeYMargins[1]) / nConTip, 1)
+  conYStep <- round((getOption('svgHeight') - treeYMargins[2] - treeYMargins[1]) / nConTip, 1)
   
   ancestors <- Ancestors(majCon, type='all')
   nAncestors <- vapply(ancestors, length, 1)
-  conXStep <- round(seq(treeXMargins[1], to=svgWidth-treeXMargins[2],
-                     len=max(nAncestors) + 1L), 1)
+  conXStep <- round(seq(treeXMargins[1], 
+                        to=getOption('svgWidth') - treeXMargins[2],
+                        len=max(nAncestors) + 1L), 1)
   conX <- conXStep[nAncestors + 1L]
   conY <- double(length(nAncestors))
-  conY[conChild[conChild <= nConTip]] <- seq(treeYMargins[1] + 30, svgHeight-treeYMargins[2], len=nConTip)
+  conY[conChild[conChild <= nConTip]] <-
+    seq(treeYMargins[1] + 30,
+        getOption('svgHeight') - treeYMargins[2],
+        len=nConTip)
   
   for (nodeI in rev(conInternal)) {
     conY[nodeI] <- mean(conY[Children(majCon, nodeI)])
@@ -199,13 +159,14 @@ if (knitr::is_html_output()) {
                                       'V', conY[conChild], 'H', conX[conChild], 
                                       collapse=''), '" stroke="#888"></path>')
   tips <- paste0('<text x="', (conX[conTerminal] + 0L), 
-                 '" y="', conY[conTerminal] + textY,
+                 '" y="', conY[conTerminal] + 3L,
                  '" fill="', taxonColour[conTips[conTerminal]],
                  '" class="taxonLabel">', 
                  gsub('_', ' ', conTips[conTerminal], fixed=TRUE), '</text>',
                  collapse='')
   omittedTips <- if (length(omit) > 0) {
-    paste0('<g transform="translate(', svgWidth - 4L, ' ', svgHeight, 
+    paste0('<g transform="translate(', getOption('svgWidth') - 4L,
+           ' ', getOption('svgHeight'), 
            ')"><text x="0" y="0" class="taxonLabel" text-anchor="end">', 
            paste0('<tspan x="0" dy="-1.2em" fill="', taxonColour[omit], '">', 
                   omit, '</tspan>', collapse=''),
@@ -218,7 +179,7 @@ if (knitr::is_html_output()) {
                   conLabels['regions', ], '</tspan><tspan class="b44" x="0" dy="1.2em">',
                   conLabels['changes', ], '</tspan><tspan class="b41" x="0" dy="1.2em">', 
                   conLabels['fitches', ], '</tspan></text></g>', collapse='')
-  conCaption <- paste0('<g transform="translate(', svgWidth - 4L, ' 0)">',
+  conCaption <- paste0('<g transform="translate(', getOption('svgWidth') - 4L, ' 0)">',
                        '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                        '<tspan x="0" dy="1.2em">',
                        '<tspan class="score b44">Blue</tspan>: ',
@@ -229,7 +190,8 @@ if (knitr::is_html_output()) {
                        'Logically invalid Fitch steps</tspan>',
                        '</text></g>')
   svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
-                svgWidth, '" height="', svgHeight, '" id="conTree">',
+                getOption('svgWidth'), '" height="',
+                getOption('svgHeight'), '" id="conTree">',
                 conCaption, tips, edges, omittedTips, nodes, '</svg>')
   cat(svgSource)
   
@@ -273,236 +235,10 @@ if (knitr::is_html_output()) {
   LabelNodes(conLabels['regions', ], 2, 1)
   LabelNodes(conLabels['fitches', ], 1, 2)
 }
+PrintJavascript('svgSwitcher.js')
 ```
-<script>
-// Enable consensus tree interactions:
-function showNodeNotes (e) {
-  var target = e.target; // Which node triggered the click
-  if (target.nodeName === 'tspan')
-    $target = $(target);
-    gp = $target.parent().parent();
-    if (gp[0].nodeName === 'g' && gp.hasClass('node-g')) {
-      nodeNumber = gp.data('node');
-      $("#conTree g").removeClass("bold");
-      gp.addClass("bold");
-      document.getElementById('nodeDetails').style='display: none';
-      $('div .nddtl').css('display', 'none');
-      document.getElementById('nodeDetail' + nodeNumber).style='display: block';
-  }
-  return false;
-}
-$("#conTree").click(showNodeNotes)
-
-
-// Hide details if not desired
-function toggleSVG() {
-  $('svg.tree').toggle();
-  $('div.switcher').toggle();
-  if (document.getElementById('showOrHide').innerHTML == 'hide') {
-    document.getElementById('showOrHide').innerHTML = 'show'
-  } else {
-    document.getElementById('showOrHide').innerHTML = 'hide'
-  }
-}
-
-function toggleDetails() {
-  $this = $(this);
-  index = $this.data('index');
-  $('#stateNotes' + index).slideToggle();
-  if ($this.html() == "[Hide details]") {
-    // Leave tree, or it's too bouncy.
-    $this.html("[Show details]");
-  } else {
-    $('svg.tree').eq(index).slideDown();
-    $('div.switcher').eq(index).slideDown();
-    $this.html("[Hide details]");
-  }
-}
-
-// Prepare for character-by-character interactions
-var latestKnownScrollY = 0,
-  latestKnownY = 0,
-	ticking = false;
-
-function onScreen(e, viewTop, viewHeight) {
-  var viewBottom = viewTop + viewHeight;
-  var elemTop = $(e).offset().top;
-  return ((elemTop <= viewBottom + 1000) && (elemTop >= viewTop - 1000));
-}
-
-function highlightTaxon (e) {
-  var target = e.target; // Which node triggered the click
-  $target = $(target);
-  if (target.nodeName === 'text' && $target.hasClass('taxonLabel')) {
-    taxonText = $(target).text();
-    $withSameText = $('#reconstructions svg text:contains("' + taxonText + '")')
-    if (localStorage.getItem(taxonText)) {
-      localStorage.removeItem(taxonText)
-      $withSameText.removeClass("highlightTaxon");
-    } else {
-      localStorage.setItem(taxonText, 1)
-      $withSameText.addClass("highlightTaxon");
-    }
-  }
-  return false;
-}
-
-function applyHighlighting () {
-  if(localStorage.getItem($(this).text())) {
-    $(this).addClass("highlightTaxon");
-  }
-}
-
-function onScroll() {
-  //Optimised via https://www.html5rocks.com/en/tutorials/speed/animations/
-  latestKnownScrollY = window.scrollY;
-  latestKnownY = $(window).height();
-  requestTick();
-}
-
-function requestTick() {
-  if (!ticking) {
-    requestAnimationFrame(updateVisible);
-  }
-  ticking = true;
-}
-
-function updateVisible() {
-  ticking = false; // Reset, ready to capture next scroll/resize
-  chosenTree = localStorage.getItem("chosenTree");
-  var currentScrollY = latestKnownScrollY;
-  var currentHeight = latestKnownY;
-  $("svg.tree").each(function(index, item) {
-    if (onScreen($(this), currentScrollY, currentHeight)) {
-      if ($(this).data('tree') != chosenTree) {        
-        var oldTree = $(item);
-        $.ajax({
-           //url: "`r sprintf(fileNamer, '" + chosenTree + "', '" + $(oldTree).data("char") + "')`",
-           url: "Brachiopod_phylogeny_files/figure-html/tree" + chosenTree + "-char" +
-                $(oldTree).data("char") + ".svg",
-          context: item,
-          datatype: 'xml'
-        }).done(function (newTree) {
-          $newSvg = $('svg', newTree);
-          $newSvg.data('tree', chosenTree);
-          $newSvg.click(highlightTaxon);
-          $('text', $newSvg).each(applyHighlighting);
-          $(this).replaceWith($newSvg);
-        })
-      }
-    }
-  });
-  return false;
-}
-
-function switchTree(input) {
-  newValue = input.value * 1;
-  if (!isNaN(newValue)) {
-    newValue = Math.floor(newValue);
-    newValue = Math.max(newValue, 1);
-    newValue = Math.min(newValue, input.max);
-    $("input.switcherNumber").val(newValue);
-    localStorage.setItem("chosenTree", newValue);
-    updateVisible()
-  }
-  return false;
-}
-
-
-$(document).ready(function() {
-  window.$my = {
-    trees : $("svg.tree")
-  };
-  // Produce detail toggler for each character
-  var originalToggler = $("div.toggleDetails");
-  $stateNotes = $('div.state-notes');
-  $stateNotes.each(function(index) {
-      var $theseNotes = $(this);
-      $theseNotes.attr('id', 'stateNotes' + index);
-      var togglerClone = originalToggler
-            .clone()
-            .data('index', index)
-            .click(toggleDetails)
-            .insertBefore($theseNotes);
-    }
-  );
-  $stateNotes.hide();
-  originalToggler.remove();
-
-  // Produce switcher box by each SVG plot
-  var originalSwitcher = $("div.switcher");
-  $my.trees.each(function() {
-      var thisTree = $(this);
-      var switcherClone = originalSwitcher.clone().insertBefore(thisTree);
-      $('input.switcherNumber', switcherClone).data("char", thisTree.data("char"));
-    }
-  );
-  
-  localStorage.setItem("chosenTree", originalSwitcher.val());
-  $my.trees.click(highlightTaxon)
-  $my.trees.data('tree', originalSwitcher.val());
-  $('text', $my.trees).each(applyHighlighting)
-  
-  $(".book-body").scroll(onScroll);
-  $(".book-body").resize(onScroll);
-  
-  $(".body-inner").resize(onScroll);
-  $(".body-inner").scroll(onScroll);
-  // page-wrapper and page-inner are the other things that might trigger events?
-  
-  originalSwitcher.remove();
-  return false;
-});
-</script>
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
-################################################################################
-## These function definitions must be in the same block as when they are called.
-################################################################################
-Header <- function (level, content) paste0("  \n", paste0(rep('#', level), collapse=''), " ", content, "  \n")
-PrintDivision <- function (parts) cat(Header(2L, paste(
-  Italicize(this_char_parts[1:parts]), collapse=': ')))
-PrintCharacter <- function () {
-  cat(Header(3L, paste0("[", i, "] ", paste0(Italicize(
-    this_char_parts[if(char_nesting[i] < 4) char_nesting[i] else 3:char_nesting[i]]),
-    collapse=': '), " {-}")))
-}
-PrintSoloCharacter <- function () {
-  cat(Header(2L, paste0(paste(
-    Italicize(this_char_parts), collapse=': ')," [", i, "] ")))
-}
-DuplicateOf <- function (x) {
-  duplicates <- duplicated(x)
-  masters <- x[!duplicates]
-  vapply(masters, function (d) x == d, logical(length(x)))
-}
-PrintStateNotes <- function (notes) {
-  PrintThisNote <- function (note) {
-    afflictedTaxa <- names(note)[note]
-    master <- afflictedTaxa[1]
-    cat(paste0("<div class='state-note' id='", master, "-coding-", i, "'>",
-               paste(taxa_italic[taxa_names %in% afflictedTaxa], collapse=', '),
-                      ": ", Italicize(notes[master]), "</div>  \n  \n"))
-  }
-  
-  if (length(notes) > 0) {
-    cat('  \n<div class="state-notes">')
-  }
-  if (length(notes) == 1) {
-    onlyOne <- TRUE
-    names(onlyOne) <- names(notes)
-    PrintThisNote(onlyOne)
-  } else {
-    notes <- notes[order(names(notes))]
-    duplicates <- DuplicateOf(toupper(notes))
-    apply(duplicates, 2, PrintThisNote)
-  }
-  if (length(notes) > 0) {
-    cat('</div>  \n  \n')
-  }
-}
-
 prev_char_parts <- "NONE"
-prev_nesting <- 0
 
 subheadings <- c("Digestive tract: Anus: Presence",
                  "Gametes: Spermatozoa: Nucleus: Shape",
@@ -518,164 +254,42 @@ subheadings <- c("Digestive tract: Anus: Presence",
 
 #for (i in 14:17) {
 for (i in seq_len(n_char)) {
-
+  
+  # Print character heading:
   this_char_parts <- char_parts[[i]]
   next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
-  this_nesting <- char_nesting[i]
-  next_nesting    <- if (i == n_char) 0 else char_nesting[i + 1L]
-
-  if ( # Reasons to print a heading
-    (char_names[i] %in% subheadings ||
-      this_char_parts[1] != prev_char_parts[1]) #||
-    #( this_nesting > 1L && prev_nesting > 2L &&
-    #  this_char_parts[2] != prev_char_parts[2]) ||
-    #( this_nesting > 1L && prev_nesting > 1L && next_nesting > 2L &&
-    #  this_char_parts[2] == next_char_parts[2] &&
-    #  this_char_parts[2] != prev_char_parts[2])
-  ) {
-    if ( # Reasons to print a Solo character
-      (this_char_parts[1] != next_char_parts[1] &&
-       this_char_parts[1] != prev_char_parts[1]) ||
-      (this_nesting == 2L && next_nesting > 1L &&
-       prev_char_parts[1] == this_char_parts[1] &&
-       next_char_parts[1] == this_char_parts[1]) ||
-      (this_nesting == 1L && next_nesting > 1L &&
-            next_char_parts[1] == this_char_parts[1]) #||
-      #prev_nesting > 2L && (
-        #next_nesting < 2L
-        #|| (this_nesting > 1L && next_nesting > 2L &&
-            #(this_char_parts[2] != next_char_parts[2]))
-      #)
-     ) {
-     PrintSoloCharacter()
-   }
-   else if ( # Reasons to print a top-level heading
-     this_nesting == 1 ||
-     (next_nesting > 1 && (this_char_parts[2] != next_char_parts[2]))
-   ) {
-     PrintDivision(1)
-     PrintCharacter()
-   } else {
-     PrintDivision(2)
-     PrintCharacter()
-   }
- } else { # Just print the character
-   PrintCharacter()
-  }
+  PrintCharacterHeading(char_names[i], i, prev_char_parts, this_char_parts, 
+                        next_char_parts, subheadings)
   prev_char_parts <- this_char_parts
-  prev_nesting <- char_nesting[i]
   
-  par(mar=rep(0.2, 4), cex=0.7)
+  # Plot character reconstruction:
+  PlotCharacterMapping(char = my_chars[, i], stateLabels = my_states[[i]],
+                       singleTree <- uniqueTrees[[1]], legendText=ci_text[i, 1],
+                       canvas = svgCanvas, treeNames = treeNames,
+                       analysisLabels = analysisLabels, 
+                       svgFilename = paste0('_book/', sprintf(fileNamer, '%s', i)),
+                       SetPar = par(mar=rep(0.2, 4), cex=0.7))
   
-  stateLabels <- my_states[[i]]
-  my_chars_i <- my_chars[, i]
-  
-  if (my_chars_i[1] == '?' && length(unique(my_chars_i)) == 1) {
-    cat("<p>All taxa are coded as ambiguous for this character.</p>")
-    legendLabels <- "?: Not scored"
-    legendCol <- "darkgrey"
-  } else if (exists('localInstance') || knitr::is_html_output()) {
-    for (treeNo in eachTree) {
-      tree <- rootedTrees[[treeNo]]
-      nodeXi <- nodeX[[treeNo]]
-      nodeYi <- nodeY[[treeNo]]
-      nodeSupporti <- nodeSupport[treeNo, ]
-      states_matrix <- apply.reconstruction(tree, my_chars_i)
-      fitch_states <- apply.reconstruction(tree, my_chars_i, method='Fitch', inapplicable=1)
-      matrix_data <- MatrixData(states_matrix, fitch_states, state.labels=stateLabels)
-      legendLabels <- matrix_data$legend
-      legendCol <- matrix_data$legend_col
-      edgeCol <- matrix_data$edge_col
-      flagCol <- matrix_data$tips_colours
-      tipFlag <- matrix_data$tips_labels
-      
-      LineStyle <- function (x) ifelse(x == 'lightgrey', '" class="inapplicable', '')
-      edges <- paste0(vapply(unique(edgeCol), function(colour) {
-        theseEdges <- edgeCol == colour
-        paste0('<path d="', paste0(
-               'M', nodeXi[parents[treeNo, theseEdges]],
-               ',', nodeYi[parents[treeNo, theseEdges]],
-               'V', nodeYi[children[treeNo, theseEdges]],
-               'H', nodeXi[children[treeNo, theseEdges]],
-               collapse=''),
-               '" stroke="', colour, LineStyle(colour), '"></path>')
-      }, character(1)), collapse='')
-      tips <- paste0('<text x="', (nodeXi[terminal] + 0L), 
-                     '" y="', nodeYi[terminal] + textY,
-                     '" fill="', flagCol[terminal],
-                     '" class="flag">[', tipFlag[terminal], ']</text>',
-                     '<text x="', (nodeXi[terminal] + 22L),
-                     '" y="', nodeYi[terminal] + textY,
-                     '" fill="', ifelse(flagCol == 'lightgrey', '#ccc', 
-                                        ifelse(flagCol == 'grey', '#999', '#000')),
-                     '" class="taxonLabel">', 
-                     gsub('_', ' ', tipLabel[treeNo, terminal], fixed=TRUE), '</text>',
-                     collapse='')
-      nodes <- paste0('<text x="', (nodeXi[internal][-1] + 2L), 
-                      '" y="', nodeYi[internal][-1] + textY,
-                      '" class="node" fill="', SupportColour(nodeSupporti),
-                      '">', nodeSupporti, '</text>', collapse='')
-      nRegions <- length(states_matrix$regions)
-      if (states_matrix$score == fitch_states$score) {
-        fitchNote1 <- fitchNote2 <- ''
-      } else {
-        fitchNote1 <- paste0(' (<tspan class="score fitch">', fitch_states$score,
-                             '</tspan> with Fitch)')
-        fitchNote2 <- ' (not counted by Fitch)'
-      }
-      ciCaption <- paste0('<text x="', svgWidth - 4L,
-                   '" y="', yStep + textY, '" text-anchor="end" class="stepsLabel">',
-                    'Character adds <tspan class="score">', states_matrix$score,
-                   '</tspan> to tree score', fitchNote1, '</text><text x="',
-                   svgWidth - 4L, '" y="', (yStep * 2) + textY, 
-                   '" text-anchor="end" class="stepsLabel">',
-                   '<tspan class="score">', nRegions,
-                   '</tspan> additional region', ifelse(nRegions == 1, '', 's'), 
-                   fitchNote2, '</text><text x="', svgWidth - 4L,
-                   '" y="', (yStep * 3) + textY, '" text-anchor="end" class="stepsLabel">',
-                    ci_text[i, treeNo],
-                   '</text><text x="', svgWidth - 4L,
-                    '" y="', (yStep * 5) + textY, '" text-anchor="end" class="stepsLabel">',
-                    '<tspan dy="16" fill="#34caaf">An optimal tree under:</tspan>', 
-                   paste0('<tspan x="', svgWidth - 2L,
-                          '" style="font-style:italic" class="',
-                          ifelse(analysisLabels %in% treeNames[treeIndex==treeNo],
-                                 'this', 'notThis'),
-                          'An" dy="1.2em">', analysisLabels, '</tspan>', collapse=''),
-                    '</text>')
-      dudSteps <- matrix_data$dud_steps
-      naughtyNodes <- if (FALSE && length(dudSteps) > 0) {
-        paste0('<circle cx="', nodeXi[dudSteps], '" cy="', nodeYi[dudSteps],
-               '"/><text x="', nodeXi[dudSteps] - textY, '" y="', nodeYi[dudSteps] + textY,
-               '" class="dud-step">Nonsensical Fitch step</text>', collapse='')
-      } else { '' }
-                  
-      svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', 
-                    svgWidth, '" height="', svgHeight, '" class="tree" data-char="', i, '">',
-                    ciCaption, tips, edges, nodes, naughtyNodes,
-                    '</svg>')
-      write(svgSource, file=paste0('_book/', sprintf(fileNamer, treeNo, i)))
-    }
-    cat(svgSource)
-  } else {
-    plot.states.matrix(apply.reconstruction(uniqueTrees[[1]], my_chars_i),
-                       passes=0, counts=1:2, show.labels=1,
-                       col.states=TRUE, state.labels=stateLabels,
-                       use.edge.length=TRUE, legend.pos='topright')
-    legend('bottomleft',  bty='n', ci_text[i, 1])
-  
-  }
+  # Plot character details:
   cat(paste0("  \n\n > **Character ", i, ": ", Italicize(char_names[i]), "**  \n>\n"))
-  if (exists('localInstance') || knitr::is_html_output()) {
+  if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
     lineHeight <- 24L
-    legendY <- round(lineHeight * seq_along(legendLabels), 1)
-    cat(paste0('>  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="', svgWidth, 
-        '" height="', lineHeight * length(legendLabels) + lineHeight - 5L, # For T/N statement
-        '" class="statesLegend">',
-        paste0('<path d="M0,', legendY - 15L, 'h22" stroke="', legendCol,
-                       LineStyle(legendCol), '"></path>', collapse=''),
+    
+    states_matrix <- apply.reconstruction(uniqueTrees[[1]], my_chars[, i])
+    matrix_data <- MatrixData(states_matrix, states_matrix, state.labels=my_states[[i]])
+    legend_labels <- matrix_data$legend
+    legend_col    <- matrix_data$legend_col
+    legendY <- round(lineHeight * seq_along(legend_labels), 1)
+    cat(paste0('>  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="',
+               getOption('svgWidth'),
+               '" height="', lineHeight * length(legend_labels) + lineHeight - 5L,
+               # For T/N statement
+               '" class="statesLegend">',
+        paste0('<path d="M0,', legendY - 15L, 'h22" stroke="', legend_col,
+               ifelse(legend_col == 'lightgrey', '" class="inapplicable', ''),
+               '"></path>', collapse=''),
         '<text x="30" y="-10" class="legendLabels">', 
-        paste0('<tspan x="30" dy="', lineHeight, '">', legendLabels, '</tspan>', collapse=''),
+        paste0('<tspan x="30" dy="', lineHeight, '">', legend_labels, '</tspan>', collapse=''),
         '<tspan x=0 dy="', lineHeight, '">', 
         ifelse (IsTransformational(my_states[[i]]), "Transformational", "Neomorphic"),
         ' character.</tspan>',
@@ -688,15 +302,11 @@ for (i in seq_len(n_char)) {
   state_notes_i <- char_notes_i[[2]]
   state_notes_i <- state_notes_i[!names(state_notes_i) %in% ignored_taxa]
   if (length(char_notes_i[[1]]) > 0) cat(Italicize(char_notes_i[[1]]), "  \n")
-  if (length(state_notes_i) > 0) PrintStateNotes(state_notes_i)
+  if (length(state_notes_i) > 0) {
+    PrintStateNotes(state_notes_i, taxa_names, taxa_italic, i, Italicize)
+  }
   if (my_states[[i]][[1]] != "''") PrintNaughtyInapplicables(my_chars[, i])
   cat("  \n") # Clear line, ready for next block
 }
-if (exists('localInstance') || knitr::is_html_output()) {
-  cat(paste0('<div class="switcher">',
-    '<span class="selectTree">Tree number:</span>',
-    '<input class="switcherNumber" type="number" min="1" max="',
-    n_tree, '"  oninput="switchTree(this)" value="', n_tree, '"></input>',
-    '</div><div class="toggleDetails">[Show details]</div>'))
-}
+PrintSwitcher(n_tree)
 ```

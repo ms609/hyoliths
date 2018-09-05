@@ -60,7 +60,7 @@ nOutgroupTips <- sum(outgroupNode) / 2L # nodes
 lifters <- conTips %in% c("Amathia", 'Flustra')
 nLifters <- sum(lifters)
 nAncestors <- vapply(ancestors, length, 1)
-conXStep <- round(seq(1L, to=svgWidth - 115L, len=max(nAncestors) + 1L), 1)
+conXStep <- round(seq(1L, to=getOption('svgWidth') - 115L, len=max(nAncestors) + 1L), 1)
 conX <- conXStep[nAncestors + 1L]
 conY <- double(length(nAncestors))
 lineHeight <- ((figHeight - 7L) - 10L) / (nConTip - 1 - nOutgroupTips - nLifters)
@@ -92,7 +92,7 @@ nodes <- paste0('<text x="', conX[conInternal][-1] + 2L, '" y="', conY[conIntern
                 '] </tspan><tspan  fill="', conLabelColour1[-1] ,'">',
                 conLabel1[-1], '</tspan>/<tspan  fill="', conLabelColour2[-1] ,'">',
                 conLabel2[-1], '</tspan></text>', collapse='')
-tipLegend <- paste0('<g transform="translate(', svgWidth, ' ', figHeight, ')">',
+tipLegend <- paste0('<g transform="translate(', getOption('svgWidth'), ' ', figHeight, ')">',
                     '<text x="0" y="0" text-anchor="end" class="stepsLabel">',
                     paste0('<tspan x="0" dy="-1.2em" fill="', groupCol, '">',
                            names(groupCol), '</tspan>', collapse=''),
@@ -134,8 +134,8 @@ notes <- c(list(c(onEdge[6 ], overEdge[66], "Pe+")
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 24, x))
 #, lapply(2:21, function (x) c(conXStep[x], lineHeight * 47, x))
 #, lapply(1:60, function (x) c(10, lineHeight * x, x))
-#, lapply(1:60, function (x) c(svgWidth-20, lineHeight * x, x))
-#, lapply(1:60, function (x) c(svgWidth/2, lineHeight * x, x))
+#, lapply(1:60, function (x) c(getOption('svgWidth')-20, lineHeight * x, x))
+#, lapply(1:60, function (x) c(getOption('svgWidth')/2, lineHeight * x, x))
 )
 key <- c(' ' = "Carbonate mineralogy"
          , Pe = "Pedicle"
@@ -168,7 +168,7 @@ circles <- paste0(sprintf('<circle cx="%s" cy="%s"></circle>',
                   collapse='')
 
 svgSource <- paste0('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="',
-                    svgWidth, '" height="', figHeight, '"><defs><style type="text/css">',
+                    getOption('svgWidth'), '" height="', figHeight, '"><defs><style type="text/css">',
                     '<![CDATA[text.taxonLabel{font-style:italic}',
                     'text.nodeLabel{font-size:8pt}',
                     'svg {font-family: "Arial", sans-serif;font-size:9pt}',

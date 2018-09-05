@@ -38,10 +38,9 @@ if (!require('MorphoBank')) devtools::install_github('ms609/MorphoBank')
 library('MorphoBank')
 
 source('bibFunctions.R')
-source('helperFunctions.R')
 source('plotFunctions.R')
-source('printFunctions.R')
 source('treeFunctions.R')
+source('italicize.R')
 ```
 ```{R Morphobank bibliography, echo=FALSE, message=FALSE}
 mbBib <- list.files(pattern='morphobank_bibliography.*\\.txt', full.names=TRUE)
@@ -54,12 +53,13 @@ refs <- trimws(enc2utf8(as.matrix(read.delim(mbRecent, sep="\t", header=TRUE, sk
 refKeys <- apply(refs, 1, RefKey) # Needed before ReadNotes
 ```
 ```{R setup-more, include=FALSE, message=FALSE}
-options(GitHubUser='ms609', GitHubRepo='hyoliths', MorphoBankProject=2800)
+options(GitHubUser='ms609', GitHubRepo='hyoliths', 
+        MorphoBankProject=2800, ProjectName='Brachiopod_Phylogeny',
+        svgHeight=500, svgWidth=682)
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 tntKs <- as.double(gsub(".*xpiwe([\\d\\.]+)\\..*", "\\1", tntFiles, perl=TRUE))
 tntFiles <- tntFiles[order(tntKs)]
 tntFile <- gsub(".*(mbank_.*\\.tnt).*", "\\1", readLines(tntFiles[1], n=1))
-tntLink <- paste0(rawGit, tntFile)
 nexusFile <- MostRecentNexus()
 my_data <- ReadAsPhyDat(nexusFile)
 #ignored_taxa <- c('Conotheca', 'Maxilites', 'Pauxillites',

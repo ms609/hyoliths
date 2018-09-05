@@ -72,6 +72,8 @@ and run in [MrBayes](http://mrbayes.sourceforge.net/download.php) by typing `exe
 pstat <- read.table('MrBayes/hyo.nex.pstat', skip=1, header=TRUE)[, -c(4:6)]
 pstat[, 2:5] <- signif(pstat[, 2:5], 3)
 pstat[, 6] <- signif(pstat[, 6], 5)
+pstat[pstat[, 4] < 200, 4] <- paste0('<mark>', pstat[pstat[, 4] < 200, 4], '</mark>')
+pstat[pstat[, 5] < 200, 5] <- paste0('<mark>', pstat[pstat[, 5] < 200, 5], '</mark>')
 knitr::kable(pstat)
 ```
 
