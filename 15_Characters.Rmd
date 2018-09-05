@@ -303,5 +303,5 @@ for (i in seq_len(n_char)) {
   if (my_states[[i]][[1]] != "''") PrintNaughtyInapplicables(my_chars[, i])
   cat("  \n") # Clear line, ready for next block
 }
-PrintSwitcher(max=n_tree)
+PrintSwitcher(n_tree)
 ```
