@@ -51,6 +51,8 @@ ci_text <- vapply(uniqueTrees, function (tree) {
 ```
 ```{R SVG-setup, echo=FALSE, results="asis"}
 fileNamer <- 'Brachiopod_phylogeny_files/figure-html/tree%s-char%s.svg'
+treeXMargins <- c(5L, 200L)
+treeYMargins <- c(7L, 8L)
 nTree <- c(length(ew.trees), vapply(iw.trees, length, 0))
 analysisNames <- c('Equal weights', paste0(c('Implied weights, k = ', rep('IW, k = ', length(kValues) - 1L)), kValues))
 analysisLabels <- c(analysisNames[-1], analysisNames[1])
@@ -62,7 +64,7 @@ if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
   CheckDirExists('_book/Brachiopod_phylogeny_files/figure-html')
   svgCanvas <- SVGCanvas(allTrees, rootingTips, analysisNames, 
                          width=682, height=682,
-                         xMargins=c(5L, 200L), yMargins=c(7L, 8L))
+                         xMargins=treeXMargins, yMargins=treeYMargins)
 }
 ```
 
