@@ -286,7 +286,7 @@ for (i in seq_len(n_char)) {
                # For T/N statement
                '" class="statesLegend">',
         paste0('<path d="M0,', legendY - 15L, 'h22" stroke="', legend_col,
-               ifelse(legendCol == 'lightgrey', '" class="inapplicable', ''),
+               ifelse(legend_col == 'lightgrey', '" class="inapplicable', ''),
                '"></path>', collapse=''),
         '<text x="30" y="-10" class="legendLabels">', 
         paste0('<tspan x="30" dy="', lineHeight, '">', legend_labels, '</tspan>', collapse=''),
