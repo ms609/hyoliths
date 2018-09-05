@@ -159,7 +159,7 @@ if (knitr::is_html_output()) {
                                       'V', conY[conChild], 'H', conX[conChild], 
                                       collapse=''), '" stroke="#888"></path>')
   tips <- paste0('<text x="', (conX[conTerminal] + 0L), 
-                 '" y="', conY[conTerminal] + textY,
+                 '" y="', conY[conTerminal] + 3L,
                  '" fill="', taxonColour[conTips[conTerminal]],
                  '" class="taxonLabel">', 
                  gsub('_', ' ', conTips[conTerminal], fixed=TRUE), '</text>',
