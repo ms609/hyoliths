@@ -38,9 +38,7 @@ if (!require('MorphoBank')) devtools::install_github('ms609/MorphoBank')
 library('MorphoBank')
 
 source('bibFunctions.R')
-source('helperFunctions.R')
 source('plotFunctions.R')
-source('printFunctions.R')
 source('treeFunctions.R')
 ```
 ```{R Morphobank bibliography, echo=FALSE, message=FALSE}
