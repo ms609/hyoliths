@@ -55,7 +55,7 @@ refKeys <- apply(refs, 1, RefKey) # Needed before ReadNotes
 ```{R setup-more, include=FALSE, message=FALSE}
 options(GitHubUser='ms609', GitHubRepo='hyoliths', 
         MorphoBankProject=2800, ProjectName='Brachiopod_Phylogeny',
-        svgHeight=500, svgWidth=682)
+        svgHeight=520, svgWidth=682)
 tntFiles <- list.files('TNT/', pattern='xpiwe.*\\.tre', full=TRUE)
 tntKs <- as.double(gsub(".*xpiwe([\\d\\.]+)\\..*", "\\1", tntFiles, perl=TRUE))
 tntFiles <- tntFiles[order(tntKs)]

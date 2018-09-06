@@ -64,7 +64,7 @@ if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
   CheckDirExists('_book/Brachiopod_phylogeny_files/figure-html')
   svgCanvas <- SVGCanvas(allTrees, rootingTips, analysisNames, 
                          uniqueTrees=uniqueTrees,
-                         width=682, height=682,
+                         width=getOption('svgWidth'), height=getOption('svgHeight'),
                          xMargins=treeXMargins, yMargins=treeYMargins)
 }
 ```
