@@ -77,6 +77,10 @@ path {
   fill: #aab;
 }
 
+svg {
+  max-height: 60vh;
+}
+
 svg tspan.score, svg tspan.fitch, svg .flag, svg .dud-step  {
   font-weight: bold;
 }
