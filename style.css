@@ -64,12 +64,12 @@ path {
 }
 
 .book .book-body .page-wrapper .page-inner section.normal svg.tree text,
-#conTree text {
+svg#conTree text {
   font-size: 10pt;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal svg.tree text.node,
- #conTree text.node {
+ svg#conTree text.node {
   font-size: 8pt;
 }
 
@@ -137,6 +137,8 @@ div.tfm::before , div.ftch::before, div.rgn::before {
 }
 div.tfm, div.rgn, div.ftch {
   float: left;
+  max-height: 35vh;
+  overflow-y: scroll;
 }
 div.cl3 { width: 33%; }
 div.cl2 { width: 49%; }
