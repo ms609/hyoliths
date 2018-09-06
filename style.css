@@ -78,7 +78,7 @@ svg#conTree text {
 }
 
 svg {
-  max-height: 60vh;
+  max-height: 56vh;
 }
 
 svg tspan.score, svg tspan.fitch, svg .flag, svg .dud-step  {
@@ -137,8 +137,8 @@ div.tfm::before , div.ftch::before, div.rgn::before {
 }
 div.tfm, div.rgn, div.ftch {
   float: left;
-  max-height: 35vh;
-  overflow-y: scroll;
+  max-height: 32vh;
+  overflow-y: auto;
 }
 div.cl3 { width: 33%; }
 div.cl2 { width: 49%; }
