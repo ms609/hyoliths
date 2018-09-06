@@ -12,8 +12,9 @@ Suggests:
   phangorn,
   phytools,
   R.cache,
-  rcrossref,
+  rcrossref (>= 0.8.1),
   stringi,
+  TreeSearch (> 0.1.2),
   zoo
 Remotes: 
   ms609/MorphoBank,
