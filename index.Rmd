@@ -1,5 +1,5 @@
 --- 
-title: "Supplementary Information for: \\newline\\newline Hyoliths with pedicles constrain the origin of the brachiopod body plan"
+title: "Supplementary Information for: \\newline\\newline Hyoliths with pedicles illuminate the origin of the brachiopod body plan"
 author: "Haijing Sun, Martin R. Smith, Han Zeng, Fangchen Zhao, Guoxiang Li and Maoyan Zhu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -15,7 +15,7 @@ csl: http://raw.githubusercontent.com/citation-style-language/styles/master/apa-
 biblio-style: apalike-doi
 link-citations: yes
 github-repo: ms609/hyoliths
-description: "Results of phylogenetic analysis"
+description: "Supplementary materials, including details of phylogenetic analysis"
 ---
 
 # Supplementary Text {-}
