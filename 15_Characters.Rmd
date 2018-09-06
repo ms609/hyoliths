@@ -63,6 +63,7 @@ if (!is.null(getOption('localInstance')) || knitr::is_html_output()) {
   CheckDirExists('_book/Brachiopod_phylogeny_files')
   CheckDirExists('_book/Brachiopod_phylogeny_files/figure-html')
   svgCanvas <- SVGCanvas(allTrees, rootingTips, analysisNames, 
+                         uniqueTrees=uniqueTrees,
                          width=682, height=682,
                          xMargins=treeXMargins, yMargins=treeYMargins)
 }
@@ -264,7 +265,7 @@ for (i in seq_len(n_char)) {
   
   # Plot character reconstruction:
   PlotCharacterMapping(char = my_chars[, i], stateLabels = my_states[[i]],
-                       singleTree <- uniqueTrees[[1]], legendText=ci_text[i, 1],
+                       singleTree = uniqueTrees[[1]], legendText=ci_text[i, 1],
                        canvas = svgCanvas, treeNames = treeNames,
                        analysisLabels = analysisLabels, 
                        svgFilename = paste0('_book/', sprintf(fileNamer, '%s', i)),
@@ -308,5 +309,5 @@ for (i in seq_len(n_char)) {
   if (my_states[[i]][[1]] != "''") PrintNaughtyInapplicables(my_chars[, i])
   cat("  \n") # Clear line, ready for next block
 }
-PrintSwitcher(n_tree)
+PrintSwitcher(length(uniqueTrees))
 ```
