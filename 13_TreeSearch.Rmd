@@ -5,7 +5,7 @@ author: "Martin R. Smith"
 
 # Corrected parsimony {#treesearch}
 
-The phylogenetic dataset contains a considerable proportion of inapplicable codings (`r sum(my_chars == '-')`, = `r round(100 * sum(my_chars == '-') / sum(my_chars != '?'), 1)`% of `r sum(my_chars != '?')` non-ambiguous tokens;  `r round(sum(my_chars == '-') / length(my_chars), 3) * 100`% of r `r length(my_chars)` total cells), which are known to introduce error and bias to phylogenetic reconstruction when the Fitch algorithm is employed [@Maddison1993;@Brazeau2018].  As such, we used the R package _TreeSearch_ v0.1.2 [@Smith2018TreeSearch] to conduct phylogenetic tree search with a tree-scoring algorithm that avoids logically impossible character transformations when handling inapplicable data [@Brazeau2018], implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib].
+The phylogenetic dataset contains a considerable proportion of inapplicable codings (`r sum(my_chars == '-')`, = `r round(100 * sum(my_chars == '-') / sum(my_chars != '?'), 1)`% of `r sum(my_chars != '?')` non-ambiguous tokens;  `r round(sum(my_chars == '-') / length(my_chars), 3) * 100`% of `r length(my_chars)` total cells), which are known to introduce error and bias to phylogenetic reconstruction when the Fitch algorithm is employed [@Maddison1993;@Brazeau2018].  As such, we used the R package _TreeSearch_ v0.1.2 [@Smith2018TreeSearch] to conduct phylogenetic tree search with a tree-scoring algorithm that avoids logically impossible character transformations when handling inapplicable data [@Brazeau2018], implemented in the _MorphyLib_ C library [@Brazeau2017Morphylib].
 
 ## Search parameters
 
