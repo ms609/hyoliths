@@ -1193,7 +1193,7 @@ function updateVisible() {
       if ($(this).data('tree') != chosenTree) {
         var oldTree = $(item);
         $.ajax({
-           url: "Brachiopod_Phylogeny_files/figure-html/tree" + chosenTree
+           url: "Brachiopod_phylogeny_files/figure-html/tree" + chosenTree
                 + "-char" + $(oldTree).data("char") + ".svg",
           context: item,
           datatype: 'xml'
