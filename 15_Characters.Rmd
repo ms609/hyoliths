@@ -265,9 +265,9 @@ for (i in seq_len(n_char)) {
   
   # Plot character reconstruction:
   PlotCharacterMapping(char = my_chars[, i], stateLabels = my_states[[i]],
-                       singleTree = uniqueTrees[[1]], legendText=ci_text[i, 1],
+                       singleTree = uniqueTrees[[1]], legendText = ci_text[i, 1],
                        canvas = svgCanvas, treeNames = treeNames,
-                       analysisLabels = analysisLabels, charIndex=i,
+                       analysisLabels = analysisLabels, charIndex = i,
                        svgFilename = paste0('_book/', sprintf(fileNamer, '%s', i)),
                        SetPar = par(mar=rep(0.2, 4), cex=0.7))
   
