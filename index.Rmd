@@ -94,21 +94,6 @@ outgroup <- 'Namacalathus'
 outgroup <- 'Loxosomella'
 rootingTips <- c('Tonicella', 'Serpula', 'Loxosomella')
 
-# Copied from latest GitHub version of TreeSearch
-RootTree <- function (tree, outgroupTips) {
-  tipLabel <- tree$tip.label
-  tipNos <- which(tipLabel %in% outgroupTips)
-  ancestry <- unlist(Ancestors(tree, tipNos))
-  ancestryTable <- table(ancestry)
-  lineage <- as.integer(names(ancestryTable))
-  lca <- max(lineage[ancestryTable == length(outgroupTips)])
-  rootNode <- length(tipLabel) + 1L
-  if (lca == rootNode) {
-    lca <- lineage[lineage - c(lineage[-1], 0) != -1][1] + 1L
-  }
-  Renumber(root(tree, Descendants(tree, lca)[[1]], resolve.root = TRUE))
-}
-
 ```
 
 (ref:first-panels) at _k_ = `r kValues[1]` and `r kValues[2]`.
