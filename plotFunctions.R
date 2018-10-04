@@ -102,16 +102,6 @@ ColMissing <- function (omit, position='bottomleft') {
     MarkMissing(omit, position, text.font=3, cex=0.8, text.col=taxonColour[omit])
 }
 
-# In TreeSearch 0.1.3
-NodeColour <- SupportColour <- function (support, show1=TRUE) {
-  ifelse(is.na(support) | support < 0 | support > 1 | support == '', 'red',
-         ifelse(support == 1 & !show1, "#ffffff00", divergingScale[(support * 100) + 1L]))
-}
-
-# continuousScale <- rev(colorspace::heat_hcl(101, h=c(300, 75), c.=c(35, 95), l=c(15, 90), power=c(0.8, 1.2))) # Viridis prefered
-divergingScale <- rev(colorspace::diverge_hcl(101, h=c(260, 0), c=100, l=c(50, 90), power=1.0))
-
-
 WriteNumber <- function (n) {
   if (n == 0) {
     'zero'
